@@ -1,0 +1,84 @@
+name: Bundle Size Budget Monitor
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  bundle-size-check:
+    name: Monitor bundle growth
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write  # for posting comments
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          # Install bundle analyzer
+          npm install --save-dev next-bundle-analyzer
+
+      - name: Build with bundle analysis
+        env:
+          ANALYZE: true
+          BUNDLE_SIZE_THRESHOLD: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '2' }}
+        run: |
+          # Run build with analyzer enabled (Next.js)
+          if npm run build 2>&1 | tee build.log; then
+            echo "✅ Build completed"
+          else
+            echo "❌ Build failed"
+            exit 1
+          fi
+
+          # Find the generated stats file
+          STATS_FILE=$(find .next -name "*.json" 2>/dev/null | head -1)
+          if [ -z "$STATS_FILE" ]; then
+            echo "❌ No bundle stats found"
+            exit 1
+          fi
+
+          # Convert to expected format (simplified)
+          # For next-bundle-analyzer, we can get total size directly
+          echo "📊 Bundle stats: $STATS_FILE"
+          cp "$STATS_FILE" bundle-analysis.json
+
+      - name: Run bundle size monitor
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_PULL_NUMBER: ${{ github.event.pull_request.number }}
+          THRESHOLD_PERCENT: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '2' }}
+        run: |
+          chmod +x scripts/bundle-size-monitor.sh
+          ./scripts/bundle-size-monitor.sh
+
+      - name: Upload bundle report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-size-report
+          path: |
+            bundle-analysis.json
+            .bundle-size-baseline.json
+          retention-days: 30
+
+      - name: Post PR comment on failure
+        if: failure() && github.event_name == 'pull_request'
+        run: |
+          BODY="🚨 **Bundle size check failed**\n\nThe bundle grew beyond the allowed threshold (${{ secrets.BUNDLE_SIZE_THRESHOLD || '2' }}%).\n\nCheck the uploaded artifact for details, or run `npm run build` locally and review the bundle analysis.\n\nYou can adjust the threshold by setting the `BUNDLE_SIZE_THRESHOLD` secret in repository settings."
+          gh pr comment "$GITHUB_PULL_NUMBER" --body "$BODY" || true
