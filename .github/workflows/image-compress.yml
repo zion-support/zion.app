@@ -1,0 +1,41 @@
+name: Image Compression
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # allow manual runs
+
+jobs:
+  compress-images:
+    name: Compress images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed to commit compressed images
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pngquant jpegoptim
+
+      - name: Run image optimizer
+        run: |
+          chmod +x scripts/optimize-images.sh
+          ./scripts/optimize-images.sh public
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --exit-code --quiet; then
+            echo "✅ No image changes detected"
+          else
+            git add -u public/**/*.png public/**/*.jpg public/**/*.jpeg 2>/dev/null || true
+            git commit -m "chore: compress images [automated]"
+            git push
+            echo "🚀 Compressed images pushed"
+          fi

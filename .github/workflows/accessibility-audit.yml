@@ -1,0 +1,91 @@
+name: Accessibility Audit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # daily at 03:00 UTC
+
+jobs:
+  accessibility-audit:
+    name: Nightly accessibility audit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write  # for posting comments
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install -g pa11y jq
+          # Install project dependencies (if needed for building)
+          if [ -f package-lock.json ]; then npm ci; fi
+
+      - name: Build site (if needed)
+        run: |
+          if npm run build 2>/dev/null; then
+            echo "✅ Build completed"
+          else
+            echo "⚠️  No build script or build failed — using static files only"
+          fi
+
+      - name: Start local server
+        run: |
+          # Try common static servers
+          if command -v npx &> /dev/null; then
+            npx serve -s . -p 3000 &
+          elif command -v python3 &> /dev/null; then
+            python3 -m http.server 3000 &
+          else
+            echo "❌ No suitable server found"
+            exit 1
+          fi
+          SERVER_PID=$!
+          echo "Server PID: $SERVER_PID"
+          # Wait for server to be ready
+          for i in $(seq 1 30); do
+            if curl -sSf http://localhost:3000 > /dev/null; then
+              echo "✅ Server ready"
+              break
+            fi
+            echo "⏳ Waiting for server ($i/30)..."
+            sleep 1
+          done
+
+      - name: Run accessibility audit script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_PULL_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          chmod +x scripts/accessibility-audit.sh
+          export PORT=3000
+          ./scripts/accessibility-audit.sh
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-audit-report
+          path: accessibility-audit-report.json
+          retention-days: 30
+
+      - name: Post summary as PR comment (if applicable)
+        if: github.event_name == 'pull_request'
+        run: |
+          REPORT="accessibility-audit-report.json"
+          if [ -f "$REPORT" ]; then
+            ERRORS=$(jq '[.[] | select(.type == "error")] | length' "$REPORT")
+            WARNINGS=$(jq '[.[] | select(.type == "warning")] | length' "$REPORT")
+            BODY="Accessibility audit results: **$ERRORS errors**, **$WARNINGS warnings**. See the uploaded artifact for details."
+            gh pr comment "$GITHUB_PULL_NUMBER" --body "$BODY" || true
+          fi
