@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-05-10T22:00:20.708Z",
+  "status": "no-change",
+  "mode": "stabilize",
+  "applyAllowed": true,
+  "applied": false,
+  "executePm2": true,
+  "files": {
+    "tunerReport": "automation/reports/openclaw-skill-auto-tuner-latest.json",
+    "overrides": "automation/reports/openclaw-runtime-overrides.json",
+    "history": "automation/reports/openclaw-runtime-overrides-history.json"
+  },
+  "before": {
+    "frequencySeconds": 70,
+    "maxParallel": 1
+  },
+  "recommended": {
+    "frequencySeconds": 70,
+    "maxParallel": 1
+  },
+  "after": {
+    "frequencySeconds": 70,
+    "maxParallel": 1
+  },
+  "pm2Restarts": [],
+  "guardrails": {
+    "minFrequencySeconds": 15,
+    "maxFrequencySeconds": 180,
+    "minParallel": 1,
+    "maxParallel": 6,
+    "maxFrequencyDeltaPerRun": 25,
+    "maxParallelDeltaPerRun": 1
+  }
+}

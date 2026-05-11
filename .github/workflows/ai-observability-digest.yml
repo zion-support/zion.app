@@ -1,0 +1,68 @@
+name: AI Observability Digest
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Daily at 9 AM
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-observability-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Generate observability digest
+        env:
+          ZION_BASE_URL: https://ziontechgroup.com
+          SMOKE_USE_ROTATION: '1'
+          SMOKE_SAMPLE_ROUTES: '10'
+        run: |
+          npm run observability:digest || true
+          npm run release:risk:score || true
+          npm run aggregate:regression:check || true
+      
+      - name: Upload digest reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: observability-digest-${{ github.run_id }}
+          path: |
+            automation/reports/observability-digest-latest.json
+            automation/reports/release-risk-score-latest.json
+            automation/reports/aggregate-regression-latest.json
+          retention-days: 30
+      
+      - name: Escalate on high release risk
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/release-risk-score-latest.json"
+          if [ -f "$report" ]; then
+            risk=$(node -e "const j=require('./$report');console.log(j.riskScore||0)")
+            if [ "$risk" -gt 70 ]; then
+              gh issue create --title "High Release Risk Detected: $risk" \
+                --body "Release risk score exceeded threshold." \
+                --label "bug,automation" || true
+            fi
+          fi

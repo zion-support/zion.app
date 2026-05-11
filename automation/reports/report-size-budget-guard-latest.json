@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-03-21T01:06:54.633Z",
+  "thresholds": {
+    "maxFileKb": 1536,
+    "maxTotalMb": 8
+  },
+  "totals": {
+    "files": 125,
+    "totalBytes": 2108655,
+    "totalMb": 2.01
+  },
+  "oversizedFiles": [],
+  "oversizedCount": 0,
+  "totalExceeded": false,
+  "failed": false,
+  "topLargest": [
+    {
+      "path": "automation/reports/seo-report.json",
+      "sizeBytes": 1238188,
+      "sizeKb": 1209.17
+    },
+    {
+      "path": "automation/reports/seo-meta-report.json",
+      "sizeBytes": 233634,
+      "sizeKb": 228.16
+    },
+    {
+      "path": "automation/reports/navigation-pages-audit-latest.json",
+      "sizeBytes": 70861,
+      "sizeKb": 69.2
+    },
+    {
+      "path": "automation/reports/ai-broken-link-page-audit-latest.json",
+      "sizeBytes": 62666,
+      "sizeKb": 61.2
+    },
+    {
+      "path": "automation/reports/pm2-slo-escalation-history.json",
+      "sizeBytes": 54792,
+      "sizeKb": 53.51
+    },
+    {
+      "path": "automation/reports/openclaw-improver-history-merged-latest.json",
+      "sizeBytes": 47364,
+      "sizeKb": 46.25
+    },
+    {
+      "path": "automation/reports/conversion-funnel-audit-latest.json",
+      "sizeBytes": 34003,
+      "sizeKb": 33.21
+    },
+    {
+      "path": "automation/reports/gha-workflow-cost-estimate-latest.json",
+      "sizeBytes": 31565,
+      "sizeKb": 30.83
+    },
+    {
+      "path": "automation/reports/navigation-audit-latest.json",
+      "sizeBytes": 24251,
+      "sizeKb": 23.68
+    },
+    {
+      "path": "automation/reports/system-intelligence-audit-latest.json",
+      "sizeBytes": 24019,
+      "sizeKb": 23.46
+    },
+    {
+      "path": "automation/reports/live-nav-sync-suggestions-latest.json",
+      "sizeBytes": 23392,
+      "sizeKb": 22.84
+    },
+    {
+      "path": "automation/reports/openclaw-autonomous-app-improver-history.json",
+      "sizeBytes": 21232,
+      "sizeKb": 20.73
+    },
+    {
+      "path": "automation/reports/github-actions-audit-latest.json",
+      "sizeBytes": 18530,
+      "sizeKb": 18.1
+    },
+    {
+      "path": "automation/reports/openclaw-deploy-confidence-gate-history.json",
+      "sizeBytes": 18338,
+      "sizeKb": 17.91
+    },
+    {
+      "path": "automation/reports/pm2-slo-latest.json",
+      "sizeBytes": 15605,
+      "sizeKb": 15.24
+    },
+    {
+      "path": "automation/reports/live-navigation-audit-latest.json",
+      "sizeBytes": 15053,
+      "sizeKb": 14.7
+    },
+    {
+      "path": "automation/reports/automation-audit-latest.json",
+      "sizeBytes": 11161,
+      "sizeKb": 10.9
+    },
+    {
+      "path": "automation/reports/pm2-restart-guardian-history.json",
+      "sizeBytes": 10838,
+      "sizeKb": 10.58
+    },
+    {
+      "path": "automation/reports/report-write-coalescer-index.json",
+      "sizeBytes": 10579,
+      "sizeKb": 10.33
+    },
+    {
+      "path": "automation/reports/openclaw-regression-memory-history.json",
+      "sizeBytes": 10151,
+      "sizeKb": 9.91
+    }
+  ]
+}

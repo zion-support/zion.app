@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-03-20T18:16:00.037Z",
+  "sourceQueue": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-queue-latest.json",
+  "minConfidence": 0.6,
+  "allowHighSeverity": false,
+  "allowlistSize": 8,
+  "totalInput": 0,
+  "totalApproved": 0,
+  "totalDenied": 0,
+  "approvedIds": [],
+  "denied": []
+}

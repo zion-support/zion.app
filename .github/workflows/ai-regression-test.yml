@@ -1,0 +1,59 @@
+name: AI Regression Test Suite
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'  # Weekly Sunday at 2 AM UTC
+  push:
+    branches: [main]
+    paths:
+      - '**/*.test.ts'
+      - '**/*.test.tsx'
+      - '**/*.spec.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regression-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Check coverage threshold
+        run: node scripts/check-coverage.cjs
+        env:
+          COVERAGE_THRESHOLD: 80
+
+      - name: Auto-create PR on low coverage
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create --title "Coverage Alert: below threshold" --body "Test coverage dropped below 80%. Please review." --label "testing,coverage" || true
+          git checkout -b fix/coverage-${{ github.run_id }}
+          git add -A
+          git commit -m "fix: address low test coverage [skip ci]" || echo "No changes"
+          git push origin fix/coverage-${{ github.run_id }}
+          gh pr create --title "Fix test coverage" --body "Automated PR to address low test coverage" || true

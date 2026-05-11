@@ -1,0 +1,61 @@
+name: AI Automation Engine
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8 AM
+  workflow_dispatch:
+  push:
+    paths:
+      - 'ai_automation_engine.py'
+      - 'automation/**'
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-automation-engine
+  cancel-in-progress: false
+
+jobs:
+  run-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          node-version: '20'
+        with:
+          python-version: '3.11'
+      
+      - name: Run AI Automation Engine
+        run: |
+          python3 ai_automation_engine.py
+      
+      - name: Upload automation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: automation-report
+          path: automation/reports/
+          retention-days: 30
+      
+      - name: Create issue on low autonomy score
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/autonomy-intelligence-plan-latest.json"
+          if [ -f "$report" ]; then
+            score=$(python3 -c "import json; print(json.load(open('$report'))['autonomyScore'])")
+            if [ "$score" -lt 70 ]; then
+              gh issue create --title "Autonomy Score Low: $score" \
+                --body "Automated detection of low autonomy score." \
+                --label "automation,bug" || true
+            fi
+          fi

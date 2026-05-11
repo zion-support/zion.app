@@ -1,0 +1,11 @@
+{
+  "mode": "daily-quick",
+  "scope": "core+homepage+ai-services",
+  "runAppAudit": true,
+  "runAppAuditApply": true,
+  "maxAuditRunsPerWeek": 7,
+  "pagesScope": "core+extended",
+  "allowLowRiskAutoApply": true,
+  "highlightAutonomousSystems": true,
+  "prioritizeHomepageAutomationMessaging": true
+}

@@ -1,0 +1,61 @@
+name: Autonomous Experiment Priority Engine
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8 AM
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  priority:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Calculate experiment priorities
+        env:
+          ZION_BASE_URL: https://ziontechgroup.com
+        run: |
+          npm run experiment:priority:score || true
+      
+      - name: Create high-priority experiment PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/experiment-priority-latest.json"
+          if [ -f "$report" ]; then
+            priority=$(node -e "const j=require('./$report');console.log(j.topPriority||0);")
+            if [ "$priority" -gt 80 ]; then
+              gh pr create --title "AI Experiment Priority: ${priority}" \
+                --body "High-priority experiment detected. Ready for implementation." \
+                --head ${{ github.sha }} \
+                --base main \
+                --label "ai-experiment,automation" --draft=true || true
+            fi
+          fi
+      
+      - name: Upload priority report
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiment-priority-${{ github.run_id }}
+          path: automation/reports/experiment-priority-latest.json
+          retention-days: 30

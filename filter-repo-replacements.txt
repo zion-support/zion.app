@@ -1,0 +1,2 @@
+regex: ghp_[A-Za-z0-9]+
+replacement: REMOVED

@@ -1,0 +1,1059 @@
+{
+  "generatedAt": "2026-04-14T02:52:32.428Z",
+  "source": "github-actions-integrity-auditor",
+  "queueSize": 371,
+  "criticalCount": 2,
+  "warningCount": 369,
+  "queue": [
+    {
+      "id": "timeout-.github/workflows/ai-accessibility-audit-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-accessibility-audit-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-accessibility-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-accessibility-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-actions-pin-strict-guard.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-actions-pin-strict-guard.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-advanced-ai-content.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-advanced-ai-content.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-agents-docs-updater.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-agents-docs-updater.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-dashboard-refresh.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-dashboard-refresh.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-regression-alert.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-regression-alert.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-regression-diff-alert.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-regression-diff-alert.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-aggregate-regression-diff-pr-comment.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-aggregate-regression-diff-pr-comment.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-experiences-health.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-experiences-health.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-route-contract-autofix-pr.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-route-contract-autofix-pr.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ai-lab-safe-scaffold-migrate-pr.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ai-lab-safe-scaffold-migrate-pr.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-audit-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-audit-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-autonomy-guarded-cycle.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-autonomy-guarded-cycle.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-evolution-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-evolution-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-evolution-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-evolution-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-evolution-trigger-on-regression.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-evolution-trigger-on-regression.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-daily-quick.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-daily-quick.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-evolution-full-quality.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-evolution-full-quality.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-evolution.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-evolution.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-on-push.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-on-push.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-orchestrator.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-orchestrator.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-improvement-specialist.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-improvement-specialist.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-quality-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-quality-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-visit-audit-implement-deploy.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-visit-audit-implement-deploy.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-app-visit-intelligence.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-app-visit-intelligence.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-artifact-freshness-mesh.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-artifact-freshness-mesh.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "pin-.github/workflows/ai-auto-fix-weekly.yml",
+      "type": "workflow-action-pin-hardening",
+      "targetFile": ".github/workflows/ai-auto-fix-weekly.yml",
+      "priority": "critical",
+      "action": "pin action references to commit SHA with comment"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-auto-fix-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-auto-fix-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-audit-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-audit-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-context-pr-comment.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-context-pr-comment.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-fingerprint-digest-freshness.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-fingerprint-digest-freshness.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-fingerprint-digest-pr-label.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-fingerprint-digest-pr-label.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-fingerprint-digest-preflight.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-fingerprint-digest-preflight.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-fingerprint-digest-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-fingerprint-digest-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-fingerprint-stale-nudge-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-fingerprint-stale-nudge-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-health-monitor-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-health-monitor-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-health-monitor.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-health-monitor.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-health-pr-comment.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-health-pr-comment.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-health-static-freshness-guard-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-health-static-freshness-guard-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-health-static-freshness-guard.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-health-static-freshness-guard.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-improvements-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-improvements-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-improvements.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-improvements.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-issue-index-weekly-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-issue-index-weekly-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-issue-index-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-issue-index-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-pr-preflight.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-pr-preflight.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automation-risk-label.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automation-risk-label.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automations-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automations-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-automations.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-automations.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-idea-guarded-cycle.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-idea-guarded-cycle.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-improvements-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-improvements-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-improvements.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-improvements.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-opportunity-radar-refresh.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-opportunity-radar-refresh.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-runtime-guardian.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-runtime-guardian.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-self-heal-factory-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-self-heal-factory-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomous-self-heal-factory.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomous-self-heal-factory.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomy-intelligence-planner-daily-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomy-intelligence-planner-daily-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomy-intelligence-planner-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomy-intelligence-planner-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-autonomy-quick.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-autonomy-quick.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-backlog-auto-runner.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-backlog-auto-runner.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-broken-link-fixer-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-broken-link-fixer-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-broken-link-fixer.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-broken-link-fixer.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-broken-link-page-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-broken-link-page-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-build-fixer.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-build-fixer.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ci-recovery.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ci-recovery.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-conservative-autofix-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-conservative-autofix-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-accelerator.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-accelerator.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-burst-high-frequency.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-burst-high-frequency.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-burst-ultra.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-burst-ultra.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-burst.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-burst.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-generator-ultra.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-generator-ultra.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-ideas-and-evolution-deploy.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-ideas-and-evolution-deploy.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-ideas-deploy.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-ideas-deploy.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-max-velocity-deploy.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-max-velocity-deploy.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-maximum-velocity.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-maximum-velocity.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-quality-auditor.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-quality-auditor.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-rapid.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-rapid.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-content-velocity.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-content-velocity.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-continuous-improvement.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-continuous-improvement.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-cron-collision-tuner.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-cron-collision-tuner.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-cron-tuner.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-cron-tuner.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-dependency-upgrade-train-monthly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-dependency-upgrade-train-monthly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-development-agent.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-development-agent.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-development-speed-accelerator.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-development-speed-accelerator.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ecosystem-intelligence.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ecosystem-intelligence.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-experiment-outcome-ledger.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-experiment-outcome-ledger.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-friday-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-friday-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-front-page-services-content.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-front-page-services-content.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-gha-cost-estimate-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-gha-cost-estimate-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-gha-npm-cache-audit-pr.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-gha-npm-cache-audit-pr.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-gha-npm-cache-audit-scheduled.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-gha-npm-cache-audit-scheduled.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-github-actions-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-github-actions-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-github-integrity-fix-factory.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-github-integrity-fix-factory.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-github-workflow-integrity-audit-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-github-workflow-integrity-audit-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-ideas-implementation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-ideas-implementation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-image-optimization-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-image-optimization-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-incident-severity-orchestrator-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-incident-severity-orchestrator-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-incident-severity-orchestrator.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-incident-severity-orchestrator.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-incident-sibling-crosslink-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-incident-sibling-crosslink-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-incident-suppression-registry-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-incident-suppression-registry-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-incident-suppression-registry.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-incident-suppression-registry.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-issue-triage.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-issue-triage.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-launch-digest-freshness-sla.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-launch-digest-freshness-sla.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-layout-design-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-layout-design-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-layout-design-automation-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-layout-design-automation-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-layout-design-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-layout-design-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-layout-improvement.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-layout-improvement.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-lead-form-routing-guard-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-lead-form-routing-guard-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-lead-gen-contact-route-guard.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-lead-gen-contact-route-guard.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-lead-routing-synthetic-intelligence-v2.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-lead-routing-synthetic-intelligence-v2.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-lead-routing-synthetic-trend-v3.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-lead-routing-synthetic-trend-v3.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-live-accessibility-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-live-accessibility-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-live-app-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-live-app-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-live-content-ideas-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-live-content-ideas-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-live-content-ideas.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-live-content-ideas.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-live-ux-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-live-ux-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-local-llm-app-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-local-llm-app-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-local-llm-specialists.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-local-llm-specialists.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-midweek-auto-impl.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-midweek-auto-impl.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-mttr-fingerprint-arbitration-digest-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-mttr-fingerprint-arbitration-digest-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-mttr-fingerprint-regression-daily-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-mttr-fingerprint-regression-daily-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-mttr-fingerprint-regression-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-mttr-fingerprint-regression-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-mttr-slo-guard-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-mttr-slo-guard-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-navigation-audit-fix.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-navigation-audit-fix.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-navigation-improvement-automation.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-navigation-improvement-automation.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-navigation-pages-audit.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-navigation-pages-audit.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-netlify-playwright-smoke-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-netlify-playwright-smoke-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-netlify-playwright-smoke.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-netlify-playwright-smoke.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-netlify-preview-smoke-scheduled.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-netlify-preview-smoke-scheduled.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-next-build-lock-guardian.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-next-build-lock-guardian.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-observability-digest.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-observability-digest.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-observability-ema-webhook-daily-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-observability-ema-webhook-daily-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-observability-ema-webhook-daily.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-observability-ema-webhook-daily.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-observability-history-freshness-guard.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-observability-history-freshness-guard.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-openclaw-anomaly-trend-breach-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-openclaw-anomaly-trend-breach-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-openclaw-anomaly-trend-breach.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-openclaw-anomaly-trend-breach.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-openclaw-auth-runtime-diagnostic-smoke-weekly.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-openclaw-auth-runtime-diagnostic-smoke-weekly.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    },
+    {
+      "id": "timeout-.github/workflows/ai-openclaw-auth-runtime-diagnostic.yml",
+      "type": "workflow-timeout-hardening",
+      "targetFile": ".github/workflows/ai-openclaw-auth-runtime-diagnostic.yml",
+      "priority": "warning",
+      "action": "add timeout-minutes per job"
+    }
+  ]
+}

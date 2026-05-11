@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-03-20T18:16:00.900Z",
+  "maxAgeHours": 30,
+  "autoHeal": false,
+  "staleCount": 0,
+  "status": "ok",
+  "results": [
+    {
+      "key": "openclawAutonomous",
+      "file": "openclaw-autonomous-app-improver-latest.json",
+      "exists": true,
+      "stale": false,
+      "ageHours": 0,
+      "workflow": "ai-openclaw-autonomous-cycle.yml",
+      "dispatch": {
+        "attempted": false,
+        "ok": false,
+        "reason": "not_stale"
+      }
+    },
+    {
+      "key": "openclawAuthRuntime",
+      "file": "openclaw-auth-runtime-diagnostic-latest.json",
+      "exists": true,
+      "stale": false,
+      "ageHours": 0.25,
+      "workflow": "ai-openclaw-auth-runtime-diagnostic.yml",
+      "dispatch": {
+        "attempted": false,
+        "ok": false,
+        "reason": "not_stale"
+      }
+    },
+    {
+      "key": "openclawPromptQuality",
+      "file": "openclaw-prompt-quality-score-latest.json",
+      "exists": true,
+      "stale": false,
+      "ageHours": 0.02,
+      "workflow": "ai-openclaw-autonomous-cycle.yml",
+      "dispatch": {
+        "attempted": false,
+        "ok": false,
+        "reason": "not_stale"
+      }
+    },
+    {
+      "key": "aggregateDashboard",
+      "file": "aggregate-dashboard.json",
+      "exists": true,
+      "stale": false,
+      "ageHours": 0.36,
+      "workflow": "ai-report-aggregator.yml",
+      "dispatch": {
+        "attempted": false,
+        "ok": false,
+        "reason": "not_stale"
+      }
+    },
+    {
+      "key": "pm2Slo",
+      "file": "pm2-slo-latest.json",
+      "exists": true,
+      "stale": false,
+      "ageHours": 0.02,
+      "workflow": "ai-pm2-slo-agent.yml",
+      "dispatch": {
+        "attempted": false,
+        "ok": false,
+        "reason": "not_stale"
+      }
+    }
+  ]
+}

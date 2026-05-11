@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-03-21T00:39:05.910Z",
+  "ciMode": true,
+  "contention": {
+    "riskScore": 260,
+    "riskLevel": "high",
+    "threshold": 50
+  },
+  "drift": {
+    "driftCount": 0
+  },
+  "slo": {
+    "note": "skipped_in_ci_no_pm2"
+  },
+  "restartGuardian": {
+    "note": "skipped_in_ci_no_pm2"
+  },
+  "pm2ReportBudget": {
+    "status": "no_scan"
+  },
+  "telegramHtml": "<b>PM2 ops digest</b>\nContention: high (260/50)\nDrift: 0 issue(s)\nSLO: CI snapshot — run on PM2 host for live data"
+}

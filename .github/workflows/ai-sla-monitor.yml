@@ -1,0 +1,35 @@
+name: AI SLA Monitor
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Every 10 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sla-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run SLA Monitor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLA_ENDPOINT: ${{ secrets.SLA_ENDPOINT }}
+          SLA_MS: ${{ secrets.SLA_MS }}
+        run: node scripts/sla-monitor.cjs

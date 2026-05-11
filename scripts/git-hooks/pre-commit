@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Report budget + optional patch-router refresh (see automation/openclaw-pre-commit-hooks.cjs).
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+if [ -n "${CI:-}" ] || [ "${SKIP_OPENCLAW_GIT_HOOKS:-}" = "1" ]; then
+  exit 0
+fi
+if ! command -v node >/dev/null 2>&1; then
+  echo "openclaw pre-commit: node not on PATH; skipping." >&2
+  exit 0
+fi
+exec node automation/openclaw-pre-commit-hooks.cjs

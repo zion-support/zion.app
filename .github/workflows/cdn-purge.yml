@@ -1,0 +1,43 @@
+name: CDN Cache Purge
+
+on:
+  workflow_run:
+    workflows: [ci]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  purge:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Get changed files
+      id: changes
+      run: |
+        git fetch origin ${{ github.event.workflow_run.head_branch }}
+        CHANGED=$(git diff --name-only ${{ github.event.workflow_run.head_sha }}~1 ${{ github.event.workflow_run.head_sha }} | grep -E '^(public|static)/')
+        echo "files=$CHANGED" >> $GITHUB_OUTPUT
+    - name: Purge Cloudflare cache
+      if: steps.changes.outputs.files != ''
+      env:
+        CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+      run: |
+        FILES=$(echo "${{ steps.changes.outputs.files }}" | tr '\n' ',' | sed 's/,$//')
+        URLs=$(printf "%s" "$FILES" | awk -v prefix="https://yourdomain.com/" '{split($0,a,","); for(i in a) print prefix a[i]}')
+        curl -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+          -H "Authorization: Bearer $CF_TOKEN" \
+          -H "Content-Type: application/json" \
+          --data "{\"files\":[$(printf \"\"%s\"\" $(echo $URLs | tr ' ' '\" , \"'))]\}" | tee purge_output.txt
+    - name: Notify on Telegram
+      if: steps.changes.outputs.files != ''
+      uses: appleboy/telegram-action@v0.1.1
+      with:
+        to: "@my_channel"
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: "🤖 CDN purge completed for changed static assets."
+        disable_notification: false
+        parse_mode: Markdown

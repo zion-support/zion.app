@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-05-04T18:54:38.694Z",
+  "severity": "critical",
+  "sloScore": 42,
+  "sloDeltaFromPrevious": 0,
+  "emaOpenIncidents": 4.999,
+  "previewUnhealthyCount": 0,
+  "openFingerprintIssues": 18,
+  "deployStatus": "failed",
+  "deploySha": "18e63ca5d2c8ff59b897c08bfca4a86c08ff1c66",
+  "netlifyDeployUrl": null,
+  "registryGeneratedAt": "2026-04-14T01:06:08Z",
+  "telemetryFreshness": {
+    "suppressionRegistryAt": "2026-04-14T01:06:08Z",
+    "deployStatusAt": "2026-05-04T18:54:37.708Z",
+    "previewSmokeAt": "2026-03-24T16:48:35.655Z",
+    "issueIndexAt": "2026-04-13T10:20:45.235Z",
+    "observabilityEmaFpHistoryAt": "2026-03-24T14:43:27.784Z",
+    "smokeHealthHistoryAt": null,
+    "automationHealthHistoryAt": "2026-05-04T18:54:38.694Z"
+  }
+}

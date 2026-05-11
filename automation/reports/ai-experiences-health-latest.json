@@ -1,0 +1,37 @@
+{
+  "startedAt": "2026-03-21T20:29:57.661Z",
+  "finishedAt": "2026-03-21T20:29:58.795Z",
+  "baseUrl": "https://ziontechgroup.com",
+  "okCount": 3,
+  "total": 3,
+  "avgResponseTimeMs": 377,
+  "experiences": [
+    {
+      "id": "ai-experiments",
+      "label": "AI Experiments Hub",
+      "url": "https://ziontechgroup.com/ai-experiments/",
+      "statusCode": 200,
+      "responseTimeMs": 588,
+      "ok": true,
+      "timestamp": "2026-03-21T20:29:58.249Z"
+    },
+    {
+      "id": "solutions-configurator",
+      "label": "AI Solutions Configurator",
+      "url": "https://ziontechgroup.com/ai/solutions-configurator/",
+      "statusCode": 200,
+      "responseTimeMs": 204,
+      "ok": true,
+      "timestamp": "2026-03-21T20:29:58.454Z"
+    },
+    {
+      "id": "url-audit-assistant",
+      "label": "AI URL Audit Assistant",
+      "url": "https://ziontechgroup.com/ai/url-audit-assistant/",
+      "statusCode": 200,
+      "responseTimeMs": 339,
+      "ok": true,
+      "timestamp": "2026-03-21T20:29:58.794Z"
+    }
+  ]
+}

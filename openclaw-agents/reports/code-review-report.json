@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-04-25T09:20:50.530Z",
+  "agent": "code-review",
+  "reviews": [],
+  "issues": [],
+  "suggestions": [
+    {
+      "type": "security",
+      "severity": "high",
+      "message": "Environment variables"
+    }
+  ],
+  "commits": [
+    "edafb2de ♾️ Continuous improvement: audit + tasks + fixes",
+    "43e5ff5e ♾️ Continuous improvement: audit + tasks + fixes",
+    "758287e6 ♾️ Continuous improvement: audit + tasks + fixes",
+    "f447cf57 ♾️ Continuous improvement: audit + tasks + fixes",
+    "42dc8199 ♾️ Continuous improvement: audit + tasks + fixes",
+    "76e9d1cb ♾️ Continuous improvement: audit + tasks + fixes",
+    "14b1fcee ♾️ Continuous improvement: audit + tasks + fixes",
+    "4bed40ea chore(reports): refresh workflow failure triage",
+    "1de74c8a chore(reports): refresh workflow failure triage",
+    "369017b2 chore(reports): refresh workflow failure triage"
+  ],
+  "typescript": {
+    "status": "fail",
+    "errors": 0
+  },
+  "eslint": {
+    "status": "errors",
+    "warnings": 0,
+    "errors": 0
+  },
+  "score": 70
+}

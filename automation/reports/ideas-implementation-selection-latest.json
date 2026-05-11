@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-04-04T22:06:40.173Z",
+  "policy": {
+    "scoreFormula": "impact*0.7 + (100-risk)*0.3",
+    "maxBlogPosts": 6,
+    "maxProductPages": 1,
+    "enforceQualityGates": true
+  },
+  "selected": [
+    {
+      "id": "blog-generation",
+      "enabled": true,
+      "impact": 82,
+      "risk": 38,
+      "owner": "openrouter-content-generator",
+      "reason": "high acquisition + SEO potential",
+      "score": 76
+    },
+    {
+      "id": "front-page-expansion",
+      "enabled": true,
+      "impact": 79,
+      "risk": 36,
+      "owner": "ai-front-page-content-expansion-agent",
+      "reason": "high visibility on homepage conversion paths",
+      "score": 75
+    },
+    {
+      "id": "services-advertiser",
+      "enabled": true,
+      "impact": 72,
+      "risk": 32,
+      "owner": "ai-front-page-services-advertiser-agent",
+      "reason": "promotes under-exposed offerings with low implementation risk",
+      "score": 71
+    },
+    {
+      "id": "product-page-creator",
+      "enabled": true,
+      "impact": 74,
+      "risk": 44,
+      "owner": "ai-zion-product-page-creator-agent",
+      "reason": "expands catalog discoverability",
+      "score": 69
+    }
+  ],
+  "skipped": []
+}

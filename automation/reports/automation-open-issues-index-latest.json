@@ -1,0 +1,285 @@
+{
+  "generatedAt": "2026-04-13T10:20:45.235Z",
+  "openAutomationFingerprintIssues": 18,
+  "issues": [
+    {
+      "number": 34578,
+      "title": "Autonomous self-heal factory critical findings",
+      "url": "https://github.com/Zion-support/zion.app/issues/34578",
+      "createdAt": "2026-04-07T23:24:08Z",
+      "updatedAt": "2026-04-12T05:01:54Z",
+      "ageHours": 130.94,
+      "fingerprintLabels": [
+        "automation-fp-1cb73be79e4d"
+      ]
+    },
+    {
+      "number": 34561,
+      "title": "Autonomous Quality Drift alert",
+      "url": "https://github.com/Zion-support/zion.app/issues/34561",
+      "createdAt": "2026-04-01T13:13:43Z",
+      "updatedAt": "2026-04-13T01:16:05Z",
+      "ageHours": 285.12,
+      "fingerprintLabels": [
+        "automation-fp-916c049849b2"
+      ]
+    },
+    {
+      "number": 34560,
+      "title": "Artifact freshness mesh stale reports detected",
+      "url": "https://github.com/Zion-support/zion.app/issues/34560",
+      "createdAt": "2026-04-01T12:37:18Z",
+      "updatedAt": "2026-04-13T07:02:31Z",
+      "ageHours": 285.72,
+      "fingerprintLabels": [
+        "automation-fp-f08183541898"
+      ]
+    },
+    {
+      "number": 34556,
+      "title": "Route vs sitemap drift threshold exceeded",
+      "url": "https://github.com/Zion-support/zion.app/issues/34556",
+      "createdAt": "2026-03-31T12:02:57Z",
+      "updatedAt": "2026-04-07T12:03:52Z",
+      "ageHours": 310.3,
+      "fingerprintLabels": [
+        "automation-fp-9026b3d0d4d8"
+      ]
+    },
+    {
+      "number": 34554,
+      "title": "Workflow SLO regressions detected",
+      "url": "https://github.com/Zion-support/zion.app/issues/34554",
+      "createdAt": "2026-03-30T14:02:58Z",
+      "updatedAt": "2026-04-06T13:52:47Z",
+      "ageHours": 332.3,
+      "fingerprintLabels": [
+        "automation-fp-574f1b0d51e4"
+      ]
+    },
+    {
+      "number": 34530,
+      "title": "Observability EMA/FP history has gone stale",
+      "url": "https://github.com/Zion-support/zion.app/issues/34530",
+      "createdAt": "2026-03-27T00:59:33Z",
+      "updatedAt": "2026-04-13T01:08:25Z",
+      "ageHours": 417.35,
+      "fingerprintLabels": [
+        "automation-fp-25ad7697dd21"
+      ]
+    },
+    {
+      "number": 34518,
+      "title": "Aggregate dashboard regression detected",
+      "url": "https://github.com/Zion-support/zion.app/issues/34518",
+      "createdAt": "2026-03-25T01:08:40Z",
+      "updatedAt": "2026-04-13T01:05:35Z",
+      "ageHours": 465.2,
+      "fingerprintLabels": [
+        "automation-fp-acf72b8d68c8"
+      ]
+    },
+    {
+      "number": 34516,
+      "title": "PM2 restart guardian alert",
+      "url": "https://github.com/Zion-support/zion.app/issues/34516",
+      "createdAt": "2026-03-24T19:38:54Z",
+      "updatedAt": "2026-04-13T01:15:01Z",
+      "ageHours": 470.7,
+      "fingerprintLabels": [
+        "automation-fp-bbfb34e9e8e8"
+      ]
+    },
+    {
+      "number": 34514,
+      "title": "Automation fingerprint incidents — rolling digest",
+      "url": "https://github.com/Zion-support/zion.app/issues/34514",
+      "createdAt": "2026-03-24T17:09:24Z",
+      "updatedAt": "2026-04-06T14:52:08Z",
+      "ageHours": 473.19,
+      "fingerprintLabels": [
+        "automation-fp-digest-rollup"
+      ]
+    },
+    {
+      "number": 34511,
+      "title": "Autonomy intelligence score degraded",
+      "url": "https://github.com/Zion-support/zion.app/issues/34511",
+      "createdAt": "2026-03-23T09:03:54Z",
+      "updatedAt": "2026-04-13T09:19:36Z",
+      "ageHours": 505.28,
+      "fingerprintLabels": [
+        "automation-fp-3987dabcd9a8"
+      ]
+    },
+    {
+      "number": 34510,
+      "title": "Release risk elevated (100)",
+      "url": "https://github.com/Zion-support/zion.app/issues/34510",
+      "createdAt": "2026-03-23T06:50:46Z",
+      "updatedAt": "2026-04-13T07:10:27Z",
+      "ageHours": 507.5,
+      "fingerprintLabels": [
+        "automation-fp-fec8c48e6c6c"
+      ]
+    },
+    {
+      "number": 34503,
+      "title": "PM2 SLO warnings (non-critical)",
+      "url": "https://github.com/Zion-support/zion.app/issues/34503",
+      "createdAt": "2026-03-22T13:13:28Z",
+      "updatedAt": "2026-03-22T13:13:28Z",
+      "ageHours": 525.12,
+      "fingerprintLabels": [
+        "automation-fp-3661decae029"
+      ]
+    },
+    {
+      "number": 34499,
+      "title": "GitHub Actions integrity regressions detected (5)",
+      "url": "https://github.com/Zion-support/zion.app/issues/34499",
+      "createdAt": "2026-03-21T14:35:47Z",
+      "updatedAt": "2026-04-13T10:06:00Z",
+      "ageHours": 547.75,
+      "fingerprintLabels": [
+        "automation-fp-12c231c712a6"
+      ]
+    },
+    {
+      "number": 34497,
+      "title": "Aggregate regression worsened",
+      "url": "https://github.com/Zion-support/zion.app/issues/34497",
+      "createdAt": "2026-03-21T12:22:06Z",
+      "updatedAt": "2026-04-13T01:03:46Z",
+      "ageHours": 549.98,
+      "fingerprintLabels": [
+        "automation-fp-b37d26ddb809"
+      ]
+    },
+    {
+      "number": 34494,
+      "title": "PM2 SLO critical breach detected",
+      "url": "https://github.com/Zion-support/zion.app/issues/34494",
+      "createdAt": "2026-03-21T01:18:44Z",
+      "updatedAt": "2026-04-13T01:29:01Z",
+      "ageHours": 561.03,
+      "fingerprintLabels": [
+        "automation-fp-cb0141ae9ea0"
+      ]
+    },
+    {
+      "number": 34476,
+      "title": "Openclaw incident: sustained unhealthy autonomous cycles",
+      "url": "https://github.com/Zion-support/zion.app/issues/34476",
+      "createdAt": "2026-03-20T19:49:28Z",
+      "updatedAt": "2026-04-13T01:26:04Z",
+      "ageHours": 566.52,
+      "fingerprintLabels": [
+        "automation-fp-aaa774ee321f"
+      ]
+    },
+    {
+      "number": 34469,
+      "title": "Openclaw auth/runtime diagnostic warning",
+      "url": "https://github.com/Zion-support/zion.app/issues/34469",
+      "createdAt": "2026-03-20T18:42:54Z",
+      "updatedAt": "2026-04-13T01:06:25Z",
+      "ageHours": 567.63,
+      "fingerprintLabels": [
+        "automation-fp-179b1c5624a6"
+      ]
+    },
+    {
+      "number": 34463,
+      "title": "AI route verification failures on production",
+      "url": "https://github.com/Zion-support/zion.app/issues/34463",
+      "createdAt": "2026-03-20T13:09:37Z",
+      "updatedAt": "2026-04-13T03:31:58Z",
+      "ageHours": 573.19,
+      "fingerprintLabels": [
+        "automation-fp-eccec3a393b8"
+      ]
+    }
+  ],
+  "mttr": {
+    "samples": 75,
+    "avgHours": 14.88,
+    "band": "healthy",
+    "byFingerprint": [
+      {
+        "label": "automation-fp-468a17810b78",
+        "samples": 47,
+        "avgHours": 3.78
+      },
+      {
+        "label": "automation-fp-63bfead0021d",
+        "samples": 12,
+        "avgHours": 9.76
+      },
+      {
+        "label": "automation-fp-f08183541898",
+        "samples": 5,
+        "avgHours": 43.15
+      },
+      {
+        "label": "automation-fp-916c049849b2",
+        "samples": 4,
+        "avgHours": 22.41
+      },
+      {
+        "label": "automation-fp-8a4b58ab6f6c",
+        "samples": 3,
+        "avgHours": 1.52
+      },
+      {
+        "label": "automation-fp-7556875021dd",
+        "samples": 1,
+        "avgHours": 180.13
+      },
+      {
+        "label": "automation-fp-951e83048748",
+        "samples": 1,
+        "avgHours": 73.22
+      },
+      {
+        "label": "automation-fp-bbfb34e9e8e8",
+        "samples": 1,
+        "avgHours": 41.71
+      },
+      {
+        "label": "automation-fp-c3b607782547",
+        "samples": 1,
+        "avgHours": 216.29
+      }
+    ],
+    "trend": {
+      "previousAvgHours": 14.77,
+      "deltaHours": 0.11,
+      "direction": "worse"
+    },
+    "history": [
+      {
+        "generatedAt": "2026-03-23T10:07:37.751Z",
+        "openCount": 14,
+        "avgHours": 14.04,
+        "samples": 10,
+        "band": "healthy"
+      },
+      {
+        "generatedAt": "2026-04-06T10:09:19.055Z",
+        "openCount": 18,
+        "avgHours": 14.77,
+        "samples": 62,
+        "band": "healthy"
+      },
+      {
+        "generatedAt": "2026-04-13T10:20:45.235Z",
+        "openCount": 18,
+        "avgHours": 14.88,
+        "samples": 75,
+        "band": "healthy"
+      }
+    ]
+  },
+  "githubIssuesQueryHint": "is:open label:bug automation OR is:open label:automation (adjust per repo conventions)"
+}

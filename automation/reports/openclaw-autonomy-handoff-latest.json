@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-05-10T21:12:12.835Z",
+  "schemaVersion": 2,
+  "sources": {
+    "actionQueue": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-queue-latest.json",
+    "patchRouter": "/Users/miami2/zion-app-clone/automation/reports/openclaw-hot-file-patch-router-latest.json",
+    "deployGate": "/Users/miami2/zion-app-clone/automation/reports/openclaw-deploy-confidence-gate-latest.json",
+    "regressionMemory": "/Users/miami2/zion-app-clone/automation/reports/openclaw-regression-memory-latest.json",
+    "actionPolicy": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-policy-latest.json",
+    "approvedQueue": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-approved-queue-latest.json",
+    "mergeLedger": "/Users/miami2/zion-app-clone/automation/reports/merge-ledger-latest.json",
+    "conflictPredictor": "/Users/miami2/zion-app-clone/automation/reports/openclaw-conflict-predictor-latest.json"
+  },
+  "actionQueue": {
+    "generatedAt": "2026-03-21T00:28:32.906Z",
+    "sourceReport": "/Users/miami2/zion-app-clone/automation/reports/openclaw-autonomous-app-improver-latest.json",
+    "totalQueued": 0,
+    "queue": []
+  },
+  "patchRouter": null,
+  "deployGate": {
+    "generatedAt": "2026-05-10T21:10:11.759Z",
+    "thresholds": {
+      "minSuccessRate": 0.6,
+      "minQuality": 60,
+      "cautionSuccessRate": 0.75,
+      "cautionQuality": 72
+    },
+    "inputs": {
+      "successRate": 0,
+      "quality": 0,
+      "schemaValidityRate": 0,
+      "failures": 1,
+      "successes": 0,
+      "total": 0,
+      "queued": 0,
+      "contractFailures": 1,
+      "parseFailures": 0
+    },
+    "confidence": 0,
+    "band": "hold",
+    "decision": "hold_deploy",
+    "reasons": [
+      "success_rate_below_threshold(0 < 0.6)",
+      "quality_below_threshold(0 < 60)",
+      "schema_validity_low(0 < 0.6)",
+      "contract_failures_detected",
+      "no_prompt_activity"
+    ]
+  },
+  "regressionMemory": {
+    "generatedAt": "2026-05-10T21:10:10.350Z",
+    "incidents": [
+      "repeated_gate_reasons",
+      "low_confidence_trend"
+    ],
+    "reasons": [
+      "success_rate_below_threshold(0 < 0.6)",
+      "quality_below_threshold(0 < 60)",
+      "schema_validity_low(0 < 0.6)",
+      "contract_failures_detected",
+      "no_prompt_activity"
+    ],
+    "repeatedReasons": [
+      "success_rate_below_threshold(0 < 0.6)",
+      "quality_below_threshold(0 < 60)",
+      "schema_validity_low(0 < 0.6)",
+      "contract_failures_detected",
+      "no_prompt_activity"
+    ],
+    "preventionChecks": [
+      "ensure_openclaw_autonomous_prompts_online",
+      "reduce_worker_parallelism_and_retry_auth",
+      "tighten_prompt_actionability_rules",
+      "decrease_frequency_until_confidence_recovers"
+    ],
+    "recommendation": "Enter conservative mode: keep deploys gated and run preflight orchestrator before release."
+  },
+  "actionPolicy": {
+    "generatedAt": "2026-03-20T18:16:00.037Z",
+    "sourceQueue": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-queue-latest.json",
+    "minConfidence": 0.6,
+    "allowHighSeverity": false,
+    "allowlistSize": 8,
+    "totalInput": 0,
+    "totalApproved": 0,
+    "totalDenied": 0,
+    "approvedIds": [],
+    "denied": []
+  },
+  "approvedQueue": {
+    "generatedAt": "2026-03-20T18:16:00.037Z",
+    "sourcePolicy": "/Users/miami2/zion-app-clone/automation/reports/openclaw-action-policy-latest.json",
+    "totalQueued": 0,
+    "queue": []
+  },
+  "mergeLedgerSnapshot": {
+    "generatedAt": "2026-05-10T21:01:51.996Z",
+    "totalFiles": 1815,
+    "trackedPrefixes": [
+      "automation/",
+      ".github/workflows/",
+      "commands/",
+      "scripts/"
+    ]
+  },
+  "conflictPredictorSummary": {
+    "generatedAt": "2026-05-10T21:01:54.362Z",
+    "files": 5
+  },
+  "summary": {
+    "queueLength": 0,
+    "queueItemsWithPatchHints": 0,
+    "hotHighRisk": null,
+    "hotMediumRisk": null,
+    "deployDecision": "hold_deploy",
+    "deployBand": "hold",
+    "policyApproved": 0,
+    "policyDenied": 0,
+    "regressionIncidents": 2
+  },
+  "guidance": {
+    "patchModes": "Queue items may include patchMode (section_scoped | append_only_preferred | full_edit_ok) from hot-file router; honor when executing edits.",
+    "deploy": "Deploy gate recommends hold; avoid production deploy until signals recover."
+  }
+}

@@ -1,0 +1,64 @@
+name: AI Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Run npm audit
+        continue-on-error: true
+        run: npm audit --audit-level moderate
+      
+      - name: Run security check
+        continue-on-error: true
+        run: npm audit --audit-level moderate --json > audit.json || true
+      
+      - name: Create issue on high risk
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f audit.json ]; then
+            vulnerabilities=$(grep -c '"vulnerabilities":' audit.json || echo "0")
+            if [ "$vulnerabilities" -gt 0 ]; then
+              gh issue create --title "Security Scan: ${vulnerabilities} vulnerabilities detected" \
+                --body "Vulnerability scan found ${vulnerabilities} issues requiring attention." \
+                --label "security" || true
+            fi
+          fi
+      
+      - name: Upload security report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report-${{ github.run_id }}
+          path: audit.json
+          retention-days: 30

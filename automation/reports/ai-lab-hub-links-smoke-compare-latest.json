@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-03-21T12:20:03.275Z",
+  "prodPresent": false,
+  "previewPresent": false,
+  "prodFailedCount": 0,
+  "previewFailedCount": 0,
+  "regressedInPreview": [],
+  "regressedInProd": [],
+  "improvedInPreview": [],
+  "flakyRoutes": [],
+  "severity": "none",
+  "ok": true
+}

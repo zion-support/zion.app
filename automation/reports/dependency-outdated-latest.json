@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-03-04T21:13:09.219Z",
+  "total": 21,
+  "byType": {
+    "major": 13,
+    "minor": 7,
+    "patch": 1
+  },
+  "packages": [
+    {
+      "name": "@eslint/js",
+      "current": "9.38.0",
+      "wanted": "9.39.3",
+      "latest": "10.0.1",
+      "type": "major"
+    },
+    {
+      "name": "@next/bundle-analyzer",
+      "current": "15.5.6",
+      "wanted": "15.5.12",
+      "latest": "16.1.6",
+      "type": "major"
+    },
+    {
+      "name": "@next/eslint-plugin-next",
+      "current": "16.0.1",
+      "wanted": "16.1.6",
+      "latest": "16.1.6",
+      "type": "minor"
+    },
+    {
+      "name": "@storybook/react-vite",
+      "current": "10.0.1",
+      "wanted": "10.2.15",
+      "latest": "10.2.15",
+      "type": "minor"
+    },
+    {
+      "name": "@types/node",
+      "current": "24.9.2",
+      "wanted": "24.11.0",
+      "latest": "25.3.3",
+      "type": "major"
+    },
+    {
+      "name": "@types/react",
+      "current": "18.3.26",
+      "wanted": "18.3.28",
+      "latest": "19.2.14",
+      "type": "major"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "current": "8.46.2",
+      "wanted": "8.56.1",
+      "latest": "8.56.1",
+      "type": "minor"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "current": "8.46.2",
+      "wanted": "8.56.1",
+      "latest": "8.56.1",
+      "type": "minor"
+    },
+    {
+      "name": "eslint",
+      "current": "9.38.0",
+      "wanted": "9.39.3",
+      "latest": "10.0.2",
+      "type": "major"
+    },
+    {
+      "name": "eslint-config-next",
+      "current": "15.5.6",
+      "wanted": "15.5.12",
+      "latest": "16.1.6",
+      "type": "major"
+    },
+    {
+      "name": "framer-motion",
+      "current": "12.23.12",
+      "wanted": "12.35.0",
+      "latest": "12.35.0",
+      "type": "minor"
+    },
+    {
+      "name": "glob",
+      "current": "11.1.0",
+      "wanted": "11.1.0",
+      "latest": "13.0.6",
+      "type": "major"
+    },
+    {
+      "name": "globals",
+      "current": "13.24.0",
+      "wanted": "13.24.0",
+      "latest": "17.4.0",
+      "type": "major"
+    },
+    {
+      "name": "lucide-react",
+      "current": "0.548.0",
+      "wanted": "0.548.0",
+      "latest": "0.577.0",
+      "type": "minor"
+    },
+    {
+      "name": "next",
+      "current": "15.5.12",
+      "wanted": "15.5.12",
+      "latest": "16.1.6",
+      "type": "major"
+    },
+    {
+      "name": "react",
+      "current": "18.3.1",
+      "wanted": "18.3.1",
+      "latest": "19.2.4",
+      "type": "major"
+    },
+    {
+      "name": "react-dom",
+      "current": "18.3.1",
+      "wanted": "18.3.1",
+      "latest": "19.2.4",
+      "type": "major"
+    },
+    {
+      "name": "react-helmet-async",
+      "current": "2.0.5",
+      "wanted": "2.0.5",
+      "latest": "3.0.0",
+      "type": "major"
+    },
+    {
+      "name": "sharp",
+      "current": "0.34.4",
+      "wanted": "0.34.5",
+      "latest": "0.34.5",
+      "type": "patch"
+    },
+    {
+      "name": "tailwind-merge",
+      "current": "3.3.1",
+      "wanted": "3.5.0",
+      "latest": "3.5.0",
+      "type": "minor"
+    },
+    {
+      "name": "tailwindcss",
+      "current": "3.4.19",
+      "wanted": "3.4.19",
+      "latest": "4.2.1",
+      "type": "major"
+    }
+  ],
+  "safeRecommendations": [
+    "npm update sharp",
+    "npm update @next/eslint-plugin-next",
+    "npm update @storybook/react-vite",
+    "npm update @typescript-eslint/eslint-plugin",
+    "npm update @typescript-eslint/parser",
+    "npm update framer-motion",
+    "npm update lucide-react",
+    "npm update tailwind-merge"
+  ],
+  "manualReview": [
+    "@eslint/js",
+    "@next/bundle-analyzer",
+    "@types/node",
+    "@types/react",
+    "eslint",
+    "eslint-config-next",
+    "glob",
+    "globals",
+    "next",
+    "react",
+    "react-dom",
+    "react-helmet-async",
+    "tailwindcss"
+  ]
+}

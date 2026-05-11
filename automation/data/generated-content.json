@@ -1,0 +1,417 @@
+{
+  "posts": [
+    {
+      "title": "The Future of AI Automation in Business",
+      "slug": "the-future-of-ai-automation-in-business",
+      "filePath": "/workspace/app/blog/the-future-of-ai-automation-in-business/page.tsx",
+      "createdAt": "2026-03-04T17:51:28.920Z"
+    },
+    {
+      "title": "Natural Language Processing in Modern Applications",
+      "slug": "natural-language-processing-in-modern-applications",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/natural-language-processing-in-modern-applications/page.tsx",
+      "createdAt": "2026-04-01T16:10:20.734Z"
+    },
+    {
+      "title": "AI-Powered Process Automation Success Stories",
+      "slug": "ai-powered-process-automation-success-stories",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-process-automation-success-stories/page.tsx",
+      "createdAt": "2026-04-01T16:10:20.738Z"
+    },
+    {
+      "title": "How AI is Revolutionizing Customer Service",
+      "slug": "how-ai-is-revolutionizing-customer-service",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/how-ai-is-revolutionizing-customer-service/page.tsx",
+      "createdAt": "2026-04-02T04:10:48.895Z"
+    },
+    {
+      "title": "Building Intelligent Chatbots that Convert",
+      "slug": "building-intelligent-chatbots-that-convert",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/building-intelligent-chatbots-that-convert/page.tsx",
+      "createdAt": "2026-04-03T15:58:11.963Z"
+    },
+    {
+      "title": "AI Ethics and Responsible Innovation",
+      "slug": "ai-ethics-and-responsible-innovation",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-ethics-and-responsible-innovation/page.tsx",
+      "createdAt": "2026-04-03T15:58:11.964Z"
+    },
+    {
+      "title": "AI for Small Business: Getting Started",
+      "slug": "ai-for-small-business-getting-started",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-for-small-business-getting-started/page.tsx",
+      "createdAt": "2026-04-03T15:58:11.965Z"
+    },
+    {
+      "title": "The Future of Work: Humans and AI Collaboration",
+      "slug": "the-future-of-work-humans-and-ai-collaboration",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-future-of-work-humans-and-ai-collaboration/page.tsx",
+      "createdAt": "2026-04-04T04:03:04.947Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-04T04:03:04.948Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-04T04:03:04.948Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-04T04:03:04.950Z"
+    },
+    {
+      "title": "The Role of AI in Cybersecurity",
+      "slug": "the-role-of-ai-in-cybersecurity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-role-of-ai-in-cybersecurity/page.tsx",
+      "createdAt": "2026-04-04T15:56:14.122Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-04T15:56:14.123Z"
+    },
+    {
+      "title": "Predictive Analytics: Transforming Business Intelligence",
+      "slug": "predictive-analytics-transforming-business-intelligence",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/predictive-analytics-transforming-business-intelligence/page.tsx",
+      "createdAt": "2026-04-04T15:56:14.123Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-04T15:56:14.124Z"
+    },
+    {
+      "title": "The Role of AI in Cybersecurity",
+      "slug": "the-role-of-ai-in-cybersecurity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-role-of-ai-in-cybersecurity/page.tsx",
+      "createdAt": "2026-04-05T04:13:17.190Z"
+    },
+    {
+      "title": "AI-Powered Analytics Dashboard Design",
+      "slug": "ai-powered-analytics-dashboard-design",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-analytics-dashboard-design/page.tsx",
+      "createdAt": "2026-04-05T04:13:17.191Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-05T04:13:17.192Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-06T04:17:44.686Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-06T04:17:44.687Z"
+    },
+    {
+      "title": "The Impact of AI on Workforce Productivity",
+      "slug": "the-impact-of-ai-on-workforce-productivity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-impact-of-ai-on-workforce-productivity/page.tsx",
+      "createdAt": "2026-04-06T04:17:44.688Z"
+    },
+    {
+      "title": "Scaling AI Solutions in the Enterprise",
+      "slug": "scaling-ai-solutions-in-the-enterprise",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/scaling-ai-solutions-in-the-enterprise/page.tsx",
+      "createdAt": "2026-04-06T16:02:46.428Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-06T16:02:46.430Z"
+    },
+    {
+      "title": "Scaling AI Solutions in the Enterprise",
+      "slug": "scaling-ai-solutions-in-the-enterprise",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/scaling-ai-solutions-in-the-enterprise/page.tsx",
+      "createdAt": "2026-04-06T16:02:46.431Z"
+    },
+    {
+      "title": "The ROI of AI Automation: Real-World Results",
+      "slug": "the-roi-of-ai-automation-real-world-results",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-roi-of-ai-automation-real-world-results/page.tsx",
+      "createdAt": "2026-04-06T16:02:46.432Z"
+    },
+    {
+      "title": "Computer Vision Applications in Industry",
+      "slug": "computer-vision-applications-in-industry",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/computer-vision-applications-in-industry/page.tsx",
+      "createdAt": "2026-04-06T16:02:46.433Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-07T04:12:06.377Z"
+    },
+    {
+      "title": "Scaling AI Solutions in the Enterprise",
+      "slug": "scaling-ai-solutions-in-the-enterprise",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/scaling-ai-solutions-in-the-enterprise/page.tsx",
+      "createdAt": "2026-04-07T04:12:06.378Z"
+    },
+    {
+      "title": "Scaling AI Solutions in the Enterprise",
+      "slug": "scaling-ai-solutions-in-the-enterprise",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/scaling-ai-solutions-in-the-enterprise/page.tsx",
+      "createdAt": "2026-04-07T04:12:06.379Z"
+    },
+    {
+      "title": "AI-Powered Process Automation Success Stories",
+      "slug": "ai-powered-process-automation-success-stories",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-process-automation-success-stories/page.tsx",
+      "createdAt": "2026-04-07T04:12:06.379Z"
+    },
+    {
+      "title": "AI for Small Business: Getting Started",
+      "slug": "ai-for-small-business-getting-started",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-for-small-business-getting-started/page.tsx",
+      "createdAt": "2026-04-08T04:12:57.644Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-08T04:12:57.644Z"
+    },
+    {
+      "title": "AI Ethics and Responsible Innovation",
+      "slug": "ai-ethics-and-responsible-innovation",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-ethics-and-responsible-innovation/page.tsx",
+      "createdAt": "2026-04-08T04:12:57.645Z"
+    },
+    {
+      "title": "The Impact of AI on Workforce Productivity",
+      "slug": "the-impact-of-ai-on-workforce-productivity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-impact-of-ai-on-workforce-productivity/page.tsx",
+      "createdAt": "2026-04-08T04:12:57.646Z"
+    },
+    {
+      "title": "Scaling AI Solutions in the Enterprise",
+      "slug": "scaling-ai-solutions-in-the-enterprise",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/scaling-ai-solutions-in-the-enterprise/page.tsx",
+      "createdAt": "2026-04-08T04:12:57.647Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.226Z"
+    },
+    {
+      "title": "AI Ethics and Responsible Innovation",
+      "slug": "ai-ethics-and-responsible-innovation",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-ethics-and-responsible-innovation/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.226Z"
+    },
+    {
+      "title": "AI for Small Business: Getting Started",
+      "slug": "ai-for-small-business-getting-started",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-for-small-business-getting-started/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.227Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.230Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.231Z"
+    },
+    {
+      "title": "AI Ethics and Responsible Innovation",
+      "slug": "ai-ethics-and-responsible-innovation",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-ethics-and-responsible-innovation/page.tsx",
+      "createdAt": "2026-04-09T04:11:46.232Z"
+    },
+    {
+      "title": "Predictive Analytics: Transforming Business Intelligence",
+      "slug": "predictive-analytics-transforming-business-intelligence",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/predictive-analytics-transforming-business-intelligence/page.tsx",
+      "createdAt": "2026-04-10T04:18:41.656Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-10T04:18:41.657Z"
+    },
+    {
+      "title": "The Role of AI in Cybersecurity",
+      "slug": "the-role-of-ai-in-cybersecurity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-role-of-ai-in-cybersecurity/page.tsx",
+      "createdAt": "2026-04-10T04:18:41.658Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-10T04:18:41.659Z"
+    },
+    {
+      "title": "AI-Powered Process Automation Success Stories",
+      "slug": "ai-powered-process-automation-success-stories",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-process-automation-success-stories/page.tsx",
+      "createdAt": "2026-04-10T04:18:41.660Z"
+    },
+    {
+      "title": "The ROI of AI Automation: Real-World Results",
+      "slug": "the-roi-of-ai-automation-real-world-results",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-roi-of-ai-automation-real-world-results/page.tsx",
+      "createdAt": "2026-04-10T16:05:54.126Z"
+    },
+    {
+      "title": "AI-Powered Process Automation Success Stories",
+      "slug": "ai-powered-process-automation-success-stories",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-process-automation-success-stories/page.tsx",
+      "createdAt": "2026-04-10T16:05:54.129Z"
+    },
+    {
+      "title": "Predictive Analytics: Transforming Business Intelligence",
+      "slug": "predictive-analytics-transforming-business-intelligence",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/predictive-analytics-transforming-business-intelligence/page.tsx",
+      "createdAt": "2026-04-11T04:06:29.499Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-11T04:06:29.499Z"
+    },
+    {
+      "title": "The Future of AI Automation in Business",
+      "slug": "the-future-of-ai-automation-in-business",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-future-of-ai-automation-in-business/page.tsx",
+      "createdAt": "2026-04-11T04:06:29.502Z"
+    },
+    {
+      "title": "Machine Learning Best Practices for Enterprises",
+      "slug": "machine-learning-best-practices-for-enterprises",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/machine-learning-best-practices-for-enterprises/page.tsx",
+      "createdAt": "2026-04-11T15:56:40.378Z"
+    },
+    {
+      "title": "AI-Driven Marketing Automation Strategies",
+      "slug": "ai-driven-marketing-automation-strategies",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-driven-marketing-automation-strategies/page.tsx",
+      "createdAt": "2026-04-11T15:56:40.378Z"
+    },
+    {
+      "title": "How AI is Revolutionizing Customer Service",
+      "slug": "how-ai-is-revolutionizing-customer-service",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/how-ai-is-revolutionizing-customer-service/page.tsx",
+      "createdAt": "2026-04-11T15:56:40.380Z"
+    },
+    {
+      "title": "AI-Powered Analytics Dashboard Design",
+      "slug": "ai-powered-analytics-dashboard-design",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-powered-analytics-dashboard-design/page.tsx",
+      "createdAt": "2026-04-12T04:19:44.744Z"
+    },
+    {
+      "title": "AI for Small Business: Getting Started",
+      "slug": "ai-for-small-business-getting-started",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-for-small-business-getting-started/page.tsx",
+      "createdAt": "2026-04-12T04:19:44.745Z"
+    },
+    {
+      "title": "The Future of Work: Humans and AI Collaboration",
+      "slug": "the-future-of-work-humans-and-ai-collaboration",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-future-of-work-humans-and-ai-collaboration/page.tsx",
+      "createdAt": "2026-04-12T04:19:44.746Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-12T15:57:53.596Z"
+    },
+    {
+      "title": "AI for Small Business: Getting Started",
+      "slug": "ai-for-small-business-getting-started",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-for-small-business-getting-started/page.tsx",
+      "createdAt": "2026-04-12T15:57:53.598Z"
+    },
+    {
+      "title": "The Future of AI Automation in Business",
+      "slug": "the-future-of-ai-automation-in-business",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-future-of-ai-automation-in-business/page.tsx",
+      "createdAt": "2026-04-12T15:57:53.599Z"
+    },
+    {
+      "title": "Building Intelligent Chatbots that Convert",
+      "slug": "building-intelligent-chatbots-that-convert",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/building-intelligent-chatbots-that-convert/page.tsx",
+      "createdAt": "2026-04-13T04:24:44.222Z"
+    },
+    {
+      "title": "Computer Vision Applications in Industry",
+      "slug": "computer-vision-applications-in-industry",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/computer-vision-applications-in-industry/page.tsx",
+      "createdAt": "2026-04-13T04:24:44.224Z"
+    },
+    {
+      "title": "Machine Learning Best Practices for Enterprises",
+      "slug": "machine-learning-best-practices-for-enterprises",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/machine-learning-best-practices-for-enterprises/page.tsx",
+      "createdAt": "2026-04-13T16:11:46.008Z"
+    },
+    {
+      "title": "The Future of AI Automation in Business",
+      "slug": "the-future-of-ai-automation-in-business",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-future-of-ai-automation-in-business/page.tsx",
+      "createdAt": "2026-04-13T16:11:46.010Z"
+    },
+    {
+      "title": "Implementing AI in Your Organization: A Step-by-Step Guide",
+      "slug": "implementing-ai-in-your-organization-a-step-by-step-guide",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/implementing-ai-in-your-organization-a-step-by-step-guide/page.tsx",
+      "createdAt": "2026-04-13T16:11:46.011Z"
+    },
+    {
+      "title": "Deep Learning vs Machine Learning: When to Use Each",
+      "slug": "deep-learning-vs-machine-learning-when-to-use-each",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/deep-learning-vs-machine-learning-when-to-use-each/page.tsx",
+      "createdAt": "2026-04-14T04:19:00.668Z"
+    },
+    {
+      "title": "The Impact of AI on Workforce Productivity",
+      "slug": "the-impact-of-ai-on-workforce-productivity",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/the-impact-of-ai-on-workforce-productivity/page.tsx",
+      "createdAt": "2026-04-14T04:19:00.669Z"
+    },
+    {
+      "title": "AI Integration Patterns for Legacy Systems",
+      "slug": "ai-integration-patterns-for-legacy-systems",
+      "filePath": "/home/runner/work/zion.app/zion.app/app/blog/ai-integration-patterns-for-legacy-systems/page.tsx",
+      "createdAt": "2026-04-14T04:19:00.670Z"
+    }
+  ],
+  "metadata": {
+    "version": "2.0.0",
+    "lastCleanup": "2026-03-04T00:00:00.000Z",
+    "note": "Reset from 830K-line file with hardcoded /Users/ paths. Content history was stale."
+  }
+}

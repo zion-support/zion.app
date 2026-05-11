@@ -1,0 +1,208 @@
+{
+  "description": "Central config for pages visited by app improvement, visit intelligence, and audit pipelines. Single source of truth. The aiLab array is merged from the AI Lab catalog by ai-lab-integrity-guardian (AUTO_PAGES_VISIT_BACKFILL).",
+  "updatedAt": "2026-04-29",
+  "aiLab": [
+    {
+      "path": "/ai-lab/ai-api-status-dashboard",
+      "label": "Ai Api Status Dashboard"
+    },
+    {
+      "path": "/ai-lab/ai-component-health-checker",
+      "label": "Ai Component Health Checker"
+    },
+    {
+      "path": "/ai-lab/ai-content-idea-generator",
+      "label": "Ai Content Idea Generator"
+    },
+    {
+      "path": "/ai-lab/ai-experiment-designer",
+      "label": "Ai Experiment Designer"
+    },
+    {
+      "path": "/ai-lab/ai-governance-risk-advisor",
+      "label": "Ai Governance Risk Advisor"
+    },
+    {
+      "path": "/ai-lab/ai-site-evolution-advisor",
+      "label": "Ai Site Evolution Advisor"
+    },
+    {
+      "path": "/ai-lab/ai-workflow-status-dashboard",
+      "label": "Ai Workflow Status Dashboard"
+    },
+    {
+      "path": "/ai-lab/autonomous-agent-skill-orchestrator",
+      "label": "Autonomous Agent Skill Orchestrator"
+    },
+    {
+      "path": "/ai-lab/autonomous-ai-experience-studio",
+      "label": "Autonomous Ai Experience Studio"
+    },
+    {
+      "path": "/ai-lab/autonomous-backlog-prioritizer",
+      "label": "Autonomous Backlog Prioritizer"
+    },
+    {
+      "path": "/ai-lab/autonomous-conversion-copilot",
+      "label": "Autonomous Conversion Copilot"
+    },
+    {
+      "path": "/ai-lab/autonomous-deploy-optimizer",
+      "label": "Autonomous Deploy Optimizer"
+    },
+    {
+      "path": "/ai-lab/autonomous-experiment-priority-engine",
+      "label": "Autonomous Experiment Priority Engine"
+    },
+    {
+      "path": "/ai-lab/autonomous-funnel-orchestrator",
+      "label": "Autonomous Funnel Orchestrator"
+    },
+    {
+      "path": "/ai-lab/autonomous-growth-loop-designer",
+      "label": "Autonomous Growth Loop Designer"
+    },
+    {
+      "path": "/ai-lab/autonomous-incident-commander",
+      "label": "Autonomous Incident Commander"
+    },
+    {
+      "path": "/ai-lab/autonomous-media-prompt-studio",
+      "label": "Autonomous Media Prompt Studio"
+    },
+    {
+      "path": "/ai-lab/autonomous-opportunity-radar",
+      "label": "Autonomous Opportunity Radar"
+    },
+    {
+      "path": "/ai-lab/autonomous-rag-knowledge-workspace",
+      "label": "Autonomous Rag Knowledge Workspace"
+    },
+    {
+      "path": "/ai-lab/autonomous-retention-playbook",
+      "label": "Autonomous Retention Playbook"
+    },
+    {
+      "path": "/ai-lab/autonomous-revenue-forecast-studio",
+      "label": "Autonomous Revenue Forecast Studio"
+    },
+    {
+      "path": "/ai-lab/autonomous-seo-audit-agent",
+      "label": "Autonomous Seo Audit Agent"
+    },
+    {
+      "path": "/ai-lab/build-failure-explainer",
+      "label": "Build Failure Explainer"
+    },
+    {
+      "path": "/ai-lab/deploy-drift-dashboard",
+      "label": "Deploy Drift Dashboard"
+    },
+    {
+      "path": "/ai-lab/deployment-readiness-console",
+      "label": "Deployment Readiness Console"
+    },
+    {
+      "path": "/ai-lab/dynamic-api-monitoring",
+      "label": "Dynamic Api Monitoring"
+    },
+    {
+      "path": "/ai-lab/idea-to-feature-blueprint",
+      "label": "Idea To Feature Blueprint"
+    },
+    {
+      "path": "/ai-lab/implementation-readiness-checker",
+      "label": "Implementation Readiness Checker"
+    },
+    {
+      "path": "/ai-lab/roi-ops-scorecard",
+      "label": "Roi Ops Scorecard"
+    },
+    {
+      "path": "/ai-lab/rollout-blueprint",
+      "label": "Rollout Blueprint"
+    }
+  ],
+  "core": [
+    {
+      "path": "/",
+      "label": "Homepage"
+    },
+    {
+      "path": "/contact",
+      "label": "Contact"
+    },
+    {
+      "path": "/services",
+      "label": "Services"
+    },
+    {
+      "path": "/solutions",
+      "label": "Solutions"
+    },
+    {
+      "path": "/about",
+      "label": "About"
+    },
+    {
+      "path": "/blog",
+      "label": "Blog"
+    }
+  ],
+  "extended": [
+    {
+      "path": "/case-studies",
+      "label": "Case Studies"
+    },
+    {
+      "path": "/ai-services",
+      "label": "AI Services"
+    },
+    {
+      "path": "/products",
+      "label": "Products"
+    },
+    {
+      "path": "/pricing",
+      "label": "Pricing"
+    },
+    {
+      "path": "/industries",
+      "label": "Industries"
+    },
+    {
+      "path": "/consultation",
+      "label": "Consultation"
+    },
+    {
+      "path": "/innovation-bundles",
+      "label": "Innovation Bundles"
+    },
+    {
+      "path": "/faq",
+      "label": "FAQ"
+    },
+    {
+      "path": "/partners",
+      "label": "Partners"
+    }
+  ],
+  "auditOnly": [
+    {
+      "path": "/automation",
+      "label": "Automation"
+    },
+    {
+      "path": "/micro-saas-services",
+      "label": "Micro SAAS Services"
+    },
+    {
+      "path": "/search",
+      "label": "Search"
+    },
+    {
+      "path": "/site-map",
+      "label": "Site Map"
+    }
+  ]
+}

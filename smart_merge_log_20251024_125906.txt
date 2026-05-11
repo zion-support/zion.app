@@ -1,0 +1,58 @@
+Smart PR Merger Started
+Timestamp: 2025-10-24T12:59:06.670753
+Mode: FULL
+Total PRs to process: 4
+
+Checking out main branch...
+
+Progress: 1/4
+
+============================================================
+Processing PR #25824: cursor/fix-errors-and-merge-to-main-ffbe
+============================================================
+Fetching branch cursor/fix-errors-and-merge-to-main-ffbe...
+✗ Failed to fetch branch: fatal: couldn't find remote ref cursor/fix-errors-and-merge-to-main-ffbe
+
+
+Progress: 2/4
+
+============================================================
+Processing PR #25823: cursor/fix-errors-and-merge-to-main-bf21
+============================================================
+Fetching branch cursor/fix-errors-and-merge-to-main-bf21...
+✗ Failed to fetch branch: fatal: couldn't find remote ref cursor/fix-errors-and-merge-to-main-bf21
+
+
+Progress: 3/4
+
+============================================================
+Processing PR #25822: cursor/fix-errors-and-merge-to-main-a502
+============================================================
+Fetching branch cursor/fix-errors-and-merge-to-main-a502...
+✗ Failed to fetch branch: fatal: couldn't find remote ref cursor/fix-errors-and-merge-to-main-a502
+
+
+Progress: 4/4
+
+============================================================
+Processing PR #25821: cursor/fix-errors-and-merge-to-main-8876
+============================================================
+Fetching branch cursor/fix-errors-and-merge-to-main-8876...
+Attempting merge...
+✓ Successfully merged PR #25821
+
+============================================================
+MERGE SUMMARY
+============================================================
+Successful merges:      1
+Conflicts resolved:     0
+Failed merges:          3
+Skipped:                0
+============================================================
+
+Failed PRs:
+  - PR #25824: cursor/fix-errors-and-merge-to-main-ffbe (Reason: fetch_failed)
+  - PR #25823: cursor/fix-errors-and-merge-to-main-bf21 (Reason: fetch_failed)
+  - PR #25822: cursor/fix-errors-and-merge-to-main-a502 (Reason: fetch_failed)
+
+Log saved to: smart_merge_log_20251024_125906.txt

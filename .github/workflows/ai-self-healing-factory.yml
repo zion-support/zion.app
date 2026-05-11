@@ -1,0 +1,66 @@
+name: AI Self-Healing Factory
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Daily at 10 AM
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: ai-self-healing-factory
+  cancel-in-progress: true
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Diagnostic audit
+        run: |
+          npm run audit:diagnostic || true
+      
+      - name: Auto-fix candidates
+        run: |
+          npm run auto:fix || true
+      
+      - name: Commit patch
+        if: success()
+        env:
+          GIT_AUTHOR_NAME: "OpenClaw Autonomous Fixer"
+          GIT_AUTHOR_EMAIL: "autofixer@openclaw.ai"
+          GIT_COMMITTER_NAME: "OpenClaw Autonomous Fixer"
+          GIT_COMMITTER_EMAIL: "autofixer@openclaw.ai"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "$GIT_AUTHOR_NAME"
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git add .
+          git diff --staged --quiet || git commit -m "[ci] Auto-fix: apply automated patches"
+          git push
+      
+      - name: Create PR on fixes
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create --title "Auto-fix PR: Automated fixes applied" \
+            --body "This PR contains automated fixes from the AI self-healing factory." \
+            --head ${{ github.sha }} \
+            --base main \
+            --label "autofix,automation" --draft=false || true

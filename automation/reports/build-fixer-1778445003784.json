@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-05-10T20:30:03.784Z",
+  "runNumber": 1,
+  "buildStatus": "failing",
+  "errorCount": 0,
+  "fixesAttempted": 0,
+  "fixesSuccessful": 0,
+  "buildFixed": false,
+  "runtime": 292699,
+  "errors": [],
+  "fixes": [],
+  "config": {
+    "rootDir": "/Users/miami2/zion-app-clone",
+    "logsDir": "/Users/miami2/zion-app-clone/automation/logs",
+    "reportsDir": "/Users/miami2/zion-app-clone/automation/reports",
+    "continuous": true,
+    "intervalMinutes": 120,
+    "autoCommit": true,
+    "autoPush": true,
+    "maxFixAttempts": 5,
+    "cleanBuildOnFail": true,
+    "fastMode": true,
+    "parallelFixes": true,
+    "repository": "https://github.com/Zion-support/zion.app",
+    "canonicalUrl": "https://ziontechgroup.com"
+  }
+}

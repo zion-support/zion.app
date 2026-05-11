@@ -1,0 +1,102 @@
+{
+  "version": "2.0.0",
+  "enabled": true,
+  "mode": "standard",
+  "continuous": false,
+  "intervalMinutes": 30,
+  "autoCommit": true,
+  "autoPush": true,
+  "createPR": false,
+  "maxImprovementsPerRun": 15,
+  "minHealthScore": 80,
+  "features": {
+    "codeQuality": true,
+    "performance": true,
+    "security": true,
+    "accessibility": true,
+    "seo": true,
+    "testing": true,
+    "documentation": true,
+    "architecture": true,
+    "dependencies": true,
+    "monitoring": true,
+    "uiux": true,
+    "aiAnalysis": true
+  },
+  "priorityLevels": {
+    "critical": {
+      "weight": 1,
+      "autoApply": true,
+      "categories": ["build", "security-critical"]
+    },
+    "high": {
+      "weight": 2,
+      "autoApply": true,
+      "categories": ["security-high", "performance-critical", "accessibility"]
+    },
+    "medium": {
+      "weight": 3,
+      "autoApply": true,
+      "categories": ["code-quality", "seo", "testing"]
+    },
+    "low": {
+      "weight": 4,
+      "autoApply": false,
+      "categories": ["documentation", "optimization"]
+    }
+  },
+  "thresholds": {
+    "lintErrors": {
+      "critical": 50,
+      "high": 20,
+      "medium": 5
+    },
+    "typeErrors": {
+      "critical": 100,
+      "high": 50,
+      "medium": 10
+    },
+    "securityVulnerabilities": {
+      "critical": 1,
+      "high": 3,
+      "moderate": 10
+    },
+    "testCoverage": {
+      "target": 70,
+      "minimum": 50
+    },
+    "bundleSize": {
+      "warning": 10485760,
+      "critical": 52428800
+    }
+  },
+  "notifications": {
+    "enabled": false,
+    "channels": ["log", "report"],
+    "criticalIssuesOnly": true
+  },
+  "ai": {
+    "enabled": true,
+    "provider": "anthropic",
+    "model": "claude-3-sonnet",
+    "useForComplexIssues": true,
+    "maxTokens": 4096
+  },
+  "git": {
+    "branch": "main",
+    "commitPrefix": "🤖 AI App Improvement:",
+    "autoCommit": true,
+    "autoPush": true,
+    "createPR": false,
+    "prLabels": ["automated", "improvement", "ai-generated"]
+  },
+  "reporting": {
+    "generateAfterEachRun": true,
+    "keepHistoryDays": 30,
+    "detailedMetrics": true,
+    "exportFormats": ["json", "markdown"]
+  },
+  "repository": "https://github.com/Zion-Holdings/zion.app",
+  "canonicalUrl": "https://ziontechgroup.com"
+}
+

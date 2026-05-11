@@ -1,0 +1,29 @@
+{
+  "at": "2026-05-10T21:17:09.420Z",
+  "tier": "critical",
+  "reasons": [
+    "ema_stale>30h",
+    "health_stale>8h",
+    "open_fp_high:18"
+  ],
+  "freshness": {
+    "emaLastAt": null,
+    "emaAgeHours": null,
+    "healthLastAt": "2026-05-04T18:54:38.694Z",
+    "healthAgeHours": 146.38,
+    "thresholds": {
+      "emaStaleHours": 30,
+      "healthStaleHours": 8
+    }
+  },
+  "health": {
+    "tier": "warning",
+    "details": [
+      "open_fp_high:18"
+    ]
+  },
+  "issuePressure": {
+    "openCount": null,
+    "tier": "unknown"
+  }
+}

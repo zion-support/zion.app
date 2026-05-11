@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-03-22T02:18:20.701Z",
+  "baseUrl": "https://ziontechgroup.com",
+  "targetSource": "production",
+  "rotation": false,
+  "sampleSize": 5,
+  "allOk": true,
+  "failedCount": 0,
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "ok": true,
+      "latency": 326
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "ok": true,
+      "latency": 289
+    },
+    {
+      "path": "/automation",
+      "status": 200,
+      "ok": true,
+      "latency": 107
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "ok": true,
+      "latency": 124
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "ok": true,
+      "latency": 114
+    }
+  ]
+}

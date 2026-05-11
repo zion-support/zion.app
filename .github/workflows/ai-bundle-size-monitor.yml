@@ -1,0 +1,75 @@
+name: AI Bundle Size Monitor
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 2 AM UTC
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.js'
+      - 'tsconfig.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bundle-size-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build for bundle analysis
+        run: npm run build
+
+      - name: Check bundle sizes
+        id: bundle-check
+        run: |
+          echo "Checking bundle sizes..."
+          # Check if next build produced .next directory
+          if [ -d ".next" ]; then
+            # Get size of main chunks
+            SIZE=$(du -sh .next | cut -f1)
+            echo "Total .next size: $SIZE"
+            
+            # Check for large files
+            LARGE_FILES=$(find .next -type f -name "*.js" -size +500k 2>/dev/null | wc -l)
+            if [ "$LARGE_FILES" -gt 0 ]; then
+              echo "Found $LARGE_FILES JavaScript files over 500KB"
+              echo "large_files=true" >> $GITHUB_OUTPUT
+            else
+              echo "large_files=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "⚠️ .next directory not found after build"
+            echo "build_failed=true" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+      - name: Create issue on large bundles
+        if: steps.bundle-check.outputs.large_files == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create --title "Large JavaScript Bundles Detected" \
+            --body "Bundle size analysis found JavaScript files exceeding 500KB threshold. This may impact page load performance." \
+            --label "performance,bundle-size" || true

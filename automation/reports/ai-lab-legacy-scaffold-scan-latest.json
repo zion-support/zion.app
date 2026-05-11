@@ -1,0 +1,31 @@
+{
+  "at": "2026-03-21T06:15:04.427Z",
+  "count": 6,
+  "note": "Pages without AILabToolLayout that use the legacy gradient shell; review before any bulk migration.",
+  "candidates": [
+    {
+      "path": "/ai-lab/ai-experiment-designer",
+      "file": "app/ai-lab/ai-experiment-designer/page.tsx"
+    },
+    {
+      "path": "/ai-lab/ai-governance-risk-advisor",
+      "file": "app/ai-lab/ai-governance-risk-advisor/page.tsx"
+    },
+    {
+      "path": "/ai-lab/autonomous-growth-loop-designer",
+      "file": "app/ai-lab/autonomous-growth-loop-designer/page.tsx"
+    },
+    {
+      "path": "/ai-lab/autonomous-opportunity-radar",
+      "file": "app/ai-lab/autonomous-opportunity-radar/page.tsx"
+    },
+    {
+      "path": "/ai-lab/build-failure-explainer",
+      "file": "app/ai-lab/build-failure-explainer/page.tsx"
+    },
+    {
+      "path": "/ai-lab/implementation-readiness-checker",
+      "file": "app/ai-lab/implementation-readiness-checker/page.tsx"
+    }
+  ]
+}

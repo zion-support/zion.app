@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "timestamp": "2026-03-03T23:01:56.474Z",
+    "runtime": "79.24s",
+    "version": "2.0.0",
+    "repository": "https://github.com/Zion-Holdings/zion.app"
+  },
+  "analysis": {
+    "healthScore": 7,
+    "totalFiles": 126,
+    "linesOfCode": 30070,
+    "errors": {
+      "lint": 0,
+      "type": 0,
+      "build": 0
+    },
+    "warnings": {
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "deprecations": []
+    },
+    "opportunities": 1,
+    "dependencies": 27
+  },
+  "aiInsights": null,
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "testing",
+      "title": "Low test coverage - many files lack tests",
+      "description": "Low test coverage - many files lack tests",
+      "action": "improve-testing",
+      "effort": "high",
+      "impact": "high"
+    }
+  ],
+  "modifications": {
+    "attempted": 1,
+    "successful": 0,
+    "failed": 1,
+    "details": [
+      {
+        "recommendation": {
+          "priority": "high",
+          "category": "testing",
+          "title": "Low test coverage - many files lack tests",
+          "description": "Low test coverage - many files lack tests",
+          "action": "improve-testing",
+          "effort": "high",
+          "impact": "high"
+        },
+        "result": {
+          "success": false,
+          "message": "Test generation requires AI implementation"
+        },
+        "success": false
+      }
+    ]
+  },
+  "nextSteps": [
+    {
+      "priority": "high",
+      "action": "Review failed modifications",
+      "count": 1
+    }
+  ]
+}

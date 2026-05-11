@@ -1,0 +1,46 @@
+name: AI Accessibility Monitor
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Nightly at 1 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  accessibility-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run accessibility audit
+        id: a11y
+        run: npm run a11y:live
+        continue-on-error: true
+
+      - name: Create issue on violations
+        if: steps.a11y.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create --title "Accessibility Violations Detected" \
+            --body "Nightly accessibility scan found violations. See workflow logs." \
+            --label "accessibility,bug" || true

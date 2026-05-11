@@ -1,0 +1,1096 @@
+{
+  "generatedAt": "2026-03-21T00:46:01.662Z",
+  "note": "Heuristic: scheduled workflows only; per-workflow minutes capped (parallel runners overlap). Push triggers excluded.",
+  "totalEstimatedScheduledMinutesPerMonth": 397890,
+  "workflows": [
+    {
+      "file": "ai-advanced-ai-content.yml",
+      "cronExpressions": 3,
+      "maxTimeoutMinutesObserved": 40,
+      "minutesPerRun": 40,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 28800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-ai-experiences-health.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-app-improvement-daily-quick.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 14400,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-artifact-freshness-mesh.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-automation-health-monitor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-autonomous-idea-guarded-cycle.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 25200,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-autonomous-opportunity-radar-refresh.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-autonomy-quick.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-backlog-auto-runner.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-accelerator.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 18000,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-burst-high-frequency.yml",
+      "cronExpressions": 8,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 18000,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-burst-ultra.yml",
+      "cronExpressions": 4,
+      "maxTimeoutMinutesObserved": 22,
+      "minutesPerRun": 22,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 15840,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-burst.yml",
+      "cronExpressions": 11,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-generator-ultra.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-ideas-and-evolution-deploy.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 25200,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-ideas-deploy.yml",
+      "cronExpressions": 3,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 14400,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-max-velocity-deploy.yml",
+      "cronExpressions": 5,
+      "maxTimeoutMinutesObserved": 28,
+      "minutesPerRun": 28,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 20160,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-maximum-velocity.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 55,
+      "minutesPerRun": 55,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 39600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-rapid.yml",
+      "cronExpressions": 10,
+      "maxTimeoutMinutesObserved": 12,
+      "minutesPerRun": 12,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 8640,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-ideas-implementation.yml",
+      "cronExpressions": 4,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 25200,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-launch-digest-freshness-sla.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-live-content-ideas-daily.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 18000,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-openclaw-auth-runtime-diagnostic.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-openclaw-autonomous-cycle.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 18000,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-pm2-ops-digest.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-promotion-anomaly-remediation-seed.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 12,
+      "minutesPerRun": 12,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 8640,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-services-and-content.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-ultra-fast-content.yml",
+      "cronExpressions": 6,
+      "maxTimeoutMinutesObserved": 40,
+      "minutesPerRun": 40,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 28800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "autonomous-growth-signal-monitor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 21600,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "autonomous-quality-drift-sentinel.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 32400,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "autonomous-release-guardian.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 1440,
+      "rawMonthlyMinutes": 28800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "autonomous-writer-queue-guard.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 2160,
+      "rawMonthlyMinutes": 32400,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "core-web-vitals-monitor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 10800,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "site-improv-agent.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 18000,
+      "estimatedMonthlyMinutes": 8000
+    },
+    {
+      "file": "ai-content-velocity.yml",
+      "cronExpressions": 3,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-incident-severity-orchestrator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-incident-suppression-registry.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-next-build-lock-guardian.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-openclaw-freshness-sla.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-openclaw-incident-escalator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-pm2-config-drift-guard.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-pm2-restart-guardian.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-pm2-slo-agent.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-promotion-confidence-anomaly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-stale-promotion-guard.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-telemetry-history-compactor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-telemetry-snapshot-scheduler.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "production-health-monitor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "stale.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 720,
+      "rawMonthlyMinutes": 7200,
+      "estimatedMonthlyMinutes": 7200
+    },
+    {
+      "file": "ai-app-improvement-evolution-full-quality.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 60,
+      "minutesPerRun": 60,
+      "estimatedRunsPerMonth": 30,
+      "rawMonthlyMinutes": 1800,
+      "estimatedMonthlyMinutes": 1800
+    },
+    {
+      "file": "ai-live-content-ideas.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 12,
+      "rawMonthlyMinutes": 540,
+      "estimatedMonthlyMinutes": 540
+    },
+    {
+      "file": "ai-dependency-upgrade-train-monthly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 30,
+      "rawMonthlyMinutes": 450,
+      "estimatedMonthlyMinutes": 450
+    },
+    {
+      "file": "ai-broken-link-fixer.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 8,
+      "rawMonthlyMinutes": 360,
+      "estimatedMonthlyMinutes": 360
+    },
+    {
+      "file": "autonomous-ai-developer.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 60,
+      "minutesPerRun": 60,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 240,
+      "estimatedMonthlyMinutes": 240
+    },
+    {
+      "file": "ai-app-visit-audit-implement-deploy.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 50,
+      "minutesPerRun": 50,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 200,
+      "estimatedMonthlyMinutes": 200
+    },
+    {
+      "file": "ai-weekly-live-app-audit-auto-fix.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 50,
+      "minutesPerRun": 50,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 200,
+      "estimatedMonthlyMinutes": 200
+    },
+    {
+      "file": "ai-app-evolution-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-app-improvement-evolution.yml",
+      "cronExpressions": 3,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-app-improvement-specialist.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-continuous-improvement.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-development-agent.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-development-speed-accelerator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-layout-improvement.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-performance-optimizer.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 45,
+      "minutesPerRun": 45,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 180,
+      "estimatedMonthlyMinutes": 180
+    },
+    {
+      "file": "ai-app-visit-intelligence.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 40,
+      "minutesPerRun": 40,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 160,
+      "estimatedMonthlyMinutes": 160
+    },
+    {
+      "file": "ai-navigation-audit-fix.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 8,
+      "rawMonthlyMinutes": 160,
+      "estimatedMonthlyMinutes": 160
+    },
+    {
+      "file": "ai-live-app-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 140,
+      "estimatedMonthlyMinutes": 140
+    },
+    {
+      "file": "ai-local-llm-app-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 140,
+      "estimatedMonthlyMinutes": 140
+    },
+    {
+      "file": "ai-weekly-automation-ideas-from-live-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 140,
+      "estimatedMonthlyMinutes": 140
+    },
+    {
+      "file": "ai-weekly-live-ideas-implement.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 140,
+      "estimatedMonthlyMinutes": 140
+    },
+    {
+      "file": "ai-weekly-maintenance.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 35,
+      "minutesPerRun": 35,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 140,
+      "estimatedMonthlyMinutes": 140
+    },
+    {
+      "file": "ai-app-improvement-orchestrator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 120,
+      "estimatedMonthlyMinutes": 120
+    },
+    {
+      "file": "ai-app-quality-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 30,
+      "minutesPerRun": 30,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 120,
+      "estimatedMonthlyMinutes": 120
+    },
+    {
+      "file": "ai-broken-link-page-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 8,
+      "rawMonthlyMinutes": 120,
+      "estimatedMonthlyMinutes": 120
+    },
+    {
+      "file": "ai-site-link-audit-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 8,
+      "rawMonthlyMinutes": 120,
+      "estimatedMonthlyMinutes": 120
+    },
+    {
+      "file": "ai-app-audit-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-app-evolution-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-automation-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-autonomous-improvements.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-github-actions-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-layout-design-automation-weekly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-live-accessibility-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-local-llm-specialists.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-navigation-pages-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-weekly-content-seo-hygiene.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-weekly-live-link-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 25,
+      "minutesPerRun": 25,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 100,
+      "estimatedMonthlyMinutes": 100
+    },
+    {
+      "file": "ai-accessibility-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-automation-improvements.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-automations.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-navigation-improvement-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-seo-content-optimizer.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-services-and-content-automation.yml",
+      "cronExpressions": 21,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-weekly-live-navigation-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "codeql-analysis.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "lighthouse-ci.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 20,
+      "minutesPerRun": 20,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 80,
+      "estimatedMonthlyMinutes": 80
+    },
+    {
+      "file": "ai-front-page-services-content.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 18,
+      "minutesPerRun": 18,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 72,
+      "estimatedMonthlyMinutes": 72
+    },
+    {
+      "file": "ai-agents-docs-updater.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-content-quality-auditor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-cron-tuner.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-ecosystem-intelligence.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-friday-automation.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-image-optimization-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-layout-design-automation.yml",
+      "cronExpressions": 2,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-live-ux-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-midweek-auto-impl.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-report-hygiene-weekly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-schema-validator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-weekly-dependency-hygiene.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-weekly-security-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-workflow-slo-monitor.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "lighthouse-production.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "pin-actions-weekly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 15,
+      "minutesPerRun": 15,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 60,
+      "estimatedMonthlyMinutes": 60
+    },
+    {
+      "file": "ai-workflow-flake-detector.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 12,
+      "minutesPerRun": 12,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 48,
+      "estimatedMonthlyMinutes": 48
+    },
+    {
+      "file": "ai-cron-collision-tuner.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-layout-design-audit.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-package-script-dedup-guard.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-report-aggregator.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-report-size-budget-guard.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-weekly-launch-digest.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 10,
+      "minutesPerRun": 10,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 40,
+      "estimatedMonthlyMinutes": 40
+    },
+    {
+      "file": "ai-gha-cost-estimate-weekly.yml",
+      "cronExpressions": 1,
+      "maxTimeoutMinutesObserved": 5,
+      "minutesPerRun": 5,
+      "estimatedRunsPerMonth": 4,
+      "rawMonthlyMinutes": 20,
+      "estimatedMonthlyMinutes": 20
+    }
+  ]
+}

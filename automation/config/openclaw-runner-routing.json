@@ -1,0 +1,54 @@
+{
+  "policy": {
+    "assignee": "",
+    "runbookOwner": "",
+    "runbookPath": "/automation/",
+    "notifyEnvVar": "OPENCLAW_RUNNER_NOTIFY_POLICY",
+    "notifyCriticalEnvVar": "OPENCLAW_RUNNER_NOTIFY_POLICY_CRITICAL",
+    "notifyFormat": "generic",
+    "notifyCriticalFormat": "slack",
+    "notifyOnDeltaOnly": true,
+    "notifyMinHours": 6,
+    "runbookUrl": "",
+    "routeStateTtlDays": 14
+  },
+  "artifact": {
+    "assignee": "",
+    "runbookOwner": "",
+    "runbookPath": "/automation/",
+    "notifyEnvVar": "OPENCLAW_RUNNER_NOTIFY_ARTIFACT",
+    "notifyCriticalEnvVar": "OPENCLAW_RUNNER_NOTIFY_ARTIFACT_CRITICAL",
+    "notifyFormat": "generic",
+    "notifyCriticalFormat": "slack",
+    "notifyOnDeltaOnly": true,
+    "notifyMinHours": 6,
+    "runbookUrl": "",
+    "routeStateTtlDays": 14
+  },
+  "runner": {
+    "assignee": "",
+    "runbookOwner": "",
+    "runbookPath": "/automation/",
+    "notifyEnvVar": "OPENCLAW_RUNNER_NOTIFY_RUNNER",
+    "notifyCriticalEnvVar": "OPENCLAW_RUNNER_NOTIFY_RUNNER_CRITICAL",
+    "notifyFormat": "generic",
+    "notifyCriticalFormat": "slack",
+    "notifyOnDeltaOnly": true,
+    "notifyMinHours": 6,
+    "runbookUrl": "",
+    "routeStateTtlDays": 14
+  },
+  "unknown": {
+    "assignee": "",
+    "runbookOwner": "",
+    "runbookPath": "/automation/",
+    "notifyEnvVar": "OPENCLAW_RUNNER_NOTIFY_UNKNOWN",
+    "notifyCriticalEnvVar": "OPENCLAW_RUNNER_NOTIFY_UNKNOWN_CRITICAL",
+    "notifyFormat": "generic",
+    "notifyCriticalFormat": "slack",
+    "notifyOnDeltaOnly": true,
+    "notifyMinHours": 6,
+    "runbookUrl": "",
+    "routeStateTtlDays": 14
+  }
+}

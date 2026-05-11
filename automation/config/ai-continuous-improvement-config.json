@@ -1,0 +1,178 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "description": "Configuration for AI Continuous Improvement Agent (ACIA)",
+  
+  "schedule": {
+    "intervalMinutes": 10,
+    "continuousMode": true,
+    "runOnStartup": false
+  },
+  
+  "features": {
+    "errorFixes": true,
+    "performanceOptimization": true,
+    "securityPatches": true,
+    "accessibilityImprovements": true,
+    "seoEnhancements": true,
+    "testCoverageExpansion": true,
+    "documentationGeneration": true,
+    "codeQualityImprovements": true,
+    "deadCodeElimination": true,
+    "dependencyUpdates": false,
+    "buildOptimization": true
+  },
+  
+  "priorities": {
+    "critical": [
+      "buildErrors",
+      "securityCritical",
+      "typeErrors"
+    ],
+    "high": [
+      "securityHigh",
+      "accessibilityIssues",
+      "performanceIssues"
+    ],
+    "medium": [
+      "lintErrors",
+      "seoIssues",
+      "testCoverage"
+    ],
+    "low": [
+      "codeQuality",
+      "documentation",
+      "deadCode"
+    ]
+  },
+  
+  "limits": {
+    "maxFixesPerRun": 10,
+    "maxRunTimeMinutes": 30,
+    "maxMemoryMB": 1024,
+    "maxConcurrentFixes": 3
+  },
+  
+  "git": {
+    "autoCommit": true,
+    "autoPush": true,
+    "commitPrefix": "🤖 AI Improvement:",
+    "branchName": "main",
+    "requireCleanWorkingTree": false
+  },
+  
+  "reporting": {
+    "enabled": true,
+    "saveReports": true,
+    "reportRetentionDays": 30,
+    "createGitHubIssues": true,
+    "healthScoreThreshold": 60,
+    "notifyOnCritical": true
+  },
+  
+  "analysis": {
+    "linting": {
+      "enabled": true,
+      "autoFix": true,
+      "severity": "error"
+    },
+    "typeChecking": {
+      "enabled": true,
+      "strict": true
+    },
+    "security": {
+      "enabled": true,
+      "auditLevel": "moderate",
+      "autoFix": true
+    },
+    "performance": {
+      "enabled": true,
+      "bundleSizeThresholdMB": 5,
+      "analyzeBundleSize": true
+    },
+    "accessibility": {
+      "enabled": true,
+      "wcagLevel": "AA",
+      "autoFix": false
+    },
+    "seo": {
+      "enabled": true,
+      "checkMetadata": true,
+      "checkSitemap": true
+    },
+    "testing": {
+      "enabled": true,
+      "coverageThreshold": 80,
+      "generateTests": false
+    },
+    "codeQuality": {
+      "enabled": true,
+      "removeConsoleLogs": true,
+      "fixAnyTypes": false,
+      "checkComplexity": true
+    }
+  },
+  
+  "notifications": {
+    "slack": {
+      "enabled": false,
+      "webhookUrl": ""
+    },
+    "email": {
+      "enabled": false,
+      "recipients": []
+    },
+    "github": {
+      "enabled": true,
+      "createIssuesOnCritical": true,
+      "commentOnCommits": true
+    }
+  },
+  
+  "ai": {
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20241022",
+    "temperature": 0.2,
+    "maxTokens": 4096,
+    "enableAIPoweredFixes": false,
+    "fallbackProvider": "openai"
+  },
+  
+  "repository": {
+    "url": "https://github.com/Zion-Holdings/zion.app",
+    "canonicalUrl": "https://ziontechgroup.com",
+    "mainBranch": "main"
+  },
+  
+  "healthScore": {
+    "excellent": 90,
+    "good": 70,
+    "fair": 50,
+    "critical": 60,
+    "weights": {
+      "lintErrors": 2,
+      "lintWarnings": 0.5,
+      "typeErrors": 3,
+      "securityCritical": 15,
+      "securityHigh": 10,
+      "securityModerate": 5,
+      "securityLow": 1,
+      "buildFailure": 20,
+      "performanceIssues": 2,
+      "accessibilityIssues": 3,
+      "seoIssues": 2,
+      "deadCode": 0.1,
+      "codeQuality": 1
+    }
+  },
+  
+  "advanced": {
+    "enablePatternLearning": false,
+    "saveFixPatterns": true,
+    "useHistoricalData": true,
+    "parallelAnalysis": false,
+    "cacheAnalysisResults": true,
+    "cacheTTLMinutes": 30
+  }
+}
+

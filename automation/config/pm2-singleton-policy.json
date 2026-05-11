@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "description": "PM2 apps that must have at most one process; duplicate-process healer deletes extras (keeps longest uptime). Version this file with ecosystem changes.",
+  "singletonApps": [
+    "openclaw-autonomous-prompts",
+    "ai-lab-integrity-guardian",
+    "ai-project-improvement-radar",
+    "ai-advanced-ai-content-pipeline",
+    "pm2-duplicate-process-healer"
+  ]
+}

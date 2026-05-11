@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-07T17:31:48.842Z",
+  "driftCount": 0,
+  "missingInEcosystem": [],
+  "npmScriptsWithMissingApps": [],
+  "npmDirectCommandsWithMissingApps": [],
+  "ecosystemAppsWithMissingScripts": [],
+  "stalePm2HintScripts": [],
+  "contradictions": [],
+  "autoFixChanges": [],
+  "autoFixApplied": false
+}

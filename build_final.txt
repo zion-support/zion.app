@@ -1,0 +1,20 @@
+Warning: You have enabled experimental feature(s).
+Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use them at your own risk.
+
+Failed to compile.
+
+/Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/roi-ops-scorecard/metadata.ts
+ERROR in /Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/roi-ops-scorecard/metadata.ts(3,24):
+3:24 'Metadata' refers to a value, but is being used as a type here. Did you mean 'typeof Metadata'?
+    1 | import Metadata from 'next';
+    2 | 
+  > 3 | export const metadata: Metadata = {
+      |                        ^
+    4 |   title: 'AI ROI & Ops Scorecard',
+    5 |   description:
+    6 |     'Estimate potential impact across revenue, operations, and customer experience to see where AI should start.',
+
+
+> Build error occurred
+Error: > Build failed because of webpack errors
+    at build (/Users/kleberalcatrao/.openclaw/workspace/node_modules/next/dist/build/index.js:13:900)

@@ -1,0 +1,16 @@
+{
+  "blogTopics": [
+    {
+      "title": "Generative AI Enterprise",
+      "category": "AI Trends",
+      "icon": "🧠",
+      "prompt": "You are writing a deep, production-focused article for Zion Tech Group about \"Generative AI Enterprise\".\n\nAudience: senior engineering, data, security, and operations leaders evaluating advanced AI solutions.\n\nWrite a ~1800 word article with the following structure:\n\n1. Problem Context – explain the real-world enterprise problems and constraints for this area.\n2. Architecture Overview – describe typical reference architectures, including components, data flows, and integration points.\n3. Implementation Patterns – outline 3–5 concrete implementation patterns with trade-offs.\n4. Risk & Compliance Considerations – cover security, governance, and regulatory aspects relevant to this topic.\n5. KPIs & Metrics – list measurable KPIs that teams should track when rolling this out.\n6. Example Workflows – provide 2–3 example workflows mapped to real departments (e.g., support, operations, finance).\n\nConstraints:\n- Assume the reader is familiar with basic AI concepts; focus on implementation detail and decision-making.\n- Use specific, concrete examples (not fluff) and avoid vendor-specific hard sells.\n- Where appropriate, reference internal routes such as:\n  /ai-services/generative-ai-enterprise/, /ai-services/ai-rag-knowledge-systems/, /ai-services/ai-observability-mlops/, /ai-services/ai-strategy-roadmap/\n- Maintain a neutral, advisory tone suitable for an enterprise blog."
+    },
+    {
+      "title": "AI Agents & Autonomous Workflows",
+      "category": "AI Trends",
+      "icon": "🧠",
+      "prompt": "You are writing a deep, production-focused article for Zion Tech Group about \"AI Agents & Autonomous Workflows\".\n\nAudience: senior engineering, data, security, and operations leaders evaluating advanced AI solutions.\n\nWrite a ~1800 word article with the following structure:\n\n1. Problem Context – explain the real-world enterprise problems and constraints for this area.\n2. Architecture Overview – describe typical reference architectures, including components, data flows, and integration points.\n3. Implementation Patterns – outline 3–5 concrete implementation patterns with trade-offs.\n4. Risk & Compliance Considerations – cover security, governance, and regulatory aspects relevant to this topic.\n5. KPIs & Metrics – list measurable KPIs that teams should track when rolling this out.\n6. Example Workflows – provide 2–3 example workflows mapped to real departments (e.g., support, operations, finance).\n\nConstraints:\n- Assume the reader is familiar with basic AI concepts; focus on implementation detail and decision-making.\n- Use specific, concrete examples (not fluff) and avoid vendor-specific hard sells.\n- Where appropriate, reference internal routes such as:\n  /ai-services/ai-agents-autonomous/, /ai-services/ai-copilot-enterprise/, /ai-services/ai-model-orchestration/\n- Maintain a neutral, advisory tone suitable for an enterprise blog."
+    }
+  ]
+}

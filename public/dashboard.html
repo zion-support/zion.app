@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zion Techgroup – Pipeline Dashboard</title>
+  <style>
+    body {font-family:Arial,sans-serif;margin:20px;}
+    h1{text-align:center;margin-bottom:20px;}
+    table{width:100%;border-collapse:collapse;margin-top:20px;}
+    th,td{padding:8px 12px;border:1px solid #ddd;text-align:left;}
+    th{background:#f4f4f4;}
+    .green{color:green;}
+    .red{color:red;}
+    .yellow{color:#e6a32f;}
+    .monet-banner{background:#fff8e1;border:1px solid #ffe082;padding:15px;margin-top:30px;border-radius:4px;}
+    .monet-banner h2{margin-top:0;}
+    .monet-banner ul{margin:10px 0 0 0;padding-left:20px;}
+    .monet-banner li{margin:5px 0;}
+    .monet-banner a{color:#1565c0;text-decoration:none;}
+    .monet-banner a:hover{text-decoration:underline;}
+    #sponsors{margin-top:20px;}
+    #sponsor-list{audio{...}} /* placeholder */
+  </style>
+</head>
+<body>
+  <h1>CI Pipeline Health</h1>
+  <div id="data"></div>
+
+  <!-- Monetization Section -->
+  <div class="monet-banner">
+    <h2>Support Us</h2>
+    <p>Free tools we use and love:</p>
+    <ul>
+      <li><a href="https://amzn.to/3wxy123?tag=ziontech-20&utm_source=dashboard&utm_medium=monetization&utm_campaign=ziontech" target="_blank" rel="noopener noreferrer">CI/CD Tools (Amazon Affiliate)</a></li>
+      <li><a href="https://bit.ly/3zXyDevOps?utm_source=dashboard&utm_medium=monetization" target="_blank" rel="noopener noreferrer">DevOps Books (Bitly)</a></li>
+      <li><a href="https://travis-ci.com/pricing" target="_blank" rel="noopener noreferrer">Travis CI (Open Source)</a></li>
+      <li><a href="https://www.linode.com/pricing/?utm_source=ziontech&utm_medium=dashboard" target="_blank" rel="noopener noreferrer">Linode Hosting (Free Tier)</a></li>
+      <li><a href="https://github.com/sponsors/Zion-support" target="_blank" rel="noopener noreferrer">GitHub Sponsors</a></li>
+      <li>
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+          <input type="hidden" name="hosted_button_id" value="SAMPLE_PAYPAL_ID"/>
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate via PayPal"/>
+        </form>
+      </li>
+      <li><a href="https://www.buymeacoffee.com/" target="_blank">Buy Me a Coffee</a></li>
+      <li><a href="https://m.do.co/c/1234567890?utm_source=ziontech&utm_medium=dashboard" target="_blank" rel="noopener noreferrer">DigitalOcean (Referral)</a></li>
+      <li><a href="https://gumroad.com/" target="_blank">Digital Products (Gumroad)</a></li>
+      <li><a href="https://ko-fi.com/" target="_blank">Support via Ko-fi</a></li>
+      <li><a href="https://pages.cloudflare.com/" target="_blank">Free Pages (Cloudflare)</a></li>
+      <li><a href="https://www.namecheap.com/?aff=YX1234567890&utm_source=ziontech&utm_medium=dashboard" target="_blank" rel="noopener noreferrer">Domain Registration (Namecheap Affiliate)</a></li>
+      <li><a href="https://brave.com/brave-rewards/" target="_blank">Tip with Brave Rewards (BAT)</a></li>
+<li><a href="https://patreon.com/" target="_blank">Support via Patreon (Tiered Memberships)</a></li>
+<li><a href="https://opencollective.com/" target="_blank">OpenCollective (Community Sponsorship)</a></li>
+<li><a href="https://vercel.com/referral?source=ziontech&utm_medium=dashboard" target="_blank">Vercel Serverless Hosting Referral</a></li>
+<li><a href="https://www.netlify.com/referral/?utm_source=ziontech&utm_medium=dashboard" target="_blank">Netlify Hosting Referral</a></li>
+<li><a href="https://donatewallet.com/" target="_blank">Donate Crypto (BTC/ETH)</a></li>
+    <li><a href="https://ziontech.substack.com/" target="_blank" rel="noopener noreferrer">Subscribe to Substack Newsletter (Free)</a></li>
+<li><a href="https://railway.app?referral=ziontech" target="_blank" rel="noopener noreferrer">Railway Hosting Referral (Free Tier)</a></li>
+<li><a href="https://platform.openai.com/signup?ref=ziontech" target="_blank" rel="noopener noreferrer">OpenAI API Referral (Free $18 credit)</a></li>
+<li><a href="https://supabase.com/dashboard?ref=ziontech" target="_blank" rel="noopener noreferrer">Supabase Database Referral (Free Tier)</a></li>
+<li><a href="https://gitpod.io/?ref=ziontech" target="_blank" rel="noopener noreferrer">Gitpod Cloud Development (Free Tier)</a></li>
+<li><a href="https://replit.com/signup?ref=ziontech" target="_blank" rel="noopener noreferrer">Replit Online IDE (Free Tier)</a></li>
+<li><a href="https://www.datadoghq.com/free?ref=ziontech" target="_blank" rel="noopener noreferrer">Datadog Monitoring (Free Tier)</a></li>
+</ul>
+    <p style="font-size:0.85em;color:#666;margin-top:8px;">All proceeds keep the project free and growing.</p>
+    <p style="font-size:0.75em;color:#999;margin-top:4px;">Powered by free tools and open-source communities.</p>
+    <div style="margin-top:15px;padding:10px;background:#f0f8ff;border:1px solid #b0c4de;border-radius:4px;">
+      <h3 style="margin:0 0 8px 0;font-size:1em;">Sponsored Content</h3>
+      <p style="margin:0;font-size:0.85em;">Your company could be here! Contact us for sponsorship opportunities.</p>
+    </div>
+    <div style="margin-top:15px;padding:10px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:4px;">
+      <h3 style="margin:0 0 8px 0;font-size:1em;">📬 Newsletter Signup (Free)</h3>
+      <p style="margin:0 0 8px 0;font-size:0.85em;">Get updates on new tools and offers:</p>
+      <form action="https://buttondown.email/api/emails/embed" method="post" target="_blank">
+        <input type="email" name="email" placeholder="your@email.com" required style="padding:4px;width:200px;border:1px solid #ccc;border-radius:3px;"/>
+        <button type="submit" style="padding:4px 8px;background:#2e7d32;color:white;border:none;border-radius:3px;cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Carbon Ads (free ad network) -->
+  <div id="carbonads-container" style="margin-top:20px;"></div>
+  <script src="https://cdn.carbonads.com/carbon.js?serve=CE7I53Y&placement=ziontechgroup" async defer></script>
+
+  <!-- Display Sponsors -->
+  <div id="sponsors">
+    <h2>Our Sponsors</h2>
+    <div id="sponsor-list" style="display:flex;flex-wrap:wrap;gap:12px;"></div>
+  </div>
+
+  <script>
+    // Load pipeline data
+    fetch('/dashboard.json')
+      .then(r=>r.json())
+      .then(data=>{
+        const container=document.getElementById('data');
+        const table=document.createElement('table');
+        const header=document.createElement('tr');
+        ['Name','Status','Conclusion','Duration(s)'].forEach(t=>{
+          const th=document.createElement('th');th.innerText=t;header.appendChild(th);
+        });
+        table.appendChild(header);
+        data.forEach(r=>{
+          const row=document.createElement('tr');
+          const cls=r.conclusion==='success'?'green':r.conclusion==='failure'?'red':'yellow';
+          [r.name,r.conclusion,r.status,r.duration? (r.duration/1000).toFixed(1) :'N/A'].forEach((v,i)=>{
+            const td=document.createElement('td');
+            if(i===2)td.className=cls;
+            td.innerText=v;
+            row.appendChild(td);
+          });
+          table.appendChild(row);
+        });
+        container.appendChild(table);
+      });
+
+    // Load sponsors and render avatars
+    fetch('/sponsors.json')
+      .then(r=>r.ok?r.json():[])
+      .then(list=>{
+        const cont=document.getElementById('sponsor-list');
+        list.forEach(s=>{
+          const a=document.createElement('a');a.href=s.url;a.target='_blank';a.title=s.login;
+          const img=document.createElement('img');img.src=s.avatar_url;img.alt=s.login;
+          img.width=48;img.height=48;borderRadius='4px';
+          a.appendChild(img);
+          cont.appendChild(a);
+        });
+      })
+      .catch(()=>{});
+
+    // Google Analytics placeholder (free tier)
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.googletagmanager.com/gtag/js','ga');
+    ga('create','G-ZZZZZZZZZZ',{'api_domain':'https://www.google-analytics.com'});
+    ga('send','pageview');
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "successful": [
+    {
+      "pr": 25821,
+      "branch": "cursor/fix-errors-and-merge-to-main-8876"
+    }
+  ],
+  "conflicts_resolved": [],
+  "failed": [
+    {
+      "pr": 25824,
+      "branch": "cursor/fix-errors-and-merge-to-main-ffbe",
+      "reason": "fetch_failed"
+    },
+    {
+      "pr": 25823,
+      "branch": "cursor/fix-errors-and-merge-to-main-bf21",
+      "reason": "fetch_failed"
+    },
+    {
+      "pr": 25822,
+      "branch": "cursor/fix-errors-and-merge-to-main-a502",
+      "reason": "fetch_failed"
+    }
+  ],
+  "skipped": []
+}

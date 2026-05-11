@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Optional: OPENCLAW_STABILITY_ON_PUSH=1 runs full merge-stability chain (slower).
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+if [ -n "${CI:-}" ] || [ "${SKIP_OPENCLAW_GIT_HOOKS:-}" = "1" ]; then
+  exit 0
+fi
+if [ "${OPENCLAW_STABILITY_ON_PUSH:-}" != "1" ]; then
+  exit 0
+fi
+if ! command -v npm >/dev/null 2>&1; then
+  echo "openclaw pre-push: npm not on PATH; skipping stability run." >&2
+  exit 0
+fi
+exec npm run openclaw:autonomy:stability

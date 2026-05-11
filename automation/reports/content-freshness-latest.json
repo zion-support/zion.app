@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-04-13T11:29:04.730Z",
+  "config": {
+    "staleMonths": 12,
+    "warnMonths": 9
+  },
+  "summary": {
+    "total": 944,
+    "stale": 8,
+    "warning": 0,
+    "fresh": 936
+  },
+  "stale": [
+    {
+      "path": "app/ai-chat-companion/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-03-23",
+      "dateSource": "metadata",
+      "monthsOld": 25,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/ai-log-analyzer/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-01-15",
+      "dateSource": "metadata",
+      "monthsOld": 27.3,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/json-formatter-validator/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-01-15",
+      "dateSource": "metadata",
+      "monthsOld": 27.3,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/json-schema-generator/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-01-15",
+      "dateSource": "metadata",
+      "monthsOld": 27.3,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/json-to-typescript-converter/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-01-01",
+      "dateSource": "metadata",
+      "monthsOld": 27.8,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/sql-formatter/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-01-01",
+      "dateSource": "metadata",
+      "monthsOld": 27.8,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/timestamp-converter/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2024-03-27",
+      "dateSource": "metadata",
+      "monthsOld": 24.9,
+      "status": "stale"
+    },
+    {
+      "path": "app/tools/xml-formatter-validator/page.tsx",
+      "slug": "page",
+      "type": "page",
+      "date": "2000-10-01",
+      "dateSource": "metadata",
+      "monthsOld": 310.8,
+      "status": "stale"
+    }
+  ],
+  "warning": [],
+  "recommendations": [
+    {
+      "path": "app/ai-chat-companion/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/ai-log-analyzer/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/json-formatter-validator/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/json-schema-generator/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/json-to-typescript-converter/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/sql-formatter/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/timestamp-converter/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    },
+    {
+      "path": "app/tools/xml-formatter-validator/page.tsx",
+      "action": "Consider updating or archiving",
+      "priority": "high"
+    }
+  ]
+}

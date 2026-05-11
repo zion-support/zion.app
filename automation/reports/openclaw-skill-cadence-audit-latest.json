@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-10T22:00:20.728Z",
+  "status": "warn",
+  "failingChecks": [
+    "promptRunnerExists",
+    "guardianExists",
+    "trendAdapterExists",
+    "regressionMemoryExists"
+  ],
+  "summary": {
+    "enabledWorkerCount": 11,
+    "expectedCadenceSeconds": 74,
+    "maxWorkerCadenceSeconds": 120,
+    "openclawFrequencySeconds": 20,
+    "openclawMaxParallel": 2
+  },
+  "checks": {
+    "promptRunnerExists": false,
+    "guardianExists": false,
+    "trendAdapterExists": false,
+    "regressionMemoryExists": false,
+    "promptCadenceNotTooSlow": true,
+    "promptCadenceNotTooFast": true,
+    "parallelismConfigured": true,
+    "minEnabledWorkers": true
+  }
+}

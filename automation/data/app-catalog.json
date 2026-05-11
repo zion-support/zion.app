@@ -1,0 +1,718 @@
+{
+  "apps": [
+    {
+      "slug": "zion-ai-chatbot-builder",
+      "title": "Zion AI Chatbot Builder",
+      "href": "/zion-ai-chatbot-builder",
+      "category": "Customer Experience",
+      "outcomes": [
+        "Fewer support tickets",
+        "Faster first response"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 10,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-chatbot-builder",
+      "pricingSources": [
+        {
+          "title": "Zion AI Chatbot Builder pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:29.644Z"
+    },
+    {
+      "slug": "zion-ai-customer-support-pro",
+      "title": "Zion AI Customer Support Pro",
+      "href": "/zion-ai-customer-support-pro",
+      "category": "Customer Experience",
+      "outcomes": [
+        "Tier-1 automation",
+        "Higher CSAT"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 9,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-customer-support-pro",
+      "pricingSources": [
+        {
+          "title": "Zion AI Customer Support Pro pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:29.724Z"
+    },
+    {
+      "slug": "zion-ai-email-assistant",
+      "title": "Zion AI Email Assistant",
+      "href": "/zion-ai-email-assistant",
+      "category": "Growth",
+      "outcomes": [
+        "Faster email workflows"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-email-assistant",
+      "pricingSources": [
+        {
+          "title": "Zion AI Email Assistant pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:29.801Z"
+    },
+    {
+      "slug": "zion-ai-marketing-automation",
+      "title": "Zion AI Marketing Automation",
+      "href": "/zion-ai-marketing-automation",
+      "category": "Growth",
+      "outcomes": [
+        "Smarter campaigns",
+        "Higher ROI"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-marketing-automation",
+      "pricingSources": [
+        {
+          "title": "Zion AI Marketing Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:29.805Z"
+    },
+    {
+      "slug": "zion-ai-social-media-manager",
+      "title": "Zion AI Social Media Manager",
+      "href": "/zion-ai-social-media-manager",
+      "category": "Growth",
+      "outcomes": [
+        "Content scheduling",
+        "Channel analytics"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-social-media-manager",
+      "pricingSources": [
+        {
+          "title": "Zion AI Social Media Manager pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:29.883Z"
+    },
+    {
+      "slug": "zion-ai-sales-predictor",
+      "title": "Zion AI Sales Predictor",
+      "href": "/zion-ai-sales-predictor",
+      "category": "Growth",
+      "outcomes": [
+        "Pipeline forecasting"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-sales-predictor",
+      "pricingSources": [
+        {
+          "title": "Zion AI Sales Predictor pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:31.886Z"
+    },
+    {
+      "slug": "zion-ai-predictive-analytics",
+      "title": "Zion AI Predictive Analytics",
+      "href": "/zion-ai-predictive-analytics",
+      "category": "Decision Intelligence",
+      "outcomes": [
+        "Forecasting",
+        "Scenario planning"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-predictive-analytics",
+      "pricingSources": [
+        {
+          "title": "Zion AI Predictive Analytics pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:31.889Z"
+    },
+    {
+      "slug": "zion-ai-code-assistant",
+      "title": "Zion AI Code Assistant",
+      "href": "/zion-ai-code-assistant",
+      "category": "Engineering",
+      "outcomes": [
+        "Faster development"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 9,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-code-assistant",
+      "pricingSources": [
+        {
+          "title": "Zion AI Code Assistant pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:31.963Z"
+    },
+    {
+      "slug": "zion-ai-code-reviewer",
+      "title": "Zion AI Code Reviewer",
+      "href": "/zion-ai-code-reviewer",
+      "category": "Engineering",
+      "outcomes": [
+        "Higher code quality"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-code-reviewer",
+      "pricingSources": [
+        {
+          "title": "Zion AI Code Reviewer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:32.124Z"
+    },
+    {
+      "slug": "zion-ai-api-tester",
+      "title": "Zion AI API Tester",
+      "href": "/zion-ai-api-tester",
+      "category": "Engineering",
+      "outcomes": [
+        "Safer releases"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-api-tester",
+      "pricingSources": [
+        {
+          "title": "Zion AI API Tester pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:32.203Z"
+    },
+    {
+      "slug": "zion-ai-database-optimizer",
+      "title": "Zion AI Database Optimizer",
+      "href": "/zion-ai-database-optimizer",
+      "category": "Engineering",
+      "outcomes": [
+        "Faster queries"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 6,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-database-optimizer",
+      "pricingSources": [
+        {
+          "title": "Zion AI Database Optimizer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:34.206Z"
+    },
+    {
+      "slug": "zion-devops-automation",
+      "title": "Zion DevOps Automation",
+      "href": "/zion-devops-automation",
+      "category": "Engineering",
+      "outcomes": [
+        "CI/CD automation"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-devops-automation",
+      "pricingSources": [
+        {
+          "title": "Zion DevOps Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:34.208Z"
+    },
+    {
+      "slug": "zion-security-shield",
+      "title": "Zion Security Shield",
+      "href": "/zion-security-shield",
+      "category": "Security",
+      "outcomes": [
+        "Hardening",
+        "Threat visibility"
+      ],
+      "collections": [
+        "Security & Infrastructure"
+      ],
+      "priority": 9,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-security-shield",
+      "pricingSources": [
+        {
+          "title": "Zion Security Shield pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:34.209Z"
+    },
+    {
+      "slug": "zion-cybersecurity-audit",
+      "title": "Zion Cybersecurity Audit",
+      "href": "/zion-cybersecurity-audit",
+      "category": "Security",
+      "outcomes": [
+        "Readiness assessment"
+      ],
+      "collections": [
+        "Security & Infrastructure"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-cybersecurity-audit",
+      "pricingSources": [
+        {
+          "title": "Zion Cybersecurity Audit pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:34.211Z"
+    },
+    {
+      "slug": "zion-cloud-vault",
+      "title": "Zion Cloud Vault",
+      "href": "/zion-cloud-vault",
+      "category": "Security",
+      "outcomes": [
+        "Secure file storage"
+      ],
+      "collections": [
+        "Security & Infrastructure"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-cloud-vault",
+      "pricingSources": [
+        {
+          "title": "Zion Cloud Vault pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:34.281Z"
+    },
+    {
+      "slug": "zion-data-sync",
+      "title": "Zion Data Sync",
+      "href": "/zion-data-sync",
+      "category": "Infrastructure",
+      "outcomes": [
+        "Data integration"
+      ],
+      "collections": [
+        "Security & Infrastructure"
+      ],
+      "priority": 6,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-data-sync",
+      "pricingSources": [
+        {
+          "title": "Zion Data Sync pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:36.285Z"
+    },
+    {
+      "slug": "zion-ai-translation-service",
+      "title": "Zion AI Translation Service",
+      "href": "/zion-ai-translation-service",
+      "category": "Productivity",
+      "outcomes": [
+        "Multilingual content"
+      ],
+      "collections": [
+        "Productivity & Content"
+      ],
+      "priority": 6,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-translation-service",
+      "pricingSources": [
+        {
+          "title": "Zion AI Translation Service pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:36.288Z"
+    },
+    {
+      "slug": "zion-ai-video-generator",
+      "title": "Zion AI Video Generator",
+      "href": "/zion-ai-video-generator",
+      "category": "Productivity",
+      "outcomes": [
+        "Faster video production"
+      ],
+      "collections": [
+        "Productivity & Content"
+      ],
+      "priority": 6,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-video-generator",
+      "pricingSources": [
+        {
+          "title": "Zion AI Video Generator pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:36.289Z"
+    },
+    {
+      "slug": "zion-ai-email-marketing-pro",
+      "title": "Zion AI Email Marketing Pro",
+      "href": "/zion-ai-email-marketing-pro",
+      "category": "Growth",
+      "outcomes": [
+        "Lifecycle campaigns"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-email-marketing-pro",
+      "pricingSources": [
+        {
+          "title": "Zion AI Email Marketing Pro pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:36.291Z"
+    },
+    {
+      "slug": "zion-ai-lead-scoring",
+      "title": "Zion AI Lead Scoring",
+      "href": "/zion-ai-lead-scoring",
+      "category": "Growth",
+      "outcomes": [
+        "Qualified pipeline"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-lead-scoring",
+      "pricingSources": [
+        {
+          "title": "Zion AI Lead Scoring pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:36.362Z"
+    },
+    {
+      "slug": "zion-smart-crm-automation",
+      "title": "Zion Smart CRM Automation",
+      "href": "/zion-smart-crm-automation",
+      "category": "Automation",
+      "outcomes": [
+        "Deal routing automation"
+      ],
+      "collections": [
+        "Operations & Automation"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-smart-crm-automation",
+      "pricingSources": [
+        {
+          "title": "Zion Smart CRM Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:38.442Z"
+    },
+    {
+      "slug": "zion-workflow-automation",
+      "title": "Zion Workflow Automation",
+      "href": "/zion-workflow-automation",
+      "category": "Automation",
+      "outcomes": [
+        "Cross-tool workflows"
+      ],
+      "collections": [
+        "Operations & Automation"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-workflow-automation",
+      "pricingSources": [
+        {
+          "title": "Zion Workflow Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:38.445Z"
+    },
+    {
+      "slug": "zion-ai-document-processor",
+      "title": "Zion AI Document Processor",
+      "href": "/zion-ai-document-processor",
+      "category": "Operations",
+      "outcomes": [
+        "Document automation"
+      ],
+      "collections": [
+        "Operations & Automation"
+      ],
+      "priority": 8,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-document-processor",
+      "pricingSources": [
+        {
+          "title": "Zion AI Document Processor pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:38.447Z"
+    },
+    {
+      "slug": "zion-ai-document-analyzer",
+      "title": "Zion AI Document Analyzer",
+      "href": "/zion-ai-document-analyzer",
+      "category": "Operations",
+      "outcomes": [
+        "Deeper document insights"
+      ],
+      "collections": [
+        "Operations & Automation"
+      ],
+      "priority": 7,
+      "isNew": false,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-document-analyzer",
+      "pricingSources": [
+        {
+          "title": "Zion AI Document Analyzer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:38.604Z"
+    },
+    {
+      "slug": "zion-ai-chatbot-playground",
+      "title": "Zion AI Chatbot Playground",
+      "href": "/zion-ai-chatbot-playground",
+      "category": "Customer Experience",
+      "outcomes": [
+        "In-browser demo"
+      ],
+      "collections": [
+        "Customer & Growth"
+      ],
+      "priority": 9,
+      "isNew": true,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-chatbot-playground",
+      "pricingSources": [
+        {
+          "title": "Zion AI Chatbot Playground pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:38.762Z"
+    },
+    {
+      "slug": "zion-ai-code-sandbox",
+      "title": "Zion AI Code Sandbox",
+      "href": "/zion-ai-code-sandbox",
+      "category": "Engineering",
+      "outcomes": [
+        "Live code analysis demo"
+      ],
+      "collections": [
+        "Engineering & DevOps"
+      ],
+      "priority": 9,
+      "isNew": true,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=zion-ai-code-sandbox",
+      "pricingSources": [
+        {
+          "title": "Zion AI Code Sandbox pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:40.922Z"
+    },
+    {
+      "slug": "micro-saas-ai-idea-generator",
+      "title": "AI Micro-SaaS Idea Generator",
+      "href": "/micro-saas/ai-idea-generator",
+      "category": "Productivity",
+      "outcomes": [
+        "Product ideation"
+      ],
+      "collections": [
+        "Productivity & Content"
+      ],
+      "priority": 8,
+      "isNew": true,
+      "price": 49,
+      "priceRange": null,
+      "priceConfidence": "medium",
+      "purchaseUrl": "/checkout?product=micro-saas-ai-idea-generator",
+      "pricingSources": [
+        {
+          "title": "AI Micro-SaaS Idea Generator pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "lastPriceUpdate": "2026-03-23T12:30:41.003Z"
+    }
+  ],
+  "bundles": [
+    {
+      "slug": "revenue-command-center",
+      "title": "Revenue Command Center",
+      "apps": [
+        "zion-ai-lead-scoring",
+        "zion-ai-email-marketing-pro",
+        "zion-smart-crm-automation"
+      ],
+      "primaryOutcome": "Faster qualified pipeline"
+    },
+    {
+      "slug": "customer-success-engine",
+      "title": "Customer Success Engine",
+      "apps": [
+        "zion-ai-onboarding-pro",
+        "zion-ai-customer-support-pro",
+        "zion-ai-customer-sentiment-tracker"
+      ],
+      "primaryOutcome": "Higher retention"
+    },
+    {
+      "slug": "engineering-velocity-hub",
+      "title": "Engineering Velocity Hub",
+      "apps": [
+        "zion-ai-code-assistant",
+        "zion-ai-code-reviewer",
+        "zion-devops-automation"
+      ],
+      "primaryOutcome": "Faster ship cycles"
+    }
+  ],
+  "lastPriceUpdate": "2026-03-23T12:31:08.796Z"
+}

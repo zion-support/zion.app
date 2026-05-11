@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-05-04T18:54:37.708Z",
+  "source": "deploy-on-push",
+  "status": "failed",
+  "sha": "18e63ca5d2c8ff59b897c08bfca4a86c08ff1c66",
+  "ref": "refs/heads/main",
+  "runId": "25336474971",
+  "workflow": "Deploy on Push",
+  "netlifyDeployId": null,
+  "netlifyDeployUrl": null
+}

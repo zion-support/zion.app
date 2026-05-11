@@ -1,0 +1,68 @@
+name: Workflow Trust Score Monitor
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # Daily at 7 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  trust-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Calculate workflow trust scores
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run workflow:trust:score || true
+      
+      - name: Alert on low trust
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/workflow-trust-latest.json"
+          if [ -f "$report" ]; then
+            node -e "
+            const fs = require('fs');
+            const scores = JSON.parse(fs.readFileSync('$report','utf8'));
+            for (const [name, score] of Object.entries(scores)) {
+              if (score < 80) {
+                console.log('LOW_TRUST:' + name + ':' + score);
+              }
+            }" | while IFS=: read -r type wf score; do
+              if [ "$type" = "LOW_TRUST" ]; then
+                gh issue create --title "Low Trust Score: $wf ($score%)" \
+                  --body "Workflow reliability has dropped below threshold. Consider review." \
+                  --label "automation,reliability" || true
+              fi
+            done
+          fi
+      
+      - name: Upload trust scores
+        uses: actions/upload-artifact@v4
+        with:
+          name: workflow-trust-${{ github.run_id }}
+          path: automation/reports/workflow-trust-latest.json
+          retention-days: 30

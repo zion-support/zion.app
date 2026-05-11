@@ -1,0 +1,46 @@
+name: AI Fingerprint Digest
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  digest-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Configure digest vars
+        run: |
+          echo "AUTOMATION_FP_DIGEST_DISPATCH_ON_DEPLOY_FAILURE=true" >> $GITHUB_ENV
+          echo "AUTOMATION_FP_DIGEST_FRESHNESS_MAX_HOURS=24" >> $GITHUB_ENV
+          echo "AUTOMATION_FP_DIGEST_APPLY_DELTA_LABEL=true" >> $GITHUB_ENV
+          echo "AUTOMATION_FP_DIGEST_CRITICAL_PR_COMMENT=1" >> $GITHUB_ENV
+          echo "AUTOMATION_FP_DIGEST_SLACK_INCLUDE_TREND=true" >> $GITHUB_ENV
+      
+      - name: Wire webhooks
+        run: node automation/configure-digest-webhooks.cjs
+      
+      - name: Validate PR labels
+        run: node automation/label-digest-touched-prs.cjs
+      - name: Execute digest
+        run: node automation/generate-automation-fingerprint-incident-digest.cjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Optional: Postfix with Stable Integration
+      - name: Check route health
+        run: node scripts/automation/check-promoted-routes.cjs

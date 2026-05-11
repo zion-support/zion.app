@@ -1,0 +1,353 @@
+{
+  "scanned": "2026-03-22T01:54:06.723Z",
+  "sampleSize": 100,
+  "categories": {
+    "bug": {
+      "count": 65,
+      "issues": [
+        {
+          "number": 34501,
+          "title": "GitHub workflow integrity drift detected"
+        },
+        {
+          "number": 34500,
+          "title": "Autonomous writer queue contention"
+        },
+        {
+          "number": 34498,
+          "title": "AI launch digest freshness SLA breached"
+        },
+        {
+          "number": 34497,
+          "title": "Aggregate regression worsened"
+        },
+        {
+          "number": 34494,
+          "title": "PM2 SLO critical breach detected"
+        },
+        {
+          "number": 34493,
+          "title": "PM2 restart guardian alert"
+        },
+        {
+          "number": 34491,
+          "title": "Artifact freshness mesh stale reports detected"
+        },
+        {
+          "number": 34489,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34488,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34487,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34486,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34485,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34484,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34483,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34482,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34481,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34480,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34479,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34478,
+          "title": "Autonomous writer queue contention (8 active writer runs)"
+        },
+        {
+          "number": 34477,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34476,
+          "title": "Openclaw incident: sustained unhealthy autonomous cycles"
+        },
+        {
+          "number": 34475,
+          "title": "PM2 SLO breach detected (5)"
+        },
+        {
+          "number": 34474,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34473,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34472,
+          "title": "PM2 restart guardian alert (1)"
+        },
+        {
+          "number": 34471,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34470,
+          "title": "Artifact freshness mesh stale reports detected (1)"
+        },
+        {
+          "number": 34469,
+          "title": "Openclaw auth/runtime diagnostic warning"
+        },
+        {
+          "number": 34468,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34467,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34466,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34465,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34464,
+          "title": "Autonomous writer queue contention (98 active writer runs)"
+        },
+        {
+          "number": 34463,
+          "title": "AI route verification failures on production"
+        },
+        {
+          "number": 34426,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34425,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34424,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34423,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34422,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34421,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34420,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34419,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34418,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34417,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34416,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34415,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34414,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34412,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34411,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34410,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34409,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34407,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34406,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34401,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34399,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34398,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34396,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34395,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34374,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34373,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34372,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34371,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34370,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34369,
+          "title": "🤖 AI Performance Optimizer Failed"
+        },
+        {
+          "number": 34368,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        }
+      ]
+    },
+    "enhancement": {
+      "count": 10,
+      "issues": [
+        {
+          "number": 34426,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34421,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34420,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34414,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34411,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34407,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34399,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34395,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34371,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        },
+        {
+          "number": 34368,
+          "title": "🤖 AI Continuous Improvement Agent Failed"
+        }
+      ]
+    },
+    "question": {
+      "count": 0,
+      "issues": []
+    },
+    "unlabeled": {
+      "count": 0,
+      "issues": []
+    }
+  },
+  "topLabels": {
+    "automation": 4,
+    "bug": 65,
+    "automation-incident": 11,
+    "automation-slo-warning": 1,
+    "automation-fp-951e83048748": 1,
+    "automation-fp-468a17810b78": 1,
+    "ci": 1,
+    "automation-fp-12c231c712a6": 1,
+    "automation-fp-c3b607782547": 1,
+    "automation-fp-b37d26ddb809": 1,
+    "autonomy-severity-critical": 2,
+    "automation-fp-cb0141ae9ea0": 1,
+    "automation-fp-bbfb34e9e8e8": 1,
+    "automation-fp-f08183541898": 1,
+    "automation-fp-aaa774ee321f": 1,
+    "automation-fp-179b1c5624a6": 1,
+    "automation-fp-eccec3a393b8": 1,
+    "dependencies": 2,
+    "security": 1,
+    "performance": 53,
+    "needs-investigation": 1,
+    "automated": 62,
+    "critical": 31,
+    "optimization": 31,
+    "ai-improvement": 10,
+    "workflow-failure": 31
+  },
+  "recommendation": "Issue distribution looks healthy"
+}

@@ -1,0 +1,1 @@
+[main/sessions/1f88b04e-af9e-4e69-a73a-a53c73e38199.jsonl#L5] User: [Mon 2026-04-13 23:11 GMT-3] [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. [Subagent Task]: Finalize Smart Search UI, complete deploy-watchdog logic, implement PR review bot auto-formattin

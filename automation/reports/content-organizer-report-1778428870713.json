@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "timestamp": "2026-05-10T16:01:10.713Z",
+    "version": "1.0.0",
+    "runtime": 67176,
+    "repository": "https://github.com/Zion-Holdings/zion.app"
+  },
+  "scan": {
+    "totalPages": 1259,
+    "totalComponents": 9,
+    "duplicates": 997,
+    "inconsistencies": 188,
+    "organizationOpportunities": 291
+  },
+  "organization": {
+    "organized": 0,
+    "deduplicated": 20,
+    "renamed": 0,
+    "categorized": 0,
+    "importsFixed": 0,
+    "metadataFixed": 0,
+    "totalChanges": 20
+  },
+  "nextSteps": [
+    {
+      "priority": "high",
+      "action": "Remove remaining duplicates",
+      "count": 977
+    },
+    {
+      "priority": "medium",
+      "action": "Organize remaining content",
+      "count": 291
+    }
+  ]
+}

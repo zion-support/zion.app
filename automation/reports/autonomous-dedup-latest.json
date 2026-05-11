@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-04-04T22:07:01.243Z",
+  "checks": {
+    "aiLabIds": 22,
+    "aiLabHrefs": 22,
+    "featuredIds": 5,
+    "featuredHrefs": 5,
+    "homepageAiLabRoutes": 7,
+    "backlogIdeas": 27,
+    "duplicateBacklogIdeasWithinBacklog": [
+      "add industry specific landing pages",
+      "implement a b testing for ctas"
+    ],
+    "duplicateBacklogIdeasAgainstCatalog": []
+  }
+}

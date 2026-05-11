@@ -1,0 +1,32 @@
+{
+  "enabledFeatures": {
+    "bugFixes": true,
+    "performance": true,
+    "codeQuality": true,
+    "newFeatures": true,
+    "testing": true,
+    "documentation": true,
+    "security": true,
+    "accessibility": true,
+    "seo": true
+  },
+  "priorities": {
+    "critical": ["security", "bugFixes"],
+    "high": ["performance", "accessibility"],
+    "medium": ["codeQuality", "testing"],
+    "low": ["documentation", "seo"]
+  },
+  "autoCommit": true,
+  "autoPush": true,
+  "maxChangesPerRun": 20,
+  "analysisInterval": 120000,
+  "featureSuggestions": true,
+  "aiProvider": "anthropic",
+  "repository": "https://github.com/Zion-Holdings/zion.app",
+  "canonicalUrl": "https://ziontechgroup.com",
+  "continuousMode": true,
+  "fastMode": true,
+  "parallelExecution": true,
+  "ultraFastMode": true
+}
+

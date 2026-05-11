@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-05-10T22:00:22.234Z",
+  "files": [
+    {
+      "file": "package.json",
+      "touches7d": 1,
+      "risk": "low",
+      "recommendation": "Normal edit flow is safe."
+    },
+    {
+      "file": "ecosystem.config.cjs",
+      "touches7d": 0,
+      "risk": "low",
+      "recommendation": "Normal edit flow is safe."
+    },
+    {
+      "file": "commands/deploy.cjs",
+      "touches7d": 0,
+      "risk": "low",
+      "recommendation": "Normal edit flow is safe."
+    },
+    {
+      "file": "OPENCLAW.md",
+      "touches7d": 0,
+      "risk": "low",
+      "recommendation": "Normal edit flow is safe."
+    },
+    {
+      "file": "memory/2026-03-20.md",
+      "touches7d": 0,
+      "risk": "low",
+      "recommendation": "Normal edit flow is safe."
+    }
+  ],
+  "highRiskFiles": []
+}

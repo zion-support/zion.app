@@ -1,0 +1,12 @@
+{
+  "admin@ziontechgroup.com": {
+    "email": "admin@ziontechgroup.com",
+    "subscribed": true,
+    "preferences": {
+      "systemAlerts": true,
+      "marketing": true,
+      "weeklyReports": true
+    },
+    "subscribedAt": "2025-01-27T00:00:00.000Z"
+  }
+}

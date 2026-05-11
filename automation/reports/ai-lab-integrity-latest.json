@@ -1,0 +1,19 @@
+{
+  "at": "2026-05-10T21:12:12.203Z",
+  "ok": true,
+  "totalTools": 30,
+  "healthy": 30,
+  "missingCount": 0,
+  "remediatedCount": 20,
+  "missing": [],
+  "autoRemediate": true,
+  "autoOpenIssue": true,
+  "autoPagesVisitBackfill": true,
+  "pagesVisitBackfill": {
+    "added": 0,
+    "addedPaths": [],
+    "skipped": false
+  },
+  "autoSmokeRoutesSync": true,
+  "smokeRoutesSynced": true
+}

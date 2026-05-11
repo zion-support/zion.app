@@ -1,0 +1,13 @@
+{
+  "id": "2026-04-27-001",
+  "title": "Enable nightly quantum scan cron",
+  "description": "Schedules a daily quantum memory scan at 02:00 UTC to continuously quantify memory and surface improvement opportunities.",
+  "changes": [
+    ".github/workflows/quantum-scan.yml",
+    "memory/.quantum-scan-report.json"
+  ],
+  "proposedBy": "innovation",
+  "timestamp": "2026-04-27T20:00:00Z",
+  "priority": "high",
+  "risk": "low"
+}

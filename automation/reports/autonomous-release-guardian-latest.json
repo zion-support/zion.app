@@ -1,0 +1,215 @@
+{
+  "generatedAt": "2026-03-20T15:41:00.218Z",
+  "baseUrl": "https://ziontechgroup.com",
+  "checkedCount": 20,
+  "unhealthyCount": 0,
+  "unhealthyRoutes": [],
+  "severity": "ok",
+  "rollbackRecommended": false,
+  "thresholds": {
+    "unhealthyRoutesAlertThreshold": 2,
+    "strictFailureThreshold": 4
+  },
+  "results": [
+    {
+      "route": "/",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/automation",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/blog",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/services",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/solutions",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/zion-ai-chatbot-playground",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/zion-ai-code-sandbox",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/zion-ai-site-evolution-simulator",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/ai-experiment-designer",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/ai-site-evolution-advisor",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-ai-experience-studio",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-backlog-prioritizer",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-conversion-copilot",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-deploy-optimizer",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-funnel-orchestrator",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-growth-loop-designer",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "route": "/ai-lab/autonomous-incident-commander",
+      "healthy": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

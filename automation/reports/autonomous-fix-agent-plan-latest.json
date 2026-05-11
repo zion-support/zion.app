@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-03-21T12:43:52.089Z",
+  "queuedCount": 3,
+  "criticalCount": 0,
+  "warningCount": 3,
+  "items": [
+    {
+      "id": "356af0183d09ec95",
+      "createdAt": "2026-03-21T12:43:52.022Z",
+      "status": "queued",
+      "title": "Fix workflow-unpinned-actions",
+      "severity": "warning",
+      "targetFile": ".github/workflows/ai-autonomy-quick.yml",
+      "rationale": "Found 2 unpinned uses@refs",
+      "suggestedCommand": "npm run pin-actions:strict"
+    },
+    {
+      "id": "c970ccd603abc9be",
+      "createdAt": "2026-03-21T12:43:52.023Z",
+      "status": "queued",
+      "title": "Fix workflow-unpinned-actions",
+      "severity": "warning",
+      "targetFile": ".github/workflows/ai-backlog-auto-runner.yml",
+      "rationale": "Found 2 unpinned uses@refs",
+      "suggestedCommand": "npm run pin-actions:strict"
+    },
+    {
+      "id": "8fc16c035121b9fc",
+      "createdAt": "2026-03-21T12:43:52.023Z",
+      "status": "queued",
+      "title": "Fix seo-robots-invalid-token",
+      "severity": "warning",
+      "targetFile": "app/utils/seoConstants.ts",
+      "rationale": "ROBOTS value \"_index, follow\" contains invalid \"_index\" token",
+      "suggestedCommand": "npm run type-check"
+    }
+  ]
+}

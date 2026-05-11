@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-03-21T16:00:01.686Z",
+  "version": 2,
+  "status": "nominal",
+  "score": 100,
+  "requiredEmail": "commercial@ziontechgroup.com",
+  "checkedFiles": [
+    "app/utils/seoConstants.ts",
+    "app/components/ContactFormClient.tsx",
+    "app/components/NewsletterSignup.tsx",
+    "app/blog/BlogNewsletterSignup.tsx",
+    "app/contact/page.tsx"
+  ],
+  "counts": {
+    "total": 0,
+    "critical": 0,
+    "warning": 0
+  },
+  "findings": []
+}

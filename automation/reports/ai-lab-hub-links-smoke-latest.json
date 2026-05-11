@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-03-21T12:20:03.206Z",
+  "baseUrl": "https://ziontechgroup.com",
+  "routeCount": 23,
+  "allOk": true,
+  "results": [
+    {
+      "path": "/ai-lab",
+      "url": "https://ziontechgroup.com/ai-lab",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/ai-experiment-designer",
+      "url": "https://ziontechgroup.com/ai-lab/ai-experiment-designer",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/ai-governance-risk-advisor",
+      "url": "https://ziontechgroup.com/ai-lab/ai-governance-risk-advisor",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/ai-site-evolution-advisor",
+      "url": "https://ziontechgroup.com/ai-lab/ai-site-evolution-advisor",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-ai-experience-studio",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-ai-experience-studio",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-backlog-prioritizer",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-backlog-prioritizer",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-conversion-copilot",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-conversion-copilot",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-deploy-optimizer",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-deploy-optimizer",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-funnel-orchestrator",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-funnel-orchestrator",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-growth-loop-designer",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-growth-loop-designer",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-incident-commander",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-incident-commander",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-media-prompt-studio",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-media-prompt-studio",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-opportunity-radar",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-opportunity-radar",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-rag-knowledge-workspace",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-rag-knowledge-workspace",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-retention-playbook",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-retention-playbook",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/autonomous-revenue-forecast-studio",
+      "url": "https://ziontechgroup.com/ai-lab/autonomous-revenue-forecast-studio",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/build-failure-explainer",
+      "url": "https://ziontechgroup.com/ai-lab/build-failure-explainer",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/deploy-drift-dashboard",
+      "url": "https://ziontechgroup.com/ai-lab/deploy-drift-dashboard",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/deployment-readiness-console",
+      "url": "https://ziontechgroup.com/ai-lab/deployment-readiness-console",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/idea-to-feature-blueprint",
+      "url": "https://ziontechgroup.com/ai-lab/idea-to-feature-blueprint",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/implementation-readiness-checker",
+      "url": "https://ziontechgroup.com/ai-lab/implementation-readiness-checker",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/roi-ops-scorecard",
+      "url": "https://ziontechgroup.com/ai-lab/roi-ops-scorecard",
+      "status": 200,
+      "ok": true,
+      "error": null
+    },
+    {
+      "path": "/ai-lab/rollout-blueprint",
+      "url": "https://ziontechgroup.com/ai-lab/rollout-blueprint",
+      "status": 200,
+      "ok": true,
+      "error": null
+    }
+  ]
+}

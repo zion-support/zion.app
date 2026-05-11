@@ -1,0 +1,32 @@
+# HELP zion_automation_mttr_slo_avg_hours Weighted average MTTR (hours) for closed automation-fp issues.
+# TYPE zion_automation_mttr_slo_avg_hours gauge
+zion_automation_mttr_slo_avg_hours 0
+
+# HELP zion_automation_mttr_slo_samples Number of closed samples in MTTR window.
+# TYPE zion_automation_mttr_slo_samples gauge
+zion_automation_mttr_slo_samples 0
+
+# HELP zion_automation_mttr_slo_band Ordinal: 0=healthy,1=warning,2=critical.
+# TYPE zion_automation_mttr_slo_band gauge
+zion_automation_mttr_slo_band 0
+
+# HELP zion_automation_mttr_slo_open_fp_issues Open issues with automation-fp-* labels.
+# TYPE zion_automation_mttr_slo_open_fp_issues gauge
+zion_automation_mttr_slo_open_fp_issues 0
+
+# HELP zion_automation_mttr_slo_critical_streak Consecutive critical-band runs.
+# TYPE zion_automation_mttr_slo_critical_streak gauge
+zion_automation_mttr_slo_critical_streak 0
+
+# HELP zion_automation_mttr_slo_critical_streak_threshold Streak required before deduped GitHub issue.
+# TYPE zion_automation_mttr_slo_critical_streak_threshold gauge
+zion_automation_mttr_slo_critical_streak_threshold 2
+
+# HELP zion_automation_mttr_slo_pd_gate Eligible for PagerDuty this run (1=yes).
+# TYPE zion_automation_mttr_slo_pd_gate gauge
+zion_automation_mttr_slo_pd_gate 0
+
+# HELP zion_automation_mttr_slo_health_score Composite 0-100 automation health score from guard.
+# TYPE zion_automation_mttr_slo_health_score gauge
+zion_automation_mttr_slo_health_score 100
+

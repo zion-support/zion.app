@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ziontechgroup.com/schemas/openclaw-autonomy-handoff.json",
+  "title": "OpenClaw autonomy handoff",
+  "type": "object",
+  "required": ["generatedAt", "schemaVersion", "summary", "sources"],
+  "properties": {
+    "generatedAt": { "type": "string", "minLength": 10 },
+    "schemaVersion": { "type": "integer", "enum": [1, 2] },
+    "sources": { "type": "object" },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "queueLength": { "type": ["integer", "null"] },
+        "queueItemsWithPatchHints": { "type": ["integer", "null"] },
+        "hotHighRisk": { "type": ["integer", "null"] },
+        "hotMediumRisk": { "type": ["integer", "null"] },
+        "deployDecision": { "type": ["string", "null"] },
+        "deployBand": { "type": ["string", "null"] },
+        "policyApproved": { "type": ["integer", "null"] },
+        "policyDenied": { "type": ["integer", "null"] },
+        "regressionIncidents": { "type": ["integer", "null"] }
+      }
+    },
+    "guidance": { "type": "object" },
+    "actionQueue": {},
+    "patchRouter": {},
+    "deployGate": {},
+    "regressionMemory": {},
+    "actionPolicy": {},
+    "approvedQueue": {}
+  },
+  "additionalProperties": true
+}

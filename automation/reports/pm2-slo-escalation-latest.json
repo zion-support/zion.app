@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-04-07T22:17:06.607Z",
+  "sourceReport": "/root/.openclaw/workspace/automation/reports/pm2-slo-latest.json",
+  "unhealthyCount": 16,
+  "totalApps": 56,
+  "unhealthyThreshold": 3,
+  "streakThreshold": 3,
+  "currentStreak": 35,
+  "shouldEscalate": true,
+  "escalationReason": "PM2 escalation metric (16 unhealthy) exceeded threshold (3) for 35 consecutive checks.",
+  "unhealthyApps": [
+    "ai-build-fixer",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomous-prompts",
+    "openclaw-autonomy-handoff",
+    "openclaw-confidence-trend-adapter",
+    "openclaw-deploy-confidence-gate",
+    "openclaw-prompt-quality-scorer"
+  ]
+}

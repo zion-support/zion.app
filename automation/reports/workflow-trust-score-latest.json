@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-04-14T04:37:02.648Z",
+  "trustScore": 100,
+  "band": "high",
+  "factors": {
+    "workflowCount": 369,
+    "criticalFindings": 0,
+    "warningFindings": 0,
+    "duplicateBodies": 0,
+    "duplicateNames": 0
+  }
+}

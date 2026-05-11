@@ -1,0 +1,5 @@
+#!/bin/bash
+# Cron job to run AI Email Audit Agent every 15 minutes
+
+cd /root/.openclaw/workspace/zion.app
+node automation/ai-email-audit-agent.cjs >> automation/logs/email-audit.log 2>&1

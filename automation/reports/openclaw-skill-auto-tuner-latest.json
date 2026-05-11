@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-05-10T22:00:20.716Z",
+  "inputs": {
+    "confidence": 0,
+    "auditHealthy": false,
+    "failingChecks": [
+      "promptRunnerExists",
+      "guardianExists",
+      "trendAdapterExists",
+      "regressionMemoryExists"
+    ],
+    "currentSuggested": {
+      "frequencySeconds": 50,
+      "maxParallel": 1
+    }
+  },
+  "decision": {
+    "mode": "stabilize",
+    "recommended": {
+      "frequencySeconds": 70,
+      "maxParallel": 1
+    },
+    "envHints": {
+      "OPENCLAW_FREQUENCY_SECONDS": "70",
+      "OPENCLAW_MAX_PARALLEL": "1"
+    }
+  },
+  "recommendation": "Reduce OpenClaw pressure and focus on remediation until confidence and skill audit recover."
+}

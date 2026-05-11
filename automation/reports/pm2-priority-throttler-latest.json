@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-04-07T22:14:54.684Z",
+  "totalProcesses": 57,
+  "totalCpu": 2.7000000000000006,
+  "totalMemoryMb": 2115,
+  "cpuThreshold": 85,
+  "memoryThresholdMb": 6144,
+  "pressure": true,
+  "dryRun": true,
+  "lowPriorityApps": [
+    "openclaw-autonomous-prompts"
+  ],
+  "actions": [
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "stop",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "stop",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "stop",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "stop",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    },
+    {
+      "app": "openclaw-autonomous-prompts",
+      "action": "restart",
+      "skipped": true
+    }
+  ]
+}

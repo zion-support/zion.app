@@ -1,0 +1,59 @@
+name: Release Risk EMA Tracker
+
+on:
+  schedule:
+    - cron: '0 6,18 * * *'  # 6 AM and 6 PM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ema-track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Calculate EMA risk
+        env:
+          ZION_BASE_URL: https://ziontechgroup.com
+        run: |
+          npm run release:risk:ema || true
+      
+      - name: Alert on rising risk trend
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/release-risk-ema-latest.json"
+          if [ -f "$report" ]; then
+            node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('$report','utf8'));
+            if (data.trend === 'rising' && data.riskScore > 60) {
+              console.log('ALERT:Risk trend rising - score ' + data.riskScore);
+            }"
+          fi || true
+      
+      - name: Upload EMA report
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-risk-ema-${{ github.run_id }}
+          path: automation/reports/release-risk-ema-latest.json
+          retention-days: 60

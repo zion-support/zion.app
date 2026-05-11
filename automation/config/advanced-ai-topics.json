@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": 1,
+  "description": "Priority topics for advanced AI solutions content. Used by automation agents to decide what to write or refresh each run.",
+  "defaults": {
+    "runWeights": {
+      "newBlogWeight": 0.6,
+      "refreshPageWeight": 0.4
+    },
+    "maxPerRun": {
+      "newBlog": 2,
+      "refreshPages": 2
+    },
+    "minDaysBetweenRefresh": 7
+  },
+  "topics": [
+    {
+      "id": "generative_ai_enterprise",
+      "title": "Generative AI Enterprise",
+      "priority": "critical",
+      "audience": "CTO, CDO, VP Engineering, Head of AI",
+      "summary": "Enterprise-scale generative AI with RAG, fine-tuning, and governed content generation.",
+      "pageTypes": ["deep_dive_blog", "architecture_playbook", "faq"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/generative-ai-enterprise/",
+        "relatedServices": [
+          "/ai-services/ai-rag-knowledge-systems/",
+          "/ai-services/ai-observability-mlops/",
+          "/ai-services/ai-strategy-roadmap/"
+        ],
+        "solutionRoutes": [
+          "/solutions/technology-and-saas/",
+          "/solutions/financial-services/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["AI Trends", "Technical Guide", "Business Strategy"],
+        "suggestedSlugs": [
+          "enterprise-generative-ai-reference-architectures",
+          "governed-generative-ai-patterns-for-regulated-industries"
+        ]
+      }
+    },
+    {
+      "id": "ai_agents_autonomous",
+      "title": "AI Agents & Autonomous Workflows",
+      "priority": "critical",
+      "audience": "Head of Automation, VP Operations, Product Leaders",
+      "summary": "Agentic AI, multi-step workflows, tool use, planning and execution for enterprise automation.",
+      "pageTypes": ["deep_dive_blog", "architecture_playbook", "case_study"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-agents-autonomous/",
+        "relatedServices": [
+          "/ai-services/ai-copilot-enterprise/",
+          "/ai-services/ai-model-orchestration/"
+        ],
+        "solutionRoutes": [
+          "/solutions/logistics-supply-chain/",
+          "/solutions/operations/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["AI Trends", "Technical Guide"],
+        "suggestedSlugs": [
+          "agentic-ai-reference-designs-for-enterprise-workflows",
+          "designing-safe-autonomous-agents-with-human-in-the-loop"
+        ]
+      }
+    },
+    {
+      "id": "rag_knowledge_systems",
+      "title": "RAG & Enterprise Knowledge Systems",
+      "priority": "high",
+      "audience": "Head of Knowledge Management, Platform Engineering, Data Leaders",
+      "summary": "Retrieval-augmented generation for internal knowledge bases, documents, and structured data.",
+      "pageTypes": ["technical_guide", "deep_dive_blog"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-rag-knowledge-systems/",
+        "relatedServices": [
+          "/ai-services/ai-observability-mlops/",
+          "/ai-services/ai-integration-apis/"
+        ],
+        "solutionRoutes": [
+          "/solutions/legal-professional-services/",
+          "/solutions/healthcare/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Technical Guide"],
+        "suggestedSlugs": [
+          "enterprise-rag-design-patterns-and-evaluation",
+          "scaling-rag-knowledge-systems-across-business-units"
+        ]
+      }
+    },
+    {
+      "id": "multimodal_intelligence",
+      "title": "AI Multimodal Intelligence",
+      "priority": "high",
+      "audience": "Head of Product, Media & CX Leaders, Data Science",
+      "summary": "Vision + language + audio for document understanding, inspection, and rich customer experiences.",
+      "pageTypes": ["deep_dive_blog", "case_study"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-multimodal-intelligence/",
+        "relatedServices": [
+          "/ai-services/generative-ai-enterprise/",
+          "/ai-services/ai-edge-realtime-inference/"
+        ],
+        "solutionRoutes": [
+          "/solutions/media-entertainment/",
+          "/solutions/manufacturing-industrial/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["AI Trends", "Technical Guide"],
+        "suggestedSlugs": [
+          "multimodal-ai-reference-architectures-for-enterprise",
+          "from-documents-to-video-end-to-end-multimodal-pipelines"
+        ]
+      }
+    },
+    {
+      "id": "edge_realtime_inference",
+      "title": "AI Edge & Real-Time Inference",
+      "priority": "high",
+      "audience": "VP Engineering, Platform & Infra, OT Leaders",
+      "summary": "Low-latency inference at the edge for voice, video, and high-frequency decision systems.",
+      "pageTypes": ["technical_guide", "architecture_playbook"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-edge-realtime-inference/",
+        "relatedServices": [
+          "/ai-services/ai-observability-mlops/",
+          "/ai-services/ai-integration-apis/"
+        ],
+        "solutionRoutes": [
+          "/solutions/energy-utilities/",
+          "/solutions/transportation-fleet/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Technical Guide"],
+        "suggestedSlugs": [
+          "designing-edge-ai-pipelines-for-subsecond-latency",
+          "observability-patterns-for-real-time-ai-systems"
+        ]
+      }
+    },
+    {
+      "id": "ai_model_orchestration",
+      "title": "AI Model Orchestration",
+      "priority": "high",
+      "audience": "Platform Engineering, MLOps, FinOps",
+      "summary": "Multi-model routing, fallback, cost optimization and policy-based model selection.",
+      "pageTypes": ["technical_guide", "deep_dive_blog"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-model-orchestration/",
+        "relatedServices": [
+          "/ai-services/ai-observability-mlops/",
+          "/ai-services/ai-strategy-roadmap/"
+        ],
+        "solutionRoutes": [
+          "/solutions/technology-and-saas/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Technical Guide"],
+        "suggestedSlugs": [
+          "designing-multi-provider-llm-orchestration-for-enterprise",
+          "building-cost-aware-routing-and-fallback-for-ai-workloads"
+        ]
+      }
+    },
+    {
+      "id": "ai_governance_trust",
+      "title": "AI Governance & Trust",
+      "priority": "critical",
+      "audience": "CISO, CDO, Risk & Compliance, CIO",
+      "summary": "Policy enforcement, bias monitoring, audit trails, and EU AI Act–ready governance.",
+      "pageTypes": ["framework_guide", "faq", "deep_dive_blog"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-governance-trust/",
+        "relatedServices": [
+          "/ai-services/ai-security-responsible-ai/",
+          "/ai-services/ai-strategy-roadmap/"
+        ],
+        "solutionRoutes": [
+          "/solutions/financial-services/",
+          "/solutions/government-and-public-sector/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Business Strategy", "AI Trends"],
+        "suggestedSlugs": [
+          "practical-ai-governance-frameworks-for-regulated-enterprises",
+          "designing-ai-risk-registers-and-approval-workflows"
+        ]
+      }
+    },
+    {
+      "id": "ai_observability_mlops",
+      "title": "AI Observability & MLOps",
+      "priority": "high",
+      "audience": "MLOps, SRE, Platform Teams",
+      "summary": "Tracing, evaluation, monitoring and automation for production AI systems.",
+      "pageTypes": ["technical_guide", "architecture_playbook"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-observability-mlops/",
+        "relatedServices": [
+          "/ai-services/ai-integration-apis/",
+          "/ai-services/ai-model-orchestration/"
+        ],
+        "solutionRoutes": [
+          "/solutions/technology-and-saas/",
+          "/solutions/logistics-supply-chain/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Technical Guide"],
+        "suggestedSlugs": [
+          "observability-patterns-for-agentic-and-rag-systems",
+          "closing-the-loop-with-evaluations-in-production-mlops"
+        ]
+      }
+    },
+    {
+      "id": "ai_security_responsible_ai",
+      "title": "AI Security & Responsible AI",
+      "priority": "critical",
+      "audience": "CISO, Security Engineering, Risk Leaders",
+      "summary": "Adversarial robustness, prompt injection defense, privacy, fairness, and human oversight.",
+      "pageTypes": ["security_guide", "deep_dive_blog", "faq"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-security-responsible-ai/",
+        "relatedServices": [
+          "/ai-services/ai-governance-trust/",
+          "/ai-services/ai-regulated-industries/"
+        ],
+        "solutionRoutes": [
+          "/solutions/cybersecurity/",
+          "/solutions/financial-services/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Security"],
+        "suggestedSlugs": [
+          "threat-models-for-enterprise-ai-systems",
+          "designing-defense-in-depth-for-llm-and-agent-workloads"
+        ]
+      }
+    },
+    {
+      "id": "ai_regulated_industries",
+      "title": "AI for Regulated Industries",
+      "priority": "high",
+      "audience": "Regulatory, Risk, Compliance, Line-of-Business Leaders",
+      "summary": "HIPAA, SOC 2, GDPR, EU AI Act–ready workflows across healthcare, finance, and public sector.",
+      "pageTypes": ["industry_guides", "case_study"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-regulated-industries/",
+        "relatedServices": [
+          "/ai-services/ai-governance-trust/",
+          "/ai-services/ai-security-responsible-ai/"
+        ],
+        "solutionRoutes": [
+          "/solutions/healthcare/",
+          "/solutions/banking-and-capital-markets/",
+          "/solutions/government-and-public-sector/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Industry Guide", "Business Strategy"],
+        "suggestedSlugs": [
+          "blueprints-for-ai-in-regulated-industries",
+          "mapping-ai-use-cases-to-eu-ai-act-risk-tiers"
+        ]
+      }
+    },
+    {
+      "id": "ai_foundation_models_custom_training",
+      "title": "AI Foundation Models & Custom Training",
+      "priority": "medium",
+      "audience": "CTO, Head of AI, Data Science",
+      "summary": "Domain-specific pretraining, fine-tuning, alignment and data governance with full data sovereignty.",
+      "pageTypes": ["deep_dive_blog", "architecture_playbook"],
+      "targetRoutes": {
+        "primaryService": "/ai-services/ai-foundation-models-custom-training/",
+        "relatedServices": [
+          "/ai-services/generative-ai-enterprise/",
+          "/ai-services/ai-observability-mlops/"
+        ],
+        "solutionRoutes": [
+          "/solutions/pharmaceuticals-life-sciences/",
+          "/solutions/technology-and-saas/"
+        ]
+      },
+      "blog": {
+        "preferredCategories": ["Technical Guide", "AI Trends"],
+        "suggestedSlugs": [
+          "deciding-between-off-the-shelf-vs-custom-foundation-models",
+          "designing-data-pipelines-for-safe-foundation-model-training"
+        ]
+      }
+    }
+  ]
+}
+

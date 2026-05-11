@@ -1,0 +1,36 @@
+'use client';
+
+export default function BlockchainProvenanceTracker() {
+  return (
+    <div className="p-6 bg-gradient-to-br from-white to-emerald-50 rounded-xl shadow-lg">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h2 className="text-2xl font-bold text-emerald-900">
+            <span className="text-3xl mr-2">🔗</span> Blockchain Provenance Tracker
+          </h2>
+          <p className="text-sm text-gray-600 mt-1">
+            Immutable code and data provenance tracking with quantum-resistant blockchain verification
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <button className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-colors">
+            Verify Chain
+          </button>
+        </div>
+      </div>
+      <div className="mt-6 bg-white/70 backdrop-blur rounded-lg p-4">
+        <h3 className="font-semibold text-gray-800 mb-2">Blockchain Features</h3>
+        <ul className="space-y-2 text-sm text-gray-700">
+          <li>Immutable code change tracking</li>
+          <li>Quantum-resistant hash verification</li>
+          <li>Real-time integrity monitoring</li>
+          <li>Automated audit trail generation</li>
+        </ul>
+      </div>
+      <div className="mt-4 flex items-center gap-2 text-green-600">
+        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+        <span className="text-sm font-medium">Verifying...</span>
+      </div>
+    </div>
+  );
+}

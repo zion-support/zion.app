@@ -1,0 +1,17 @@
+{
+  "assigneeRules": [],
+  "runbookRules": [
+    {
+      "matchTitleContains": ["PM2", "SLO", "restart"],
+      "url": "https://github.com/Zion-support/zion.app/blob/main/automation/PM2-AUTOMATION-OPERATIONS.md"
+    },
+    {
+      "matchTitleContains": ["route", "sitemap", "drift"],
+      "url": "https://github.com/Zion-support/zion.app/blob/main/docs/automation-issue-dedupe-helper.md"
+    },
+    {
+      "default": true,
+      "url": "https://github.com/Zion-support/zion.app/blob/main/docs/automation-fingerprint-incident-digest.md"
+    }
+  ]
+}

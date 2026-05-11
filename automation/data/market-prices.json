@@ -1,0 +1,410 @@
+{
+  "prices": [
+    {
+      "slug": "zion-ai-chatbot-builder",
+      "title": "Zion AI Chatbot Builder",
+      "category": "Customer Experience",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Chatbot Builder pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:29.644Z"
+    },
+    {
+      "slug": "zion-ai-customer-support-pro",
+      "title": "Zion AI Customer Support Pro",
+      "category": "Customer Experience",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Customer Support Pro pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:29.724Z"
+    },
+    {
+      "slug": "zion-ai-email-assistant",
+      "title": "Zion AI Email Assistant",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Email Assistant pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:29.801Z"
+    },
+    {
+      "slug": "zion-ai-marketing-automation",
+      "title": "Zion AI Marketing Automation",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Marketing Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:29.805Z"
+    },
+    {
+      "slug": "zion-ai-social-media-manager",
+      "title": "Zion AI Social Media Manager",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Social Media Manager pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:29.883Z"
+    },
+    {
+      "slug": "zion-ai-sales-predictor",
+      "title": "Zion AI Sales Predictor",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Sales Predictor pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:31.886Z"
+    },
+    {
+      "slug": "zion-ai-predictive-analytics",
+      "title": "Zion AI Predictive Analytics",
+      "category": "Decision Intelligence",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Predictive Analytics pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:31.889Z"
+    },
+    {
+      "slug": "zion-ai-code-assistant",
+      "title": "Zion AI Code Assistant",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Code Assistant pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:31.963Z"
+    },
+    {
+      "slug": "zion-ai-code-reviewer",
+      "title": "Zion AI Code Reviewer",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Code Reviewer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:32.124Z"
+    },
+    {
+      "slug": "zion-ai-api-tester",
+      "title": "Zion AI API Tester",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI API Tester pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:32.203Z"
+    },
+    {
+      "slug": "zion-ai-database-optimizer",
+      "title": "Zion AI Database Optimizer",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Database Optimizer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:34.206Z"
+    },
+    {
+      "slug": "zion-devops-automation",
+      "title": "Zion DevOps Automation",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion DevOps Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:34.208Z"
+    },
+    {
+      "slug": "zion-security-shield",
+      "title": "Zion Security Shield",
+      "category": "Security",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Security Shield pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:34.209Z"
+    },
+    {
+      "slug": "zion-cybersecurity-audit",
+      "title": "Zion Cybersecurity Audit",
+      "category": "Security",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Cybersecurity Audit pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:34.211Z"
+    },
+    {
+      "slug": "zion-cloud-vault",
+      "title": "Zion Cloud Vault",
+      "category": "Security",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Cloud Vault pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:34.281Z"
+    },
+    {
+      "slug": "zion-data-sync",
+      "title": "Zion Data Sync",
+      "category": "Infrastructure",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Data Sync pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:36.285Z"
+    },
+    {
+      "slug": "zion-ai-translation-service",
+      "title": "Zion AI Translation Service",
+      "category": "Productivity",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Translation Service pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:36.288Z"
+    },
+    {
+      "slug": "zion-ai-video-generator",
+      "title": "Zion AI Video Generator",
+      "category": "Productivity",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Video Generator pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:36.289Z"
+    },
+    {
+      "slug": "zion-ai-email-marketing-pro",
+      "title": "Zion AI Email Marketing Pro",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Email Marketing Pro pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:36.291Z"
+    },
+    {
+      "slug": "zion-ai-lead-scoring",
+      "title": "Zion AI Lead Scoring",
+      "category": "Growth",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Lead Scoring pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:36.362Z"
+    },
+    {
+      "slug": "zion-smart-crm-automation",
+      "title": "Zion Smart CRM Automation",
+      "category": "Automation",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Smart CRM Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:38.442Z"
+    },
+    {
+      "slug": "zion-workflow-automation",
+      "title": "Zion Workflow Automation",
+      "category": "Automation",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion Workflow Automation pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:38.445Z"
+    },
+    {
+      "slug": "zion-ai-document-processor",
+      "title": "Zion AI Document Processor",
+      "category": "Operations",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Document Processor pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:38.447Z"
+    },
+    {
+      "slug": "zion-ai-document-analyzer",
+      "title": "Zion AI Document Analyzer",
+      "category": "Operations",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Document Analyzer pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:38.604Z"
+    },
+    {
+      "slug": "zion-ai-chatbot-playground",
+      "title": "Zion AI Chatbot Playground",
+      "category": "Customer Experience",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Chatbot Playground pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:38.762Z"
+    },
+    {
+      "slug": "zion-ai-code-sandbox",
+      "title": "Zion AI Code Sandbox",
+      "category": "Engineering",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Zion AI Code Sandbox pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:40.922Z"
+    },
+    {
+      "slug": "micro-saas-ai-idea-generator",
+      "title": "AI Micro-SaaS Idea Generator",
+      "category": "Productivity",
+      "estimatedPrice": 49,
+      "priceRange": null,
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "AI Micro-SaaS Idea Generator pricing subscription - Pricing",
+          "url": "https://example.com"
+        }
+      ],
+      "researchedAt": "2026-03-23T12:30:41.003Z"
+    }
+  ],
+  "lastUpdated": "2026-03-23T12:30:41.003Z"
+}

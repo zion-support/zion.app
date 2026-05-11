@@ -1,0 +1,7 @@
+# Code Owners for zion-tech-group repository
+* @Zion-Holdings/core-team
+/automation/ @Zion-Holdings/devops-team
+/app/ @Zion-Holdings/frontend-team
+/api/ @Zion-Holdings/backend-team
+/.github/ @Zion-Holdings/devops-team
+*.md @Zion-Holdings/docs-team

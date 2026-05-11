@@ -1,0 +1,328 @@
+# Cron Collision Report
+
+- Generated at: `2026-03-24T17:23:29.298Z`
+- Workflow files scanned: `211`
+- Total scheduled expressions: `247`
+- Exact collisions: `49`
+- Dense minute-hour windows: `16`
+
+## Exact cron collisions
+
+- `0 8 * * *` used by 6 workflows
+  - ai-app-improvement-daily-quick.yml
+  - ai-automation-health-monitor.yml
+  - ai-content-ideas-and-evolution-deploy.yml
+  - ai-content-rapid.yml
+  - ai-ideas-implementation.yml
+  - ai-ultra-fast-content.yml
+- `35 */6 * * *` used by 5 workflows
+  - ai-autonomous-idea-guarded-cycle.yml
+  - ai-openclaw-runner-guard.yml
+  - ai-pm2-config-drift-guard.yml
+  - ai-promotion-confidence-anomaly.yml
+  - ai-weekly-automation-health-sla-orchestrator.yml
+- `*/10 * * * *` used by 5 workflows
+  - ai-autonomous-runtime-guardian.yml
+  - ai-autonomous-self-heal-factory.yml
+  - ai-github-integrity-fix-factory.yml
+  - ai-github-workflow-integrity-audit-daily.yml
+  - ai-lead-form-routing-guard-daily.yml
+- `0 4 * * *` used by 5 workflows
+  - ai-content-automation.yml
+  - ai-content-burst-high-frequency.yml
+  - ai-content-rapid.yml
+  - ai-ideas-implementation.yml
+  - ai-ultra-fast-content.yml
+- `0 3 * * *` used by 4 workflows
+  - ai-advanced-ai-content.yml
+  - ai-content-burst.yml
+  - ai-content-max-velocity-deploy.yml
+  - stale.yml
+- `0 19 * * *` used by 4 workflows
+  - ai-advanced-ai-content.yml
+  - ai-content-burst-high-frequency.yml
+  - ai-content-burst.yml
+  - ai-content-ideas-deploy.yml
+- `0 6 * * 1` used by 4 workflows
+  - ai-agents-docs-updater.yml
+  - ai-services-and-content-automation.yml
+  - ai-weekly-content-seo-hygiene.yml
+  - lighthouse-ci.yml
+- `0 16 * * *` used by 4 workflows
+  - ai-content-burst-high-frequency.yml
+  - ai-content-rapid.yml
+  - ai-ideas-implementation.yml
+  - ai-ultra-fast-content.yml
+- `0 12 * * *` used by 4 workflows
+  - ai-content-max-velocity-deploy.yml
+  - ai-content-rapid.yml
+  - ai-ideas-implementation.yml
+  - ai-ultra-fast-content.yml
+- `0 8 * * 2` used by 3 workflows
+  - ai-accessibility-audit.yml
+  - ai-schema-validator.yml
+  - ai-weekly-live-ideas-implement.yml
+- `0 11 * * *` used by 3 workflows
+  - ai-advanced-ai-content.yml
+  - ai-content-burst-ultra.yml
+  - ai-content-burst.yml
+- `0 12 * * 5` used by 3 workflows
+  - ai-app-improvement-specialist.yml
+  - ai-friday-automation.yml
+  - ai-services-and-content-automation.yml
+- `0 12 * * 3` used by 3 workflows
+  - ai-app-visit-audit-implement-deploy.yml
+  - ai-local-llm-app-automation.yml
+  - ai-services-and-content-automation.yml
+- `0 6 * * *` used by 3 workflows
+  - ai-backlog-auto-runner.yml
+  - ai-content-rapid.yml
+  - ai-live-content-ideas-daily.yml
+- `0 1 * * *` used by 3 workflows
+  - ai-content-accelerator.yml
+  - ai-content-burst-high-frequency.yml
+  - ai-content-velocity.yml
+- `0 14 * * *` used by 3 workflows
+  - ai-content-accelerator.yml
+  - ai-content-ideas-deploy.yml
+  - ai-content-rapid.yml
+- `0 7 * * *` used by 3 workflows
+  - ai-content-burst-high-frequency.yml
+  - ai-content-burst.yml
+  - site-improv-agent.yml
+- `0 10 * * *` used by 3 workflows
+  - ai-content-burst-high-frequency.yml
+  - ai-content-maximum-velocity.yml
+  - ai-content-rapid.yml
+- `0 22 * * *` used by 3 workflows
+  - ai-content-burst-high-frequency.yml
+  - ai-content-rapid.yml
+  - ai-ultra-fast-content.yml
+- `0 9 * * *` used by 3 workflows
+  - ai-content-burst.yml
+  - ai-content-ideas-deploy.yml
+  - ai-content-max-velocity-deploy.yml
+- `0 20 * * *` used by 3 workflows
+  - ai-content-ideas-and-evolution-deploy.yml
+  - ai-content-rapid.yml
+  - ai-ultra-fast-content.yml
+- `25 */6 * * *` used by 3 workflows
+  - ai-openclaw-auth-runtime-diagnostic.yml
+  - ai-openclaw-runtime-applier.yml
+  - ai-production-smoke-scheduled.yml
+- `25 10 * * 1` used by 2 workflows
+  - ai-ai-lab-legacy-scaffold-weekly.yml
+  - workflow-contracts-weekly.yml
+- `0 14 * * 6` used by 2 workflows
+  - ai-app-evolution-audit.yml
+  - ai-app-visit-audit-implement-deploy.yml
+- `0 6 * * 2` used by 2 workflows
+  - ai-app-improvement-evolution.yml
+  - ai-services-and-content-automation.yml
+- `0 6 * * 3` used by 2 workflows
+  - ai-app-improvement-evolution.yml
+  - ai-services-and-content-automation.yml
+- `0 6 * * 5` used by 2 workflows
+  - ai-app-improvement-evolution.yml
+  - ai-services-and-content-automation.yml
+- `0 12 * * 1` used by 2 workflows
+  - ai-app-improvement-orchestrator.yml
+  - ai-services-and-content-automation.yml
+- `0 5 * * 0` used by 2 workflows
+  - ai-app-quality-audit.yml
+  - ai-weekly-security-audit.yml
+- `12 */6 * * *` used by 2 workflows
+  - ai-automation-health-static-freshness-guard.yml
+  - ai-weekly-automation-health-linker-orchestrator.yml
+- `0 10 * * 3` used by 2 workflows
+  - ai-automation-improvements.yml
+  - ai-performance-optimizer.yml
+- `0 11 * * 1` used by 2 workflows
+  - ai-autonomous-improvements.yml
+  - ai-report-aggregator.yml
+- `0 13 * * *` used by 2 workflows
+  - ai-content-burst-high-frequency.yml
+  - ai-content-burst.yml
+- `0 0 * * *` used by 2 workflows
+  - ai-content-burst-ultra.yml
+  - ai-content-velocity.yml
+- `0 5 * * *` used by 2 workflows
+  - ai-content-burst-ultra.yml
+  - ai-content-burst.yml
+- `0 17 * * *` used by 2 workflows
+  - ai-content-burst-ultra.yml
+  - ai-content-burst.yml
+- `0 21 * * *` used by 2 workflows
+  - ai-content-burst.yml
+  - ai-content-max-velocity-deploy.yml
+- `0 18 * * *` used by 2 workflows
+  - ai-content-max-velocity-deploy.yml
+  - ai-content-rapid.yml
+- `50 */6 * * *` used by 2 workflows
+  - ai-experiment-outcome-ledger.yml
+  - ai-pm2-slo-agent.yml
+- `0 7 * * 2` used by 2 workflows
+  - ai-front-page-services-content.yml
+  - ai-live-ux-audit.yml
+- `0 6 * * 4` used by 2 workflows
+  - ai-image-optimization-audit.yml
+  - ai-services-and-content-automation.yml
+- `0 12 * * 6` used by 2 workflows
+  - ai-layout-design-audit.yml
+  - ai-services-and-content-automation.yml
+- `0 11 * * 5` used by 2 workflows
+  - ai-layout-design-automation-weekly.yml
+  - ai-layout-design-automation.yml
+- `0 9 * * 4` used by 2 workflows
+  - ai-navigation-improvement-automation.yml
+  - ai-weekly-live-link-audit.yml
+- `10 */6 * * *` used by 2 workflows
+  - ai-openclaw-autonomous-cycle.yml
+  - ai-openclaw-skill-auto-tuner.yml
+- `0 12 * * 0` used by 2 workflows
+  - ai-services-and-content-automation.yml
+  - lighthouse-production.yml
+- `0 12 * * 4` used by 2 workflows
+  - ai-services-and-content-automation.yml
+  - ai-weekly-maintenance.yml
+- `0 8 * * 0` used by 2 workflows
+  - ai-weekly-automation-ideas-from-live-audit.yml
+  - ai-weekly-dependency-hygiene.yml
+- `*/30 * * * *` used by 2 workflows
+  - ai-workflow-trust-regression-guard.yml
+  - autonomous-release-guardian.yml
+
+## Dense minute-hour windows
+
+- `0 12` has 19 schedules
+  - ai-app-improvement-orchestrator.yml -> 0 12 * * 1
+  - ai-app-improvement-specialist.yml -> 0 12 * * 5
+  - ai-app-visit-audit-implement-deploy.yml -> 0 12 * * 3
+  - ai-content-max-velocity-deploy.yml -> 0 12 * * *
+  - ai-content-rapid.yml -> 0 12 * * *
+  - ai-friday-automation.yml -> 0 12 * * 5
+  - ai-ideas-implementation.yml -> 0 12 * * *
+  - ai-layout-design-audit.yml -> 0 12 * * 6
+  - ... 11 more
+- `0 6` has 17 schedules
+  - ai-agents-docs-updater.yml -> 0 6 * * 1
+  - ai-app-improvement-evolution.yml -> 0 6 * * 2
+  - ai-app-improvement-evolution.yml -> 0 6 * * 3
+  - ai-app-improvement-evolution.yml -> 0 6 * * 5
+  - ai-backlog-auto-runner.yml -> 0 6 * * *
+  - ai-content-rapid.yml -> 0 6 * * *
+  - ai-image-optimization-audit.yml -> 0 6 * * 4
+  - ai-live-content-ideas-daily.yml -> 0 6 * * *
+  - ... 9 more
+- `0 8` has 16 schedules
+  - ai-accessibility-audit.yml -> 0 8 * * 2
+  - ai-app-improvement-daily-quick.yml -> 0 8 * * *
+  - ai-automation-health-monitor.yml -> 0 8 * * *
+  - ai-automations.yml -> 0 8 * * 1
+  - ai-content-ideas-and-evolution-deploy.yml -> 0 8 * * *
+  - ai-content-rapid.yml -> 0 8 * * *
+  - ai-continuous-improvement.yml -> 0 8 * * 1-5
+  - ai-ideas-implementation.yml -> 0 8 * * *
+  - ... 8 more
+- `0 11` has 10 schedules
+  - ai-advanced-ai-content.yml -> 0 11 * * *
+  - ai-app-evolution-automation.yml -> 0 11 * * 0
+  - ai-automation-audit.yml -> 0 11 * * 6
+  - ai-autonomous-improvements.yml -> 0 11 * * 1
+  - ai-content-burst-ultra.yml -> 0 11 * * *
+  - ai-content-burst.yml -> 0 11 * * *
+  - ai-development-speed-accelerator.yml -> 0 11 * * 2
+  - ai-layout-design-automation-weekly.yml -> 0 11 * * 5
+  - ... 2 more
+- `0 7` has 10 schedules
+  - ai-app-improvement-evolution-full-quality.yml -> 0 7 1-7 * 0
+  - ai-broken-link-page-automation.yml -> 0 7 * * 2,5
+  - ai-content-burst-high-frequency.yml -> 0 7 * * *
+  - ai-content-burst.yml -> 0 7 * * *
+  - ai-content-quality-auditor.yml -> 0 7 * * 1
+  - ai-front-page-services-content.yml -> 0 7 * * 2
+  - ai-front-page-services-content.yml -> 0 7 * * 5
+  - ai-live-accessibility-audit.yml -> 0 7 * * 4
+  - ... 2 more
+- `0 18` has 10 schedules
+  - ai-content-max-velocity-deploy.yml -> 0 18 * * *
+  - ai-content-rapid.yml -> 0 18 * * *
+  - ai-patch-only-auto-pr.yml -> 0 18 2 * *
+  - ai-services-and-content-automation.yml -> 0 18 * * 0
+  - ai-services-and-content-automation.yml -> 0 18 * * 1
+  - ai-services-and-content-automation.yml -> 0 18 * * 2
+  - ai-services-and-content-automation.yml -> 0 18 * * 3
+  - ai-services-and-content-automation.yml -> 0 18 * * 4
+  - ... 2 more
+- `0 10` has 9 schedules
+  - ai-app-audit-automation.yml -> 0 10 * * 6
+  - ai-automation-improvements.yml -> 0 10 * * 3
+  - ai-content-burst-high-frequency.yml -> 0 10 * * *
+  - ai-content-maximum-velocity.yml -> 0 10 * * *
+  - ai-content-rapid.yml -> 0 10 * * *
+  - ai-ecosystem-intelligence.yml -> 0 10 * * 1
+  - ai-layout-design-automation.yml -> 0 10 * * 2
+  - ai-performance-optimizer.yml -> 0 10 * * 3
+  - ... 1 more
+- `0 14` has 9 schedules
+  - ai-app-evolution-audit.yml -> 0 14 * * 6
+  - ai-app-visit-audit-implement-deploy.yml -> 0 14 * * 6
+  - ai-app-visit-intelligence.yml -> 0 14 * * 1
+  - ai-content-accelerator.yml -> 0 14 * * *
+  - ai-content-ideas-deploy.yml -> 0 14 * * *
+  - ai-content-rapid.yml -> 0 14 * * *
+  - ai-layout-improvement.yml -> 0 14 * * 2
+  - ai-local-llm-specialists.yml -> 0 14 * * 4
+  - ... 1 more
+- `0 9` has 9 schedules
+  - ai-content-burst.yml -> 0 9 * * *
+  - ai-content-ideas-deploy.yml -> 0 9 * * *
+  - ai-content-max-velocity-deploy.yml -> 0 9 * * *
+  - ai-development-agent.yml -> 0 9 * * 1-5
+  - ai-github-actions-audit.yml -> 0 9 * * 0
+  - ai-navigation-improvement-automation.yml -> 0 9 * * 4
+  - ai-seo-content-optimizer.yml -> 0 9 * * 3
+  - ai-weekly-live-app-audit-auto-fix.yml -> 0 9 * * 6
+  - ... 1 more
+- `0 5` has 6 schedules
+  - ai-app-quality-audit.yml -> 0 5 * * 0
+  - ai-content-burst-ultra.yml -> 0 5 * * *
+  - ai-content-burst.yml -> 0 5 * * *
+  - ai-cron-tuner.yml -> 0 5 * * 1
+  - ai-live-content-ideas.yml -> 0 5 * * 1,3,5
+  - ai-weekly-security-audit.yml -> 0 5 * * 0
+- `0 4` has 6 schedules
+  - ai-content-automation.yml -> 0 4 * * *
+  - ai-content-burst-high-frequency.yml -> 0 4 * * *
+  - ai-content-rapid.yml -> 0 4 * * *
+  - ai-ideas-implementation.yml -> 0 4 * * *
+  - ai-ultra-fast-content.yml -> 0 4 * * *
+  - codeql-analysis.yml -> 0 4 * * 1
+- `35 */6` has 5 schedules
+  - ai-autonomous-idea-guarded-cycle.yml -> 35 */6 * * *
+  - ai-openclaw-runner-guard.yml -> 35 */6 * * *
+  - ai-pm2-config-drift-guard.yml -> 35 */6 * * *
+  - ai-promotion-confidence-anomaly.yml -> 35 */6 * * *
+  - ai-weekly-automation-health-sla-orchestrator.yml -> 35 */6 * * *
+- `*/10 *` has 5 schedules
+  - ai-autonomous-runtime-guardian.yml -> */10 * * * *
+  - ai-autonomous-self-heal-factory.yml -> */10 * * * *
+  - ai-github-integrity-fix-factory.yml -> */10 * * * *
+  - ai-github-workflow-integrity-audit-daily.yml -> */10 * * * *
+  - ai-lead-form-routing-guard-daily.yml -> */10 * * * *
+- `0 16` has 5 schedules
+  - ai-content-burst-high-frequency.yml -> 0 16 * * *
+  - ai-content-rapid.yml -> 0 16 * * *
+  - ai-dependency-upgrade-train-monthly.yml -> 0 16 3 * *
+  - ai-ideas-implementation.yml -> 0 16 * * *
+  - ai-ultra-fast-content.yml -> 0 16 * * *
+- `0 3` has 4 schedules
+  - ai-advanced-ai-content.yml -> 0 3 * * *
+  - ai-content-burst.yml -> 0 3 * * *
+  - ai-content-max-velocity-deploy.yml -> 0 3 * * *
+  - stale.yml -> 0 3 * * *
+- `0 19` has 4 schedules
+  - ai-advanced-ai-content.yml -> 0 19 * * *
+  - ai-content-burst-high-frequency.yml -> 0 19 * * *
+  - ai-content-burst.yml -> 0 19 * * *
+  - ai-content-ideas-deploy.yml -> 0 19 * * *

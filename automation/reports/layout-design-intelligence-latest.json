@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-04-13T18:23:16.124Z",
+  "url": "https://ziontechgroup.com",
+  "score": 85,
+  "metrics": {
+    "sectionCount": 32,
+    "mainCount": 2,
+    "h2Count": 30,
+    "h3Count": 69,
+    "listCount": 5,
+    "heroCtaCount": 0,
+    "heroLinkCount": 4,
+    "hasMaxWidth": true,
+    "hasConsistentContainer": true
+  },
+  "diagnostics": [
+    {
+      "id": "structure",
+      "detail": "sections=32, main=2, h2=30, h3=69, lists=5"
+    },
+    {
+      "id": "hero",
+      "detail": "heroCtas=0, heroLinks=4"
+    },
+    {
+      "id": "containers",
+      "detail": "hasMaxWidth=true, hasConsistentContainer=true"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "page-length",
+      "priority": "medium",
+      "title": "Consider grouping or summarizing lower-page sections",
+      "description": "The homepage contains a large number of sections and headings. Consider turning some repeated patterns into carousels, tabs, or collapsible sections so decision-makers can scan the page more comfortably."
+    }
+  ]
+}

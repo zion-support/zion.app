@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-05-10T22:00:19.763Z",
+  "thresholds": {
+    "minSuccessRate": 0.6,
+    "minQuality": 60,
+    "cautionSuccessRate": 0.75,
+    "cautionQuality": 72
+  },
+  "inputs": {
+    "successRate": 0,
+    "quality": 0,
+    "schemaValidityRate": 0,
+    "failures": 1,
+    "successes": 0,
+    "total": 0,
+    "queued": 0,
+    "contractFailures": 1,
+    "parseFailures": 0
+  },
+  "confidence": 0,
+  "band": "hold",
+  "decision": "hold_deploy",
+  "reasons": [
+    "success_rate_below_threshold(0 < 0.6)",
+    "quality_below_threshold(0 < 60)",
+    "schema_validity_low(0 < 0.6)",
+    "contract_failures_detected",
+    "no_prompt_activity"
+  ]
+}

@@ -1,0 +1,18 @@
+Warning: You have enabled experimental feature(s).
+Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use them at your own risk.
+
+Failed to compile.
+
+/Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/ai-workflow-status-dashboard/page.tsx
+ERROR in /Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/ai-workflow-status-dashboard/page.tsx(1,10):
+1:10 Module '"next"' has no exported member 'Metadata'. Did you mean to use 'import Metadata from "next"' instead?
+  > 1 | import { Metadata } from 'next';
+      |          ^
+    2 | 
+    3 | export const metadata = {
+    4 |   title: 'AI Workflow Status Dashboard - Zion AI Lab',
+
+
+> Build error occurred
+Error: > Build failed because of webpack errors
+    at build (/Users/kleberalcatrao/.openclaw/workspace/node_modules/next/dist/build/index.js:13:900)

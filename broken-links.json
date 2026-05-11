@@ -1,0 +1,54 @@
+[
+  {
+    "file": "app/ai-experiments/page.tsx",
+    "link": "contact?topic=project&source=ai-experiments"
+  },
+  {
+    "file": "app/components/Navigation.tsx",
+    "link": "contact?topic=project&source=nav-desktop"
+  },
+  {
+    "file": "app/components/Navigation.tsx",
+    "link": "contact?topic=project&source=nav-mobile"
+  },
+  {
+    "file": "app/components/SEOHead.tsx",
+    "link": "icon.svg"
+  },
+  {
+    "file": "app/components/SEOHead.tsx",
+    "link": "icon.svg"
+  },
+  {
+    "file": "app/components/StickyMobileCTA.tsx",
+    "link": "contact?topic=project&source=sticky-mobile"
+  },
+  {
+    "file": "app/search/page.tsx",
+    "link": "search?q=chatbot"
+  },
+  {
+    "file": "app/search/page.tsx",
+    "link": "search?q=automation"
+  },
+  {
+    "file": "app/search/page.tsx",
+    "link": "search?q=healthcare"
+  },
+  {
+    "file": "app/search/page.tsx",
+    "link": "search?q=pricing"
+  },
+  {
+    "file": "app/search/page.tsx",
+    "link": "search?q=document"
+  },
+  {
+    "file": "app/zion-ai-site-evolution-simulator/page.tsx",
+    "link": "contact?topic=project&source=site-evolution-simulator"
+  },
+  {
+    "file": "app/zion-ai-site-evolution-simulator/page.tsx",
+    "link": "contact?topic=project&source=site-evolution-simulator-footer"
+  }
+]

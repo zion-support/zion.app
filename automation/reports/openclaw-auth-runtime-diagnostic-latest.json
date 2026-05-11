@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-05-10T21:46:51.004Z",
+  "status": "warning",
+  "failingChecks": [
+    "openclaw_auth_contract"
+  ],
+  "checks": [
+    {
+      "name": "node22_runtime",
+      "ok": true,
+      "output": "v22.22.1"
+    },
+    {
+      "name": "openclaw_cli_available",
+      "ok": true,
+      "output": "/Users/miami2/.nvm/versions/node/v22.22.1/bin/openclaw"
+    },
+    {
+      "name": "openclaw_auth_contract",
+      "ok": false,
+      "output": "Invalid config at /Users/miami2/.openclaw/openclaw.json:\\n- channels.telegram.streaming: Invalid input (allowed: true, false, \"off\", \"partial\", \"block\", \"progress\")\nConfig invalid\nFile: ~/.openclaw/openclaw.json\nProblem:\n  - channels.telegram.streaming: Invalid input (allowed: true, false, \"off\", \"partial\", \"block\", \"progress\")\n\nRun: openclaw doctor --fix",
+      "parsedToken": "Invalid config at /Users/miami2/.openclaw/openclaw.json:\\n- channels.telegram.st",
+      "responseShape": "plain-text"
+    }
+  ],
+  "recommendations": [
+    "Ensure Node 22 and Openclaw CLI are available in runtime environment.",
+    "Re-authenticate Openclaw/OpenRouter if auth contract checks fail.",
+    "Run npm run openclaw:autonomous-once after remediation."
+  ]
+}

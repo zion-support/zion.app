@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-03-21T10:41:48.455Z",
+  "path": "/Users/miami2/zion-app-clone/public/api/automation-health.json",
+  "healthGeneratedAt": "2026-03-21T10:21:30.646Z",
+  "ageHours": 0.3,
+  "maxHours": 36,
+  "fresh": true,
+  "reason": "within freshness threshold"
+}

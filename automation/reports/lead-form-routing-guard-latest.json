@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-04-14T04:03:59.821Z",
+  "targetEmail": "commercial@ziontechgroup.com",
+  "status": "healthy",
+  "findings": [],
+  "checks": [
+    {
+      "file": "app/utils/seoConstants.ts",
+      "kind": "contact-source-of-truth",
+      "ok": true,
+      "missingRequired": [],
+      "forbiddenPresent": []
+    },
+    {
+      "file": "app/components/ContactFormClient.tsx",
+      "kind": "contact-form",
+      "ok": true,
+      "missingRequired": [],
+      "forbiddenPresent": []
+    },
+    {
+      "file": "app/components/NewsletterSignup.tsx",
+      "kind": "newsletter-form",
+      "ok": true,
+      "missingRequired": [],
+      "forbiddenPresent": []
+    },
+    {
+      "file": "app/blog/BlogNewsletterSignup.tsx",
+      "kind": "blog-newsletter-form",
+      "ok": true,
+      "missingRequired": [],
+      "forbiddenPresent": []
+    },
+    {
+      "file": "app/contact/page.tsx",
+      "kind": "contact-page-mailto",
+      "ok": true,
+      "missingRequired": [],
+      "forbiddenPresent": []
+    }
+  ]
+}

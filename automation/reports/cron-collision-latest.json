@@ -1,0 +1,1726 @@
+{
+  "generatedAt": "2026-03-24T17:23:29.298Z",
+  "workflowCount": 211,
+  "totalSchedules": 247,
+  "densityThreshold": 4,
+  "exactCollisions": [
+    {
+      "cron": "0 8 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-daily-quick.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-automation-health-monitor.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-content-ideas-and-evolution-deploy.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        }
+      ]
+    },
+    {
+      "cron": "35 */6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-autonomous-idea-guarded-cycle.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-openclaw-runner-guard.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-pm2-config-drift-guard.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-promotion-confidence-anomaly.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-weekly-automation-health-sla-orchestrator.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        }
+      ]
+    },
+    {
+      "cron": "*/10 * * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-autonomous-runtime-guardian.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-autonomous-self-heal-factory.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-github-integrity-fix-factory.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-github-workflow-integrity-audit-daily.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-lead-form-routing-guard-daily.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        }
+      ]
+    },
+    {
+      "cron": "0 4 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-automation.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        }
+      ]
+    },
+    {
+      "cron": "0 3 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "stale.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        }
+      ]
+    },
+    {
+      "cron": "0 19 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * 1",
+      "occurrences": [
+        {
+          "workflow": "ai-agents-docs-updater.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-weekly-content-seo-hygiene.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "lighthouse-ci.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 16 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 8 * * 2",
+      "occurrences": [
+        {
+          "workflow": "ai-accessibility-audit.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-schema-validator.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-weekly-live-ideas-implement.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        }
+      ]
+    },
+    {
+      "cron": "0 11 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 5",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-specialist.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-friday-automation.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 3",
+      "occurrences": [
+        {
+          "workflow": "ai-app-visit-audit-implement-deploy.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-local-llm-app-automation.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-backlog-auto-runner.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-live-content-ideas-daily.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 1 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-accelerator.yml",
+          "cron": "0 1 * * *",
+          "minuteHour": "0 1"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 1 * * *",
+          "minuteHour": "0 1"
+        },
+        {
+          "workflow": "ai-content-velocity.yml",
+          "cron": "0 1 * * *",
+          "minuteHour": "0 1"
+        }
+      ]
+    },
+    {
+      "cron": "0 14 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-accelerator.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        }
+      ]
+    },
+    {
+      "cron": "0 7 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "site-improv-agent.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        }
+      ]
+    },
+    {
+      "cron": "0 10 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-content-maximum-velocity.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        }
+      ]
+    },
+    {
+      "cron": "0 22 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 22 * * *",
+          "minuteHour": "0 22"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 22 * * *",
+          "minuteHour": "0 22"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 22 * * *",
+          "minuteHour": "0 22"
+        }
+      ]
+    },
+    {
+      "cron": "0 9 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        }
+      ]
+    },
+    {
+      "cron": "0 20 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-ideas-and-evolution-deploy.yml",
+          "cron": "0 20 * * *",
+          "minuteHour": "0 20"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 20 * * *",
+          "minuteHour": "0 20"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 20 * * *",
+          "minuteHour": "0 20"
+        }
+      ]
+    },
+    {
+      "cron": "25 */6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-openclaw-auth-runtime-diagnostic.yml",
+          "cron": "25 */6 * * *",
+          "minuteHour": "25 */6"
+        },
+        {
+          "workflow": "ai-openclaw-runtime-applier.yml",
+          "cron": "25 */6 * * *",
+          "minuteHour": "25 */6"
+        },
+        {
+          "workflow": "ai-production-smoke-scheduled.yml",
+          "cron": "25 */6 * * *",
+          "minuteHour": "25 */6"
+        }
+      ]
+    },
+    {
+      "cron": "25 10 * * 1",
+      "occurrences": [
+        {
+          "workflow": "ai-ai-lab-legacy-scaffold-weekly.yml",
+          "cron": "25 10 * * 1",
+          "minuteHour": "25 10"
+        },
+        {
+          "workflow": "workflow-contracts-weekly.yml",
+          "cron": "25 10 * * 1",
+          "minuteHour": "25 10"
+        }
+      ]
+    },
+    {
+      "cron": "0 14 * * 6",
+      "occurrences": [
+        {
+          "workflow": "ai-app-evolution-audit.yml",
+          "cron": "0 14 * * 6",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-app-visit-audit-implement-deploy.yml",
+          "cron": "0 14 * * 6",
+          "minuteHour": "0 14"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * 2",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 2",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 2",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * 3",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 3",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 3",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * 5",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 5",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 5",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 1",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-orchestrator.yml",
+          "cron": "0 12 * * 1",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 1",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 5 * * 0",
+      "occurrences": [
+        {
+          "workflow": "ai-app-quality-audit.yml",
+          "cron": "0 5 * * 0",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-weekly-security-audit.yml",
+          "cron": "0 5 * * 0",
+          "minuteHour": "0 5"
+        }
+      ]
+    },
+    {
+      "cron": "12 */6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-automation-health-static-freshness-guard.yml",
+          "cron": "12 */6 * * *",
+          "minuteHour": "12 */6"
+        },
+        {
+          "workflow": "ai-weekly-automation-health-linker-orchestrator.yml",
+          "cron": "12 */6 * * *",
+          "minuteHour": "12 */6"
+        }
+      ]
+    },
+    {
+      "cron": "0 10 * * 3",
+      "occurrences": [
+        {
+          "workflow": "ai-automation-improvements.yml",
+          "cron": "0 10 * * 3",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-performance-optimizer.yml",
+          "cron": "0 10 * * 3",
+          "minuteHour": "0 10"
+        }
+      ]
+    },
+    {
+      "cron": "0 11 * * 1",
+      "occurrences": [
+        {
+          "workflow": "ai-autonomous-improvements.yml",
+          "cron": "0 11 * * 1",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-report-aggregator.yml",
+          "cron": "0 11 * * 1",
+          "minuteHour": "0 11"
+        }
+      ]
+    },
+    {
+      "cron": "0 13 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 13 * * *",
+          "minuteHour": "0 13"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 13 * * *",
+          "minuteHour": "0 13"
+        }
+      ]
+    },
+    {
+      "cron": "0 0 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 0 * * *",
+          "minuteHour": "0 0"
+        },
+        {
+          "workflow": "ai-content-velocity.yml",
+          "cron": "0 0 * * *",
+          "minuteHour": "0 0"
+        }
+      ]
+    },
+    {
+      "cron": "0 5 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 5 * * *",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 5 * * *",
+          "minuteHour": "0 5"
+        }
+      ]
+    },
+    {
+      "cron": "0 17 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 17 * * *",
+          "minuteHour": "0 17"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 17 * * *",
+          "minuteHour": "0 17"
+        }
+      ]
+    },
+    {
+      "cron": "0 21 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 21 * * *",
+          "minuteHour": "0 21"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 21 * * *",
+          "minuteHour": "0 21"
+        }
+      ]
+    },
+    {
+      "cron": "0 18 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 18 * * *",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 18 * * *",
+          "minuteHour": "0 18"
+        }
+      ]
+    },
+    {
+      "cron": "50 */6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-experiment-outcome-ledger.yml",
+          "cron": "50 */6 * * *",
+          "minuteHour": "50 */6"
+        },
+        {
+          "workflow": "ai-pm2-slo-agent.yml",
+          "cron": "50 */6 * * *",
+          "minuteHour": "50 */6"
+        }
+      ]
+    },
+    {
+      "cron": "0 7 * * 2",
+      "occurrences": [
+        {
+          "workflow": "ai-front-page-services-content.yml",
+          "cron": "0 7 * * 2",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-live-ux-audit.yml",
+          "cron": "0 7 * * 2",
+          "minuteHour": "0 7"
+        }
+      ]
+    },
+    {
+      "cron": "0 6 * * 4",
+      "occurrences": [
+        {
+          "workflow": "ai-image-optimization-audit.yml",
+          "cron": "0 6 * * 4",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 4",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 6",
+      "occurrences": [
+        {
+          "workflow": "ai-layout-design-audit.yml",
+          "cron": "0 12 * * 6",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 6",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 11 * * 5",
+      "occurrences": [
+        {
+          "workflow": "ai-layout-design-automation-weekly.yml",
+          "cron": "0 11 * * 5",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-layout-design-automation.yml",
+          "cron": "0 11 * * 5",
+          "minuteHour": "0 11"
+        }
+      ]
+    },
+    {
+      "cron": "0 9 * * 4",
+      "occurrences": [
+        {
+          "workflow": "ai-navigation-improvement-automation.yml",
+          "cron": "0 9 * * 4",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-weekly-live-link-audit.yml",
+          "cron": "0 9 * * 4",
+          "minuteHour": "0 9"
+        }
+      ]
+    },
+    {
+      "cron": "10 */6 * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-openclaw-autonomous-cycle.yml",
+          "cron": "10 */6 * * *",
+          "minuteHour": "10 */6"
+        },
+        {
+          "workflow": "ai-openclaw-skill-auto-tuner.yml",
+          "cron": "10 */6 * * *",
+          "minuteHour": "10 */6"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 0",
+      "occurrences": [
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 0",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "lighthouse-production.yml",
+          "cron": "0 12 * * 0",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 12 * * 4",
+      "occurrences": [
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 4",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-weekly-maintenance.yml",
+          "cron": "0 12 * * 4",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "cron": "0 8 * * 0",
+      "occurrences": [
+        {
+          "workflow": "ai-weekly-automation-ideas-from-live-audit.yml",
+          "cron": "0 8 * * 0",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-weekly-dependency-hygiene.yml",
+          "cron": "0 8 * * 0",
+          "minuteHour": "0 8"
+        }
+      ]
+    },
+    {
+      "cron": "*/30 * * * *",
+      "occurrences": [
+        {
+          "workflow": "ai-workflow-trust-regression-guard.yml",
+          "cron": "*/30 * * * *",
+          "minuteHour": "*/30 *"
+        },
+        {
+          "workflow": "autonomous-release-guardian.yml",
+          "cron": "*/30 * * * *",
+          "minuteHour": "*/30 *"
+        }
+      ]
+    }
+  ],
+  "denseWindows": [
+    {
+      "window": "0 12",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-orchestrator.yml",
+          "cron": "0 12 * * 1",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-app-improvement-specialist.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-app-visit-audit-implement-deploy.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-friday-automation.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-layout-design-audit.yml",
+          "cron": "0 12 * * 6",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-local-llm-app-automation.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 0",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 1",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 2",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 3",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 4",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 5",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 12 * * 6",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 12 * * *",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "ai-weekly-maintenance.yml",
+          "cron": "0 12 * * 4",
+          "minuteHour": "0 12"
+        },
+        {
+          "workflow": "lighthouse-production.yml",
+          "cron": "0 12 * * 0",
+          "minuteHour": "0 12"
+        }
+      ]
+    },
+    {
+      "window": "0 6",
+      "occurrences": [
+        {
+          "workflow": "ai-agents-docs-updater.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 2",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 3",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-app-improvement-evolution.yml",
+          "cron": "0 6 * * 5",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-backlog-auto-runner.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-image-optimization-audit.yml",
+          "cron": "0 6 * * 4",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-live-content-ideas-daily.yml",
+          "cron": "0 6 * * *",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 0",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 2",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 3",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 4",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 5",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 6 * * 6",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "ai-weekly-content-seo-hygiene.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        },
+        {
+          "workflow": "lighthouse-ci.yml",
+          "cron": "0 6 * * 1",
+          "minuteHour": "0 6"
+        }
+      ]
+    },
+    {
+      "window": "0 8",
+      "occurrences": [
+        {
+          "workflow": "ai-accessibility-audit.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-app-improvement-daily-quick.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-automation-health-monitor.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-automations.yml",
+          "cron": "0 8 * * 1",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-content-ideas-and-evolution-deploy.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-continuous-improvement.yml",
+          "cron": "0 8 * * 1-5",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-live-app-audit.yml",
+          "cron": "0 8 * * 5",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-navigation-audit-fix.yml",
+          "cron": "0 8 * * 3,6",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-schema-validator.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-site-link-audit-automation.yml",
+          "cron": "0 8 * * 2,5",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 8 * * *",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-weekly-automation-ideas-from-live-audit.yml",
+          "cron": "0 8 * * 0",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-weekly-dependency-hygiene.yml",
+          "cron": "0 8 * * 0",
+          "minuteHour": "0 8"
+        },
+        {
+          "workflow": "ai-weekly-live-ideas-implement.yml",
+          "cron": "0 8 * * 2",
+          "minuteHour": "0 8"
+        }
+      ]
+    },
+    {
+      "window": "0 11",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-app-evolution-automation.yml",
+          "cron": "0 11 * * 0",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-automation-audit.yml",
+          "cron": "0 11 * * 6",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-autonomous-improvements.yml",
+          "cron": "0 11 * * 1",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 11 * * *",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-development-speed-accelerator.yml",
+          "cron": "0 11 * * 2",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-layout-design-automation-weekly.yml",
+          "cron": "0 11 * * 5",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-layout-design-automation.yml",
+          "cron": "0 11 * * 5",
+          "minuteHour": "0 11"
+        },
+        {
+          "workflow": "ai-report-aggregator.yml",
+          "cron": "0 11 * * 1",
+          "minuteHour": "0 11"
+        }
+      ]
+    },
+    {
+      "window": "0 7",
+      "occurrences": [
+        {
+          "workflow": "ai-app-improvement-evolution-full-quality.yml",
+          "cron": "0 7 1-7 * 0",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-broken-link-page-automation.yml",
+          "cron": "0 7 * * 2,5",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-content-quality-auditor.yml",
+          "cron": "0 7 * * 1",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-front-page-services-content.yml",
+          "cron": "0 7 * * 2",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-front-page-services-content.yml",
+          "cron": "0 7 * * 5",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-live-accessibility-audit.yml",
+          "cron": "0 7 * * 4",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "ai-live-ux-audit.yml",
+          "cron": "0 7 * * 2",
+          "minuteHour": "0 7"
+        },
+        {
+          "workflow": "site-improv-agent.yml",
+          "cron": "0 7 * * *",
+          "minuteHour": "0 7"
+        }
+      ]
+    },
+    {
+      "window": "0 18",
+      "occurrences": [
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 18 * * *",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 18 * * *",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-patch-only-auto-pr.yml",
+          "cron": "0 18 2 * *",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 0",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 1",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 2",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 3",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 4",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 5",
+          "minuteHour": "0 18"
+        },
+        {
+          "workflow": "ai-services-and-content-automation.yml",
+          "cron": "0 18 * * 6",
+          "minuteHour": "0 18"
+        }
+      ]
+    },
+    {
+      "window": "0 10",
+      "occurrences": [
+        {
+          "workflow": "ai-app-audit-automation.yml",
+          "cron": "0 10 * * 6",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-automation-improvements.yml",
+          "cron": "0 10 * * 3",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-content-maximum-velocity.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 10 * * *",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-ecosystem-intelligence.yml",
+          "cron": "0 10 * * 1",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-layout-design-automation.yml",
+          "cron": "0 10 * * 2",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-performance-optimizer.yml",
+          "cron": "0 10 * * 3",
+          "minuteHour": "0 10"
+        },
+        {
+          "workflow": "ai-weekly-live-navigation-audit.yml",
+          "cron": "0 10 * * 5",
+          "minuteHour": "0 10"
+        }
+      ]
+    },
+    {
+      "window": "0 14",
+      "occurrences": [
+        {
+          "workflow": "ai-app-evolution-audit.yml",
+          "cron": "0 14 * * 6",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-app-visit-audit-implement-deploy.yml",
+          "cron": "0 14 * * 6",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-app-visit-intelligence.yml",
+          "cron": "0 14 * * 1",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-content-accelerator.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 14 * * *",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-layout-improvement.yml",
+          "cron": "0 14 * * 2",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-local-llm-specialists.yml",
+          "cron": "0 14 * * 4",
+          "minuteHour": "0 14"
+        },
+        {
+          "workflow": "ai-midweek-auto-impl.yml",
+          "cron": "0 14 * * 3",
+          "minuteHour": "0 14"
+        }
+      ]
+    },
+    {
+      "window": "0 9",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 9 * * *",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-development-agent.yml",
+          "cron": "0 9 * * 1-5",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-github-actions-audit.yml",
+          "cron": "0 9 * * 0",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-navigation-improvement-automation.yml",
+          "cron": "0 9 * * 4",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-seo-content-optimizer.yml",
+          "cron": "0 9 * * 3",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-weekly-live-app-audit-auto-fix.yml",
+          "cron": "0 9 * * 6",
+          "minuteHour": "0 9"
+        },
+        {
+          "workflow": "ai-weekly-live-link-audit.yml",
+          "cron": "0 9 * * 4",
+          "minuteHour": "0 9"
+        }
+      ]
+    },
+    {
+      "window": "0 5",
+      "occurrences": [
+        {
+          "workflow": "ai-app-quality-audit.yml",
+          "cron": "0 5 * * 0",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-content-burst-ultra.yml",
+          "cron": "0 5 * * *",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 5 * * *",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-cron-tuner.yml",
+          "cron": "0 5 * * 1",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-live-content-ideas.yml",
+          "cron": "0 5 * * 1,3,5",
+          "minuteHour": "0 5"
+        },
+        {
+          "workflow": "ai-weekly-security-audit.yml",
+          "cron": "0 5 * * 0",
+          "minuteHour": "0 5"
+        }
+      ]
+    },
+    {
+      "window": "0 4",
+      "occurrences": [
+        {
+          "workflow": "ai-content-automation.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 4 * * *",
+          "minuteHour": "0 4"
+        },
+        {
+          "workflow": "codeql-analysis.yml",
+          "cron": "0 4 * * 1",
+          "minuteHour": "0 4"
+        }
+      ]
+    },
+    {
+      "window": "35 */6",
+      "occurrences": [
+        {
+          "workflow": "ai-autonomous-idea-guarded-cycle.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-openclaw-runner-guard.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-pm2-config-drift-guard.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-promotion-confidence-anomaly.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        },
+        {
+          "workflow": "ai-weekly-automation-health-sla-orchestrator.yml",
+          "cron": "35 */6 * * *",
+          "minuteHour": "35 */6"
+        }
+      ]
+    },
+    {
+      "window": "*/10 *",
+      "occurrences": [
+        {
+          "workflow": "ai-autonomous-runtime-guardian.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-autonomous-self-heal-factory.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-github-integrity-fix-factory.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-github-workflow-integrity-audit-daily.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        },
+        {
+          "workflow": "ai-lead-form-routing-guard-daily.yml",
+          "cron": "*/10 * * * *",
+          "minuteHour": "*/10 *"
+        }
+      ]
+    },
+    {
+      "window": "0 16",
+      "occurrences": [
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-content-rapid.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-dependency-upgrade-train-monthly.yml",
+          "cron": "0 16 3 * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-ideas-implementation.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        },
+        {
+          "workflow": "ai-ultra-fast-content.yml",
+          "cron": "0 16 * * *",
+          "minuteHour": "0 16"
+        }
+      ]
+    },
+    {
+      "window": "0 3",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "ai-content-max-velocity-deploy.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        },
+        {
+          "workflow": "stale.yml",
+          "cron": "0 3 * * *",
+          "minuteHour": "0 3"
+        }
+      ]
+    },
+    {
+      "window": "0 19",
+      "occurrences": [
+        {
+          "workflow": "ai-advanced-ai-content.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-burst-high-frequency.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-burst.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        },
+        {
+          "workflow": "ai-content-ideas-deploy.yml",
+          "cron": "0 19 * * *",
+          "minuteHour": "0 19"
+        }
+      ]
+    }
+  ],
+  "recommendation": "Stagger minute fields and spread heavy workflows across different hour windows."
+}

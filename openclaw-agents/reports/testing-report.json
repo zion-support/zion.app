@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-04-25T09:23:51.489Z",
+  "agent": "testing",
+  "tests": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "coverage": null,
+  "status": "failed",
+  "testFiles": 192,
+  "score": 50
+}

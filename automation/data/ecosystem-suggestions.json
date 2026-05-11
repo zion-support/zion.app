@@ -1,0 +1,14 @@
+{
+  "suggestions": [
+    {
+      "id": "broken-link-external",
+      "type": "enhancement",
+      "priority": "medium",
+      "title": "External Link Monitoring",
+      "description": "Extend broken-link-fixer to track external link health over time and alert on repeated failures.",
+      "implementation": "Add external link history to ai-broken-link-fixer.cjs",
+      "benefit": "Proactive link maintenance"
+    }
+  ],
+  "updatedAt": "2026-04-13T11:27:57.316Z"
+}

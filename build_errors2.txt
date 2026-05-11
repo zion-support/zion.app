@@ -1,0 +1,18 @@
+Warning: You have enabled experimental feature(s).
+Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use them at your own risk.
+
+Failed to compile.
+
+/Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/idea-to-feature-blueprint/metadata.ts
+ERROR in /Users/kleberalcatrao/.openclaw/workspace/app/ai-lab/idea-to-feature-blueprint/metadata.ts(1,15):
+1:15 Module '"next"' has no exported member 'Metadata'. Did you mean to use 'import Metadata from "next"' instead?
+  > 1 | import type { Metadata } from 'next';
+      |               ^
+    2 | 
+    3 | export const metadata: Metadata = {
+    4 |   title: 'AI Idea-to-Feature Blueprint',
+
+
+> Build error occurred
+Error: > Build failed because of webpack errors
+    at build (/Users/kleberalcatrao/.openclaw/workspace/node_modules/next/dist/build/index.js:13:900)

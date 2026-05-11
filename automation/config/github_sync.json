@@ -1,0 +1,9 @@
+{
+  "repos": [
+    "Zion-Holdings/zion"
+  ],
+  "sync_interval": 3600,
+  "auto_merge": true,
+  "label_rules_enabled": true,
+  "last_sync": "2026-04-28T05:21:26.266535"
+}

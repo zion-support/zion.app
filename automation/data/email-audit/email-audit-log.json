@@ -1,0 +1,1112 @@
+[
+  {
+    "timestamp": "2026-04-10T10:32:21.378Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76df2e4b62836",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Workspace Alerts <google-workspace-alerts-noreply@google.com> Google Workspace status alert - Issue 501338068 UNREAD,CATEGORY_UPDATES,INBOX [2"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.379Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76d2d899463d9",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Services and Front Page Content - main (3aedd08) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.379Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76815c2095098",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Ideas and Evolution Deploy - main (49c0ff2) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.380Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7669c952aac11",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: eslint.config.mjs smoke (weekly) - main (afa54ff) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.380Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7652854b7e3d2",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Site Improvement Agent - main (bd6cc46) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.384Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7640cedc19aea",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Workflow push policy smoke (weekly) - main (4eae393) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:21.384Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7639e031587e7",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Autonomous Idea Guarded Cycle - main (4eae393) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.107Z",
+    "action": "MARK_READ",
+    "emailId": "19d76367435cd59d",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.108Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d762bc84de1df0",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Automation health static freshness guard - main (a2f35ce) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.108Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d762915ab08c96",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Openclaw Autonomous Cycle - main (e6f88b0) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.108Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d761a94a286c79",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Live Content Ideas Daily - main (f333a7c) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.109Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75ecd0daf3a09",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Burst Ultra - main (164831c) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:22.792Z",
+    "action": "MARK_READ",
+    "emailId": "19d75ec9f6f19b5f",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:23.509Z",
+    "action": "MARK_READ",
+    "emailId": "19d75cc1befd90e3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.204Z",
+    "action": "MARK_READ",
+    "emailId": "19d75c0199e8ccfa",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.205Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d759024659dae4",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T09:55:55.237Z) (Issue #22302) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.205Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75901f00b8e5e",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T09:55:55.328Z) (Issue #22303) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.206Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75901b2dbddb9",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T10:02:29.367Z) (Issue #22304) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.206Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d751966665dd70",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Experiences Health - main (3d240d0) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.919Z",
+    "action": "MARK_READ",
+    "emailId": "19d750b210416da6",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.920Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74ec25a9f71b3",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Autonomous Idea Guarded Cycle - main (e03d5d4) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.921Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74ea1211f9a88",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Observability history freshness guard - main (bef33d5) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.921Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e7fccb888b4",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Automation health static freshness guard - main (bef33d5) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.922Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e504d2c283f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Openclaw Autonomous Cycle - main (82eab9b) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.922Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e0b6bb23033",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: CI/CD Pipeline - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.922Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cf78b8c2bd3",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Burst Ultra - main (82eab9b) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.923Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb45bfff5ab",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> [Zion-support/zion.app] Release v2026.04.10 - Release 2026-04-10 UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.923Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb1eb9911d0",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.923Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb1c948bf1f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.924Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb19bdf2f3c",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.924Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb191e9a7e8",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.924Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb18f626e8a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:24.924Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb16cd80810",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:25.614Z",
+    "action": "MARK_READ",
+    "emailId": "19d74130579e9bbe",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:26.262Z",
+    "action": "MARK_READ",
+    "emailId": "19d73df4111c9e56",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:26.927Z",
+    "action": "MARK_READ",
+    "emailId": "19d73ddebdb2740e",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.563Z",
+    "action": "MARK_READ",
+    "emailId": "19d73d8be2d2e27f",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.563Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73d65bd96326c",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI App Improvement On Push - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.564Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca23ed3d755",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.564Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca203a4492f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.565Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1f624fb85",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.565Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1ad6ba69b",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.566Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1a84e2a0a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:27.566Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1879fb542",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.271Z",
+    "action": "MARK_READ",
+    "emailId": "19d73c501e3bbfd3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.271Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c3330d3796a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.272Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c330f73c41d",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.272Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c3305303331",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.272Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c32ee84ddef",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:32:28.273Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c32d6d61598",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.979Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76f698d6af2e0",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Experiences Health - main (ae816fc) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.980Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76df2e4b62836",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Workspace Alerts <google-workspace-alerts-noreply@google.com> Google Workspace status alert - Issue 501338068 UNREAD,CATEGORY_UPDATES,INBOX [2"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.980Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76d2d899463d9",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Services and Front Page Content - main (3aedd08) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.981Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d76815c2095098",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Ideas and Evolution Deploy - main (49c0ff2) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.981Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7669c952aac11",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: eslint.config.mjs smoke (weekly) - main (afa54ff) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.981Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7652854b7e3d2",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Site Improvement Agent - main (bd6cc46) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.982Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7640cedc19aea",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Workflow push policy smoke (weekly) - main (4eae393) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.983Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d7639e031587e7",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Autonomous Idea Guarded Cycle - main (4eae393) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.983Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d762bc84de1df0",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Automation health static freshness guard - main (a2f35ce) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.984Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d762915ab08c96",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Openclaw Autonomous Cycle - main (e6f88b0) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.984Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d761a94a286c79",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Live Content Ideas Daily - main (f333a7c) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.984Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75ecd0daf3a09",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Burst Ultra - main (164831c) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.985Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d759024659dae4",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T09:55:55.237Z) (Issue #22302) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.985Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75901f00b8e5e",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T09:55:55.328Z) (Issue #22303) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.985Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d75901b2dbddb9",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> Re: [Zion-support/zion.app] Lighthouse regression detected (2025-09-17T10:02:29.367Z) (Issue #22304) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.986Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d751966665dd70",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Experiences Health - main (3d240d0) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.987Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74ec25a9f71b3",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Autonomous Idea Guarded Cycle - main (e03d5d4) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.987Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74ea1211f9a88",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Observability history freshness guard - main (bef33d5) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.988Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e7fccb888b4",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: Automation health static freshness guard - main (bef33d5) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.988Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e504d2c283f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Openclaw Autonomous Cycle - main (82eab9b) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.989Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74e0b6bb23033",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: CI/CD Pipeline - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.989Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cf78b8c2bd3",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Content Burst Ultra - main (82eab9b) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.989Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb45bfff5ab",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<notifications@github.com> [Zion-support/zion.app] Release v2026.04.10 - Release 2026-04-10 UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.990Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb1eb9911d0",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.990Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb1c948bf1f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.990Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb19bdf2f3c",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.991Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb191e9a7e8",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.991Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb18f626e8a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.991Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d74cb16cd80810",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (ff5782a) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.992Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73d65bd96326c",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI App Improvement On Push - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.992Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca23ed3d755",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.993Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca203a4492f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.993Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1f624fb85",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.993Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1ad6ba69b",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.993Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1a84e2a0a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.994Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73ca1879fb542",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (ce2c88d) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.994Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c3330d3796a",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-contracts-weekly.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.994Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c330f73c41d",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.995Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c3305303331",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-change-guard.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.995Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c32ee84ddef",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.996Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c32d6d61598",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-reusable-ci-dispatch.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:32.996Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73c328a842b7f",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (a790b63) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:33.674Z",
+    "action": "MARK_READ",
+    "emailId": "19d73bd94735d720",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.293Z",
+    "action": "MARK_READ",
+    "emailId": "19d73bd2f52179d5",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.925Z",
+    "action": "MARK_READ",
+    "emailId": "19d73bb80e973f36",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.926Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73b0b10cb05f6",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "<support@news.surfline.com> NEW: Customize your forecast UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.926Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73aed07314718",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI Autonomous Idea Guarded Cycle - main (23dc5cb) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.927Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73a69826bbd61",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: AI App Improvement On Push - main (23dc5cb) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.927Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73a63da4339f2",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-yaml-sanity.yml - main (c05c2a7) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:36:34.928Z",
+    "action": "FLAGGED_PRIORITY",
+    "emailId": "19d73a63a85a7370",
+    "details": {
+      "category": "support",
+      "priority": "medium",
+      "subject": "Garcia Alcatrao <notifications@github.com> [Zion-support/zion.app] Run failed: .github/workflows/workflow-validate-light-weekly.yml - main (c05c2a7) UNREAD,CATEGORY_UPDATES,INBOX"
+    }
+  },
+  {
+    "timestamp": "2026-04-10T10:44:28.476Z",
+    "action": "ARCHIVE",
+    "emailId": "19d76367435cd59d",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:29.154Z",
+    "action": "ARCHIVE",
+    "emailId": "19d75ec9f6f19b5f",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:29.806Z",
+    "action": "ARCHIVE",
+    "emailId": "19d75cc1befd90e3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:30.543Z",
+    "action": "ARCHIVE",
+    "emailId": "19d75c0199e8ccfa",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:31.204Z",
+    "action": "ARCHIVE",
+    "emailId": "19d750b210416da6",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:31.863Z",
+    "action": "ARCHIVE",
+    "emailId": "19d74b2fc7c4fbee",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:32.502Z",
+    "action": "ARCHIVE",
+    "emailId": "19d74a4dcce717d3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:33.152Z",
+    "action": "ARCHIVE",
+    "emailId": "19d7473046dcff0d",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:33.837Z",
+    "action": "ARCHIVE",
+    "emailId": "19d74729a24e22a3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:34.465Z",
+    "action": "ARCHIVE",
+    "emailId": "19d7421ccbad7497",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:35.133Z",
+    "action": "ARCHIVE",
+    "emailId": "19d7410dbc4dfb1a",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:35.805Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73df4111c9e56",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:36.449Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73ddebdb2740e",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:37.070Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73d8be2d2e27f",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:37.720Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73c501e3bbfd3",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:38.370Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73bd94735d720",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:39.043Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73bd2f52179d5",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:39.676Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73bb80e973f36",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:40.302Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73a207012e615",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:40.958Z",
+    "action": "ARCHIVE",
+    "emailId": "19d739f4a5b176a9",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:41.638Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73806d1950e02",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:42.300Z",
+    "action": "ARCHIVE",
+    "emailId": "19d737a95174f2ac",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T10:44:42.994Z",
+    "action": "ARCHIVE",
+    "emailId": "19d7371fdf4bee12",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T11:08:19.636Z",
+    "action": "ARCHIVE",
+    "emailId": "19d736ae1abda1a5",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T11:08:20.297Z",
+    "action": "ARCHIVE",
+    "emailId": "19d736a4a0f97b72",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T11:08:20.938Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73697b3b0f0d5",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-04-10T11:08:21.604Z",
+    "action": "ARCHIVE",
+    "emailId": "19d73678a575d67c",
+    "details": {}
+  }
+]

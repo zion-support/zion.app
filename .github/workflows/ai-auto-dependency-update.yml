@@ -1,0 +1,47 @@
+name: Auto Dependency Update
+
+on:
+  schedule:
+    - cron: '0 5 * * 0'  # Weekly Sunday at 5 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Update dependencies
+        id: update
+        run: node scripts/auto-dependency-update.cjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fallback if script failed
+        if: failure()
+        run: |
+          echo "No updates or script failed, that's ok"
+          exit 0

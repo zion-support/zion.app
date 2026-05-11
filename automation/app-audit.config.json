@@ -1,0 +1,7 @@
+{
+  "enabledCategories": ["content", "ux", "seo", "performance", "conversion", "feature"],
+  "minPriority": "medium",
+  "maxSuggestions": 40,
+  "quickWinsPerPage": 5,
+  "requireHighPrioritySeoForApply": true
+}

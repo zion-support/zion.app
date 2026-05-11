@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-03-21T15:51:50.361Z",
+  "status": "healthy",
+  "signal": 0,
+  "deltaSignal": 0,
+  "recommendation": "Keep current autonomous experiment cadence and continue collecting outcome evidence.",
+  "entry": {
+    "at": "2026-03-21T15:51:50.359Z",
+    "confidence": 0,
+    "mode": "stabilize",
+    "cycles": 0,
+    "successes": 0,
+    "failures": 0,
+    "successRate": 0,
+    "actionsFound": 0,
+    "actionsPerCycle": 0,
+    "signal": 0
+  },
+  "trend": {
+    "points": 1,
+    "avgSignalLast7": 0
+  },
+  "files": {
+    "priorityReport": "automation/reports/openclaw-skill-auto-tuner-latest.json",
+    "openclawReport": "automation/reports/openclaw-autonomous-app-improver-latest.json",
+    "history": "automation/reports/experiment-outcome-ledger-history.json"
+  }
+}

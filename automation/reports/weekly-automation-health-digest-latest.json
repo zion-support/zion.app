@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-03-21T12:00:39.224Z",
+  "windowDays": 7,
+  "currentWindowCount": 3,
+  "previousWindowCount": 0,
+  "slo": {
+    "currentAvg": 94,
+    "previousAvg": null,
+    "delta": null
+  },
+  "emaOpenIncidents": {
+    "currentAvg": 1.05,
+    "previousAvg": null,
+    "delta": null
+  },
+  "previewUnhealthy": {
+    "currentAvg": 0,
+    "previousAvg": null,
+    "delta": null
+  },
+  "openFingerprint": {
+    "currentAvg": 0,
+    "previousAvg": null,
+    "delta": null
+  },
+  "severityCounts": {
+    "critical": 0,
+    "warning": 0,
+    "nominal": 3
+  },
+  "topRegressions": [],
+  "regressionAlert": false,
+  "regressionThreshold": 6,
+  "ownerEscalation": {
+    "owners": [
+      "@Zion-Holdings/devops-team"
+    ],
+    "mentionCooldownHours": 168,
+    "shouldMentionOwners": false,
+    "mentionReason": "no-regression-alert",
+    "lastMentionAt": null
+  }
+}

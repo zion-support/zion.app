@@ -1,0 +1,25 @@
+{
+  "dashboard": {
+    "title": "Zion Tech Group Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Leads",
+        "targets": [
+          {
+            "expr": "zion_leads_total"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Conversion Rate",
+        "targets": [
+          {
+            "expr": "zion_leads_converted / zion_leads_total"
+          }
+        ]
+      }
+    ]
+  }
+}

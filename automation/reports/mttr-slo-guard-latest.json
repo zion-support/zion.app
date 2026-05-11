@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-03-21T07:16:55.055Z",
+  "warningHours": 24,
+  "criticalHours": 48,
+  "streakThreshold": 2,
+  "openAutomationFingerprintIssues": 0,
+  "mttr": {
+    "avgHours": null,
+    "samples": 0,
+    "band": "unknown"
+  },
+  "consecutiveCritical": 0,
+  "consecutiveHealthyOrWarning": 1,
+  "topFingerprints": [],
+  "fingerprintRegressions": [],
+  "automationHealthScore": 100,
+  "pagerDuty": {
+    "eligible": false,
+    "sent": false,
+    "skippedReason": "not-critical-streak",
+    "minOpenFp": 3,
+    "cooldownHours": 24,
+    "lastPagerDutyAt": null
+  }
+}

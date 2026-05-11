@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-04-14T04:37:02.610Z",
+  "workflowCount": 369,
+  "status": "healthy",
+  "counts": {
+    "critical": 0,
+    "warning": 0,
+    "totalFindings": 0
+  },
+  "findings": [],
+  "sample": [
+    {
+      "file": ".github/workflows/ai-accessibility-audit-smoke-weekly.yml",
+      "workflowName": "ai accessibility audit workflow smoke (weekly)",
+      "digest": "33308f4413ff",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 33
+    },
+    {
+      "file": ".github/workflows/ai-accessibility-audit.yml",
+      "workflowName": "AI Accessibility Audit",
+      "digest": "916c69dc670f",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 136
+    },
+    {
+      "file": ".github/workflows/ai-actions-pin-strict-guard.yml",
+      "workflowName": "AI Actions pin strict guard",
+      "digest": "7ba0c999ad5c",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 38
+    },
+    {
+      "file": ".github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
+      "workflowName": "ai advanced-ai content workflow smoke (weekly)",
+      "digest": "aab2e6029d0b",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 41
+    },
+    {
+      "file": ".github/workflows/ai-advanced-ai-content.yml",
+      "workflowName": "AI Advanced-AI Content",
+      "digest": "c1bf48574e2b",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 53
+    },
+    {
+      "file": ".github/workflows/ai-agents-docs-updater.yml",
+      "workflowName": "AI Agents Docs Updater",
+      "digest": "11ecea593d12",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 40
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
+      "workflowName": "ai aggregate dashboard refresh workflow smoke (weekly)",
+      "digest": "096c8b89a434",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 39
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-dashboard-refresh.yml",
+      "workflowName": "AI aggregate dashboard refresh",
+      "digest": "27c75739d573",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 66
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
+      "workflowName": "ai aggregate regression alert workflow smoke (weekly)",
+      "digest": "26781de47fcc",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 42
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-regression-alert.yml",
+      "workflowName": "AI aggregate regression alert",
+      "digest": "189f5bf46fde",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 79
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
+      "workflowName": "ai aggregate regression diff alert workflow smoke (weekly)",
+      "digest": "bc5db795cdf7",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 43
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-regression-diff-alert.yml",
+      "workflowName": "AI aggregate regression diff alert",
+      "digest": "33f783748e28",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 96
+    },
+    {
+      "file": ".github/workflows/ai-aggregate-regression-diff-pr-comment.yml",
+      "workflowName": "AI aggregate regression diff PR comment",
+      "digest": "8542aeeaed7e",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 49
+    },
+    {
+      "file": ".github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
+      "workflowName": "ai ai experiences health workflow smoke (weekly)",
+      "digest": "109d09b275f3",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 39
+    },
+    {
+      "file": ".github/workflows/ai-ai-experiences-health.yml",
+      "workflowName": "AI Experiences Health",
+      "digest": "7f292a25d54d",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 49
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
+      "workflowName": "AI AI Lab hub links smoke",
+      "digest": "856ee641b454",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 103
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
+      "workflowName": "AI AI Lab integrity smoke contract",
+      "digest": "863a299927c7",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 78
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
+      "workflowName": "AI AI Lab legacy scaffold weekly",
+      "digest": "44121c4bbfa4",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 50
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-route-contract-autofix-pr.yml",
+      "workflowName": "AI AI Lab route contract autofix PR",
+      "digest": "9d0088aafb6b",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 45
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
+      "workflowName": "AI AI Lab route contract PR comment",
+      "digest": "0c6ef62eae74",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 51
+    },
+    {
+      "file": ".github/workflows/ai-ai-lab-safe-scaffold-migrate-pr.yml",
+      "workflowName": "AI AI Lab safe scaffold migrate PR",
+      "digest": "fbcb9237e888",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 45
+    },
+    {
+      "file": ".github/workflows/ai-app-audit-automation.yml",
+      "workflowName": "AI App Audit Automation",
+      "digest": "793b95ab4648",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 58
+    },
+    {
+      "file": ".github/workflows/ai-app-autonomy-guarded-cycle.yml",
+      "workflowName": "AI App Autonomy Guarded Cycle",
+      "digest": "160fe37faa09",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 68
+    },
+    {
+      "file": ".github/workflows/ai-app-evolution-audit.yml",
+      "workflowName": "AI App Evolution Audit",
+      "digest": "7d9ea103e5a3",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 74
+    },
+    {
+      "file": ".github/workflows/ai-app-evolution-automation.yml",
+      "workflowName": "AI App Evolution Automation",
+      "digest": "6a86c8384cc4",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 74
+    },
+    {
+      "file": ".github/workflows/ai-app-evolution-trigger-on-regression.yml",
+      "workflowName": "AI App Evolution Trigger on Regression",
+      "digest": "42474149c546",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 80
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-daily-quick.yml",
+      "workflowName": "AI App Improvement Daily Quick",
+      "digest": "4d1592d7c3a8",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 55
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-evolution-full-quality.yml",
+      "workflowName": "AI App Improvement Evolution (Full Quality)",
+      "digest": "be00464974e7",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 63
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-evolution.yml",
+      "workflowName": "AI App Improvement Evolution",
+      "digest": "b6cbc84ca9b8",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 103
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-on-push.yml",
+      "workflowName": "AI App Improvement On Push",
+      "digest": "824b8b5c1a82",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 64
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-orchestrator.yml",
+      "workflowName": "AI App Improvement Orchestrator",
+      "digest": "8953119a1bd5",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 88
+    },
+    {
+      "file": ".github/workflows/ai-app-improvement-specialist.yml",
+      "workflowName": "AI App Improvement Specialist",
+      "digest": "86b5ba8fa0b0",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 96
+    },
+    {
+      "file": ".github/workflows/ai-app-quality-audit.yml",
+      "workflowName": "AI App Quality Audit",
+      "digest": "1285f97f7ea8",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 62
+    },
+    {
+      "file": ".github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
+      "workflowName": "ai app visit audit implement deploy workflow smoke (weekly)",
+      "digest": "d0ca1841b145",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 44
+    },
+    {
+      "file": ".github/workflows/ai-app-visit-audit-implement-deploy.yml",
+      "workflowName": "App Visit Audit Implement Deploy",
+      "digest": "cc770b6bafcf",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 90
+    },
+    {
+      "file": ".github/workflows/ai-app-visit-intelligence.yml",
+      "workflowName": "AI App Visit Intelligence",
+      "digest": "5428c23f1c80",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 60
+    },
+    {
+      "file": ".github/workflows/ai-artifact-freshness-mesh.yml",
+      "workflowName": "AI Artifact Freshness Mesh",
+      "digest": "e848e9ccc6ef",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 83
+    },
+    {
+      "file": ".github/workflows/ai-auto-fix-weekly.yml",
+      "workflowName": "AI Auto Fix Weekly",
+      "digest": "b766266c586a",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 35
+    },
+    {
+      "file": ".github/workflows/ai-automation-audit-smoke-weekly.yml",
+      "workflowName": "ai automation audit workflow smoke (weekly)",
+      "digest": "89d4865ed038",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 33
+    },
+    {
+      "file": ".github/workflows/ai-automation-audit.yml",
+      "workflowName": "AI Automation Audit",
+      "digest": "9627b8ec52cb",
+      "nameCount": 1,
+      "duplicateNameHeaders": false,
+      "lines": 57
+    }
+  ]
+}

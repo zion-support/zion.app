@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-03-20T15:31:32.413Z",
+  "mergeCommitsScanned": 180,
+  "mergeParentsProcessed": 180,
+  "missingCandidatesCount": 1,
+  "missingCandidates": [
+    {
+      "file": "app/sitemap/page.tsx",
+      "count": 175,
+      "firstSeenIn": "c7b12325cf7ea2901a36d2b128776450961013ed",
+      "lastSeenIn": "2aa5e0aa9bb9dc2fe56cb109d220093355d9cb0c"
+    }
+  ],
+  "top20": [
+    {
+      "file": "app/sitemap/page.tsx",
+      "count": 175,
+      "firstSeenIn": "c7b12325cf7ea2901a36d2b128776450961013ed",
+      "lastSeenIn": "2aa5e0aa9bb9dc2fe56cb109d220093355d9cb0c"
+    }
+  ]
+}

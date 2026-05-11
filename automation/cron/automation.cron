@@ -1,0 +1,167 @@
+# Zion Tech Group Automation Cron Jobs
+# Usage: Edit ZION_ROOT below, then install with: crontab automation/cron/automation.cron
+# To verify: crontab -l
+
+ZION_ROOT=/workspace
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# Social media automation - LinkedIn every 4 hours, Instagram offset by 30 min
+0 */4 * * * cd $ZION_ROOT && node automation/ai-social-media-automation.cjs post linkedin >> automation/logs/linkedin-cron.log 2>&1
+30 */4 * * * cd $ZION_ROOT && node automation/ai-social-media-automation.cjs post instagram >> automation/logs/instagram-cron.log 2>&1
+
+# Build and type-check - every 4 hours
+0 */4 * * * cd $ZION_ROOT && npm run type-check >> automation/logs/build-cron.log 2>&1
+
+# Security audit - every 6 hours
+0 */6 * * * cd $ZION_ROOT && npm audit --audit-level=moderate >> automation/logs/security-cron.log 2>&1
+
+# SEO monitoring - every 2 hours
+0 */2 * * * cd $ZION_ROOT && node automation/ai-seo-monitor-optimizer.cjs >> automation/logs/seo-cron.log 2>&1
+
+# Content organization - every hour
+0 * * * * cd $ZION_ROOT && node automation/ai-content-organizer-agent.cjs >> automation/logs/content-organizer-cron.log 2>&1
+
+# Broken link check - twice daily
+0 6,18 * * * cd $ZION_ROOT && node automation/ai-broken-link-fixer.cjs >> automation/logs/broken-links-cron.log 2>&1
+
+# Performance optimization - every 6 hours
+0 */6 * * * cd $ZION_ROOT && node automation/ai-performance-optimizer.cjs >> automation/logs/performance-cron.log 2>&1
+
+# Report cleanup - daily at 2 AM (keep last 7 days)
+0 2 * * * cd $ZION_ROOT && node automation/ai-report-cleanup.cjs >> automation/logs/report-cleanup-cron.log 2>&1
+
+# Log cleanup - daily at 3 AM (keep last 7 days)
+0 3 * * * find $ZION_ROOT/automation/logs -name "*.log" -mtime +7 -delete 2>&1
+
+# Git auto-commit improvements - every 6 hours
+0 */6 * * * cd $ZION_ROOT && git add -A && git diff --staged --quiet || git commit -m "chore: automated improvements $(date +\%F)" && git push >> automation/logs/git-cron.log 2>&1
+
+# Health check - every 30 minutes
+*/30 * * * * cd $ZION_ROOT && node automation/ai-automation-health-monitor.cjs >> automation/logs/health-cron.log 2>&1
+
+# Site uptime & SSL monitoring - every 10 minutes
+*/10 * * * * cd $ZION_ROOT && node automation/ai-site-health-monitor.cjs check >> automation/logs/site-health-cron.log 2>&1
+
+# SEO meta tag audit - every 6 hours
+0 */6 * * * cd $ZION_ROOT && node automation/ai-seo-meta-auditor.cjs audit >> automation/logs/seo-meta-cron.log 2>&1
+
+# Sitemap validation - twice daily
+0 6,18 * * * cd $ZION_ROOT && node automation/ai-sitemap-validator.cjs validate >> automation/logs/sitemap-cron.log 2>&1
+
+# Navigation audit - daily 7 AM (validates nav/footer links, optional LLM suggestions)
+0 7 * * * cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-navigation-audit-agent.cjs run >> automation/logs/navigation-audit-cron.log 2>&1
+
+# Navigation & pages audit - weekly Thursday 9:30 AM (nav + site links + LLM suggestions)
+30 9 * * 4 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-navigation-pages-audit-automation.cjs run >> automation/logs/navigation-pages-audit-cron.log 2>&1
+
+# Production Lighthouse audit - weekly on Sunday 4 AM
+0 4 * * 0 cd $ZION_ROOT && node automation/ai-lighthouse-production-audit.cjs run >> automation/logs/lighthouse-production-cron.log 2>&1
+
+# Code hygiene - 5:30 AM (lint:fix, type-check; AUTO_COMMIT=1 to commit fixes)
+30 5 * * * cd $ZION_ROOT && AUTO_COMMIT=1 node automation/ai-code-hygiene-agent.cjs run >> automation/logs/code-hygiene-cron.log 2>&1
+
+# Daily automation pipeline - 6 AM (ecosystem intel, suggestion importer, content freshness, report aggregator, telegram digest)
+0 6 * * * cd $ZION_ROOT && node automation/ai-daily-automation-pipeline.cjs >> automation/logs/daily-pipeline-cron.log 2>&1
+
+# Cron health monitor - 8 AM (verify cron logs have recent activity)
+0 8 * * * cd $ZION_ROOT && node automation/ai-cron-health-monitor-agent.cjs run >> automation/logs/cron-health-cron.log 2>&1
+
+# Content freshness - weekly Monday 4 AM (stale content detection; also runs in daily pipeline)
+0 4 * * 1 cd $ZION_ROOT && node automation/ai-content-freshness-agent.cjs run >> automation/logs/content-freshness-cron.log 2>&1
+
+# Dependency security audit - weekly Sunday 3 AM (low-risk auto-fix)
+0 3 * * 0 cd $ZION_ROOT && npm audit fix --audit-level=low >> automation/logs/deps-security-cron.log 2>&1
+
+# Test coverage improvement - weekly Tuesday 5 AM (identify untested critical paths)
+0 5 * * 2 cd $ZION_ROOT && node automation/ai-test-coverage-improvement-agent.cjs >> automation/logs/test-coverage-cron.log 2>&1
+
+# Blog date metadata check - weekly Wednesday 4 AM (flag posts >18mo, missing dates)
+0 4 * * 3 cd $ZION_ROOT && node automation/ai-content-freshness-agent.cjs metadata-check >> automation/logs/metadata-check-cron.log 2>&1
+
+# SEO content refresh - weekly Wednesday 5 AM (prioritize stale high-value pages)
+0 5 * * 3 cd $ZION_ROOT && node automation/ai-seo-content-refresh-agent.cjs run >> automation/logs/seo-content-refresh-cron.log 2>&1
+
+# Dependency outdated check - weekly Thursday 5 AM (npm outdated report)
+0 5 * * 4 cd $ZION_ROOT && node automation/ai-dependency-outdated-agent.cjs run >> automation/logs/deps-outdated-cron.log 2>&1
+
+# Dead code detector - weekly Thursday 4 AM (unused deps via depcheck)
+0 4 * * 4 cd $ZION_ROOT && node automation/ai-dead-code-detector-agent.cjs run >> automation/logs/deadcode-cron.log 2>&1
+
+# Bundle size monitor - weekly Friday 5 AM (track size, detect regressions)
+0 5 * * 5 cd $ZION_ROOT && node automation/ai-bundle-size-monitor-agent.cjs run >> automation/logs/bundle-monitor-cron.log 2>&1
+
+# Python agents - Lead discovery (daily 8 AM; requires CRUNCHBASE_API_KEY, APOLLO_API_KEY, Postgres)
+0 8 * * * cd $ZION_ROOT && python3 commands/zion_lead_discovery_agent.py >> automation/logs/lead-discovery-cron.log 2>&1
+
+# Python agents - Email interaction (every 2 hours; requires GOG_TOKEN, CURSOR_API_KEY)
+0 */2 * * * cd $ZION_ROOT && python3 commands/zion_email_interaction_agent.py >> automation/logs/email-interaction-cron.log 2>&1
+
+# Python agents - Feature promotion (daily 7 AM; generates index.html from feature_promo.yml)
+0 7 * * * cd $ZION_ROOT && python3 commands/zion_feature_promotion_agent.py >> automation/logs/feature-promotion-cron.log 2>&1
+
+# Documentation sync - weekly Friday 6 AM (keeps AI-SYSTEMS-OVERVIEW in sync)
+0 6 * * 5 cd $ZION_ROOT && node automation/ai-documentation-sync-agent.cjs run >> automation/logs/documentation-sync-cron.log 2>&1
+
+# Changelog generator - weekly Friday 7 AM (auto-generates from commits)
+0 7 * * 5 cd $ZION_ROOT && node automation/ai-changelog-generator-agent.cjs run >> automation/logs/changelog-generator-cron.log 2>&1
+
+# Memory consolidation - weekly Sunday 9 AM (reads memory/YYYY-MM-DD.md, updates MEMORY.md)
+0 9 * * 0 cd $ZION_ROOT && node automation/ai-memory-consolidation-agent.cjs run >> automation/logs/memory-consolidation-cron.log 2>&1
+
+# Dependency vulnerability alert - weekly Sunday 3:30 AM (Telegram alert for high/critical)
+30 3 * * 0 cd $ZION_ROOT && node automation/ai-dependency-vulnerability-alert-agent.cjs run >> automation/logs/vuln-alert-cron.log 2>&1
+
+# Layout & design audit - weekly Saturday 5 AM (OpenRouter LLM audit of layout/design)
+0 5 * * 6 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-layout-design-audit-agent.cjs run >> automation/logs/layout-design-audit-cron.log 2>&1
+
+# Layout design automation - weekly Friday 11 AM (UX audit + layout audit + implementation; no auto-commit by default)
+0 11 * * 5 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-layout-design-automation-pipeline-full.cjs >> automation/logs/layout-design-automation-cron.log 2>&1
+
+# App audit automation - weekly Saturday 10 AM (LLM audit of live site via OpenRouter)
+0 10 * * 6 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-app-audit-automation-agent.cjs run >> automation/logs/app-audit-cron.log 2>&1
+
+# Content maximum pipeline - daily 4 AM (ideation + evolution ideas + blog 6 posts + front page + product pages via OpenRouter; AUTO_COMMIT + optional deploy)
+0 4 * * * cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-content-maximum-pipeline.cjs >> automation/logs/content-maximum-cron.log 2>&1
+
+# Ideas to implementation pipeline - daily 4 PM (second run for maximum content velocity; ideation + evolution + blog + front page + product pages)
+0 16 * * * cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-ideas-to-implementation-pipeline.cjs >> automation/logs/ideas-implementation-cron.log 2>&1
+
+# Ultra-fast content pipeline - 6x daily (4, 8, 12, 16, 20, 22 UTC) - industry pages + blog + products
+0 4,8,12,16,20,22 * * * cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-ultra-fast-content-pipeline.cjs >> automation/logs/ultra-fast-content-cron.log 2>&1
+
+# Content burst - template-only 6x daily (5, 9, 13, 17, 21, 23 UTC) - no LLM, max velocity
+0 5,9,13,17,21,23 * * * cd $ZION_ROOT && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-content-burst-agent.cjs >> automation/logs/content-burst-cron.log 2>&1
+
+# Content ideas to deploy - 3x daily (9, 14, 19 UTC) - ideation + front page (LLM) + burst + deploy
+0 9,14,19 * * * cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-content-ideas-to-deploy-pipeline.cjs >> automation/logs/content-ideas-deploy-cron.log 2>&1
+
+# Front page services advertiser - weekly Friday 5 AM (promote under-featured Zion AI pages to front page)
+0 5 * * 5 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-front-page-services-advertiser-agent.cjs >> automation/logs/front-page-services-advertiser-cron.log 2>&1
+
+# GitHub Actions + App audit - weekly Sunday 9 AM (audits workflows + live site via OpenRouter)
+0 9 * * 0 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-github-actions-audit-agent.cjs run >> automation/logs/github-actions-audit-cron.log 2>&1
+
+# App evolution automation - weekly Sunday 11 AM (audit + evolution ideas + backlog; OPENROUTER_API_KEY for LLM)
+0 11 * * 0 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-app-evolution-automation-agent.cjs run >> automation/logs/app-evolution-cron.log 2>&1
+
+# Automation audit - weekly Saturday 11 AM (audits agents, workflows, cron; OPENROUTER_API_KEY for LLM suggestions)
+0 11 * * 6 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && node automation/ai-automation-audit-agent.cjs run >> automation/logs/automation-audit-cron.log 2>&1
+
+# App improvement orchestrator - weekly Monday 12 PM (audit + evolution + implementation + optional commit)
+0 12 * * 1 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 node automation/ai-app-improvement-orchestrator.cjs run >> automation/logs/app-improvement-cron.log 2>&1
+
+# Automation improvements pipeline - weekly Wednesday 10 AM (automation audit + site link audit + report aggregator)
+0 10 * * 3 cd $ZION_ROOT && node automation/ai-automation-improvements-pipeline.cjs >> automation/logs/automation-improvements-cron.log 2>&1
+
+# App evolution audit pipeline - weekly Saturday 2 PM (visit site → audit → implement → deploy; UX + automation + site links + content)
+0 14 * * 6 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 node automation/ai-app-evolution-audit-pipeline.cjs >> automation/logs/app-evolution-audit-cron.log 2>&1
+
+# Local LLM app automation - weekly Wednesday 1 PM (evolution ideas + content audit + app audit + implementation; Ollama or OpenRouter)
+0 13 * * 3 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 node automation/ai-local-llm-app-automation-pipeline.cjs run >> automation/logs/local-llm-automation-cron.log 2>&1
+
+# Local LLM specialists - weekly Thursday 3 PM (SEO + conversion + content specialists in parallel; merges quick wins to backlog)
+0 15 * * 4 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 MERGE_TO_BACKLOG=1 node automation/ai-local-llm-specialists-orchestrator.cjs run >> automation/logs/local-llm-specialists-cron.log 2>&1
+
+# App improvement evolution - Tue + Wed + Fri 7 AM (audit + implement + evolution ideas + content burst + deploy)
+0 7 * * 2,3,5 cd $ZION_ROOT && (set -a; [ -f .env ] && . ./.env; set +a) && AUTO_COMMIT=1 TRIGGER_DEPLOY=1 TRIGGER_FIXES=1 node automation/ai-app-improvement-evolution-pipeline.cjs >> automation/logs/app-improvement-evolution-cron.log 2>&1

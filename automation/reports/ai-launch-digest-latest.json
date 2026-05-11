@@ -1,0 +1,189 @@
+{
+  "generatedAt": "2026-03-20T17:01:17.541Z",
+  "windowDays": 14,
+  "totalLaunchCommits": 43,
+  "weeklyHighlights": [
+    "security: update security configurations",
+    "feat(audit): merge AI lab reliability improvements after PR-loss verification",
+    "feat(ai-lab): launch autonomous revenue forecast studio with promotion sync guard",
+    "chore(autonomy): add dedup/quality gates + promoted route links",
+    "chore(autonomy): add deploy watchdog + promoted-route validator + AI Lab expansions",
+    "feat(autonomy): merge and harden full app evolution batch",
+    "chore(ci): add reusable secrets preflight for autonomous workflows",
+    "fix(home): align AI catalog live IDs with available lab tools"
+  ],
+  "commits": [
+    {
+      "sha": "42c3fb93f676",
+      "subject": "security: update security configurations"
+    },
+    {
+      "sha": "a531c4658152",
+      "subject": "feat(audit): merge AI lab reliability improvements after PR-loss verification"
+    },
+    {
+      "sha": "b85438b30e45",
+      "subject": "feat(ai-lab): launch autonomous revenue forecast studio with promotion sync guard"
+    },
+    {
+      "sha": "a74bfe6c50ec",
+      "subject": "chore(autonomy): add dedup/quality gates + promoted route links"
+    },
+    {
+      "sha": "195a9423a68f",
+      "subject": "chore(autonomy): add deploy watchdog + promoted-route validator + AI Lab expansions"
+    },
+    {
+      "sha": "a457a446ff97",
+      "subject": "feat(autonomy): merge and harden full app evolution batch"
+    },
+    {
+      "sha": "194f44124fa5",
+      "subject": "chore(ci): add reusable secrets preflight for autonomous workflows"
+    },
+    {
+      "sha": "7d7e7630d1ad",
+      "subject": "fix(home): align AI catalog live IDs with available lab tools"
+    },
+    {
+      "sha": "cb1e72715653",
+      "subject": "feat(ai-lab): merge conversion and incident intelligence improvements"
+    },
+    {
+      "sha": "5f35514612e2",
+      "subject": "feat(autonomy): unify AI catalog and harden guarded deploy cycle"
+    },
+    {
+      "sha": "1e55a33911eb",
+      "subject": "feat(ai-lab): add backlog prioritizer and harden autonomous delivery"
+    },
+    {
+      "sha": "06eb7ee0af10",
+      "subject": "feat(ai-lab): launch autonomous experience studio and add integrity guard"
+    },
+    {
+      "sha": "eb2969f673d4",
+      "subject": "feat(home): merge AI improvements and stabilize featured launches"
+    },
+    {
+      "sha": "54e0e201dde3",
+      "subject": "feat(ai-lab): add experiment designer and radar ops hardening"
+    },
+    {
+      "sha": "dbaaecf98f4a",
+      "subject": "feat(ai-lab): expand autonomous planning tools and remove duplication"
+    },
+    {
+      "sha": "d7847a65b9b0",
+      "subject": "feat(ai-lab): add autonomous opportunity radar and refresh automation"
+    },
+    {
+      "sha": "80fb8df4cfc6",
+      "subject": "Deploy autonomous features: AI health monitor, blockchain agent, and feature banner updates"
+    },
+    {
+      "sha": "bf6dd3ad5bf9",
+      "subject": "Autonomous CI/CD improvements: enhanced merge workflow with testing and deployment"
+    },
+    {
+      "sha": "93c49549133f",
+      "subject": "chore(content): burst ultra - template blog + case studies + industry"
+    },
+    {
+      "sha": "354694279f20",
+      "subject": "chore(content): content burst - template blog + case studies + industry pages"
+    },
+    {
+      "sha": "adfa32877d66",
+      "subject": "feat(automation): add AI whats-new curator for homepage"
+    },
+    {
+      "sha": "7aebcefd792e",
+      "subject": "feat(ai-experiences): expand AI lab and in-browser demos"
+    },
+    {
+      "sha": "f480bef4485c",
+      "subject": "Add AI Lab deployment readiness console"
+    },
+    {
+      "sha": "9ab019b54b45",
+      "subject": "feat(ai-experiences): add solutions configurator and URL audit assistant"
+    },
+    {
+      "sha": "81339ab6f643",
+      "subject": "Add AI Site Evolution Simulator and homepage whats-new strip"
+    },
+    {
+      "sha": "79732e974e41",
+      "subject": "Introduce shared app catalog manifest for homepage"
+    },
+    {
+      "sha": "3bf6007f7bc8",
+      "subject": "chore(content): content burst - template blog + case studies + industry pages + front page services"
+    },
+    {
+      "sha": "ff18901de4f4",
+      "subject": "Enhance homepage AI planners and lab surfacing"
+    },
+    {
+      "sha": "c201609a626d",
+      "subject": "feat(ai-experiences): add AI rollout architect widget and homepage recommender"
+    },
+    {
+      "sha": "e4f1a254d88a",
+      "subject": "feat(ai-lab): add in-browser AI lab tools and live activity surface"
+    },
+    {
+      "sha": "253c2569059e",
+      "subject": "feat(ai): add Autonomous Ops Hub and AI Experiments in-browser experiences"
+    },
+    {
+      "sha": "7d3e61db73cd",
+      "subject": "feat(homepage): showcase autonomous agents and grow evolution backlog"
+    },
+    {
+      "sha": "9203f6bdf1d3",
+      "subject": "Surface automation engine and roadmap on homepage and docs"
+    },
+    {
+      "sha": "4be97f7f9859",
+      "subject": "feat(content): add advanced-AI ideas engine and homepage advertising"
+    },
+    {
+      "sha": "e39e1a4693e9",
+      "subject": "Expose autonomous AI systems on homepage and seed evolution ideas"
+    },
+    {
+      "sha": "4eabd090ee3d",
+      "subject": "Tighten homepage funnels toward contact and bundles"
+    },
+    {
+      "sha": "1a0aafc2e521",
+      "subject": "feat(site): align home CTAs and metadata with live funnel"
+    },
+    {
+      "sha": "ae0ce402f807",
+      "subject": "Improve hero CTA and canonical metadata"
+    },
+    {
+      "sha": "9a1d318120f9",
+      "subject": "chore(front-page): refine marketing automation content and layout"
+    },
+    {
+      "sha": "3e391717696a",
+      "subject": "Highlight Advanced AI hub on homepage"
+    },
+    {
+      "sha": "bd832453a236",
+      "subject": "Enhance advanced AI hub content and homepage promotion"
+    },
+    {
+      "sha": "f619c51767cb",
+      "subject": "chore(app): add on-push improvement workflow and industry CTA"
+    },
+    {
+      "sha": "8283c86f575a",
+      "subject": "chore(layout): enhance layout design audit automation"
+    }
+  ]
+}

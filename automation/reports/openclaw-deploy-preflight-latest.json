@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-03-20T17:46:27.176Z",
+  "passed": false,
+  "gateDecision": "hold_deploy",
+  "checks": [
+    {
+      "ok": true,
+      "command": "npm run openclaw:prompt:score"
+    },
+    {
+      "ok": true,
+      "command": "npm run openclaw:actions:queue"
+    },
+    {
+      "ok": true,
+      "command": "npm run openclaw:pr:route"
+    },
+    {
+      "ok": true,
+      "command": "npm run openclaw:confidence:trend"
+    },
+    {
+      "ok": true,
+      "command": "npm run openclaw:deploy:gate"
+    },
+    {
+      "ok": true,
+      "command": "npm run openclaw:regression:memory"
+    }
+  ]
+}

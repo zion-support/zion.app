@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes neon-glow {
+  0% { box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff; }
+  50% { box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff; }
+  100% { box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-border {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, #00f0ff, #ff00ff, #00f0ff, #ff00ff);
+  background-size: 400% 400%;
+  animation: pulse-gradient 15s ease infinite;
+}
+
+.text-neon {
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-card {
+  @apply bg-gray-900 text-white rounded-lg p-6 border border-purple-500 hover:border-purple-400 transition-all duration-300 card-hover;
+}
+
+.hero-section {
+  @apply min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden;
+}
+
+.hero-content {
+  @apply text-center z-10 floating;
+}
+
+.service-button {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105;
+}
+
+.sidebar-item {
+  @apply text-gray-300 hover:text-white transition-colors duration-200;
+}
+
+.nav-link {
+  @apply text-white hover:text-purple-400 transition-colors duration-200;
+}

@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-03-20T15:41:05.115Z",
+  "promotedRouteCount": 12,
+  "liveCheckedCount": 12,
+  "liveUnhealthyCount": 0,
+  "liveUnhealthyRoutes": [],
+  "homepageAiSync": {
+    "ok": true,
+    "exitCode": 0,
+    "output": "[Homepage AI Sync Check] PASS (3 arrays validated against 17 live tools)."
+  },
+  "promotionsRouteCheck": {
+    "ok": true,
+    "exitCode": 0,
+    "output": "Promotion route validator passed (12 homepage routes + 4 catalog routes checked)."
+  },
+  "severity": "ok",
+  "thresholds": {
+    "minPromotedRoutes": 6,
+    "liveUnhealthyThreshold": 2
+  }
+}

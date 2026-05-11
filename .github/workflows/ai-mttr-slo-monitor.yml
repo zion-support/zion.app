@@ -1,0 +1,60 @@
+name: MTTR SLO Monitor
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # Every 2 hours
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      
+      - name: Calculate MTTR
+        env:
+          ZION_BASE_URL: https://ziontechgroup.com
+        run: |
+          npm run mttr:calculate || true
+      
+      - name: Check SLO breach
+        env:
+          MTTR_SLO_THRESHOLD_HOURS: '24'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/mttr-slo-latest.json"
+          if [ -f "$report" ]; then
+            mttr=$(node -e "const j=require('./$report');console.log(j.mttrHours||0)")
+            if [ "$mttr" -gt "$MTTR_SLO_THRESHOLD_HOURS" ]; then
+              gh issue create --title "MTTR SLO Breach: ${mttr}h" \
+                --body "Mean Time to Recovery exceeded SLO threshold of ${MTTR_SLO_THRESHOLD_HOURS}h" \
+                --label "slo,maintenance,urgent" || true
+            fi
+          fi
+      
+      - name: Upload MTTR report
+        uses: actions/upload-artifact@v4
+        with:
+          name: mttr-slo-report-${{ github.run_id }}
+          path: automation/reports/mttr-slo-latest.json
+          retention-days: 30

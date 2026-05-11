@@ -1,0 +1,51 @@
+name: AI Fingerprint Delta Tracker
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  delta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Calculate config delta
+        env:
+          ZION_BASE_URL: https://ziontechgroup.com
+        run: |
+          npm run fingerprint:delta || true
+      - name: Alert config drift
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report="automation/reports/fingerprint-delta-latest.json"
+          if [ -f "$report" ]; then
+            delta_count=$(node -e "const j=require('./$report');console.log(j.deltaCount||0);")
+            if [ "$delta_count" -gt 10 ]; then
+              gh issue create --title "Config Foldrift Detected: $delta_count changes" \
+                --body "Critical configuration changes detected." \
+                --label "automation,security" || true
+            fi
+          fi
+      - name: Upload delta report
+        uses: actions/upload-artifact@v4
+        with:
+          name: fingerprint-delta-${{ github.run_id }}
+          path: automation/reports/fingerprint-delta-latest.json
+          retention-days: 45

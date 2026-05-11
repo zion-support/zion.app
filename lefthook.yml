@@ -1,0 +1,8 @@
+# Optional cross-platform Git hooks via Lefthook.
+# Install: npx lefthook install
+# Do not combine with `npm run git:hooks:install` (core.hooksPath) or pre-commit runs twice.
+# Pre-push stability remains in scripts/git-hooks/pre-push when using core.hooksPath only.
+pre-commit:
+  commands:
+    openclaw:
+      run: node automation/openclaw-pre-commit-hooks.cjs

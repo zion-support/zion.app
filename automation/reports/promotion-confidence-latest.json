@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-03-20T17:01:16.608Z",
+  "promotedCount": 13,
+  "gatedThreshold": 60,
+  "summary": {
+    "high": 13,
+    "medium": 0,
+    "watch": 0,
+    "low": 0
+  },
+  "lowestConfidenceRoutes": [
+    {
+      "route": "/ai-lab",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/automation",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-services/autonomous-growth-intelligence",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-services",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-rag-knowledge-workspace",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-media-prompt-studio",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-conversion-copilot",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-revenue-forecast-studio",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-incident-commander",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/deployment-readiness-console",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    }
+  ],
+  "routeScores": [
+    {
+      "route": "/ai-lab",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/automation",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-services/autonomous-growth-intelligence",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-services",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-rag-knowledge-workspace",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-media-prompt-studio",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-conversion-copilot",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-revenue-forecast-studio",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/autonomous-incident-commander",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/deployment-readiness-console",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-lab/deploy-drift-dashboard",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/ai-services/ai-strategy-roadmap",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    },
+    {
+      "route": "/products",
+      "score": 100,
+      "healthy": true,
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "totalFailures": 0,
+      "status": "high"
+    }
+  ]
+}

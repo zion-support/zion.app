@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-05-10T21:00:30.910Z",
+  "dryRun": false,
+  "maxKeepPerPrefix": 20,
+  "maxAgeDays": 30,
+  "deleted": 139,
+  "reclaimedMB": 0.1
+}

@@ -1,0 +1,36 @@
+{
+  "name": "zion-tech-group",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:check": "next lint --max-warnings=0",
+    "type-check": "tsc --noEmit",
+    "postbuild": "next-sitemap",
+    "generate-sitemap": "next-sitemap",
+    "postdeploy": "npm run generate-sitemap",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "next-sitemap": "^4.1.0", 
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^10.3.0",
+    "framer-motion": "^12.38.0",
+    "next": "^16.2.6",
+    "tailwindcss": "^4.3.0"
+  },
+  "type": "module"
+}

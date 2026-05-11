@@ -1,0 +1,116 @@
+{
+  "version": 2,
+  "description": "High-frequency OpenClaw prompt workers for app evolution with structured-output hints.",
+  "workers": [
+    {
+      "name": "quality-guard",
+      "enabled": true,
+      "riskTier": "low",
+      "timeoutSeconds": 240,
+      "maxRetries": 1,
+      "cadenceSeconds": 45,
+      "outputSchema": "action-list-v1",
+      "prompt": "Run an autonomous quality pass for this Next.js app. Focus on lint/type/test regressions and safe, reversible fixes. Output concrete prioritized actions only."
+    },
+    {
+      "name": "ux-improver",
+      "enabled": true,
+      "riskTier": "low",
+      "timeoutSeconds": 240,
+      "maxRetries": 1,
+      "cadenceSeconds": 45,
+      "outputSchema": "action-list-v1",
+      "prompt": "Audit app UX opportunities and propose implementation-ready improvements for navigation, conversion clarity, and accessibility. Keep actions low-risk and incremental."
+    },
+    {
+      "name": "automation-optimizer",
+      "enabled": true,
+      "riskTier": "medium",
+      "timeoutSeconds": 300,
+      "maxRetries": 1,
+      "cadenceSeconds": 45,
+      "outputSchema": "action-list-v1",
+      "prompt": "Inspect automation opportunities to speed app improvement cycles. Recommend high-impact script/workflow changes that reduce manual effort and keep main branch healthy."
+    },
+    {
+      "name": "performance-specialist",
+      "enabled": true,
+      "riskTier": "medium",
+      "timeoutSeconds": 300,
+      "maxRetries": 1,
+      "cadenceSeconds": 60,
+      "outputSchema": "action-list-v1",
+      "prompt": "Identify frontend performance opportunities for Core Web Vitals and bundle size. Propose precise low-risk implementation steps with expected impact."
+    },
+    {
+      "name": "seo-content-specialist",
+      "enabled": true,
+      "riskTier": "low",
+      "timeoutSeconds": 240,
+      "maxRetries": 1,
+      "cadenceSeconds": 60,
+      "outputSchema": "action-list-v1",
+      "prompt": "Propose SEO and conversion improvements for metadata, internal links, and high-intent content paths. Prefer changes that can be implemented quickly and verified automatically."
+    },
+    {
+      "name": "reliability-guardian",
+      "enabled": true,
+      "riskTier": "high",
+      "timeoutSeconds": 300,
+      "maxRetries": 2,
+      "cadenceSeconds": 45,
+      "outputSchema": "action-list-v1",
+      "prompt": "Analyze release reliability risks in automation and CI workflows. Suggest fail-safe checks, retries, and observability upgrades to reduce silent failures."
+    },
+    {
+      "name": "workflow-reliability-specialist",
+      "enabled": true,
+      "riskTier": "medium",
+      "timeoutSeconds": 300,
+      "maxRetries": 1,
+      "cadenceSeconds": 90,
+      "outputSchema": "action-list-v1",
+      "prompt": "Review GitHub Actions reliability. Focus on flaky workflow patterns, concurrency collisions, timeout/retry settings, and deterministic artifact/report handling. Return only implementation-ready actions."
+    },
+    {
+      "name": "release-safety-specialist",
+      "enabled": true,
+      "riskTier": "high",
+      "timeoutSeconds": 300,
+      "maxRetries": 1,
+      "cadenceSeconds": 90,
+      "outputSchema": "action-list-v1",
+      "prompt": "Audit release safety controls and rollback readiness. Propose concrete low-risk guardrail additions for deploy hooks, route validation, and stale promotion resilience."
+    },
+    {
+      "name": "pm2-slo-specialist",
+      "enabled": true,
+      "riskTier": "medium",
+      "timeoutSeconds": 300,
+      "maxRetries": 1,
+      "cadenceSeconds": 90,
+      "outputSchema": "action-list-v1",
+      "prompt": "Analyze PM2 process health and SLO telemetry quality. Recommend improvements that reduce restart storms, detect drift quickly, and improve actionable PM2 reporting."
+    },
+    {
+      "name": "docs-sync-specialist",
+      "enabled": true,
+      "riskTier": "low",
+      "timeoutSeconds": 240,
+      "maxRetries": 1,
+      "cadenceSeconds": 120,
+      "outputSchema": "action-list-v1",
+      "prompt": "Check docs-to-automation consistency for Openclaw and autonomous workflows. Return concrete doc update actions with exact file targets and expected outcomes."
+    },
+    {
+      "name": "security-ops-specialist",
+      "enabled": true,
+      "riskTier": "high",
+      "timeoutSeconds": 300,
+      "maxRetries": 2,
+      "cadenceSeconds": 120,
+      "outputSchema": "action-list-v1",
+      "prompt": "Inspect workflow and automation security posture. Prioritize least-privilege permissions, secret-safety, and dependency risk controls with practical implementation steps."
+    }
+  ]
+}

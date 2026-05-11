@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-05-10T22:00:20.678Z",
+  "incidents": [
+    "repeated_gate_reasons",
+    "low_confidence_trend"
+  ],
+  "reasons": [
+    "success_rate_below_threshold(0 < 0.6)",
+    "quality_below_threshold(0 < 60)",
+    "schema_validity_low(0 < 0.6)",
+    "contract_failures_detected",
+    "no_prompt_activity"
+  ],
+  "repeatedReasons": [
+    "success_rate_below_threshold(0 < 0.6)",
+    "quality_below_threshold(0 < 60)",
+    "schema_validity_low(0 < 0.6)",
+    "contract_failures_detected",
+    "no_prompt_activity"
+  ],
+  "preventionChecks": [
+    "ensure_openclaw_autonomous_prompts_online",
+    "reduce_worker_parallelism_and_retry_auth",
+    "tighten_prompt_actionability_rules",
+    "decrease_frequency_until_confidence_recovers"
+  ],
+  "recommendation": "Enter conservative mode: keep deploys gated and run preflight orchestrator before release."
+}
