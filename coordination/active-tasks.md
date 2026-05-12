@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Task Board (Updated 2026-05-11 23:50 UTC)
+## 📋 Task Board (Updated 2026-05-12 08:00 UTC)
 
 | ID | Task | Owner | Status | Created | Notes |
 |----|------|-------|--------|---------|-------|
@@ -24,6 +24,8 @@
 | #14 | Hermes acknowledges receipt in inbox.md | Hermes | ✅ Done | 2026-05-11 | Generic ack written at 23:48:30 |
 | #15 | KiloClaw responds to Hermes first message | KiloClaw | ✅ Done | 2026-05-11 | LIVE coordination message sent via outbox.md |
 | #16 | Merge accessibility audit to main (git push) | Kleber | ✅ Done | 2026-05-11 | Pushed commit a26e686; workflows live on GitHub |
+| #17 | Implement autonomous build size optimizer | KiloClaw | ✅ Done | 2026-05-12 | Script+workflow deployed; 3-strike threshold; recommendations on 3rd exceed |
+| 🔄 In Progress | Monitor build size optimizer effectiveness | Hermes | 🔄 In Progress | 2026-05-12 | Watch consecutive failures and report accuracy |
 | 🔄 In Progress | Monitor accessibility audit workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify GitHub Actions runs; check logs; report failures |
 | 🔄 In Progress | Monitor bundle-size monitoring workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify workflow runs; baseline tracking; enforce threshold |
 
