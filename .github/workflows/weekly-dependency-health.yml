@@ -1,0 +1,32 @@
+name: Weekly Dependency Health Report
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 3 AM UTC
+  workflow_dispatch:
+
+jobs:
+  health-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install gitleaks (optional)
+        run: |
+          curl -sfL https://github.com/gitleaks/gitleaks/releases/download/v8.16.1/gitleaks_8.16.1_linux_x64.tar.gz | tar xz
+          sudo mv gitleaks /usr/local/bin/
+          gitleaks version
+      - name: Run weekly health report
+        run: |
+          chmod +x ./scripts/weekly-dependency-health.sh
+          ./scripts/weekly-dependency-health.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependency-health-report
+          path: ${{ github.workspace }}/.hermes/memory/dependency-health-weekly.txt
