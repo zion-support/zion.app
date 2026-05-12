@@ -16,7 +16,7 @@ concurrency:
 jobs:
   storybook-regeneration:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -29,29 +29,40 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm install --save-dev @storybook/cli @storybook/testing-library
 
       - name: Check schema changes
         id: schema
         run: |
           if [ -f scripts/check-schema-changes.sh ]; then
             ./scripts/check-schema-changes.sh
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Run Storybook Snapshot Regenerator
         if: steps.schema.outputs.changed == 'true'
-        run: node automation/storybook-snapshot-regenerator.cjs
+        run: |
+          node automation/storybook-snapshot-regenerator.cjs
+        id: snapshot
 
       - name: Create regression issue if needed
         if: steps.schema.outputs.changed == 'true'
         env:
-          GH_TOKEN: *** secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f .hermes/memory/storybook-regression-report.json ]; then
-            REPORT=$(cat .hermes/memory/storybook-regression-report.json)
-            TITLE=$(echo "$REPORT" | jq -r .title)
-            BODY=$(echo "$REPORT" | jq -r .body)
-            gh issue create --title "$TITLE" --body "$BODY" --label "storybook,visual-regression" || true
+          REPORT=".hermes/memory/storybook-regression-report.json"
+          if [ -f "$REPORT" ]; then
+            TITLE=$(jq -r '.title // empty' "$REPORT")
+            BODY=$(jq -r '.body // empty' "$REPORT")
+            STATUS=$(jq -r '.status // empty' "$REPORT")
+            if [[ -n "$TITLE" && "$STATUS" != "baseline_initialized" && "$STATUS" != "no_regression" ]]; then
+              echo "📝 Creating GitHub issue: $TITLE"
+              gh issue create --title "$TITLE" --body "$BODY" --label "storybook,visual-regression,automation" || true
+            else
+              echo "✅ No regression detected (status: $STATUS)"
+            fi
+          else
+            echo "⚠️ No report file found"
           fi
 
       - name: Upload snapshot artifacts
