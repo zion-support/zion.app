@@ -1,0 +1,79 @@
+name: Code Quality Analytics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**/*.ts'
+      - 'app/**/*.tsx'
+      - 'components/**/*.ts'
+      - 'components/**/*.tsx'
+      - 'automation/**/*.cjs'
+      - 'scripts/**/*.sh'
+  schedule:
+    - cron: '0 17 * * 0'  # Weekly on Sunday at 17:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run code quality analytics
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '8435383377' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node automation/code-quality-analytics.cjs
+
+      - name: Upload report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-report
+          path: |
+            .hermes/memory/code-quality/
+          retention-days: 30
+
+      - name: Comment PR with findings
+        if: github.event_name == 'pull_request' && always()
+        run: |
+          REPORT=".hermes/memory/code-quality/latest-report.json"
+          if [ -f "$REPORT" ]; then
+            node -e "
+              const r = require('./$REPORT');
+              const s = r.summary || {};
+              const pr = Number(process.env.PR_NUMBER);
+              const { execSync } = require('child_process');
+              if (s.highComplexityFiles > 0 || s.largeFiles > 0) {
+                const body = '🔧 **Code Quality Analytics** — review complexity changes\\n\\n' +
+                  \`Files changed: \${s.filesAnalyzed} | LOC: \${s.totalLOC}\\n\` +
+                  \`High complexity: \${s.highComplexityFiles} | Large files: \${s.largeFiles} | Duplicates: \${s.duplicateBlocks}\\n\` +
+                  'See artifact for details. Consider refactoring before merge.\\n';
+                execSync(\`gh pr comment \$PR_NUMBER --body "\${body}"\`, { stdio: 'pipe' });
+              } else {
+                execSync(\`gh pr comment \$PR_NUMBER --body '✅ Code quality check passed — no high-complexity or large files detected.'\`, { stdio: 'pipe' });
+              }
+            "
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
