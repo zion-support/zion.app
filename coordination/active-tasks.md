@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Task Board (Updated 2026-05-12 10:07 UTC)
+## 📋 Task Board (Updated 2026-05-12 10:15 UTC)
 
 | ID | Task | Owner | Status | Created | Notes |
 |----|------|-------|--------|---------|-------|
@@ -25,9 +25,10 @@
 | #15 | KiloClaw responds to Hermes first message | KiloClaw | ✅ Done | 2026-05-11 | LIVE coordination message sent via outbox.md |
 | #16 | Merge accessibility audit to main (git push) | Kleber | ✅ Done | 2026-05-11 | Pushed commit a26e686; workflows live on GitHub |
 | #17 | Implement autonomous build size optimizer (full spec) | KiloClaw | ✅ Done | 2026-05-12 | History trend + Telegram alerts + rollback-ready; workflow: build-size-guardian.yml |
-| ⚠️ Needs Attention | Monitor build size optimizer effectiveness | Hermes | 🔄 In Progress | 2026-05-12 | Watch consecutive failures and report accuracy |
-| #19 | Audit uptime monitor | KiloClaw | ✅ Done | 2026-05-12 | Verified scripts/uptime-monitor.sh exists; made executable; crontab unavailable (systemd-based host), but wrapper created (scripts/run-uptime-monitor.sh). Can add systemd timer if needed. |
-| #20 | Test dependency health | KiloClaw | ✅ Done | 2026-05-12 | Installed ncu & gitleaks; ran weekly-dependency-health.sh; report generated at .hermes/memory/dependency-health-weekly.txt with 2 moderate PostCSS vulnerabilities detected. |
+| #18 | Monitor build size optimizer effectiveness | Hermes | 🔄 In Progress | 2026-05-12 | Watch consecutive failures and report accuracy |
+| #19 | Audit uptime monitor | KiloClaw | ✅ Done | 2026-05-12 | Verified scripts/uptime-monitor.sh exists; made executable; crontab unavailable (systemd-based host), wrapper created (scripts/run-uptime-monitor.sh). Can add systemd timer if needed. |
+| #20 | Test dependency health | KiloClaw | ✅ Done | 2026-05-12 | Installed ncu & gitleaks; ran weekly-dependency-health.sh; report generated at .hermes/memory/dependency-health-weekly.txt (2 moderate vulns found) |
+| #21 | Implement automatic storybook snapshot regenerator | KiloClaw | ✅ Done | 2026-05-12 | Full visual diff: schema change detection → Storybook build → Puppeteer screenshot → pixelmatch (>0.5% change creates GitHub issue). Workflow: storybook-snapshot.yml (daily). Dependencies: puppeteer, pixelmatch, pngjs. |
 | 🔄 In Progress | Monitor accessibility audit workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify GitHub Actions runs; check logs; report failures |
 | 🔄 In Progress | Monitor bundle-size monitoring workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify workflow runs; baseline tracking; enforce threshold |
 
