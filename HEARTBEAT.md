@@ -39,7 +39,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 7. Confirm new advertised AI Lab/route cards return `200` after deploy cycles (with redirect follow)
 8. For risky merges/pushes: `npm run openclaw:merge:freeze:run -- <cmd>`; for lock-heavy deploys: `npm run deploy:local:supervised`; before report-only commits: `npm run openclaw:report:budget`
 9. Keep `ai-github-workflow-integrity-audit-daily.yml` and `ai-lead-form-routing-guard-daily.yml` green; if either drifts from healthy, prioritize fix-agent loops before feature expansion.
-10. Autonomous build size optimizer upgraded to full spec — history trend detection (>5% over 3 runs), Telegram alerts on block and suggestions, rollback scaffolding in place. See `docs/AUTONOMOUS-BUILD-SIZE-OPTIMIZER.md` and workflow `build-size-guardian.yml`.
+11. Autonomous storybook snapshot regenerator now active – schema change detection, Puppeteer screenshot, pixelmatch visual diff, GitHub issue on >0.5% change. See automation/storybook-snapshot-regenerator.cjs and workflow storybook-snapshot.yml.
 5. Keep main branch synced and deployment-ready
 6. Run deploy watchdog and promotion-route validation on each release cycle
 7. Confirm new advertised AI Lab/route cards return `200` after deploy cycles (with redirect follow)
