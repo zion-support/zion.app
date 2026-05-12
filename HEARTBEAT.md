@@ -49,6 +49,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 17. Autonomous API health & latency monitor now active – checks critical endpoints every 5 min; measures p95/p99 latency + error rate; baseline comparison (7d avg); Telegram alerts on degradation; GitHub issues for p95>3s or error rate>5%. See automation/api-health-monitor.cjs, workflow api-health-monitor.yml, docs/API-HEALTH-MONITOR.md.
 18. Automated accessibility compliance audit now active – Playwright + axe-core WCAG 2.1 AA scan; PR comments on violations; daily main-branch scan creates issue if critical violations; per-page violation history tracked. See automation/accessibility-audit.cjs, workflow accessibility-audit.yml, docs/ACCESSIBILITY-AUDIT.md.
 19. Autonomous image optimization & alt text compliance now active – scans source files for <img> + Next.js <Image>; enforces alt text; checks file size (>500KB warn, >1MB fail); verifies WebP/AVIF variants for large images; per-page image weight tracked; PR comments; daily Telegram + GitHub issue. See automation/image-optimization-audit.cjs, workflow image-optimization-audit.yml, docs/IMAGE-OPTIMIZATION-AUDIT.md.
+20. Autonomous content quality & SEO auditor now active – fetches sitemap pages, parses HTML for title, meta, headings, word count, links, Open Graph, Twitter Cards, schema; scores 0–100; measures readability (Flesch, grade level); detects thin content, orphan pages, missing metadata; daily Telegram summary; GitHub issues for systemic problems; per-page 90-day history. See automation/content-quality-audit.cjs, workflow content-quality-audit.yml, docs/CONTENT-QUALITY-AUDIT.md.
 5. Keep main branch synced and deployment-ready
 6. Run deploy watchdog and promotion-route validation on each release cycle
 7. Confirm new advertised AI Lab/route cards return `200` after deploy cycles (with redirect follow)
@@ -58,7 +59,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 ### System Status:
 🟢 All automation components operational
 🟢 GitHub repository synced
-🟢 Documentation updated (added STORYBOOK-SNAPSHOT-REGENERATOR.md, UPTIME-MONITOR.md, BROKEN-LINK-CHECKER.md, LIGHTHOUSE-MONITOR.md, ERROR-TRACKER.md, API-HEALTH-MONITOR.md, ACCESSIBILITY-AUDIT.md)
+🟢 Documentation updated (added STORYBOOK-SNAPSHOT-REGENERATOR.md, UPTIME-MONITOR.md, BROKEN-LINK-CHECKER.md, LIGHTHOUSE-MONITOR.md, ERROR-TRACKER.md, API-HEALTH-MONITOR.md, ACCESSIBILITY-AUDIT.md, IMAGE-OPTIMIZATION-AUDIT.md, CONTENT-QUALITY-AUDIT.md)
 🟢 Memory augmented with new insights
 🟢 Hermes Agent coordination loop LIVE (5-minute heartbeat enabled)
 🟢 Daily Automation Digest enabled (08:00 UTC Telegram summary)
@@ -68,6 +69,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 🟢 API Health & Latency Monitor deployed (every 5 minutes, baseline comparison, alerts)
 🟢 Automated Accessibility Compliance Audit deployed (PR + daily runs, WCAG 2.1 AA, GitHub issue on critical violations)
 🟢 Image Optimization & Alt Text Compliance deployed (PR + daily runs, alt text enforcement, file size checks, WebP/AVIF verification)
+🟢 Content Quality & SEO Auditor deployed (daily 16:00 UTC + PRs, SEO scoring, readability metrics, thin content/orphan detection, GitHub issues)
 
 ### Operating Mandate
 - Standing owner permission (2026-03-20 rr-accel-1): continue autonomous implementation/deployment loops by default and persist this authority in continuity files for future sessions.

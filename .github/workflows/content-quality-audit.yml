@@ -1,0 +1,81 @@
+name: Content Quality & SEO Audit
+
+on:
+  schedule:
+    - cron: '0 16 * * *'  # Daily at 16:00 UTC
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**/*.tsx'
+      - 'app/**/*.ts'
+      - 'components/**/*.tsx'
+      - 'components/**/*.ts'
+      - 'content/**'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run content quality audit
+        env:
+          APP_URL: ${{ secrets.APP_URL || 'https://ziontechgroup.com' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '8435383377' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node automation/content-quality-audit.cjs
+
+      - name: Upload report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-quality-report
+          path: |
+            .hermes/memory/content-quality/
+          retention-days: 30
+
+      - name: Comment PR with findings
+        if: github.event_name == 'pull_request' && always()
+        run: |
+          REPORT=".hermes/memory/content-quality/latest-report.json"
+          if [ -f "$REPORT" ]; then
+            node -e "
+              const r = require('./$REPORT');
+              const s = r.summary || {};
+              const pr = Number(process.env.PR_NUMBER);
+              const { execSync } = require('child_process');
+              if (s.criticalCount > 0) {
+                const body = '🚨 **Content Quality & SEO audit found critical issues**\\n\\n' +
+                  \`SEO score avg: \${s.averageScore}/100\\n\` +
+                  \`Critical pages: \${s.criticalCount}\\n\` +
+                  \`Orphan pages: \${s.orphanCount}\\n\` +
+                  \`Thin content: \${s.thinContentCount}\\n\` +
+                  'See artifact for full report. Improve content before merging.\\n';
+                execSync(\`gh pr comment \$PR_NUMBER --body "\${body}"\`, { stdio: 'pipe' });
+              } else {
+                execSync(\`gh pr comment \$PR_NUMBER --body '✅ Content audit passed — SEO score \${s.averageScore}/100, no critical issues.'\`, { stdio: 'pipe' });
+              }
+            "
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
