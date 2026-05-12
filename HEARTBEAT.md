@@ -47,6 +47,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 15. Broken Link & Sitemap Health Checker now active – crawls sitemap, validates all internal links, detects 404s/redirects/orphans, sends Telegram summary daily at 06:00 UTC, creates GitHub issue when ≥3 new broken links. See automation/link-health-checker.cjs and workflow link-health-checker.yml.
 16. Autonomous error tracking & aggregation now active – client-side error capture (unhandled, promise rejections, console.error) → API → hourly aggregation; Telegram alerts for new/spiking errors; GitHub issues on threshold. See docs/ERROR-TRACKER.md.
 17. Autonomous API health & latency monitor now active – checks critical endpoints every 5 min; measures p95/p99 latency + error rate; baseline comparison (7d avg); Telegram alerts on degradation; GitHub issues for p95>3s or error rate>5%. See automation/api-health-monitor.cjs, workflow api-health-monitor.yml, docs/API-HEALTH-MONITOR.md.
+18. Automated accessibility compliance audit now active – Playwright + axe-core WCAG 2.1 AA scan; PR comments on violations; daily main-branch scan creates issue if critical violations; per-page violation history tracked. See automation/accessibility-audit.cjs, workflow accessibility-audit.yml, docs/ACCESSIBILITY-AUDIT.md.
 5. Keep main branch synced and deployment-ready
 6. Run deploy watchdog and promotion-route validation on each release cycle
 7. Confirm new advertised AI Lab/route cards return `200` after deploy cycles (with redirect follow)
@@ -56,7 +57,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 ### System Status:
 🟢 All automation components operational
 🟢 GitHub repository synced
-🟢 Documentation updated (added STORYBOOK-SNAPSHOT-REGENERATOR.md, UPTIME-MONITOR.md, BROKEN-LINK-CHECKER.md, LIGHTHOUSE-MONITOR.md, ERROR-TRACKER.md)
+🟢 Documentation updated (added STORYBOOK-SNAPSHOT-REGENERATOR.md, UPTIME-MONITOR.md, BROKEN-LINK-CHECKER.md, LIGHTHOUSE-MONITOR.md, ERROR-TRACKER.md, API-HEALTH-MONITOR.md, ACCESSIBILITY-AUDIT.md)
 🟢 Memory augmented with new insights
 🟢 Hermes Agent coordination loop LIVE (5-minute heartbeat enabled)
 🟢 Daily Automation Digest enabled (08:00 UTC Telegram summary)
@@ -64,6 +65,7 @@ If anything changed, update this heartbeat summary and optionally notify Kleber 
 🟢 Broken Link Health Checker deployed (06:00 UTC daily)
 🟢 Error Tracking & Aggregation deployed (hourly runs, Telegram + GitHub issues)
 🟢 API Health & Latency Monitor deployed (every 5 minutes, baseline comparison, alerts)
+🟢 Automated Accessibility Compliance Audit deployed (PR + daily runs, WCAG 2.1 AA, GitHub issue on critical violations)
 
 ### Operating Mandate
 - Standing owner permission (2026-03-20 rr-accel-1): continue autonomous implementation/deployment loops by default and persist this authority in continuity files for future sessions.
