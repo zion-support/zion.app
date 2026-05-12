@@ -253,4 +253,47 @@ TASK 101 – Review PR #42 on GitHub repo ziontechgroup/main
 
 ---
 
+## 9️⃣ Telegram Status Updates (Optional — Self-Push)
+
+If you want to send your own Telegram updates directly (without an external heartbeat script), add this to your poller:
+
+**Requirements:**
+- `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in your `.env` file
+- `curl` and `jq` installed
+
+**Add to your script (after sourcing .env):**
+
+```bash
+send_telegram() {
+  local text="$1"
+  curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    -F "chat_id=${TELEGRAM_CHAT_ID}" \
+    -F "text=${text}" \
+    -F "parse_mode=Markdown" > /dev/null 2>&1
+}
+
+build_telegram_summary() {
+  local pending=$(grep -c "⏳ Pending" "$TASKS" 2>/dev/null || echo 0)
+  local inprog=$(grep -c "🔄 In Progress" "$TASKS" 2>/dev/null || echo 0)
+  local done=$(grep -c "✅ Done" "$TASKS" 2>/dev/null || echo 0)
+  local hermes=$(head -1 "$STATUS")
+  cat <<EOF
+🤖 *Hermes Status — $(date '+%H:%M UTC')*
+
+${hermes}
+*Tasks:* 🙋${inprog} active | ⏳${pending} queued | ✅${done} done
+EOF
+}
+
+# Inside your loop, after the 5-min self-status check:
+if [ $((now - LAST_SELF_STATUS)) -ge $SELF_STATUS_INTERVAL ]; then
+  build_telegram_summary | send_telegram
+  LAST_SELF_STATUS=$now
+fi
+```
+
+**Important:** `TELEGRAM_CHAT_ID` must be a **numeric user ID** (e.g., `8435383377`), **not** a bot username like `@Neo_kleber_bot`. Telegram forbids bot-to-bot messaging.
+
+---
+
 **🚀 You're ready! Start the poller and check `status.md` within 30 seconds to confirm it's live.**
