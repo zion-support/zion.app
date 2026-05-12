@@ -1,0 +1,21 @@
+name: CI Self-Heal Guardian
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  self-heal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git curl jq
+      - name: Run Self-Heal Script
+        run: |
+          chmod +x ./scripts/ci-self-heal.sh
+          ./scripts/ci-self-heal.sh
