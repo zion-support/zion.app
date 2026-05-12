@@ -96,6 +96,21 @@ function cleanupDirectory(dir, ageDays, pattern = '*') {
   let bytesFreed = 0;
 
   for (const file of files) {
+    // Protect retention manager's own state files
+    try {
+      const rel = path.relative(STATE_DIR, file);
+      if (!rel.startsWith('..') && !rel.startsWith(path.sep)) {
+        // file is inside STATE_DIR — never delete
+        continue;
+      }
+    } catch {}
+
+    // Never delete latest report snapshots (current state)
+    const basename = path.basename(file);
+    if (basename === 'latest-report.json' || basename.endsWith('-latest.json')) {
+      continue;
+    }
+
     // Safety: skip if modified recently
     if (!isOlderThanDays(file, SAFETY_AGE_H / 24)) continue; // skip <24h old
     if (!isOlderThanDays(file, ageDays)) continue; // keep within retention
