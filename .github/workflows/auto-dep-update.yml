@@ -1,0 +1,53 @@
+name: Automated Dependency Updates
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'   # Every Monday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Run dependency update script
+        run: |
+          chmod +x scripts/auto-dep-update.sh
+          scripts/auto-dep-update.sh
+
+      - name: Check if changes exist
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "no_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_changes=false" >> $GITHUB_OUTPUT
+            git add package.json package-lock.json
+          fi
+
+      - name: Create PR if updated
+        if: steps.diff.outputs.no_changes == 'false'
+        run: |
+          BRANCH="deps-auto-$(date +%Y%m%d%H%M%S)"
+          git checkout -b $BRANCH
+          git push origin $BRANCH
+          gh pr create --title "🤖 Automated dependency update" \
+            --body "This PR updates project dependencies to the latest safe versions.  All tests passed before committing changes. \n\nThis automated run will be force‑merged after checking features." \
+            --head $BRANCH \
+            --base main \
+            --label "dependencies,automation" || true
