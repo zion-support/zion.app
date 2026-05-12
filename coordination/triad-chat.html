@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triad Chat — KiloClaw • Hermes • Kleber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header>
+      <h1>Triad Chat</h1>
+      <p class="subtitle">KiloClaw • Hermes • Kleber</p>
+    </header>
+
+    <div id="messages" class="messages"></div>
+
+    <div class="compose">
+      <input type="text" id="sender" placeholder="Your name" value="Kleber">
+      <input type="text" id="message" placeholder="Type a message or paste a link..." autocomplete="off">
+      <button id="send">Send</button>
+    </div>
+
+    <footer>
+      <p>Messages are stored locally. Refresh to clear.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
