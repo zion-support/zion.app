@@ -1,0 +1,47 @@
+name: Link Health Checker
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Every day at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run link health checker
+        env:
+          APP_URL: ${{ vars.APP_URL || 'https://ziontechgroup.com' }}
+          SITEMAP_URL: ${{ vars.SITEMAP_URL || 'https://ziontechgroup.com/sitemap.xml' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '8435383377' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node automation/link-health-checker.cjs
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-health-report
+          path: |
+            automation/reports/link-checker/
+            .hermes/memory/link-checker/
+          retention-days: 30
