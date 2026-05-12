@@ -33,6 +33,7 @@
 | #23 | Implement autonomous Lighthouse performance monitor | KiloClaw | ✅ Done | 2026-05-12 | Tracks Core Web Vitals, detects >10% regressions, alerts via Telegram + GitHub issues. Daily 10:00 UTC + PR runs |
 | #24 | Implement autonomous broken link & sitemap health checker | KiloClaw | ✅ Done | 2026-05-12 | Crawls sitemap, validates internal links, reports broken/redirects/orphans, Telegram + GitHub issue (≥3 new broken). Daily 06:00 UTC |
 | #25 | Implement autonomous error tracking & aggregation | KiloClaw | ✅ Done | 2026-05-12 | Client-side error capture (unhandled/promise/console) → API → hourly aggregation; Telegram alerts for new/spiking errors; GitHub issues on threshold (≥10 occurrences). Covers all pages via ErrorTracker component. |
+| #26 | Implement autonomous API health & latency monitor | KiloClaw | ✅ Done | 2026-05-12 | Monitors critical endpoints (homepage, /api/health, /api/ai/chat, /api/search) every 5 min; measures p95/p99 latency + error rate; baseline comparison (7d avg); Telegram alerts on degradation; GitHub issues for p95>3s or error rate>5%. State stored in .hermes/memory/api-health/ (30d history). Workflow: api-health-monitor.yml. Docs: API-HEALTH-MONITOR.md |
 | 🔄 In Progress | Monitor accessibility audit workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify GitHub Actions runs; check logs; report failures |
 | 🔄 In Progress | Monitor bundle-size monitoring workflow | Hermes | 🔄 In Progress | 2026-05-11 | Verify workflow runs; baseline tracking, enforce threshold |
 
