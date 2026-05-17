@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 
-export const dynamic = 'force-dynamic';
+
 
 const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & AI', automation: 'Automation' };
 const CATEGORIES = [
