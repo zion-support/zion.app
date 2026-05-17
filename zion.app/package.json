@@ -8,7 +8,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "build:check": "npm run type-check && npm run build",
+    "test:ci": "npm test",
+    "routes:promotions:check": "node scripts/routes-promotions-check.cjs",
+    "sitemap:validate": "npx sitemapper https://ziontechgroup.com/sitemap.xml",
+    "seo:audit": "node scripts/seo-audit.cjs",
+    "deploy:status:generate": "node scripts/deploy-status-generate.cjs",
+    "automation:preflight": "node scripts/automation-preflight.cjs",
+    "ai-lab:integrity-check": "node scripts/ai-lab-integrity-check.cjs",
+    "smoke:routes:check": "node scripts/smoke-routes-check.cjs",
+    "homepage:ai-sync:check": "node scripts/homepage-ai-sync-check.cjs"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",
