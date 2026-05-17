@@ -40,10 +40,6 @@ export default async function ServicePage({ params }: PageProps) {
   );
   if (!service) notFound();
 
-  const related = allServices
-    .filter((s) => s.category === service.category && s.id !== service.id)
-    .slice(0, 4);
-
   const catLabel = CAT_LABELS[service.category] || service.category;
 
   return (
@@ -132,22 +128,42 @@ export default async function ServicePage({ params }: PageProps) {
         {/* ROI Calculator */}
         <ROICalculator serviceTitle={service.title} category={service.category} />
 
-        {/* Related */}
-        {related.length > 0 && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-white mb-6">Related Services</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {related.map((s) => (
-                <Link key={s.id} href={`/services/${s.id}`}
-                  className="glass-card hover:border-purple-500/50 transition group">
-                  <span className="text-xs text-slate-500">{s.category}</span>
-                  <h3 className="text-white font-semibold mt-1 group-hover:text-purple-400 transition">{s.title}</h3>
-                  <p className="text-slate-400 text-sm mt-2 line-clamp-2">{s.description}</p>
+        {/* Related Services — expand to 8 + category link */}
+        {(() => {
+          const sameCat = allServices
+            .filter((s) => s.category === service.category && s.id !== service.id)
+            .slice(0, 8);
+          if (sameCat.length === 0) return null;
+          const catLabel = (CAT_LABELS[service.category] || service.category).replace(' Services', '');
+          return (
+            <div className="mb-12">
+              <h2 className="text-2xl font-semibold text-white mb-6">Related Services</h2>
+              <p className="text-slate-400 text-sm mb-6">Other {catLabel} services you may be interested in</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {sameCat.map((s) => (
+                  <Link key={s.id} href={`/services/${s.id}`}
+                    className="glass-card hover:border-purple-500/50 transition group flex flex-col">
+                    <span className="text-xs text-slate-500 uppercase tracking-wider">{s.category}</span>
+                    <h3 className="text-white font-semibold mt-1 group-hover:text-purple-400 transition leading-snug">{s.title}</h3>
+                    <p className="text-slate-400 text-sm mt-2 line-clamp-2 flex-1">{s.description}</p>
+                    <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
+                      <span className="text-purple-300 text-xs font-semibold">
+                        From {Object.values(s.pricing as Record<string,string>)[0]}/mo
+                      </span>
+                      <span className="text-xs text-slate-500 group-hover:text-purple-400 transition-colors">→</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="text-center mt-6">
+                <Link href={`/services?category=${service.category}`}
+                  className="text-sm text-purple-400 hover:text-purple-300 font-medium transition">
+                  View all {catLabel} services →
                 </Link>
-              ))}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* Bottom CTA */}
         <section className="cta-section text-center">

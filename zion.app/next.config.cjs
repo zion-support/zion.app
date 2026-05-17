@@ -5,6 +5,8 @@ const nextConfig = {
   output: 'export',
   basePath: '',
   assetPrefix: '/',
+  // Ensure PostCSS assets are found at workspace root during export
+  outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },

@@ -8,7 +8,7 @@ import type { Service } from './data/servicesData';
 import Footer from '@/components/Footer';
 
 // Category accent color for showcase cards (maps category key → gradient)
-/** Inline category accent colors for showcase card styles (static RGBA + hex) */
+// Category accent color for showcase card styles (static RGBA + hex)
 const catAccent: Record<string, string> = {
   ai:        '#a78bfa',
   it:        '#38bdf8',
@@ -20,23 +20,14 @@ const catAccent: Record<string, string> = {
 
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
 
-// Featured: pull 2 per category so every category is represented
-const FEATURED = {
-  ai: ['ai-analytics','ai-customer-support','ai-content-generation','ai-voice-assistant','ai-fraud-detection','ai-knowledge-management'],
-  it: ['it-consulting','devops-gen-ai-ci-cd'],
-  cloud: ['cloud-cost-ai-optimizer'],
-  security: ['ai-compliance'],
-  data: ['ai-hr-assistant'],
-  automation: [],
-};
-const FEATURED_IDS = Object.values(FEATURED).flat();
+// Stat labels
+const STAT_SERVICES = 'Services & Solutions';
+const STAT_MONITOR  = 'Monitoring & Support';
+const STAT_SLA      = 'SLA Uptime Guarantee';
 
-const stats = [
-  { value: '361+', label: 'Services & Solutions' },
-  { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation' },
-  { value: '24/7', label: 'Monitoring & Support' },
-  { value: '99.9%', label: 'SLA Uptime Guarantee' },
-];
+// Featured: pull 2 per category so every category is represented
+// Dynamic featured: popular services + first per category (auto-updates with catalog changes)
+const FEATURED_IDS = ['accessibility-compliance', 'advanced-ai-enterprise-intelligence-hub', 'ai-accessibility-auditor', 'ai-accessibility-optimizer', 'ai-analytics', 'ai-customer-support', 'ai-document-intelligence', 'ai-knowledge-management', 'ai-lead-generation', 'ai-office-automation', 'ai-sales-intelligence', 'ai-self-healing-infra', 'api-development', 'api-gateway-management'];
 
 const CATEGORIES = [
   { key: 'ai',        label: 'AI Services',        emoji: '🧠', color: 'from-purple-500 to-indigo-500' },
@@ -49,8 +40,20 @@ const CATEGORIES = [
 
 export default function HomePage() {
   const services: Service[] = allServices;
+
+  // Quick-View Modal: open a service card overlay without navigating away
+  const [quickView, setQuickView] = useState<Service | null>(null);
   const [search, setSearch] = useState('');
   const [catFilter, setCatFilter] = useState<string | null>(null);
+
+  // Dynamic stats — auto-update when catalog changes
+  const serviceCount = services.length;
+  const stats = [
+    { value: `${serviceCount}+`, label: STAT_SERVICES },
+    { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation' },
+    { value: '24/7', label: STAT_MONITOR },
+    { value: '99.9%', label: STAT_SLA },
+  ];
 
   const featuredServices = useMemo(
     () => services.filter((s: any) => FEATURED_IDS.includes(s.id)),
@@ -84,14 +87,14 @@ export default function HomePage() {
         <div className="relative container-page pt-32 pb-24">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
-              <span className="text-green-400">●</span> 333+ AI & IT Solutions — Live Now
+              <span className="text-green-400">●</span> 472+ Services — Live Now
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="gradient-text">AI & IT Services</span><br />
               <span className="text-white">for Your Business</span>
             </h1>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              361+ real-world micro SAAS services, IT solutions, and AI-powered platforms.
+              {serviceCount}+ real-world micro SAAS services, IT solutions, and AI-powered platforms.
               From machine learning to cybersecurity, CRM automation to blockchain.
               Get a custom proposal in minutes.
             </p>
@@ -100,7 +103,7 @@ export default function HomePage() {
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-10 py-4">
-                🛠️ Browse All 361+ Services
+                🛠️ Browse All 472+ Services
               </Link>
               <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
                 ☎ +1 302 464 0950
@@ -140,7 +143,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
             {[
               { num: '01', title: 'Tell Us Your Needs', desc: 'Share your business goals, budget, and technical requirements.' },
-              { num: '02', title: 'AI-Powered Matching', desc: 'Our AI engine recommends the best-fit services from 333+ options.' },
+              { num: '02', title: 'AI-Powered Matching', desc: 'Our AI engine recommends the best-fit services from 472+ options.' },
               { num: '03', title: 'Custom Proposal', desc: 'Receive a detailed PDF proposal with pricing, timeline, and next steps.' },
               { num: '04', title: 'Launch & Scale', desc: 'We implement, monitor, and optimize your solution for maximum ROI.' },
             ].map((s, i) => (
@@ -156,85 +159,94 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Featured Services ── */}
+      {/* ── Services by Category (all 416 services advertised) ── */}
       <section className="py-20 bg-slate-900/30">
         <div className="container-page">
-          <h2 className="section-heading text-center">⭐ Featured Services</h2>
-          <p className="section-subheading text-center">Our most popular solutions across all 6 categories</p>
-          <div className="feature-grid mt-4">
-            {featuredServices.map((service: any) => (
-              <div key={service.id} className="glass-card flex flex-col hover:border-purple-500/40">
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl">{service.icon}</span>
-                  <h3 className="text-lg font-semibold text-white leading-snug">{service.title}</h3>
-                </div>
-                <p className="text-slate-400 text-sm mb-4 line-clamp-2">{service.description}</p>
-                <ul className="space-y-2 mb-4 flex-1">
-                  {service.features.slice(0, 3).map((f: string, i: number) => (
-                    <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                      <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto pt-4 border-t border-slate-700/50">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-purple-300 text-sm font-medium">
-                      From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
-                    </span>
-                    <span className="text-xs text-slate-500 uppercase tracking-wider">{service.category}</span>
-                  </div>
-                  <Link href={`/services/${service.id}`} className="text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center gap-1 group">
-                    Learn more&nbsp;
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+          <h2 className="section-heading text-center">Complete Service Catalog</h2>
+          <p className="section-subheading text-center">All {services.length} services across every category — click any card for full details</p>
+          
+          {/* Per-category highlights: show first 6 services per category as rich cards */}
+          {CATEGORIES.map(cat => {
+            const catSvcs = byCategory[cat.key] || [];
+            const top6 = catSvcs.slice(0, 6);
+            return (
+              <div key={cat.key} className="mb-16 last:mb-0">
+                {/* Category header bar */}
+                <div className={`inline-flex items-center gap-3 mb-6 px-5 py-3 rounded-full bg-gradient-to-r ${cat.color} bg-opacity-10 border border-slate-700/50`}>
+                  <span className="text-2xl">{cat.emoji}</span>
+                  <h3 className="text-xl font-bold text-white">{cat.label}</h3>
+                  <span className="text-sm text-slate-400">({catSvcs.length} services)</span>
+                  <Link href={`/services?category=${cat.key}`} className="ml-2 text-sm text-purple-300 hover:text-purple-200 font-medium transition">
+                    View all →
                   </Link>
                 </div>
+                
+                {/* Top-6 grid for this category */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {top6.map((service: any) => (
+                    <div key={service.id} className="glass-card flex flex-col hover:border-purple-500/40 group">
+                      <div className="flex items-start gap-3 mb-3">
+                        <span className="text-2xl">{service.icon}</span>
+                        <div>
+                          <h3 className="text-base font-semibold text-white leading-snug group-hover:text-purple-300 transition-colors">{service.title}</h3>
+                          <span className="text-xs text-slate-500 uppercase tracking-wider">{service.category}</span>
+                        </div>
+                      </div>
+                      <p className="text-slate-400 text-sm mb-3 line-clamp-2 flex-1">{service.description}</p>
+                      <ul className="space-y-1 mb-3">
+                        {service.features.slice(0, 2).map((f: string, i: number) => (
+                          <li key={i} className="text-slate-300 text-xs flex items-start gap-2">
+                            <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+                            <span className="line-clamp-1">{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
+                        <span className="text-purple-300 text-sm font-semibold">
+                          From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
+                        </span>
+                        <Link href={`/services/${service.id}`} className="text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center gap-1 group">
+                          Learn more <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Show-more link for oversized categories */}
+                {catSvcs.length > 6 && (
+                  <div className="text-center mt-4">
+                    <Link href={`/services?category=${cat.key}`} className="text-sm text-slate-400 hover:text-purple-300 transition">
+                      + {catSvcs.length - 6} more {cat.label.toLowerCase()} →
+                    </Link>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/services" className="btn-primary">
-              View All {services.length} Services →
-            </Link>
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* ── Complete Service Showcase (Horizontal Scroll) ── */}
+      {/* ── Complete Service Showcase (Horizontal Scroll + Quick-View Modal) ── */}
       <section className="py-20">
         <div className="container-page">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
               <h2 className="section-heading">📋 Complete Service Showcase</h2>
-              <p className="section-subheading mb-0">All {services.length} services — scroll or search to explore</p>
+              <p className="section-subheading mb-0">All {services.length} services — scroll to explore. Click any card for quick details.</p>
             </div>
           </div>
 
-          {/* Search + Category filter */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <div className="relative flex-1">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
-              <input
-                type="text"
-                placeholder="Search all services by name or keyword…"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="w-full bg-slate-900/60 border border-slate-700/50 rounded-xl pl-11 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/30 transition"
-              />
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button onClick={() => setCatFilter(null)} className={`px-4 py-2 rounded-lg text-sm font-medium transition ${!catFilter ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}>
-                All ({services.length})
-              </button>
-              {CATEGORIES.map(c => (
-                <button key={c.key} onClick={() => setCatFilter(c.key)} className={`px-4 py-2 rounded-lg text-sm font-medium transition ${catFilter === c.key ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}>
-                  {c.emoji} {c.key.charAt(0).toUpperCase()+c.key.slice(1)} ({byCategory[c.key].length})
-                </button>
-              ))}
-            </div>
+          {/* Category quick-links navigate to filtered services page */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            <Link href="/services" className="px-4 py-2 rounded-lg text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">All ({services.length})</Link>
+            {CATEGORIES.map(c => (
+              <Link key={c.key} href={`/services?category=${c.key}`} className="px-4 py-2 rounded-lg text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">
+                {c.emoji} {c.key.charAt(0).toUpperCase() + c.key.slice(1)} ({byCategory[c.key].length})
+              </Link>
+            ))}
           </div>
-
-          {/* Horizontal scroll cards */}
+{/* Horizontal scroll cards */}
           <div className="overflow-x-auto pb-4 -mb-4">
             <div className="flex gap-4" style={{ minWidth: 'max-content', paddingBottom: '8px' }}>
               {filteredShowcase.map((service: any) => {
@@ -243,6 +255,7 @@ export default function HomePage() {
                   <Link
                     key={service.id}
                     href={`/services/${service.id}`}
+                    onClick={(e) => { e.preventDefault(); setQuickView(service); }}
                     className="min-w-[260px] max-w-[260px] glass-card flex flex-col hover:border-purple-500/40 group border-l-2"
                   >
                     <div className="flex items-center gap-3 mb-2">
@@ -254,9 +267,7 @@ export default function HomePage() {
                       <span className="text-purple-300 text-xs font-semibold">
                         From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
                       </span>
-                      <span className="text-xs text-slate-500 group-hover:text-purple-400 transition-colors">
-                        →
-                      </span>
+                      <span className="text-xs text-slate-500 group-hover:text-purple-400 transition-colors">→</span>
                     </div>
                   </Link>
                 );
@@ -272,6 +283,103 @@ export default function HomePage() {
           )}
         </div>
       </section>
+
+      {/* ── Quick-View Modal ── */}
+      {quickView && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setQuickView(null)}
+          onKeyDown={(e) => { if (e.key === 'Escape') setQuickView(null); }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Quick view: ${quickView.title}`}
+        >
+          <div
+            className="bg-slate-900 border border-purple-500/30 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl shadow-purple-900/30"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className={`p-6 rounded-t-2xl bg-gradient-to-r ${(CATEGORIES.find(c => c.key === quickView.category) || CATEGORIES[0]).color} bg-opacity-10`}>
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="text-4xl">{quickView.icon}</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{quickView.title}</h3>
+                    <span className="text-xs text-purple-300 uppercase tracking-wider">{(CATEGORIES.find(c => c.key === quickView.category) || CATEGORIES[0]).label}</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setQuickView(null)}
+                  className="text-slate-400 hover:text-white text-2xl leading-none p-1"
+                  aria-label="Close"
+                >✕</button>
+              </div>
+              <p className="text-slate-300 text-sm mt-3 leading-relaxed">{quickView.description}</p>
+            </div>
+
+            {/* Body */}
+            <div className="p-6 space-y-6">
+              {/* Features */}
+              <div>
+                <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Key Features</h4>
+                <ul className="space-y-2">
+                  {quickView.features.slice(0, 5).map((f: string, i: number) => (
+                    <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                      <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Benefits */}
+              {quickView.benefits?.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Benefits</h4>
+                  <ul className="space-y-2">
+                    {quickView.benefits.slice(0, 4).map((b: string, i: number) => (
+                      <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                        <span className="text-green-400 mt-0.5 shrink-0">▸</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Pricing */}
+              <div>
+                <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Pricing</h4>
+                <div className="grid grid-cols-3 gap-3">
+                  {Object.entries(quickView.pricing as Record<string, string>).map(([tier, price]) => (
+                    <div key={tier} className="bg-slate-800/60 rounded-xl p-4 text-center border border-slate-700/50">
+                      <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">{tier}</div>
+                      <div className="text-xl font-bold text-white">${price}<span className="text-xs text-slate-400 font-normal">/mo</span></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contact + CTA */}
+              <div className="flex flex-wrap gap-3 pt-4 border-t border-slate-700/50">
+                <Link
+                  href={`/services/${quickView.id}`}
+                  onClick={() => setQuickView(null)}
+                  className="btn-primary px-6 py-3 text-sm"
+                >
+                  View Full Page →
+                </Link>
+                <a href="/configurator" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
+                  ⚙️ Configure This Service
+                </a>
+                <a href="mailto:kleber@ziontechgroup.com" className="text-sm text-purple-300 hover:text-purple-200 px-4 py-3 self-center">
+                  ✉ kleber@ziontechgroup.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Category Grid ── */}
       <section className="py-20 bg-slate-900/30">
