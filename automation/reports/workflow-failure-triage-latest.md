@@ -1,46 +1,43 @@
 # Workflow failure triage
 
-- generatedAt: 2026-05-17T12:35:53.385Z
+- generatedAt: 2026-05-17T15:35:23.496Z
 - recentRuns: 80
-- failedRuns: 19
+- failedRuns: 22
 
 ## Top failing workflows
-- Deploy on Push: 2
-- AI Openclaw Autonomous Cycle: 1
-- AI Ideas to Implementation: 1
-- AI Services & Content Automation: 1
-- AI Content Max Velocity Deploy: 1
-- Deploy to GitHub Pages: 1
-- OpenAPI Contract Drift Detector: 1
-- Autonomous Changelog Generator: 1
-- Autonomous Bundle Split Analyzer: 1
-- TypeScript Type Coverage & Dead Code Check: 1
-- .github/workflows/ai-actions-pin-strict-guard.yml: 1
-- .github/workflows/route-slicer.yml: 1
-- .github/workflows/workflow-reusable-ci-dispatch.yml: 1
+- Deploy on Push: 4
+- OpenAPI Contract Drift Detector: 2
+- Autonomous Changelog Generator: 2
+- Autonomous Bundle Split Analyzer: 2
+- TypeScript Type Coverage & Dead Code Check: 2
+- Deploy to GitHub Pages: 2
+- AI Content Burst: 1
 - .github/workflows/workflow-yaml-sanity.yml: 1
+- .github/workflows/workflow-reusable-ci-dispatch.yml: 1
 - .github/workflows/workflow-validate-light-weekly.yml: 1
-- .github/workflows/workflow-change-guard.yml: 1
 - .github/workflows/workflow-contracts-weekly.yml: 1
-- Codespaces Prebuilds: 1
+- .github/workflows/workflow-change-guard.yml: 1
+- .github/workflows/route-slicer.yml: 1
+- .github/workflows/ai-actions-pin-strict-guard.yml: 1
 
 ## Latest failed runs
-- AI Openclaw Autonomous Cycle | 2026-05-17T12:34:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990998148
-- AI Ideas to Implementation | 2026-05-17T12:23:26Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990743500
-- AI Services & Content Automation | 2026-05-17T12:15:07Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990562207
-- AI Content Max Velocity Deploy | 2026-05-17T12:13:25Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990527075
-- Deploy on Push | 2026-05-17T12:02:41Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990294585
-- Deploy to GitHub Pages | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273349
-- OpenAPI Contract Drift Detector | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273327
-- Autonomous Changelog Generator | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273324
-- Deploy on Push | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273321
-- Autonomous Bundle Split Analyzer | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273314
-- TypeScript Type Coverage & Dead Code Check | 2026-05-17T12:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990273311
-- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-05-17T12:01:44Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272986
-- .github/workflows/route-slicer.yml | 2026-05-17T12:01:44Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272874
-- .github/workflows/workflow-reusable-ci-dispatch.yml | 2026-05-17T12:01:43Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272710
-- .github/workflows/workflow-yaml-sanity.yml | 2026-05-17T12:01:43Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272566
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-05-17T12:01:43Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272379
-- .github/workflows/workflow-change-guard.yml | 2026-05-17T12:01:42Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272226
-- .github/workflows/workflow-contracts-weekly.yml | 2026-05-17T12:01:42Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990272060
-- Codespaces Prebuilds | 2026-05-17T11:51:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25990050853
+- AI Content Burst | 2026-05-17T15:22:19Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994806635
+- Deploy on Push | 2026-05-17T15:08:58Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994495993
+- OpenAPI Contract Drift Detector | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493707
+- Autonomous Changelog Generator | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493693
+- Deploy on Push | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493692
+- Autonomous Bundle Split Analyzer | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493690
+- TypeScript Type Coverage & Dead Code Check | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493683
+- Deploy to GitHub Pages | 2026-05-17T15:08:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493676
+- .github/workflows/workflow-yaml-sanity.yml | 2026-05-17T15:08:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493339
+- .github/workflows/workflow-reusable-ci-dispatch.yml | 2026-05-17T15:08:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493214
+- .github/workflows/workflow-validate-light-weekly.yml | 2026-05-17T15:08:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994493092
+- .github/workflows/workflow-contracts-weekly.yml | 2026-05-17T15:08:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994492933
+- .github/workflows/workflow-change-guard.yml | 2026-05-17T15:08:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994492819
+- .github/workflows/route-slicer.yml | 2026-05-17T15:08:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994492709
+- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-05-17T15:08:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994492598
+- Deploy on Push | 2026-05-17T14:52:56Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994124769
+- OpenAPI Contract Drift Detector | 2026-05-17T14:52:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994121982
+- Deploy on Push | 2026-05-17T14:52:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994121977
+- Deploy to GitHub Pages | 2026-05-17T14:52:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994121973
+- TypeScript Type Coverage & Dead Code Check | 2026-05-17T14:52:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/25994121963
