@@ -1,5 +1,6 @@
+// app/api/configurator/generate-pdf/route.ts
 // POST /api/configurator/generate-pdf
-// Receives configurator form data, generates a proposal summary, and returns a downloadable link
+// Generates an HTML proposal and attempts to email it using local sendmail
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
@@ -11,20 +12,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Use process.cwd() for path resolution (works in Next.js server runtime)
+    // Load service data from servicesData.json generated during build
     const servicesPath = `${process.cwd()}/app/data/servicesData.json`;
-
     let allServices: any[];
     try {
       const fs = await import('node:fs');
       allServices = JSON.parse(fs.readFileSync(servicesPath, 'utf-8'));
     } catch {
-      allServices = [];
+      return NextResponse.json({ error: 'Service catalog unavailable' }, { status: 500 });
     }
 
     const services = selectedServices
       .map((sid: string) => allServices.find((s: any) => s.id === sid))
       .filter(Boolean);
+
+    if (services.length === 0) {
+      return NextResponse.json({ error: 'No valid services selected' }, { status: 400 });
+    }
 
     const proposalId = `prop-${Date.now()}`;
     const generatedAt = new Date().toISOString();
@@ -35,7 +39,7 @@ export async function POST(req: NextRequest) {
           `<tr>
             <td style="padding:8px;border:1px solid #ddd;">${s.title}</td>
             <td style="padding:8px;border:1px solid #ddd;">${s.category}</td>
-            <td style="padding:8px;border:1px solid #ddd;">${Object.values(s.pricing)[0]}</td>
+            <td style="padding:8px;border:1px solid #ddd;">$${s.pricing?.basic || 'Custom'}/mo</td>
           </tr>`
       )
       .join('');
@@ -56,7 +60,7 @@ td,th{border:1px solid #ddd;padding:8px}
 .footer{margin-top:40px;font-size:12px;color:#999;border-top:1px solid #eee;padding-top:10px}
 .meta{color:#888;font-size:14px;margin-bottom:20px}</style></head><body>
 <h1>Zion Tech Group — Custom Proposal</h1>
-<div class="meta">Proposal ID: ${proposalId} • Generated: ${new Date(generatedAt).toLocaleDateString()}</div>
+<div class="meta">Proposal ID: ${proposalId} &bull; Generated: ${new Date(generatedAt).toLocaleDateString()}</div>
 <h2>Client Information</h2>
 <p><strong>Company:</strong> ${companyName}</p>
 <p><strong>Email:</strong> ${contactEmail}</p>
@@ -71,10 +75,10 @@ ${needsHtml ? `<h2>Stated Needs</h2><ul>${needsHtml}</ul>` : ''}
 <h2 style="color:#fff;margin-top:0">Ready to get started?</h2>
 <p>Contact: <strong>+1 302 464 0950</strong> or <strong>kleber@ziontechgroup.com</strong></p>
 <p>364 E Main St STE 1008, Middletown, DE 19709</p></div>
-<div class="footer">Zion Tech Group — All services include implementation support, SLA guarantees, and 24/7 monitoring.</div>
+<div class="footer">Zion Tech Group &mdash; All services include implementation support, SLA guarantees, and 24/7 monitoring.</div>
 </body></html>`;
 
-    // Save proposal (only if fs is available)
+    // Save proposal HTML to disk
     try {
       const fs = await import('node:fs');
       const path = await import('node:path');
@@ -89,11 +93,26 @@ ${needsHtml ? `<h2>Stated Needs</h2><ul>${needsHtml}</ul>` : ''}
       console.warn('Could not save proposal to disk:', e);
     }
 
+    // Try to send email via local sendmail (best-effort, non-blocking)
+    try {
+      const nodemailer = await import('nodemailer');
+      const transporter = nodemailer.createTransport({ sendmail: true, newline: 'unix' });
+      await transporter.sendMail({
+        from: 'Zion Tech Group <proposals@ziontechgroup.com>',
+        to: contactEmail,
+        subject: `Your Custom Proposal — ${companyName} — Zion Tech Group`,
+        html,
+      });
+    } catch (e) {
+      // Email sending is best-effort; proposal is saved and downloadable above
+      console.warn('Email not sent (no SMTP configured):', e);
+    }
+
     return NextResponse.json({
       success: true,
       proposalId,
       proposalUrl: `/proposals/view/${proposalId}`,
-      message: 'Proposal generated successfully! Check your email for the detailed PDF.',
+      message: 'Proposal generated! Click Preview PDF to view it now. Our team will follow up.',
     });
   } catch (err: any) {
     console.error('Proposal error:', err);
