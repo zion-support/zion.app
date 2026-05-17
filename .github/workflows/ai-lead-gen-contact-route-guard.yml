@@ -38,7 +38,7 @@ jobs:
         continue-on-error: true
         env:
           LEAD_GEN_BASE_URL: https://ziontechgroup.com
-          LEAD_GEN_EXPECTED_EMAIL: kleber@ziontechgroup.com
+          LEAD_GEN_EXPECTED_EMAIL: commercial@ziontechgroup.com
         run: node scripts/automation/lead-gen-contact-route-guard.cjs
 
       - name: Open deduped issue on contact guard failure
@@ -55,7 +55,7 @@ jobs:
 
           - **Dedupe key:** `lead-gen-contact-route-guard`
           - Base URL: `https://ziontechgroup.com`
-          - Expected email: `kleber@ziontechgroup.com`
+          - Expected email: `commercial@ziontechgroup.com`
           - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           EOF
           export ISSUE_BODY_FILE=lead-gen-contact-guard.md
