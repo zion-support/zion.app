@@ -40,6 +40,9 @@ const CATEGORIES = [
 
 export default function HomePage() {
   const services: Service[] = allServices;
+
+  // Quick-View Modal: open a service card overlay without navigating away
+  const [quickView, setQuickView] = useState<Service | null>(null);
   const [search, setSearch] = useState('');
   const [catFilter, setCatFilter] = useState<string | null>(null);
 
@@ -224,22 +227,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Complete Service Showcase (Horizontal Search + Scroll) ── */}
+      {/* ── Complete Service Showcase (Horizontal Scroll + Quick-View Modal) ── */}
       <section className="py-20">
         <div className="container-page">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
               <h2 className="section-heading">📋 Complete Service Showcase</h2>
-              <p className="section-subheading mb-0">All {services.length} services — scroll or search to explore</p>
+              <p className="section-subheading mb-0">All {services.length} services — scroll to explore. Click any card for quick details.</p>
             </div>
           </div>
 
-                    {/* Category quick-links navigate to filtered services page */}
+          {/* Category quick-links navigate to filtered services page */}
           <div className="flex flex-wrap gap-2 mb-8">
             <Link href="/services" className="px-4 py-2 rounded-lg text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">All ({services.length})</Link>
             {CATEGORIES.map(c => (
               <Link key={c.key} href={`/services?category=${c.key}`} className="px-4 py-2 rounded-lg text-sm font-medium transition bg-slate-800 text-slate-300 hover:bg-slate-700">
-                {c.emoji} {c.key.charAt(0).toUpperCase()+c.key.slice(1)} ({byCategory[c.key].length})
+                {c.emoji} {c.key.charAt(0).toUpperCase() + c.key.slice(1)} ({byCategory[c.key].length})
               </Link>
             ))}
           </div>
@@ -252,6 +255,7 @@ export default function HomePage() {
                   <Link
                     key={service.id}
                     href={`/services/${service.id}`}
+                    onClick={(e) => { e.preventDefault(); setQuickView(service); }}
                     className="min-w-[260px] max-w-[260px] glass-card flex flex-col hover:border-purple-500/40 group border-l-2"
                   >
                     <div className="flex items-center gap-3 mb-2">
@@ -263,9 +267,7 @@ export default function HomePage() {
                       <span className="text-purple-300 text-xs font-semibold">
                         From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
                       </span>
-                      <span className="text-xs text-slate-500 group-hover:text-purple-400 transition-colors">
-                        →
-                      </span>
+                      <span className="text-xs text-slate-500 group-hover:text-purple-400 transition-colors">→</span>
                     </div>
                   </Link>
                 );
@@ -281,6 +283,103 @@ export default function HomePage() {
           )}
         </div>
       </section>
+
+      {/* ── Quick-View Modal ── */}
+      {quickView && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setQuickView(null)}
+          onKeyDown={(e) => { if (e.key === 'Escape') setQuickView(null); }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Quick view: ${quickView.title}`}
+        >
+          <div
+            className="bg-slate-900 border border-purple-500/30 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl shadow-purple-900/30"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className={`p-6 rounded-t-2xl bg-gradient-to-r ${(CATEGORIES.find(c => c.key === quickView.category) || CATEGORIES[0]).color} bg-opacity-10`}>
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="text-4xl">{quickView.icon}</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{quickView.title}</h3>
+                    <span className="text-xs text-purple-300 uppercase tracking-wider">{(CATEGORIES.find(c => c.key === quickView.category) || CATEGORIES[0]).label}</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setQuickView(null)}
+                  className="text-slate-400 hover:text-white text-2xl leading-none p-1"
+                  aria-label="Close"
+                >✕</button>
+              </div>
+              <p className="text-slate-300 text-sm mt-3 leading-relaxed">{quickView.description}</p>
+            </div>
+
+            {/* Body */}
+            <div className="p-6 space-y-6">
+              {/* Features */}
+              <div>
+                <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Key Features</h4>
+                <ul className="space-y-2">
+                  {quickView.features.slice(0, 5).map((f: string, i: number) => (
+                    <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                      <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Benefits */}
+              {quickView.benefits?.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Benefits</h4>
+                  <ul className="space-y-2">
+                    {quickView.benefits.slice(0, 4).map((b: string, i: number) => (
+                      <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                        <span className="text-green-400 mt-0.5 shrink-0">▸</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Pricing */}
+              <div>
+                <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Pricing</h4>
+                <div className="grid grid-cols-3 gap-3">
+                  {Object.entries(quickView.pricing as Record<string, string>).map(([tier, price]) => (
+                    <div key={tier} className="bg-slate-800/60 rounded-xl p-4 text-center border border-slate-700/50">
+                      <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">{tier}</div>
+                      <div className="text-xl font-bold text-white">${price}<span className="text-xs text-slate-400 font-normal">/mo</span></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contact + CTA */}
+              <div className="flex flex-wrap gap-3 pt-4 border-t border-slate-700/50">
+                <Link
+                  href={`/services/${quickView.id}`}
+                  onClick={() => setQuickView(null)}
+                  className="btn-primary px-6 py-3 text-sm"
+                >
+                  View Full Page →
+                </Link>
+                <a href="/configurator" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
+                  ⚙️ Configure This Service
+                </a>
+                <a href="mailto:kleber@ziontechgroup.com" className="text-sm text-purple-300 hover:text-purple-200 px-4 py-3 self-center">
+                  ✉ kleber@ziontechgroup.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Category Grid ── */}
       <section className="py-20 bg-slate-900/30">
