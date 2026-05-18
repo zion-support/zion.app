@@ -28,14 +28,26 @@ const STAT_SLA      = 'SLA Uptime Guarantee';
 // Featured: pull 2 per category so every category is represented
 // Dynamic featured: popular services + first per category (auto-updates with catalog changes)
 const FEATURED_IDS = [
-  'accessibility-compliance', 'advanced-ai-enterprise-intelligence-hub',
-  'ai-accessibility-auditor', 'ai-accessibility-optimizer', 'ai-analytics',
-  'ai-customer-support', 'ai-document-intelligence', 'ai-knowledge-management',
-  'ai-lead-generation', 'ai-office-automation', 'ai-sales-intelligence',
-  'ai-self-healing-infra', 'api-development', 'api-gateway-management',
-  'ai-deepfake-voice-spoof-detector', 'ai-supply-chain-disruption-predictor',
-  'ai-chronic-disease-progression-tracker', 'ai-marine-fisheries-sustainability',
-  'it-self-healing-kubernetes-platform', 'it-zero-trust-network-access',
+  'accessibility-compliance',
+  'advanced-ai-enterprise-intelligence-hub',
+  'ai-accessibility-auditor',
+  'ai-accessibility-optimizer',
+  'ai-analytics',
+  'ai-customer-support',
+  'ai-document-intelligence',
+  'ai-knowledge-management',
+  'ai-lead-generation',
+  'ai-office-automation',
+  'ai-sales-intelligence',
+  'ai-self-healing-infra',
+  'api-development',
+  'api-gateway-management',
+  'ai-deepfake-detection',
+  'ai-supply-chain-predictor',
+  'ai-chronic-disease-tracker',
+  'ai-marine-fisheries-sustainability',
+  'ai-self-healing-kubernetes-platform',
+  'it-zero-trust-1'
 ];
 
 const CATEGORIES = [
@@ -168,7 +180,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services by Category (all 600 services advertised) ── */}
+      {/* ── Services by Category (all 416 services advertised) ── */}
       <section className="py-20 bg-slate-900/30">
         <div className="container-page">
           <h2 className="section-heading text-center">Complete Service Catalog</h2>
