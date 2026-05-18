@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-04-06T11:19:08.583Z",
+  "timestamp": "2026-05-18T12:13:15.314Z",
   "config": {
     "staleMonths": 12,
     "warnMonths": 9
   },
   "summary": {
-    "total": 906,
+    "total": 1356,
     "stale": 8,
     "warning": 0,
-    "fresh": 898
+    "fresh": 1348
   },
   "stale": [
     {
@@ -17,7 +17,7 @@
       "type": "page",
       "date": "2024-03-23",
       "dateSource": "metadata",
-      "monthsOld": 24.8,
+      "monthsOld": 26.2,
       "status": "stale"
     },
     {
@@ -26,7 +26,7 @@
       "type": "page",
       "date": "2024-01-15",
       "dateSource": "metadata",
-      "monthsOld": 27.1,
+      "monthsOld": 28.5,
       "status": "stale"
     },
     {
@@ -35,7 +35,7 @@
       "type": "page",
       "date": "2024-01-15",
       "dateSource": "metadata",
-      "monthsOld": 27.1,
+      "monthsOld": 28.5,
       "status": "stale"
     },
     {
@@ -44,7 +44,7 @@
       "type": "page",
       "date": "2024-01-15",
       "dateSource": "metadata",
-      "monthsOld": 27.1,
+      "monthsOld": 28.5,
       "status": "stale"
     },
     {
@@ -53,7 +53,7 @@
       "type": "page",
       "date": "2024-01-01",
       "dateSource": "metadata",
-      "monthsOld": 27.5,
+      "monthsOld": 29,
       "status": "stale"
     },
     {
@@ -62,7 +62,7 @@
       "type": "page",
       "date": "2024-01-01",
       "dateSource": "metadata",
-      "monthsOld": 27.5,
+      "monthsOld": 29,
       "status": "stale"
     },
     {
@@ -71,7 +71,7 @@
       "type": "page",
       "date": "2024-03-27",
       "dateSource": "metadata",
-      "monthsOld": 24.7,
+      "monthsOld": 26.1,
       "status": "stale"
     },
     {
@@ -80,7 +80,7 @@
       "type": "page",
       "date": "2000-10-01",
       "dateSource": "metadata",
-      "monthsOld": 310.6,
+      "monthsOld": 312,
       "status": "stale"
     }
   ],
