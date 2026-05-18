@@ -8,7 +8,7 @@ import { SITE_URL, STRUCTURED_DATA } from './utils/seoConstants';
 
 export const metadata: Metadata = {
   title: { default: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', template: '%s | Zion Tech Group' },
-  description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms. Machine learning, cybersecurity, cloud infrastructure, automation, and more. Based in Middletown, DE.',
+  description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms. Machine learning, cybersecurity, cloud infrastructure, automation, and more. Based in',
   keywords: 'AI services, IT consulting, machine learning, cybersecurity, cloud migration, Micro SAAS, automation, NLP, computer vision, recommendation engine',
   authors: [{ name: 'Kleber Garcia Alcatrão', url: 'https://ziontechgroup.com' }],
   creator: 'Zion Tech Group', publisher: 'Zion Tech Group',
