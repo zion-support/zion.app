@@ -23,12 +23,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
           cache: 'npm'
@@ -54,7 +54,7 @@ jobs:
 
       - name: Upload proposal artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: route-slicer-proposal
           path: .hermes/memory/route-slicer/proposals/*
@@ -62,7 +62,7 @@ jobs:
 
       - name: Create Pull Request (if apply=true and proposals found)
         if: steps.slicer.outputs.exit_code == '0' && github.event.inputs.apply == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'feat(auto): apply lazy-load route slicing for bundle optimization'
