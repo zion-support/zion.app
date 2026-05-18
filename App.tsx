@@ -1,23 +1,6 @@
 import React, { useEffect, useState, memo } from "react";
-import { HelmetProvider } from "react-helmet-async";
 import Navigation from "./app/components/Navigation";
 import Footer from "./app/components/Footer";
-import LazyHomePage from "./app/components/LazyHomePage";
-import PerformanceMonitor from "./app/components/PerformanceMonitor";
-import PerformanceDashboard from "./app/components/PerformanceDashboard";
-import PWAInstaller from "./app/components/PWAInstaller";
-import ServiceWorkerRegistration from "./app/components/ServiceWorkerRegistration";
-import SEOHead from "./app/components/SEOHead";
-import AccessibilityEnhancer from "./app/components/AccessibilityEnhancer";
-import ErrorBoundary from "./app/components/ErrorBoundary";
-import LoadingSpinner from "./app/components/LoadingSpinner";
-import PerformanceOptimizer from "./app/components/PerformanceOptimizer";
-
-// Note: Page imports removed as they are not used in the main App component
-// Individual pages are handled by Next.js routing
-
-// Note: Lazy imports removed as they are not used in the main App component
-// Individual pages are handled by Next.js routing
 
 // Error fallback component
 export const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) => (
@@ -41,18 +24,11 @@ export const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; res
     </div>
   </div>
 );
-// Memoized loading component
-const LoadingFallback = memo(() => (
-  <div className="min-h-screen flex items-center justify-center">
-    <LoadingSpinner />
-  </div>
-));
-LoadingFallback.displayName = 'LoadingFallback';
 
-// Memoized main content component
+// Memoized main content component - uses Next.js pages routing
 const MainContent = memo(() => (
   <main className="relative z-10" id="main-content" role="main">
-    <LazyHomePage />
+    {/* Homepage rendered via Next.js app router */}
   </main>
 ));
 
@@ -62,44 +38,12 @@ const AppLayout = memo(() => (
     <Navigation />
     <MainContent />
     <Footer />
-    <PerformanceMonitor />
-    <PerformanceDashboard />
-    <PWAInstaller />
-    <AccessibilityEnhancer />
   </div>
 ));
 
 const App = memo(() => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <div className="text-white text-xl">Loading application...</div>
-      </div>
-    );
-  }
-
-  return (
-    <ErrorBoundary>
-      <HelmetProvider>
-        <SEOHead />
-        <PerformanceOptimizer>
-          <AppLayout />
-          <ServiceWorkerRegistration />
-        </PerformanceOptimizer>
-      </HelmetProvider>
-    </ErrorBoundary>
-  );
+  return <AppLayout />;
 });
 
-App.displayName = 'App';export default App;
+App.displayName = 'App';
+export default App;
