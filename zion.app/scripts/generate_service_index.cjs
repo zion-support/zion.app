@@ -126,4 +126,4 @@ function main() {
   console.log(`Categories: ${JSON.stringify(byCat)}`);
 }
 
-main().catch(e => { console.error(e.message); process.exit(1); });
+try { main(); } catch(e) { console.error(e.message || e); process.exit(1); }
