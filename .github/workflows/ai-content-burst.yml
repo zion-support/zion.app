@@ -54,6 +54,8 @@ jobs:
     timeout-minutes: 15
     env:
       NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      NEXT_BUILD_WORKER_COUNT: 1
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
