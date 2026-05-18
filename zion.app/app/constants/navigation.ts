@@ -301,7 +301,25 @@ export const AI_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Reinforcement Learning Optimiser', href: '/services/ai-reinforcement-learning-optimiser' },
   { name: 'Spatial Computing 3D Scene Generator', href: '/services/ai-spatial-computing-3d-scene' },
   { name: 'Voice-to-Action Platform', href: '/services/ai-voice-to-action-platform' },
+
+  { name: 'AI Hiring Process Optimiser',         href: '/services/ai-hiring-process-optimiser' },
+  { name: 'AI Invoice Processing & Auto-Posting', href: '/services/ai-invoice-ocr-automation' },
+  { name: 'AI Legal Document Drafting',           href: '/services/ai-legal-doc-drafting' },
+  { name: 'AI Personalized Learning Path Builder',href: '/services/ai-personalized-learning-path-builder' },
+  { name: 'AI Quantum-Safe Encryption Advisor',   href: '/services/ai-quantum-safe-encryption-advisor' },
+  { name: 'AI Real Estate Investment Analysis',   href: '/services/ai-real-estate-investment-analysis' },
+  { name: 'AI Quantum ML Compiler', href: '/services/ai-quantum-machine-learning-compiler' },
+  { name: 'AI Synthetic Biology Cloud Lab', href: '/services/ai-synthetic-biology-cloud-lab' },
+  { name: 'AI Neural Interface Design System', href: '/services/ai-neural-interface-design-system' },
+  { name: 'AI Legal Settlement Outcome Predictor', href: '/services/ai-legal-settlement-outcome-predictor' },
+  { name: 'AI Air Quality Predictive Forecaster', href: '/services/ai-air-quality-predictive-forecaster' },
+  { name: 'AI Crowd Behaviour Queue Simulator', href: '/services/ai-crowd-behaviour-queue-simulator' },
+  { name: 'AI News Anomaly Story Arc Detector', href: '/services/ai-news-anomaly-story-detector' },
+  { name: 'AI Open-Source License Compliance Scanner', href: '/services/ai-opensource-license-compliance-scanner' },
+  { name: 'AI Portfolio Variance Tax-Optimizer', href: '/services/ai-portfolio-variance-optimizer' },
 ];
+
+
 
 export const IT_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Accessibility & WCAG Compliance', href: '/services/accessibility-compliance' },
@@ -394,6 +412,11 @@ export const IT_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Identity & Access Management (SSO/MFA)', href: '/services/it-identity-access-management-sso' },
   { name: 'Next-Generation Firewall', href: '/services/it-network-firewall-next-generation' },
   { name: 'Remote Collaboration Suite', href: '/services/it-remote-collaboration-suites' },
+
+  { name: 'API-First Integration Framework',              href: '/services/it-api-first-integration-framework' },
+  { name: 'DRaaS — Disaster Recovery as a Service',       href: '/services/it-disaster-recovery-as-a-service' },
+  { name: 'Endpoint Security & Compliance Monitor',        href: '/services/it-endpoint-security-compliance-monitor' },
+  { name: 'Legacy Mainframe Modernisation',                href: '/services/it-legacy-mainframe-modernisation' },
 ];
 
 export const CLOUD_SERVICE_LINKS: readonly NavigationLink[] = [

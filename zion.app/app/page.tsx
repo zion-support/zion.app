@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="relative container-page pt-32 pb-24">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
-              <span className="text-green-400">●</span> 472+ Services — Live Now
+              <span className="text-green-400">●</span> 491+ Services — Live Now
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="gradient-text">AI & IT Services</span><br />
@@ -103,7 +103,7 @@ export default function HomePage() {
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-10 py-4">
-                🛠️ Browse All 472+ Services
+                🛠️ Browse All 491+ Services
               </Link>
               <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
                 ☎ +1 302 464 0950
