@@ -39,7 +39,7 @@ jobs:
 
       - name: Build app (to generate bundle stats)
         run: |
-          npm run build
+          ANALYZE=true npm run build
           # Ensure bundle analyzer stats exist; generate if missing
           if [ ! -d ".next/stats" ]; then
             echo "No bundle stats found. Run with ANALYZE=true to generate."
