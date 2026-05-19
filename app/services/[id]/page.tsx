@@ -73,12 +73,50 @@ export default async function ServicePage({ params }: PageProps) {
     },
   };
 
+  // BreadcrumbList schema — mirrors visible breadcrumb nav for sitelink display in SERPs
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    name: "Breadcrumbs",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://ziontechgroup.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://ziontechgroup.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: catLabel,
+        item: `https://ziontechgroup.com/services?category=${encodeURIComponent(service.category)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: service.title,
+        item: `https://ziontechgroup.com/services/${service.id}`,
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 py-20">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="container-page">
         {/* Breadcrumb */}
