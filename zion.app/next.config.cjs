@@ -1,12 +1,9 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig } */
 const nextConfig = {
   trailingSlash: true,
-  eslint: { ignoreDuringBuilds: true },
   output: 'export',
-  basePath: '',
-  assetPrefix: '/',
-  // Ensure PostCSS assets are found at workspace root during export
   outputFileTracingRoot: __dirname,
+  turbopack: { root: __dirname },
   images: {
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },
