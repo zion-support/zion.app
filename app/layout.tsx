@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kleber Garcia Alcatrão', url: 'https://ziontechgroup.com' }],
   creator: 'Zion Tech Group', publisher: 'Zion Tech Group',
   robots: 'index, follow',
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: { type: 'website', title: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', description: '552+ micro SAAS services, IT solutions, and AI-powered platforms. Custom proposals in minutes.', url: 'https://ziontechgroup.com', siteName: 'Zion Tech Group', locale: 'en_US' },
   twitter: { card: 'summary_large_image', title: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms.' },
   alternates: { canonical: 'https://ziontechgroup.com' },
