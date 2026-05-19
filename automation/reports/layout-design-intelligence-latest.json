@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-05-19T09:48:28.333Z",
+  "timestamp": "2026-05-19T11:53:23.548Z",
   "url": "https://ziontechgroup.com",
-  "score": 75,
+  "score": 80,
   "metrics": {
-    "sectionCount": 0,
-    "mainCount": 0,
-    "h2Count": 0,
-    "h3Count": 0,
-    "listCount": 0,
+    "sectionCount": 10,
+    "mainCount": 1,
+    "h2Count": 8,
+    "h3Count": 735,
+    "listCount": 52,
     "heroCtaCount": 0,
-    "heroLinkCount": 0,
-    "hasMaxWidth": false,
+    "heroLinkCount": 5,
+    "hasMaxWidth": true,
     "hasConsistentContainer": false
   },
   "diagnostics": [
     {
       "id": "structure",
-      "detail": "sections=0, main=0, h2=0, h3=0, lists=0"
+      "detail": "sections=10, main=1, h2=8, h3=735, lists=52"
     },
     {
       "id": "hero",
-      "detail": "heroCtas=0, heroLinks=0"
+      "detail": "heroCtas=0, heroLinks=5"
     },
     {
       "id": "containers",
-      "detail": "hasMaxWidth=false, hasConsistentContainer=false"
+      "detail": "hasMaxWidth=true, hasConsistentContainer=false"
     }
   ],
   "suggestions": [
@@ -35,10 +35,10 @@
       "description": "Not all content appears to be wrapped in a consistent max-width container. Use a shared layout wrapper (e.g., max-w-7xl mx-auto px-4) to keep content readable on large screens."
     },
     {
-      "id": "semantic-main",
-      "priority": "high",
-      "title": "Confirm semantic main content region",
-      "description": "The live HTML did not include a <main> element. Ensure the primary content is wrapped in a semantic main region for accessibility and layout clarity."
+      "id": "bullet-density",
+      "priority": "low",
+      "title": "Break up very dense bullet sections",
+      "description": "There are many bullet lists on the homepage. Consider grouping related bullets into cards or columns to improve visual rhythm and scanning."
     }
   ]
 }
