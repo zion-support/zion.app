@@ -1,0 +1,55 @@
+{
+  "fixes": [
+    {
+      "workflow": "AI Ultra-Fast Content - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI Content Burst High Frequency - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "Autonomous Release Guardian - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI Content Rapid - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "Autonomous Writer Queue Guard - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI workflow trust regression guard - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI lead form routing guard ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI autonomous self-heal factory - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI GitHub workflow integrity audit ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    },
+    {
+      "workflow": "AI autonomous runtime guardian - main ",
+      "failure_type": "unknown",
+      "recommended_fix": "Check workflow logs for specific error"
+    }
+  ],
+  "last_updated": "2026-05-18T22:32:36.094958+00:00"
+}

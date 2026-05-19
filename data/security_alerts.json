@@ -1,0 +1,40 @@
+{
+  "alerts": [
+    {
+      "email_id": "19d0f13f343f27e4",
+      "subject": "Security alert",
+      "sender": "Google <no-reply@accounts.google.com>",
+      "snippet": "A new sign-in on Windows kleber@ziontechgroup.com We noticed a new sign-in to your Google Account on",
+      "severity": "medium",
+      "category": "compliance",
+      "keywords": [
+        "alert"
+      ],
+      "timestamp": "2026-05-18T21:14:02.461366+00:00"
+    },
+    {
+      "email_id": "19d0f0715851db63",
+      "subject": "Security alert",
+      "sender": "Google <no-reply@accounts.google.com>",
+      "snippet": "A new sign-in on Windows kleber@ziontechgroup.com We noticed a new sign-in to your Google Account on",
+      "severity": "medium",
+      "category": "compliance",
+      "keywords": [
+        "alert"
+      ],
+      "timestamp": "2026-05-18T21:14:02.461388+00:00"
+    },
+    {
+      "email_id": "19d0b2f6f07828f4",
+      "subject": "Security alert",
+      "sender": "Google <no-reply@accounts.google.com>",
+      "snippet": "A new sign-in on Mac kleber@ziontechgroup.com We noticed a new sign-in to your Google Account on a M",
+      "severity": "medium",
+      "category": "compliance",
+      "keywords": [
+        "alert"
+      ],
+      "timestamp": "2026-05-18T21:14:02.461392+00:00"
+    }
+  ]
+}

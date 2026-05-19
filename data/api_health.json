@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "name": "ziontechgroup.com",
+      "status": "up",
+      "ms": 33
+    },
+    {
+      "name": "github",
+      "status": "up",
+      "ms": 86
+    }
+  ]
+}

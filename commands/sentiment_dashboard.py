@@ -1,106 +1,153 @@
 #!/usr/bin/env python3
 """
-Sentiment Dashboard - Zion
+Client Sentiment Dashboard - Track client satisfaction in real-time
 
-Real-time sentiment analysis dashboard for email communications.
-- Tracks sentiment trends over time
-- Flags concerning emotional spikes
-- Provides team mood visibility
-- Integrates with Slack/Teams for alerts
-
-Usage:
-  python3 sentiment_dashboard.py --generate --days 30
-  python3 sentiment_dashboard.py --alert --threshold -0.5
+Analyzes email sentiment, response patterns, and engagement to provide
+real-time client health scores.
 """
 
 import sys, json
-from datetime import datetime, timedelta
 from pathlib import Path
+from datetime import datetime, timezone
+from typing import Dict, List
+
 WORKSPACE = Path('/root/.openclaw/workspace')
 sys.path.insert(0, str(WORKSPACE / 'zion.app' / 'commands'))
 sys.path.insert(0, str(WORKSPACE / 'zion.app' / 'lib'))
 
-from google_workspace import gmail_search
+from google_workspace import gmail_search, gmail_get, telegram_send
 
-# Simple sentiment keywords (in production would use proper NLP)
-POSITIVE_WORDS = ['great', 'excellent', 'good', 'awesome', 'fantastic', 'pleased', 'happy', 'success', 'achieved', 'completed']
-NEGATIVE_WORDS = ['bad', 'terrible', 'awful', 'frustrated', 'angry', 'disappointed', 'failed', 'broken', 'urgent', 'critical', 'issue', 'problem']
+SENTIMENT_LOG = WORKSPACE / 'zion.app' / 'data' / 'client_sentiment.json'
 
-def analyze_sentiment(text: str) -> float:
-    """Simple sentiment analysis (-1 to 1)."""
-    text_lower = text.lower()
-    pos_count = sum(1 for w in POSITIVE_WORDS if w in text_lower)
-    neg_count = sum(1 for w in NEGATIVE_WORDS if w in text_lower)
-    
-    # Normalize to -1 to 1
-    if pos_count + neg_count == 0:
-        return 0.0
-    
-    return (pos_count - neg_count) / (pos_count + neg_count)
+# Sentiment keywords
+POSITIVE_WORDS = ['great', 'excellent', 'love', 'thank', 'perfect', 'awesome', 'satisfied', 'happy', 'pleased', 'success']
+NEGATIVE_WORDS = ['concerned', 'worried', 'issue', 'problem', 'frustrated', 'delayed', 'complaint', 'disappointed', 'angry', 'urgent']
 
-def generate_dashboard(days: int = 30) -> dict:
-    """Generate sentiment dashboard data."""
-    # Get recent emails
-    query = f'is:sent newer_than:{days}d'
-    msgs = gmail_search(query, limit=100)
+
+def analyze_client_emails(limit=50) -> List[Dict]:
+    """Analyze emails from clients."""
+    clients = {}
+    queries = ['from:client', 'from:customer', 'from:partner']
     
-    sentiments = []
-    for msg in msgs:
-        snippet = msg.get('snippet', '')
-        score = analyze_sentiment(snippet)
-        sentiments.append({
-            'date': msg.get('internalDate', ''),
-            'score': score,
-            'subject': msg.get('subject', '')[:50]
-        })
+    for query in queries:
+        emails = gmail_search(f'{query} newer_than:30d', limit=limit)
+        for email in emails:
+            msg = gmail_get(email['id'])
+            headers = msg.get('payload', {}).get('headers', [])
+            sender = next((h['value'] for h in headers if h['name'] == 'From'), '')
+            subject = next((h['value'] for h in headers if h['name'] == 'Subject'), '')
+            snippet = msg.get('snippet', '').lower()
+            
+            # Extract email address
+            import re
+            email_match = re.search(r'<([^>]+)>', sender)
+            email_addr = email_match.group(1) if email_match else sender
+            
+            # Calculate sentiment
+            pos_count = sum(1 for w in POSITIVE_WORDS if w in snippet)
+            neg_count = sum(1 for w in NEGATIVE_WORDS if w in snippet)
+            
+            sentiment_score = 0.5
+            if pos_count > neg_count:
+                sentiment_score = 0.5 + min(0.5, (pos_count - neg_count) * 0.1)
+            elif neg_count > pos_count:
+                sentiment_score = 0.5 - min(0.5, (neg_count - pos_count) * 0.1)
+            
+            client = clients.setdefault(email_addr, {
+                'email': email_addr,
+                'name': sender.split('<')[0].strip(),
+                'emails': [],
+                'sentiment_scores': [],
+            })
+            client['emails'].append({'subject': subject, 'date': email.get('date', '')})
+            client['sentiment_scores'].append(sentiment_score)
     
-    # Calculate metrics
-    avg_sentiment = sum(s['score'] for s in sentiments) / max(len(sentiments), 1)
-    negative_count = sum(1 for s in sentiments if s['score'] < -0.3)
-    positive_count = sum(1 for s in sentiments if s['score'] > 0.3)
+    return list(clients.values())
+
+
+def calculate_health_score(client: Dict) -> Dict:
+    """Calculate client health score."""
+    scores = client['sentiment_scores']
+    if not scores:
+        return {'health': 0.5, 'trend': 'stable', 'risk': 'low'}
+    
+    avg_score = sum(scores) / len(scores)
+    recent_scores = scores[-5:] if len(scores) > 5 else scores
+    recent_avg = sum(recent_scores) / len(recent_scores)
+    
+    trend = 'stable'
+    if recent_avg > avg_score + 0.1:
+        trend = 'improving'
+    elif recent_avg < avg_score - 0.1:
+        trend = 'declining'
+    
+    risk = 'low'
+    if avg_score < 0.3:
+        risk = 'high'
+    elif avg_score < 0.5:
+        risk = 'medium'
     
     return {
-        'period_days': days,
-        'total_analyzed': len(sentiments),
-        'average_sentiment': round(avg_sentiment, 3),
-        'positive_ratio': round(positive_count / max(len(sentiments), 1), 2),
-        'negative_ratio': round(negative_count / max(len(sentiments), 1), 2),
-        'alerts': [{'type': 'high_negative', 'message': f'{negative_count} negative emails detected'}] if negative_count > 10 else []
+        'health': round(avg_score, 2),
+        'trend': trend,
+        'risk': risk,
+        'emails': len(client['emails']),
     }
 
-def cmd_run(dry_run: bool, days: int = 30):
-    print("📊 Sentiment Dashboard Generator")
-    
-    data = generate_dashboard(days)
-    
-    print(f"\n📈 Sentiment Analysis ({days} days)")
-    print(f"   Emails analyzed: {data['total_analyzed']}")
-    print(f"   Average sentiment: {data['average_sentiment']:.2f}")
-    print(f"   Positive ratio: {data['positive_ratio']:.0%}")
-    print(f"   Negative ratio: {data['negative_ratio']:.0%}")
-    
-    if data['alerts']:
-        for alert in data['alerts']:
-            print(f"\n   ⚠️  Alert: {alert['message']}")
-    
-    print("\n📊 Sentiment Scale:")
-    print("   -1.0 = Very Negative | 0 = Neutral | +1.0 = Very Positive")
-    
-    if dry_run:
-        print(f"\n[DRY-RUN] Would generate dashboard report.")
-    else:
-        print(f"\n✅ Dashboard generated.")
 
-def main():
-    import argparse
-    p = argparse.ArgumentParser()
-    p.add_argument('--execute', action='store_true')
-    p.add_argument('--days', type=int, default=30)
-    p.add_argument('--alert', action='store_true')
-    p.add_argument('--threshold', type=float, default=-0.5)
-    args = p.parse_args()
+def main(execute=True, limit=50):
+    """Main execution."""
+    print("😊 Client Sentiment Dashboard - Analyzing client satisfaction...")
     
-    cmd_run(dry_run=not args.execute, days=args.days)
+    clients = analyze_client_emails(limit)
+    print(f"👥 Analyzed {len(clients)} active clients")
+    
+    # Calculate health scores
+    results = []
+    for client in clients:
+        health = calculate_health_score(client)
+        client.update(health)
+        results.append(client)
+        
+        status_emoji = {'improving': '📈', 'stable': '➡️', 'declining': '📉'}.get(health['trend'], '➡️')
+        risk_emoji = {'low': '✅', 'medium': '⚠️', 'high': '🔴'}.get(health['risk'], '✅')
+        
+        print(f"  {client['name'][:30]:30s} {status_emoji} Health: {health['health']:.0%} {risk_emoji} {health['risk']}")
+    
+    # Sort by risk
+    high_risk = [r for r in results if r.get('risk') == 'high']
+    medium_risk = [r for r in results if r.get('risk') == 'medium']
+    
+    # Load history
+    if SENTIMENT_LOG.exists():
+        log = json.loads(SENTIMENT_LOG.read_text())
+    else:
+        log = {'clients': []}
+    
+    log['clients'] = results
+    log['last_updated'] = datetime.now(timezone.utc).isoformat()
+    SENTIMENT_LOG.parent.mkdir(parents=True, exist_ok=True)
+    SENTIMENT_LOG.write_text(json.dumps(log, indent=2))
+    
+    # Alert on risks
+    if execute:
+        for client in high_risk:
+            telegram_send(f"🔴 HIGH RISK: {client['name']} health={client['health']:.0%}")
+        for client in medium_risk[:3]:
+            telegram_send(f"⚠️ Medium risk: {client['name']} health={client['health']:.0%}")
+    
+    print(f"\n📊 Summary:")
+    print(f"  ✅ Low risk: {len([r for r in results if r.get('risk') == 'low'])}")
+    print(f"  ⚠️ Medium risk: {len(medium_risk)}")
+    print(f"  🔴 High risk: {len(high_risk)}")
+    
+    return results
+
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--limit', type=int, default=50)
+    args = parser.parse_args()
+    main(execute=args.execute, limit=args.limit)

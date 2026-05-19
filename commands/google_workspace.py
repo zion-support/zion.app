@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 """Google Workspace API helpers for Zion Org Memory system.
 
 Shared between org_memory_agent.py and vector_index.py
+FIXED for proper conversation threading
 """
 
-import urllib.request, urllib.parse, json, datetime, sys, time
+import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
 WORKSPACE = Path('/root/.openclaw/workspace')
@@ -91,7 +93,6 @@ def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) ->
 
     Returns: draft ID (str)
     """
-    import base64
     raw_lines = [
         f"Subject: Re: {subject}",
         f"To: {to_addr}",
@@ -114,7 +115,6 @@ def gmail_create_draft_new(subject: str, body: str, to_addr: str) -> str:
 
     Returns: draft ID (str)
     """
-    import base64
     raw_lines = [
         f"Subject: {subject}",
         f"To: {to_addr}",
@@ -139,7 +139,6 @@ def extract_body_from_gmail_message(msg):
         if 'parts' in part:
             return '\n'.join(part_text(p) for p in part['parts'])
         return ''
-    import base64
     return part_text(msg.get('payload', {}))
 
 def gmail_batch_modify(payload: dict, addLabelIds=None, removeLabelIds=None):
@@ -157,6 +156,78 @@ def gmail_batch_modify(payload: dict, addLabelIds=None, removeLabelIds=None):
     except Exception as e:
         print(f'Batch modify error: {e}', file=sys.stderr)
         return False
+
+
+# ── Gmail FIXED Reply ───────────────────────────────────────────────────────
+
+def gmail_send_reply_fixed(thread_id_or_msg_id: str, original_subject: str, body: str, original_sender: str) -> dict:
+    """Send a proper reply that stays in the same conversation thread.
+    
+    Uses threadId for proper Gmail conversation threading.
+    
+    Args:
+      thread_id_or_msg_id: Either thread ID or message ID (we use threads for threading)
+      original_subject: The original email's subject (we'll add "Re:" if needed)
+      body: The reply body text
+      original_sender: The sender's email address
+    Returns:
+      dict with result status
+    """
+    # Get the original message (could be thread or message)
+    url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{thread_id_or_msg_id}'
+    req = urllib.request.Request(url, headers=gog_headers())
+    msg = json.loads(urllib.request.urlopen(req).read())
+    
+    # Get thread ID for proper threading
+    thread_id = msg.get('threadId', thread_id_or_msg_id)
+    
+    # Extract headers from original message
+    headers_raw = msg.get('payload', {}).get('headers', [])
+    
+    # Find the recipient (To header) - which should be us
+    to_header = next((h['value'] for h in headers_raw if h['name'] == 'To'), '')
+    
+    # Find Message-ID for References/In-Reply-To
+    message_id = next((h['value'] for h in headers_raw if h['name'] == 'Message-ID'), '')
+    
+    # Build proper subject (preserve Re: if already present, otherwise add it)
+    subject = original_subject
+    if not subject.startswith('Re:'):
+        subject = f"Re: {subject}"
+    
+    # Build the reply email with thread headers
+    raw_email_lines = [
+        f"To: {original_sender}",  # Reply to original sender
+        f"Subject: {subject}",
+    ]
+    
+    # Add threading headers if we have them
+    if message_id:
+        raw_email_lines.append(f"In-Reply-To: {message_id}")
+        raw_email_lines.append(f"References: {message_id}")
+    
+    raw_email_lines.append("")
+    raw_email_lines.append(body)
+    
+    raw_email = "\r\n".join(raw_email_lines)
+    
+    # Encode for Gmail API
+    raw_bytes = raw_email.encode('utf-8')
+    raw_b64 = base64.urlsafe_b64encode(raw_bytes).decode('utf-8')
+    
+    # Send via Gmail API - CRITICAL: use threadId for conversation threading
+    send_url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
+    data = json.dumps({
+        'raw': raw_b64,
+        'threadId': thread_id  # THIS is what makes it stay in conversation!
+    }).encode()
+    send_req = urllib.request.Request(send_url, data=data, headers={**gog_headers(), 'Content-Type': 'application/json'})
+    
+    try:
+        result = json.loads(urllib.request.urlopen(send_req).read())
+        return {'success': True, 'message_id': result.get('id'), 'thread_id': thread_id}
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
 
 
 # ── Calendar ────────────────────────────────────────────────────────────────
@@ -202,7 +273,7 @@ def calendar_get_freebusy(time_min, time_max, calendar_ids=None):
     body = {
         'timeMin': time_min,
         'timeMax': time_max,
-        'items': [{'id': cal_id} for cal_id in calendar_ids]
+        'items': [{'id': cal_id} for cal_id in calendar_ids],
     }
     data = json.dumps(body).encode()
     url = 'https://www.googleapis.com/calendar/v3/freeBusy'
@@ -253,14 +324,11 @@ def drive_create_folder(name: str, parent_id: str = None) -> str:
 
 def drive_move_file(file_id: str, new_parent_id: str):
     """Move a Drive file to a new parent folder (removes from all other parents)."""
-    # Get current parents first
     curr = json.loads(urllib.request.urlopen(
         urllib.request.Request(f'https://www.googleapis.com/drive/v3/files/{file_id}', headers=gog_headers())
     ).read()).get('parents', [])
-    # Patch: add new parent, then remove old ones in separate calls
     url = f'https://www.googleapis.com/drive/v3/files/{file_id}'
-    # Step 1: add new parent
-    add_url = url + f'?addParents={new_parent_id}&removeParents={','.join(curr) if curr else ''}'
+    add_url = url + f'?addParents={new_parent_id}&removeParents={",".join(curr) if curr else ""}'
     req = urllib.request.Request(add_url, headers=gog_headers(), method='PATCH')
     try:
         urllib.request.urlopen(req, timeout=15)
@@ -351,51 +419,3 @@ def telegram_send(text: str):
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
         print(f'[TELEGRAM] Failed: {e}')
-
-def gmail_send_reply(thread_id: str, body: str) -> dict:
-    """Send a reply to an email thread.
-    
-    Args:
-      thread_id: The Gmail message/thread ID to reply to
-      body: The reply body text
-      
-    Returns:
-      dict with result status
-    """
-    # Get the thread to find original message details
-    url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{thread_id}'
-    req = urllib.request.Request(url, headers=gog_headers())
-    thread = json.loads(urllib.request.urlopen(req).read())
-    
-    # Extract headers
-    headers = thread.get('payload', {}).get('headers', [])
-    to_header = next((h['value'] for h in headers if h['name'] == 'To'), '')
-    from_header = next((h['value'] for h in headers if h['name'] == 'From'), '')
-    subject = next((h['value'] for h in headers if h['name'] == 'Subject'), '')
-    message_id = next((h['value'] for h in headers if h['name'] == 'Message-ID'), '')
-    
-    # Create reply message
-    reply_subject = f"Re: {subject}" if not subject.startswith('Re:') else subject
-    
-    raw_email = f"""To: {from_header}
-Subject: {reply_subject}
-In-Reply-To: {message_id}
-References: {message_id}
-
-{body}"""
-    
-    # Encode for Gmail API
-    import base64
-    raw_bytes = raw_email.encode('utf-8')
-    raw_b64 = base64.urlsafe_b64encode(raw_bytes).decode('utf-8')
-    
-    # Send via Gmail API
-    send_url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
-    data = json.dumps({'raw': raw_b64}).encode()
-    send_req = urllib.request.Request(send_url, data=data, headers={**gog_headers(), 'Content-Type': 'application/json'})
-    
-    try:
-        result = json.loads(urllib.request.urlopen(send_req).read())
-        return {'success': True, 'message_id': result.get('id')}
-    except Exception as e:
-        return {'success': False, 'error': str(e)}

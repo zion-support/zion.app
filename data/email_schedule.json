@@ -1,0 +1,42 @@
+{
+  "recommendations": [
+    {
+      "domain": "praia.digital",
+      "emails_sent": 1,
+      "optimal_hours": [
+        9,
+        10,
+        11,
+        14,
+        15,
+        16
+      ],
+      "analysis_time": "2026-05-18T22:23:44.153393+00:00"
+    },
+    {
+      "domain": "ziontechgroup.com",
+      "emails_sent": 5,
+      "optimal_hours": [
+        15,
+        9,
+        21,
+        16,
+        13
+      ],
+      "analysis_time": "2026-05-18T22:23:51.627781+00:00"
+    },
+    {
+      "domain": "agilize.zendesk.com",
+      "emails_sent": 2,
+      "optimal_hours": [
+        16,
+        13,
+        17,
+        12,
+        14
+      ],
+      "analysis_time": "2026-05-18T22:23:55.300850+00:00"
+    }
+  ],
+  "last_updated": "2026-05-18T22:23:55.300950+00:00"
+}
