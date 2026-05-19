@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'CRM Automation Trends 2026: AI-Driven Customer Journey Personalization | Zion Tech Group Blog',

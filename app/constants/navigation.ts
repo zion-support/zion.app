@@ -14,15 +14,15 @@ export const PRIMARY_NAV_LINKS: readonly NavigationLink[] = [
 
 export const SOLUTION_LINKS: readonly NavigationLink[] = [
   { name: 'All Solutions', href: '/solutions' },
-  { name: 'Healthcare', href: '/solutions/healthcare' },
-  { name: 'Financial Services', href: '/solutions/financial-services' },
-  { name: 'Manufacturing & Industrial', href: '/solutions/manufacturing-industrial' },
-  { name: 'E‑Commerce & Retail', href: '/solutions/ecommerce-retail' },
-  { name: 'Technology & SaaS', href: '/solutions/technology-and-saas' },
-  { name: 'Logistics & Supply Chain', href: '/solutions/logistics-supply-chain' },
-  { name: 'Government & Public Sector', href: '/solutions/government-and-public-sector' },
-  { name: 'Insurance', href: '/solutions/insurance' },
-  { name: 'Industries', href: '/industries' },
+  { name: 'Healthcare', href: '/industry-solutions' },
+  { name: 'Financial Services', href: '/solutions' },
+  { name: 'Manufacturing & Industrial', href: '/solutions' },
+  { name: 'E‑Commerce & Retail', href: '/solutions' },
+  { name: 'Technology & SaaS', href: '/solutions' },
+  { name: 'Logistics & Supply Chain', href: '/solutions' },
+  { name: 'Government & Public Sector', href: '/solutions' },
+  { name: 'Insurance', href: '/solutions' },
+  { name: 'Industries', href: '/industry-solutions' },
 ];
 // Resource Links
 export const RESOURCE_LINKS: readonly NavigationLink[] = [
@@ -31,26 +31,28 @@ export const RESOURCE_LINKS: readonly NavigationLink[] = [
   { name: 'Proposal Generator', href: '/proposal-generator' },
   { name: 'Service Comparison', href: '/tools/service-comparison' },
   { name: 'Service Recommender', href: '/tools/service-recommender' },
+  { name: 'SSL Certificate Checker', href: '/tools/ssl-checker' },
+  { name: 'Port Scanner', href: '/tools/port-scanner' },
   { name: 'Client Portal', href: '/portal' },
 ];
 
 export const FEATURED_AI_SERVICE_LINKS: readonly NavigationLink[] = [
-  { name: 'Zion AI Chatbot Builder', href: '/zion-ai-chatbot-builder' },
+  { name: 'Zion AI Chatbot Builder', href: '/services/ai-chatbot-builder-pro' },
   {
     name: 'AI-Powered DevOps',
-    href: '/ai-powered-devops',
-    aliases: ['/zion-devops-automation'],
+    href: '/services/devops-gen-ai-ci-cd',
+    aliases: ['/services/it-devops-platform-toolchain'],
   },
   {
     name: 'AI Email Analyzer',
-    href: '/ai-powered-email-analyzer',
-    aliases: ['/zion-ai-email-assistant'],
+    href: '/services/ai-email-marketing',
+    aliases: ['/services/ai-email-marketing'],
   },
-  { name: 'Zion AI Code Assistant', href: '/zion-ai-code-assistant' },
-  { name: 'Zion AI Code Reviewer', href: '/zion-ai-code-reviewer' },
-  { name: 'Zion AI Customer Support Pro', href: '/zion-ai-customer-support-pro' },
-  { name: 'Zion AI Predictive Analytics', href: '/zion-ai-predictive-analytics' },
-  { name: 'Zion Security Shield', href: '/zion-security-shield' },
+  { name: 'Zion AI Code Assistant', href: '/services/ai-code-assistant-enterprise' },
+  { name: 'Zion AI Code Reviewer', href: '/services/ai-code-migration-assistant' },
+  { name: 'Zion AI Customer Support Pro', href: '/services/ai-customer-support' },
+  { name: 'Zion AI Predictive Analytics', href: '/services/ai-analytics' },
+  { name: 'Zion Security Shield', href: '/services/ai-security-responsible-ai' },
 ];
 
 export const AI_SERVICE_LINKS: readonly NavigationLink[] = [
@@ -361,59 +363,68 @@ export const AI_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Secure File Transfer', href: '/services/secure-file-transfer' },
   { name: 'Supply Chain', href: '/services/supply-chain' },
   { name: 'Vector Database', href: '/services/vector-database' },
+  { name: 'AI Chronic Disease Progression Tracker', href: '/services/ai-chronic-disease-tracker' },
+  { name: 'AI Code Vulnerability Scanner', href: '/services/ai-code-vulnerability-scanner' },
+  { name: 'AI Content Moderation Suite', href: '/services/ai-content-moderation-suite' },
+  { name: 'AI Conversational HR & Employee Onboarding', href: '/services/ai-conversational-hr-onboarding' },
+  { name: 'AI Drug Discovery & Molecular Design Assistant', href: '/services/ai-drug-discovery-assistant' },
+  { name: 'AI Generative Synthetic Patient Data Engine', href: '/services/ai-generative-synthetic-patient-data' },
+  { name: 'AI Marine & Fisheries Sustainability Monitor', href: '/services/ai-marine-fisheries-sustainability' },
+  { name: 'AI Predictive Maintenance — Industrial IoT', href: '/services/ai-predictive-maintenance-industrial' },
+  { name: 'AI Real-Time Translation & Subtitle Platform', href: '/services/ai-real-time-translation-platform' },
+  { name: 'AI Self-Healing Kubernetes Platform', href: '/services/ai-self-healing-kubernetes-platform' },
+  { name: 'AI Visual Search & Image-Based Recommendation', href: '/services/ai-visual-search-recommendation' },
+  { name: 'AI Zero Trust Network Access (ZTNA)', href: '/services/ai-zero-trust-network-access' },
 ];
 
 export const FEATURED_PRODUCT_LINKS: readonly NavigationLink[] = [
-  { name: 'Zion Analytics Pro', href: '/zion-analytics-pro' },
-  { name: 'Zion CRM Intelligence', href: '/zion-crm-intelligence' },
-  { name: 'Zion Content Studio', href: '/zion-content-studio' },
-  { name: 'Zion Project Master', href: '/zion-project-master' },
-  { name: 'Zion Performance Monitor', href: '/zion-performance-monitor' },
-  { name: 'Zion Lead Magnet', href: '/zion-lead-magnet' },
-  { name: 'Zion Invoice Genius', href: '/zion-invoice-genius' },
-  { name: 'Zion Data Sync', href: '/zion-data-sync' },
-  { name: 'Autonomous RAG Knowledge Workspace', href: '/ai-lab/autonomous-rag-knowledge-workspace' },
-  { name: 'Autonomous Media Prompt Studio', href: '/ai-lab/autonomous-media-prompt-studio' },
+  { name: 'Zion Analytics Pro', href: '/services/ai-analytics' },
+  { name: 'Zion CRM Intelligence', href: '/services/ai-crm-automation-suite' },
+  { name: 'Zion Content Studio', href: '/services/ai-content-generation' },
+  { name: 'Zion Project Master', href: '/services/ai-project-planning' },
+  { name: 'Zion Performance Monitor', href: '/services/performance-engineering' },
+  { name: 'Zion Lead Magnet', href: '/services/ai-lead-generation' },
+  { name: 'Zion Invoice Genius', href: '/services/invoice-ai-automation' },
+  { name: 'Zion Data Sync', href: '/services/data-sync-engineering' },
+  { name: 'Autonomous RAG Knowledge Workspace', href: '/services/ai-knowledge-base-rag' },
+  { name: 'Autonomous Media Prompt Studio', href: '/services/ai-video-generation' },
 ];
 
 export const AUTOMATION_LINKS: readonly NavigationLink[] = [
-  { name: 'Automation', href: '/automation' },
-  { name: 'Workflow Automation', href: '/workflow-automation' },
+  { name: 'Automation', href: '/services/workflow-automation' },
   {
     name: 'Smart CRM Automation',
-    href: '/zion-smart-crm-automation',
-    aliases: ['/crm-automation'],
+    href: '/services/ai-crm-automation-suite',
+    aliases: ['/services/ai-crm-automation-suite'],
   },
-  { name: 'Email Automation', href: '/zion-email-automation' },
-  { name: 'AI Marketing Automation', href: '/zion-ai-marketing-automation' },
-  { name: 'DevOps Automation', href: '/zion-devops-automation' },
-  { name: 'AI Workflow Automator', href: '/zion-ai-workflow-automator' },
-  { name: 'AI Workflow Automator Pro', href: '/zion-ai-workflow-automator-pro' },
-  { name: 'Robotic Process Automation', href: '/robotic-process-automation' },
-  { name: 'Process Automation', href: '/process-automation' },
-  { name: 'Security Automation', href: '/security-automation' },
-  { name: 'Compliance Automation', href: '/compliance-automation' },
+  { name: 'Email Automation', href: '/services/ai-email-marketing' },
+  { name: 'DevOps Automation', href: '/services/it-devops-platform-toolchain' },
+  { name: 'AI Workflow Automator', href: '/services/ai-workflow-automation-builder' },
+  { name: 'AI Workflow Automator Pro', href: '/services/ai-workflow-automation-enterprise' },
+  { name: 'Robotic Process Automation', href: '/services/ai-rpa-automation' },
+  { name: 'Process Automation', href: '/services/process-automation' },
+  { name: 'Security Automation', href: '/services/security-privacy-program-automation' },
+  { name: 'Compliance Automation', href: '/services/compliance-automation' },
 ];
 
 export const PRODUCT_LINKS: readonly NavigationLink[] = [
-  { name: 'Zion Analytics Pro', href: '/zion-analytics-pro' },
-  { name: 'Zion CRM Intelligence', href: '/zion-crm-intelligence' },
-  { name: 'Zion Content Studio', href: '/zion-content-studio' },
-  { name: 'Zion Project Master', href: '/zion-project-master' },
-  { name: 'Zion Performance Monitor', href: '/zion-performance-monitor' },
-  { name: 'Zion Smart Analytics Dashboard', href: '/zion-smart-analytics-dashboard' },
-  { name: 'Zion Lead Magnet', href: '/zion-lead-magnet' },
-  { name: 'Zion Invoice Genius', href: '/zion-invoice-genius' },
-  { name: 'Zion Data Sync', href: '/zion-data-sync' },
-  { name: 'AI Lead Scoring', href: '/zion-ai-lead-scoring' },
-  { name: 'AI Email Marketing Pro', href: '/zion-ai-email-marketing-pro' },
-  { name: 'AI SEO Optimizer', href: '/zion-ai-seo-optimizer' },
-  { name: 'AI Social Media Manager', href: '/zion-ai-social-media-manager' },
-  { name: 'AI Meeting Assistant', href: '/zion-ai-meeting-assistant' },
-  { name: 'AI Fraud Detection', href: '/zion-ai-fraud-detection' },
-  { name: 'AI Voice Assistant', href: '/zion-ai-voice-assistant' },
-  { name: 'Autonomous Media Prompt Studio', href: '/ai-lab/autonomous-media-prompt-studio' },
-  { name: 'Autonomous RAG Knowledge Workspace', href: '/ai-lab/autonomous-rag-knowledge-workspace' },
+  { name: 'Zion Analytics Pro', href: '/services/ai-analytics' },
+  { name: 'Zion CRM Intelligence', href: '/services/ai-crm-automation-suite' },
+  { name: 'Zion Content Studio', href: '/services/ai-content-generation' },
+  { name: 'Zion Project Master', href: '/services/ai-project-planning' },
+  { name: 'Zion Performance Monitor', href: '/services/performance-engineering' },
+  { name: 'Zion Lead Magnet', href: '/services/ai-lead-generation' },
+  { name: 'Zion Invoice Genius', href: '/services/invoice-ai-automation' },
+  { name: 'Zion Data Sync', href: '/services/data-sync-engineering' },
+  { name: 'AI Lead Scoring', href: '/services/predictive-lead-scoring' },
+  { name: 'AI Email Marketing Pro', href: '/services/ai-email-campaign-generator' },
+  { name: 'AI SEO Optimizer', href: '/services/ai-seo-content-optimizer' },
+  { name: 'AI Social Media Manager', href: '/services/ai-social-scheduler' },
+  { name: 'AI Meeting Assistant', href: '/services/ai-meeting-assistant-pro' },
+  { name: 'AI Fraud Detection', href: '/services/ai-fraud-detection' },
+  { name: 'AI Voice Assistant', href: '/services/ai-voice-assistant-pro' },
+  { name: 'Autonomous Media Prompt Studio', href: '/services/ai-video-generation' },
+  { name: 'Autonomous RAG Knowledge Workspace', href: '/services/ai-knowledge-base-rag' },
 ];
 
 export const IT_SERVICE_LINKS: readonly NavigationLink[] = [
@@ -527,7 +538,10 @@ export const IT_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Security Operations Center as a Service (SOCaaS)', href: '/services/soc-as-a-service' },
   { name: 'Technical Writing & Developer Documentation', href: '/services/tech-writing-docs' },
   { name: 'Vulnerability Assessment & Penetration Testing', href: '/services/vulnerability-assessment-penetration-testing' },
-];
+  { name: 'AI-Powered Performance Monitoring', href: '/services/ai-performance-monitoring' },
++  { name: 'GraphQL Federation & API Composition Platform', href: '/services/graphql-federation-platform' },
++  { name: 'Kubernetes Operator for Database Automation', href: '/services/kubernetes-operator-database' },
+ ];
 export const CLOUD_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'API Development & Integration', href: '/services/api-development' },
   { name: 'AWS Serverless Migration', href: '/services/aws-serverless-migration' },
@@ -597,7 +611,8 @@ export const CLOUD_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Sovereign & Regulated Cloud Hosting', href: '/services/sovereign-cloud-hosting' },
   { name: 'Virtual Private Cloud', href: '/services/virtual-private-cloud' },
   { name: 'Zero-Trust Network Access (ZTNA)', href: '/services/zero-trust-network-access' },
-];
++  { name: 'Cloud Cost Anomaly Detector — ML-Powered', href: '/services/cloud-cost-anomaly-detector-ml' },
+ ];
 export const SECURITY_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Attack Surface Management (ASM)', href: '/services/attack-surface-management' },
   { name: 'Automated Penetration Testing', href: '/services/automated-pen-testing' },
@@ -648,7 +663,8 @@ export const SECURITY_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'SIEM Security Platform', href: '/services/siem-security-platform' },
   { name: 'Software Supply Chain Security', href: '/services/software-supply-chain-sec' },
   { name: 'Zero Trust Access Gateway', href: '/services/zero-trust-access' },
-];
++  { name: 'AI DDoS Protection & Mitigation Platform', href: '/services/ai-ddos-protection-platform' },
+ ];
 export const DATA_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'AI Data Quality & Enforcement Engine', href: '/services/ai-data-quality-engine' },
   { name: 'AI ETL Pipeline Builder', href: '/services/ai-etl-pipeline-builder' },
@@ -689,7 +705,8 @@ export const DATA_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Observability Data Lakehouse', href: '/services/observability-lakehouse' },
   { name: 'Self-Service Analytics Platform', href: '/services/self-service-analytics' },
   { name: 'Real-Time Streaming Analytics', href: '/services/streaming-realtime-analytics' },
-];
++  { name: 'Real-Time Streaming ETL with Apache Flink', href: '/services/realtime-streaming-etl-flink' },
+ ];
 export const AUTOMATION_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Agentic Workflow Orchestrator', href: '/services/agentic-workflow-orchestrator' },
   { name: 'AI-Powered Office Automation', href: '/services/ai-office-automation' },
@@ -720,4 +737,5 @@ export const AUTOMATION_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Supply Chain Management Platform', href: '/services/supply-chain-management-service' },
   { name: 'Supply Chain Visibility', href: '/services/supply-chain-visibility' },
   { name: 'Workflow Automation & Integration Platform', href: '/services/workflow-automation' },
-];
++  { name: 'Event-Driven Orchestration Hub', href: '/services/event-driven-orchestration-hub' },
+ ];

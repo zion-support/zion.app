@@ -1,9 +1,10 @@
 // app/page.tsx — Home / Landing Page
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
+import serviceIndex from '../public/service-index.json';
 import type { Service } from './data/servicesData';
 import Footer from '@/components/Footer';
 
@@ -182,6 +183,20 @@ export default function HomePage() {
 
       {/* ── Services by Category (all 626 services advertised) ── */}
 
+
+      {/* ── Service Spotlight ── */}
+      <section className="py-16">
+        <div className="container-page">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-2xl">✨</span>
+            <h2 className="text-2xl font-bold text-white">Today’s Service Spotlight</h2>
+            <span className="text-xs text-slate-500 bg-slate-800 rounded-full px-3 py-1">
+              Auto-updated · Quality-ranked
+            </span>
+          </div>
+          <SpotlightCard />
+        </div>
+      </section>
       {/* ── Popular Services ── */}
       <section className="py-16">
         <div className="container-page">
@@ -1054,5 +1069,94 @@ export default function HomePage() {
       </section>
     <Footer />
     </main>
+  );
+}
+
+function SpotlightCard() {
+  // 14-day rotation: one "best" service per day based on quality score
+  const rotateIdx = useMemo(() => {
+    if (typeof window === 'undefined') return 0;
+    const stored = parseInt(localStorage.getItem('spotlightIdx') || '0', 10);
+    // advance once per 4-day period
+    return stored;
+  }, []);
+
+  const [spotlight, setSpotlight] = useState<Service | null>(null);
+
+  useEffect(() => {
+    const idx = Math.floor(Date.now() / 86400000 / 4) % 14; // cycle 0–13 every 4 days
+    localStorage.setItem('spotlightIdx', String(idx));
+    const pool = serviceIndex.services.slice(0, 14); // pre-ranked top-14 by quality
+    const pick = pool[idx] || pool[0];
+    const full = allServices.find((s: any) => s.id === pick.id) || pick;
+    setSpotlight(full as any);
+  }, []);
+
+  if (!spotlight) return <p className="text-slate-400">Loading spotlight…</p>;
+
+  const catLabel = (() => {
+    switch (spotlight.category) {
+      case 'ai': return 'AI Service'; case 'it': return 'IT'; case 'cloud': return 'Cloud';
+      case 'security': return 'Security'; case 'data': return 'Data'; case 'automation': return 'Automation';
+      default: return spotlight.category;
+    }
+  })();
+
+  return (
+    <div className="glass-card p-8 border-purple-500/30 bg-gradient-to-br from-slate-900/80 via-purple-900/10 to-slate-900/60">
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xs font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full px-3 py-0.5">
+              {catLabel}
+            </span>
+            <span className="text-xs text-slate-500">
+              {Math.floor(spotlight.features?.length || 0)} features · {Object.keys(spotlight.pricing || {}).length} pricing tiers
+            </span>
+          </div>
+          <h3 className="text-2xl font-bold text-white mb-2">{spotlight.title}</h3>
+          <p className="text-slate-300 text-sm mb-5 leading-relaxed">{spotlight.description}</p>
+          <div className="grid sm:grid-cols-2 gap-2 mb-5">
+            {(spotlight.features || []).slice(0, 4).map((f: string, i: number) => (
+              <div key={i} className="flex items-start gap-2 text-sm text-slate-300">
+                <span className="text-purple-400 mt-0.5">✦</span>
+                <span className="line-clamp-1">{f}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {Object.entries(spotlight.pricing || {}).map(([tier, price]) => (
+              <span key={tier} className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+                {tier}: {price as string}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-3">
+            <Link href={`/services/${spotlight.id}`} className="btn-primary text-sm px-7 py-3">
+              View Details →
+            </Link>
+            <Link href="/configurator" className="btn-secondary text-sm px-7 py-3">
+              Get Proposal
+            </Link>
+          </div>
+        </div>
+        <div className="lg:w-72 flex flex-col gap-3 shrink-0">
+          <div className="glass-card p-5 text-center border-purple-500/20 bg-purple-900/10">
+            <div className="text-3xl font-bold text-white mb-1">#{Math.floor(rotateIdx) + 1}</div>
+            <div className="text-xs text-slate-400 uppercase tracking-wider">Today’s Rank</div>
+            <div className="text-xs text-slate-500 mt-2">{14 - (rotateIdx % 14)} days left in rotation</div>
+          </div>
+          <div className="glass-card p-5">
+            <div className="text-xs text-slate-400 uppercase tracking-wider mb-2">Why Featured?</div>
+            <ul className="text-xs text-slate-300 space-y-1">
+              <li>• {(spotlight.features || []).length || 0} features</li>
+              <li>• {Object.keys(spotlight.pricing || {}).length} pricing tiers</li>
+              <li>• AI quality-ranked</li>
+              <li>• Auto-rotates daily</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
