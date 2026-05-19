@@ -43,8 +43,43 @@ export default async function ServicePage({ params }: PageProps) {
 
   const catLabel = CAT_LABELS[service.category] || service.category;
 
+  // Schema.org structured data for rich search snippets on service pages
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description || "",
+    provider: {
+      "@type": "Organization",
+      name: "Zion Tech Group",
+      url: "https://ziontechgroup.com",
+    },
+    url: `https://ziontechgroup.com/services/${service.id}`,
+    category: catLabel,
+    serviceOutput:
+      (service.features || []).slice(0, 5).join("; "),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: catLabel,
+      itemListElement:
+        service.pricing && Object.keys(service.pricing).length > 0
+          ? Object.entries(service.pricing).map(([tier, price]) => ({
+              "@type": "Offer",
+              price: String(price).replace(/[^0-9.-]/g, ""),
+              priceCurrency: "USD",
+              name: tier,
+            }))
+          : undefined,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="container-page">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-slate-400">
