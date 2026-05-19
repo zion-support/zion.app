@@ -28,6 +28,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <url><loc>https://ziontechgroup.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/status</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/search</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/data/services.json</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://ziontechgroup.com/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/portal</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>`;
