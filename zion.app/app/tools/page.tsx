@@ -19,7 +19,7 @@ const tools = [
   {
     href: '/tools/service-comparison',
     title: 'Service Comparison',
-    desc: 'Compare features, pricing tiers, and benefits across our catalog of 600+ services side-by-side.',
+    desc: 'Compare features, pricing tiers, and benefits across our catalog of 626+ services side-by-side.',
     icon: '📊',
   },
   {

@@ -138,7 +138,7 @@ export default function SmartSearchBar({ initialQuery = '', initialCategory = 'a
             onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
             onKeyDown={onKeyDown}
             onFocus={() => setOpen(true)}
-            placeholder="Search 570+ services by name, keyword, or category..."
+            placeholder="Search 626+ services by name, keyword, or category..."
             className="flex-1 rounded-full border border-slate-700 bg-slate-900/90 px-5 py-3.5 pl-1 text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 pr-28"
             aria-label="Search services"
             aria-autocomplete="list"

@@ -449,6 +449,71 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── What's New / Fresh Features ── */}
+      <section className="py-20">
+        <div className="container-page">
+          <h2 className="section-heading text-center">✨ What's New at Zion Tech Group</h2>
+          <p className="section-subheading text-center">The latest platform upgrades, services, and capabilities — always evolving</p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              {
+                title: '🤖 Autonomous Email Responder',
+                desc: 'V15/V16 AI-driven email intelligence — predictive response with auto-reply monitoring. Handles your inbox 24/7 without lifting a finger.',
+                tag: 'AI Tools',
+                color: 'from-purple-600 to-pink-500',
+              },
+              {
+                title: '⚡ Dynamic Hero Stats',
+                desc: 'Homepage numbers now auto-sync from the live service catalog. Add, rename, or retire services and the count updates instantly across the whole site.',
+                tag: 'Platform',
+                color: 'from-cyan-500 to-blue-600',
+              },
+              {
+                title: '🔍 Smart Fuzzy Search',
+                desc: 'Find exactly the right service in milliseconds. Category pill filters + hit counts show results at a glance before you even click.',
+                tag: 'Search',
+                color: 'from-green-500 to-emerald-500',
+              },
+              {
+                title: '⚙️ AI-Powered Configurator',
+                desc: 'Get a custom-tailored proposal as a PDF delivered to your inbox within 24 hours. AI matches your budget + needs to the right services.',
+                tag: 'Sales',
+                color: 'from-orange-500 to-amber-500',
+              },
+              {
+                title: '🛠️ Full Service Catalog',
+                desc: '626+ micro-SaaS, AI, IT, Cloud, Security, Data, and Automation services — all documented with pricing, features, and direct contact.',
+                tag: 'Catalog',
+                color: 'from-indigo-500 to-violet-500',
+              },
+              {
+                title: '🗺️ Industry Solutions',
+                desc: 'Healthcare, Finance, E-Commerce, Manufacturing, SaaS, and more — discover how our services apply directly to your industry.',
+                tag: 'Industries',
+                color: 'from-sky-500 to-cyan-600',
+              },
+            ].map((feat, i) => (
+              <div key={i} className="glass-card flex flex-col gap-3 hover:border-purple-500/40 group">
+                <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color}`} />
+                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
+                <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
+                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
+                <div className="mt-auto">
+                  <span
+                    role="img"
+                    aria-hidden
+                    className="inline-block transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 {/* Contact Info */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
