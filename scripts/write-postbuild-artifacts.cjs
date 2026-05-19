@@ -35,6 +35,3 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 
 fs.writeFileSync(path.join(outDir, 'sitemap.xml'), sitemap);
 console.log('postbuild: .nojekyll, sitemap.xml, robots.txt written to out/');
-
-// Spotlight feed
-require('./generate_spotlight_feed.cjs');
