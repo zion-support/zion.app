@@ -602,6 +602,29 @@ let list = services;
           <ServiceSpotlight services={popularServices} />
         </div>
       </section>
+      {/* ── Trust Badges — Persuasion Proof Matrix ── */}
+      <section className="py-16 border-t border-slate-800">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-white text-center mb-10">
+            Why Choose Zion Tech Group
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { emoji: '🏆', label: '600+ Services', sub: 'AI & IT catalog', color: 'from-amber-500/20 to-yellow-500/10' },
+              { emoji: '🚀', label: 'Latest Tech', sub: 'Modern stacks', color: 'from-purple-500/20 to-blue-500/10' },
+              { emoji: '🌐', label: 'Cross-Industry', sub: '9 sectors served', color: 'from-blue-500/20 to-cyan-500/10' },
+              { emoji: '💡', label: 'Plug & Play', sub: 'No AI team needed', color: 'from-green-500/20 to-emerald-500/10' },
+            ].map((badge, i) => (
+              <div key={i} className={`bg-gradient-to-br ${badge.color} border border-slate-700/50 rounded-xl p-6 text-center group hover:border-cyan-500/30 transition-all`}>
+                <div className="text-4xl mb-4">{badge.emoji}</div>
+                <div className="text-xl font-bold text-white mb-1">{badge.label}</div>
+                <div className="text-sm text-slate-400">{badge.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
 {/* Contact Info */}
       <section className="py-16 border-t border-slate-800">
