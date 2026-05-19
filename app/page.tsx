@@ -179,10 +179,40 @@ export default function HomePage() {
           <div className="flex items-center gap-3 mb-8">
             <span className="text-2xl">🗂️</span>
             <h2 className="text-2xl font-bold text-white">Browse by Category</h2>
-            <span className="text-sm text-slate-400">All {services.length}+ services across 6 domains</span>
+            <span className="text-sm text-slate-400">All {services.length}+ services — pick a domain below</span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {CATEGORIES.map(cat => {
+              const n = byCategory[cat.key]?.length ?? 0;
+              return (
+              <Link key={cat.key} href={`/services?category=${cat.key}`}
+                className="glass-card group hover:border-purple-500/40 hover:scale-[1.015] transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)` }}/>
+                <div className="relative flex items-center gap-4">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl shadow-lg
+                    group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                    {cat.emoji}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors leading-tight">
+                      {cat.label}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-1">
+                      <p className="text-slate-400 text-sm">{n} service{n !== 1 ? 's' : ''}</p>
+                      <span className="text-slate-600 text-xs">·</span>
+                      <span className="text-purple-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                        Browse →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+            })}
           </div>
         </div>
-        </section>
+      </section>
 
         {/* ── Popular Services ── */}
 
