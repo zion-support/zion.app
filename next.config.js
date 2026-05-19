@@ -31,9 +31,4 @@ const nextConfig = {
   },
 };
 
-// Serve JSON data files directly (bypasses SPA rewrite)
-nextConfig.rewrites = () => [
-  { source: '/:path(\.json)$', destination: '/:path\.json' },
-  { source: '/data/:path(\.json)$', destination: '/data/:path\.json' },
-];
 export default nextConfig;
