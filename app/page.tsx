@@ -1087,7 +1087,7 @@ function SpotlightCard() {
     let cancelled = false;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6000);
-    fetch('/service-index.json', { signal: controller.signal })
+    fetch('/data/service-spotlight.json', { signal: controller.signal })
       .then(r => r.json())
       .then(idx => {
         if (cancelled) return;
