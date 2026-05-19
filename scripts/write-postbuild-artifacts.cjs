@@ -5,6 +5,11 @@ const path = require('path');
 
 const outDir = path.join(process.cwd(), 'out');
 
+// Ensure out/ directory exists
+if (!fs.existsSync(outDir)) {
+  fs.mkdirSync(outDir, { recursive: true });
+}
+
 // .nojekyll
 fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
 
