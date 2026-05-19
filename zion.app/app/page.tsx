@@ -673,35 +673,51 @@ export default function HomePage() {
                   </Link>
                 </div>
                 
-                {/* Top-6 grid for this category */}
+                {/* Top-6 service grid */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {top6.map((service: any) => (
-                    <div key={service.id} className="glass-card flex flex-col hover:border-purple-500/40 group">
-                      <div className="flex items-start gap-3 mb-3">
-                        <span className="text-2xl">{service.icon}</span>
-                        <div>
-                          <h3 className="text-base font-semibold text-white leading-snug group-hover:text-purple-300 transition-colors">{service.title}</h3>
-                          <span className="text-xs text-slate-500 uppercase tracking-wider">{service.category}</span>
-                        </div>
-                      </div>
-                      <p className="text-slate-400 text-sm mb-3 line-clamp-2 flex-1">{service.description}</p>
-                      <ul className="space-y-1 mb-3">
-                        {service.features.slice(0, 2).map((f: string, i: number) => (
-                          <li key={i} className="text-slate-300 text-xs flex items-start gap-2">
-                            <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-                            <span className="line-clamp-1">{f}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
-                        <span className="text-purple-300 text-sm font-semibold">
-                          From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
-                        </span>
-                        <Link href={`/services/${service.id}`} className="text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center gap-1 group">
-                          Learn more <span className="group-hover:translate-x-1 transition-transform">→</span>
-                        </Link>
+                  <div
+                    key={service.id}
+                    className="glass-card flex flex-col hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 group cursor-pointer relative"
+                  >
+                    {/* Popular badge — only if flagged in data */}
+                    {service.popular && (
+                    <span className="absolute -top-2 -right-2 z-10 text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-orange-500 to-pink-500 text-white px-2.5 py-1 rounded-full shadow-md">
+                      🔥 Popular
+                    </span>
+                    )}
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="text-2xl group-hover:scale-110 transition-transform duration-300">{service.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base font-semibold text-white leading-snug group-hover:text-purple-300 transition-colors line-clamp-2">
+                          {service.title}
+                        </h3>
+                        <span className="text-xs text-slate-500 uppercase tracking-wider">{service.category}</span>
                       </div>
                     </div>
+                    <p className="text-slate-400 text-sm mb-3 line-clamp-2 flex-1 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-1 mb-3">
+                      {service.features.slice(0, 2).map((f: string, i: number) => (
+                        <li key={i} className="text-slate-300 text-xs flex items-start gap-2">
+                          <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+                          <span className="line-clamp-1">{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
+                      <span className="text-purple-300 text-sm font-semibold">
+                        From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
+                      </span>
+                      <Link
+                        href={`/services/${service.id}`}
+                        className="text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center gap-1 group/learn"
+                      >
+                        Learn more <span className="group-hover/learn:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    </div>
+                  </div>
                   ))}
                 </div>
                 
@@ -877,21 +893,45 @@ export default function HomePage() {
       <section className="py-20 bg-slate-900/30">
         <div className="container-page">
           <h2 className="section-heading text-center">Our Service Categories</h2>
-          <p className="section-subheading text-center">Six core domains of expertise</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {CATEGORIES.map(cat => (
-              <Link key={cat.key} href={`/services?category=${cat.key}`} className="glass-card group hover:border-purple-500/40">
-                <div className="flex items-center gap-4">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl shadow-lg`}>
+          <p className="section-subheading text-center">
+            Six core domains — {services.length}+ services total — click any category to filter
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {CATEGORIES.map(cat => {
+              const catCount = byCategory[cat.key]?.length ?? 0;
+              return (
+              <Link
+                key={cat.key}
+                href={`/services?category=${cat.key}`}
+                className="glass-card group hover:border-purple-500/40 hover:scale-[1.015] transition-all duration-300 relative overflow-hidden"
+              >
+                {/* Gradient border glow on hover */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)`,
+                  }}
+                />
+                <div className="relative flex items-center gap-4">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
                     {cat.emoji}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors">{cat.label}</h3>
-                    <p className="text-slate-400 text-sm">{byCategory[cat.key].length} services available</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors leading-tight">
+                      {cat.label}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-1">
+                      <p className="text-slate-400 text-sm">{catCount} service{catCount !== 1 ? 's' : ''}</p>
+                      <span className="text-slate-600 text-xs">·</span>
+                      <span className="text-purple-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                        Browse →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

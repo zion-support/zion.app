@@ -101,7 +101,7 @@ export default function Navigation() {
                 ))}
                 <div className="border-t border-slate-800 my-1" />
                 <Link href="/services" className="block px-3 py-2 rounded-lg text-sm text-purple-400 hover:text-purple-300" onClick={() => setServicesOpen(false)}>
-                  all 626+ Services → →
+                  all 626+ Services →
                 </Link>
               </div>
             )}

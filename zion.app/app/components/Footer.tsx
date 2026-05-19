@@ -44,16 +44,16 @@ export default function Footer() {
     <footer className="border-t border-slate-800/60 bg-slate-900/40 mt-auto" role="contentinfo">
       {/* Main footer grid */}
       <div className="container-page py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-7 text-sm">
-        {/* Brand column */}
-        <div className="lg:col-span-1">
+        {/* Brand column — full width on mobile */}
+        <div className="lg:col-span-2 flex flex-col gap-3">
           <Link href="/" className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             {SITE_NAME}
           </Link>
-          <p className="text-slate-400 mt-2 text-xs leading-relaxed">
-            626+ AI, IT &amp; Micro-SaaS services — enterprise automation, cybersecurity, cloud,
-            and data solutions headquartered in Middletown, DE.
+          <p className="text-slate-400 text-xs leading-relaxed max-w-xs">
+            626+ AI, IT &amp; Micro-SaaS services — enterprise automation, cybersecurity,
+            cloud, and data solutions for US-based and global businesses.
           </p>
-          <address className="not-italic text-xs text-slate-500 mt-3 space-y-1">
+          <address className="not-italic text-xs text-slate-500 space-y-1">
             <div>{ADDRESS}</div>
             <div>
               <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="text-purple-400 hover:underline">{PHONE}</a>
@@ -64,7 +64,7 @@ export default function Footer() {
           </address>
         </div>
 
-        {/* Quick links */}
+        {/* Company */}
         <div>
           <h3 className="text-sm font-bold text-white mb-3 tracking-wide">Company</h3>
           <ul className="space-y-1.5">
@@ -92,22 +92,14 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* AI services — top 10 */}
-        <ServiceGrid title="AI &amp; Automation" links={AI_SERVICE_LINKS} max={10} />
-
-        {/* IT services — top 10 */}
-        <ServiceGrid title="IT Infrastructure" links={IT_SERVICE_LINKS} max={10} />
-
-        {/* Cloud + Security */}
-        <div className="space-y-4">
-          <ServiceGrid title="Cloud &amp; DevOps" links={CLOUD_SERVICE_LINKS} max={6} />
-          <ServiceGrid title="Security" links={SECURITY_SERVICE_LINKS} max={6} />
-        </div>
-
-        {/* Data + Automation */}
-        <div className="space-y-4">
-          <ServiceGrid title="Data &amp; Analytics" links={DATA_SERVICE_LINKS} max={6} />
-          <ServiceGrid title="Automation" links={AUTOMATION_SERVICE_LINKS} max={6} />
+        {/* Services — single column spans the rest of the 7-col grid */}
+        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+          <ServiceGrid title="AI &amp; Automation" links={AI_SERVICE_LINKS} max={8} />
+          <ServiceGrid title="IT Infrastructure" links={IT_SERVICE_LINKS} max={8} />
+          <ServiceGrid title="Cloud &amp; DevOps" links={CLOUD_SERVICE_LINKS} max={5} />
+          <ServiceGrid title="Security" links={SECURITY_SERVICE_LINKS} max={5} />
+          <ServiceGrid title="Data &amp; Analytics" links={DATA_SERVICE_LINKS} max={5} />
+          <ServiceGrid title="Automation" links={AUTOMATION_SERVICE_LINKS} max={5} />
         </div>
       </div>
 
@@ -117,9 +109,9 @@ export default function Footer() {
           <div>
             &copy; {socialYear} {SITE_NAME}. All rights reserved.
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
+            <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms</Link>
             <Link href="/status" className="hover:text-slate-300 transition-colors">System Status</Link>
             <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">Sitemap</Link>
           </div>
@@ -128,3 +120,4 @@ export default function Footer() {
     </footer>
   );
 }
+
