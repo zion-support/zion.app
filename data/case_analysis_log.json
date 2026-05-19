@@ -1,0 +1,1 @@
+{"analyses": [{"thread_id": "test-123", "timestamp": "2026-05-19T08:50:12.741171+00:00", "intent": "booking", "sentiment": "urgent", "urgency": "high", "complexity": "simple", "reply_all_required": false, "sender_profile_match": {"known": false}, "recommended_action": "respond_with_template_booking_priority", "confidence": 0.8999999999999999}]}

@@ -1,0 +1,1 @@
+{"followups": [{"thread_id": "test-v20", "scheduled_at": "2026-05-20T11:33:45.304424+00:00", "status": "pending", "original_response_id": null, "recipient": "test@example.com", "intent": "booking", "followup_count": 1}]}
