@@ -157,7 +157,7 @@ export default function PortScannerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/it-endpoint-security-compliance-monitor" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/it-endpoint-security-compliance-monitor" className="text-purple-400 hover:underline text-sm">
             Need full infrastructure security monitoring? → IT Endpoint Security Compliance
           </Link>
         </div>
