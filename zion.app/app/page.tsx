@@ -764,7 +764,7 @@ export default function HomePage() {
                   <span className="text-2xl">{cat.emoji}</span>
                   <h3 className="text-xl font-bold text-white">{cat.label}</h3>
                   <span className="text-sm text-slate-400">({catSvcs.length} services)</span>
-                  <Link href={`/services?category=${cat.key}`} className="ml-2 text-sm text-purple-300 hover:text-purple-200 font-medium transition">
+                  <Link href={`/services/${cat.key}/`} className="ml-2 text-sm text-purple-300 hover:text-purple-200 font-medium transition">
                     View all →
                   </Link>
                 </div>
@@ -820,7 +820,7 @@ export default function HomePage() {
                 {/* Show-more link for oversized categories */}
                 {catSvcs.length > 6 && (
                   <div className="text-center mt-4">
-                    <Link href={`/services?category=${cat.key}`} className="text-sm text-slate-400 hover:text-purple-300 transition">
+                    <Link href={`/services/${cat.key}/`} className="text-sm text-slate-400 hover:text-purple-300 transition">
                       + {catSvcs.length - 6} more {cat.label.toLowerCase()} →
                     </Link>
                   </div>
@@ -998,7 +998,7 @@ export default function HomePage() {
               return (
               <Link
                 key={cat.key}
-                href={`/services?category=${cat.key}`}
+                href={`/services/${cat.key}/`}
                 className="glass-card group hover:border-purple-500/40 hover:scale-[1.015] transition-all duration-300 relative overflow-hidden"
               >
                 {/* Gradient border glow on hover */}
