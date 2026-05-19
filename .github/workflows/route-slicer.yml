@@ -1,6 +1,7 @@
+name: "Autonomous Lazy-Loading Route Slicer"
+
 permissions:
   contents: read
-name: "Autonomous Lazy-Loading Route Slicer"
 
 on:
   schedule:
