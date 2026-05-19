@@ -1003,24 +1003,24 @@ export default function HomePage() {
                 desc: 'Healthcare, Finance, E-Commerce, Manufacturing, SaaS, and more — discover how our services apply directly to your industry.',
                 tag: 'Industries',
                 color: 'from-sky-500 to-cyan-600',
-                href: '/industry-solutions',
               },
-            ].map((feat: any, i: number) => {
-              const CardInner = (
-                <div key={i} className="glass-card flex flex-col gap-3 hover:border-purple-500/40 group">
-                  <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color}`} />
-                  <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
-                  <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
-                  <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
-                  <div className="mt-auto">
-                    <span role="img" aria-hidden className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                  </div>
+            ].map((feat, i) => (
+              <div key={i} className="glass-card flex flex-col gap-3 hover:border-purple-500/40 group">
+                <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color}`} />
+                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
+                <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
+                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
+                <div className="mt-auto">
+                  <span
+                    role="img"
+                    aria-hidden
+                    className="inline-block transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </div>
-              );
-              return feat.href
-                ? <Link key={i} href={feat.href} className="block">{CardInner}</Link>
-                : CardInner;
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
