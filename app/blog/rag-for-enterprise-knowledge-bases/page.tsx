@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'RAG for Enterprise Knowledge Bases: From Documents to Answers | Zion Tech Group Blog',
