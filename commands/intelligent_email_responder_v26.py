@@ -538,6 +538,23 @@ def _normalize_intent(label: str) -> str:
             return bucket
     return 'routine_bucket'
 
+# ── w2-01: Intent bucket hash ─────────────────────────────────
+_INTENT_BUCKETS: dict = {
+    'urgent_bucket':     {'urgent', 'billing', 'legal', 'outage', 'critical', 'incident'},
+    'high_value_bucket': {'sales', 'partnership', 'booking', 'invoice'},
+    'routine_bucket':    {'support', 'follow_up', 'general'},
+    'low_priority_bucket': {'cancellation', 'informational', 'newsletter'},
+}
+
+def _normalize_intent(label: str) -> str:
+    """Map intent label → bucket key (for fast-path confidence override)."""
+    for bucket, labels in _INTENT_BUCKETS.items():
+        if label in labels:
+            return bucket
+    return 'routine_bucket'
+
+
+
 class CascadingLatencyDetector:
     """Decision-tree fast/slow gating with intent-bucket boost."""
     # w2-01 intent_bucket_hash: urgent/high-value labels auto-pass confidence gate
