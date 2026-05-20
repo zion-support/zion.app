@@ -4,7 +4,7 @@ Enhanced Reply-All Handler V22 — Intelligent reply-all decision engine
 Replaces V12's simple boolean at line 156 with full case-by-case analysis.
 """
 
-import json
+import json, re
 from pathlib import Path
 from datetime import datetime, timezone
 

@@ -29,6 +29,14 @@ except Exception:
     def telegram_send(t): print(f"[TG] {t}")
     def gmail_get_or_create_label_id(n): return 'label_id'
 
+# ── V22 Adaptive Tone Matching ──────────────────────────────
+try:
+    from adaptive_tone_matcher import analyze_email_tone, generate_adapted_response
+except Exception as e:
+    print(f"[V22] AdaptiveToneMatcher import failed: {e}")
+    def analyze_email_tone(ed): return {}
+    def generate_adapted_response(*a, **kw): return ''
+
 # V21 classes we need
 class MLTemplateOptimizerV21:
     def __init__(self):

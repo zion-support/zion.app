@@ -1,0 +1,27 @@
+{
+  "substack.com": {
+    "name": "newsletter",
+    "emails": [
+      "newsletter@substack.com"
+    ],
+    "domains": [
+      "substack.com"
+    ],
+    "first_contact": "2026-05-20T08:35:34.408939+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "general": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-20T08:35:34.408979+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  }
+}
