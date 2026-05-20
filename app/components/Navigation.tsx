@@ -318,6 +318,7 @@ export default function Navigation() {
           <NavLink link={{ name: 'Industry Solutions', href: '/industry-solutions' }} />
           <NavLink link={{ name: 'Pricing', href: '/pricing' }} />
           <NavLink link={{ name: 'Tools', href: '/tools' }} />
+          <NavLink link={{ name: 'Partners', href: '/partners' }} />
           <NavLink link={{ name: 'Contact', href: '/contact' }} />
 
           <div className="border-t border-slate-800 my-3" />
