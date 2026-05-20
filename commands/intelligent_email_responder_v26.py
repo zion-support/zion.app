@@ -47,8 +47,8 @@ from collections import defaultdict
 WORKSPACE  = Path(__file__).resolve().parent.parent.parent
 COMMANDS   = WORKSPACE / 'commands'
 DATA       = WORKSPACE / 'data'
-V25_LOG    = DATA / 'v25_run_log.jsonl'
-V25_STATS  = DATA / 'v25_stats.jsonl'
+V26_LOG    = DATA / 'v26_run_log.jsonl'
+V26_STATS  = DATA / 'v26_stats.jsonl'
 
 sys_path_flag = False
 if str(COMMANDS) not in __import__('sys').path:
@@ -199,14 +199,14 @@ def _build_dry_run_outcomes() -> dict:
 
 def _log(record: dict):
     try:
-        with open(V25_LOG, 'a') as f:
+        with open(V26_LOG, 'a') as f:
             f.write(json.dumps(record, ensure_ascii=False) + '\n')
     except Exception:
         pass
 
 def _log_stats(record: dict):
     try:
-        with open(V25_STATS, 'a') as f:
+        with open(V26_STATS, 'a') as f:
             f.write(json.dumps(record, ensure_ascii=False) + '\n')
     except Exception:
         pass
@@ -391,7 +391,7 @@ def _fallback_quality_check(body: str, lang: str = 'en') -> dict:
 
 # ═══════════════════════════════════════════════════════════════
 # ── Wave 7: Fast-path KB grounding ─────────────────────────────────
-def _fast_kb_context(intent_cat: str, subj: str, max_hits: int = 2) -> str:
+def _fast_kb_context(intent_cat: str, subj: str, lang: str = 'en', max_hits: int = 2) -> str:
     """<1ms lightweight KB hit: top service title + 1-line desc for intent category."""
     try:
         _build_index = globals().get('_build_index')
@@ -809,7 +809,7 @@ class V25Responder:
             # Pass financial_result to _fast_path via instance variable
             self._fin_result = financial_result
             result = self._fast_path(email, intent_label, intent_cat, intent_raw,
-                                     tone_data, profile, cat_result, dry_run, t0,
+                                     urgency_val, tone_data, profile, cat_result, dry_run, t0,
                                      attach_info=attach_info)
             result["fast_path"]      = True
             result["fast_path_ms"]   = round((time.monotonic() - fast_ms_start) * 1000, 1)
@@ -853,7 +853,7 @@ class V25Responder:
             body = f"{body}\n\nI see you {attach_info['attachment_summary']}{lang_sfx}"
 
         # ③-kb Lightweight KB inject (Wave 7)<1ms
-        kb_inject = _fast_kb_context(intent_cat, subj)
+        kb_inject = _fast_kb_context(intent_cat, subj, lang)
         if kb_inject:
             body = f"{body}\n\n_KB: {kb_inject}_"
 
