@@ -585,6 +585,39 @@ let list = services;
         </div>
       </section>
 
+      {/* ── Category Deep-Link Strip — all 6 categories, live counts ───────── */}
+      <section className="py-12 bg-slate-900/20 border-y border-slate-800/60">
+        <div className="container-page">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-white">Browse by Category</h2>
+            <p className="text-slate-400 text-sm mt-1">
+              {serviceCount}+ services across 6 core capability areas
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {CATEGORIES.map((cat) => {
+              const count = services.filter((s: any) => s.category === cat.key).length;
+              return (
+                <Link
+                  key={cat.key}
+                  href={`/services?category=${cat.key}`}
+                  className="group relative flex flex-col items-center gap-2 p-5 rounded-2xl border border-slate-700/60 bg-slate-800/40 hover:border-purple-500/50 hover:bg-slate-800/70 transition-all"
+                >
+                  <span className="text-3xl group-hover:scale-110 transition-transform">{cat.emoji}</span>
+                  <span className="text-sm font-semibold text-slate-200 group-hover:text-white text-center leading-snug">
+                    {cat.label}
+                  </span>
+                  <span className="text-xs font-medium text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full">
+                    {count} services
+                  </span>
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-[0.06] transition-opacity pointer-events-none`} />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ── What's New / Fresh Features ── */}
       <section className="py-20">
         <div className="container-page">
