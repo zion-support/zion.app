@@ -147,6 +147,28 @@ except Exception as ex:
     QualityRegressionTrainer = None
 
 
+
+
+# ── Dry-run outcome pre-seed (enables fast-path testing in dry mode) ──
+def _build_dry_run_outcomes() -> dict:
+    """Return a pre-built outcome_history dict per stub email sender."""
+    return {
+        "dr-1": [  # Alice — support, 3 positive outcomes → fast-path profile gate passes
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
+        ],
+        "dr-2": [  # Bob — sales, 3 positive
+            {"intent": "sales", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
+            {"intent": "sales", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
+            {"intent": "sales", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
+        ],
+        "dr-3": [  # Carla — support, 3 positive
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
+            {"intent": "support", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
+        ],
+    }
 # ═══════════════════════════════════════════════════════════════
 #  LOGGING
 # ═══════════════════════════════════════════════════════════════
@@ -370,6 +392,30 @@ def _fast_kb_context(intent_cat: str, subj: str, max_hits: int = 2) -> str:
 #  FAST-THROUGH DETECTOR
 # ═══════════════════════════════════════════════════════════════
 
+
+
+# ── Wave 11: Post-score intent boost (sender-known intent bias) ────
+def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
+    """If the sender has a strong prior for a category, nudge confidence up."""
+    if not profile or not intent_raw:
+        return intent_raw
+    known = profile.get("intents", {})
+    if not known:
+        return intent_raw
+    top_cat, top_count = max(known.items(), key=lambda kv: kv[1]) if known else (None, 0)
+    if not top_cat or top_count < 2:
+        return intent_raw
+    conf  = intent_raw.get("confidence", 0)
+    boost = min(0.12, top_count * 0.03)
+    cats  = intent_raw.get("categories", [])
+    if top_cat in cats:
+        intent_raw["confidence"]      = round(min(1.0, conf + boost), 3)
+        intent_raw["confidence_level"] = (
+            "very_high" if intent_raw["confidence"] >= 0.9 else
+            "high"      if intent_raw["confidence"] >= 0.7 else
+            intent_raw.get("confidence_level", "medium"))
+        intent_raw["intent_boost_src"] = f"profile:{top_cat}:+{boost:.0%}"
+    return intent_raw
 class CascadingLatencyDetector:
     """Decide fast-path vs full pipeline for a single email."""
 
@@ -491,6 +537,10 @@ class V25Responder:
 
         # Stats
         self.stats = defaultdict(int)
+        # Reply-all compliance
+        self.stats['reply_all_enforced'] = 0
+        self.stats['reply_all_missed']   = 0
+        self.stats['reply_all_total']    = 0
 
     # ── Main loop ──────────────────────────────────────────────
     def process_batch(self, limit: int = 20, dry_run: bool = False) -> dict:
@@ -508,15 +558,18 @@ class V25Responder:
             pool = [
                 {"id": "dr-1", "thread_id": "dr-1", "sender": "Alice <alice@example.com>",
                  "subject": "Urgent: Server outage", "snippet": "Production is down!",
-                 "cc": ""},
+                 "cc": "dev@team.com"},
                 {"id": "dr-2", "thread_id": "dr-2", "sender": "Bob <bob@partner.com>",
                  "subject": "Partnership proposal", "snippet": "Strategic partnership discussion.",
-                 "cc": ""},
+                 "cc": "colleague@partner.com"},
                 {"id": "dr-3", "thread_id": "dr-3", "sender": "Carla <carla@client.com>",
                  "subject": "Support: Cannot login", "snippet": "Getting error 500 on login.",
                  "cc": ""},
             ]
-            print("🧪 [V25] Injecting 3 dry-run stub emails.")
+            # Pre-seed outcome history so fast-path detector is exercised
+            self._dry_run_outcomes = _build_dry_run_outcomes()
+            print("🧪 [V25] Injecting 3 dry-run stub emails with pre-seeded outcomes.")
+            self._dry_outcomes = _build_dry_run_outcomes()
         else:
             raw = gmail_search("is:unread", limit=limit * 2)
             if not raw:
@@ -623,6 +676,15 @@ class V25Responder:
         intent_raw = self.intent_scorer.score(sender, subj, snip, tid) if self.intent_scorer else {
             "categories": ["general"], "confidence": 0.5, "confidence_level": "medium",
             "intent_details": {"urgency": 3}, "suggested_action": "draft_and_review"}
+
+        # ── Dry-run: inject pre-built outcomes into profile for fast-path detector (moved earlier)
+        if dry_run and hasattr(self, '_dry_outcomes') and ee in self._dry_outcomes:
+            profile['outcome_history'] = profile.get('outcome_history', []) + self._dry_outcomes[ee]
+            profile['total_messages']  = profile.get('total_messages', 0) + len(self._dry_outcomes[ee])
+
+        # ── Wave 11: Apply sender-intent bias (profile-confirmed category boost)
+        intent_raw = _apply_intent_boost(intent_raw, profile)
+
         if intent_raw.get("confidence_level") == "low":
             return {"action": "review", "reason": "low_intent_confidence",
                     "intent": intent_raw, "tone": tone_data, "elapsed_ms": ms_elapsed()}
@@ -655,13 +717,13 @@ class V25Responder:
         if use_fast:
             fast_ms_start = time.monotonic()
             result = self._fast_path(email, intent_label, intent_cat, intent_raw,
-                                     tone_data, profile, cat_result, dry_run, t0)
+                                     tone_data, profile, cat_result, dry_run, t0,
+                                     attach_info=attach_info)
             result["fast_path"]      = True
             result["fast_path_ms"]   = round((time.monotonic() - fast_ms_start) * 1000, 1)
             result["total_ms"]       = ms_elapsed()
             result["fast_path_total"]= result["fast_path_ms"] + ms_elapsed()
             result["detector_stats"] = detector.stats_dict(True)
-            self.stats["fast_path_count"] += 1
             return result
 
         # FULL pipeline fall-through — identical to V24
@@ -673,7 +735,8 @@ class V25Responder:
     # ═══════════════════════════════════════════════════════════════
 
     def _fast_path(self, email, intent_label, intent_cat, intent_raw,
-                   tone_data, profile, cat_result, dry_run, t0) -> dict:
+                   tone_data, profile, cat_result, dry_run, t0,
+                   attach_info=None) -> dict:
 
         sender    = email["sender"]
         subj      = email["subject"]
@@ -681,6 +744,7 @@ class V25Responder:
         name      = self._get_name(sender)
         lang      = tone_data.get("language", "pt")
         use_cc    = ""
+        attach_info = attach_info or {"has_attachments": False, "attachment_summary": ""}
         reply_all = False
 
         # ① Tone — already computed
@@ -760,6 +824,12 @@ class V25Responder:
         subj_rep = f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
+        # ══ Reply-all compliance (Wave 12)
+        self.stats["reply_all_total"] += 1
+        if reply_all_ok:
+            self.stats["reply_all_enforced"] += 1
+        else:
+            self.stats["reply_all_missed"] += 1
         return {"action": "send_fast", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "quality": min_qc, "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)}
@@ -923,11 +993,17 @@ class V25Responder:
 
         # ⑫ Send
         if dry_run:
+            # ══ Reply-all compliance (Wave 12)
+            self.stats["reply_all_total"] += 1
+            if reply_all_ok:
+                self.stats["reply_all_enforced"] += 1
+            else:
+                self.stats["reply_all_missed"] += 1
             return {"action": "send_dry", "intent": intent_label,
+
                     "reply_all": reply_all_ok, "tone": tone_data,
                     "quality": qc, "elapsed_ms": ms(), "fast_path": False,
                     "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx)}
-
         if not HAS_GMAIL:
             return {"action": "skip", "reason": "no_gmail",
                     "elapsed_ms": ms(), "fast_path": False}
@@ -937,6 +1013,12 @@ class V25Responder:
         subj_rep= f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
+        # ══ Reply-all compliance (Wave 12)
+        self.stats["reply_all_total"] += 1
+        if reply_all_ok:
+            self.stats["reply_all_enforced"] += 1
+        else:
+            self.stats["reply_all_missed"] += 1
         return {"action": "send", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "quality": qc, "elapsed_ms": ms(), "fast_path": False,
@@ -974,6 +1056,7 @@ class V25Responder:
             f"📦 Auto-arch : {self.stats.get('action_archive', 0)}",
             f"👁  Review    : {self.stats.get('action_review', 0)}",
             f"❌ Errors    : {self.stats.get('errors_fetch', 0)}",
+            f"📬 Reply-all : {_rera_enf}/{_rera_tot} enforced" if (_rera_enf:=self.stats.get("reply_all_enforced",0))>0 or (_rera_tot:=self.stats.get("reply_all_total",0))>0 else "",
         ]
         if avg_full > 0:
             lines.append(f"⚡ Latency gain vs full: ~{max(1, round(avg_full / max(avg_fast, 1))):.0f}x faster")

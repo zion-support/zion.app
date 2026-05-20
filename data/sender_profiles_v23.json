@@ -33,20 +33,24 @@
       "example.com"
     ],
     "first_contact": "2026-05-20T12:56:38.219017+00:00",
-    "total_messages": 16,
+    "total_messages": 30,
     "formality": "neutral",
     "language": "unknown",
     "intents": {
       "support": 9,
-      "urgent": 7
+      "urgent": 21
     },
     "avg_response_minutes": null,
     "response_times": [],
-    "last_interaction": "2026-05-20T14:19:06.513942+00:00",
+    "last_interaction": "2026-05-20T14:54:23.436922+00:00",
     "preferred_time": -3,
     "reply_pattern": "unknown",
     "urgency_patterns": {},
     "contact_hours": [
+      -3,
+      -3,
+      -3,
+      -3,
       -3,
       -3,
       -3,
@@ -74,19 +78,29 @@
       "partner.com"
     ],
     "first_contact": "2026-05-20T13:10:54.323836+00:00",
-    "total_messages": 9,
+    "total_messages": 20,
     "formality": "casual",
     "language": "en",
     "intents": {
-      "sales": 9
+      "sales": 20
     },
     "avg_response_minutes": null,
     "response_times": [],
-    "last_interaction": "2026-05-20T14:19:06.532213+00:00",
+    "last_interaction": "2026-05-20T14:54:23.445482+00:00",
     "preferred_time": -3,
     "reply_pattern": "unknown",
     "urgency_patterns": {},
     "contact_hours": [
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
       -3,
       -3,
       -3,
@@ -107,19 +121,29 @@
       "client.com"
     ],
     "first_contact": "2026-05-20T13:10:54.324715+00:00",
-    "total_messages": 8,
+    "total_messages": 19,
     "formality": "neutral",
     "language": "unknown",
     "intents": {
-      "support": 8
+      "support": 19
     },
     "avg_response_minutes": null,
     "response_times": [],
-    "last_interaction": "2026-05-20T14:19:06.533204+00:00",
+    "last_interaction": "2026-05-20T14:54:23.446950+00:00",
     "preferred_time": -3,
     "reply_pattern": "unknown",
     "urgency_patterns": {},
     "contact_hours": [
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
       -3,
       -3,
       -3,
