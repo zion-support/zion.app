@@ -13,6 +13,7 @@ import ServiceGridWithSearch from '@/components/ServiceGridWithSearch';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
+import FloatingActionDock from '@/components/FloatingActionDock';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -650,6 +651,7 @@ let list = services;
           </div>
         </div>
       </section>
+    <FloatingActionDock />
     <Footer />
     </main>
   );
