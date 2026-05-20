@@ -43,4 +43,4 @@ export default function PredictiveAnomalyDetectionEngine() {
           <span className="ml-2 text-green-600">Active</span>
         </div>
       </div>
-    </
+    </div>

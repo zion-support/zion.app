@@ -42,4 +42,4 @@ export default function AIDrivenGrowthIntelligence() {
           <li>Integrate with existing PM2 automations</li>
         </ul>
       </div>
-    </div
+    </div>

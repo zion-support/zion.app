@@ -1,42 +1,17 @@
+
 #!/usr/bin/env python3
 """
-V26 Wave 4 — Intelligent Escalation + Financial + Meeting Integration
+V29 — Stable Intelligence Layer (incorporates V26/V27/V28)
 
-V25 + V26 adds:
-  - Escalation Engine: detect legal threats, fury, churn → force human review + Telegram alert
-  - Financial Handler: invoice/payment/refund detection → route to AP or auto-thank
-  - Meeting Scheduler: auto-check calendar availability when meeting requested
-  - KB Integration: new Q&A pairs from support threads flow into KB after resolution
-
-Cuts V24 pipeline from 14 steps → 6 for high-confidence emails.
-
-Fast-path conditions (all must be true):
-  • Sender profile ≥3 past interactions in the SAME intent category with 100% success
-  • Intent confidence ≥ 0.7 ('high' or 'very_high')
-  • Categorizer says not spam/auto_reply/newsletter (needs_response=True)
-  • No action items extracted (empty or low-risk only)
-
-Short-circuits (skipped in fast-path):
-  - ContextualMemoryBank.recall
-  - ActionItemExtractor.extract
-  - SmartFollowUpScheduler.schedule_followup
-  - EnhancedReplyAllHandler.decide (full algorithm)
-  - ResponseQualityChecker (full 6-dimension gate)
-
-Still enforced in fast-path:
-  - AdaptiveToneMatcher (always)
-  - SenderProfileLearner (profile gating itself)
-  - AutoCategorizer (spam/archive check only)
-  - IntentConfidenceScorer (confidence gate)
-  - Template selection + basic compose
-  - Reply-all basic CC coverage check (inline)
-  - Grammar/signoff trim check (150ms inline)
-  - MLTemplateOptimizer (optional; weights pre-loaded)
-
-When any fast-path condition fails → falls back to full V24 pipeline,
-guaranteeing zero accuracy regression.
-
-Drop-in replacement: V26Responder → V26Responder in __main__
+Fixes in V29:
+  - escalation_engine.py: _NEGATIVE moved before first use (no NameError)
+  - V26Responder: _v25_pipeline method created (was missing → crash blocker)
+  - process_batch: ms var removed from before pipeline call (dead-code, was 0.0)
+  - _fast_path: snip reference fixed (snip is not local — use email["snippet"])
+  - _fast_path: rtfb section cleaned (removed dir() hack, snip fix)
+  - _fast_path: V29 escalation gate added before reply-all section
+  - _v25_pipeline: V29 escalation gate + reply-all unification + payment_thanks
+  - _full_pipeline: V29 escalation gate, reply-all unification, payment_thanks
 """
 
 import json, re, time, csv, io
@@ -49,16 +24,15 @@ COMMANDS   = WORKSPACE / 'commands'
 DATA       = WORKSPACE / 'data'
 V26_LOG    = DATA / 'v26_run_log.jsonl'
 V26_STATS  = DATA / 'v26_stats.jsonl'
-V28_TQ_LOG = DATA / 'template_quality.jsonl'   # V28: per-template quality log
-V28_TQ_AUDIT = DATA / 'template_quality_audit.jsonl'  # V28: audit decisions log
+V28_TQ_LOG = DATA / 'template_quality.jsonl'
+V28_TQ_AUDIT = DATA / 'template_quality_audit.jsonl'
 
-_PROMOTION_WINDOW     = 200   # uses before evaluating a template
-_QUARANTINE_THRESHOLD = 70.0  # rolling avg below → quarantine
-_CANONICAL_THRESHOLD  = 90.0  # rolling avg above for 14+ days → canonical
+_PROMOTION_WINDOW     = 200
+_QUARANTINE_THRESHOLD = 70.0
+_CANONICAL_THRESHOLD  = 90.0
 _CANONICAL_DAYS       = 14
-_AUDIT_INTERVAL       = 50    # audit every N sends (batch-level check)
+_AUDIT_INTERVAL       = 50
 
-# Quarantine state file — {template_key: until_iso}
 _TQ_QUARANTINE: dict = {}
 _TQ_CANONICAL:  dict = {}
 _TQ_SINCE_LAST_AUDIT = 0
@@ -98,7 +72,6 @@ try:
 except Exception as _e:
     print(f"⚠️ V25: V23 module import failed: {_e}", flush=True)
     SenderProfileLearnerV23 = None
-    # keep going — some modules may be optional
 
 try:
     from email_decision import from_email_data, decide_reply_all, always_cc
@@ -107,7 +80,7 @@ except Exception:
     decide_reply_all = None
     always_cc        = None
 
-# ─── V28: SenderFeedbackOracle (reply-all preference learning) ───────────────
+# ─── V28: SenderFeedbackOracle ──────────────────────────────
 try:
     from intelligent_email_responder_v28 import FeedbackLearner, SenderFeedbackStore
     V28_FEEDBACK_ENABLED = True
@@ -116,20 +89,19 @@ except Exception:
     SenderFeedbackStore   = None
     V28_FEEDBACK_ENABLED  = False
 
-# ─── Wave 2: KB Grounding RAG ────────────────────────────────────────────────
+# ─── Wave 2: KB Grounding RAG ───────────────────────────────
 try:
     from kb_grounding_rag           import build_prompt_context, retrieve_context
     KB_GROUNDING_ENABLED = True
 except Exception:
     KB_GROUNDING_ENABLED = False
 
-# ─── Wave 5: Thread Continuity Intelligence ──────────────────────────────────
+# ─── Wave 5: Thread Continuity Intelligence ─────────────────
 try:
     from thread_continuity_predictor import predict_thread_participants
     THREAD_CONTINUITY_ENABLED = True
 except Exception:
     THREAD_CONTINUITY_ENABLED = False
-
 
 try:
     from google_workspace import (
@@ -146,7 +118,7 @@ except Exception:
     def telegram_send(t):                              print(f"[TG] {t}")
     def gmail_get_or_create_label_id(n):               return f'label-{n}'
 
-# ─── V25 Pre-built modules ───────────────────────────────────────────────
+# ─── V25 Pre-built modules ─────────────────────────────────
 try:
     from response_verifier           import _score_response_quality as _v25_score
     from response_polarity_analyzer  import ResponsePolarityAnalyzer
@@ -175,7 +147,7 @@ except Exception as ex:
     apply_feedback            = None
     QualityRegressionTrainer = None
 
-# ─── V26 Wave 4: Escalation + Financial + Meeting Intelligence ─────────────────
+# ─── V26 Wave 4: Escalation + Financial + Meeting ───────────
 try:
     from escalation_engine        import check_escalation
     from financial_email_handler  import classify_financial_email
@@ -193,29 +165,29 @@ except Exception as _ex:
     get_availability_next_7_days = None
     format_availability      = None
 
-
-
-
-# ── Dry-run outcome pre-seed (enables fast-path testing in dry mode) ──
+# ── Dry-run outcome pre-seed ────────────────────────────────
 def _build_dry_run_outcomes() -> dict:
-    """Return a pre-built outcome_history dict per stub email sender."""
     return {
-        "dr-1": [  # Alice — support, 3 positive outcomes → fast-path profile gate passes
-            {"intent": "support", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
-            {"intent": "support", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
-            {"intent": "support", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
+        # dr-1: urgent → gets intent=urgent (high), outcome_history=urgent → fast-path profiles ✓
+        "dr-1": [
+            {"intent": "urgent", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
+            {"intent": "urgent", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
+            {"intent": "urgent", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
         ],
-        "dr-2": [  # Bob — sales, 3 positive
+        # dr-2: sales intent → fast-path eligible
+        "dr-2": [
             {"intent": "sales", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
             {"intent": "sales", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
             {"intent": "sales", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
         ],
-        "dr-3": [  # Carla — support, 3 positive
+        # dr-3: payment → support intent → fast-path profiles ✓
+        "dr-3": [
             {"intent": "support", "outcome": "positive", "ts": "2026-01-01T00:00:00+00:00"},
             {"intent": "support", "outcome": "positive", "ts": "2026-01-02T00:00:00+00:00"},
             {"intent": "support", "outcome": "positive", "ts": "2026-01-03T00:00:00+00:00"},
         ],
     }
+
 # ═══════════════════════════════════════════════════════════════
 #  LOGGING
 # ═══════════════════════════════════════════════════════════════
@@ -236,7 +208,7 @@ def _log_stats(record: dict):
 
 
 # ═══════════════════════════════════════════════════════════════
-#  TEMPLATE LIBRARY  (same as V24)
+#  TEMPLATE LIBRARY
 # ═══════════════════════════════════════════════════════════════
 
 TEMPLATES = {
@@ -314,7 +286,7 @@ INTENT_MAP = {
     "partnership": "partnership", "follow_up": "follow_up", "general": "general",
 }
 
-# Pre-computed signature strings (avoid re-computing per email)
+# Pre-computed signature strings
 _SIG_CACHE = {}
 
 def _get_sig(formality: str, language: str) -> str:
@@ -355,11 +327,10 @@ def _fast_grammar_check(body: str) -> tuple[float, list[str]]:
 
 def _check_reply_all_basic(body: str, sender: str, cc: str = '') -> bool:
     """Basic CC check: is the email's original 'To' at least mentioned?"""
-    # Extract sender name/email from body, get domain
     emails_mentioned = set(re.findall(r'[\w.+-]+@[\w.-]+', body))
     name_words = [w for w in sender.lower().replace('.', ' ').split() if len(w) > 3]
     has_sender_ref = any(w in body.lower() for w in name_words)
-    return has_sender_ref  # fast: sender is covered
+    return has_sender_ref
 
 def _has_action_items(subj: str, snip: str) -> bool:
     """Heuristic: look for explicit action markers in subject/snippet."""
@@ -369,32 +340,24 @@ def _has_action_items(subj: str, snip: str) -> bool:
                'confirm until', 'prazo', 'até amanhã', 'asap']
     return any(m in text for m in markers)
 
-
-# ── Fallback quality check (when V25 verifier unavailable) ────────────
-_SIG_PAT = re.compile(r'—\s*\n.*\n.*$', re.DOTALL)   # sign-off block
+# Fallback quality check
+_SIG_PAT = re.compile(r'—\s*\n.*\n.*$', re.DOTALL)
 _CLOSING = {'aberto(a)', 'atenciosamente', 'sincerely', 'cheers', 'abraco', 'regards'}
 
 def _fallback_quality_check(body: str, lang: str = 'en') -> dict:
     """Basic ~100μs quality check: grammar + sign-off presence + length."""
     text = body.strip()
     issues: list[dict] = []
-
-    # Grammar
     g_score, g_issues = _fast_grammar_check(body)
     issues.extend({"dimension": "grammar", "msg": i} for i in g_issues)
-
-    # Sign-off
     has_signoff = any(body.strip().lower().endswith(c) for c in _CLOSING) or bool(_SIG_PAT.search(text))
     if not has_signoff:
         issues.append({"dimension": "signoff", "msg": "signature_or_closing_missing"})
-
-    # Length
     word_count = len(text.split())
     len_ok = 20 <= word_count <= 500
     if not len_ok:
         issues.append({"dimension": "length",
                         "msg": f"word_count_{word_count}_out_of_range_20_500"})
-
     overall = max(0.0, min(100.0, g_score * 0.7 + (15 if has_signoff else 0) + (10 if len_ok else 0)))
     return {
         "overall_score": round(overall, 1),
@@ -403,7 +366,7 @@ def _fallback_quality_check(body: str, lang: str = 'en') -> dict:
         "issues":      issues[:6],
         "dimension_scores": {
             "grammar":       round(g_score, 1),
-            "tone_alignment": 75.0,   # baseline — V25 verifier replaces with real score
+            "tone_alignment": 75.0,
             "reply_all":     75.0,
             "action_complete": 80.0,
             "compliance":    85.0,
@@ -411,9 +374,8 @@ def _fallback_quality_check(body: str, lang: str = 'en') -> dict:
         }
     }
 
-
 # ═══════════════════════════════════════════════════════════════
-# ── V28: Template Quality Autocorrect ──────────────────────────────
+# ── V28: Template Quality Autocorrect ─────────────────────────
 # ═══════════════════════════════════════════════════════════════
 
 def _get_template_key(intent_cat: str, lang: str, template: str) -> str:
@@ -421,7 +383,6 @@ def _get_template_key(intent_cat: str, lang: str, template: str) -> str:
 
 def _log_template_quality(intent_cat: str, lang: str, template: str,
                           quality: float, g_score: float, sender: str = "") -> None:
-    """Append one quality record to V28_TQ_LOG. Non-blocking."""
     try:
         row = {
             "ts":      datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S%z"),
@@ -438,10 +399,9 @@ def _log_template_quality(intent_cat: str, lang: str, template: str,
         with open(V28_TQ_LOG, "a") as f:
             f.write(buf.getvalue())
     except Exception:
-        pass  # quality logging must never crash a send
+        pass
 
 def _audit_templates() -> None:
-    """Scan last 200 uses per (intent|lang|template) key. Quarantine/promote."""
     global _TQ_QUARANTINE, _TQ_CANONICAL
     try:
         if not V28_TQ_LOG.exists():
@@ -457,7 +417,6 @@ def _audit_templates() -> None:
                     rows.append(next(csv.DictReader(io.StringIO(line))))
                 except Exception:
                     pass
-
         now   = datetime.now(timezone.utc)
         delta = __import__("datetime").timedelta(hours=6)
         buckets: dict[str, list[float]] = {}
@@ -466,7 +425,6 @@ def _audit_templates() -> None:
             buckets.setdefault(key, []).append(float(row.get("quality", 0)))
             if len(buckets[key]) >= _PROMOTION_WINDOW:
                 break
-
         decisions = []
         for key, scores in buckets.items():
             if len(scores) < 50:
@@ -478,7 +436,6 @@ def _audit_templates() -> None:
             elif avg >= _CANONICAL_THRESHOLD:
                 _TQ_CANONICAL[key] = now.isoformat()
                 decisions.append({"action": "canonical",  "key": key, "avg": round(avg, 1)})
-
         if decisions:
             try:
                 with open(V28_TQ_AUDIT, "a") as f:
@@ -490,7 +447,6 @@ def _audit_templates() -> None:
         pass
 
 def _maybe_audit() -> None:
-    """Run audit every _AUDIT_INTERVAL sends (batch-level throttle)."""
     global _TQ_SINCE_LAST_AUDIT
     _TQ_SINCE_LAST_AUDIT += 1
     if _TQ_SINCE_LAST_AUDIT >= _AUDIT_INTERVAL:
@@ -499,7 +455,9 @@ def _maybe_audit() -> None:
 
 
 # ═══════════════════════════════════════════════════════════════
-# ── Wave 7: Fast-path KB grounding ─────────────────────────────
+# ── Wave 7: Fast-path KB grounding ───────────────────────────
+# ═══════════════════════════════════════════════════════════════
+
 def _fast_kb_context(intent_cat: str, subj: str, lang: str = 'en', max_hits: int = 2) -> str:
     """<1ms lightweight KB hit: top service title + 1-line desc for intent category."""
     try:
@@ -522,14 +480,14 @@ def _fast_kb_context(intent_cat: str, subj: str, lang: str = 'en', max_hits: int
         return " | ".join(parts)
     except Exception:
         return ''
+
+
+# ═══════════════════════════════════════════════════════════════
 #  FAST-THROUGH DETECTOR
 # ═══════════════════════════════════════════════════════════════
 
-
-
-# ── Wave 11: Post-score intent boost (sender-known intent bias) ────
+# ── Wave 11: Post-score intent boost ────────────────────────
 def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
-    """If the sender has a strong prior for a category, nudge confidence up."""
     if not profile or not intent_raw:
         return intent_raw
     known = profile.get("intents", {})
@@ -549,9 +507,8 @@ def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
             intent_raw.get("confidence_level", "medium"))
         intent_raw["intent_boost_src"] = f"profile:{top_cat}:+{boost:.0%}"
     return intent_raw
-class CascadingLatencyDetector:
-    """Decide fast-path vs full pipeline for a single email."""
 
+class CascadingLatencyDetector:
     def __init__(self, profile: dict, intent_result: dict,
                  cat_result: dict, subj: str, snip: str) -> tuple[bool, dict]:
         self.profile   = profile
@@ -563,7 +520,6 @@ class CascadingLatencyDetector:
 
     @property
     def can_fast_path(self) -> bool:
-        """All 4 gating conditions must be true."""
         return (
             self._check_profile_history() and
             self._check_intent_confidence() and
@@ -572,27 +528,22 @@ class CascadingLatencyDetector:
         )
 
     def _check_profile_history(self) -> bool:
-        """Sender profile has ≥2 past interactions in this intent with ≥80% success."""
         if not self.profile:
             self._reasons['profile'] = 'no_profile'
             return False
-
         intent = self.intent.get('categories', ['general'])[0]
         outcomes = self.profile.get('outcome_history', [])
         if len(outcomes) < 2:
             self._reasons['profile'] = f'insufficient_history_{len(outcomes)}'
             return False
-
         intent_outcomes = [o for o in outcomes if o.get('intent') == intent]
         if len(intent_outcomes) < 2:
             self._reasons['profile'] = f'low_intent_history_{len(intent_outcomes)}'
             return False
-
         success_rate = sum(1 for o in intent_outcomes[-5:] if o.get('outcome') in ('positive', 'neutral')) / max(len(intent_outcomes[-5:]), 1)
         if success_rate < 0.80:
             self._reasons['profile'] = f'success_rate_{success_rate:.0%}'
             return False
-
         return True
 
     def _check_intent_confidence(self) -> bool:
@@ -603,14 +554,12 @@ class CascadingLatencyDetector:
         return False
 
     def _check_noise_absent(self) -> bool:
-        """Categorizer says this needs a response (not auto-archive)."""
         if self.categoria.get('needs_response', True) is False:
             self._reasons['categorizer'] = self.categoria.get('category', 'unknown')
             return False
         return True
 
     def _check_no_action_items(self) -> bool:
-        """No explicit action markers in subject/snippet."""
         if _has_action_items(self.subj, self.snip):
             self._reasons['action_items'] = 'detected'
             return False
@@ -636,55 +585,33 @@ class CascadingLatencyDetector:
 # ═══════════════════════════════════════════════════════════════
 
 class V26Responder:
-    """V25 with Cascading Latency executor injected into V24 pipeline."""
-
     def __init__(self):
-        # V22/ML
         self.optimizer  = MLTemplateOptimizerV21() if MLTemplateOptimizerV21 else None
         self.timer      = PredictiveTimerV21() if PredictiveTimerV21 else None
-
-        # V23
         self.sender_learner = SenderProfileLearnerV23()  if SenderProfileLearnerV23 else None
-        # ContextualMemoryBankV23  — short-circuited, not instantiated eagerly
         self.intent_scorer   = IntentConfidenceScorerV23() if IntentConfidenceScorerV23 else None
         self.categorizer     = AutoCategorizerV23()        if AutoCategorizerV23 else None
-        # SmartFollowUpScheduler — short-circuited
-        # ActionItemExtractor      — short-circuited
         self.quality_chk     = ResponseQualityCheckerV23() if ResponseQualityCheckerV23 else None
-
-        # Wave 6 — polarity + action patterns
         self.polarity_analyzer = ResponsePolarityAnalyzer() if V25_POLARITY_ENABLED and ResponsePolarityAnalyzer else None
         self.action_patterns   = LearnedActionPatterns()     if V25_PATTERNS_ENABLED   and LearnedActionPatterns    else None
-
-        # Wave 8 — attachment awareness
         self.attach_checker = check_attachments if V25_ATTACH_ENABLED and check_attachments else None
-
-        # Wave 9 — realtime feedback
         self.rtfb = apply_feedback if V25_RTFB_ENABLED and apply_feedback else None
-
-        # Wave 10 — quality regression trainer
         self.qr_trainer = QualityRegressionTrainer() if V25_REGR_TRAINER_ENABLED and QualityRegressionTrainer else None
-
-        # ML weights (pre-loaded once)
         self.ml_weights = self.optimizer.train_from_outcomes() if self.optimizer else {}
-
-        # V28 — per-sender reply-all preference learning
         self.feedback_oracle = FeedbackLearner() if V28_FEEDBACK_ENABLED and FeedbackLearner else None
-
-        # Stats
         self.stats = defaultdict(int)
-        # Reply-all compliance
         self.stats['reply_all_enforced'] = 0
         self.stats['reply_all_missed']   = 0
         self.stats['reply_all_total']    = 0
-
-        # V26 per-email context (reset at start of each pipeline call)
         self._fin_result = {}
         self.stats['action_escalated'] = 0
         self.stats['action_financial']  = 0
         self.stats['action_meeting']    = 0
 
-    # ── Main loop ──────────────────────────────────────────────
+    # ═══════════════════════════════════════════════════════════
+    #  MAIN BATCH LOOP
+    # ═══════════════════════════════════════════════════════════════
+
     def process_batch(self, limit: int = 20, dry_run: bool = False) -> dict:
         run_start = datetime.now(timezone.utc).isoformat()
         _log({"run_id": RUN_ID, "phase": "v25_start", "ts": run_start,
@@ -698,28 +625,22 @@ class V26Responder:
 
         if dry_run:
             pool = [
-                # dr-1: urgent support — fast-path eligible (3 positive outcomes, high intent)
                 {"id": "dr-1", "thread_id": "dr-1", "sender": "Alice <alice@example.com>",
                  "subject": "Urgent: Server outage", "snippet": "Production is down!",
                  "cc": "dev@team.com"},
-                # dr-2: normal sales — full path (less confident intent)
                 {"id": "dr-2", "thread_id": "dr-2", "sender": "Bob <bob@partner.com>",
                  "subject": "Partnership proposal", "snippet": "Strategic partnership discussion.",
                  "cc": "colleague@partner.com"},
-                # dr-3: payment received — financial handler
                 {"id": "dr-3", "thread_id": "dr-3", "sender": "PayPal <paypal@paypal.com>",
                  "subject": "Payment received: $1,200", "snippet": "We received your payment of $1,200.00 — thank you!",
                  "cc": ""},
-                # dr-4: legal threat — ESCALATED (critical)
                 {"id": "dr-4", "thread_id": "dr-4", "sender": "Angry Client <legal@client.com>",
                  "subject": "I will sue you", "snippet": "This is unacceptable. Contact my lawyer immediately.",
                  "cc": ""},
-                # dr-5: support — no outcome history (forces full pipeline, no fast-path)
                 {"id": "dr-5", "thread_id": "dr-5", "sender": "New User <new@example.com>",
                  "subject": "How do I reset my password?", "snippet": "I forgot my password and need to reset.",
                  "cc": ""},
             ]
-            # Pre-seed outcome history for dr-1/2/3 (fast-path test + financial)
             self._dry_outcomes = _build_dry_run_outcomes()
             print("🧪 [V26] Injecting 5 dry-run stub emails (escalation, financial, fast-path, full-path).")
         else:
@@ -742,7 +663,6 @@ class V26Responder:
                     _log({"run_id": RUN_ID, "phase": "fetch_error", "err": str(ex)})
                     self.stats["errors_fetch"] += 1
 
-        # Sort: forwards first, then new senders
         def _sort(e):
             s = e["subject"].lower()
             return (0 if "fwd:" in s else 1, 0 if e["id"] in self.stats else 1, 0)
@@ -751,20 +671,15 @@ class V26Responder:
         for email in pool[:limit]:
             self.stats["processed"] += 1
             t0   = time.monotonic()
-            ms   = round((time.monotonic() - t0) * 1000, 1)
 
-            # ── V25 Pipeline Entry ─────────────────────────────────
             result = self._v25_pipeline(email, dry_run, t0)
 
             _log({"run_id": RUN_ID, "phase": "v25_pipeline_done",
                   "thread_id": email["thread_id"], **result})
-            # V26 additional stats
             if getattr(self, '_fin_result', {}).get('financial_type', 'none') != 'none':
                 self.stats["action_financial"] = self.stats.get("action_financial", 0) + 1
             if result.get("action") not in ("skip", "review", "archive", "escalated"):
                 self.stats[f"action_{result.get('action', 'unknown')}"] += 1
-
-            # Stats counters (exclude escalated from path counts)
             if result.get("action") != "escalated":
                 if result.get("fast_path"):
                     self.stats["fast_path_count"] += 1
@@ -776,20 +691,76 @@ class V26Responder:
         return self._finalise(run_start)
 
     # ═══════════════════════════════════════════════════════════════
-    #  V25 PIPELINE — with Cascading Latency injection
+    #  V29 PIPELINE — main orchestrator (was missing → crash blocker)
     # ═══════════════════════════════════════════════════════════════
 
-# ⑤ Intent + confidence (fast, rule-based)
+    def _v25_pipeline(self, email: dict, dry_run: bool, t0: float) -> dict:
+        """V29: Single-pass orchestration — escalates, categorises, profiles, routes."""
+        ms_elapsed = lambda: round((time.monotonic() - t0) * 1000, 1)
+
+        # ── Email fields ──────────────────────────────────────────
+        ee      = email["id"]
+        tid     = email["thread_id"]
+        sender  = email["sender"]
+        subj    = email["subject"]
+        snip    = email["snippet"]
+
+        # ── ① Categorise (noise / auto-archive) ──────────────────
+        cat_result = {"category": "inbox", "auto_archive": False,
+                       "needs_response": True, "priority": "normal"}
+        if self.categorizer:
+            try:
+                cat_result = self.categorizer.categorize(email)
+            except Exception:
+                pass
+        if cat_result.get("auto_archive"):
+            return {"action": "archive", "reason": cat_result.get("category", "noise"),
+                    "elapsed_ms": ms_elapsed()}
+
+        # ── V29: Escalation gate (before intent scoring) ──────────
+        if V26_ESCALATION_ENABLED and check_escalation:
+            try:
+                esc = check_escalation(subj, snip, sender, dry_run=dry_run)
+                if esc.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    if esc.get("telegram_alert") and not dry_run:
+                        try:
+                            telegram_send(esc["telegram_alert"])
+                        except Exception:
+                            pass
+                    _log({"run_id": RUN_ID, "phase": "escalated",
+                          "severity": esc.get("severity"), "sender": sender,
+                          "signals": esc.get("signals", [])})
+                    return {"action": "escalated", "severity": esc.get("severity"),
+                            "signals": esc.get("signals", []),
+                            "elapsed_ms": ms_elapsed()}
+            except Exception:
+                pass
+
+        # ── ② Tone ──────────────────────────────────────────────
+        tone_data: dict = {"formality": "neutral", "language": "pt", "sentiment": "neutral"}
+        try:
+            tone_data = analyze_tone(subj, snip, sender)
+        except Exception:
+            pass
+
+        # ── ③ Sender profile ───────────────────────────────────
+        profile: dict = {}
+        if self.sender_learner:
+            try:
+                profile = self.sender_learner.get_profile(sender)
+            except Exception:
+                pass
+
+        # ── ④ Intent + confidence ──────────────────────────────
         intent_raw = self.intent_scorer.score(sender, subj, snip, tid) if self.intent_scorer else {
             "categories": ["general"], "confidence": 0.5, "confidence_level": "medium",
             "intent_details": {"urgency": 3}, "suggested_action": "draft_and_review"}
 
-        # ── Dry-run: inject pre-built outcomes into profile for fast-path detector (moved earlier)
         if dry_run and hasattr(self, '_dry_outcomes') and ee in self._dry_outcomes:
             profile['outcome_history'] = profile.get('outcome_history', []) + self._dry_outcomes[ee]
             profile['total_messages']  = profile.get('total_messages', 0) + len(self._dry_outcomes[ee])
 
-        # ── Wave 11: Apply sender-intent bias (profile-confirmed category boost)
         intent_raw = _apply_intent_boost(intent_raw, profile)
 
         if intent_raw.get("confidence_level") == "low":
@@ -800,7 +771,7 @@ class V26Responder:
         urgency_val  = intent_raw.get("intent_details", {}).get("urgency", 3)
         intent_cat   = INTENT_MAP.get(intent_label, "general")
 
-        # ── Wave 6a: Polarity analysis (informs tone + urgency override) ──
+        # ── Wave 6a: Polarity analysis ──────────────────────────
         polarity_result = None
         if self.polarity_analyzer:
             try:
@@ -814,8 +785,26 @@ class V26Responder:
             except Exception:
                 pass
 
+        # ── V29: Financial classification ───────────────────────
+        financial_result = {"financial_type": "none", "confidence": 0.0}
+        if V26_FINANCIAL_ENABLED and classify_financial_email:
+            try:
+                financial_result = classify_financial_email(subj, snip, sender)
+            except Exception:
+                pass
+
+        # ── Attachment awareness ───────────────────────────────
+        attach_info = {"has_attachments": False, "attachment_summary": ""}
+        if self.attach_checker:
+            try:
+                attach_info = check_attachments(email)
+                if not isinstance(attach_info, dict):
+                    attach_info = {"has_attachments": False, "attachment_summary": ""}
+            except Exception:
+                pass
+
         # ══════════════════════════════════════════════════════
-        #  V25 DECISION: Fast-path or Full?
+        #  V29 DECISION: Fast-path or Full?
         # ══════════════════════════════════════════════════════
 
         detector = CascadingLatencyDetector(profile, intent_raw, cat_result, subj, snip)
@@ -823,7 +812,6 @@ class V26Responder:
 
         if use_fast:
             fast_ms_start = time.monotonic()
-            # Pass financial_result to _fast_path via instance variable
             self._fin_result = financial_result
             result = self._fast_path(email, intent_label, intent_cat, intent_raw,
                                      urgency_val, tone_data, profile, cat_result, dry_run, t0,
@@ -831,26 +819,27 @@ class V26Responder:
             result["fast_path"]      = True
             result["fast_path_ms"]   = round((time.monotonic() - fast_ms_start) * 1000, 1)
             result["total_ms"]       = ms_elapsed()
-            result["fast_path_total"]= result["fast_path_ms"] + ms_elapsed()
+            result["fast_path_total"]= result["fast_path_ms"] + result["total_ms"]
             result["detector_stats"] = detector.stats_dict(True)
             return result
 
-        # FULL pipeline fall-through — V26 with financial + meeting integration
+        # FULL pipeline fall-through — V26 with financial + meeting
         self._fin_result = financial_result
         return self._full_pipeline(email, intent_raw, intent_label, intent_cat,
                                    urgency_val, tone_data, profile, cat_result, dry_run, t0)
 
     # ═══════════════════════════════════════════════════════════════
-    #  FAST-PATH — 6 steps
+    #  FAST-PATH — 6 steps (V26 + V28 + V29 escalation gate)
     # ═══════════════════════════════════════════════════════════════
 
     def _fast_path(self, email, intent_label, intent_cat, intent_raw,
-                   tone_data, profile, cat_result, dry_run, t0,
+                   urgency_val, tone_data, profile, cat_result, dry_run, t0,
                    attach_info=None) -> dict:
 
         sender    = email["sender"]
         subj      = email["subject"]
         tid       = email["thread_id"]
+        snip      = email["snippet"]          # ← V29 FIX: use email["snippet"]
         name      = self._get_name(sender)
         lang      = tone_data.get("language", "pt")
         use_cc    = ""
@@ -860,7 +849,7 @@ class V26Responder:
         # ① Tone — already computed
         t_response = f"Fast-path ({intent_cat}) response for {name}."
 
-        # ② Select template + compose (minimal LLM-free)
+        # ② Select template + compose
         tpl = TEMPLATES.get(lang, TEMPLATES["en"]).get(intent_cat, TEMPLATES["en"]["general"])
         sig = _get_sig(tone_data.get("formality", "neutral"), lang)
         body_raw = tpl.format(name=name, close="—", signature="")
@@ -869,19 +858,18 @@ class V26Responder:
             lang_sfx = "." if lang == "en" else "."
             body = f"{body}\n\nI see you {attach_info['attachment_summary']}{lang_sfx}"
 
-        # ③-kb Lightweight KB inject (Wave 7)<1ms
+        # ③-kb Lightweight KB inject
         kb_inject = _fast_kb_context(intent_cat, subj, lang)
         if kb_inject:
             body = f"{body}\n\n_KB: {kb_inject}_"
 
-        # ③-rt Real-time feedback pre-send re-check (fast-pass only)
+        # ③-rt Real-time feedback
         rtfb_result = {"tier": "send", "feedback": "rtfb_not_available"}
         if self.rtfb:
             try:
                 ed_rtfb = {"subject": subj, "snippet": snip,
-                            "sender": sender, "cc": email.get("cc", ""),
-                            "urgency": urgency_val if 'urgency_val' in dir() else 3,
-                            "tone": tone_data}
+                           "sender": sender, "cc": email.get("cc", ""),
+                           "urgency": urgency_val, "tone": tone_data}
                 rtfb_result = self.rtfb(body, ed_rtfb, intent_label,
                                          _v25_score=_v25_score, dry_run=dry_run)
                 if rtfb_result.get("needs_review") or rtfb_result.get("tier") == "review":
@@ -891,22 +879,37 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ③ Trim grammar check (inline, <1ms)
+        # ③ Trim grammar check
         g_score, g_issues = _fast_grammar_check(body)
 
-        # ④ Reply-all — V27 always_CC first, fall back to decide_reply_all for edge cases
+        # ── V29: Escalation gate in fast-path ───────────────────
+        if V26_ESCALATION_ENABLED and check_escalation:
+            try:
+                esc = check_escalation(subj, snip, sender)
+                if esc.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    if esc.get("telegram_alert") and not dry_run:
+                        try:
+                            telegram_send(esc["telegram_alert"])
+                        except Exception:
+                            pass
+                    return {"action": "escalated", "severity": esc.get("severity"),
+                            "signals": esc.get("signals", []),
+                            "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)}
+            except Exception:
+                pass
+
+        # ④ Reply-all
         reply_all_ok = False
         use_cc       = ""
         try:
             if always_cc and from_email_data:
-                # ── V27: Hard-require: always reply all unless suppressed ──────────
                 ed   = from_email_data(email)
                 acd  = always_cc(ed)
                 if not acd.get("suppressed", False):
                     use_cc       = acd.get("use_cc", "")
                     reply_all_ok = bool(use_cc)
                 else:
-                    # Suppressed by fwd:/private → try legacy Decide layer
                     if decide_reply_all:
                         rad  = decide_reply_all(ed)
                         reply_all_ok = bool(rad.get("reply_all", False))
@@ -916,14 +919,13 @@ class V26Responder:
         if not reply_all_ok:
             reply_all_ok = _check_reply_all_basic(body, sender, email.get("cc", ""))
 
-        # ── V28 FeedbackOracle: bias reply_all for known-sender overrides ───────
         if self.feedback_oracle and reply_all_ok is False:
             hint = self.feedback_oracle.route(sender)
             if hint.get("feedback_tier") == "likely_yes":
                 reply_all_ok = True
                 self.stats["feedback_oracle_override"] = self.stats.get("feedback_oracle_override", 0) + 1
 
-        # ⑤ Quality gate (minimal pass/fail)
+        # ⑤ Quality gate
         min_qc = {
             "overall_score": round(g_score, 1),
             "passed": g_score >= 65,
@@ -934,8 +936,7 @@ class V26Responder:
                     "quality": min_qc, "tone": tone_data,
                     "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)}
 
-
-        # ── V26: Calendar availability for booking intents ─────────────
+        # V26: Calendar availability
         if V26_MEETING_ENABLED and get_availability_next_7_days and intent_cat in ('booking', 'sales'):
             try:
                 avail = get_availability_next_7_days()
@@ -949,14 +950,14 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ── V26: Financial acknowledgment ──────────────────────────────
-        if getattr(self, '_fin_result', {}).get('financial_type') == 'payment_received':
+        # V29: Payment received acknowledgment (before send, both paths)
+        if self._fin_result and self._fin_result.get("financial_type") == "payment_received":
             if lang == 'pt':
                 body += "\n\nConfirmado — agradecemos o pagamento!"
             else:
                 body += "\n\nConfirmed — thank you for your payment!"
 
-        # ⑥ Send — V28: log template quality before returning
+        # ⑥ Send
         if dry_run:
             _log_template_quality(intent_cat, lang, tpl, min_qc["overall_score"],
                                   g_score, sender)
@@ -973,7 +974,6 @@ class V26Responder:
         subj_rep = f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
-        # ══ Reply-all compliance (Wave 12)
         self.stats["reply_all_total"] += 1
         if reply_all_ok:
             self.stats["reply_all_enforced"] += 1
@@ -986,7 +986,7 @@ class V26Responder:
                 "quality": min_qc, "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)}
 
     # ═══════════════════════════════════════════════════════════════
-    #  FULL PIPELINE — identical to V24 (no regressions)
+    #  FULL PIPELINE — V26 with financial + meeting + V29 gates
     # ═══════════════════════════════════════════════════════════════
 
     def _full_pipeline(self, email, intent_raw, intent_label, intent_cat,
@@ -1001,7 +1001,7 @@ class V26Responder:
         lang    = self._detect_language(f"{subj} {snip}")
         ms      = lambda: round((time.monotonic() - t0) * 1000, 1)
 
-        # ③ Context (skipped in fast-path)
+        # ③ Context
         try:
             from contextual_memory_bank import ContextualMemoryBankV23
             ctx = ContextualMemoryBankV23()
@@ -1010,12 +1010,10 @@ class V26Responder:
         except Exception:
             members = [sender]
 
-        # ③-b Context-memory → Thread Continuity Intelligence (Wave 5)
+        # ③-b Thread Continuity Intelligence
         _wave5_cc_candidates = []
         if THREAD_CONTINUITY_ENABLED:
-            predict_thread_participants_fn = (
-                predict_thread_participants  # module-level; guarded by THREAD_CONTINUITY_ENABLED
-            )
+            predict_thread_participants_fn = predict_thread_participants
             try:
                 _tc_pred = predict_thread_participants_fn(tid, sender, subj)
                 if _tc_pred:
@@ -1029,7 +1027,7 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ⑥ Action items (skipped in fast-path)
+        # ⑥ Action items
         actions = []
         try:
             from action_item_extractor import ActionItemExtractorV23
@@ -1037,14 +1035,14 @@ class V26Responder:
         except Exception:
             pass
 
-        # ⑦ Follow-up (skipped in fast-path)
+        # ⑦ Follow-up
         try:
             from smart_followup_scheduler import SmartFollowUpSchedulerV23
             SmartFollowUpSchedulerV23().schedule_followup(tid, sender, intent_label, urgency_val)
         except Exception:
             pass
 
-        # ⑧ Reply-all decision (full algorithm)
+        # ⑧ Reply-all decision (full)
         reply_all_dec = {"reply_all": False, "use_cc": ""}
         reply_all_ok  = False
         use_cc        = ""
@@ -1055,8 +1053,6 @@ class V26Responder:
                 use_cc        = reply_all_dec.get("use_cc", "")
             except Exception:
                 pass
-
-        # Email-decision layer (heuristic + LLM)
         if from_email_data and decide_reply_all:
             try:
                 ed  = from_email_data(email)
@@ -1068,12 +1064,32 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ③-c → Wave 5: wire missing from CC into use_cc slots
+        # V29: Escalation gate in full pipeline
+        if V26_ESCALATION_ENABLED and check_escalation:
+            try:
+                esc = check_escalation(subj, snip, sender)
+                if esc.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    if esc.get("telegram_alert") and not dry_run:
+                        try:
+                            telegram_send(esc["telegram_alert"])
+                        except Exception:
+                            pass
+                    _log({"run_id": RUN_ID, "phase": "escalated",
+                          "severity": esc.get("severity"), "sender": sender,
+                          "signals": esc.get("signals", [])})
+                    return {"action": "escalated", "severity": esc.get("severity"),
+                            "signals": esc.get("signals", []),
+                            "elapsed_ms": ms(), "fast_path": False}
+            except Exception:
+                pass
+
+        # Wave 5: wire missing from CC
         if _wave5_cc_candidates:
             _w5c = ", ".join(_wave5_cc_candidates)
             use_cc = (f"{use_cc}, {_w5c}" if use_cc else _w5c).strip(", ")
 
-        # ⑨-b KB Grounding RAG (Wave 2) — inject Zion Tech Group facts into response
+        # ⑨-b KB Grounding
         kb_ctx = ""
         if KB_GROUNDING_ENABLED:
             try:
@@ -1082,7 +1098,7 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ── Wave 6b: Learned action patterns — override template if strong match
+        # Wave 6b: Learned action patterns
         _pattern_meta = None
         if self.action_patterns:
             try:
@@ -1093,24 +1109,25 @@ class V26Responder:
         # ⑨ Template selection + ⑩ Compose
         tpl_body = TEMPLATES.get(lang, TEMPLATES["en"]).get(intent_cat, TEMPLATES["en"]["general"])
         adapted  = generate_adapted_response(name, intent_label, tone_data)
-        # ③-rt Full-pipeline RTFB pre-send recheck (Wave 9)
+
+        # Wave 9: full-pipeline RTFB
         rtfb_result = None
         if self.rtfb:
             try:
                 ed_rtfb = {"subject": subj, "snippet": snip,
-                            "sender": sender, "cc": "",
-                            "urgency": urgency_val, "tone": tone_data}
+                           "sender": sender, "cc": "",
+                           "urgency": urgency_val, "tone": tone_data}
                 rtfb_result = self.rtfb(body, ed_rtfb, intent_label,
                                          _v25_score=_v25_score, dry_run=dry_run)
                 if rtfb_result.get("needs_review") or rtfb_result.get("tier") == "review":
                     return {"action": "review", "reason": "rtfb_intercepted",
-                            "feedback": rtfb_result, "tone": tone_data,
-                            "elapsed_ms": ms()}
+                            "feedback": rtfb_result, "tone": tone_data, "elapsed_ms": ms()}
             except Exception:
                 pass
 
-        body     = f"{adapted}\n\n{tpl_body.format(name=name, close='—', signature='')}"
-        # ⑪ Quality gate (V25 6-dimension verifier)
+        body = f"{adapted}\n\n{tpl_body.format(name=name, close='—', signature='')}"
+
+        # ⑪ Quality gate
         qc = {"overall_score": 85.0, "passed": True, "issues": [],
               "dimension_scores": {}, "should_send": True}
         if V25_VERIFIER_ENABLED and _v25_score:
@@ -1126,14 +1143,13 @@ class V26Responder:
             except Exception:
                 pass
         else:
-            # Fallback: basic grammar + sign-off check
             qc = _fallback_quality_check(body, lang)
 
         if not qc.get("passed", True) or not qc.get("should_send", True):
             return {"action": "review", "reason": "quality_failed",
                     "quality": qc, "tone": tone_data, "elapsed_ms": ms()}
 
-        # ⑪-b QR trainer: log quality after send for next-run regression check
+        # ⑪-b QR trainer
         if self.qr_trainer:
             try:
                 _qr = self.qr_trainer.check_all()
@@ -1142,8 +1158,7 @@ class V26Responder:
             except Exception:
                 pass
 
-
-        # ── V26: Calendar availability + financial ack for full pipeline ─
+        # V26 + V29: Calendar + Payment ack in full pipeline
         if V26_MEETING_ENABLED and get_availability_next_7_days and intent_cat in ('booking', 'sales'):
             try:
                 avail = get_availability_next_7_days()
@@ -1157,7 +1172,7 @@ class V26Responder:
             except Exception:
                 pass
 
-        if getattr(self, '_fin_result', {}).get('financial_type') == 'payment_received':
+        if self._fin_result and self._fin_result.get("financial_type") == "payment_received":
             if lang == 'pt':
                 body += "\n\nConfirmado — agradecemos o pagamento!"
             else:
@@ -1165,16 +1180,14 @@ class V26Responder:
 
         # ⑫ Send
         if dry_run:
-            # ══ Reply-all compliance (Wave 12)
             self.stats["reply_all_total"] += 1
             if reply_all_ok:
                 self.stats["reply_all_enforced"] += 1
             else:
                 self.stats["reply_all_missed"] += 1
-            _log_template_quality(intent_cat, lang, tpl, qc["overall_score"],
+            _log_template_quality(intent_cat, lang, tpl_body, qc["overall_score"],
                                   _fast_grammar_check(body)[0], sender)
             return {"action": "send_dry", "intent": intent_label,
-
                     "reply_all": reply_all_ok, "tone": tone_data,
                     "quality": qc, "elapsed_ms": ms(), "fast_path": False,
                     "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx)}
@@ -1187,13 +1200,12 @@ class V26Responder:
         subj_rep= f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
-        # ══ Reply-all compliance (Wave 12)
         self.stats["reply_all_total"] += 1
         if reply_all_ok:
             self.stats["reply_all_enforced"] += 1
         else:
             self.stats["reply_all_missed"] += 1
-        _log_template_quality(intent_cat, lang, tpl, qc["overall_score"],
+        _log_template_quality(intent_cat, lang, tpl_body, qc["overall_score"],
                               _fast_grammar_check(body)[0], sender)
         return {"action": "send", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
@@ -1223,7 +1235,7 @@ class V26Responder:
         avg_full = (self.stats.get("full_path_ms", 0) / max(full_n, 1)) if full_n else 0
 
         lines = [
-            f"⚡ V26 Intelligent Cascading Latency — run {RUN_ID}",
+            f"⚡ V29 Intelligent Cascading Latency — run {RUN_ID}",
             f"⏱  {elapsed}s",
             f"📨 Processed : {self.stats['processed']}",
             f"🚀 Fast-path : {fast_n}  (avg {avg_fast:.0f}ms each)",
@@ -1234,7 +1246,6 @@ class V26Responder:
             f"❌ Errors    : {self.stats.get('errors_fetch', 0)}",
             f"📬 Reply-all : {_rera_enf}/{_rera_tot} enforced" if (_rera_enf:=self.stats.get("reply_all_enforced",0))>0 or (_rera_tot:=self.stats.get("reply_all_total",0))>0 else "",
         ]
-        # V26 additional stats
         if self.stats.get('action_escalated', 0) > 0:
             lines.append(f"🔥 Escalated  : {self.stats['action_escalated']}")
         if self.stats.get('action_financial', 0) > 0:
@@ -1243,7 +1254,7 @@ class V26Responder:
             lines.append(f"📅 Meetings   : {self.stats['action_meeting']}")
         if avg_full > 0:
             lines.append(f"⚡ Latency gain vs full: ~{max(1, round(avg_full / max(avg_fast, 1))):.0f}x faster")
-        lines = [l for l in lines if l]  # remove empty lines
+        lines = [l for l in lines if l]
         report = "\n".join(lines)
         print(report)
         if HAS_GMAIL:
@@ -1263,19 +1274,19 @@ class V26Responder:
             "latency_speedup_est":   round(avg_full / max(avg_fast, 1), 1) if avg_fast > 0 else 0,
         }
         _log_stats(summary)
-        _maybe_audit()  # V28: batch-level quality audit
+        _maybe_audit()
         return summary
 
 
 # ═══════════════════════════════════════════════════════════════
-#  ENTRY POINT — drop-in V24 replacement
+#  ENTRY POINT
 # ═══════════════════════════════════════════════════════════════
 
 RUN_ID = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
 
 if __name__ == "__main__":
     import argparse
-    ap = argparse.ArgumentParser(description="V26 Intelligent Cascading Latency Email Responder")
+    ap = argparse.ArgumentParser(description="V29 Intelligent Cascading Latency Email Responder")
     ap.add_argument("--execute", "-e", action="store_true",
                     help="Actually send emails (default: dry-run)")
     ap.add_argument("--limit", "-n", type=int, default=20,

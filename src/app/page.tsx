@@ -224,7 +224,7 @@ export default function Home() {
   };
 
   return (
-    <LayoutLayout>
+    <Layout>
       {/* Banner */}
       <Banner items={whatsNewItems} />
 
@@ -941,6 +941,6 @@ export default function Home() {
         </section>
       </Link>
 
-    </LayoutLayout>
+    </Layout>
   );
 }

@@ -48,3 +48,4 @@ export const knowledgeBase: KnowledgeItem[] = [
     category: 'ops',
     content: `The appropriate cron pattern for Zion Tech Group's current workload is: \n\\* * * * * node /root/.openclaw/workspace/zion.app/nightly-audit.js \\nexec node /root/.openclaw/workspace/zion.app/scripts/audit.js \\nexec node /root/.openclaw/workspace/zion.app/node_modules/.bin/gh && echo "Auto-prune stale branches every 24h" \\nexec node /root/.openclaw/workspace/zion.app/scripts/cleanup-branches.sh\ntask schedule:0 3 * * * /root/.openclaw/workspace/zion.app/scripts/nightly-audit.js\n`,
   }
+];

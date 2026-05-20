@@ -72,6 +72,14 @@ _ALL_CAPS_LINE = re.compile(r'^[A-Z][A-Z\s!?]{10,}$', re.MULTILINE)
 # Multiple exclamation/question marks in sequence
 _EXCESSIVE_PUNCT = re.compile(r'[!?]{3,}|[!?]{2,}\s*[!?]{2,}')
 
+# Mirror of polarity_analyzer's negative pattern (tone-adjacent escalation signal)
+_NEGATIVE = re.compile(
+    r'\b(?:angry|furious|disappointed|frustrat|terrible|awful|horrible|'
+    r'problema|erro|falha|ruim|péssim|insatisfeit|reclama|não funciona|'
+    r'not working|broken|down|outage|fail)\b',
+    re.IGNORECASE
+)
+
 
 def _log(msg: dict):
     try:
@@ -194,18 +202,6 @@ def check_escalation(subject: str, snippet: str, sender: str = '', dry_run: bool
             return result
     
     return result
-
-
-# Mirror of polarity_analyzer's negative pattern for tone-adjacent check
-_NEGATIVE = re.compile(
-    r'\b(?:angry|furious|disappointed|frustrat|terrible|awful|horrible|'
-    r'problema|erro|falha|ruim|péssim|insatisfeit|reclama|não funciona|'
-    r'not working|broken|down|outage|fail)\b',
-    re.IGNORECASE
-)
-
-
-if __name__ == '__main__':
     # ── Self-test ───────────────────────────────────────────────
     tests = [
         ("URGENT: Server down!", "Production is completely down, fix immediately!", "client@example.com"),

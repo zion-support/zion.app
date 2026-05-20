@@ -31,4 +31,4 @@ export default function CognitiveEmulationLayer() {
         <span className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" />
         <span className="text-sm">Cognitive layer active</span>
       </div>
-    </
+    </div>

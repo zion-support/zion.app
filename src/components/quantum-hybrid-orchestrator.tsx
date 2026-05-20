@@ -32,4 +32,4 @@ export default function QuantumHybridOrchestrator() {
         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
         <span className="text-sm font-medium">Active</span>
       </div>
-    </
+    </div>

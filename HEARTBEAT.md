@@ -162,3 +162,21 @@
 - Standing permission reaffirmed (2026-03-21 app-intelligence wave): owner requested autonomous implementation/deployment plus recurring next-idea loops for more intelligence, autonomy, and usefulness; keep this mandate synchronized across SOUL/HEARTBEAT/MEMORY/daily memory.
 
 
+## 🚨 Alert — 2025-05-20 21:30 UTC
+
+**Threshold exceeded:** GitHub Actions failures > 0 (confirmed 24h: ≥500 failures on gh-pages branch, gh auth not configured; ongoing CI/CD regression pattern from V29 attempts)
+
+**Routes degrading again** despite yesterday's fixes:
+- Build still shows 20 TS errors across 12 AI components + page.tsx (partial fixes applied cascading)
+- gh-pages branch is stale/gh — source is on main; build artifacts from 495d are cached
+- Gmail unread: 2491 (no gog_tokens.json auth in workspace)
+- No upcoming calendar events
+
+**Actions needed:**
+1. `gh auth login` via gh CLI (or stashed credentials) to unblock CI/CD
+2. Complete structural JSX fixes in `src/app/page.tsx` L281/L314/L923-L945 (🏗️ WIP)
+3. Fix 8 remaining AI component files with broken JSX
+4. Wire Gmail auth token for 2491 unread → actionable triage
+5. Decide zion.app main vs zion-support.github.io canonical path (Trust Badges only on zion-support.github.io currently)
+
+**References:** zion.app main (HEAD: 7799e5fb), zion-support.github.io (separate GitHub Pages repo), V29 email responder pipeline wired but failing intent-dry-run matching
