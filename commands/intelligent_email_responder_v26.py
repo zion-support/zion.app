@@ -36,7 +36,7 @@ Still enforced in fast-path:
 When any fast-path condition fails → falls back to full V24 pipeline,
 guaranteeing zero accuracy regression.
 
-Drop-in replacement: V25Responder → V26Responder in __main__
+Drop-in replacement: V26Responder → V26Responder in __main__
 """
 
 import json, re, time, csv, io
@@ -626,7 +626,7 @@ class CascadingLatencyDetector:
 #  FAST-PATH PIPELINE  (~6 steps vs 14)
 # ═══════════════════════════════════════════════════════════════
 
-class V25Responder:
+class V26Responder:
     """V25 with Cascading Latency executor injected into V24 pipeline."""
 
     def __init__(self):
@@ -766,101 +766,6 @@ class V25Responder:
     # ═══════════════════════════════════════════════════════════════
     #  V25 PIPELINE — with Cascading Latency injection
     # ═══════════════════════════════════════════════════════════════
-
-    def _v25_pipeline(self, email: dict, dry_run: bool, t0: float) -> dict:
-        ee    = email["id"]
-        tid   = email["thread_id"]
-        subj  = email["subject"]
-        snip  = email["snippet"]
-        sender= email["sender"]
-        cc    = email.get("cc", "")
-        name  = self._get_name(sender)
-        lang  = self._detect_language(f"{subj} {snip}")
-
-        ms_elapsed = lambda: round((time.monotonic() - t0) * 1000, 1)
-
-        # ══════════════════════════════════════════════════════
-        #  Shared preamble (both paths) — tone + profile + categorizer + intent
-        # ══════════════════════════════════════════════════════
-
-        # Reset per-email context
-        self._fin_result = {}
-
-        # ① Tone (fast, rule-based) — computed before escalation so we have it for the return
-        tone_data = analyze_tone(subj, snip)
-
-        # ══════════════════════════════════════════════════════
-        #  V26 Escalation Engine — first priority check
-        # ══════════════════════════════════════════════════════
-        if V26_ESCALATION_ENABLED and check_escalation:
-            esc = check_escalation(subj, snip, sender, dry_run)
-            if esc.get('escalated'):
-                # Send Telegram alert
-                if esc.get('telegram_alert'):
-                    try:
-                        telegram_send(esc['telegram_alert'])
-                    except Exception:
-                        pass
-                _log({"run_id": RUN_ID, "phase": "escalated",
-                      "thread_id": tid, "severity": esc['severity'],
-                      "signals": esc['signals']})
-                self.stats['action_escalated'] = self.stats.get('action_escalated', 0) + 1
-                # Reset financial result so process_batch doesn't see stale value
-                self._fin_result = {}
-                return {"action": "escalated", "severity": esc['severity'],
-                        "signals": esc['signals'], "tone": tone_data,
-                        "elapsed_ms": ms_elapsed()}
-
-        # ② Sender Profile
-        profile = self.sender_learner.learn_from_email(sender, subj, snip, email) if self.sender_learner else {}
-        profile_lang = profile.get("language", "")
-        if profile_lang in ("pt", "en"):
-            lang = profile_lang
-        if profile.get("formality", "neutral") != "neutral":
-            tone_data["formality"] = profile["formality"]
-
-        # ③-C Wave 8: Attachment awareness (pre-check)
-        attach_info = {"has_attachments": False, "attachment_summary": "", "stub_mode": True}
-        if self.attach_checker:
-            try:
-                attach_info = self.attach_checker(
-                    msg_id    = email.get("id", ""),
-                    snippet   = email.get("snippet", ""),
-                    subject   = email.get("subject", ""),
-                )
-            except Exception:
-                pass
-
-        # ④ Categorizer (fast)
-        cat_result = self.categorizer.categorize(email) if self.categorizer else {"auto_archive": False, "needs_response": True}
-        if cat_result.get("auto_archive"):
-            if not dry_run:
-                lab = gmail_get_or_create_label_id("Auto-Archive/V25")
-                gmail_batch_modify({"ids": [tid]},
-                                   removeLabelIds=["UNREAD"], addLabelIds=[lab])
-            return {"action": "archive", "category": cat_result["category"],
-                    "elapsed_ms": ms_elapsed()}
-
-        
-        # ── V26 Wave 4: Financial email classification ──────────────────────
-        financial_result = {"financial_type": "none", "urgency": "low", "action": "proceed"}
-        if V26_FINANCIAL_ENABLED and classify_financial_email:
-            try:
-                financial_result = classify_financial_email(subj, snip, sender)
-                if financial_result.get('financial_type') != 'none':
-                    _log({"run_id": RUN_ID, "phase": "financial_classified",
-                          "thread_id": tid, "fin_type": financial_result['financial_type'],
-                          "fin_action": financial_result['action'],
-                          "fin_urgency": financial_result['urgency'],
-                          "fin_amount": financial_result.get('amount_mentioned')})
-                    # Payment received → auto-thank mode
-                    if financial_result['financial_type'] == 'payment_received':
-                        tone_data['financial_context'] = 'payment_received'
-                    # Invoice/payment request → bump urgency
-                    if financial_result['urgency'] == 'high':
-                        urgency_val = min(urgency_val, 1)
-            except Exception:
-                pass
 
 # ⑤ Intent + confidence (fast, rule-based)
         intent_raw = self.intent_scorer.score(sender, subj, snip, tid) if self.intent_scorer else {
@@ -1362,4 +1267,4 @@ if __name__ == "__main__":
     dry = not args.execute or args.dry_run
     if dry:
         print("🧪 DRY-RUN — no emails will be sent.\n")
-    V25Responder().process_batch(limit=args.limit, dry_run=dry)
+    V26Responder().process_batch(limit=args.limit, dry_run=dry)
