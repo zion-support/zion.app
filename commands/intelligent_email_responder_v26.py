@@ -623,7 +623,11 @@ class V26Responder:
         self.stats['action_financial']  = 0
         self.stats['action_meeting']    = 0
 
-    # ═══════════════════════════════════════════════════════════
+        # V30: CaseRouter + ResponseImprover
+        self.case_router      = CaseRouter()      if V30_ROUTER_ENABLED   else None
+        self.response_improver = ResponseImprover() if V30_IMPROVER_ENABLED else None
+
+    # ═══════════════════════════════════════════════════════════════════
     #  MAIN BATCH LOOP
     # ═══════════════════════════════════════════════════════════════
 
