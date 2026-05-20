@@ -6,7 +6,7 @@ permissions:
 concurrency:
   group: deploy-on-push-main
   cancel-in-progress: false
-true:
+on:
   workflow_run:
     workflows:
     - CI/CD Pipeline
