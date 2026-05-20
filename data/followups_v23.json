@@ -291,6 +291,16 @@
       "status": "pending"
     },
     {
+      "thread_id": "dr-1",
+      "sender": "Alice <alice@example.com>",
+      "intent": "urgent",
+      "urgency": 1,
+      "delay_hours": 1.0,
+      "scheduled_at": "2026-05-20T17:20:19.359260+00:00",
+      "created_at": "2026-05-20T16:20:19.359260+00:00",
+      "status": "pending"
+    },
+    {
       "thread_id": "dr-2",
       "sender": "Bob <bob@partner.com>",
       "intent": "sales",
@@ -478,6 +488,16 @@
       "delay_hours": 19.2,
       "scheduled_at": "2026-05-21T10:06:23.446050+00:00",
       "created_at": "2026-05-20T14:54:23.446050+00:00",
+      "status": "pending"
+    },
+    {
+      "thread_id": "dr-2",
+      "sender": "Bob <bob@partner.com>",
+      "intent": "sales",
+      "urgency": 3,
+      "delay_hours": 19.2,
+      "scheduled_at": "2026-05-21T11:32:19.361361+00:00",
+      "created_at": "2026-05-20T16:20:19.361361+00:00",
       "status": "pending"
     }
   ],

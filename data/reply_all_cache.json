@@ -11,7 +11,7 @@
       "Alice <alice@example.com>",
       "dr-1"
     ],
-    "decided_at": "2026-05-20T14:54:23.443925+00:00"
+    "decided_at": "2026-05-20T16:20:19.359694+00:00"
   },
   "dr-2": {
     "reply_all": false,
@@ -22,10 +22,10 @@
     "use_cc": "",
     "reply_to_original": false,
     "thread_participants": [
-      "dr-2",
-      "Bob <bob@partner.com>"
+      "Bob <bob@partner.com>",
+      "dr-2"
     ],
-    "decided_at": "2026-05-20T14:54:23.446486+00:00"
+    "decided_at": "2026-05-20T16:20:19.361819+00:00"
   },
   "dr-3": {
     "reply_all": false,

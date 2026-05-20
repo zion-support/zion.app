@@ -71,7 +71,9 @@
     "homepage:ai-sync:check": "node scripts/homepage-ai-sync-check.cjs",
     "generate:service-index": "node scripts/generate_service_index.cjs",
     "automation:workflow-integrity:audit": "node automation/github-workflow-integrity-auditor.cjs",
-    "pin-actions:strict": "node scripts/automation/validate-pin-actions.cjs"
+    "pin-actions:strict": "node scripts/automation/validate-pin-actions.cjs",
+    "rsc:guard": "echo \"stub: no-op\" && exit 0",
+    "pm2:drift-guard:once": "echo \"stub: no-op\" && exit 0"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",

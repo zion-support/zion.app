@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Generative AI for Content and Creative Workflows | Zion Tech Group Blog',
