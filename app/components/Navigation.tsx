@@ -8,6 +8,12 @@ import {
   SOLUTION_LINKS,
   RESOURCE_LINKS,
   FEATURED_AI_SERVICE_LINKS,
+  IT_SERVICE_LINKS,
+  CLOUD_SERVICE_LINKS,
+  SECURITY_SERVICE_LINKS,
+  DATA_SERVICE_LINKS,
+  AUTOMATION_SERVICE_LINKS,
+  AI_SERVICE_LINKS,
   type NavigationLink,
 } from '@/constants/navigation';
 
@@ -139,39 +145,113 @@ export default function Navigation() {
               Services {servicesOpen ? '▴' : '▾'}
             </button>
             {servicesOpen && (
-              <div className="absolute top-full right-0 mt-2 w-80 rounded-xl bg-slate-900/95 border border-slate-700/80 shadow-2xl shadow-purple-500/10 p-2 animate-in fade-in-0 zoom-in-95 backdrop-blur-md max-h-[70vh] overflow-y-auto">
-                <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-                  AI & Automation
+              <div className="absolute top-full right-0 mt-2 w-96 rounded-xl bg-slate-900/95 border border-slate-700/80 shadow-2xl shadow-purple-500/10 p-2 animate-in fade-in-0 zoom-in-95 backdrop-blur-md max-h-[80vh] overflow-y-auto">
+                <div className="grid gap-4">
+                  {/* AI & Automation Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      AI & Automation
+                    </div>
+                    <div className="space-y-0.5">
+                      {FEATURED_AI_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"featured-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* IT & Infrastructure Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      IT & Infrastructure
+                    </div>
+                    <div className="space-y-0.5">
+                      {IT_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"it-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Cloud & DevOps Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      Cloud & DevOps
+                    </div>
+                    <div className="space-y-0.5">
+                      {CLOUD_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"cloud-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Security & Compliance Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      Security & Compliance
+                    </div>
+                    <div className="space-y-0.5">
+                      {SECURITY_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"security-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Data & Analytics Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      Data & Analytics
+                    </div>
+                    <div className="space-y-0.5">
+                      {DATA_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"data-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Automation Section */}
+                  <div>
+                    <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      Automation
+                    </div>
+                    <div className="space-y-0.5">
+                      {AUTOMATION_SERVICE_LINKS.slice(0, 4).map((link, i) => (
+                        <DropdownItem key={"automation-" + i} link={link} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                {FEATURED_AI_SERVICE_LINKS.slice(0, 6).map((link, i) => (
-                  <DropdownItem key={i} link={link} />
-                ))}
-                <div className="border-t border-slate-800 my-1" />
-                <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-                  More
+                <div className="border-t border-slate-800 my-3" />
+                <div className="space-y-2">
+                  <Link
+                    href="/services"
+                    className="block px-3 py-2 rounded-lg text-sm text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transition-colors font-medium"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    Browse All Services →
+                  </Link>
+                  <Link
+                    href="/ai-services"
+                    className="block px-3 py-2 rounded-lg text-sm text-pink-400 hover:text-pink-300 hover:bg-pink-500/10 transition-colors"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    AI Services Hub →
+                  </Link>
                 </div>
-                <Link
-                  href="/services"
-                  className="block px-3 py-2 rounded-lg text-sm text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transition-colors font-medium"
-                  onClick={() => setServicesOpen(false)}
-                >
-                  Browse All 626+ →
-                </Link>
-                <Link
-                  href="/ai-services"
-                  className="block px-3 py-2 rounded-lg text-sm text-pink-400 hover:text-pink-300 hover:bg-pink-500/10 transition-colors"
-                  onClick={() => setServicesOpen(false)}
-                >
-                  AI Services Hub →
-                </Link>
               </div>
             )}
           </div>
 
-          {/* Primary nav links */}
+          {/* Primary nav links */}          {/* Primary nav links */}
           {PRIMARY_NAV_LINKS.filter(l => l.href !== '/' && l.href !== '/services' && l.href !== '/solutions').map((link, i) => (
             <NavLink key={i} link={link} />
           ))}
+
+          {/* Desktop CTA */}
+          <a
+            href={`mailto:${EMAIL}`}
+            className="lg:inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium text-white bg-pink-500 hover:bg-pink-600 transition-colors"
+          >
+            ✉ Get Free Consultation
+          </a>
 
           <div className="w-px h-6 bg-slate-700 mx-1" />
           <a
