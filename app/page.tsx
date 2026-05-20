@@ -180,6 +180,19 @@ let list = services;
               </a>
             </div>
 
+            {/* ── Secondary CTAs — extra discovery links ── */}
+            <div className="flex flex-wrap justify-center gap-3 mt-2">
+              <Link href="/search" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                🔍 Search 600+ Services
+              </Link>
+              <Link href="/testimonials" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                ⭐ Client Reviews
+              </Link>
+              <Link href="/pricing" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                💰 Pricing
+              </Link>
+            </div>
+
             {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-8 text-slate-400 text-sm mb-12">
               {['BBB Accredited','100% US-Based Team','SLA Guaranteed','HIPAA Compliant'].map(t => (
