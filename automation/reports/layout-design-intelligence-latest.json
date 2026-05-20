@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-05-20T17:44:19.358Z",
+  "timestamp": "2026-05-20T18:22:00.502Z",
   "url": "https://ziontechgroup.com",
-  "score": 80,
+  "score": 85,
   "metrics": {
-    "sectionCount": 10,
+    "sectionCount": 15,
     "mainCount": 1,
-    "h2Count": 8,
-    "h3Count": 735,
-    "listCount": 52,
+    "h2Count": 12,
+    "h3Count": 700,
+    "listCount": 16,
     "heroCtaCount": 0,
     "heroLinkCount": 0,
     "hasMaxWidth": true,
@@ -16,7 +16,7 @@
   "diagnostics": [
     {
       "id": "structure",
-      "detail": "sections=10, main=1, h2=8, h3=735, lists=52"
+      "detail": "sections=15, main=1, h2=12, h3=700, lists=16"
     },
     {
       "id": "hero",
@@ -33,12 +33,6 @@
       "priority": "high",
       "title": "Ensure consistent max-width containers",
       "description": "Not all content appears to be wrapped in a consistent max-width container. Use a shared layout wrapper (e.g., max-w-7xl mx-auto px-4) to keep content readable on large screens."
-    },
-    {
-      "id": "bullet-density",
-      "priority": "low",
-      "title": "Break up very dense bullet sections",
-      "description": "There are many bullet lists on the homepage. Consider grouping related bullets into cards or columns to improve visual rhythm and scanning."
     }
   ]
 }
