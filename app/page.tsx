@@ -77,6 +77,14 @@ const INDUSTRIES = [
 
 export default function HomePage() {
   const services: Service[] = allServices;
+
+  // Stage health counts — deterministic from catalog
+  const byStage = useMemo(() => {
+    const acc: Record<string,number> = { published:0, beta:0, planned:0 };
+    services.forEach((s: any) => { if (s.stage && acc.hasOwnProperty(s.stage)) acc[s.stage]++; });
+    return acc;
+  }, [services]);
+
   const serviceCount = searchServices.length;
     const [quickView, setQuickView] = useState<Service | null>(null);
     const [releaseNotes, setReleaseNotes] = useState<any[]>([]);
@@ -304,6 +312,33 @@ let list = services;
                   <div className="text-sm text-slate-400 mt-1">{s.label}</div>
                 </div>
               ))}
+
+            </div>
+
+            {/* ── Service Pipeline — live stage counts ── */}
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              {[
+                { stage:'published', emoji:'✅', color:'emerald', label:'Published',  sub:'Live production services' },
+                { stage:'beta',      emoji:'🧪', color:'purple',   label:'Beta',       sub:'Early access — refined live' },
+                { stage:'planned',   emoji:'🚧', color:'amber',    label:'Coming Soon',sub:'In the pipeline — scheduled' },
+              ].map((s) => {
+                const n = (byStage as Record<string,number>)[s.stage] || 0;
+                const colorMap: Record<string,string> = {
+                  emerald:'from-emerald-500/20 to-green-500/10 border-emerald-500/30',
+                  purple:  'from-purple-500/20 to-indigo-500/10 border-purple-500/30',
+                  amber:   'from-amber-500/20 to-yellow-500/10 border-amber-500/30',
+                };
+                return (
+                  <a key={s.stage} href={`/services/stage/${s.stage}`}
+                    className={`group block rounded-xl border bg-gradient-to-br ${colorMap[s.color]} px-5 py-4 hover:scale-[1.04] hover:border-opacity-60 transition-all min-w-[140px]`}
+                  >
+                    <div className="text-2xl mb-1">{s.emoji}</div>
+                    <div className="text-xl font-bold text-white">{n}</div>
+                    <div className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider mt-1">{s.label}</div>
+                    <div className="text-[10px] text-slate-500 mt-0.5">{s.sub}</div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

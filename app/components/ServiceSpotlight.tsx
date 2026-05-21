@@ -11,6 +11,7 @@ export interface FeaturedService {
   icon: string;
   href: string;
   popular?: boolean;
+  stage?: 'published'|'beta'|'planned';
 }
 
 const INTERVAL_MS = 6000;
@@ -45,6 +46,10 @@ export default function ServiceSpotlight({ services }: { services: FeaturedServi
     automation: 'from-rose-600/40 to-pink-600/40 border-rose-500/30',
   };
   const catLabel: Record<string,string> = { ai:'AI', it:'IT', cloud:'Cloud', security:'Security', data:'Data', automation:'Automation' };
+  const stageMeta: Record<string,{emoji:string; cls:string}> = {
+    beta:    { emoji:'🧪', cls:'bg-purple-500/25 text-purple-200 border-purple-500/40' },
+    planned: { emoji:'🚧', cls:'bg-amber-500/25 text-amber-200 border-amber-500/40' },
+  };
   const gradient = catColors[current.category] || catColors.ai;
 
   return (
@@ -65,6 +70,11 @@ export default function ServiceSpotlight({ services }: { services: FeaturedServi
               {catLabel[current.category] || current.category}
             </span>
             {current.popular && (<span className="absolute top-4 right-16 text-yellow-400 text-lg" title="Popular">★</span>)}
+    {current.stage && current.stage !== 'published' && stageMeta[current.stage] && (
+      <span className={`absolute top-4 right-6 px-2 py-0.5 text-[10px] font-bold rounded-full border backdrop-blur-sm ${stageMeta[current.stage].cls}`} title={current.stage}>
+        {stageMeta[current.stage].emoji} {current.stage}
+      </span>
+    )}
             <div className="flex flex-col h-full justify-end relative z-10">
               <div className="text-5xl mb-3">{current.icon}</div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{current.title}</h3>

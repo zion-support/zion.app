@@ -67,10 +67,22 @@ function collectLeafPages() {
   const svcDir = path.join(outDir, 'services');
   if (fs.existsSync(svcDir)) {
     for (const entry of fs.readdirSync(svcDir, { withFileTypes: true })) {
-      if (!entry.isDirectory()) continue;
+      if (!entry.isDirectory() || entry.name === 'stage') continue;
       const f = path.join(svcDir, entry.name, 'index.html');
       if (fs.existsSync(f)) {
         pages.push({ url: `${SITE_URL}/services/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+      }
+    }
+  }
+
+  // 3b) Service stage pages: out/services/stage/<stage>/index.html
+  const stageDir = path.join(outDir, 'services', 'stage');
+  if (fs.existsSync(stageDir)) {
+    for (const entry of fs.readdirSync(stageDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const f = path.join(stageDir, entry.name, 'index.html');
+      if (fs.existsSync(f)) {
+        pages.push({ url: `${SITE_URL}/services/stage/${entry.name}/`, lastmod: fs.statSync(f).mtime });
       }
     }
   }
@@ -92,6 +104,7 @@ function collectLeafPages() {
 function pageInfo(url, lastmod) {
   let freq = 'monthly', prio = '0.4';
   if (url === `${SITE_URL}/`) { freq = 'daily'; prio = '1.0'; }
+  else if (url.startsWith(`${SITE_URL}/services/stage/`)) { freq = 'weekly'; prio = '0.7'; }
   else if (url.startsWith(`${SITE_URL}/services/`)) { freq = 'weekly'; prio = '0.6'; }
   else if (url.startsWith(`${SITE_URL}/blog/`)) { freq = 'weekly'; prio = '0.5'; }
   else if (['/ai', '/ai-services', '/industry-solutions', '/solutions', '/products', '/tools'].some(x => url.startsWith(SITE_URL + x))) { freq = 'weekly'; prio = '0.5'; }
