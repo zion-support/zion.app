@@ -33,6 +33,7 @@ export const RESOURCE_LINKS: readonly NavigationLink[] = [
   { name: 'ROI Calculator', href: '/tools/roi-calculator' },
   { name: 'Service Comparison', href: '/tools/service-comparison' },
   { name: 'Service Recommender', href: '/tools/service-recommender' },
+  { name: 'AI Service Router', href: '/tools/ai-service-router' },
   { name: 'Port Scanner', href: '/tools/port-scanner' },
   { name: 'SSL Checker', href: '/tools/ssl-checker' },
   { name: 'Client Portal', href: '/portal' },
