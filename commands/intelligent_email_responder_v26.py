@@ -642,6 +642,55 @@ def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
 
 
 # ── V34: per-intent false-positive rate calibration cache ─────────────────
+# ── V36-1: Escalation floor per intent label ─────────────────────────────
+# If body contains dollar amounts above the floor for financial/legal intents,
+# auto-escalate regardless of confidence level. Runs BEFORE intent-scorer gates.
+_ESCALATION_FLOOR: dict = {
+    "financial": {
+        "min_amount": 10_000,
+        "keywords": ["wire", "ach", "bank transfer", "discrepancy", "overdue", "past due"],
+        "required_intent": ["financial"],
+    },
+    "legal": {
+        "min_amount": 0,
+        "keywords": ["lawsuit", "sue", "attorney", "patent", "cease", "subpoena"],
+        "required_intent": ["legal", "general"],
+    },
+    "urgent": {
+        "min_amount": 0,
+        "keywords": ["sla breach", "production down", "data loss", "breach"],
+        "required_intent": ["urgent", "support_issue"],
+    },
+}
+
+def _check_escalation_floor(subj: str, snip: str, body: str, intent_label: str) -> dict:
+    """Return escalation if body amount exceeds policy floor for this intent."""
+    import re as _re
+    import datetime as _dt_
+    text = f"{subj} {snip} {body}".lower()
+    for policy_label, policy in _ESCALATION_FLOOR.items():
+        if intent_label not in policy["required_intent"]:
+            continue
+        if policy["min_amount"] > 0:
+            m = _re.search(r'[$€£]\s*[\d,]+\.?\d*', text)
+            if not m:
+                continue
+            amount_str = m.group(0).replace(',', '').replace('$', '').replace('€', '').replace('£', '')
+            try:
+                amount = float(''.join(c for c in amount_str if c.isdigit() or c == '.'))
+                if amount < policy["min_amount"]:
+                    continue
+            except ValueError:
+                continue
+        elif not any(kw in text for kw in policy["keywords"]):
+            continue
+        return {
+            "escalated": True,
+            "reason": f"escalation_floor_{policy_label}",
+            "severity": "critical",
+            "signals": [f"intent={intent_label}", f"floor={policy_label}"],
+        }
+    return {}
 FP_RATES        = DATA / 'fp_rates.json'
 _FP_RATES_CACHE: dict = {}
 _FP_RATES_MTIME: float = 0.0
@@ -1020,6 +1069,29 @@ class V26Responder:
             return result
 
         # V34-R5: Thread-depth short-circuit — live threads w/ >=10 msgs skip LLM → review
+
+        # V36-2: Dead-thread readmission gate — >7d since last AI reply → review
+        if not dry_run and tid:
+            try:
+                _last_ai = None
+                if _SENT_REPLY_LOG.exists():
+                    for line in _SENT_REPLY_LOG.read_text().splitlines():
+                        try:
+                            rec = json.loads(line)
+                            if rec.get("thread_id") == tid and rec.get("action", "").startswith("send_"):
+                                ts = datetime.fromisoformat(rec["sent_at"])
+                                if _last_ai is None or ts > _last_ai:
+                                    _last_ai = ts
+                        except Exception:
+                            continue
+                if _last_ai and (datetime.now(timezone.utc) - _last_ai).days >= 7:
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                            "action": "review", "reason": "dead_thread_readmission",
+                            "last_ai_reply_days": (datetime.now(timezone.utc) - _last_ai).days,
+                            "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+                    return result
+            except Exception:
+                pass
         if not dry_run:
             try:
                 from google_workspace import gmail_get
@@ -1050,6 +1122,23 @@ class V26Responder:
                     "elapsed_ms": ms_elapsed()})
             return result
 
+        # V36-1: escalation floor — catches big-dollar financial/legal threads before keyword gate
+        if V26_ESCALATION_ENABLED:
+            try:
+                esc_floor = _check_escalation_floor(subj, snip, email.get("body",""), intent_label)
+                if esc_floor.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    if not dry_run:
+                        try: telegram_send(f"[V36-ESC-FLOOR] {esc_floor['reason']}: {sender}")
+                        except Exception: pass
+                    add_to_result(email, {"thread_intent": thread_intent_label,
+                         "action": "escalated", "severity": esc_floor.get("severity","high"),
+                         "signals": esc_floor.get("signals",[]),
+                         "reason": esc_floor.get("reason", ""),
+                         "elapsed_ms": round((time.monotonic()-t0)*1000, 1)})
+                    return result
+            except Exception:
+                pass
         # ── V29: Escalation gate (before intent scoring) ──────────
         if V26_ESCALATION_ENABLED and check_escalation:
             try:
@@ -1193,7 +1282,56 @@ class V26Responder:
         # ① Tone — already computed
         t_response = f"Fast-path ({intent_cat}) response for {name}."
 
-        # ② Select template + compose
+        # V36-3: Attachment-type routing before quality gate
+        attachment_action = ""
+        if self.attach_checker and attach_info:
+            try:
+                full_for_att = attach_info if attach_info.get("has_attachments") else {}
+                # Heuristic routing: filename content → escalation / auto-thank / calendar
+                att_summary = str(attach_info.get("attachment_summary", "")).lower()
+                att_types   = [a.lower() for a in attach_info.get("attachment_types", [])]
+                if any(k in att_summary for k in ["law", "legal", "cease", "patent", "sue", "attorney"]):
+                    attachment_action = "escalate"
+                elif any(k in att_summary for k in ["invoice", "receipt", "paid", "wire", "ach"]):
+                    attachment_action = "thank_auto"
+                elif any(k in att_summary for k in ["deck", "proposal", "partnership", "pitch"]):
+                    attachment_action = "calendar_draft"
+                if attachment_action == "escalate":
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                            "action": "escalated", "reason": "attachment_legal_routing",
+                            "attachment_action": attachment_action,
+                            "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+                    return result
+            except Exception:
+                pass
+                # V36-3: Attachment-type routing (pre-quality gate)
+        if self.attach_checker and attach_info.get("has_attachments"):
+            try:
+                att_text = str(attach_info.get("attachment_summary","")).lower()
+                att_types = " ".join(str(x) for x in attach_info.get("attachment_types", [])).lower()
+                if any(k in att_text+att_types for k in ["law","legal","cease","patent","sue","attorney","subpoena"]):
+                    _r = add_to_result(email, {"thread_intent": thread_intent_label,
+                         "action":"escalated","reason":"attachment_legal_routing",
+                         "attachment_action":"escalate",
+                         "elapsed_ms": round((time.monotonic()-t0)*1000, 1)})
+                    return _r
+                if any(k in att_text+att_types for k in ["invoice","receipt","wire","ach","paid","payment"]):
+                    _r = add_to_result(email, {"thread_intent": thread_intent_label,
+                         "action":"send_dry","reason":"attachment_payment_routing",
+                         "attachment_action":"thank_auto",
+                         "elapsed_ms": round((time.monotonic()-t0)*1000, 1)})
+                    return _r
+                if any(k in att_text+att_types for k in ["deck","proposal","partnership","pitch","contract"]):
+                    if dry_run: _r = add_to_result(email, {"thread_intent": thread_intent_label,
+                             "action":"send_dry","reason":"attachment_sales_routing_calendar",
+                             "elapsed_ms": round((time.monotonic()-t0)*1000, 1)})
+                    else: _r = add_to_result(email, {"thread_intent": thread_intent_label,
+                             "action":"send_dry","reason":"attachment_sales_routing_calendar",
+                             "elapsed_ms": round((time.monotonic()-t0)*1000, 1)})
+                    return _r
+            except Exception:
+                pass
+# ② Select template + compose
         tpl = TEMPLATES.get(lang, TEMPLATES["en"]).get(intent_cat, TEMPLATES["en"]["general"])
         sig = _get_sig(tone_data.get("formality", "neutral"), lang)
         body_raw = tpl.format(name=name, close="—", signature="")
@@ -1260,6 +1398,24 @@ class V26Responder:
                 return result
             # full_pipeline / fast_path: continue normally
 
+        # V36-1: Escalation floor — pre-check before keyword gate
+        if V26_ESCALATION_ENABLED:
+            try:
+                esc_floor = _check_escalation_floor(subj, snip, email.get("body",""), intent_label)
+                if esc_floor.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    try: telegram_send(f"[ESC-FLOOR] {esc_floor['reason']}: {sender}")
+                    except Exception: pass
+                    _log({"run_id": RUN_ID, "phase": "escalation_floor",
+                          "reason": esc_floor.get("reason",""), "sender": sender})
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                         "action": "escalated", "severity": esc_floor.get("severity","high"),
+                         "signals": esc_floor.get("signals",[]),
+                         "reason": esc_floor.get("reason",""),
+                         "elapsed_ms": ms()})
+                    return result
+            except Exception:
+                pass
 
         # ── V29: Escalation gate in fast-path ───────────────────
         if V26_ESCALATION_ENABLED and check_escalation:
@@ -1554,6 +1710,24 @@ class V26Responder:
                 if rad.get("use_cc"):
                     use_cc = rad["use_cc"]
                 reply_all_ok = merged
+            except Exception:
+                pass
+        # V36-1: Escalation floor — pre-check before keyword gate
+        if V26_ESCALATION_ENABLED:
+            try:
+                esc_floor = _check_escalation_floor(subj, snip, email.get("body",""), intent_label)
+                if esc_floor.get("escalated"):
+                    self.stats["action_escalated"] += 1
+                    try: telegram_send(f"[ESC-FLOOR] {esc_floor['reason']}: {sender}")
+                    except Exception: pass
+                    _log({"run_id": RUN_ID, "phase": "escalation_floor",
+                          "reason": esc_floor.get("reason",""), "sender": sender})
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                         "action": "escalated", "severity": esc_floor.get("severity","high"),
+                         "signals": esc_floor.get("signals",[]),
+                         "reason": esc_floor.get("reason",""),
+                         "elapsed_ms": ms()})
+                    return result
             except Exception:
                 pass
 
