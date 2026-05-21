@@ -105,7 +105,7 @@ _AUDIT_INTERVAL       = 50
 _TQ_QUARANTINE: dict = {}
 _TQ_CANONICAL:  dict = {}
 _TQ_SINCE_LAST_AUDIT = 0
-
+_ED_ROUTER_ALWAYS_SKIP = {"escalate", "auto_ack", "review"}
 sys_path_flag = False
 if str(COMMANDS) not in __import__('sys').path:
     import sys
@@ -961,19 +961,19 @@ class V26Responder:
             pool = [
                 {"id": "dr-1", "thread_id": "dr-1", "sender": "Alice <alice@example.com>",
                  "subject": "Urgent: Server outage", "snippet": "Production is down!",
-                 "cc": "dev@team.com"},
+                 "to_header": "me@example.com", "cc": "dev@team.com"},
                 {"id": "dr-2", "thread_id": "dr-2", "sender": "Bob <bob@partner.com>",
                  "subject": "Partnership proposal", "snippet": "Strategic partnership discussion.",
-                 "cc": "colleague@partner.com"},
+                 "to_header": "me@example.com", "cc": "colleague@partner.com"},
                 {"id": "dr-3", "thread_id": "dr-3", "sender": "PayPal <paypal@paypal.com>",
                  "subject": "Payment received: $1,200", "snippet": "We received your payment of $1,200.00 — thank you!",
-                 "cc": ""},
+                 "to_header": "me@example.com", "cc": ""},
                 {"id": "dr-4", "thread_id": "dr-4", "sender": "Angry Client <legal@client.com>",
                  "subject": "I will sue you", "snippet": "This is unacceptable. Contact my lawyer immediately.",
-                 "cc": ""},
+                 "to_header": "me@example.com", "cc": ""},
                 {"id": "dr-5", "thread_id": "dr-5", "sender": "New User <new@example.com>",
                  "subject": "How do I reset my password?", "snippet": "I forgot my password and need to reset.",
-                 "cc": ""},
+                 "to_header": "me@example.com", "cc": ""},
             ]
             self._dry_outcomes = _build_dry_run_outcomes()
             print("🧪 [V26] Injecting 5 dry-run stub emails (escalation, financial, fast-path, full-path).")
@@ -1425,8 +1425,14 @@ class V26Responder:
                         "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
                 return result
             # full_pipeline / fast_path: continue normally
+            # V49-FEAT5: ActionRouter dispatch — intent → action matrix
+            if V30_ROUTER_ENABLED:
+                _drd = self._dispatch_action(_rroute, intent_label, urgency_val,
+                                             email, dry_run)
+                if _drd and _drd.get("dispatch_action") not in _ED_ROUTER_ALWAYS_SKIP:
+                    result["dispatch"] = _drd
 
-        # V36-1: Escalation floor — pre-check before keyword gate
+        # V36
         if V26_ESCALATION_ENABLED:
             try:
                 esc_floor = _check_escalation_floor(subj, snip, email.get("body",""), intent_label)
@@ -1565,6 +1571,22 @@ class V26Responder:
         if dry_run:
             _log_template_quality(intent_cat, lang, tpl, min_qc["overall_score"],
                                   g_score, sender)
+
+            # V49-FEAT3: 6-dimension response quality score
+            try:
+                _rv_ed = {"subject": subj, "snippet": snip, "sender": sender,
+                          "recipients": email.get("to", ""), "cc": email.get("cc", ""),
+                          "tone": tone_data}
+                _rv_sc = _v25_score(body, _rv_ed, intent_label)
+                _log({"ts": datetime.now(timezone.utc).isoformat(),
+                      "run_id": RUN_ID, "phase": "response_quality_score",
+                      "intent": intent_label,
+                      "overall": _rv_sc.get("overall_score", 0),
+                      "should_send": _rv_sc.get("should_send", False),
+                      "thread_id": tid})
+            except Exception:
+                pass
+
             result = add_to_result(email, {"action": "send_dry_fast", "intent": intent_label,
                     "reply_all": reply_all_ok, "tone": tone_data,
                     "quality": min_qc, "elapsed_ms": round((time.monotonic() - t0) * 1000, 1),
@@ -1656,6 +1678,22 @@ class V26Responder:
             self.stats["reply_all_missed"] += 1
         _log_template_quality(intent_cat, lang, tpl, min_qc["overall_score"],
                               g_score, sender)
+
+        # V49-FEAT3: 6-dimension response quality score
+        try:
+            _rv_ed = {"subject": subj, "snippet": snip, "sender": sender,
+                      "recipients": email.get("to", ""), "cc": email.get("cc", ""),
+                      "tone": tone_data}
+            _rv_sc = _v25_score(body, _rv_ed, intent_label)
+            _log({"ts": datetime.now(timezone.utc).isoformat(),
+                  "run_id": RUN_ID, "phase": "response_quality_score",
+                  "intent": intent_label,
+                  "overall": _rv_sc.get("overall_score", 0),
+                  "should_send": _rv_sc.get("should_send", False),
+                  "thread_id": tid})
+        except Exception:
+            pass
+
         result = add_to_result(email, {"action": "send_fast", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "thread_intent": thread_intent_label,
@@ -1895,6 +1933,22 @@ class V26Responder:
                 self.stats["reply_all_missed"] += 1
             _log_template_quality(intent_cat, lang, tpl_body, qc["overall_score"],
                                   _fast_grammar_check(body)[0], sender)
+
+            # V49-FEAT3: 6-dimension response quality score
+            try:
+                _rv_ed = {"subject": subj, "snippet": snip, "sender": sender,
+                          "recipients": email.get("to", ""), "cc": email.get("cc", ""),
+                          "tone": tone_data}
+                _rv_sc = _v25_score(body, _rv_ed, intent_label)
+                _log({"ts": datetime.now(timezone.utc).isoformat(),
+                      "run_id": RUN_ID, "phase": "response_quality_score",
+                      "intent": intent_label,
+                      "overall": _rv_sc.get("overall_score", 0),
+                      "should_send": _rv_sc.get("should_send", False),
+                      "thread_id": tid})
+            except Exception:
+                pass
+
             # R2: include M1 reply_all_binding in dry-run result
             rab = email.get("reply_all_binding") or {}
             result = add_to_result(email, {"action": "send_dry", "intent": intent_label,
@@ -1978,6 +2032,22 @@ class V26Responder:
             self.stats["reply_all_missed"] += 1
         _log_template_quality(intent_cat, lang, tpl_body, qc["overall_score"],
                               _fast_grammar_check(body)[0], sender)
+
+        # V49-FEAT3: 6-dimension response quality score
+        try:
+            _rv_ed = {"subject": subj, "snippet": snip, "sender": sender,
+                      "recipients": email.get("to", ""), "cc": email.get("cc", ""),
+                      "tone": tone_data}
+            _rv_sc = _v25_score(body, _rv_ed, intent_label)
+            _log({"ts": datetime.now(timezone.utc).isoformat(),
+                  "run_id": RUN_ID, "phase": "response_quality_score",
+                  "intent": intent_label,
+                  "overall": _rv_sc.get("overall_score", 0),
+                  "should_send": _rv_sc.get("should_send", False),
+                  "thread_id": tid})
+        except Exception:
+            pass
+
         result = add_to_result(email, {"action": "send", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "quality": qc, "elapsed_ms": ms(), "fast_path": False,
@@ -1997,6 +2067,44 @@ class V26Responder:
                              r'|\bsenhor\b|\bprezad\b|\bsolicita\b|\bretorno\b', text, re.I)
         return "pt" if len(pt_hits) >= 2 else "en"
 
+    def _dispatch_action(self, router_route: str, intent_label: str, urgency: str,
+                         _email: dict, _dry_run: bool) -> dict:
+        """Map intent + router route to a concrete action outcome annotation."""
+        if router_route in ("escalate", "auto_ack", "review"):
+            return {"dispatch_action": router_route, "intent": intent_label}
+        action = "send"
+        _pol = _INTENT_POLICIES.get(intent_label, _INTENT_POLICIES.get("default", {}))
+        if _pol.get("send_on") is False:
+            action = "skip"
+        elif intent_label in ("escalation", "legal", "security") and urgency == "high":
+            action = "escalate"
+        elif urgency == "high" and _dry_run:
+            action = "needs_review"
+        return {"dispatch_action": action, "intent": intent_label, "urgency": urgency}
+
+    def _check_escalation_spike(self) -> None:
+        """Alert if ≥3 escalated emails arrive within 60 min."""
+        try:
+            _sl_path = DATA / 'v26_stats.jsonl'
+            if not _sl_path.exists() or _sl_path.stat().st_size < 50:
+                return
+            rows = [json.loads(l) for l in _sl_path.read_text().splitlines()[-20:]
+                    if l.strip()]
+            escs = [r for r in rows if r.get("action_escalated", 0) > 0]
+            if len(escs) >= 3:
+                ts0 = datetime.fromisoformat(escs[0]["ts_end"])
+                ts1 = datetime.fromisoformat(escs[-1]["ts_end"])
+                if abs((ts1 - ts0).total_seconds()) <= 3600:
+                    try:
+                        telegram_send(
+                            f"[SPIKE ALERT] {len(escs)} escalations in ≤60 min "
+                            f"| first={escs[0].get('run_id', '?')} "
+                            f"last={escs[-1].get('run_id', '?')}")
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+
     # ── Finalise ───────────────────────────────────────────────
     def _finalise(self, run_start: str) -> dict:
         elapsed = round((datetime.now(timezone.utc) -
@@ -2005,6 +2113,9 @@ class V26Responder:
         full_n = self.stats.get("full_path_count", 0)
         avg_fast = (self.stats.get("fast_path_ms", 0) / max(fast_n, 1)) if fast_n else 0
         avg_full = (self.stats.get("full_path_ms", 0) / max(full_n, 1)) if full_n else 0
+
+        _rera_enf = self.stats.get("reply_all_enforced", 0)
+        _rera_tot = self.stats.get("reply_all_total", 0)
 
         lines = [
             f"⚡ V29 Intelligent Cascading Latency — run {RUN_ID}",
@@ -2016,7 +2127,7 @@ class V26Responder:
             f"📦 Auto-arch : {self.stats.get('action_archive', 0)}",
             f"👁  Review    : {self.stats.get('action_review', 0)}",
             f"❌ Errors    : {self.stats.get('errors_fetch', 0)}",
-            f"📬 Reply-all : {_rera_enf}/{_rera_tot} enforced" if (_rera_enf:=self.stats.get("reply_all_enforced",0))>0 or (_rera_tot:=self.stats.get("reply_all_total",0))>0 else "",
+            f"📬 Reply-all : {_rera_enf}/{_rera_tot} enforced" if _rera_enf > 0 or _rera_tot > 0 else "",
         ]
         if self.stats.get('action_escalated', 0) > 0:
             lines.append(f"🔥 Escalated  : {self.stats['action_escalated']}")
@@ -2047,6 +2158,8 @@ class V26Responder:
         }
         _log_stats(summary)
         _maybe_audit()
+        # V49-FEAT6: escalation spike detector — alert if ≥3 escalated in 60 min
+        self._check_escalation_spike()
         return summary
 
 

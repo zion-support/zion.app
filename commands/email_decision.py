@@ -198,11 +198,20 @@ def decide_reply_all(email: Email) -> dict:
     }
 
 # ── Adapter ────────────────────────────────────────────────────────────────
+
+def _parse_recipients(raw) -> list:
+    """Parse a recipient field that may be str, list, or None into a clean list."""
+    if raw is None:
+        return []
+    if isinstance(raw, list):
+        return [str(a).strip() for a in raw if str(a).strip()]
+    return [a.strip() for a in str(raw).split(",") if a.strip()]
+
 def from_email_data(ed: dict) -> "Email":
     return Email(
         sender   = ed.get("sender", ""),
-        to       = [ed.get("to_header", "")],
-        cc       = [c.strip() for c in ed.get("cc_recipients", "").split(",") if c.strip()],
+        to       = _parse_recipients(ed.get("to", ed.get("to_header", ""))),
+        cc       = _parse_recipients(ed.get("cc", ed.get("cc_recipients", ""))),
         subject  = ed.get("subject", ""),
         thread   = [m.get("snippet", "")
                     for m in ed.get("thread_messages", [{"snippet": ed.get("snippet", "")}])
