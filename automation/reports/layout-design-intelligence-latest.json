@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-21T05:02:34.852Z",
+  "timestamp": "2026-05-21T05:09:10.485Z",
   "url": "https://ziontechgroup.com",
   "score": 85,
   "metrics": {
-    "sectionCount": 17,
+    "sectionCount": 18,
     "mainCount": 1,
-    "h2Count": 14,
-    "h3Count": 710,
+    "h2Count": 15,
+    "h3Count": 716,
     "listCount": 16,
     "heroCtaCount": 0,
     "heroLinkCount": 4,
@@ -16,7 +16,7 @@
   "diagnostics": [
     {
       "id": "structure",
-      "detail": "sections=17, main=1, h2=14, h3=710, lists=16"
+      "detail": "sections=18, main=1, h2=15, h3=716, lists=16"
     },
     {
       "id": "hero",
