@@ -586,6 +586,50 @@ def _normalize_intent(label: str) -> str:
 # ── w2-01: Intent bucket hash ─────────────────────────────────
 
 
+_SENT_REPLY_LOG = DATA / 'sent_reply_log.jsonl'
+_DEDUP_WINDOW_SEC = 1800   # 30 minutes
+
+def _check_dedup(thread_id: str, dry_run: bool = False) -> bool:
+    """Return True if this thread has a recent send and can be skipped.
+
+    Writes to sent_reply_log on real, non-dry sends only.
+    """
+    if not _SENT_REPLY_LOG.exists() or not thread_id:
+        return False
+    now = __import__("datetime").datetime.now(timezone.utc).timestamp()
+    last_sent = None
+    try:
+        for line in _SENT_REPLY_LOG.read_text().splitlines():
+            try:
+                rec = json.loads(line)
+                if rec.get("thread_id") == thread_id:
+                    ts = __import__("datetime").datetime.fromisoformat(
+                        rec["sent_at"]).timestamp()
+                    if last_sent is None or ts > last_sent:
+                        last_sent = ts
+            except Exception:
+                continue
+    except Exception:
+        pass
+    if last_sent and (now - last_sent) < _DEDUP_WINDOW_SEC:
+        return True
+    return False
+
+def _record_send(thread_id: str, action: str = "send") -> None:
+    """Append a send record for dedup tracking."""
+    try:
+        rec = {
+            "thread_id":  thread_id,
+            "sent_at":    datetime.now(timezone.utc).isoformat(),
+            "action":     action,
+        }
+        _SENT_REPLY_LOG.parent.mkdir(parents=True, exist_ok=True)
+        with open(_SENT_REPLY_LOG, "a") as f:
+            f.write(json.dumps(rec) + "\n")
+    except Exception:
+        pass
+
+
 class CascadingLatencyDetector:
     """Decision-tree fast/slow gating with intent-bucket boost."""
     # w2-01 intent_bucket_hash: urgent/high-value labels auto-pass confidence gate
@@ -797,6 +841,18 @@ class V26Responder:
         sender  = email["sender"]
         subj    = email["subject"]
         snip    = email["snippet"]
+        thread_intent_label: str = "unknown"   # R3: initialise before any early-return uses it
+
+        # R3: dedup skip — if this thread was already replied to within 30 min, pass
+        try:
+            _should_skip = not dry_run and callable(_check_dedup) and _check_dedup(tid)
+        except Exception:
+            _should_skip = False
+        if _should_skip:
+            result = add_to_result(email, {"thread_intent": thread_intent_label,
+                    "action": "skip", "reason": "dedup_thread_active",
+                    "elapsed_ms": ms_elapsed()})
+            return result
 
         # ── ① Categorise (noise / auto-archive) ──────────────────
         cat_result = {"category": "inbox", "auto_archive": False,
@@ -1044,6 +1100,14 @@ class V26Responder:
         reply_all_dec = {"reply_all": False, "use_cc": ""}
         reply_all_ok  = False
         use_cc        = ""
+        # R1b: merge M1 binding (email_orchestrator -> email dict -> _fast_path)
+        rab = email.get("reply_all_binding") or {}
+        if rab.get("reply_all"):
+            reply_all_dec["reply_all"] = True
+            reply_all_dec["use_cc"]    = rab.get("use_cc", "")
+            reply_all_ok = True
+            use_cc       = rab.get("use_cc", use_cc)
+            reply_all_dec["reason"]    = rab.get("reason", "m1_binding")
         try:
             if always_cc and from_email_data:
                 ed   = from_email_data(email)
@@ -1085,13 +1149,15 @@ class V26Responder:
             except Exception:
                 pass
 
-        # ⑤ Quality gate
+        # ⑤ Quality gate — R5: financial payment_received auto-ack bypasses grammar gate
         min_qc = {
             "overall_score": round(g_score, 1),
             "passed": g_score >= 65,
             "issues": [{"dimension": "grammar", "msg": i} for i in g_issues[:3]],
         }
-        if not min_qc["passed"]:
+        _fin_payment = (self._fin_result and
+                        self._fin_result.get("financial_type") == "payment_received")
+        if (not min_qc["passed"]) and (not _fin_payment):
             result = add_to_result(email, {"action": "review", "reason": "fast_path_quality_failed",
                     "quality": min_qc, "tone": tone_data,
                     "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
@@ -1147,6 +1213,9 @@ class V26Responder:
         all_rcp = f"{sender}{cc_part}"
         subj_rep = f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
+
+        # R2: dedup tracking — record successful send
+        _record_send(tid, "send_fast")
 
         # w2-02: record send outcome for 48h poll; w2-03: expand CC list
         if W2_ENABLED:
@@ -1379,10 +1448,18 @@ class V26Responder:
                 self.stats["reply_all_missed"] += 1
             _log_template_quality(intent_cat, lang, tpl_body, qc["overall_score"],
                                   _fast_grammar_check(body)[0], sender)
+            # R2: include M1 reply_all_binding in dry-run result
+            rab = email.get("reply_all_binding") or {}
             result = add_to_result(email, {"action": "send_dry", "intent": intent_label,
                     "reply_all": reply_all_ok, "tone": tone_data,
                     "quality": qc, "elapsed_ms": ms(), "fast_path": False,
-                    "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx)})
+                    "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx),
+                    "reply_all_detail": {
+                        "reply_all": rab.get("reply_all", reply_all_ok),
+                        "use_cc": rab.get("use_cc", use_cc),
+                        "reason": rab.get("reason", ""),
+                    }
+                    })
             return result
         if not HAS_GMAIL:
             result = add_to_result(email, {"action": "skip", "reason": "no_gmail",
@@ -1393,6 +1470,9 @@ class V26Responder:
         all_rcp = f"{sender}{cc_part}"
         subj_rep= f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
+
+        # R2: dedup tracking — record successful send
+        _record_send(tid, "send")
 
         self.stats["reply_all_total"] += 1
         if reply_all_ok:

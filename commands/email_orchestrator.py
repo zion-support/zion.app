@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 email_orchestrator.py — M1 Orchestrator Stub
@@ -67,6 +68,10 @@ def orchestrate(email: dict, *, dry_run: bool = True) -> dict:
     if ra_mod:
         try:
             result = ra_mod.bind(result, email)
+            # R1a: write binding back into email so _v25_pipeline can access it
+            email["reply_all_binding"]    = result.get("reply_all_binding", {})
+            email["reply_all_enforced"]   = result.get("reply_all_enforced", False)
+            email["reply_all_reason"]     = result.get("reply_all_reason", "")
         except Exception as ex:
             result["reply_all_binding_error"] = str(ex)
 

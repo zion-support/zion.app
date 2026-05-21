@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 w3-03 — Template Slot Quarantine + Auto-Retrain

@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 w2-02 — Reply-All Outcome → Sender Profile (48h poll + write)

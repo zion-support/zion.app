@@ -1,3 +1,4 @@
+from __future__ import annotations
 #!/usr/bin/env python3
 """
 decode_reply_all.py — M1 Reply-All Binding
