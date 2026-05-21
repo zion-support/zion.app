@@ -1,8 +1,8 @@
-import { pingTool } from '@/data/tools_ping_client';
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
+import { pingTool } from '@/data/tools_ping_client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { allServices, type Service } from '../../data/servicesData';
 import Link from 'next/link';
 import SmartServiceCard from '@/components/SmartServiceCard';

@@ -1,7 +1,7 @@
-'use client';
 
-import { pingTool } from '@/data/tools_ping_client';
 // app/tools/ai-service-router/page.tsx — AI Service Router (server wrapper)
+import RouterPing from './pingClient';
+
 import AIServiceRouterClient from './AIServiceRouterClient';
 
 export const metadata = {
@@ -11,7 +11,10 @@ export const metadata = {
 };
 
 export default function AIServiceRouterPage() {
-  useEffect(() => { pingTool('ai-service-router'); }, []);
 
-  return <AIServiceRouterClient />;
+
+  return <>
+    <RouterPing />
+    <AIServiceRouterClient />
+  </>;
 }

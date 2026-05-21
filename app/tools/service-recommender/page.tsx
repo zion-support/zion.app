@@ -1,8 +1,8 @@
-import { pingTool } from '@/data/tools_ping_client';
 // app/tools/service-recommender/page.tsx
 'use client';
+import { pingTool } from '@/data/tools_ping_client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '../../data/servicesData';
 

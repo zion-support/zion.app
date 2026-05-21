@@ -1,19 +1,16 @@
-'use client';
-
-import { pingTool } from '@/data/tools_ping_client';
-// app/tools/roi-calculator/page.tsx — Standalone ROI Calculator
-import ROICalculatorClient from './ROICalculatorClient';
-
+// app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 export const metadata = {
   title: 'ROI Calculator | Zion Tech Group',
   description: 'Estimate the business value and ROI of AI & IT services for your organization. Free interactive calculator.',
 };
 
-export default function ROICalculatorPage() {
-  useEffect(() => { pingTool('roi-calculator'); }, []);
+import RouterPing from './pingClient';
+import ROICalculatorClient from './ROICalculatorClient';
 
+export default function ROICalculatorPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+      <RouterPing />
       <div className="container-page max-w-3xl">
         {/* ── Header ── */}
         <div className="text-center mb-12">
