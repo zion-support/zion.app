@@ -1,3 +1,4 @@
+import { pingTool } from '@/data/tools_ping_client';
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
 
@@ -5,6 +6,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 export default function SSLCheckerPage() {
+  useEffect(() => { pingTool('ssl-checker'); }, []);
+
   const [domain, setDomain] = useState('');
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);

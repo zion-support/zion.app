@@ -1,3 +1,4 @@
+import { pingTool } from '@/data/tools_ping_client';
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
 
@@ -22,6 +23,8 @@ const TABS = [
 type TabKey = typeof TABS[number]['key'];
 
 export default function ServiceComparisonPage() {
+  useEffect(() => { pingTool('service-comparison'); }, []);
+
   const featured = useMemo(
     () => allServices.filter((s: Service) => s.popular).slice(0, 8), []
   );

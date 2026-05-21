@@ -1,3 +1,4 @@
+import { pingTool } from '@/data/tools_ping_client';
 // app/tools/service-recommender/page.tsx
 'use client';
 
@@ -12,6 +13,8 @@ const questions = [
 ];
 
 export default function ServiceRecommenderPage() {
+  useEffect(() => { pingTool('service-recommender'); }, []);
+
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [recommendations, setRecommendations] = useState<Service[]>([]);
 

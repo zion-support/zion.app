@@ -1,3 +1,6 @@
+'use client';
+
+import { pingTool } from '@/data/tools_ping_client';
 // app/tools/roi-calculator/page.tsx — Standalone ROI Calculator
 import ROICalculatorClient from './ROICalculatorClient';
 
@@ -7,6 +10,8 @@ export const metadata = {
 };
 
 export default function ROICalculatorPage() {
+  useEffect(() => { pingTool('roi-calculator'); }, []);
+
   return (
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page max-w-3xl">
