@@ -28,6 +28,7 @@ export default function Navigation() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const solutionsRef = useRef<HTMLDivElement>(null);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -44,20 +45,15 @@ export default function Navigation() {
     if (mobileOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
     return () => { document.body.style.overflow = ''; };
-  // Dynamic featured services rotation
-  const [featuredIndex, setFeaturedIndex] = useState(0);
-  
+  }, [mobileOpen]);
+
+  // featured services rotation
   useEffect(() => {
-    // Rotate featured services every 30 seconds
     const interval = setInterval(() => {
       setFeaturedIndex(prev => (prev + 1) % FEATURED_AI_SERVICE_LINKS.length);
-    }, 30000); // 30 seconds
-    
+    }, 30000);
     return () => clearInterval(interval);
   }, []);
-
-
-  }, [mobileOpen]);
 
   function isActive(href: string): boolean {
     if (href === '/') return pathname === '/';
