@@ -343,6 +343,11 @@ class IntelligentEmailResponderV23:
         snippet   = email_data.get('snippet', '')
         thread_id = email_data.get('thread_id', '')
 
+        # V47 — direction + reply-size + CC override from email_data
+        direction   = email_data.get('direction', '')
+        reply_size  = len(email_data.get('snippet', ''))
+        cc_raw      = email_data.get('cc', '')
+        cc_override = bool(cc_raw and any(k in cc_raw.lower() for k in ['noreply', 'newsletter', 'announce']))
         result = {}
 
         # [L8] Attachment parsing
@@ -387,6 +392,16 @@ class IntelligentEmailResponderV23:
         # 4b. Keyword-based intent confidence  → merge with semantic result
         kw_intent = self.intent_scorer.score(sender, subject, snippet, thread_id)
         merged = self.semantic_intent.merged_intent(combined_text, kw_intent)
+        # V47: inject semantic score + thread context
+        merged['score'] = sem_label.get('score', 0)
+        try:
+            from thread_summarizer import ThreadSummarizer
+            ts = ThreadSummarizer()
+            summary = ts.summarize(thread_id or '')
+            if summary:
+                merged['thread_summary'] = summary
+        except Exception:
+            pass
         result['intent'] = merged
         if merged.get('confidence_level') in ('very_low', 'low'):
             result['action'] = 'human'
