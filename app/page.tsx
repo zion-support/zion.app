@@ -779,6 +779,108 @@ let list = services;
           </div>
         </div>
       </section>
+
+      {/* ── Free Tools & Interactive Utilities — 626-service catalog ── */}
+      <section className="py-16 border-t border-slate-800">
+        <div className="container-page">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-white mb-3">🛠️ Free Tools & Interactive Utilities</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm">
+              Explore our service catalog, calculate ROI, compare solutions, and route your needs — directly from
+              our <strong className="text-white">{services.length}+</strong> services across <strong className="text-white">{CATEGORIES.length}</strong> categories.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                name: 'AI Service Router',
+                path: '/tools/ai-service-router',
+                emoji: '🧭',
+                gradient: 'from-purple-500 to-indigo-500',
+                desc: 'Type your need in plain language — AI matches you to the top services from our 626-service catalog in real time. Zero server calls.',
+                tag: 'New',
+                features: ['627 services scored live', 'Keyword + synonym expansion', 'Top-12 ranked results'],
+              },
+              {
+                name: 'ROI Calculator',
+                path: '/tools/roi-calculator',
+                emoji: '📈',
+                gradient: 'from-emerald-500 to-teal-500',
+                desc: 'Estimate return on investment across AI, Automation, Cloud, Data, IT, or Security with category-specific lift multipliers.',
+                tag: '',
+                features: ['Small / Mid / Enterprise', '6-category lift model', 'Instant annual projection'],
+              },
+              {
+                name: 'Service Comparison',
+                path: '/tools/service-comparison',
+                emoji: '⚖️',
+                gradient: 'from-cyan-500 to-blue-600',
+                desc: 'Pick up to 3 services side-by-side on Overview, Features, Pricing, Benefits, and Timeline with full detail expansion.',
+                tag: '',
+                features: ['Up to 3-way compare', '5-tab deep breakdown', 'Full catalog browse'],
+              },
+              {
+                name: 'Service Recommender',
+                path: '/tools/service-recommender',
+                emoji: '🎯',
+                gradient: 'from-amber-500 to-orange-500',
+                desc: 'Answer 4 quick qualification questions and get a personalised ranked shortlist of services matched to your industry and use case.',
+                tag: '',
+                features: ['4-question qualifier', 'Industry-aware ranking', 'Direct service links'],
+              },
+              {
+                name: 'Port Scanner',
+                path: '/tools/port-scanner',
+                emoji: '🔍',
+                gradient: 'from-red-500 to-orange-500',
+                desc: 'Free online port scanner — enter a hostname or IP and instantly see which ports are open, filtered, or closed.',
+                tag: 'Free tool',
+                features: ['TCP + UDP scan', 'Public API powered', 'Instant results'],
+              },
+              {
+                name: 'SSL Certificate Checker',
+                path: '/tools/ssl-checker',
+                emoji: '🔒',
+                gradient: 'from-green-500 to-emerald-500',
+                desc: 'Check TLS certificate validity, issuer, expiry date, and chain depth for any domain — free, no account needed.',
+                tag: 'Free tool',
+                features: ['Expiry & issuer info', 'Chain depth check', 'Domain look-up'],
+              },
+            ].map(tool => (
+              <Link
+                key={tool.name}
+                href={tool.path}
+                className="group block rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-purple-500/30 p-5 transition-all duration-300"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-3xl">{tool.emoji}</span>
+                  <div className="flex gap-1">
+                    {tool.tag && (
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-cyan-300 bg-cyan-400/10 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+                        {tool.tag}
+                      </span>
+                    )}
+                    <span className="text-xs text-slate-500 bg-slate-800/80 px-2 py-0.5 rounded-full">Free →</span>
+                  </div>
+                </div>
+                <h3 className="text-base font-semibold text-white group-hover:text-purple-300 transition-colors">{tool.name}</h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed line-clamp-3">{tool.desc}</p>
+                {tool.features.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-3">
+                    {tool.features.map(f => (
+                      <span key={f} className="text-[10px] text-slate-400 bg-slate-800/60 border border-slate-700/60 px-1.5 py-0.5 rounded">{f}</span>
+                    ))}
+                  </div>
+                )}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/tools/ai-service-router" className="btn-primary text-base px-8 py-3">🚀 Find Your Perfect Service</Link>
+            <p className="text-slate-500 text-xs mt-3">All tools are 100% free — no sign-up required. Your data never leaves your browser.</p>
+          </div>
+        </div>
+      </section>
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
