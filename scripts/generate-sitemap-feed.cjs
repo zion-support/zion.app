@@ -39,6 +39,18 @@ function collectLeafPages() {
     }
   }
 
+  // 2a) Dynamic tools/* sub-pages (app/tools/* → out/tools/*/index.html)
+  const toolsDir = path.join(outDir, 'tools');
+  if (fs.existsSync(toolsDir)) {
+    for (const entry of fs.readdirSync(toolsDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const f = path.join(toolsDir, entry.name, 'index.html');
+      if (fs.existsSync(f)) {
+        pages.push({ url: `${SITE_URL}/tools/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+      }
+    }
+  }
+
   // 3) Service pages: out/services/<id>/index.html
   const svcDir = path.join(outDir, 'services');
   if (fs.existsSync(svcDir)) {
@@ -70,7 +82,7 @@ function pageInfo(url, lastmod) {
   if (url === `${SITE_URL}/`) { freq = 'daily'; prio = '1.0'; }
   else if (url.startsWith(`${SITE_URL}/services/`)) { freq = 'weekly'; prio = '0.6'; }
   else if (url.startsWith(`${SITE_URL}/blog/`)) { freq = 'weekly'; prio = '0.5'; }
-  else if (['/ai', '/ai-services', '/industry-solutions', '/solutions', '/products'].some(x => url.startsWith(SITE_URL + x))) { freq = 'weekly'; prio = '0.5'; }
+  else if (['/ai', '/ai-services', '/industry-solutions', '/solutions', '/products', '/tools'].some(x => url.startsWith(SITE_URL + x))) { freq = 'weekly'; prio = '0.5'; }
   else { freq = 'monthly'; prio = '0.4'; }
 
   const loc = url.replace(/"/g, '&quot;');
