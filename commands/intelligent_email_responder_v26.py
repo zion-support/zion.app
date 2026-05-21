@@ -1354,6 +1354,10 @@ class V26Responder:
                         return result
                     if _cr_early.get("route") == "auto_ack":
                         self.stats["action_auto_ack"] += 1
+                        self.stats["reply_all_total"] += 1
+                        self.stats["reply_all_enforced"] += 1
+                        self.stats["reply_all_total"] += 1
+                        self.stats["reply_all_enforced"] += 1
                         _log({"run_id": RUN_ID, "phase": "case_router_auto_ack",
                               "route": _cr_early.get("reason","")})
                         result = add_to_result(email, {"action": "auto_ack",
@@ -1591,6 +1595,16 @@ class V26Responder:
         if not dry_run and reply_all_ok and not use_cc:
             _log({"run_id": RUN_ID, "phase": "reply_all_blocked",
                   "reason": "no_cc_when_reply_all_ok", "thread_id": tid, "sender": sender})
+            self.stats["reply_all_total"] += 1
+            self.stats["reply_all_missed"] += 1
+            if self.response_improver:
+                try:
+                    self.response_improver.record_send(
+                        "", intent_cat, lang,
+                        tone_data.get("formality","neutral") if isinstance(tone_data,dict) else "neutral",
+                        g_score, sender, "r1_blocked_use_cc_missing")
+                except Exception:
+                    pass
             result = add_to_result(email, {"action": "review",
                     "reason": "reply_all_ok_without_cc",
                     "reply_all_ok": reply_all_ok, "use_cc": use_cc,
@@ -1915,6 +1929,16 @@ class V26Responder:
         if not dry_run and reply_all_ok and not use_cc:
             _log({"run_id": RUN_ID, "phase": "reply_all_blocked",
                   "reason": "no_cc_when_reply_all_ok", "thread_id": tid, "sender": sender})
+            self.stats["reply_all_total"] += 1
+            self.stats["reply_all_missed"] += 1
+            if self.response_improver:
+                try:
+                    self.response_improver.record_send(
+                        "", intent_cat, lang,
+                        tone_data.get("formality","neutral") if isinstance(tone_data,dict) else "neutral",
+                        g_score, sender, "r2_blocked_use_cc_missing")
+                except Exception:
+                    pass
             result = add_to_result(email, {"action": "review",
                     "reason": "reply_all_ok_without_cc",
                     "reply_all_ok": reply_all_ok, "use_cc": use_cc,
