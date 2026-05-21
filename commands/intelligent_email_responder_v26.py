@@ -640,6 +640,73 @@ def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
         intent_raw["intent_boost_src"] = f"profile:{top_cat}:+{boost:.0%}"
     return intent_raw
 
+
+# ── V34: per-intent false-positive rate calibration cache ─────────────────
+FP_RATES        = DATA / 'fp_rates.json'
+_FP_RATES_CACHE: dict = {}
+_FP_RATES_MTIME: float = 0.0
+
+def _load_fp_rates() -> dict:
+    """Read false-positive rates per intent label from disk."""
+    global _FP_RATES_CACHE, _FP_RATES_MTIME
+    try:
+        if FP_RATES.exists():
+            mtime = FP_RATES.stat().st_mtime
+            if mtime != _FP_RATES_MTIME:
+                _FP_RATES_CACHE = json.loads(FP_RATES.read_text())
+                _FP_RATES_MTIME = mtime
+    except Exception:
+        pass
+
+def _write_fp_rates(rates: dict) -> None:
+    """Persist fp_rates.json — safe atomic write."""
+    try:
+        tmp = FP_RATES.with_suffix('.tmp')
+        tmp.write_text(json.dumps(rates, indent=2))
+        tmp.replace(FP_RATES)
+    except Exception:
+        pass
+
+
+def _refresh_fp_rates() -> dict:
+    """Recompute fp_rates from v26_run_log.jsonl (last 500 entries)."""
+    try:
+        log = V26_LOG.read_text().splitlines()
+        # Only outcome entries with phase == "v25_send_outcome"
+        outcomes = []
+        for line in log[-500:]:
+            try:
+                r = json.loads(line)
+                if r.get("phase") == "v25_send_outcome":
+                    outcomes.append(r)
+            except Exception:
+                continue
+        if not outcomes:
+            return _load_fp_rates()
+
+        by_intent: dict = defaultdict(list)
+        for o in outcomes:
+            lbl = o.get("intent", "general")
+            by_intent[lbl].append(o)
+
+        rates: dict = {}
+        for lbl, rows in by_intent.items():
+            n = len(rows)
+            fp = sum(1 for r in rows if not r.get("reply_all", False)
+                     and r.get("grammar_score", 100) < 65)
+            rates[lbl] = {
+                "n": n,
+                "fp_count": fp,
+                "fp_rate": round(fp / max(n, 1), 3),
+                "updated": datetime.now(timezone.utc).isoformat(),
+            }
+        _write_fp_rates(rates)
+        return rates
+    except Exception:
+        return _load_fp_rates()
+
+    return _FP_RATES_CACHE
+
 # ── w2-01: Intent bucket hash ─────────────────────────────────
 _INTENT_BUCKETS: dict = {
     'urgent_bucket':    {'urgent', 'billing', 'legal', 'outage', 'critical', 'incident'},
@@ -824,6 +891,12 @@ class V26Responder:
     # ═══════════════════════════════════════════════════════════════
 
     def process_batch(self, limit: int = 20, dry_run: bool = False) -> dict:
+        # V35: seed FP calibration from last 500 outcomes on each run
+        if not dry_run:
+            try:
+                _refresh_fp_rates()
+            except Exception:
+                pass
         run_start = datetime.now(timezone.utc).isoformat()
         _log({"run_id": RUN_ID, "phase": "v25_start", "ts": run_start,
               "dry_run": dry_run, "limit": limit, "gmail": HAS_GMAIL})
@@ -922,11 +995,47 @@ class V26Responder:
             _should_skip = not dry_run and callable(_check_dedup) and _check_dedup(tid)
         except Exception:
             _should_skip = False
+
+        # V34-R5: Thread-depth probe — if thread has ≥10 messages & live, skip LLM → review
+        if not dry_run:
+            try:
+                from google_workspace import gmail_get
+                _thr_info    = gmail_get(tid)
+                _thread_raw  = _thr_info.get("messages", _thr_info.get("thread", {}))
+                _depth       = len(_thread_raw) if isinstance(_thread_raw, list) else 0
+                if _depth >= 10:
+                    self.stats["thread_depth_skips"] = self.stats.get("thread_depth_skips", 0) + 1
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                            "action": "review", "reason": f"thread_depth_{_depth}",
+                            "depth": _depth,
+                            "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+                    return result
+            except Exception:
+                pass
+
         if _should_skip:
             result = add_to_result(email, {"thread_intent": thread_intent_label,
                     "action": "skip", "reason": "dedup_thread_active",
                     "elapsed_ms": ms_elapsed()})
             return result
+
+        # V34-R5: Thread-depth short-circuit — live threads w/ >=10 msgs skip LLM → review
+        if not dry_run:
+            try:
+                from google_workspace import gmail_get
+                _thr   = gmail_get(tid)
+                _depth = len(_thr.get("messages", _thr.get("thread", {})))
+                if isinstance(_depth, int) and _depth >= 10:
+                    self.stats["thread_depth_skips"] = self.stats.get("thread_depth_skips", 0) + 1
+                    result = add_to_result(email, {"thread_intent": thread_intent_label,
+                            "action": "review", "reason": f"thread_depth_{_depth}",
+                            "depth": _depth,
+                            "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+                    return result
+            except Exception:
+                pass
+
+
 
         # ── ① Categorise (noise / auto-archive) ──────────────────
         cat_result = {"category": "inbox", "auto_archive": False,
@@ -1224,9 +1333,12 @@ class V26Responder:
                 pass
 
         # ⑤ Quality gate — R5: financial payment_received auto-ack bypasses grammar gate
+        # V34-R4: per-intent grammar threshold (calibrated against live FP rates)
+        _calib_thresh = intent_raw.get("_policy", {}).get("grammar_threshold", 65)
         min_qc = {
             "overall_score": round(g_score, 1),
-            "passed": g_score >= 65,
+            "passed": g_score >= _calib_thresh,
+            "threshold": _calib_thresh,
             "issues": [{"dimension": "grammar", "msg": i} for i in g_issues[:3]],
         }
         _fin_payment = (self._fin_result and
@@ -1276,7 +1388,7 @@ class V26Responder:
                     "reply_all_detail": reply_all_dec if reply_all_ok else {"reply_all": False, "reason": "dry_run"}})
             return result
 
-        _record_improver(body, intent_cat, lang, tone_data, g_score, sender, "send_dry_fast")
+        # V35: dry-run path — improver handled below after dry result
 
         if not HAS_GMAIL:
             result = add_to_result(email, {"action": "skip", "reason": "no_gmail",
@@ -1284,12 +1396,52 @@ class V26Responder:
             return result
 
         cc_part = f", {use_cc}" if reply_all_ok and use_cc else ""
+
+        # V34-R1: fail-closed — if reply_all_ok but use_cc empty, block send
+        if not dry_run and reply_all_ok and not use_cc:
+            _log({"run_id": RUN_ID, "phase": "reply_all_blocked",
+                  "reason": "no_cc_when_reply_all_ok", "thread_id": tid, "sender": sender})
+            result = add_to_result(email, {"action": "review",
+                    "reason": "reply_all_ok_without_cc",
+                    "reply_all_ok": reply_all_ok, "use_cc": use_cc,
+                    "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+            return result
+
         all_rcp = f"{sender}{cc_part}"
         subj_rep = f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
         # R2: dedup tracking — record successful send
         _record_send(tid, "send_fast")
+        # V35: ResponseImprover post-send record
+        if self.response_improver:
+            try:
+                self.response_improver.record_send(
+                    body, intent_cat, lang,
+                    tone_data.get("formality", "neutral"),
+                    g_score, sender, "send_fast")
+            except Exception:
+                pass
+
+
+        # V34-R2: post-send outcome analytics
+        _log({"run_id": RUN_ID, "phase": "v25_send_outcome",
+              "thread_id": tid, "sender": sender,
+              "intent": intent_label,
+              "reply_all": reply_all_ok, "use_cc": use_cc,
+              "grammar_score": round(g_score, 1)})
+
+
+
+        # V34-R2: post-send outcome record — log for day-zero analytics
+        send_action = "send_fast" if "fast" in (result.get("action","")) else "send_full"
+        _log({"run_id": RUN_ID, "phase": "v25_send_outcome",
+              "thread_id": tid, "sender": sender,
+              "intent": intent_label, "path": send_action,
+              "reply_all": reply_all_ok, "use_cc": use_cc,
+              "grammar_score": round(g_score, 1)})
+
+
 
         # w2-02: record send outcome for 48h poll; w2-03: expand CC list
         if W2_ENABLED:
@@ -1314,7 +1466,7 @@ class V26Responder:
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "thread_intent": thread_intent_label,
                 "quality": min_qc, "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
-        _record_improver(body, intent_cat, lang, tone_data, g_score, sender, "send_fast")
+        # V35: improver.record_send called above (L1413) — bare helper removed
         return result
 
     # ═══════════════════════════════════════════════════════════════
@@ -1332,6 +1484,15 @@ class V26Responder:
         name    = self._get_name(sender)
         lang    = self._detect_language(f"{subj} {snip}")
         ms      = lambda: round((time.monotonic() - t0) * 1000, 1)
+        # V34-R3: 8s timeout fuse — full pipeline
+        _FULL_DEADLINE = time.monotonic() + 8.0
+
+        # V34-R3: timeout fuse — 8s wallclock, mid-LLM chain
+        _FULL_TIMEOUT = 8.0
+        _FULL_START   = time.monotonic()
+        def _FULL_STILL_RUNNING():
+            return (time.monotonic() - _FULL_START) <= _FULL_TIMEOUT
+
 
         # ③ Context
         try:
@@ -1541,12 +1702,52 @@ class V26Responder:
             return result
 
         cc_part = f", {use_cc}" if reply_all_ok and use_cc else ""
+
+        # V34-R1: fail-closed — if reply_all_ok but use_cc empty, block send
+        if not dry_run and reply_all_ok and not use_cc:
+            _log({"run_id": RUN_ID, "phase": "reply_all_blocked",
+                  "reason": "no_cc_when_reply_all_ok", "thread_id": tid, "sender": sender})
+            result = add_to_result(email, {"action": "review",
+                    "reason": "reply_all_ok_without_cc",
+                    "reply_all_ok": reply_all_ok, "use_cc": use_cc,
+                    "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+            return result
+
         all_rcp = f"{sender}{cc_part}"
         subj_rep= f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp)
 
         # R2: dedup tracking — record successful send
         _record_send(tid, "send")
+        # V35: ResponseImprover post-send record
+        if self.response_improver:
+            try:
+                self.response_improver.record_send(
+                    body, intent_cat, lang,
+                    tone_data.get("formality", "neutral"),
+                    g_score, sender, "send_full")
+            except Exception:
+                pass
+
+
+        # V34-R2: post-send outcome analytics
+        _log({"run_id": RUN_ID, "phase": "v25_send_outcome",
+              "thread_id": tid, "sender": sender,
+              "intent": intent_label,
+              "reply_all": reply_all_ok, "use_cc": use_cc,
+              "grammar_score": round(g_score, 1)})
+
+
+
+        # V34-R2: post-send outcome record — log for day-zero analytics
+        send_action = "send_fast" if "fast" in (result.get("action","")) else "send_full"
+        _log({"run_id": RUN_ID, "phase": "v25_send_outcome",
+              "thread_id": tid, "sender": sender,
+              "intent": intent_label, "path": send_action,
+              "reply_all": reply_all_ok, "use_cc": use_cc,
+              "grammar_score": round(g_score, 1)})
+
+
 
         self.stats["reply_all_total"] += 1
         if reply_all_ok:
