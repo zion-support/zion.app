@@ -451,7 +451,7 @@ let list = services;
         </div>
       </section>
 
-      {/* ──       {/* ── Full Service Catalog by Category ── */}
+      {/* ── Full Service Catalog by Category ── */}
       <section className="py-20">
         <div className="container-page">
           <div className="text-center mb-12">
