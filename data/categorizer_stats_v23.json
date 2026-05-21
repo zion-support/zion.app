@@ -1,7 +1,9 @@
 {
-  "processed": 28,
+  "processed": 30,
   "categories": {
-    "billing": 28
+    "billing": 25,
+    "notification": 4,
+    "newsletter": 3
   },
-  "auto_archived": 0
+  "auto_archived": 5
 }

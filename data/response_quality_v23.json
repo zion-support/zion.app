@@ -139,6 +139,83 @@
       "score": 0.889,
       "issues_count": 1,
       "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-21T05:15:29.161217+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
+    },
+    {
+      "timestamp": "2026-05-21T05:15:49.096295+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:35:50.406084+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:35:50.409756+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your interest. Can you share more about your needs?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:25.861237+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:25.863257+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your interest. Can you share more about your needs?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:33.040850+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Obrigado pela mensagem. Retorno em breve."
+    },
+    {
+      "timestamp": "2026-05-21T05:47:39.450385+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Obrigado pela mensagem. Retorno em breve."
+    },
+    {
+      "timestamp": "2026-05-21T05:53:46.981918+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
+    },
+    {
+      "timestamp": "2026-05-21T05:53:46.983644+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "I understand. What can we do better?"
+    },
+    {
+      "timestamp": "2026-05-21T05:53:53.874284+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
     }
   ]
 }

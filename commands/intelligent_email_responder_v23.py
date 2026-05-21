@@ -237,11 +237,18 @@ class SemanticIntentClassifierV23:
         return 'very_low'
 
 
-# ════════════════════════════════════════════════════════
+# V22 foundational helper
+try:
+    from response_outcome_analyzer import ResponseOutcomeAnalyzerV22
+except Exception:
+    class ResponseOutcomeAnalyzerV22:
+        def __init__(self): pass
+        def record_sent(self, *a): return 'tbd'
+        def get_pending(self): return []
+
 # V23 MODULES (external files)
 # ════════════════════════════════════════════════════════
 
->>>>>>> eca09467b (feat(v23a): add SemanticIntentClassifierV23 and priority-intent merge fusion)
 from sender_profile_learner import SenderProfileLearnerV23
 from contextual_memory_bank import ContextualMemoryBankV23
 from intent_confidence_scorer import IntentConfidenceScorerV23
@@ -326,50 +333,6 @@ class IntelligentEmailResponderV23:
             'is_vip': is_vip,
             'is_internal': is_internal,
             'expected_response_hours': expected_hours,
-            'history_count': history,
-        }
-=======
-        self.extractor        = ActionItemExtractorV23()
-        self.semantic_intent  = SemanticIntentClassifierV23()   # V23a — per-runtime instance
-        self.extractor        = ActionItemExtractorV23()
-        self.semantic_intent  = SemanticIntentClassifierV23()   # V23a — per-runtime instance
-        self.outcome_analyzer = ResponseOutcomeAnalyzerV22()  # L7 outcome tracking
-
-    # ── V23 intelligence layers ────────────────────────────────────
-    @staticmethod
-    def _attachment_layer(email_data: dict) -> dict:
-        """Layer 8 — Detect mentions of attachment types in body/snippet."""
-        body = email_data.get('snippet','') + ' ' + email_data.get('body', '')
-        mentions = re.findall(r'(?:attach|file|document)s?\s*[:=]?\s*(\S+)', body, re.I)
-        return {'has_attachments': len(mentions) > 0, 'count': len(mentions), 'mentions': mentions[:5]}
-
-    @staticmethod
-    def _calendar_layer(email_data: dict, thread_id: str) -> dict:
-        """Layer 9 — Fetch calendar events + first available slot (next 7 days)."""
-        try:
-            full = gmail_get(thread_id) if thread_id else {}
-            calendar_link = None
-            hdrs = full.get('payload', {}).get('headers', [])
-            for h in hdrs:
-                if h.get('name', '').lower() in ('x-google-event-uri', 'x-calendar'):
-                    calendar_link = h.get('value', '')
-            return {'has_calendar_mention': bool(calendar_link), 'link': calendar_link or ''}
-        except Exception:
-            return {'has_calendar_mention': False, 'link': ''}
-
-    @staticmethod
-    def _relationship_layer(sender: str, profile: dict) -> dict:
-        """Layer 10 — Sender trust tier and expected response latency."""
-        domain = sender.split('@')[-1].lower() if '@' in sender else ''
-        trust_score = profile.get('trust_score', 0)
-        is_internal = any(domain.endswith(d) for d in ('ziontechgroup.com', 'ziontech.com'))
-        is_vip = trust_score >= 7 or is_internal
-        history = profile.get('total_messages', 0)
-        tier = 'vip' if is_vip else ('trusted' if history > 5 else 'cold_lead')
-        expected_hours = 2 if tier == 'vip' else (24 if tier == 'trusted' else 72)
-        return {
-            'tier': tier, 'trust_score': trust_score, 'is_vip': is_vip,
-            'is_internal': is_internal, 'expected_response_hours': expected_hours,
             'history_count': history,
         }
 
@@ -464,7 +427,7 @@ class IntelligentEmailResponderV23:
         return result
 
     def _generate(self, sender, subject, snippet, intent):
-"""Generate context-aware response using sender profile if available."""
+        """Generate context-aware response using sender profile if available."""
         profile = self.sender_learner.get_profile(sender) or {}
         formality = profile.get('formality', 'neutral')
         lang = 'pt' if re.search(r'[ãõçêé]|não|você|obrigado', snippet, re.I) else 'en'
