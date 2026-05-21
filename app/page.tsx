@@ -114,9 +114,18 @@ let list = services;
     return list;
   }, [services, catFilter, search]);
 
-  // Dynamic popular services — changes automatically when catalog updates
+  // Dynamic popular services — scored from catalog (no manual data edits)
   const popularServices = useMemo(
-    () => services.filter((s: any) => s.popular == true).slice(0, 50),
+    () => services
+      .map((s: any) => ({
+        ...s,
+        _score: (s.features?.length || 0) * 3          // richer features = higher score
+               + (s.benefits?.length  || 0) * 2          // more benefits = more value
+               + (s.description || '').length * 0.3      // better documented
+               + (s.category === 'ai' || s.category === 'security' ? 4 : 0), // core Zion verticals
+      }))
+      .sort((a: any, b: any) => b._score - a._score)
+      .slice(0, 50),
     [services]
   );
 
@@ -372,7 +381,7 @@ let list = services;
           <div className="flex items-center gap-3 mb-8">
             <span className="text-2xl">🔥</span>
             <h2 className="text-2xl font-bold text-white">Popular Services</h2>
-            <span className="text-sm text-slate-400">({popularServices.length} services chosen by our clients — data-driven)</span>
+            <span className="text-sm text-slate-400">(Top 12 services — ranked by feature depth, benefits, and discovery priority)</span>
           </div>
           <div className="overflow-x-auto pb-4 -mb-4">
             <div className="flex gap-4" style={{ minWidth:'max-content', paddingBottom:'8px' }}>
