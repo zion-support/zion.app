@@ -1,0 +1,5 @@
+{"thread_id": "dr-1", "cc_addresses": [], "last_used_at": "2026-05-21T12:04:15.845528+00:00", "use_count": -1, "too_recent": true, "indexed_at": "2026-05-22T03:13:51.339738+00:00"}
+{"thread_id": "dr-2", "cc_addresses": ["Bob <bob@partner.com>"], "last_used_at": "2026-05-22T02:52:34.132037+00:00", "use_count": -1, "too_recent": true, "indexed_at": "2026-05-22T03:13:51.339738+00:00"}
+{"thread_id": "dr-3", "cc_addresses": ["PayPal <paypal@paypal.com>"], "last_used_at": "2026-05-22T02:52:34.135267+00:00", "use_count": -1, "too_recent": true, "indexed_at": "2026-05-22T03:13:51.339738+00:00"}
+{"thread_id": "dr-5", "cc_addresses": ["New User <new@example.com>"], "last_used_at": "2026-05-22T02:52:34.138163+00:00", "use_count": -1, "too_recent": true, "indexed_at": "2026-05-22T03:13:51.339738+00:00"}
+{"thread_id": "dr-4", "cc_addresses": ["Angry Client <legal@client.com>"], "last_used_at": "2026-05-20T23:49:36.755061+00:00", "use_count": -1, "too_recent": false, "indexed_at": "2026-05-22T03:13:51.339738+00:00"}

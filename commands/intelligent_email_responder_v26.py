@@ -1597,9 +1597,11 @@ class V26Responder:
             except Exception:
                 pass
 
+        # IDEAS-3: thread-memory CC suggestion
+        if not dry_run and tid and sender:
+            use_cc = self._suggest_cc_from_memory(tid, sender, use_cc, dry_run)
 
 
-        # w3-01: grammar regression alert
 
         # w3-01: grammar regression alert
         if W3_ENABLED and grammar_check:
@@ -1693,6 +1695,9 @@ class V26Responder:
             result = add_to_result(email, {"action": "skip", "reason": "no_gmail",
                     "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
             return result
+
+        # IDEAS-3: CC memory injection (pre-cc_part)
+        use_cc = self._suggest_cc_from_memory(tid, sender, use_cc, dry_run)
 
         cc_part = f", {use_cc}" if reply_all_ok and use_cc else ""
 
@@ -2063,6 +2068,9 @@ class V26Responder:
                     "elapsed_ms": ms(), "fast_path": False})
             return result
 
+        # IDEAS-3: CC memory injection (pre-cc_part)
+        use_cc = self._suggest_cc_from_memory(tid, sender, use_cc, dry_run)
+
         cc_part = f", {use_cc}" if reply_all_ok and use_cc else ""
 
         # V34-R1: fail-closed — if reply_all_ok but use_cc empty, block send
@@ -2160,6 +2168,55 @@ class V26Responder:
         m = re.match(r'([^<]+)<', sender)
         if m: return m.group(1).strip()
         return sender.split('@')[0] if '@' in sender else sender[:30]
+
+
+        return sender.split('@')[0] if '@' in sender else sender[:30]
+
+    def _suggest_cc_from_memory(self, thread_id: str, email_from: str,
+                                use_cc: str, dry_run: bool) -> str:
+        """IDEAS-3: read cc_memory.jsonl and suggest thread-relevant CC addresses.
+
+        Priority order
+        1. If the reply-all cache (reply_all_cache.json) already voted use_cc
+           → keep it (cooldown already handled upstream).
+        2. If cc_memory.jsonl has an entry for this thread_id:
+           - skip if too_recent (last CC added < 1 day ago)
+           - on cooldown (use_cc was cleared upstream) → return empty (don't fight the veto)
+           - otherwise → suppress policy CC, return memory CCs
+        3. Fallthrough → return use_cc unchanged.
+        """
+        if dry_run:
+            return use_cc
+        try:
+            _mem_path = DATA / 'cc_memory.jsonl'
+            if not _mem_path.exists():
+                return use_cc
+            tid_lower = thread_id.lower().strip()
+            for line in _mem_path.read_text().splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                row = json.loads(line)
+                if row.get("thread_id", "").lower().strip() == tid_lower:
+                    _too_recent = row.get("too_recent", True)
+                    cc_list = [c for c in row.get("cc_addresses", []) if c.strip()]
+                    if _too_recent and not use_cc:
+                        # suppressed; don't suggest things added today
+                        _log({"run_id": RUN_ID, "phase": "cc_memory_suppress_too_recent",
+                              "thread_id": thread_id, "sender": email_from})
+                        return ""
+                    if cc_list and not use_cc:
+                        _cc_str  = ", ".join(cc_list[:5])
+                        self.stats.setdefault("cc_memory_injected", 0)
+                        self.stats["cc_memory_injected"] += 1
+                        _log({"run_id": RUN_ID, "phase": "cc_memory_injected",
+                              "count": len(cc_list), "thread_id": thread_id,
+                              "sender": email_from, "use_cc": _cc_str})
+                        return _cc_str
+                    break
+        except Exception:
+            pass
+        return use_cc
 
     def _detect_language(self, text: str) -> str:
         pt_hits = re.findall(r'[ãõçêéíóúàâô]|\bnão\b|\bvocê\b|\bobrigad'
