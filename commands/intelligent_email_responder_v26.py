@@ -42,6 +42,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "intent_urgent_default_cc",
         "max_auto_depth": 30,
         "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "sales_lead": {
         "grammar_threshold": 70,
@@ -49,6 +52,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "sales_review_required",
         "max_auto_depth": 15,
         "min_confidence": 0.85,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "support_issue": {
         "grammar_threshold": 65,
@@ -56,6 +62,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "support_default_cc",
         "max_auto_depth": 20,
         "min_confidence": 0.70,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "personal_one2one": {
         "grammar_threshold": 75,
@@ -63,6 +72,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "personal_privacy",
         "max_auto_depth": 10,
         "min_confidence": 0.80,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": None,
     },
     "financial": {
         "grammar_threshold": 80,
@@ -70,6 +82,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "financial_confidential",
         "max_auto_depth": 5,
         "min_confidence": 0.90,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": None,
     },
     "meeting": {
         "grammar_threshold": 65,
@@ -77,6 +92,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "meeting_participants_cc_all",
         "max_auto_depth": 15,
         "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "partnership": {
         "grammar_threshold": 80,
@@ -84,6 +102,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "partnership_intro_cc_executives",
         "max_auto_depth": 10,
         "min_confidence": 0.85,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "cancellation": {
         "grammar_threshold": 75,
@@ -91,6 +112,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "cancellation_review_cc_manager",
         "max_auto_depth": 5,
         "min_confidence": 0.80,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
     "default": {
         "grammar_threshold": 65,
@@ -98,6 +122,9 @@ _INTENT_POLICIES: dict = {
         "reply_all_reason": "default_no_cc",
         "max_auto_depth": 10,
         "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": None,
     },
 }
 _AUDIT_INTERVAL       = 50
@@ -2087,20 +2114,42 @@ class V26Responder:
                              r'|\bsenhor\b|\bprezad\b|\bsolicita\b|\bretorno\b', text, re.I)
         return "pt" if len(pt_hits) >= 2 else "en"
 
+    def _maybe_call_ask_ai_bridge(self, thread_id: str, body: str,
+                                  intent_label: str, dry_run: bool) -> bool:
+        """If thread_id is listed in forcesend.txt, bypass normal gating and send now."""
+        try:
+            src = "/tmp/forcesend.txt" if dry_run else f"{DATA}/forcesend.txt"
+            forced_ids = {
+                line.strip().lower()
+                for line in pathlib.Path(src).read_text().splitlines()
+                if line.strip()
+            }
+            if thread_id and thread_id.lower() in forced_ids:
+                return True
+        except Exception:
+            pass
+        return False
+
     def _dispatch_action(self, router_route: str, intent_label: str, urgency: str,
                          _email: dict, _dry_run: bool) -> dict:
         """Map intent + router route to a concrete action outcome annotation."""
         if router_route in ("escalate", "auto_ack", "review"):
             return {"dispatch_action": router_route, "intent": intent_label}
-        action = "send"
         _pol = _INTENT_POLICIES.get(intent_label, _INTENT_POLICIES.get("default", {}))
-        if _pol.get("send_on") is False:
-            action = "skip"
+        action = _pol.get("send_on", "send")
+        if action == "skip":
+            pass  # already set
         elif intent_label in ("escalation", "legal", "security") and urgency == "high":
             action = "escalate"
         elif urgency == "high" and _dry_run:
             action = "needs_review"
-        return {"dispatch_action": action, "intent": intent_label, "urgency": urgency}
+        return {
+            "dispatch_action": action,
+            "intent":          intent_label,
+            "urgency":         urgency,
+            "cc_on":           _pol.get("cc_on", "auto_ack"),
+            "fwd_on":          _pol.get("fwd_on"),
+        }
 
     def _check_escalation_spike(self) -> None:
         """Alert if ≥3 escalated emails arrive within 60 min."""
