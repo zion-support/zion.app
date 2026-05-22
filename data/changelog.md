@@ -38,7 +38,35 @@ All notable changes to the intelligent email responder workspace.
 ---
 ### Prior versions (references)
 
+#### [V34] — 2026-05-22
+- `commands/v34_modules/account_tag_isolation.py` — Account Tag Isolation module: `tag_email()`, `batch_tag()`, `filter_by_tag()` with per-account GRC tagging (dc-only, agency-cco, esp-verified, production, force_tags)
+- Test harness 19/19 green (account_tag_isolation test + batch + extras)
+
+#### [V33] — 2026-05-22
+- `commands/v33_modules/intent_policy_db.py` — IntentPolicyDB with JSON hot-swap GRC policy engine; 5 rules: agency(P1), non-com-true(P2), ESP(P3), DC-guard(P4), non-com-false(P5)
+- Test harness 14/14 green (12 target + 2 extras)
+- `data/policies/intent_policies.json` — GRC policy definitions consumed by IntentPolicyDB
+
+#### [V32] — 2026-05-22
+- `commands/v32_modules/reply_quality_ab.py` — A/B test split for reply templates with auto-winner selection
+- `commands/v32_modules/inbox_triage.py` — Priority scorer for inbox batch processing
+- `commands/v32_modules/template_versioner.py` — Template version bump + scaffold
+- `commands/v32_modules/lang_detector.py` — PT/EN language detection with accent-free fallback
+- `commands/v32_modules/health_alert.py` — Telegram alert sender with `check_health()` + `send_telegram_alert()`
+- Test harness 15/15 green
+
+#### [V31] — 2026-05-22
+- 5 modules in `commands/v31_modules/`: thread_context_bank, real_llm_verify, cron_schedule, billing_attachment, persona_routing
+- Test harness 18/18 green
+
 #### [V29]
+- FEAT-1: calendar_overlay injected into meeting reply body
+- FEAT-2: deadline injection in forcesend.txt
+- FEAT-3: CC cooldown (14 days) + reply_to_override (Reply-To MIME header)
+- FEAT-4: invoice/billing intents in `_INTENT_POLICIES`
+- Commit: `2d873ba34607`
+
+#### [V28]
 - FEAT-1: calendar_overlay injected into meeting reply body
 - FEAT-2: deadline injection in forcesend.txt
 - FEAT-3: CC cooldown (14 days) + reply_to_override (Reply-To MIME header)

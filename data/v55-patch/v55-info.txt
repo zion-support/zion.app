@@ -1,0 +1,4 @@
+Local: 284df68b8bbb V55: IDEAS-4 FAQ auto-reply + KB context restore
+Remote: 9b68ae3bb289 chore(app): daily quick improvement audit
+Status: PUSH BLOCKED (network). Also fixes V54 needed.
+Missing: actual push of V54+V55 stack when stable.
