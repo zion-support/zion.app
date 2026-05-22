@@ -9,6 +9,9 @@ import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+_WORKSPACE = Path(__file__).resolve().parent.parent.parent
+DATA = _WORKSPACE / 'data'
+
 _LOG = DATA / 'v26_run_log.jsonl'
 _FP_RATES = DATA / 'fp_rates.json'
 _POLICIES = DATA / 'v30_policy_learned.json'

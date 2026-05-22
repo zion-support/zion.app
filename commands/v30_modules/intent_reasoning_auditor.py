@@ -6,6 +6,10 @@ reply-all rationale, escalation causes.
 """
 
 import json, re
+from pathlib import Path
+
+_WORKSPACE = Path(__file__).resolve().parent.parent.parent
+DATA = _WORKSPACE / 'data'
 
 def build_case_log(
     run_id: str,
@@ -57,9 +61,15 @@ def build_case_log(
     }
     return entry
 
-def log_case(entry: dict) -> None:
-    """Append case log to file."""
-    log_path = DATA / 'case_reasoning.jsonl'
+def log_case(entry: dict, log_path: str = None) -> None:
+    """Append case log to file.
+    
+    Args:
+        entry: Case log dict from build_case_log()
+        log_path: Override path (tests use this). Defaults to DATA / 'case_reasoning.jsonl'
+    """
+    if log_path is None:
+        log_path = str(DATA / 'case_reasoning.jsonl')
     try:
         import sys
         if str(DATA) not in sys.path:

@@ -9,6 +9,9 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+_WORKSPACE = Path(__file__).resolve().parent.parent.parent
+DATA = _WORKSPACE / 'data'
+
 _SENDER_DB = DATA / 'sender_reputation.jsonl'
 
 def get_reputation(sender: str) -> dict:

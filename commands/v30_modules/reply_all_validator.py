@@ -7,6 +7,10 @@ Logs all decisions for per-case audit trail.
 
 import json, re
 from datetime import datetime, timezone
+from pathlib import Path
+
+_WORKSPACE = Path(__file__).resolve().parent.parent.parent
+DATA = _WORKSPACE / 'data'
 
 def validate_reply_all(
     use_cc: str,
