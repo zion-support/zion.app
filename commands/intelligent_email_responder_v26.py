@@ -1462,6 +1462,7 @@ class V26Responder:
                             if formatted:
                                 avail_info = ("\n\n📅 My availability:\n"
                                               + "\n".join(f"  • {d}" for d in formatted[:3]))
+                                body = f"{body}{avail_info}"
                     result = add_to_result(email, {
                         "thread_intent": intent_label, "action": "meeting",
                         "reply_all": True, "reply_all_reason": "meeting_booking_cc",
