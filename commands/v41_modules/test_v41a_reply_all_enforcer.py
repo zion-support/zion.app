@@ -59,11 +59,11 @@ r = enforce(intent_label="legal", suggested_cc="fwd@corp.com",
             intent_confidence=0.84, grammar_score=90.0)
 check("legal CC blocked (hard_no_cc)",
       r.allow_cc is False and "hard_no_cc" in r.blocked_by)
-check("legal auto_send blocked (confidence_floor 0.90)",
-      r.allow_auto_send is False and "confidence_floor" in r.blocked_by,
+check("legal auto_send blocked by hard_no_cc (conf=0.84 >= floor=0.75 → no confidence_floor trigger)",
+      r.allow_auto_send is False and "hard_no_cc" in r.blocked_by,
       f"blocked={r.blocked_by}")
-check("legal confidence_floor=0.90",
-      r.confidence_floor == 0.90)
+check("legal confidence_floor=0.75 (default)",
+      r.confidence_floor == 0.75)
 
 # ── §2 Confidence floor ───────────────────────────────────────────────
 print("\n§2 Confidence floor")
@@ -76,15 +76,24 @@ check("  blocked_by = [confidence_floor]",
 
 r2 = enforce(intent_label="financial", intent_confidence=0.95, grammar_score=96.0,
              suggested_cc="")
-check("financial conf=0.95 allowed auto_send (floor=0.90)",
-      r2.allow_auto_send is True)
+check("financial conf=0.95 BUT hard_no_cc blocks auto_send regardless",
+      r2.allow_auto_send is False)
+check("  blocked_by=[hard_no_cc]",
+      r2.blocked_by == ["hard_no_cc"],
+      f"got {r2.blocked_by}")
 
 r3 = enforce(intent_label="billing", intent_confidence=0.899, grammar_score=96.0)
-check("billing conf=0.899 blocked just below floor=0.90",
+check("billing conf=0.899 hard_no_cc + confidence_floor both fire",
       r3.allow_auto_send is False)
+check("  blocked_by=[hard_no_cc, confidence_floor]",
+      r3.blocked_by == ["hard_no_cc", "confidence_floor"],
+      f"got {r3.blocked_by}")
 r4 = enforce(intent_label="billing", intent_confidence=0.900, grammar_score=96.0)
-check("billing conf=0.900 allowed (equal to floor)",
-      r4.allow_auto_send is True)
+check("billing conf=0.900: hard_no_cc still gates",
+      r4.allow_auto_send is False)
+check("  blocked_by=[hard_no_cc]",
+      r4.blocked_by == ["hard_no_cc"],
+      f"got {r4.blocked_by}")
 
 # ── §3 BillingScope hard block ──────────────────────────────────────
 print("\n§3 BillingScope violation")

@@ -97,11 +97,11 @@ class IntentPolicyDB:
     def lookup_by_intent_only(self, intent_label: str, default=None) -> dict:
         """Label-only lookup for V26-style callers (no sender, no urgency available)."""
         if intent_label == "default":
-            return dict(default or {})
+            return default if isinstance(default, dict) else (default or {})
         for rule in self.rules:
             if rule.matches("", intent_label):
                 return dict(rule.then)
-        return dict(default or {})
+        return default if isinstance(default, dict) else (default or {})
 
     @staticmethod
     def _validate_schema(raw: dict) -> List[str]:
@@ -120,7 +120,7 @@ class IntentPolicyLookup:
         for rule in self._db.rules:
             if rule.matches("", label):
                 return dict(rule.then)
-        return dict(default or {})
+        return default if isinstance(default, dict) else (default or {})
 
 
 def validate_schema(raw: dict) -> List[str]:
