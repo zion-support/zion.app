@@ -585,7 +585,7 @@ def _apply_intent_boost(intent_raw: dict, profile: dict) -> dict:
     # V33-T1: per-intent calibration — apply policy overrides before confidence boost
     if intent_raw:
         label = intent_raw.get("categories", [""])[0]
-        _pol  = _INTENT_POLICIES.get(label, _INTENT_POLICIES.get("default", {}))
+        _pol  = POLICY_LOOKUP.get(label, POLICY_LOOKUP.get("default", {}))
         if _pol:
             intent_raw.setdefault("_policy", dict(_pol))
             intent_raw["intent_details"] = intent_raw.get("intent_details", {})
@@ -2185,7 +2185,7 @@ class V26Responder:
         """Map intent + router route to a concrete action outcome annotation."""
         if router_route in ("escalate", "auto_ack", "review"):
             return {"dispatch_action": router_route, "intent": intent_label}
-        _pol = _INTENT_POLICIES.get(intent_label, _INTENT_POLICIES.get("default", {}))
+        _pol = POLICY_LOOKUP.get(intent_label, POLICY_LOOKUP.get("default", {}))
         action = _pol.get("send_on", "send")
         if action == "skip":
             pass  # already set

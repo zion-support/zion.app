@@ -74,7 +74,7 @@ class IntentPolicyDB:
             raw = json.loads(p.read_text())
         except Exception:
             return cls()
-        errors = cls._validate_schema(raw)
+        errors = validate_schema(raw)
         if errors:
             return cls()
         parsed = []
@@ -103,12 +103,6 @@ class IntentPolicyDB:
                 return dict(rule.then)
         return default if isinstance(default, dict) else (default or {})
 
-    @staticmethod
-    def _validate_schema(raw: dict) -> List[str]:
-        """Thin delegation to module-level validate_schema()."""
-        return validate_schema(raw)
-
-
 class IntentPolicyLookup:
     """Drop-in identity layer: .get(label, default) mimics V26's inline dict."""
 
@@ -124,7 +118,7 @@ class IntentPolicyLookup:
 
 
 def validate_schema(raw: dict) -> List[str]:
-    """Standalone schema validator — also serves as IntentPolicyDB._validate_schema()."""
+    """Standalone schema validator — used by IntentPolicyDB.load() classmethod."""
     errors = []
     if not isinstance(raw, dict):
         errors.append("root must be a JSON object")
