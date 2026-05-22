@@ -52,14 +52,27 @@ def should_bump_version(template_id: str, threshold: float = 70.0, min_flags: in
 
 def bump_template(template_id: str, new_variant: str = "") -> dict:
     """Increment template version and log the bump event."""
+    # Count existing bumps FIRST, then write
+    count = 1
+    try:
+        if _TEMPLATE_DB.exists():
+            for l in _TEMPLATE_DB.read_text().splitlines():
+                try:
+                    row = json.loads(l)
+                    if row.get("template_id") == template_id and row.get("event") == "version_bump":
+                        count += 1
+                except (json.JSONDecodeError, AttributeError):
+                    pass
+    except Exception:
+        pass
     entry = {"ts": _now(), "template_id": template_id,
-             "event": "version_bump", "new_variant": new_variant}
+             "event": "version_bump", "new_variant": new_variant, "version": count}
     try:
         with open(_TEMPLATE_DB, "a") as f:
             f.write(json.dumps(entry) + "\n")
     except Exception:
         pass
-    return {"bumped": True, "template_id": template_id, "variant": new_variant}
+    return {"bumped": True, "template_id": template_id, "variant": new_variant, "version": count}
 
 def scaffold_version(template_id: str, base_wording: str = "", tone: str = "professional") -> str:
     """Generate a scaffolded variant wording for a bumped template."""

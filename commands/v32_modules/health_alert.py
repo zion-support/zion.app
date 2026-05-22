@@ -27,14 +27,15 @@ def _parse_ts(ts_str: str):
     except (ValueError, AttributeError):
         return None
 
-def check_health(window_hours: int = 24) -> dict:
+def check_health(log_path=None, window_hours: int = 24) -> dict:
     """Read run log and return health status + alert flags."""
-    if not _LOG.exists():
+    log = log_path or _LOG
+    if not log.exists():
         return {"status": "no_log", "alerts": []}
     cutoff = (_now() - timedelta(hours=window_hours)).isoformat()
     entries = []
     try:
-        with open(_LOG) as f:
+        with open(log) as f:
             for line in f:
                 line = line.strip()
                 if not line: continue

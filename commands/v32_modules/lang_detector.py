@@ -15,16 +15,24 @@ _PT_MARKERS = [
     r'\b(caro|caro senhor|atenciosamente|abraco|abraço)\b',
     r'\b(servico|serviço|cliente|fatura|boleto|pagamento)\b',
 ]
+_PT_ACCENTFREE = [
+    r"\bola\b", r"\bpreciso\b", r"\bajuda\b",
+    r"\bobrigado\b", r"\bobrigada\b",
+]
 _EN_MARKERS = [
     r'\b(please|thank you|kindly|good morning|sincerely|regards)\b',
     r'\b(dear|service|customer|invoice|payment|schedule)\b',
 ]
 
+import unicodedata
+
 def detect_lang(text: str, default: str = "en") -> str:
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     """Detect language: 'en', 'pt', or 'default'."""
     low = text.lower()
     pt_hits = sum(1 for p in _PT_MARKERS if re.search(p, low))
     en_hits = sum(1 for p in _EN_MARKERS if re.search(p, low))
+    pt_hits += sum(1 for p in _PT_ACCENTFREE if re.search(p, low))
     if pt_hits > en_hits:
         return "pt"
     if en_hits > pt_hits:
