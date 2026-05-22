@@ -170,5 +170,307 @@ module.exports = {
         NODE_ENV: 'production'
       }
     }
+
+    {
+      name: 'ai-content-organizer',
+      script: 'missing-pm2-stubs/ai-content-organizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-frontend-advertiser',
+      script: 'missing-pm2-stubs/ai-frontend-advertiser.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-continuous-improvement',
+      script: 'missing-pm2-stubs/ai-continuous-improvement.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-build-fixer',
+      script: 'missing-pm2-stubs/ai-build-fixer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-smart-dependency-manager',
+      script: 'missing-pm2-stubs/ai-smart-dependency-manager.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-restart-guardian',
+      script: 'missing-pm2-stubs/ai-pm2-restart-guardian.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-config-drift-guard',
+      script: 'missing-pm2-stubs/ai-pm2-config-drift-guard.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-slo-agent',
+      script: 'missing-pm2-stubs/ai-pm2-slo-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-slo-escalation-agent',
+      script: 'missing-pm2-stubs/ai-pm2-slo-escalation-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-priority-throttler',
+      script: 'missing-pm2-stubs/ai-pm2-priority-throttler.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-deploy-hook-availability-guard',
+      script: 'missing-pm2-stubs/ai-deploy-hook-availability-guard.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-netlify-hook-smoke-agent',
+      script: 'missing-pm2-stubs/ai-netlify-hook-smoke-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-test-automation',
+      script: 'missing-pm2-stubs/ai-test-automation.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-security-scanner',
+      script: 'missing-pm2-stubs/ai-security-scanner.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-git-workflow',
+      script: 'missing-pm2-stubs/ai-git-workflow.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-documentation-generator',
+      script: 'missing-pm2-stubs/ai-documentation-generator.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-bundle-optimizer',
+      script: 'missing-pm2-stubs/ai-bundle-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-image-optimizer',
+      script: 'missing-pm2-stubs/ai-image-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-route-optimizer',
+      script: 'missing-pm2-stubs/ai-route-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-complexity-analyzer',
+      script: 'missing-pm2-stubs/ai-complexity-analyzer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-performance-optimizer',
+      script: 'missing-pm2-stubs/ai-performance-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-layout-design-automation',
+      script: 'missing-pm2-stubs/ai-layout-design-automation.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-broken-link-fixer',
+      script: 'missing-pm2-stubs/ai-broken-link-fixer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'openclaw-autonomous-prompts',
+      script: 'missing-pm2-stubs/openclaw-autonomous-prompts.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'openclaw-autonomous-guardian',
+      script: 'missing-pm2-stubs/openclaw-autonomous-guardian.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' 
+    },
+    {
+      name: 'ai-content-organizer',
+      script: 'missing-pm2-stubs/ai-content-organizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-frontend-advertiser',
+      script: 'missing-pm2-stubs/ai-frontend-advertiser.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-continuous-improvement',
+      script: 'missing-pm2-stubs/ai-continuous-improvement.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-build-fixer',
+      script: 'missing-pm2-stubs/ai-build-fixer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-smart-dependency-manager',
+      script: 'missing-pm2-stubs/ai-smart-dependency-manager.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-restart-guardian',
+      script: 'missing-pm2-stubs/ai-pm2-restart-guardian.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-config-drift-guard',
+      script: 'missing-pm2-stubs/ai-pm2-config-drift-guard.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-slo-agent',
+      script: 'missing-pm2-stubs/ai-pm2-slo-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-slo-escalation-agent',
+      script: 'missing-pm2-stubs/ai-pm2-slo-escalation-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-pm2-priority-throttler',
+      script: 'missing-pm2-stubs/ai-pm2-priority-throttler.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-deploy-hook-availability-guard',
+      script: 'missing-pm2-stubs/ai-deploy-hook-availability-guard.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-netlify-hook-smoke-agent',
+      script: 'missing-pm2-stubs/ai-netlify-hook-smoke-agent.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-test-automation',
+      script: 'missing-pm2-stubs/ai-test-automation.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-security-scanner',
+      script: 'missing-pm2-stubs/ai-security-scanner.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-git-workflow',
+      script: 'missing-pm2-stubs/ai-git-workflow.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-documentation-generator',
+      script: 'missing-pm2-stubs/ai-documentation-generator.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-bundle-optimizer',
+      script: 'missing-pm2-stubs/ai-bundle-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-image-optimizer',
+      script: 'missing-pm2-stubs/ai-image-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-route-optimizer',
+      script: 'missing-pm2-stubs/ai-route-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-complexity-analyzer',
+      script: 'missing-pm2-stubs/ai-complexity-analyzer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-performance-optimizer',
+      script: 'missing-pm2-stubs/ai-performance-optimizer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-layout-design-automation',
+      script: 'missing-pm2-stubs/ai-layout-design-automation.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'ai-broken-link-fixer',
+      script: 'missing-pm2-stubs/ai-broken-link-fixer.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'openclaw-autonomous-prompts',
+      script: 'missing-pm2-stubs/openclaw-autonomous-prompts.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+    {
+      name: 'openclaw-autonomous-guardian',
+      script: 'missing-pm2-stubs/openclaw-autonomous-guardian.cjs',
+      instances: 1, autorestart: true, max_memory_restart: '512M',
+      env: { NODE_ENV: 'production' }
+    },
+
   ]
-};
+};,
