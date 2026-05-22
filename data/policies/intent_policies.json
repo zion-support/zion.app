@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "policy_id": "grp-policy-001",
+  "description": "GRC intents: agency match > non-commissionable > intent/urgency",
+  "rules": [
+    {
+      "match": {
+        "sender_domain_in": [
+          "agency-a.com"
+        ],
+        "conditions": [
+          "is_agency"
+        ]
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com",
+          "agency-a@test.com"
+        ],
+        "route_to": "agency"
+      },
+      "priority": 1
+    },
+    {
+      "match": {
+        "non_commissionable": true
+      },
+      "then": {
+        "route_to": "default"
+      },
+      "priority": 2
+    },
+    {
+      "match": {
+        "dc_domain": true
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com"
+        ],
+        "route_to": "dc"
+      },
+      "priority": 4
+    },
+    {
+      "match": {
+        "sender_domain_in": [
+          "esp-verified.com"
+        ],
+        "conditions": [
+          "esp_verified"
+        ]
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com"
+        ],
+        "route_to": "esp"
+      },
+      "priority": 3
+    },
+    {
+      "match": {
+        "non_commissionable": false
+      },
+      "then": {
+        "route_to": "subjectivity"
+      },
+      "priority": 5
+    }
+  ]
+}
