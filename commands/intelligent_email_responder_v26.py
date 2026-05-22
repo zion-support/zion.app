@@ -228,7 +228,7 @@ except Exception as _ex:
     print(f"⚠️ V26: new modules import failed: {_ex}", flush=True)
     V26_ESCALATION_ENABLED   = False
     V26_FINANCIAL_ENABLED    = False
-    V26_MEETING_ENABLED      = False
+    V26_MEETING_ENABLED      = True
     check_escalation         = None
     classify_financial_email = None
     get_availability_next_7_days = None
@@ -1424,6 +1424,26 @@ class V26Responder:
                         "reason": router_result.get("reason", ""),
                         "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
                 return result
+            # ── V50: meeting/scheduling branch
+            if _rroute == "full_pipeline" and intent_cat == "booking":
+                try:
+                    avail_info = ""
+                    if get_availability_next_7_days and V26_MEETING_ENABLED:
+                        raw_avail = get_availability_next_7_days(sender)
+                        if raw_avail:
+                            formatted = format_availability(raw_avail)
+                            if formatted:
+                                avail_info = ("\n\n📅 My availability:\n"
+                                              + "\n".join(f"  • {d}" for d in formatted[:3]))
+                    result = add_to_result(email, {
+                        "thread_intent": intent_label, "action": "meeting",
+                        "reply_all": True, "reply_all_reason": "meeting_booking_cc",
+                        "reason": f"calendar_booking|intent={intent_label}|conf={intent_raw.get('confidence',0):.2f}",
+                        "calendar_overlay": avail_info,
+                        "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+                    return result
+                except Exception:
+                    pass  # fall through if calendar fails
             # full_pipeline / fast_path: continue normally
             # V49-FEAT5: ActionRouter dispatch — intent → action matrix
             if V30_ROUTER_ENABLED:
