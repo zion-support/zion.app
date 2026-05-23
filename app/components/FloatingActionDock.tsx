@@ -37,6 +37,14 @@ const DOCK_ITEMS = [
     color: 'from-green-500 to-emerald-500',
   },
   {
+    id: 'health-check',
+    href: '/tools/health-check',
+    emoji: '🏥',
+    label: 'Platform Status',
+    action: 'nav',
+    color: 'from-emerald-500 to-green-500',
+  },
+  {
     id: 'contact',
     href: '/contact',
     emoji: '✉️',
