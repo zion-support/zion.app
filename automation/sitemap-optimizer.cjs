@@ -41,7 +41,7 @@ function discoverRoutes() {
 
     if (hasPage) {
       routes.push({ path: routePath.replace(/\/+$/, ''), segments: [...segments] });
-      return; // don't descend into route dirs further
+      // keep walking subdirs for nested routes
     }
 
     for (const e of entries) {
