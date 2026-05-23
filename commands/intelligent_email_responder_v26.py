@@ -38,8 +38,11 @@ _CANONICAL_DAYS       = 14
 # ── V39-A: IntentPolicyDB replaces inline dict ──────────────────────
 # Hot-swap by replacing data/policies/intent_policies.json · no code change.
 from commands.v33_modules.intent_policy_db import IntentPolicyDB, IntentPolicyLookup
+from commands.v40_modules.thread_headroom_lock import ThreadHeadroomLock
 POLICY_DB = IntentPolicyDB.load(str(DATA / "policies" / "intent_policies.json"))
 POLICY_LOOKUP = IntentPolicyLookup(POLICY_DB)
+# V40-C: ThreadHeadroomLock — shared lock for per-thread conveyor-belt gate.
+_head_lock = ThreadHeadroomLock(POLICY_DB)
 # Drop-in replacement: .get(label, default) mirrors V26 semantics
 
 
@@ -902,6 +905,8 @@ class V26Responder:
         self.stats['action_financial']  = 0
         self.stats['action_meeting']    = 0
 
+        # V40-C: ThreadHeadroomLock — per-thread conveyor-belt gate
+        self._head_lock = _head_lock
         # V30: CaseRouter + ResponseImprover
         self.case_router      = CaseRouter()      if V30_ROUTER_ENABLED   else None
         self.response_improver = ResponseImprover() if V30_IMPROVER_ENABLED else None
@@ -1558,6 +1563,17 @@ class V26Responder:
                     "quality": min_qc, "tone": tone_data,
                     "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
             return result
+        # V40-C: ThreadHeadroomLock — per-thread dispatch headroom gate.
+        if getattr(self, '_head_lock', None) is not None and tid:
+            try:
+                _hr = self._head_lock.check(intent_label, tid)
+            except Exception:
+                _hr = None
+            if _hr and _hr.get("headroom_blocked"):
+                return add_to_result(email, {"action": "skipped",
+                        "reason": "thread_headroom_blocked", "headroom": _hr,
+                        "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+
 
         # V26: Calendar availability
         if V26_MEETING_ENABLED and get_availability_next_7_days and intent_cat in ('booking', 'sales'):
