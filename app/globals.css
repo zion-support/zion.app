@@ -27,11 +27,11 @@
     @apply rounded-full px-8 py-3 font-semibold text-white;
     background: linear-gradient(to right, #7c3aed 0%, #db2777 100%);
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
-    @apply hover:shadow-[0_6px_25px_rgba(124,58,237,0.55)] hover:-translate-y-0.5 transition-all duration-250;
+    @apply hover:shadow-[0_6px_25px_rgba(124,58,237,0.55)] hover:-translate-y-0.5 transition-all duration-300;
   }
   .btn-secondary {
     @apply rounded-full border border-purple-500/40 bg-purple-950/25 px-8 py-3 font-semibold text-slate-200;
-    @apply hover:bg-purple-900/45 hover:border-purple-400/60 transition-all duration-250;
+    @apply hover:bg-purple-900/45 hover:border-purple-400/60 transition-all duration-300;
   }
   .btn-ghost {
     @apply rounded-full px-6 py-2.5 text-sm font-medium text-slate-300;
