@@ -45,6 +45,12 @@ const TOOLS = [
     title: 'Service Recommender',
     desc: 'Describe your business challenge and get a ranked list of recommended services across all six categories.',
   },
+  {
+    href: '/tools/health-check',
+    emoji: '🏥',
+    title: 'Platform Status',
+    desc: 'Run a free autonomous health check on Zion Tech Group infrastructure. No API key, no sign-up — just click and see.',
+  },
 ];
 
 export default function ToolsIndexPage() {
