@@ -878,7 +878,7 @@ let list = services;
         </div>
       </section>
 
-      {/* ── Free Tools & Interactive Utilities — 626-service catalog ── */}
+      {/* ── Free Tools & Interactive Utilities — {serviceCount}+-service catalog ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
           <div className="text-center mb-10">
@@ -895,9 +895,9 @@ let list = services;
                 path: '/tools/ai-service-router',
                 emoji: '🧭',
                 gradient: 'from-purple-500 to-indigo-500',
-                desc: 'Type your need in plain language — AI matches you to the top services from our 626-service catalog in real time. Zero server calls.',
+                desc: `Type your need in plain language — AI matches you to the top services from our ${serviceCount}+-service catalog in real time. Zero server calls.`,
                 tag: 'New',
-                features: ['627 services scored live', 'Keyword + synonym expansion', 'Top-12 ranked results'],
+                features: [`${serviceCount}+ services scored live`, 'Keyword + synonym expansion', 'Top-12 ranked results'],
               },
               {
                 name: 'ROI Calculator',
