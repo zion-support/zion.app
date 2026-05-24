@@ -722,8 +722,6 @@ export const aiServices: Service[] = [
     industry: 'Finance',
   },
   {
-  {
-  {
     id: 'ai-content-moderation-suite',
     title: 'AI Content Moderation Suite',
     description: 'Platform-agnostic content moderation: real-time text/image/video classification, multi-language support, custom policy rules, human-in-the-loop review queues, and automated takedown workflows for platforms, marketplaces, and social apps.',
@@ -3514,8 +3512,6 @@ export const aiServices: Service[] = [
     industry: 'Healthcare',
   },
   {
-  {
-  {
     id: 'ai-serverless-platform',
     title: 'Ai Serverless Platform',
     description: 'Ai Serverless Platform — a professional AI solution delivered by Zion Tech Group. AI-powered capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI. Contact AI specialists for a free consultation.',
@@ -4341,7 +4337,6 @@ export const aiServices: Service[] = [
     industry: 'General',
   },
   {
-  {
     id: 'content-generation',
     title: 'Content Generation',
     description: 'Content Generation empowers marketing and revenue teams with AI-driven campaign optimization, lead intelligence, and personalized outreach automati...',
@@ -4551,7 +4546,6 @@ export const aiServices: Service[] = [
     category: 'ai',
     industry: 'General',
   },
-  {
   {
     id: 'invoice-ai-automation',
     title: 'AI Invoice Processing & Auto-Posting',
@@ -4853,7 +4847,6 @@ export const aiServices: Service[] = [
     industry: 'Manufacturing',
   },
   {
-  {
     id: 'cloud-finops-1',
     title: 'Cloud FinOps & Cost Intelligence',
     description: 'Comprehensive cloud cost management service combining automated tooling, reserved instance optimization, anomaly detection, and organizational FinOps culture to reduce cloud spend by 30-40% without performance impact.',
@@ -5093,8 +5086,6 @@ export const aiServices: Service[] = [
     category: 'it',
     industry: 'Finance',
   },
-  {
-  {
   {
     id: 'it-api-gateway-openapi',
     title: 'API Gateway + OpenAPI Management',
@@ -5471,7 +5462,6 @@ export const aiServices: Service[] = [
     industry: 'General',
   },
   {
-  {
     id: 'it-e-commerce-platform-advisor',
     title: 'E-Commerce Platform Advisor',
     description: 'Platform selection, headless storefront implementation, payments integration, and Shopify/BigCommerce/Salesforce Commerce migration guidance.',
@@ -5546,8 +5536,6 @@ export const aiServices: Service[] = [
     category: 'it',
     industry: 'General',
   },
-  {
-  {
   {
     id: 'it-esg-compliance-automation',
     title: 'ESG Compliance Automation',
@@ -5638,7 +5626,6 @@ export const aiServices: Service[] = [
     category: 'it',
     industry: 'Finance',
   },
-  {
   {
     id: 'it-kubernetes-multicloud',
     title: 'Kubernetes Multi-Cloud Management',
@@ -6345,7 +6332,6 @@ export const aiServices: Service[] = [
     industry: 'General',
   },
   {
-  {
     id: 'aws-serverless-migration',
     title: 'AWS Serverless Migration',
     description: 'Migrate EC2/S3 apps to serverless: Lambda + API Gateway + DynamoDB event-driven. Schema migration dual-write zero-downtime cutover — saves compute costs 60-80%.',
@@ -6465,7 +6451,6 @@ export const aiServices: Service[] = [
     category: 'cloud',
     industry: 'General',
   },
-  {
   {
     id: 'cloud-cost-anomaly-detector',
     title: 'Cloud Cost Anomaly Detector',
@@ -6947,7 +6932,6 @@ export const aiServices: Service[] = [
     industry: 'General',
   },
   {
-  {
     id: 'identity-access-management',
     title: 'Identity & Access Management (IAM)',
     description: 'Enterprise IAM with SSO, MFA, privileged access management, and automated provisioning for secure, frictionless access across all applications.',
@@ -7038,7 +7022,6 @@ export const aiServices: Service[] = [
     industry: 'E-Commerce',
   },
   {
-  {
     id: 'it-edge-computing-solutions',
     title: 'Edge Computing & IoT Infrastructure',
     description: 'Deploy compute closer to your data sources with edge computing architecture — low-latency processing, distributed AI inference, and resilient IoT device management.',
@@ -7053,7 +7036,6 @@ export const aiServices: Service[] = [
     category: 'cloud',
     industry: 'Manufacturing',
   },
-  {
   {
     id: 'it-microservices-architecture',
     title: 'Microservices Architecture & API Gateway Design',
@@ -7369,7 +7351,6 @@ export const aiServices: Service[] = [
     category: 'security',
     industry: 'Healthcare',
   },
-  {
   {
     id: 'container-security-runtime',
     title: 'Container Security Runtime',
@@ -7851,8 +7832,6 @@ export const aiServices: Service[] = [
     industry: 'General',
   },
   {
-  {
-  {
     id: 'security-sbom-supply-chain',
     title: 'SBOM & Supply Chain Security',
     description: 'Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.',
@@ -8048,7 +8027,6 @@ export const aiServices: Service[] = [
     industry: 'Manufacturing',
   },
   {
-  {
     id: 'batch-etl-platform',
     title: 'Batch ETL Platform',
     description: 'Visual ETL/ELT builder with 400+ connectors, scheduled or event-triggered pipelines, schema drift handling, and data quality checks.',
@@ -8243,8 +8221,6 @@ export const aiServices: Service[] = [
     category: 'data',
     industry: 'General',
   },
-  {
-  {
   {
     id: 'data-log-analytics-platform',
     title: 'Log Analytics & SIP Platform',
@@ -8980,8 +8956,6 @@ export const aiServices: Service[] = [
     category: 'automation',
     industry: 'General',
   },
-  {
-  {
   {
     id: 'supply-chain-management-service',
     title: 'Supply Chain Management Platform',
