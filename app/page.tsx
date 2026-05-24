@@ -257,13 +257,13 @@ let list = services;
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
               <span className="text-green-400">●</span> <ServiceCounter /> Services — Live Now
             </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+<h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="gradient-text">AI & IT Services</span><br />
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, and automation services — from machine learning to cybersecurity, CRM automation to blockchain.
-            Get a free, custom proposal in minutes.
+            {serviceCount}+ real-world micro-SaaS services, IT solutions, and AI-powered platforms.
+            From ML &amp; cybersecurity to CRM automation. Get a custom proposal in minutes — no commitment.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
