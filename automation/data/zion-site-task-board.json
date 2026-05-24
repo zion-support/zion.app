@@ -475,7 +475,7 @@
     "P3_low": 6
 =======
   "me": {
-    "count": 3,
+    "count": 4,
     "tasks": [
       {
         "id": "fix-servicesdata-ts-schema-18-entries-wi",
@@ -497,6 +497,13 @@
         "priority": "low",
         "area": "structure",
         "detail": "2 jest.setup files, 1 __tests__ directories found in source"
+      },
+      {
+        "id": "fix-page-tsx-servicecount-string-literal-to-template-literal",
+        "title": "Fix {serviceCount}+ rendering as literal text in page.tsx L354 string-literal",
+        "priority": "high",
+        "area": "types",
+        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count."
       }
     ]
   },
