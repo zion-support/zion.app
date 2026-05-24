@@ -4,7 +4,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { allServices } from '@/data/servicesData';
 
 
-const DEMO_ITEMS = 626;
+const DEMO_ITEMS = 599;
 
 // ── Keywords + category weight boost ──────────────────────────────────────────
 const CAT_WEIGHT: Record<string, number> = {
