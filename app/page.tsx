@@ -4,7 +4,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
-import { searchServices } from './data/searchServices';
+import { SearchService } from './data/searchServices';
 import type { Service } from './data/servicesData';
 import ServiceBrowser from '@/components/ServiceBrowser';
 import ServiceSpotlight from '@/components/ServiceSpotlight';
@@ -76,19 +76,18 @@ const INDUSTRIES = [
 
 export default function HomePage() {
   const services: Service[] = allServices;
+  const serviceCount = services.length;
+  const [quickView, setQuickView] = useState<Service | null>(null);
+  const [releaseNotes, setReleaseNotes] = useState<any[]>([]);
+  const [search, setSearch] = useState('');
+  const [catFilter, setCatFilter] = useState<string | null>(null);
 
   // Stage health counts — deterministic from catalog
   const byStage = useMemo(() => {
     const acc: Record<string,number> = { published:0, beta:0, planned:0 };
-    services.forEach((s: any) => { if (s.stage in acc) acc[s.stage]++; });
+    services.forEach((s: any) => { if (Object.hasOwn(acc, s.stage)) acc[s.stage]++; });
     return acc;
   }, [services]);
-
-  const serviceCount = searchServices.length;
-    const [quickView, setQuickView] = useState<Service | null>(null);
-    const [releaseNotes, setReleaseNotes] = useState<any[]>([]);
-    const [search, setSearch] = useState('');
-    const [catFilter, setCatFilter] = useState<string | null>(null);
 
   // Dynamic stats — auto-update when catalog changes
   const stats = [
@@ -280,7 +279,7 @@ let list = services;
             {/* ── Secondary CTAs — extra discovery links ── */}
             <div className="flex flex-wrap justify-center gap-3 mt-2">
               <Link href="/search/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
-                🔍 Search Services
+🔍 Search {serviceCount}+ Services
               </Link>
               <Link href="/testimonials/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 ⭐ Client Reviews
@@ -842,7 +841,7 @@ let list = services;
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { emoji: '🏆', label: 'Service Catalog', sub: 'AI & IT catalog', color: 'from-amber-500/20 to-yellow-500/10' },
+{ emoji: '🏆', label: `${serviceCount}+ Services`, sub: 'AI & IT catalog', color: 'from-amber-500/20 to-yellow-500/10' },
               { emoji: '🚀', label: 'Latest Tech', sub: 'Modern stacks', color: 'from-purple-500/20 to-blue-500/10' },
               { emoji: '🌐', label: 'Cross-Industry', sub: '9 sectors served', color: 'from-purple-500/20 to-blue-500/10' },
               { emoji: '💡', label: 'Plug & Play', sub: 'No AI team needed', color: 'from-purple-500/20 to-blue-500/10' },
