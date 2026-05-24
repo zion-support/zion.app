@@ -4769,6 +4769,74 @@
           "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
         }
       ]
+    },
+    {
+      "timestamp": "2026-05-24T05:35:27.327Z",
+      "model": "openrouter/free",
+      "results": [
+        {
+          "slug": "generative-ai-enterprise",
+          "title": "Generative AI Enterprise",
+          "category": "AI Trends",
+          "date": "2026-05-24",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        },
+        {
+          "slug": "ai-agents-autonomous-workflows",
+          "title": "AI Agents & Autonomous Workflows",
+          "category": "AI Trends",
+          "date": "2026-05-21",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-24T05:48:54.351Z",
+      "model": "openrouter/free",
+      "results": [
+        {
+          "slug": "migrating-to-cloud-native-ai-a-step-by-step-guide",
+          "title": "Migrating to Cloud-Native AI: A Step-by-Step Guide",
+          "category": "AI Trends | Technical Guide",
+          "date": "2026-05-24",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        },
+        {
+          "slug": "the-role-of-explainable-ai-in-regulatory-compliance",
+          "title": "The Role of Explainable AI in Regulatory Compliance",
+          "category": "AI Trends | Business Strategy | Technical Guide",
+          "date": "2026-05-21",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        },
+        {
+          "slug": "building-a-data-driven-culture-with-ai-powered-analytics",
+          "title": "Building a Data-Driven Culture with AI-Powered Analytics",
+          "category": "Industry Guide | Business Strategy | Technical Guide",
+          "date": "2026-05-18",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        },
+        {
+          "slug": "the-future-of-work-how-ai-is-revolutionizing-the-job-market",
+          "title": "The Future of Work: How AI is Revolutionizing the Job Market",
+          "category": "AI Trends | Business Strategy | Industry Guide",
+          "date": "2026-05-15",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        },
+        {
+          "slug": "ai-for-social-good-success-stories-and-best-practices",
+          "title": "AI for Social Good: Success Stories and Best Practices",
+          "category": "Industry Guide | Technical Guide | AI Trends",
+          "date": "2026-05-12",
+          "status": "error",
+          "error": "OpenRouter HTTP 400: qwen/qwen3-1.8b:free is not a valid model ID"
+        }
+      ]
     }
   ]
 }

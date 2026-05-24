@@ -3,11 +3,19 @@
   "quickWins": [
     "Refresh meta descriptions",
     "Clarify primary CTAs",
-    "Update stale content"
+    "Update stale content",
+    "Add schema.org FAQ markup to key pages",
+    "Improve mobile CTA visibility",
+    "Add breadcrumb to blog posts"
   ],
   "newIdeas": [
     "Add industry-specific landing pages",
-    "Implement A/B testing for CTAs"
+    "Implement A/B testing for CTAs",
+    "Add testimonials section with social proof",
+    "Implement dark mode toggle for accessibility",
+    "Add industry-specific landing page templates",
+    "Create interactive ROI calculator",
+    "Add newsletter signup with value proposition"
   ],
   "implementationTasks": [
     {
@@ -98,8 +106,12 @@
   ],
   "evolutionRoadmap": [
     "Add industry-specific landing pages",
-    "Implement A/B testing for CTAs"
+    "Implement A/B testing for CTAs",
+    "A/B test hero CTAs",
+    "Add industry-specific case study filters",
+    "Implement progressive web app features"
   ],
   "schemaVersion": 1,
-  "updatedAt": "2026-05-23T14:43:56.160Z"
+  "updatedAt": "2026-05-24T05:38:16.806Z",
+  "evolutionIdeasRun": "2026-05-24T05:38:16.806Z"
 }
