@@ -74,13 +74,13 @@ export default function PricingCalculatorClient() {
     (sum, cat) => sum + (services[cat.key] || 0) * cat.unitPrice, 0,
   );
 
-  let tierCost = tier.basePrice;
+  let tierCost: number;
   if (tier.id === 'enterprise') {
-    // Enterprise: base cost = category subtotal × multiplier
+    // Enterprise: custom per-service multiplier
     tierCost = Math.round(categorySubtotal * tier.multiplier / 100) * 100;
-    if (tierCost < 7500) tierCost = 7500; // floor
-  } else if (overageUnits > 0) {
-    tierCost += overageUnits * 750; // $750 / extra service over limit
+    if (tierCost < 7500) tierCost = 7500; // floor at Professional tier
+  } else {
+    tierCost = tier.basePrice + overageUnits * 750;
   }
   const supportSurcharge = Math.round(tierCost * (supportLvl.multiplier - 1));
   const totalMonthly = tierCost + supportSurcharge;
@@ -197,7 +197,7 @@ export default function PricingCalculatorClient() {
           <div className="rounded-xl bg-purple-500/10 border border-purple-500/30 px-4 py-3">
             <div className="text-purple-300 text-xs mb-0.5">Monthly estimate</div>
             <div className="text-2xl font-bold text-purple-400">
-              {tier.id === 'enterprise' && tierCost < 7500
+              {tier.id === 'enterprise'
                 ? '$7,500+'
                 : `$${totalMonthly.toLocaleString()}`}
               <span className="text-xs text-slate-500 block">/ month</span>
@@ -232,8 +232,7 @@ export default function PricingCalculatorClient() {
       {/* ── Overage notice ─────────────────────────────────────────────── */}
       {!tier.featured && overageUnits > 0 && (
         <p className="text-center text-xs text-amber-400/80 mb-4">
-          ⚠️ {overageUnits} service{overageUnits > 1 ? 's' : ''} over the {totalUnits > tier.limit ? tier.limit : 0}
-          included — adding ${(overageUnits * 750).toLocaleString()}/mo in overage fees.
+          ⚠️ {overageUnits} service{overageUnits > 1 ? 's' : ''} over the {tier.serviceLimit === Infinity ? '∞' : tier.serviceLimit.toString()} included — adding ${(overageUnits * 750).toLocaleString()}/mo in overage fees.
           <a href="/pricing" className="underline ml-1">Upgrade tier →</a>
         </p>
       )}
