@@ -7,14 +7,16 @@
         "title": "Fix servicesData.ts schema \u2014 18 entries with missing required fields",
         "priority": "medium",
         "area": "types",
-        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults."
+        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults. RESOLVED: audit confirmed 0 entries missing required fields (all 599 entries have title/description/features/benefits/pricing/contactInfo/icon/href).",
+        "status": "done"
       },
       {
         "id": "replace-all-hardcoded-service-count-lite",
         "title": "Replace all hardcoded service-count literals (600+ / 626 / 627) with serviceCount+",
         "priority": "medium",
         "area": "content",
-        "detail": "0 total occurrences in 0 page.tsx files."
+        "detail": "0 total occurrences in 0 page.tsx files.",
+        "status": "done"
       },
       {
         "id": "remove-or-relocate-jest-setup-ts-__tests",
@@ -28,7 +30,8 @@
         "title": "Fix {serviceCount}+ rendering as literal text in page.tsx L354 string-literality",
         "priority": "high",
         "area": "types",
-        "detail": "desc: '...{serviceCount}+...' string literal inside JS object step array becomes `\\${serviceCount}+` \u2014 was rendering as literal text in 'How It Works / AI-Powered Matching' card (Step 2) instead of dynamic count."
+        "detail": "desc: '...{serviceCount}+...' string literal inside JS object step array becomes `\\${serviceCount}+` \u2014 was rendering as literal text in 'How It Works / AI-Powered Matching' card (Step 2) instead of dynamic count.",
+        "status": "done"
       }
     ]
   },
