@@ -1,4 +1,4 @@
-import ProductPageLayout from '../components/ProductPageLayout';
+import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

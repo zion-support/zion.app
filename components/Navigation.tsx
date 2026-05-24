@@ -47,6 +47,13 @@ const Navigation: React.FC = () => {
                 About
               </Link>
 
+              <Link
+                href="/blog"
+                className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Blog
+              </Link>
+
               {/* Services Dropdown */}
               <div className="relative group">
                 <button
@@ -97,33 +104,8 @@ const Navigation: React.FC = () => {
                     <span className="flex-1">Compare Services</span>
                     <span className="text-xs text-slate-500">→</span>
                   </Link>
-                  <Link
-                    href="/configurator"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-emerald-300 hover:bg-emerald-500/10 font-medium transition-colors"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    <span className="text-lg">⚙️</span>
-                    <span className="flex-1">Configurator</span>
-                    <span className="text-xs text-emerald-400/80">Get Proposal →</span>
-                  </Link>
-                  <Link
-                    href="/proposals"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    <span className="text-lg">📄</span>
-                    <span className="flex-1">Proposals</span>
-                    <span className="text-xs text-slate-500">→</span>
-                  </Link>
-                  <Link
-                    href="/services"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors border-t border-slate-700/40 pt-2.5 mt-0.5"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    <span className="text-lg">🛠️</span>
-                    <span className="flex-1">View All Services</span>
-                    <span className="text-xs text-slate-500">→</span>
-                  </Link>
+
+
                 </div>
               </div>
 
@@ -175,6 +157,13 @@ const Navigation: React.FC = () => {
               >
                 About
               </Link>
+              <Link
+                href="/blog"
+                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
+              >
+                Blog
+              </Link>
               {/* Mobile: 6 categories */}
               {CATEGORIES.map(cat => (
                 <Link
@@ -200,27 +189,8 @@ const Navigation: React.FC = () => {
               >
                 ⚖️ Compare Services
               </Link>
-              <Link
-                href="/configurator"
-                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
-              >
-                ⚙️ Configurator
-              </Link>
-              <Link
-                href="/proposals"
-                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
-              >
-                📄 Proposals
-              </Link>
-              <Link
-                href="/services"
-                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
-              >
-                🛠️ All Services
-              </Link>
+
+
               <Link
                 href="/contact"
                 className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
