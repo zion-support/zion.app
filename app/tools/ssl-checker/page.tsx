@@ -143,7 +143,11 @@ export default function SSLCheckerPage() {
         </div>
 
         <div className="mt-8 text-center">
+<<<<<<< HEAD
           <Link href="/services/ai-compliance/" className="text-purple-400 hover:underline text-sm">
+=======
+          <Link href="/services/ai-fedrisk-compliance" className="text-purple-400 hover:underline text-sm">
+>>>>>>> a720cf12 (fix(site-audit): hardcoded count residues → dynamic, broken anchor → ai-fedrisk-compliance)
             Need help fixing SSL issues? → Security Compliance & Monitoring
           </Link>
         </div>

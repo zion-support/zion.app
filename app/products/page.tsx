@@ -1,7 +1,17 @@
 // app/products/page.tsx — Products & Platforms
 'use client';
 import Link from 'next/link';
+<<<<<<< HEAD
 import { allServices } from '@/data/servicesData';
+=======
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Products & Platforms | Zion Tech Group',
+  description:
+    'Six product families, 599+ services — AI, IT, Cloud, Security, Data, and Automation platforms for enterprise.',
+};
+>>>>>>> a720cf12 (fix(site-audit): hardcoded count residues → dynamic, broken anchor → ai-fedrisk-compliance)
 
 const PRODUCTS: readonly {
   key: string;

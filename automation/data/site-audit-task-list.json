@@ -1,0 +1,87 @@
+{
+  "me": {
+    "count": 4,
+    "tasks": [
+      {
+        "id": "add-export-const-metadata-to-pages-missi",
+        "title": "Add export const metadata to pages missing it",
+        "priority": "medium",
+        "area": "seo",
+        "detail": "3 pages missing metadata export: page.tsx, services/[id]/page.tsx, services/stage/[stage]/page.tsx"
+      },
+      {
+        "id": "inject-json-ld-schema-organization-or-se",
+        "title": "Inject JSON-LD schema (Organization or Service) on pages without it",
+        "priority": "medium",
+        "area": "seo",
+        "detail": "144 pages without schema.org JSON-LD markup."
+      },
+      {
+        "id": "replace-remaining-hardcoded-service-coun",
+        "title": "Replace remaining hardcoded service-count literals with {serviceCount}+",
+        "priority": "medium",
+        "area": "content",
+        "detail": "Found in 2 files: app/products/page.tsx(1), app/tools/ai-service-router/page.tsx(1)"
+      },
+      {
+        "id": "fix-or-redirect-broken-internal-anchors-",
+        "title": "Fix or redirect broken internal anchors (href=\"/\u2026\")",
+        "priority": "high",
+        "area": "links",
+        "detail": "19 unique broken anchors: services/(67), configurator/(21), contact/(14), pricing-calculator/(3), about/(2), privacy/(2), search/(2), blog/(2), industry-solutions/(2), proposals/(2), cookies/(2), services/ai-compliance(2), testimonials/(1), pricing/(1), faq/(1)"
+      }
+    ]
+  },
+  "both": {
+    "count": 2,
+    "tasks": [
+      {
+        "id": "add-skip-to-main-content-links-for-keybo",
+        "title": "Add skip-to-main-content links for keyboard/screen-reader users",
+        "priority": "high",
+        "area": "a11y",
+        "detail": "148 pages lack a skip link."
+      },
+      {
+        "id": "add-aria-label-role-attributes-for-landm",
+        "title": "Add aria-label / role attributes for landmark navigation blocks",
+        "priority": "medium",
+        "area": "a11y",
+        "detail": "147 pages lack any ARIA attribute."
+      }
+    ]
+  },
+  "human": {
+    "count": 3,
+    "tasks": [
+      {
+        "id": "design-review-confirm-primary-cta-hierar",
+        "title": "Design review: confirm primary CTA hierarchy across homepage hero and service pages is optimal",
+        "priority": "high",
+        "area": "Conversion",
+        "detail": "Automated scan can read code but cannot judge visual prominence."
+      },
+      {
+        "id": "content-freshness-review-55-blog-posts-v",
+        "title": "Content freshness review: 55 blog posts vs 626 services \u2014 verify no stale stats or broken claims",
+        "priority": "medium",
+        "area": "Content",
+        "detail": "Automated scan confirmed post count but cannot validate content accuracy."
+      },
+      {
+        "id": "disable-typescript-ignorebuilderrors-in-",
+        "title": "Disable typescript.ignoreBuildErrors in next.config.js after type-check goes clean on Mac",
+        "priority": "high",
+        "area": "TypeScript",
+        "detail": "Build currently suppresses TS errors. Gate should be enforced."
+      }
+    ]
+  },
+  "meta": {
+    "total_routes": 148,
+    "hardcoded_residues": 2,
+    "broken_anchors": 19,
+    "no_skip_link": 148,
+    "no_aria": 147
+  }
+}
