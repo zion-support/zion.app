@@ -12,8 +12,8 @@ export default function ContactPage() {
       <div className="container-page">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="section-subheading mx-auto">
-            Ready to transform your business? Get in touch for a free consultation.
+          <p className="text-slate-300 mb-4 max-w-2xl mx-auto">
+            From AI strategy to cloud infrastructure and automation — free discovery call, same-day proposal.
           </p>
         </div>
 

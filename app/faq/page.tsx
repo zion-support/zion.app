@@ -19,19 +19,19 @@ const faqs = [
     questions: [
       {
         q: 'What is Zion Tech Group?',
-        a: 'Zion Tech Group is a technology services company offering AI services, IT solutions, micro-SaaS products, and strategic consulting to businesses of all sizes. We help you modernize, optimize, and grow with cutting-edge technology.'
+        a: 'Zion Tech Group delivers AI services, IT infrastructure, micro-SaaS products, and strategic consulting to businesses of all sizes — helping teams modernize, optimize, and grow with practical, cutting-edge technology.'
       },
       {
         q: 'How do I get started with Zion Tech Group?',
-        a: 'Simply reach out via our contact page or call us at +1 302 464 0950. We\'ll schedule a free initial consultation to understand your needs and recommend the best solutions for your business.'
+        a: 'Reach out via our contact page or call +1 302 464 0950. We\'ll schedule a free discovery call, understand your needs, and recommend the best-fit solutions.'
       },
       {
         q: 'What industries do you serve?',
-        a: 'We serve a wide range of industries including finance, healthcare, manufacturing, e-commerce, logistics, education, real estate, government, and technology startups.'
+        a: 'Finance, healthcare, manufacturing, e-commerce, logistics, education, real estate, government, and technology startups.'
       },
       {
         q: 'Do you offer custom solutions?',
-        a: 'Absolutely. Every business is unique. We offer fully customized solutions tailored to your specific requirements, budget, and timeline.'
+        a: 'Yes. Every business is unique. We build fully customized solutions tailored to your requirements, budget, and timeline.'
       }
     ]
   },
@@ -40,19 +40,19 @@ const faqs = [
     questions: [
       {
         q: 'What AI services do you offer?',
-        a: 'We offer a comprehensive suite of AI services including predictive maintenance, recommendation engines, identity verification, energy optimization, content intelligence, autonomous trading, and more.'
+        a: 'A full AI stack: predictive analytics, recommendation engines, identity verification, content intelligence, autonomous agents, knowledge-graph search, and more — deployed as managed APIs or embedded workflows.'
       },
       {
         q: 'Do I need an AI team to use your services?',
-        a: 'No. Our services are designed to be plug-and-play. We handle all the complexity of model training, deployment, and maintenance. You get a simple API or dashboard to integrate with your existing systems.'
+        a: 'No. We handle model training, deployment, and maintenance. You get a simple API or dashboard that plugs into your existing stack.'
       },
       {
         q: 'How do you ensure data privacy in AI solutions?',
-        a: 'We follow strict data privacy protocols including encryption at rest and in transit, role-based access control, data anonymization, and compliance with GDPR, CCPA, and HIPAA regulations.'
+        a: 'Encryption at rest and in transit, role-based access controls, data anonymization, and GDPR/CCPA/HIPAA-aligned governance.'
       },
       {
         q: 'What is the typical ROI of implementing AI solutions?',
-        a: 'Most of our clients see ROI within 3-6 months. Typical returns include 20-40% cost reduction, 15-35% revenue increase, and significant improvements in operational efficiency.'
+        a: 'Most clients see ROI within 3–6 months — 20–40% cost reduction, 15–35% revenue uplift, and measurable efficiency gains. Actual results depend on workflow maturity and scope.'
       }
     ]
   },
