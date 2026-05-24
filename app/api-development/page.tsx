@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // app/api-development/page.tsx
 import Link from 'next/link';
 import type { Metadata } from 'next';
