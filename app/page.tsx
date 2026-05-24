@@ -263,9 +263,8 @@ let list = services;
               <span className="text-white">for Your Business</span>
             </h1>
             <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              <ServiceCounter /> real-world micro SAAS services, IT solutions, and AI-powered platforms.
-              From machine learning to cybersecurity, CRM automation to blockchain.
-              Get a custom proposal in minutes.
+              {serviceCount}+ real-world micro-SaaS services, IT solutions, and AI-powered platforms.
+              From ML &amp; cybersecurity to CRM automation. Get a custom proposal in minutes — no commitment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
