@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { SERVICE_COUNT_B } from '@/data/servicesData';
 
 const DOCK_ITEMS = [
   {
     id: 'search',
     href: '#',
     emoji: '🔍',
-    label: 'Search 600+ Services',
+    label: `Search ${SERVICE_COUNT_B}+ Services`,
     action: 'search',
     color: 'from-blue-500 to-cyan-500',
   },

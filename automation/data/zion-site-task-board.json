@@ -4,17 +4,19 @@
     "tasks": [
       {
         "id": "fix-servicesdata-ts-schema-18-entries-wi",
-        "title": "Fix servicesData.ts schema — 18 entries with missing required fields",
+        "title": "Fix servicesData.ts schema \u2014 18 entries with missing required fields",
         "priority": "medium",
         "area": "types",
-        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults."
+        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults. RESOLVED: audit confirmed 0 entries missing required fields (all 599 entries have title/description/features/benefits/pricing/contactInfo/icon/href).",
+        "status": "done"
       },
       {
         "id": "replace-all-hardcoded-service-count-lite",
         "title": "Replace all hardcoded service-count literals (600+ / 626 / 627) with serviceCount+",
         "priority": "medium",
         "area": "content",
-        "detail": "0 total occurrences in 0 page.tsx files."
+        "detail": "0 total occurrences in 0 page.tsx files.",
+        "status": "done"
       },
       {
         "id": "remove-or-relocate-jest-setup-ts-__tests",
@@ -28,7 +30,7 @@
         "title": "Fix {serviceCount}+ rendering as literal text in page.tsx L354 string-literal",
         "priority": "high",
         "area": "types",
-        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count."
+        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count.",
       }
     ]
   },
@@ -40,14 +42,14 @@
         "title": "Review @/components/* vs new @shared/* import path divergence",
         "priority": "high",
         "area": "types",
-        "detail": "tsconfig aliases: @/* → ./app/* exists; @shared/* may not resolve if path is ./components/* at repo root"
+        "detail": "tsconfig aliases: @/* \u2192 ./app/* exists; @shared/* may not resolve if path is ./components/* at repo root"
       },
       {
         "id": "disable-typescript-ignorebuilderrors-in-",
         "title": "Disable typescript.ignoreBuildErrors in next.config.js once type-check is clean",
         "priority": "high",
         "area": "types",
-        "detail": "Build currently silently swallows TS errors — harmful for CI"
+        "detail": "Build currently silently swallows TS errors \u2014 harmful for CI"
       },
       {
         "id": "brand-book-review-servicesdata-ts-uses-c",
@@ -63,7 +65,7 @@
     "tasks": [
       {
         "id": "navigation-ts-fix-6-navigationlink-type-",
-        "title": "navigation.ts — fix 6 NavigationLink type: number should be NavigationLink",
+        "title": "navigation.ts \u2014 fix 6 NavigationLink type: number should be NavigationLink",
         "priority": "medium",
         "area": "types",
         "detail": "Fixes pre-existing at/import type mismatches in billing/resource constants"
