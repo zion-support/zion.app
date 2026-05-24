@@ -15,7 +15,8 @@
     "Implement dark mode toggle for accessibility",
     "Add industry-specific landing page templates",
     "Create interactive ROI calculator",
-    "Add newsletter signup with value proposition"
+    "Add newsletter signup with value proposition",
+    "[Layout/Design] Ensure consistent max-width containers: Not all content appears to be wrapped in a consistent max-width container. Use a shared layout wrapper (e.g., max-w-7xl mx-auto px-4) to keep content readable on large screens."
   ],
   "implementationTasks": [
     {
@@ -112,6 +113,7 @@
     "Implement progressive web app features"
   ],
   "schemaVersion": 1,
-  "updatedAt": "2026-05-24T05:38:16.806Z",
-  "evolutionIdeasRun": "2026-05-24T05:38:16.806Z"
+  "updatedAt": "2026-05-24T11:51:43.194Z",
+  "evolutionIdeasRun": "2026-05-24T05:38:16.806Z",
+  "layoutDesignIntelMerge": "2026-05-24T11:51:43.194Z"
 }
