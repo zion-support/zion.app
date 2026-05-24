@@ -47,12 +47,6 @@ const Navigation: React.FC = () => {
                 About
               </Link>
 
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Blog
-              </Link>
 
               {/* Services Dropdown */}
               <div className="relative group">
@@ -156,13 +150,6 @@ const Navigation: React.FC = () => {
                 onClick={toggleMenu}
               >
                 About
-              </Link>
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
-              >
-                Blog
               </Link>
               {/* Mobile: 6 categories */}
               {CATEGORIES.map(cat => (
