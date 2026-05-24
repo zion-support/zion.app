@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment | Zion Tech Group Blog',
+  title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
   description:
     'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
   alternates: { canonical: '/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment' },

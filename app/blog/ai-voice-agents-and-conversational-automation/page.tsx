@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI Voice Agents and Conversational Automation | Zion Tech Group Blog',
+  title: 'AI Voice Agents and Conversational Automation',
   description:
     'Voice-first customer service, IVR replacement, and multimodal assistants. Deploying AI voice at scale with quality and compliance.',
   alternates: { canonical: '/blog/ai-voice-agents-and-conversational-automation' },

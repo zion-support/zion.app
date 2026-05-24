@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Capacity Planner | Zion Tech Group',
+  title: 'Zion AI Capacity Planner',
   description:
     'Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.',
   alternates: { canonical: '/zion-ai-capacity-planner' },

@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Responsible AI Practices for Enterprise Deployment | Zion Tech Group Blog',
+  title: 'Responsible AI Practices for Enterprise Deployment',
   description:
     'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
   alternates: { canonical: '/blog/responsible-ai-practices-for-enterprise-deployment' },

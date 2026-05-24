@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Testimonials & Case Studies | Zion Tech Group',
+  title: 'Testimonials & Case Studies',
   description: 'See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.',
 };
 

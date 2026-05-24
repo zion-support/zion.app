@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Field Service Manager | Zion Tech Group',
+  title: 'Zion AI Field Service Manager',
   description:
     'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
   alternates: { canonical: '/zion-ai-field-service-manager' },

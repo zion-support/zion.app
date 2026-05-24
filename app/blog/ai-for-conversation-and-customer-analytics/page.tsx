@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Conversation and Customer Analytics | Zion Tech Group Blog',
+  title: 'AI for Conversation and Customer Analytics',
   description:
     'Unifying customer data, analyzing conversations across channels, and driving next-best-action recommendations. Building a true customer 360.',
   alternates: { canonical: '/blog/ai-for-conversation-and-customer-analytics' },

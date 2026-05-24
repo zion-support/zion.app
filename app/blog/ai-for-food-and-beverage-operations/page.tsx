@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Food and Beverage Operations | Zion Tech Group Blog',
+  title: 'AI for Food and Beverage Operations',
   description:
     'Demand forecasting, quality control, supply chain traceability, and waste reduction. AI across the food value chain.',
   alternates: { canonical: '/blog/ai-for-food-and-beverage-operations' },

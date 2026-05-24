@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Blog | Zion Tech Group',
+  title: 'Blog',
   description:
     'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
   alternates: { canonical: '/blog' },

@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion | Zion Tech Group Blog',
+  title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
   description:
     'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
   alternates: { canonical: '/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion' },

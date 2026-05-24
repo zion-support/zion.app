@@ -1,6 +1,6 @@
 // app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 export const metadata = {
-  title: 'ROI Calculator | Zion Tech Group',
+  title: 'ROI Calculator',
   description: 'Estimate the business value and ROI of AI & IT services for your organization. Free interactive calculator.',
 };
 

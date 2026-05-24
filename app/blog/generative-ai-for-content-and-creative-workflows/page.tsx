@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Generative AI for Content and Creative Workflows | Zion Tech Group Blog',
+  title: 'Generative AI for Content and Creative Workflows',
   description:
     'Copy generation, image creation, video editing, and brand consistency. Scaling creative output without sacrificing quality.',
   alternates: { canonical: '/blog/generative-ai-for-content-and-creative-workflows' },

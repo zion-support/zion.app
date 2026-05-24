@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Insurance Claims and Underwriting | Zion Tech Group Blog',
+  title: 'AI for Insurance Claims and Underwriting',
   description:
     'Claims triage, fraud detection, risk assessment, and automated underwriting. Improving accuracy and speed in insurance operations.',
   alternates: { canonical: '/blog/ai-for-insurance-claims-and-underwriting' },

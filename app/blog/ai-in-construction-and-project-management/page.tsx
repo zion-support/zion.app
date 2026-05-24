@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI in Construction and Project Management | Zion Tech Group Blog',
+  title: 'AI in Construction and Project Management',
   description:
     'Schedule optimization, cost forecasting, risk prediction, and document management. How AI is transforming construction delivery and project controls.',
   alternates: { canonical: '/blog/ai-in-construction-and-project-management' },

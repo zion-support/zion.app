@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Quantum Computing and Hybrid Workloads | Zion Tech Group Blog',
+  title: 'AI for Quantum Computing and Hybrid Workloads',
   description:
     'Quantum machine learning, hybrid classical-quantum pipelines, and optimization. When quantum advantage matters for AI.',
   alternates: { canonical: '/blog/ai-for-quantum-computing-and-hybrid-workloads' },

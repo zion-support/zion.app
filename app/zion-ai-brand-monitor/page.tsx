@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Brand Monitor | Zion Tech Group',
+  title: 'Zion AI Brand Monitor',
   description:
     'Track brand mentions, sentiment, and competitive positioning across channels in real time.',
   alternates: { canonical: '/zion-ai-brand-monitor' },

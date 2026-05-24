@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Sales Enablement and Revenue Operations | Zion Tech Group Blog',
+  title: 'AI for Sales Enablement and Revenue Operations',
   description:
     'Conversation intelligence, deal scoring, forecast accuracy, and sales content automation. Turning RevOps into a competitive advantage.',
   alternates: { canonical: '/blog/ai-for-sales-enablement-and-revenue-operations' },

@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for FinTech and Digital Banking Operations | Zion Tech Group Blog',
+  title: 'AI for FinTech and Digital Banking Operations',
   description:
     'Credit scoring, fraud prevention, customer onboarding, and regulatory compliance. AI-powered financial services at scale.',
   alternates: { canonical: '/blog/ai-for-fintech-and-digital-banking-operations' },

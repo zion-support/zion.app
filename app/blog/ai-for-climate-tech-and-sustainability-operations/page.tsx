@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Climate Tech and Sustainability Operations | Zion Tech Group Blog',
+  title: 'AI for Climate Tech and Sustainability Operations',
   description:
     'Carbon accounting, supply chain emissions, renewable forecasting, and ESG reporting. AI accelerates the path to net zero.',
   alternates: { canonical: '/blog/ai-for-climate-tech-and-sustainability-operations' },

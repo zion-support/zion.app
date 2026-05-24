@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Vendor Risk Analytics | Zion Tech Group',
+  title: 'Zion AI Vendor Risk Analytics',
   description:
     'Assess and monitor vendor risk with automated scoring, compliance checks, and early warning signals.',
   alternates: { canonical: '/zion-ai-vendor-risk-analytics' },

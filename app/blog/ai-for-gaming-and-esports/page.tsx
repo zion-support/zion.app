@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Gaming and Esports | Zion Tech Group Blog',
+  title: 'AI for Gaming and Esports',
   description:
     'Player analytics, anti-cheat, content moderation, and personalized experiences. AI powers the gaming industry.',
   alternates: { canonical: '/blog/ai-for-gaming-and-esports' },

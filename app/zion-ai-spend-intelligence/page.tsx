@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Spend Intelligence | Zion Tech Group',
+  title: 'Zion AI Spend Intelligence',
   description:
     'Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.',
   alternates: { canonical: '/zion-ai-spend-intelligence' },

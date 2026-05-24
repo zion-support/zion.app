@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'CRM Automation Trends 2026: AI-Driven Customer Journey Personalization | Zion Tech Group Blog',
+  title: 'CRM Automation Trends 2026: AI-Driven Customer Journey Personalization',
   description:
     'AI-powered lead scoring, predictive customer analytics, automated outreach, personalization at scale, and CRM integration with marketing and support.',
   alternates: { canonical: '/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization' },

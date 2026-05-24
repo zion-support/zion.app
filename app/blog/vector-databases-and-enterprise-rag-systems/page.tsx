@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Vector Databases and Enterprise RAG Systems | Zion Tech Group Blog',
+  title: 'Vector Databases and Enterprise RAG Systems',
   description:
     'Embeddings, similarity search, and retrieval-augmented generation. Building enterprise knowledge bases that ground LLMs in your data.',
   alternates: { canonical: '/blog/vector-databases-and-enterprise-rag-systems' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Free Tools & Calculators | Zion Tech Group',
+  title: 'Free Tools & Calculators',
   description:
     'Free online tools: ROI Calculator, Port Scanner, SSL Checker, Service Comparison, AI Service Router, and Service Recommender — no sign-up required.',
   alternates: { canonical: '/tools' },

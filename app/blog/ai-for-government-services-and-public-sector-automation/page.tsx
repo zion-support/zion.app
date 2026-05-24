@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Government Services and Public Sector Automation | Zion Tech Group Blog',
+  title: 'AI for Government Services and Public Sector Automation',
   description:
     'Citizen services, permit processing, fraud detection, and operational efficiency. Responsible AI in government with transparency and accountability.',
   alternates: { canonical: '/blog/ai-for-government-services-and-public-sector-automation' },

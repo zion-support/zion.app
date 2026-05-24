@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Edge AI and IoT: Deploying Models at the Edge | Zion Tech Group Blog',
+  title: 'Edge AI and IoT: Deploying Models at the Edge',
   description:
     'On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge.',
   alternates: { canonical: '/blog/edge-ai-and-iot-deploying-models-at-the-edge' },

@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Audit and Compliance Automation | Zion Tech Group Blog',
+  title: 'AI for Audit and Compliance Automation',
   description:
     'Automating evidence collection, compliance checks, and audit report generation. Reducing manual effort and improving audit trail completeness.',
   alternates: { canonical: '/blog/ai-for-audit-and-compliance-automation' },

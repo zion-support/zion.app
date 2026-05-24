@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Cybersecurity Threat Detection | Zion Tech Group Blog',
+  title: 'AI for Cybersecurity Threat Detection',
   description:
     'Anomaly detection, behavioral analysis, SIEM enhancement, and automated response. Using machine learning to identify and respond to threats faster.',
   alternates: { canonical: '/blog/ai-for-cybersecurity-threat-detection' },

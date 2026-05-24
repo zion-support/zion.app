@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Warehousing and Inventory Optimization | Zion Tech Group Blog',
+  title: 'AI for Warehousing and Inventory Optimization',
   description:
     'Pick path optimization, demand forecasting, slotting, and labor planning. Maximizing warehouse throughput and accuracy with intelligent automation.',
   alternates: { canonical: '/blog/ai-for-warehousing-and-inventory-optimization' },

@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Supply Visibility | Zion Tech Group',
+  title: 'Zion AI Supply Visibility',
   description:
     'Gain real-time visibility into supply chain status, risks, and alternative sourcing options.',
   alternates: { canonical: '/zion-ai-supply-visibility' },

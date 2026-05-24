@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Compliance and Regulatory Reporting | Zion Tech Group Blog',
+  title: 'AI for Compliance and Regulatory Reporting',
   description:
     'Automated compliance monitoring, regulatory change tracking, and audit-ready documentation. Reducing compliance burden with intelligent automation.',
   alternates: { canonical: '/blog/ai-for-compliance-and-regulatory-reporting' },

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Knowledge Base — Client Portal | Zion Tech Group',
+  title: 'Knowledge Base — Client Portal',
   description: 'Documentation, guides, how-tos, and technical resources.',
 };
 

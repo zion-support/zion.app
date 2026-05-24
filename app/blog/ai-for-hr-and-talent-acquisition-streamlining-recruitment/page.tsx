@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for HR and Talent Acquisition: Streamlining Recruitment | Zion Tech Group Blog',
+  title: 'AI for HR and Talent Acquisition: Streamlining Recruitment',
   description:
     'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
   alternates: { canonical: '/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment' },

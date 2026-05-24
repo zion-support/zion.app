@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI Observability and MLOps Best Practices | Zion Tech Group Blog',
+  title: 'AI Observability and MLOps Best Practices',
   description:
     'Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time.',
   alternates: { canonical: '/blog/ai-observability-and-mlops-best-practices' },

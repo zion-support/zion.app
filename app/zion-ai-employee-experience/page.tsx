@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Employee Experience | Zion Tech Group',
+  title: 'Zion AI Employee Experience',
   description:
     'Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.',
   alternates: { canonical: '/zion-ai-employee-experience' },

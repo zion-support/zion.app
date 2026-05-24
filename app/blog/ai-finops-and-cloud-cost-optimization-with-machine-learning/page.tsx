@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI FinOps: Cloud Cost Optimization with Machine Learning | Zion Tech Group Blog',
+  title: 'AI FinOps: Cloud Cost Optimization with Machine Learning',
   description:
     'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
   alternates: { canonical: '/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning' },

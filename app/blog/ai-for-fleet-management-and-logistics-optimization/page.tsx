@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Fleet Management and Logistics Optimization | Zion Tech Group Blog',
+  title: 'AI for Fleet Management and Logistics Optimization',
   description:
     'Route optimization, predictive maintenance, driver behavior analytics, and real-time visibility. How AI transforms fleet operations and reduces costs.',
   alternates: { canonical: '/blog/ai-for-fleet-management-and-logistics-optimization' },

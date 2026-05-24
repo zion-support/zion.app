@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Retail Analytics and Personalization | Zion Tech Group Blog',
+  title: 'AI for Retail Analytics and Personalization',
   description:
     'Demand forecasting, assortment optimization, personalization engines, and loss prevention. Data-driven retail in the age of AI.',
   alternates: { canonical: '/blog/ai-for-retail-analytics-and-personalization' },

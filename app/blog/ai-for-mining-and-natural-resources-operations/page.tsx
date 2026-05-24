@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Mining and Natural Resources Operations | Zion Tech Group Blog',
+  title: 'AI for Mining and Natural Resources Operations',
   description:
     'Predictive maintenance, ore grade estimation, safety monitoring, and supply chain optimization. AI in extractive industries.',
   alternates: { canonical: '/blog/ai-for-mining-and-natural-resources-operations' },

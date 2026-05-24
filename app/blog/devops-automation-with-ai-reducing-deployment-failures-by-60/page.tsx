@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'DevOps Automation with AI: Reducing Deployment Failures by 60% | Zion Tech Group Blog',
+  title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
   description:
     'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
   alternates: { canonical: '/blog/devops-automation-with-ai-reducing-deployment-failures-by-60' },

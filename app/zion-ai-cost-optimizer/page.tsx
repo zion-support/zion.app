@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Cost Optimizer | Zion Tech Group',
+  title: 'Zion AI Cost Optimizer',
   description:
     'Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.',
   alternates: { canonical: '/zion-ai-cost-optimizer' },

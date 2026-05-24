@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Customer Service and Support Automation | Zion Tech Group Blog',
+  title: 'AI for Customer Service and Support Automation',
   description:
     'Intelligent routing, self-service deflection, agent assist, and sentiment analysis. Delivering faster resolution and higher satisfaction.',
   alternates: { canonical: '/blog/ai-for-customer-service-and-support-automation' },

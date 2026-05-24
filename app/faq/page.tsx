@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Zion Tech Group',
+  title: 'Frequently Asked Questions',
   description: 'Answers to the most common questions about our AI services, IT solutions, consulting, and micro-SaaS products.',
 };
 

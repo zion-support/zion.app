@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Workflow Orchestrator | Zion Tech Group',
+  title: 'Zion AI Workflow Orchestrator',
   description:
     'Orchestrate cross-system workflows with intelligent routing, retries, and dependency management.',
   alternates: { canonical: '/zion-ai-workflow-orchestrator' },

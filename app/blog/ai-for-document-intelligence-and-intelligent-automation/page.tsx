@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Document Intelligence and Intelligent Automation | Zion Tech Group Blog',
+  title: 'AI for Document Intelligence and Intelligent Automation',
   description:
     'IDP, contract analysis, form processing, and knowledge extraction. End-to-end document workflows with AI.',
   alternates: { canonical: '/blog/ai-for-document-intelligence-and-intelligent-automation' },

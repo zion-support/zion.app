@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Real Estate and Property Management | Zion Tech Group Blog',
+  title: 'AI for Real Estate and Property Management',
   description:
     'Lease abstraction, tenant analytics, maintenance prediction, and valuation. Transforming property operations with intelligent automation.',
   alternates: { canonical: '/blog/ai-for-real-estate-and-property-management' },

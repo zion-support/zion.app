@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Media and Content Production | Zion Tech Group Blog',
+  title: 'AI for Media and Content Production',
   description:
     'Content generation, editing automation, rights management, and audience analytics. How media companies leverage AI for scale and efficiency.',
   alternates: { canonical: '/blog/ai-for-media-and-content-production' },

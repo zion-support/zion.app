@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI in Education and Learning Systems | Zion Tech Group Blog',
+  title: 'AI in Education and Learning Systems',
   description:
     'Adaptive learning, personalized curricula, assessment automation, and administrative efficiency. Transforming education with intelligent systems.',
   alternates: { canonical: '/blog/ai-in-education-and-learning-systems' },

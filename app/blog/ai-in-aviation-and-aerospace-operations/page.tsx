@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI in Aviation and Aerospace Operations | Zion Tech Group Blog',
+  title: 'AI in Aviation and Aerospace Operations',
   description:
     'Predictive maintenance, crew scheduling, cargo optimization, and safety analytics. How airlines and aerospace companies use AI for operational excellence.',
   alternates: { canonical: '/blog/ai-in-aviation-and-aerospace-operations' },

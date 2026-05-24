@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Vendor Manager | Zion Tech Group',
+  title: 'Zion AI Vendor Manager',
   description:
     'Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.',
   alternates: { canonical: '/zion-ai-vendor-manager' },

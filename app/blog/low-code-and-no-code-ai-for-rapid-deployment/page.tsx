@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Low-Code and No-Code AI for Rapid Deployment | Zion Tech Group Blog',
+  title: 'Low-Code and No-Code AI for Rapid Deployment',
   description:
     'Citizen development, workflow automation, and AI builders. Empowering business users to deploy AI without engineering.',
   alternates: { canonical: '/blog/low-code-and-no-code-ai-for-rapid-deployment' },

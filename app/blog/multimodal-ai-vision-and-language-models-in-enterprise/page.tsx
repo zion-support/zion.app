@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Multimodal AI: Vision and Language Models in Enterprise | Zion Tech Group Blog',
+  title: 'Multimodal AI: Vision and Language Models in Enterprise',
   description:
     'Combining vision and language for document understanding, quality inspection, and customer experience. When and how to deploy multimodal models.',
   alternates: { canonical: '/blog/multimodal-ai-vision-and-language-models-in-enterprise' },

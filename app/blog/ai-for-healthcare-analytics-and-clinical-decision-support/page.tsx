@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Healthcare Analytics and Clinical Decision Support | Zion Tech Group Blog',
+  title: 'AI for Healthcare Analytics and Clinical Decision Support',
   description:
     'Clinical documentation, diagnosis assistance, population health, and operational analytics. Responsible AI in healthcare delivery.',
   alternates: { canonical: '/blog/ai-for-healthcare-analytics-and-clinical-decision-support' },

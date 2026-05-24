@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Digital Transformation and Change Management | Zion Tech Group Blog',
+  title: 'AI for Digital Transformation and Change Management',
   description:
     'Driving organizational change with AI: adoption strategies, stakeholder alignment, training programs, and measuring transformation success.',
   alternates: { canonical: '/blog/ai-for-digital-transformation-and-change-management' },

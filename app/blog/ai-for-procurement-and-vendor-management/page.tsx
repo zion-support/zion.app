@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Procurement and Vendor Management | Zion Tech Group Blog',
+  title: 'AI for Procurement and Vendor Management',
   description:
     'Spend analysis, contract extraction, supplier risk scoring, and automated sourcing. Optimizing procurement with intelligent automation.',
   alternates: { canonical: '/blog/ai-for-procurement-and-vendor-management' },

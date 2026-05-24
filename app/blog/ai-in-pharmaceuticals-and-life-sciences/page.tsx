@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI in Pharmaceuticals and Life Sciences | Zion Tech Group Blog',
+  title: 'AI in Pharmaceuticals and Life Sciences',
   description:
     'Drug discovery, clinical trial optimization, regulatory submissions, and pharmacovigilance. Accelerating life sciences with AI.',
   alternates: { canonical: '/blog/ai-in-pharmaceuticals-and-life-sciences' },

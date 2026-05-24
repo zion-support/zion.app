@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production | Zion Tech Group Blog',
+  title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
   description:
     'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
   alternates: { canonical: '/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production' },

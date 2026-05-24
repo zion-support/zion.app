@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Product Development and Innovation | Zion Tech Group Blog',
+  title: 'AI for Product Development and Innovation',
   description:
     'Ideation assistance, market research automation, competitive analysis, and rapid prototyping. Accelerating the product lifecycle with AI.',
   alternates: { canonical: '/blog/ai-for-product-development-and-innovation' },

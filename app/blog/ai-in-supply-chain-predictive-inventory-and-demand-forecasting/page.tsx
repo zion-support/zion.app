@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting | Zion Tech Group Blog',
+  title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
   description:
     'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
   alternates: { canonical: '/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting' },

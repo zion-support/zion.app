@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Pricing — Zion Tech Group',
   description: 'Transparent pricing tiers for AI, IT, and Micro-SaaS services. From startup to enterprise.',
+  alternates: { canonical: '/pricing' },
 };
 
 export default function PricingPage() {
@@ -12,7 +13,7 @@ export default function PricingPage() {
       <h1 className="text-4xl font-bold text-white mb-4">Pricing</h1>
       <p className="text-slate-400 mb-12 max-w-2xl">
         Every engagement is custom — but here's a general view of our pricing tiers.
-        Use the <Link href="/pricing-calculator" className="text-purple-400 underline">Pricing Calculator</Link> for an instant estimate.
+        Use the <Link href="/pricing-calculator/" className="text-purple-400 underline">Pricing Calculator</Link> for an instant estimate.
       </p>
       <div className="grid gap-6 md:grid-cols-3">
         {[

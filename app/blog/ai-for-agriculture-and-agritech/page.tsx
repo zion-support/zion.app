@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Agriculture and Agritech | Zion Tech Group Blog',
+  title: 'AI for Agriculture and Agritech',
   description:
     'Precision agriculture, crop yield prediction, pest detection, and supply chain optimization. Data-driven farming with AI.',
   alternates: { canonical: '/blog/ai-for-agriculture-and-agritech' },

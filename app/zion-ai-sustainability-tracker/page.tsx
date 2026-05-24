@@ -2,7 +2,7 @@ import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zion AI Sustainability Tracker | Zion Tech Group',
+  title: 'Zion AI Sustainability Tracker',
   description:
     'Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.',
   alternates: { canonical: '/zion-ai-sustainability-tracker' },

@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI for Blockchain and Web3 Operations | Zion Tech Group Blog',
+  title: 'AI for Blockchain and Web3 Operations',
   description:
     'Smart contract analysis, DeFi risk scoring, NFT analytics, and on-chain intelligence. AI meets decentralized systems.',
   alternates: { canonical: '/blog/ai-for-blockchain-and-web3-operations' },

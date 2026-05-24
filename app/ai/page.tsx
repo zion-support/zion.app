@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { ArrowRight, Cog, Search } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Lab | Zion Tech Group',
+  title: 'AI Lab',
   description:
     'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',
 };

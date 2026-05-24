@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Support Tickets — Client Portal | Zion Tech Group',
+  title: 'Support Tickets — Client Portal',
   description: 'Track and manage your support requests.',
 };
 

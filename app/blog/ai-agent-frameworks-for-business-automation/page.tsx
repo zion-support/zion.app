@@ -4,7 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'AI Agent Frameworks for Business Automation | Zion Tech Group Blog',
+  title: 'AI Agent Frameworks for Business Automation',
   description:
     'Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end.',
   alternates: { canonical: '/blog/ai-agent-frameworks-for-business-automation' },
