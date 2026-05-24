@@ -490,7 +490,7 @@
         "title": "Replace all hardcoded service-count literals (600+ / 626 / 627) with serviceCount+",
         "priority": "medium",
         "area": "content",
-        "detail": "0 total occurrences in 0 page.tsx files.",
+        "detail": "0 total occurrences in 0 page.tsx files. Also: ServiceGridWithSearch.tsx L186 {626}/{6} \u2192 activeCount.toLocaleString()/CATEGORIES.length; FloatingActionDock.tsx hardcoded \"600+\" \u2192 SERVICE_COUNT_B template literal; page.tsx L354 string-literal {serviceCount}+ \u2192 template literal ${serviceCount}+.",
         "status": "done"
       },
       {
