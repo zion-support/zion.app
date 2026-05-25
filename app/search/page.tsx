@@ -106,6 +106,7 @@ export default function SearchPage() {
   }, [loaded, err, allServices.length, results.length, activeCategory, feedMeta, qLower]);
 
   return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "SearchResultsPage",\n  "name": "Search Results",\n  "description": "Search 550+ AI, IT, cloud, security, data analytics, and automation services from Zion Tech Group.",\n  "url": "https://ziontechgroup.com/search"\n}') }} />
     <div className="container-page py-12">
       {/* JSON-LD: SearchResultsPage + BreadcrumbList */}
       <script

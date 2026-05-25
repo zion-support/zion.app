@@ -95,6 +95,7 @@ export default function ServicesExplorerPage() {
           })),
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "CollectionPage",\n  "name": "Service Explorer",\n  "description": "Interactive explorer for all 550+ enterprise AI and IT services \\u2014 filter by category, industry, and keywords.",\n  "url": "https://ziontechgroup.com/services-explorer"\n}') }} />
       <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 

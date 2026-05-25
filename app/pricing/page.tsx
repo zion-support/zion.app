@@ -9,6 +9,7 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "WebPage",\n  "name": "Pricing \\u2014 Zion Tech Group",\n  "description": "Transparent pricing tiers for AI, IT, and Micro-SaaS services. From startup to enterprise.",\n  "url": "https://ziontechgroup.com/pricing"\n}') }} />
     <div className="container-page py-16">
       {/* JSON-LD: WebPage + BreadcrumbList */}
       <script

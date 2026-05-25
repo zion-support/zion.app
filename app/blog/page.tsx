@@ -100,6 +100,7 @@ export default function BlogIndexPage() {
           })),
         }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "Blog",\n  "name": "Zion Tech Group Blog",\n  "description": "Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.",\n  "url": "https://ziontechgroup.com/blog",\n  "publisher": {\n    "@type": "Organization",\n    "name": "Zion Tech Group",\n    "logo": {\n      "@type": "ImageObject",\n      "url": "https://ziontechgroup.com/logo.png"\n    }\n  },\n  "inLanguage": "en-US"\n}') }} />
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-24 left-[-10rem] h-[32rem] w-[32rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute right-[-12rem] top-32 h-[30rem] w-[30rem] rounded-full bg-fuchsia-500/10 blur-3xl" />

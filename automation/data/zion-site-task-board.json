@@ -600,8 +600,7 @@
         "priority": "medium",
         "area": "types",
         "detail": "Fixes pre-existing at/import type mismatches in billing/resource constants",
-        "status": "done",
-        "status_both": "✅"
+        "status": "done"
       },
       {
         "id": "add-schema-org-json-ld-to-service-detail",
@@ -617,8 +616,7 @@
         "priority": "medium",
         "area": "a11y",
         "detail": "Zero skip-links found; 147 of 148 pages lack ARIA landmark strings",
-        "status": "done",
-        "status_both": "✅"
+        "status": "done"
       }
     ]
   },
