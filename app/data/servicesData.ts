@@ -23,7 +23,11 @@ export const aiServices: Service[] = [
     features: ['Unified Advanced AI Fabric','Enterprise-Grade Governance & Trust','Cross-Provider Model Orchestration','Production-Ready RAG & Knowledge Systems','Enterprise Copilots and Assistants','End-to-End Observability & MLOps'],
     benefits: ["Accelerate insight by 75%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/advanced-ai-enterprise-intelligence-hub/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/advanced-ai-enterprise-intelligence-hub', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/advanced-ai-enterprise-intelligence-hub/',
     popular: false,
@@ -38,7 +42,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Accelerate insight by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-3d-asset-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-3d-asset-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-3d-asset-generator/',
     popular: false,
@@ -53,7 +61,11 @@ export const aiServices: Service[] = [
     features: ['Full-page accessibility scoring','Component-level issue mapping','Remediation code snippets','Automated PDF accessibility check'],
     benefits: ["Built-in audit governance", "Accelerate insight by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-accessibility-auditor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-accessibility-auditor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-accessibility-auditor/',
     popular: false,
@@ -68,7 +80,11 @@ export const aiServices: Service[] = [
     features: ['Auto-alt-text for images','Video transcript with speaker IDs','Readability scoring','WCAG 2.1 AA gap analysis'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-accessibility-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-accessibility-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-accessibility-optimizer/',
     popular: false,
@@ -83,7 +99,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-ad-copy-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-ad-copy-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-ad-copy-generator/',
     popular: false,
@@ -98,7 +118,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-agent-safety-evaluation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-agent-safety-evaluation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-agent-safety-evaluation/',
     popular: false,
@@ -113,7 +137,11 @@ export const aiServices: Service[] = [
     features: ['Drag-drop tool schema builder','MCP server scaffold + OpenAPI wrapper','Sandbox execution harness per tool','Multi-model compatibility (OpenAI/Anthropic/Google)'],
     benefits: ["Accelerate insight by 40%", "80%+ less manual touch", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-agent-tool-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-agent-tool-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-agent-tool-builder/',
     popular: false,
@@ -128,7 +156,11 @@ export const aiServices: Service[] = [
     features: ['Multi-agent orchestration with role specialization','Natural language workflow design','Human-in-the-loop approval gates','Self-healing workflows with error recovery','Real-time monitoring dashboards','Integration with 200+ enterprise tools'],
     benefits: ["Built-in audit governance", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-agentic-workflows/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-agentic-workflows', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-agentic-workflows/',
     popular: false,
@@ -143,7 +175,11 @@ export const aiServices: Service[] = [
     features: ['Reasoning & Planning','Tool & API Integration','Multi-Agent Orchestration','Human-in-the-Loop','Memory & Context','Observability & Safety'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-agents-autonomous/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-agents-autonomous', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-agents-autonomous/',
     popular: false,
@@ -158,7 +194,11 @@ export const aiServices: Service[] = [
     features: ['Metric anomaly scoring','Correlation across services','Predictive alerting (30 min lead)','Integration with PagerDuty & Slack'],
     benefits: ["Scale in weeks", "Accelerate insight by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-aiops-anomaly-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-aiops-anomaly-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-aiops-anomaly-detection/',
     popular: false,
@@ -173,7 +213,11 @@ export const aiServices: Service[] = [
     features: ['Real-time data processing','Predictive analytics','Custom dashboards','Automated reporting','Machine learning models'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-analytics/',
     popular: true,
@@ -188,7 +232,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-api-orchestration-layer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-api-orchestration-layer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-api-orchestration-layer/',
     popular: false,
@@ -203,7 +251,11 @@ export const aiServices: Service[] = [
     features: ['Natural language summaries','Custom templates (PDF, PPT)','Scheduled distribution','Drill-down charts','Email & Slack delivery'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-automated-reporting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-automated-reporting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-automated-reporting/',
     popular: false,
@@ -218,7 +270,11 @@ export const aiServices: Service[] = [
     features: ['Workflow automation','Document processing','Email automation','Task scheduling','Process optimization'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-automation/',
     popular: false,
@@ -233,7 +289,11 @@ export const aiServices: Service[] = [
     features: ['Code-review finder (comment on PR per pattern)','Security scan (CodeQL + Snyk + Trivy)','Auto-retry flaky test up to 3x','Feature-flag gate auto-enable on green CI','Rollback automatic on error-rate spike'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-autonomous-code-deployment/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-autonomous-code-deployment', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-autonomous-code-deployment/',
     popular: false,
@@ -248,7 +308,11 @@ export const aiServices: Service[] = [
     features: ['E2E test auto-generation from session replay','Auto-fix flaky selector on retry (best-match)','Run full E2E suite per PR + auto-open Jira','Flake budget SLA gate per PR'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-autonomous-qa-engineering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-autonomous-qa-engineering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-autonomous-qa-engineering/',
     popular: false,
@@ -263,7 +327,11 @@ export const aiServices: Service[] = [
     features: ['Lead research & enrichment (LinkedIn, company data)','Personalized cold email & LinkedIn outreach','Intent signal detection & prioritization','Automated meeting booking (Calendly integration)','CRM sync (HubSpot, Salesforce)'],
     benefits: ["Reduce overhead by 90%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-bdr-sdr/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-bdr-sdr', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-bdr-sdr/',
     popular: false,
@@ -278,7 +346,11 @@ export const aiServices: Service[] = [
     features: ['Multi-tier BOM parsing','Supplier intelligence and scoring','Alternative component finder','Global price benchmarking','Lead-time and supply-risk prediction'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-bom-procurement/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-bom-procurement', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-bom-procurement/',
     popular: false,
@@ -293,7 +365,11 @@ export const aiServices: Service[] = [
     features: ['Tone profiling from existing content','Multi-channel voice adapter','Brand guideline document generator','Competitor tone comparison','Real-time style enforcement'],
     benefits: ["Reduce overhead by 40%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-brand-voice-guardian/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-brand-voice-guardian', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-brand-voice-guardian/',
     popular: false,
@@ -308,7 +384,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 40%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-bug-to-issue-router/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-bug-to-issue-router', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-bug-to-issue-router/',
     popular: false,
@@ -323,7 +403,11 @@ export const aiServices: Service[] = [
     features: ['Real-time speech-to-text transcription','Sentiment & emotion detection','Agent compliance monitoring (PCI, GDPR)','Automated coaching suggestions','Keyword & topic trend analysis'],
     benefits: ["Accelerate insight by 75%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-call-center-voice-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-call-center-voice-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-call-center-voice-analytics/',
     popular: false,
@@ -338,7 +422,11 @@ export const aiServices: Service[] = [
     features: ['ROAS and CTR forecasting','A/B test simulation engine','Audience segment scoring','Creative asset feature extractor','Multi-touch attribution model'],
     benefits: ["Cut ESG reporting cost ~80% by automating data collection and calculation", "Finish CSRD-ready ESG report in 3 days vs. 3 weeks manually", "Reduce carbon intensity 15-30% in 12 months with AI action plans"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-campaign-predictor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-campaign-predictor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-campaign-predictor/',
     popular: false,
@@ -353,7 +441,11 @@ export const aiServices: Service[] = [
     features: ['Multi-language ASR transcription (50+ languages)','LLM translation + cultural localisation','SRT/VTT/WebVTT + lip-sync time-align','Auto-highlight key quote phrases per transcript'],
     benefits: ["Cut ESG reporting cost ~80% by automating data collection and calculation", "Finish CSRD-ready ESG report in 3 days vs. 3 weeks manually", "Reduce carbon intensity 15-30% in 12 months with AI action plans"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-caption-subtitle-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-caption-subtitle-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-caption-subtitle-generator/',
     popular: false,
@@ -368,7 +460,11 @@ export const aiServices: Service[] = [
     features: ['Scope 1-3 automatic accounting from bills, APIs, and invoices','Machine learning intensity factors per city, data-centre, and carrier','Priority-ranked action plan generated weekly','ESG/CSRD-ready report PDF and CSV exports','Alerts: budget exceeded, deviation from reduction trajectory'],
     benefits: ["Reduce overhead by 60%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-carbon-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-carbon-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-carbon-optimizer/',
     popular: true,
@@ -383,7 +479,11 @@ export const aiServices: Service[] = [
     features: ['RAG-powered knowledge base from your docs','Multi-channel — website, WhatsApp, Slack, Teams','Visual drag-and-drop flow designer','Smart human handoff with context transfer','Analytics — resolution rates, satisfaction, trends','Continuous learning from unanswered questions'],
     benefits: ["Accelerate insight by 40%", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-chatbot-builder-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-chatbot-builder-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-chatbot-builder-pro/',
     popular: false,
@@ -398,7 +498,11 @@ export const aiServices: Service[] = [
     features: ['Multichannel conversation orchestration','Context memory across channels','Fallback to live agents with full context','Built-in analytics & conversation flows','CRM & helpdesk integration'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-chatbot-omnichannel/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-chatbot-omnichannel', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-chatbot-omnichannel/',
     popular: false,
@@ -413,7 +517,11 @@ export const aiServices: Service[] = [
     features: ['Multi-source EHR + wearable data fusion','Early-deterioration signal detection','Personalised care plan generation','Hospitalisation risk prediction','Care-team dashboards + alerts'],
     benefits: ["Accelerate insight by 90%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-chronic-disease-tracker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-chronic-disease-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-chronic-disease-tracker/',
     popular: true,
@@ -428,7 +536,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Reduce overhead by 75%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cloud-cost-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cloud-cost-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cloud-cost-optimizer/',
     popular: false,
@@ -443,7 +555,11 @@ export const aiServices: Service[] = [
     features: ['Private fine-tuned model','Repo-aware completions','Security scanning integrations','Role-based access','On-prem or VPC deployment'],
     benefits: ["Reduce overhead by 75%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-assistant-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-assistant-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-assistant-enterprise/',
     popular: false,
@@ -458,7 +574,11 @@ export const aiServices: Service[] = [
     features: ['Static Application Security Testing (SAST)','Secrets & credential leakage detection','Dependency vulnerability scanning','License compliance & risk assessment','Remediation guidance with code suggestions'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-audit-security/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-audit-security', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-audit-security/',
     popular: false,
@@ -473,7 +593,11 @@ export const aiServices: Service[] = [
     features: ['Legacy code analysis and dependency mapping','Automated migration plan generation','AI-assisted code transformation and refactoring','Test case generation for migrated systems','Risk assessment and rollback planning'],
     benefits: ["Reduce overhead by 40%", "Accelerate insight by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-migration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-migration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-migration/',
     popular: false,
@@ -488,7 +612,11 @@ export const aiServices: Service[] = [
     features: ['AST-level code transformation (no regex hacks)','Breaking-change detection + PR diff per file','Regression test suite auto-generated per migration','Manual-approval gate per PR (human-in-loop)'],
     benefits: ["Accelerate insight by 90%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-migration-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-migration-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-migration-assistant/',
     popular: false,
@@ -503,7 +631,11 @@ export const aiServices: Service[] = [
     features: ['Automated code translation','Dependency analysis and mapping','Test generation and validation','Incremental migration planning','Code quality scoring post-migration'],
     benefits: ["Built-in audit governance", "Reduce overhead by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-migration-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-migration-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-migration-modernization/',
     popular: false,
@@ -518,7 +650,11 @@ export const aiServices: Service[] = [
     features: ['Static analysis with deep learning','Security vulnerability detection','Performance optimization suggestions','Code style & best practice enforcement','GitHub/GitLab/Bitbucket PR integration'],
     benefits: ["Built-in audit governance", "Reduce overhead by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-review-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-review-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-review-assistant/',
     popular: false,
@@ -533,7 +669,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 85%", "Built-in audit governance", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-reviewer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-reviewer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-reviewer/',
     popular: false,
@@ -548,7 +688,11 @@ export const aiServices: Service[] = [
     features: ['Deep code analysis across 50+ languages','OWASP Top 10 vulnerability scanning','Performance suggestions with benchmarks','Team coding standards enforcement','PR integration — GitHub, GitLab, Bitbucket','Custom rules engine for team-specific checks'],
     benefits: ["Accelerate insight by 85%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-reviewer-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-reviewer-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-reviewer-pro/',
     popular: false,
@@ -563,7 +707,11 @@ export const aiServices: Service[] = [
     features: ['Semantic code analysis (not just pattern matching)','OWASP Top 10 + CWE + proprietary flaw rules','IDE plugin (VS Code, JetBrains)','CI pipeline gate + PR bot','Auto-generated remediation diffs'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-code-vulnerability-scanner/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-code-vulnerability-scanner', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-code-vulnerability-scanner/',
     popular: false,
@@ -578,7 +726,11 @@ export const aiServices: Service[] = [
     features: ['Interactive dependency graph','Auto-updated API endpoint docs','Change-log highlighting','Developer onboarding checklist'],
     benefits: ["Built-in audit governance", "Accelerate insight by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-codebase-doc-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-codebase-doc-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-codebase-doc-generator/',
     popular: false,
@@ -593,7 +745,11 @@ export const aiServices: Service[] = [
     features: ['Price monitoring across 50+ sources','Feature gap analysis vs your product','Hiring intent detection (e.g. \\',')','Sentiment on competitor brands'],
     benefits: ["Built-in audit governance", "Accelerate insight by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-competitive-intel-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-competitive-intel-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-competitive-intel-engine/',
     popular: false,
@@ -608,7 +764,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Built-in audit governance", "Accelerate insight by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-competitive-price-tracker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-competitive-price-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-competitive-price-tracker/',
     popular: false,
@@ -623,7 +783,11 @@ export const aiServices: Service[] = [
     features: ['Daily web crawls','Feature matrix auto-update','Sentiment tracking','Alert rules & thresholds','Export to PDF/PPT'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-competitor-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-competitor-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-competitor-intelligence/',
     popular: false,
@@ -638,7 +802,11 @@ export const aiServices: Service[] = [
     features: ['Automated policy generation','Real-time compliance monitoring','Risk assessment scoring','Audit trail & reporting','Regulatory change alerts'],
     benefits: ["Reduce overhead by 60%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-compliance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-compliance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-compliance/',
     popular: false,
@@ -653,7 +821,11 @@ export const aiServices: Service[] = [
     features: ['Multi-jurisdiction template engine','Cookie banner and consent builder','Policy version history and diff','Consent audit log','Legal review export package'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-compliance-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-compliance-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-compliance-generator/',
     popular: false,
@@ -668,7 +840,11 @@ export const aiServices: Service[] = [
     features: ['Image classification & object detection','Visual quality inspection & defect detection','OCR + layout analysis','Visual search & similarity matching','Edge deployment for real-time inference'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-computer-vision/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-computer-vision', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-computer-vision/',
     popular: false,
@@ -683,7 +859,11 @@ export const aiServices: Service[] = [
     features: ['YOLOv8/RT-DETR shelf item detection','Stock-out detection per SKU per camera','Facings count + planogram compliance score','Slack/POS out-of-stock alert auto-create ticket'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-computer-vision-shelf-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-computer-vision-shelf-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-computer-vision-shelf-monitoring/',
     popular: false,
@@ -698,7 +878,11 @@ export const aiServices: Service[] = [
     features: ['Blog post & article generation','Social media content creation','SEO-optimized copywriting','Ad copy & landing page text','Brand voice customization'],
     benefits: ["Reduce overhead by 90%", "Built-in audit governance", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-content-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-content-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-content-generation/',
     popular: false,
@@ -713,7 +897,11 @@ export const aiServices: Service[] = [
     features: ['Context-aware Neural Machine Translation (100+ languages)','Cultural adaptation and localization QA','Brand voice consistency across markets','Automated regulatory compliance checking','CMS and marketing platform integrations'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-content-localization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-content-localization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-content-localization/',
     popular: false,
@@ -728,7 +916,11 @@ export const aiServices: Service[] = [
     features: ['Real-time text, image & video classification','Multi-language + multi-script support','Custom policy rule engine per platform','Human-in-the-loop review queue','Audit log + takedown SFTP/webhook export'],
     benefits: ["Accelerate insight by 90%", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-content-moderation-suite/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-content-moderation-suite', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-content-moderation-suite/',
     popular: false,
@@ -743,7 +935,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-context-engineering-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-context-engineering-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-context-engineering-enterprise/',
     popular: false,
@@ -758,7 +954,11 @@ export const aiServices: Service[] = [
     features: ['Risk scoring 0–100','Clause extraction & classification','Compliance matrix (GDPR, CCPA, HIPAA)','Redline suggestions','Audit trail'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-contract-analyzer-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-contract-analyzer-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-contract-analyzer-pro/',
     popular: false,
@@ -773,7 +973,11 @@ export const aiServices: Service[] = [
     features: ['Clause extraction matching against 200+ contract type templates','Auto renewal calendar plus amendment tracker with approval chain','Benchmark pricing and T&Cs against anonymised peer market medians','Obligation tracker with reminders at 90, 30, and 7 days pre-renewal'],
     benefits: ["Scale in weeks", "Accelerate insight by 40%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-contract-lifecycle-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-contract-lifecycle-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-contract-lifecycle-intelligence/',
     popular: true,
@@ -788,7 +992,11 @@ export const aiServices: Service[] = [
     features: ['Smart clause library & assembly','Obligation & deadline tracking','Risk scoring & non-standard clause flagging','Automated renewal & expiration alerts','Integration with DocuSign & Adobe Sign'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-contract-manager/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-contract-manager', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-contract-manager/',
     popular: false,
@@ -803,7 +1011,11 @@ export const aiServices: Service[] = [
     features: ['Clause risk scoring (1-10)','Comparison with 200K+ public contracts','AI-suggested redlines','Compliance checklist generation'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-contract-review/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-contract-review', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-contract-review/',
     popular: false,
@@ -818,7 +1030,11 @@ export const aiServices: Service[] = [
     features: ['Per-call sentiment + intent heatmap','Talk-listen ratio scoring','CRM auto-logging + deal stage update','Competitor mention + pricing cue detection','Personalized rep coaching tip per call'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-conversation-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-conversation-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-conversation-intelligence/',
     popular: false,
@@ -833,7 +1049,11 @@ export const aiServices: Service[] = [
     features: ['New-hire document collection & I-9','Benefits enrollment guided flow','IT provisioning (Okta, Slack, GitHub access)','Policy Q&A (handbook, PTO, leave)','People analytics dashboard for HR'],
     benefits: ["Launch multi-market support 3\u00d7 faster vs. hiring per-market translators", "Reduce mistranslation incidents by 80% in regulated industries", "Customer support CSAT score rises 25% post-localisation"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-conversational-hr-onboarding/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-conversational-hr-onboarding', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-conversational-hr-onboarding/',
     popular: false,
@@ -848,7 +1068,11 @@ export const aiServices: Service[] = [
     features: ['Context-Aware Assistance','Role-Specific Intelligence','Embedded in Your Tools','Controlled & Governed','Learning & Improvement','Multi-Modal Interaction'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-copilot-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-copilot-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-copilot-enterprise/',
     popular: false,
@@ -863,7 +1087,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-credit-underwriting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-credit-underwriting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-credit-underwriting/',
     popular: false,
@@ -878,7 +1106,11 @@ export const aiServices: Service[] = [
     features: ['AI lead scoring + prioritization','Automated email sequences & drips','Pipeline tracking + stage automation','Conversation intelligence & call coach','Native HS / SF / Zoho integrations'],
     benefits: ["Built-in audit governance", "Reduce overhead by 75%", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-crm-automation-suite/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-crm-automation-suite', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-crm-automation-suite/',
     popular: true,
@@ -893,7 +1125,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Reduce overhead by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cro-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cro-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cro-optimizer/',
     popular: false,
@@ -908,7 +1144,11 @@ export const aiServices: Service[] = [
     features: ['Semantic translation engine (80+ language pairs, trains on in-domain corpus)','Accent-normalised speech-to-text and TTS per locale','Auto language/region detection with confidence scoring','Webhook-ready multilingual chatbot builder','CSV/XLIFF glossary import + compliance glossary lock'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cross-lingual-bridge/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cross-lingual-bridge', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cross-lingual-bridge/',
     popular: false,
@@ -923,7 +1163,11 @@ export const aiServices: Service[] = [
     features: ['Simultaneous interpretation across 40+ languages and dialects per meeting','Live bilingual captions with per-speaker timestamped transcript','Cultural-adaptation annotations including politeness norms and idiom equivalents','Silent-watch spectator mode and executive summary auto-generated after each call'],
     benefits: ["Reduce overhead by 40%", "Scale in weeks", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cross-lingual-meeting-bridge/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cross-lingual-meeting-bridge', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cross-lingual-meeting-bridge/',
     popular: false,
@@ -938,7 +1182,11 @@ export const aiServices: Service[] = [
     features: ['Value-alignment scoring per candidate','Behavioral flag detection','Culture-card comparison vs new hire baseline','Auto short-list per candidate + hiring manager'],
     benefits: ["Built-in audit governance", "Reduce overhead by 75%", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cultural-fit-screener/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cultural-fit-screener', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cultural-fit-screener/',
     popular: false,
@@ -953,7 +1201,11 @@ export const aiServices: Service[] = [
     features: ['Data unification (10+ sources)','Timeline view','Next-best-action recommendations','Segment builder','Predictive CLV'],
     benefits: ["Reduce overhead by 60%", "80%+ less manual touch", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-360/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-360', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-360/',
     popular: false,
@@ -968,7 +1220,11 @@ export const aiServices: Service[] = [
     features: ['Multi-channel sentiment tracking','Emotion intensity scoring','Trend detection and alerting','Competitor sentiment benchmarking','Actionable insight generation'],
     benefits: ["Scale in weeks", "Accelerate insight by 90%", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-sentiment-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-sentiment-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-sentiment-analytics/',
     popular: false,
@@ -983,7 +1239,11 @@ export const aiServices: Service[] = [
     features: ['Multi-channel aggregation (email, chat, social)','Emotion classification (8 categories)','Trend alerts for sentiment drops','Root-cause topic clustering'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-sentiment-tracker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-sentiment-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-sentiment-tracker/',
     popular: false,
@@ -998,7 +1258,11 @@ export const aiServices: Service[] = [
     features: ['Usage analytics churn signal (feature adoption)','Support ticket sentiment per account','Auto-created retention playbook per at-risk account','CSM engagement score card per tier cohort'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-success-predictor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-success-predictor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-success-predictor/',
     popular: false,
@@ -1013,7 +1277,11 @@ export const aiServices: Service[] = [
     features: ['AI chatbot with human handoff','Smart ticket routing & prioritization','Sentiment analysis & escalation','Knowledge base auto-sync','Multi-channel support (email, chat, social)'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-support/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-support', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-support/',
     popular: true,
@@ -1028,7 +1296,11 @@ export const aiServices: Service[] = [
     features: ['Multilingual support (50+ languages)','Integrations: Zendesk, Intercom, Salesforce','Document retrieval from knowledge base (RAG)','Sentiment-aware responses & escalation','Analytics: resolution rate, CSAT impact'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-customer-support-agent/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-customer-support-agent', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-customer-support-agent/',
     popular: false,
@@ -1043,7 +1315,11 @@ export const aiServices: Service[] = [
     features: ['24/7 AI-powered threat hunting across network endpoints','Behavioral anomaly detection & zero-day identification','Automated incident response playbooks','Threat intelligence correlation & enrichment','Forensic analysis & root-cause reconstruction','Compliance reporting for SOC 2, ISO 27001, NIST'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 40%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-cyber-threat-hunting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-cyber-threat-hunting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-cyber-threat-hunting/',
     popular: false,
@@ -1058,7 +1334,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-dashboard-designer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-dashboard-designer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-dashboard-designer/',
     popular: false,
@@ -1073,7 +1353,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 85%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-data-quality-fabric/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-data-quality-fabric', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-data-quality-fabric/',
     popular: false,
@@ -1088,7 +1372,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-data-quality-guardian/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-data-quality-guardian', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-data-quality-guardian/',
     popular: false,
@@ -1103,7 +1391,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-deepfake-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-deepfake-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-deepfake-detection/',
     popular: false,
@@ -1118,7 +1410,11 @@ export const aiServices: Service[] = [
     features: ['Natural language queries over logs & metrics','Incident root cause summarization','Automated runbook execution (via chat)','Slack/MS Teams integration','Access control & audit logging'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-devops-chatbot/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-devops-chatbot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-devops-chatbot/',
     popular: false,
@@ -1133,7 +1429,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-digital-twin-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-digital-twin-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-digital-twin-platform/',
     popular: false,
@@ -1148,7 +1448,11 @@ export const aiServices: Service[] = [
     features: ['99-doc ocr nlp classification','Key field extraction per doc type','Workflow queue routing + SLA tagging','Metadata + search tags auto-attached'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-document-classifier/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-document-classifier', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-document-classifier/',
     popular: false,
@@ -1163,7 +1467,11 @@ export const aiServices: Service[] = [
     features: ['99%+ accuracy AI-powered OCR','Intelligent document classification','Field-level structured data extraction','ERP/CRM validation & reconciliation','Automated approval workflow triggers'],
     benefits: ["Reduce overhead by 60%", "Accelerate insight by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-document-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-document-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-document-intelligence/',
     popular: true,
@@ -1178,7 +1486,11 @@ export const aiServices: Service[] = [
     features: ['Multi-format PDF/Word/Sheets ingest','Natural language query with citations','Cross-document comparison view','Role-based access and audit log','Snippet-level answer provenance'],
     benefits: ["Accelerate insight by 90%", "Built-in audit governance", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-document-qa/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-document-qa', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-document-qa/',
     popular: false,
@@ -1193,7 +1505,11 @@ export const aiServices: Service[] = [
     features: ['Natural language to OpenAPI 3.0 spec','Schema validation & best practice linting','Auto-generated client SDKs (10+ languages)','Mock server with configurable responses','Breaking change detection across versions'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-driven-api-design-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-driven-api-design-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-driven-api-design-assistant/',
     popular: false,
@@ -1208,7 +1524,11 @@ export const aiServices: Service[] = [
     features: ['K-means + hierarchical clustering models','Dynamic segment recalculation (daily/weekly)','Persona profiles with predictive scores','Export to CRM/CDP (Segment, HubSpot)','Campaign performance tracking per segment'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-driven-customer-segmentation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-driven-customer-segmentation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-driven-customer-segmentation/',
     popular: false,
@@ -1223,7 +1543,11 @@ export const aiServices: Service[] = [
     features: ['De novo molecular design with generative AI','Protein-ligand binding affinity prediction','ADMET toxicity and pharmacokinetics modeling','Clinical trial cohort matching and optimization','Multi-target drug candidate screening'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 60%", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-drug-discovery/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-drug-discovery', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-drug-discovery/',
     popular: false,
@@ -1238,7 +1562,11 @@ export const aiServices: Service[] = [
     features: ['De novo molecular generation with GFlowNets','Target binding affinity predictor (AlphaFold + GNN)','ADMET property forecasting','Patent landscape FTO analysis','Lead candidate ranking with explainability'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-drug-discovery-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-drug-discovery-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-drug-discovery-assistant/',
     popular: false,
@@ -1253,7 +1581,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 85%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-drug-discovery-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-drug-discovery-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-drug-discovery-platform/',
     popular: false,
@@ -1268,7 +1600,11 @@ export const aiServices: Service[] = [
     features: ['50K+ drug interaction database','Pregnancy weight renal dosing adj','Prescriber + pharmacy workflow alert','Printable patient counseling sheet'],
     benefits: ["Built-in audit governance", "Accelerate insight by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-drug-interaction-checker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-drug-interaction-checker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-drug-interaction-checker/',
     popular: false,
@@ -1283,7 +1619,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-dyslexia-assist/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-dyslexia-assist', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-dyslexia-assist/',
     popular: false,
@@ -1298,7 +1638,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 60%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-ecommerce-smart-search/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-ecommerce-smart-search', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-ecommerce-smart-search/',
     popular: false,
@@ -1313,7 +1657,11 @@ export const aiServices: Service[] = [
     features: ['Edge-Deployed Models','Real-Time Streaming Pipelines','Hybrid Cloud-Edge Orchestration','Model Optimization & Quantization','Low-Latency APIs','Observability at the Edge'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-edge-realtime-inference/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-edge-realtime-inference', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-edge-realtime-inference/',
     popular: false,
@@ -1328,7 +1676,11 @@ export const aiServices: Service[] = [
     features: ['Mastery-level adaptive engine','Scaffold strugglers + accelerate performers','Curriculum-standard problem tagging','Parent+teacher mastery heat-map'],
     benefits: ["Accelerate insight by 85%", "Reduce overhead by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-education-adaptive-tutor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-education-adaptive-tutor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-education-adaptive-tutor/',
     popular: false,
@@ -1343,7 +1695,11 @@ export const aiServices: Service[] = [
     features: ['Curriculum-aligned (Common Core, IB, AP)','Progress dashboards for parents/teachers','Multilingual support (25 languages)','Plagiarism-resistant homework assistance'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-education-tutor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-education-tutor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-education-tutor/',
     popular: false,
@@ -1358,7 +1714,11 @@ export const aiServices: Service[] = [
     features: ['Multi-email sequence generation','Personalization tokens','Subject line A/B testing','Send-time optimization','Deliverability monitoring'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-email-campaign-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-email-campaign-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-email-campaign-generator/',
     popular: false,
@@ -1373,7 +1733,11 @@ export const aiServices: Service[] = [
     features: ['AI subject line & copy generator','Send-time optimization per subscriber','Dynamic content personalization','Advanced behavioral segmentation','A/B/n automated testing'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-email-marketing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-email-marketing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-email-marketing/',
     popular: false,
@@ -1388,7 +1752,11 @@ export const aiServices: Service[] = [
     features: ['Automated onboarding workflow orchestration','Personalized training & development paths','Sentiment & engagement tracking','AI-powered retention risk prediction','Buddy & mentor matching algorithms'],
     benefits: ["Built-in audit governance", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-employee-experience/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-employee-experience', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-employee-experience/',
     popular: false,
@@ -1403,7 +1771,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered energy load forecasting and optimization','HVAC, lighting, and power system automated control','Carbon emissions tracking with ESG reporting','Peer benchmarking and efficiency gap analysis','Renewable energy integration recommendations','Real-time cost savings dashboard'],
     benefits: ["Reduce overhead by 90%", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-energy-optimization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-energy-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-energy-optimization/',
     popular: false,
@@ -1418,7 +1790,11 @@ export const aiServices: Service[] = [
     features: ['Algorithmic bias detection across race, gender, age, and geography','Model interpretability and explainability analysis (XAI)','EU AI Act compliance assessment and readiness','AI impact assessment for high-risk applications','Fairness metrics evaluation (demographic parity, equalized odds)','AI governance framework design (NIST AI RMF, OECD)','Transparency report and model card documentation','Stakeholder engagement and AI literacy workshops'],
     benefits: ["Accelerate insight by 85%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-ethics-audit-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-ethics-audit-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-ethics-audit-1/',
     popular: false,
@@ -1433,7 +1809,11 @@ export const aiServices: Service[] = [
     features: ['Automated bias detection across training data and model outputs','Model interpretability and explainability (SHAP/LIME integration)','AI ethics board policy generation and compliance tracking','Regulatory compliance automation (EU AI Act, NIST AI RMF)','Continuous monitoring and audit log generation'],
     benefits: ["Detect 95% of known fraud patterns within 48 hours of go-live", "Reduce false positives 60% vs rule-based engines", "Comply with FinCEN/EU AMLD/UK POCA SAR requirements out of the box", "Cut fraud analyst review time from 40 min to <5 min per case"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-ethics-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-ethics-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-ethics-governance/',
     popular: false,
@@ -1448,7 +1828,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Detect 95% of known fraud patterns within 48 hours of go-live", "Reduce false positives 60% vs rule-based engines", "Comply with FinCEN/EU AMLD/UK POCA SAR requirements out of the box", "Cut fraud analyst review time from 40 min to <5 min per case"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-exam-proctoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-exam-proctoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-exam-proctoring/',
     popular: false,
@@ -1463,7 +1847,11 @@ export const aiServices: Service[] = [
     features: ['Auto-categorisation by GL code','Policy violation alerting','Audit trail with full export','QuickBooks, Xero, NetSuite integrations','Custom rules engine per organisation'],
     benefits: ["Reduce overhead by 40%", "Accelerate insight by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-expense-audit/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-expense-audit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-expense-audit/',
     popular: false,
@@ -1478,7 +1866,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 60%", "Accelerate insight by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-feature-store/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-feature-store', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-feature-store/',
     popular: false,
@@ -1493,7 +1885,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Built-in audit governance", "Accelerate insight by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-federated-learning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-federated-learning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-federated-learning/',
     popular: false,
@@ -1508,7 +1904,11 @@ export const aiServices: Service[] = [
     features: ['FedRAMP Rev 5 control mapping','POA&M auto-generation + monthly tracking','Continuous monitoring artifact creation','Audit evidence bundle per annual assessment'],
     benefits: ["Scale in weeks", "Reduce overhead by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fedrisk-compliance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fedrisk-compliance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fedrisk-compliance/',
     popular: false,
@@ -1523,7 +1923,11 @@ export const aiServices: Service[] = [
     features: ['Revenue and expense forecasting','Cash flow prediction models','Scenario planning and simulation','Budget variance analysis','Automated financial reporting'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-financial-forecasting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-financial-forecasting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-financial-forecasting/',
     popular: false,
@@ -1538,7 +1942,11 @@ export const aiServices: Service[] = [
     features: ['Real-time transaction scoring & blocking','Deep learning behavioral anomaly detection','Customer risk profiling with dynamic baselines','Automated case management with evidence bundling','False positive reduction with adaptive learning','Regulatory reporting (BSA, AML, SAR) automation'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-financial-fraud-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-financial-fraud-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-financial-fraud-detection/',
     popular: false,
@@ -1553,7 +1961,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Reduce overhead by 75%", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-finetuning-alignment-pipelines/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-finetuning-alignment-pipelines', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-finetuning-alignment-pipelines/',
     popular: false,
@@ -1568,7 +1980,11 @@ export const aiServices: Service[] = [
     features: ['Entity resolution graph across accounts, IPs, devices, cards, and emails','Real-time ML scoring per transaction in under 15ms','SAR and CTR auto-draft — zero compliance team manual data entry','Global rule engine per jurisdiction, instant payment scheme, and card network'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 85%", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fintech-fraud-graph/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fintech-fraud-graph', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fintech-fraud-graph/',
     popular: true,
@@ -1583,7 +1999,11 @@ export const aiServices: Service[] = [
     features: ['Language-to-language AST-based translation','Preserve business logic & edge cases','Interactive migration playground (preview changes)','Test generation for migrated functions','Gradual cutover strategy planning'],
     benefits: ["Accelerate insight by 85%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-for-code-migration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-for-code-migration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-for-code-migration/',
     popular: false,
@@ -1598,7 +2018,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-form-filler-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-form-filler-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-form-filler-intelligence/',
     popular: false,
@@ -1613,7 +2037,11 @@ export const aiServices: Service[] = [
     features: ['Domain-Specific Pretraining','Efficient Fine-Tuning & Adaptation','Alignment & Safety Training','Continuous Learning Pipelines','Model Compression & Export','Data Pipeline & Curation'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-foundation-models-custom-training/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-foundation-models-custom-training', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-foundation-models-custom-training/',
     popular: false,
@@ -1628,7 +2056,11 @@ export const aiServices: Service[] = [
     features: ['Real-time transaction scoring','Behavioral biometrics analysis','Anomaly pattern detection','Chargeback prediction & prevention','AML/KYC compliance screening'],
     benefits: ["Built-in audit governance", "Reduce overhead by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fraud-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fraud-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fraud-detection/',
     popular: false,
@@ -1643,7 +2075,11 @@ export const aiServices: Service[] = [
     features: ['Rule-based plus ML hybrid model','Explainable decision reasons (XAI)','Adaptive learning from investigator feedback','Automatic SAR filing templates'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fraud-detection-finance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fraud-detection-finance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fraud-detection-finance/',
     popular: false,
@@ -1658,7 +2094,11 @@ export const aiServices: Service[] = [
     features: ['Real-time scoring (<50ms)','Adaptive thresholds','Case management dashboard','Investigation tools','PCI DSS compliant'],
     benefits: ["Reduce overhead by 75%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fraud-detection-real-time/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fraud-detection-real-time', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fraud-detection-real-time/',
     popular: false,
@@ -1673,7 +2113,11 @@ export const aiServices: Service[] = [
     features: ['Per-user behavior baseline engine','Multi-signal anomaly scoring','Cross-account ring detection','Geo-velocity + device fingerprint trigger','Slack/PagerDuty webhook for SOC integration'],
     benefits: ["Scale in weeks", "Accelerate insight by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fraud-pattern-analyzer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fraud-pattern-analyzer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fraud-pattern-analyzer/',
     popular: false,
@@ -1688,7 +2132,11 @@ export const aiServices: Service[] = [
     features: ['Source + schema + OpenAPI ingestion','Unit + integration + E2E auto-gen','90%+ line coverage without manual writing','CI/CD pipeline + flaky test auto-retry'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-fullstack-test-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-fullstack-test-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-fullstack-test-generator/',
     popular: false,
@@ -1703,7 +2151,11 @@ export const aiServices: Service[] = [
     features: ['LLM application architecture and design','RAG (Retrieval-Augmented Generation) implementation','Multi-agent system design and orchestration (LangChain, LangGraph, CrewAI)','Vector database selection and optimization (Pinecone, Weaviate, Qdrant)','Prompt engineering and fine-tuning workflows','AI safety, guardrails, and output validation','Scalable deployment with cost optimization','Evaluation frameworks and A/B testing for AI outputs'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-gen-app-dev-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-gen-app-dev-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-gen-app-dev-1/',
     popular: false,
@@ -1718,7 +2170,11 @@ export const aiServices: Service[] = [
     features: ['HIPAA-safe synthetic patient generation','Realistic diagnosis + procedure coding (ICD-10, CPT)','Configurable prevalence & comorbidity rates','FHIR R4 export format','Differential privacy guarantees'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-generative-synthetic-patient-data/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-generative-synthetic-patient-data', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-generative-synthetic-patient-data/',
     popular: false,
@@ -1733,7 +2189,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-genomic-analysis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-genomic-analysis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-genomic-analysis/',
     popular: false,
@@ -1748,7 +2208,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-glassdoor-review-analyzer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-glassdoor-review-analyzer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-glassdoor-review-analyzer/',
     popular: false,
@@ -1763,7 +2227,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-governance-compliance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-governance-compliance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-governance-compliance/',
     popular: false,
@@ -1778,7 +2246,11 @@ export const aiServices: Service[] = [
     features: ['Policy & Guardrail Enforcement','Bias & Fairness Monitoring','Audit Trails & Traceability','Model Risk Management','Regulatory Compliance','Responsible AI Frameworks'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-governance-trust/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-governance-trust', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-governance-trust/',
     popular: false,
@@ -1793,7 +2265,11 @@ export const aiServices: Service[] = [
     features: ['50,000+ opportunity database','Auto-draft tailored proposals','Deadline and eligibility tracker','Submission pipeline dashboard','Grant success analytics'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-grant-matcher/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-grant-matcher', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-grant-matcher/',
     popular: false,
@@ -1808,7 +2284,11 @@ export const aiServices: Service[] = [
     features: ['10K+ lever scoring','Experiment ROI ranking per stage','Competitor signal + gap detection','GTM strategy auto-draft per priority lever'],
     benefits: ["Accelerate insight by 75%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-growth-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-growth-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-growth-intelligence/',
     popular: false,
@@ -1823,7 +2303,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 75%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-hiring-pipeline-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-hiring-pipeline-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-hiring-pipeline-optimizer/',
     popular: false,
@@ -1838,7 +2322,11 @@ export const aiServices: Service[] = [
     features: ['AI resume screening & ranking','Automated interview scheduling','Employee onboarding chatbot','Policy Q&A knowledge base','Engagement & sentiment tracking'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-hr-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-hr-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-hr-assistant/',
     popular: false,
@@ -1853,7 +2341,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 85%", "80%+ less manual touch", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-infra-provisioner/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-infra-provisioner', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-infra-provisioner/',
     popular: false,
@@ -1868,7 +2360,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 90%", "Reduce overhead by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-insurance-claims/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-insurance-claims', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-insurance-claims/',
     popular: false,
@@ -1883,7 +2379,11 @@ export const aiServices: Service[] = [
     features: ['Per-risk ML pricing model','Confidence interval + exposure summary','Market rate benchmarking vs competitors','Underwriter explainability per recommendation'],
     benefits: ["Answer how-do-I type queries in seconds that previously took hours of searching", "Eliminate 40-70% of repeated support tickets by surfacing canonical answers", "Build a living knowledge graph without manual taxonomy work"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-insurance-pricing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-insurance-pricing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-insurance-pricing/',
     popular: false,
@@ -1898,7 +2398,11 @@ export const aiServices: Service[] = [
     features: ['Unified AI API Layer','Enterprise Connectors','Event-Driven Pipelines','Structured Outputs & Orchestration','Security & Access Control','Observability & Versioning'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-integration-apis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-integration-apis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-integration-apis/',
     popular: false,
@@ -1913,7 +2417,11 @@ export const aiServices: Service[] = [
     features: ['OCR + AI document understanding (99.5% accuracy)','Intelligent document classification and tagging','Automated data extraction to structured formats','Smart routing to teams based on content','Integration with RPA for downstream automation'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-intelligent-routing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-intelligent-routing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-intelligent-routing/',
     popular: false,
@@ -1928,7 +2436,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-interview-conduct-bot/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-interview-conduct-bot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-interview-conduct-bot/',
     popular: false,
@@ -1943,7 +2455,11 @@ export const aiServices: Service[] = [
     features: ['Automated ticket creation & routing','Knowledge base search with semantic understanding','Password reset & MFA enrollment automation','Software request fulfillment workflows','Hardware troubleshooting decision trees'],
     benefits: ["Reduce overhead by 90%", "80%+ less manual touch", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-it-helpdesk/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-it-helpdesk', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-it-helpdesk/',
     popular: false,
@@ -1958,7 +2474,11 @@ export const aiServices: Service[] = [
     features: ['Bias detection and inclusive language','Interview question generator with rubrics','Role and level templates','ATS-ready export','EEOC and ADA compliance check'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-job-description-kit/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-job-description-kit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-job-description-kit/',
     popular: false,
@@ -1973,7 +2493,11 @@ export const aiServices: Service[] = [
     features: ['Two-sided job + candidate fit scoring','Gap analysis + interview prep','Salary benchmark + offer comparison','Employer short-list with fit rankings'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-job-matcher/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-job-matcher', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-job-matcher/',
     popular: false,
@@ -1988,7 +2512,11 @@ export const aiServices: Service[] = [
     features: ['Multi-source document ingestion (PDF, DOC, Confluence, Notion)','Semantic search with natural language queries','Automated knowledge graph construction','Answer citation & source linking','Real-time sync with source systems'],
     benefits: ["Accelerate insight by 60%", "Reduce overhead by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-base-agent/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-base-agent', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-base-agent/',
     popular: false,
@@ -2003,7 +2531,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 75%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-base-rag/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-base-rag', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-base-rag/',
     popular: false,
@@ -2018,7 +2550,11 @@ export const aiServices: Service[] = [
     features: ['Entity extraction + relation graph build','Semantic search across full graph','Impact analysis: what breaks if team X leaves','Auto-updating from new documents + PRs','GraphQL API for custom integrations'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-graph/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-graph', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-graph/',
     popular: false,
@@ -2033,7 +2569,11 @@ export const aiServices: Service[] = [
     features: ['NER (Named Entity Recognition) + relation extraction','Graph schema auto-generated from data','SPARQL + GraphQL dual query layer','Neo4j/TypeDB graph store + schema management'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-graph-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-graph-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-graph-builder/',
     popular: false,
@@ -2048,7 +2588,11 @@ export const aiServices: Service[] = [
     features: ['Auto-ingest: Confluence, Slack, Drive, Jira, Notion, SharePoint','Auto-built navigable knowledge graph with entity recognition','Faceted navigation + path finder (A→B shortest path through relations)','Answer synthesis with inline citations + source confidence scores','On-prem AIR-gapped deployment option for public-sector / PHI'],
     benefits: ["Built-in audit governance", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-graph-search-deep/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-graph-search-deep', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-graph-search-deep/',
     popular: true,
@@ -2063,7 +2607,11 @@ export const aiServices: Service[] = [
     features: ['Semantic search across all documents','Auto-tagging & intelligent categorization','Knowledge gap detection','AI Q&A over internal documents','Content lifecycle & freshness monitoring'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-knowledge-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-knowledge-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-knowledge-management/',
     popular: true,
@@ -2078,7 +2626,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-kubernetes-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-kubernetes-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-kubernetes-optimizer/',
     popular: false,
@@ -2093,7 +2645,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-kyc-aml-compliance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-kyc-aml-compliance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-kyc-aml-compliance/',
     popular: false,
@@ -2108,7 +2664,11 @@ export const aiServices: Service[] = [
     features: ['Fit and intent scoring model','50+ data provider enrichment','CRM native sync Salesforce and HubSpot','Priority queue routing','Enrichment history audit trail'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-lead-enricher/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-lead-enricher', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-lead-enricher/',
     popular: false,
@@ -2123,7 +2683,11 @@ export const aiServices: Service[] = [
     features: ['Automated lead discovery from public sources','Firmographic enrichment — revenue, tech stack, contacts','Intent signal — hiring, mentions, website visits','CRM auto-sync to Salesforce, HubSpot, Pipedrive','Personalized outreach — email, LinkedIn, sequences','ML-powered lead quality scoring and ranking'],
     benefits: ["Scale in weeks", "Accelerate insight by 40%", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-lead-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-lead-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-lead-generation/',
     popular: true,
@@ -2138,7 +2702,11 @@ export const aiServices: Service[] = [
     features: ['Entity recognition (PII, PHI, PCI)','Custom redaction rules per jurisdiction','Audit trail of redactions','Secure workspace with encryption'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-legal-contract-redaction/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-legal-contract-redaction', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-legal-contract-redaction/',
     popular: false,
@@ -2153,7 +2721,11 @@ export const aiServices: Service[] = [
     features: ['Contract clause extraction & classification','Risk flagging & compliance checking','Document summarization (NLP)','Due diligence report generation','Multi-language support (20+ languages)'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-legal-doc-review/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-legal-doc-review', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-legal-doc-review/',
     popular: false,
@@ -2168,7 +2740,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent clause extraction and classification','Risk scoring and compliance flagging','Contract comparison and gap analysis','Legal precedent research automation','Multi-language contract processing'],
     benefits: ["Accelerate insight by 60%", "Reduce overhead by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-legal-document-analysis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-legal-document-analysis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-legal-document-analysis/',
     popular: false,
@@ -2183,7 +2759,11 @@ export const aiServices: Service[] = [
     features: ['Clause risk scoring vs your playbook','Missing obligation auto-detection','Fee/price anomaly flagging','Redline stub generation per clause','Executive summary + risk digest'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-legal-redline/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-legal-redline', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-legal-redline/',
     popular: false,
@@ -2198,7 +2778,11 @@ export const aiServices: Service[] = [
     features: ['Semantic search case law+statutes+regs','Source attribution + citation per answer','Law change alerts per jurisdiction','Memo export per research session'],
     benefits: ["Accelerate insight by 75%", "Reduce overhead by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-legal-research/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-legal-research', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-legal-research/',
     popular: false,
@@ -2213,7 +2797,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-llm-router-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-llm-router-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-llm-router-pro/',
     popular: false,
@@ -2228,7 +2816,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Built-in audit governance", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-load-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-load-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-load-testing/',
     popular: false,
@@ -2243,7 +2835,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 75%", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-log-analysis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-log-analysis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-log-analysis/',
     popular: false,
@@ -2258,7 +2854,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 75%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-low-code-integration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-low-code-integration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-low-code-integration/',
     popular: false,
@@ -2273,7 +2873,11 @@ export const aiServices: Service[] = [
     features: ['COMET/HYENA quality scoring per segment','Terminology enforcement dictionary','Auto-edit suggestion (Neural MT post-editing)','Translation memory browser per language pair'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-machine-translation-quality/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-machine-translation-quality', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-machine-translation-quality/',
     popular: false,
@@ -2288,7 +2892,11 @@ export const aiServices: Service[] = [
     features: ['Satellite & AIS vessel tracking','Fish stock abundance estimation','Illegal fishing detection & alerting','Coral reef health monitoring','UN SDG 14 compliance reporting'],
     benefits: ["Search 10 000+ hours of video content in seconds \u2014 find any mention of any product or event instantly", "Auto-generated video chapter index reduces manual editing time from hours per video to zero", "Compliance review: find potentially sensitive visuals or language across all video content automatically"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-marine-fisheries-sustainability/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-marine-fisheries-sustainability', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-marine-fisheries-sustainability/',
     popular: false,
@@ -2303,7 +2911,11 @@ export const aiServices: Service[] = [
     features: ['10+ output formats (blog/ad/landing/LinkedIn/email)','Brand voice training on your tone/guidelines','SEO brief + outline + draft in one pass','Human-in-loop review + approval workflow'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-marketing-copy-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-marketing-copy-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-marketing-copy-generator/',
     popular: false,
@@ -2318,7 +2930,11 @@ export const aiServices: Service[] = [
     features: ['100K+ sources monitored','Multilingual sentiment','Trending topic detection','Custom keyword & competitor alerts'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-media-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-media-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-media-monitoring/',
     popular: false,
@@ -2333,7 +2949,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 85%", "Scale in weeks", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-medical-image-diagnosis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-medical-image-diagnosis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-medical-image-diagnosis/',
     popular: false,
@@ -2348,7 +2968,11 @@ export const aiServices: Service[] = [
     features: ['Deep learning anomaly detection in X-rays, CT, MRI','Pathology slide analysis and classification','Dermatological lesion assessment','Triage and workload prioritization','HIPAA-compliant deployment with audit trails'],
     benefits: ["Built-in audit governance", "Accelerate insight by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-medical-imaging/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-medical-imaging', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-medical-imaging/',
     popular: false,
@@ -2363,7 +2987,11 @@ export const aiServices: Service[] = [
     features: ['Live transcription (OpenAI Whisper Real-time)','Action-item extraction + assignment','Decision-log compiler per meeting','Sentiment tracker per participant + aggregate'],
     benefits: ["Accelerate insight by 75%", "Built-in audit governance", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-meeting-assistant-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-meeting-assistant-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-meeting-assistant-pro/',
     popular: false,
@@ -2378,7 +3006,11 @@ export const aiServices: Service[] = [
     features: ['Real-time transcription with speaker diarisation','Action item and decision extraction','Multi-platform calendar sync','Shareable branded summary packs','Slack and email distribution'],
     benefits: ["Built-in audit governance", "Accelerate insight by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-meeting-notes-summary/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-meeting-notes-summary', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-meeting-notes-summary/',
     popular: false,
@@ -2393,7 +3025,11 @@ export const aiServices: Service[] = [
     features: ['Auto-agenda from calendar invite','Context assembly from Slack/CRM','Decision log and action tracker','Stakeholder routing by role','Brand template for pre-reads'],
     benefits: ["Reduce overhead by 40%", "Accelerate insight by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-meeting-preread/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-meeting-preread', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-meeting-preread/',
     popular: false,
@@ -2408,7 +3044,11 @@ export const aiServices: Service[] = [
     features: ['Live transcription with speaker diarization','AI summary: decisions + action items + owners','Auto-push to Slack/Asana/Notion/Jira','Recurring meeting agenda from past topics','Sentiment + engagement score per participant'],
     benefits: ["Reduce overhead by 40%", "Scale in weeks", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-meeting-summarizer-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-meeting-summarizer-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-meeting-summarizer-pro/',
     popular: false,
@@ -2423,7 +3063,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-memory-agents-long-horizon/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-memory-agents-long-horizon', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-memory-agents-long-horizon/',
     popular: false,
@@ -2438,7 +3082,11 @@ export const aiServices: Service[] = [
     features: ['Mood journal with trends','Personalized coping strategies','Crisis keyword detection to human handoff','Weekly mental health reports'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-mental-health-chatbot/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-mental-health-chatbot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-mental-health-chatbot/',
     popular: false,
@@ -2453,7 +3101,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-metadata-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-metadata-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-metadata-management/',
     popular: false,
@@ -2468,7 +3120,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent Model Routing','Fallback & Resilience','Cost & Latency Optimization','Unified API Layer','A/B Testing & Evaluation','Observability & Analytics'],
     benefits: ["Reduce overhead by 75%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-model-orchestration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-model-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-model-orchestration/',
     popular: false,
@@ -2483,7 +3139,11 @@ export const aiServices: Service[] = [
     features: ['Unified Multimodal Understanding','Video Intelligence','Image & Visual Analysis','Document-to-Insight Pipelines','Real-Time & Batch Processing','Enterprise Security & Compliance'],
     benefits: ["Accelerate insight by 90%", "Built-in audit governance", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-multimodal-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-multimodal-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-multimodal-intelligence/',
     popular: false,
@@ -2498,7 +3158,11 @@ export const aiServices: Service[] = [
     features: ['Frame-level CLIP embeddings + action-recognition time-series across entire video','Scene-change detection + automatic key-frame extraction per 30-second segment','Auto-generated transcript + OCR with chapter marker overlay','Natural-language question answering across video with time-stamped answer snippets','Batch ingest: 1000+ video files automatically processed and indexed within hours'],
     benefits: ["Built-in audit governance", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-multimodal-video-understanding/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-multimodal-video-understanding', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-multimodal-video-understanding/',
     popular: false,
@@ -2513,7 +3177,11 @@ export const aiServices: Service[] = [
     features: ['Open-rate and click prediction','Churn alerting by subscriber cohort','Topic performance clustering','A/B headline suggestion engine','Subscriber segmentation builder'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-newsletter-engagement/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-newsletter-engagement', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-newsletter-engagement/',
     popular: false,
@@ -2528,7 +3196,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-nutrition-meal-planner/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-nutrition-meal-planner', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-nutrition-meal-planner/',
     popular: false,
@@ -2543,7 +3215,11 @@ export const aiServices: Service[] = [
     features: ['End-to-End Tracing','Quality & Safety Evaluation','Cost & Usage Analytics','MLOps Pipeline Management','Debugging & Root Cause','Compliance & Audit'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-observability-mlops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-observability-mlops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-observability-mlops/',
     popular: false,
@@ -2558,7 +3234,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-observability-turbo/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-observability-turbo', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-observability-turbo/',
     popular: false,
@@ -2573,7 +3253,11 @@ export const aiServices: Service[] = [
     features: ['20+ channel unified inbox','Shared conversation context per customer','Human handoff with full context preserved','Channel-consistent brand voice tuning'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-omnichannel-chatbot/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-omnichannel-chatbot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-omnichannel-chatbot/',
     popular: false,
@@ -2588,7 +3272,11 @@ export const aiServices: Service[] = [
     features: ['Table + layout + structure extraction','OCR handwriting recognition','Form auto-fill export DOCX CSV JSON','Batch + queue 1000 pages per hour'],
     benefits: ["Reduce overhead by 40%", "Accelerate insight by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-pdf-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-pdf-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-pdf-engine/',
     popular: false,
@@ -2603,7 +3291,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 60%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-personal-finance-coach/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-personal-finance-coach', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-personal-finance-coach/',
     popular: false,
@@ -2618,7 +3310,11 @@ export const aiServices: Service[] = [
     features: ['Session-based collaborative-filtering per user','LLM cold-start description for new/no-history users','Auto A/B variant per homepage/checkout/product','JSON recommendation API (endpoint per user/context)'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-personalisation-engine-realtime/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-personalisation-engine-realtime', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-personalisation-engine-realtime/',
     popular: false,
@@ -2633,7 +3329,11 @@ export const aiServices: Service[] = [
     features: ['Real-time visitor behavior tracking and profiling','Dynamic content serving based on user segments','Cross-channel personalized messaging','AI-powered product recommendation engine','A/B/n testing with multi-armed bandit optimization','Revenue attribution and ROI measurement'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-personalization-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-personalization-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-personalization-engine/',
     popular: false,
@@ -2648,7 +3348,11 @@ export const aiServices: Service[] = [
     features: ['Skill assessment & gap analysis','Personalized learning path generation','Auto-generated micro-lessons (5–10 min)','Progress analytics & leaderboards','Integration with LMS (SCORM, xAPI)'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-personalized-learning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-personalized-learning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-personalized-learning/',
     popular: false,
@@ -2663,7 +3367,11 @@ export const aiServices: Service[] = [
     features: ['Order and shipment tracking','Proactive outreach on delays','RMA and return automation','Self-service resolution portal','SLA monitoring and alerting'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-post-purchase-care/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-post-purchase-care', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-post-purchase-care/',
     popular: false,
@@ -2678,7 +3386,11 @@ export const aiServices: Service[] = [
     features: ['Timeline assembly from logs/metrics/alerts','Root cause inference via causal graph','Impact quantification (users, revenue, SLA)','Auto-generated action items with owners','Follow-up tracking & closure verification'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-incident-postmortem/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-incident-postmortem', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-incident-postmortem/',
     popular: false,
@@ -2693,7 +3405,11 @@ export const aiServices: Service[] = [
     features: ['Unsupervised clustering of log events','Real-time anomaly scoring per time-series','Seamless integration with ELK/Prometheus','Alert suppression & correlation','Root-cause hinting via pattern matching'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-log-anomaly-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-log-anomaly-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-log-anomaly-detection/',
     popular: false,
@@ -2708,7 +3424,11 @@ export const aiServices: Service[] = [
     features: ['Behavioral biometrics (keystroke dynamics, mouse movements)','Device & location risk scoring','Step-up authentication for anomalies','FIDO2/WebAuthn integration','Compliance: NIST 800-63B, PSD2 SCA'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-passwordless-auth/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-passwordless-auth', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-passwordless-auth/',
     popular: false,
@@ -2723,7 +3443,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent diff summarization','JIRA/GitHub issue linking & status updates','Changelog entry drafting per semantic version','Reviewer recommendation based on ownership','Auto-update of API docs & README diffs'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-pr-drafting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-pr-drafting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-pr-drafting/',
     popular: false,
@@ -2738,7 +3462,11 @@ export const aiServices: Service[] = [
     features: ['RAG over private document corpus','Source citation & confidence scores','Multi-department bots (HR, Eng, Sales, Support)','Feedback loop to improve answers','Analytics: most-asked questions, gaps in docs'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-question-answering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-question-answering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-question-answering/',
     popular: false,
@@ -2753,7 +3481,11 @@ export const aiServices: Service[] = [
     features: ['On-page SEO scoring (0-100)','Competitor gap analysis','Automated meta title/description generation','Readability improvement suggestions','Schema.org structured data suggestions'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-seo-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-seo-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-seo-optimizer/',
     popular: false,
@@ -2768,7 +3500,11 @@ export const aiServices: Service[] = [
     features: ['Static code analysis + complexity heatmaps','Dependency vulnerability & EOL detection','Duplicate code detection with CloneDR','Architecture rule validation (dependency cycles)','Remediation effort estimation (person-days)'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-tech-debt-quantifier/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-tech-debt-quantifier', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-tech-debt-quantifier/',
     popular: false,
@@ -2783,7 +3519,11 @@ export const aiServices: Service[] = [
     features: ['White-box test generation from source code','Black-box tests from BDD/Gherkin specs','E2E test generation via Puppeteer/Playwright','Coverage gap analysis & prioritizing','Test flake detection & stabilization'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-test-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-test-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-test-generation/',
     popular: false,
@@ -2798,7 +3538,11 @@ export const aiServices: Service[] = [
     features: ['Natural language to JSX/TSX component generation','Tailwind CSS class application','Responsive breakpoint handling','A11y attributes (aria-* roles & labels)','Export to Figma/Storybook format'],
     benefits: ["Built-in audit governance", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-powered-ui-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-powered-ui-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-powered-ui-generator/',
     popular: false,
@@ -2813,7 +3557,11 @@ export const aiServices: Service[] = [
     features: ['Auto-PRD first-draft generator','User story with acceptance criteria boilerplate','Mermaid user-flow diagrams','Development effort estimation','Notion and Linear one-click sync'],
     benefits: ["Accelerate insight by 60%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-prd-story-gen/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-prd-story-gen', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-prd-story-gen/',
     popular: false,
@@ -2828,7 +3576,11 @@ export const aiServices: Service[] = [
     features: ['Predict churn 30-90 days before event','Feature importance per customer','Recommended retention action per at-risk account','CLV-adjusted retention spend optimization'],
     benefits: ["Accelerate insight by 60%", "Reduce overhead by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-churn/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-churn', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-churn/',
     popular: false,
@@ -2843,7 +3595,11 @@ export const aiServices: Service[] = [
     features: ['Kafka event stream feature engineering','IsolationForest + XGBoost stacked fraud score','Online feature store for low-latency inference','Feedback loop model retrain pipeline'],
     benefits: ["Reduce overhead by 60%", "Accelerate insight by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-fraud-detection-streaming/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-fraud-detection-streaming', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-fraud-detection-streaming/',
     popular: false,
@@ -2858,7 +3614,11 @@ export const aiServices: Service[] = [
     features: ['IoT sensor data ingestion & real-time monitoring','ML-based remaining useful life (RUL) prediction','Anomaly detection for early fault signatures','Automated maintenance scheduling & work order generation','Fleet-wide asset health dashboards','Integration with CMMS, SAP, and ERP systems'],
     benefits: ["Scale in weeks", "Reduce overhead by 60%", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-maintenance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-maintenance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-maintenance/',
     popular: false,
@@ -2873,7 +3633,11 @@ export const aiServices: Service[] = [
     features: ['Multimodal sensor fusion across vibration, thermal, acoustic, and current sensors','Remaining-Useful-Life distribution with three-severity flag per asset','Plain-English root-cause description with part and vendor recommendation','HSE safety-risk layer assessed before scheduling any maintenance work'],
     benefits: ["Scale in weeks", "Accelerate insight by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-maintenance-advisor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-maintenance-advisor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-maintenance-advisor/',
     popular: false,
@@ -2888,7 +3652,11 @@ export const aiServices: Service[] = [
     features: ['Vibration & thermal analysis','Failure mode classification','Maintenance scheduling','Parts inventory forecasting','OEE dashboards'],
     benefits: ["Accelerate insight by 75%", "Built-in audit governance", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-maintenance-factory/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-maintenance-factory', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-maintenance-factory/',
     popular: false,
@@ -2903,7 +3671,11 @@ export const aiServices: Service[] = [
     features: ['Multi-sensor fusion + edge analytics','RUL estimation per asset','Failure mode classification (bearing, motor, pump)','CMMS work-order auto-creation','OEE dashboard with MTBF/MTTR tracking'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-maintenance-industrial/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-maintenance-industrial', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-maintenance-industrial/',
     popular: false,
@@ -2918,7 +3690,11 @@ export const aiServices: Service[] = [
     features: ['Demand forecast XGBoost/LightGBM per SKU','Safety-stock SDE (service-level, lead-time)','Route optimisation OR-Tools per order-batch','Supplier risk score per vendor/region/country'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-supply-chain-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-supply-chain-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-supply-chain-optimizer/',
     popular: false,
@@ -2933,7 +3709,11 @@ export const aiServices: Service[] = [
     features: ['Attrition risk prediction','Skills gap analysis','Optimal team composition','Seasonal demand forecasting','Succession planning guidance'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-predictive-workforce-planning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-predictive-workforce-planning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-predictive-workforce-planning/',
     popular: false,
@@ -2948,7 +3728,11 @@ export const aiServices: Service[] = [
     features: ['Document-to-slide conversion from any file','Smart data visualization — auto charts, graphs','AI-generated speaker notes and timing cues','Brand-consistent — apply company guidelines','Multi-format export — PowerPoint, Google Slides, PDF','Real-time collaboration with team editing'],
     benefits: ["Accelerate insight by 90%", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-presentation-maker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-presentation-maker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-presentation-maker/',
     popular: false,
@@ -2963,7 +3747,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-privilege-access-manager/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-privilege-access-manager', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-privilege-access-manager/',
     popular: false,
@@ -2978,7 +3766,11 @@ export const aiServices: Service[] = [
     features: ['Auto-sourcing + supplier matching','Price comparison + contract negotiation','Delivery tracking + SLA monitoring','Supplier risk scoring + scorecard'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-procurement/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-procurement', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-procurement/',
     popular: false,
@@ -2993,7 +3785,11 @@ export const aiServices: Service[] = [
     features: ['Feature adoption funnel per cohort','Anomaly detection on all key metrics','Auto-generated insight weekly reports','Revenue-impact scoring per anomaly','Alert threshold auto-tuning per metric history'],
     benefits: ["Accelerate insight by 90%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-product-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-product-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-product-analytics/',
     popular: false,
@@ -3008,7 +3804,11 @@ export const aiServices: Service[] = [
     features: ['Conversion funnel anomaly per step','Feature-adoption cohort heatmap','Retention waterfall (D1/D7/D30/D90)','Session replay auto-clip per anomaly insight'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-product-analytics-insights/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-product-analytics-insights', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-product-analytics-insights/',
     popular: false,
@@ -3023,7 +3823,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Reduce overhead by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-product-photo-enhancer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-product-photo-enhancer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-product-photo-enhancer/',
     popular: false,
@@ -3038,7 +3842,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Reduce overhead by 40%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-profitability-dashboard/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-profitability-dashboard', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-profitability-dashboard/',
     popular: false,
@@ -3053,7 +3861,11 @@ export const aiServices: Service[] = [
     features: ['Scope to WBS auto-generation','Resource allocation + critical path analysis','Risk register + contingency recommendation','Sync Jira Asana Monday'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-project-planning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-project-planning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-project-planning/',
     popular: false,
@@ -3068,7 +3880,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 85%", "Built-in audit governance", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-quality-inspection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-quality-inspection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-quality-inspection/',
     popular: false,
@@ -3083,7 +3899,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-quantum-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-quantum-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-quantum-optimizer/',
     popular: false,
@@ -3098,7 +3918,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent Retrieval','Source Attribution & Citations','Knowledge Graph Integration','Real-Time Data Grounding','Chunking & Embedding Strategies','Evaluation & Continuous Improvement'],
     benefits: ["Reduce overhead by 85%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-rag-knowledge-systems/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-rag-knowledge-systems', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-rag-knowledge-systems/',
     popular: false,
@@ -3113,7 +3937,11 @@ export const aiServices: Service[] = [
     features: ['Automated AVM ML model','Confidence interval + risk score','Comparable sales per property','Commercial lease + cap rate valuation'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-real-estate-valuation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-real-estate-valuation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-real-estate-valuation/',
     popular: false,
@@ -3128,7 +3956,11 @@ export const aiServices: Service[] = [
     features: ['100+ language speech-to-text live captions','Real-time translation (bidi, 50+ language pairs)','Video subtitle SRT/VTT generation','AI voice dubbing preserves tone/emotion','Zoom, Teams, YouTube, Twitch integrations'],
     benefits: ["Built-in audit governance", "Accelerate insight by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-real-time-translation-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-real-time-translation-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-real-time-translation-platform/',
     popular: false,
@@ -3143,7 +3975,11 @@ export const aiServices: Service[] = [
     features: ['70+ languages & dialects','Sub-200ms latency','Speaker diarization','Custom glossary per client','REST + WebSocket APIs'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-realtime-translation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-realtime-translation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-realtime-translation/',
     popular: false,
@@ -3158,7 +3994,11 @@ export const aiServices: Service[] = [
     features: ['MITRE ATT&CK mapped adversary simulation','C2 + lateral movement + priv esc','Auto-remediation playbook per finding','Continuous testing on actual environment'],
     benefits: ["Reduce overhead by 60%", "Built-in audit governance", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-red-team-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-red-team-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-red-team-automation/',
     popular: false,
@@ -3173,7 +4013,11 @@ export const aiServices: Service[] = [
     features: ['Regulatory-First Architecture','Human-in-the-Loop & Oversight','Bias & Fairness Monitoring','Documentation & Transparency','Sector-Specific Workflows','Vendor & Model Governance'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-regulated-industries/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-regulated-industries', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-regulated-industries/',
     popular: false,
@@ -3188,7 +4032,11 @@ export const aiServices: Service[] = [
     features: ['150+ jurisdiction regulatory change tracking','AI-powered impact analysis on existing operations','Automated compliance gap detection','Real-time deadline and filing alerts','Audit-ready evidence collection','Integration with GRC platforms'],
     benefits: ["Reduce overhead by 75%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-regulatory-compliance-monitor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-regulatory-compliance-monitor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-regulatory-compliance-monitor/',
     popular: false,
@@ -3203,7 +4051,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 60%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-reinforcement-learning-ops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-reinforcement-learning-ops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-reinforcement-learning-ops/',
     popular: false,
@@ -3218,7 +4070,11 @@ export const aiServices: Service[] = [
     features: ['PPO/SAC RL fine-tune on your KPI objective','Simulation environment without touching production','Policy deployment via feature-flag rollout','Online drift detector + retrain trigger'],
     benefits: ["Accelerate insight by 85%", "Scale in weeks", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-reinforcement-learning-optimiser/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-reinforcement-learning-optimiser', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-reinforcement-learning-optimiser/',
     popular: false,
@@ -3233,7 +4089,11 @@ export const aiServices: Service[] = [
     features: ['ATS keyword scoring (JD vs resume)','Bullet-point rewrite per role','Achievement quantification suggestions','One-click PDF + cover letter export'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-resume-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-resume-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-resume-optimizer/',
     popular: false,
@@ -3248,7 +4108,11 @@ export const aiServices: Service[] = [
     features: ['Shopper behavior scoring per SKU','Real-time offer personalization','Inventory allocation + OOS prevention','Basket size + store labor optimization'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-retail-personalization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-retail-personalization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-retail-personalization/',
     popular: false,
@@ -3263,7 +4127,11 @@ export const aiServices: Service[] = [
     features: ['Real-time personalization','A/B testing built-in','Cross-sell & upsell suggestions','Seasonal trend integration'],
     benefits: ["Accelerate insight by 75%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-retail-recommendation-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-retail-recommendation-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-retail-recommendation-engine/',
     popular: false,
@@ -3278,7 +4146,11 @@ export const aiServices: Service[] = [
     features: ['Pipeline ingestion from CRM + custom objects','Revenue forecast probability-adjusted','Stalled-deal early-warning detection','Pipeline coverage score per rep','Revenue-at-risk breakdown per stage'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-revenue-clarity/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-revenue-clarity', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-revenue-clarity/',
     popular: false,
@@ -3293,7 +4165,11 @@ export const aiServices: Service[] = [
     features: ['Cross-channel attribution modeling','Pipeline health scoring & prediction','Customer churn prediction','GTM motion analysis & recommendation','Integration with Salesforce, HubSpot, Marketo'],
     benefits: ["Built-in audit governance", "Reduce overhead by 90%", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-revenue-ops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-revenue-ops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-revenue-ops/',
     popular: false,
@@ -3308,7 +4184,11 @@ export const aiServices: Service[] = [
     features: ['ML-driven dynamic pricing models','Competitor price monitoring & alerts','Customer segment willingness-to-pay analysis','Demand forecasting & inventory alignment','A/B price testing & revenue attribution','Multi-channel price synchronization'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-revenue-optimization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-revenue-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-revenue-optimization/',
     popular: false,
@@ -3323,7 +4203,11 @@ export const aiServices: Service[] = [
     features: ['Dynamic pricing engine','Churn prediction (90-day)','Upsell recommendations','Cohort analysis','Revenue attribution'],
     benefits: ["Accelerate insight by 75%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-revenue-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-revenue-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-revenue-optimizer/',
     popular: false,
@@ -3338,7 +4222,11 @@ export const aiServices: Service[] = [
     features: ['Opportunity assessment per process','AI model + stack selection','Data readiness audit','90-day roadmap + first-win per exec approval'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-roadmap-strategy/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-roadmap-strategy', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-roadmap-strategy/',
     popular: false,
@@ -3353,7 +4241,11 @@ export const aiServices: Service[] = [
     features: ['Computer vision for robot navigation and obstacle avoidance','Autonomous task planning with reinforcement learning','Human-robot collaboration and safety monitoring','Multi-robot fleet management and coordination','Edge AI deployment for low-latency real-time control'],
     benefits: ["Built-in audit governance", "Accelerate insight by 90%", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-robotics-integration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-robotics-integration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-robotics-integration/',
     popular: false,
@@ -3368,7 +4260,11 @@ export const aiServices: Service[] = [
     features: ['Desktop + web + mobile RPA','ERP / tax portal connector','Screen-scrape + form fill + readback','Scheduler + audit log per bot'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-rpa-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-rpa-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-rpa-automation/',
     popular: false,
@@ -3383,7 +4279,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-rpa-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-rpa-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-rpa-platform/',
     popular: false,
@@ -3398,7 +4298,11 @@ export const aiServices: Service[] = [
     features: ['Eligibility + formulary real-time check','Payer portal auto-submit clinical note attach','Denial tracking + rework automation','Analytics per payer approval time + rate'],
     benefits: ["Scale in weeks", "Reduce overhead by 40%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-rx-prior-auth/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-rx-prior-auth', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-rx-prior-auth/',
     popular: false,
@@ -3413,7 +4317,11 @@ export const aiServices: Service[] = [
     features: ['Real-time talk-listen + objection detection','Recommended next-step per call stage','CRM scorecard + follow-up task auto-created','Team leaderboard + best-practice highlight'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sales-coach/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sales-coach', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sales-coach/',
     popular: false,
@@ -3428,7 +4336,11 @@ export const aiServices: Service[] = [
     features: ['Predictive lead scoring (0-100)','Sales pipeline forecasting','Deal risk detection & alerts','Automated email sequences','Competitive intelligence briefs'],
     benefits: ["Accelerate insight by 60%", "Reduce overhead by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sales-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sales-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sales-intelligence/',
     popular: true,
@@ -3443,7 +4355,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 85%", "Accelerate insight by 85%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-secrets-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-secrets-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-secrets-management/',
     popular: false,
@@ -3458,7 +4374,11 @@ export const aiServices: Service[] = [
     features: ['Adversarial Robustness & Red-Teaming','Prompt & Input Guardrails','Data Privacy & Confidentiality','Model Supply Chain Security','Fairness & Bias Mitigation','Incident Response & Recovery'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-security-responsible-ai/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-security-responsible-ai', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-security-responsible-ai/',
     popular: false,
@@ -3473,7 +4393,11 @@ export const aiServices: Service[] = [
     features: ['AI anomaly detection + auto-remediation','Cluster drift detection & drift correction','Workload-aware auto-scaling (predictive)','Security policy enforcement (OPA/Gatekeeper)','Zero-downtime canary + blue-green deploys'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-self-healing-kubernetes-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-self-healing-kubernetes-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-self-healing-kubernetes-platform/',
     popular: false,
@@ -3488,7 +4412,11 @@ export const aiServices: Service[] = [
     features: ['Multi-platform social listening (X, Reddit, TikTok, news)','Emotion-level sentiment scoring (joy, anger, fear, trust)','Brand mention clustering & trending topic detection','Influencer identification & partnership scoring','Crisis early-warning system with alert triage','Competitor sentiment benchmarking & gap analysis'],
     benefits: ["Accelerate insight by 85%", "Scale in weeks", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sentiment-analysis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sentiment-analysis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sentiment-analysis/',
     popular: false,
@@ -3503,7 +4431,11 @@ export const aiServices: Service[] = [
     features: ['Multi-source brand mention ingestion','Sentiment scoring per region + product','Issue spike alert + anomaly detect','Weekly brand health executive summary','Competitor sentiment comparison view'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sentiment-brand-pulse/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sentiment-brand-pulse', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sentiment-brand-pulse/',
     popular: false,
@@ -3518,7 +4450,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 40%", "Accelerate insight by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-serverless-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-serverless-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-serverless-platform/',
     popular: false,
@@ -3533,7 +4469,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 85%", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-smart-document-redactor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-smart-document-redactor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-smart-document-redactor/',
     popular: false,
@@ -3548,7 +4488,11 @@ export const aiServices: Service[] = [
     features: ['Multi-platform publishing queue','AI caption and hashtag writer','Optimal timing engine per channel','Engagement analytics dashboard','A/B post variant testing'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-social-scheduler/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-social-scheduler', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-social-scheduler/',
     popular: false,
@@ -3563,7 +4507,11 @@ export const aiServices: Service[] = [
     features: ['30+ data sources','Sentiment scoring (-100 to +100)','Crisis detection','Influencer identification','Competitor benchmark'],
     benefits: ["Built-in audit governance", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-social-sentiment-tracker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-social-sentiment-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-social-sentiment-tracker/',
     popular: false,
@@ -3578,7 +4526,11 @@ export const aiServices: Service[] = [
     features: ['Real-time 3D scene reconstruction and understanding','AI-driven gesture and gaze tracking','Spatial audio processing and acoustic mapping','Immersive analytics dashboard creation','Cross-platform AR/VR deployment (Vision Pro, Quest, HoloLens)'],
     benefits: ["Accelerate insight by 90%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-spatial-computing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-spatial-computing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-spatial-computing/',
     popular: false,
@@ -3593,7 +4545,11 @@ export const aiServices: Service[] = [
     features: ['Text/Image 3D scene Gaussian Splatting/LRM','Real-time browser viewer via Three.js','Object decomposition + physics export','FBX/GLTF/OBJ export + textures baked'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-spatial-computing-3d-scene/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-spatial-computing-3d-scene', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-spatial-computing-3d-scene/',
     popular: false,
@@ -3608,7 +4564,11 @@ export const aiServices: Service[] = [
     features: ['99.2% accuracy speech-to-text in 60+ languages','Real-time voice translation for live meetings','Voice cloning for personalized brand audio content','Voice biometrics for secure identity verification','Conversational IVR with natural language understanding','Meeting transcription with speaker diarization & summaries'],
     benefits: ["Accelerate insight by 85%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-speech-voice-solutions/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-speech-voice-solutions', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-speech-voice-solutions/',
     popular: false,
@@ -3623,7 +4583,11 @@ export const aiServices: Service[] = [
     features: ['Discovery & Opportunity Mapping','Use-Case Prioritization','Vendor & Build-vs-Buy Evaluation','Phased Roadmap Design','KPI & Success Metrics','Governance & Risk Alignment'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 90%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-strategy-roadmap/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-strategy-roadmap', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-strategy-roadmap/',
     popular: false,
@@ -3638,7 +4602,11 @@ export const aiServices: Service[] = [
     features: ['Demand forecasting (ARIMA + ML)','Inventory optimization & reorder points','Supplier risk scoring & monitoring','Logistics route optimization','Real-time shipment tracking'],
     benefits: ["Accelerate insight by 60%", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-chain/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-chain', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-chain/',
     popular: false,
@@ -3653,7 +4621,11 @@ export const aiServices: Service[] = [
     features: ['Real-time multi-tier visibility','Predictive disruption alerts','Vendor risk assessment','Cost optimization engine','Scenario simulation and planning'],
     benefits: ["Built-in audit governance", "Reduce overhead by 60%", "Accelerate insight by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-chain-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-chain-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-chain-intelligence/',
     popular: false,
@@ -3668,7 +4640,11 @@ export const aiServices: Service[] = [
     features: ['ML-powered demand forecasting at SKU level','Multi-echelon inventory optimization','Supplier risk intelligence and monitoring','Logistics route optimization with cost modeling','Carbon footprint tracking and reduction'],
     benefits: ["Scale in weeks", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-chain-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-chain-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-chain-optimizer/',
     popular: false,
@@ -3683,7 +4659,11 @@ export const aiServices: Service[] = [
     features: ['Demand forecasting with 94% accuracy','Alternative routing suggestions','Supplier risk scoring','Real-time anomaly alerts'],
     benefits: ["Scale in weeks", "Reduce overhead by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-chain-predictor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-chain-predictor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-chain-predictor/',
     popular: false,
@@ -3698,7 +4678,11 @@ export const aiServices: Service[] = [
     features: ['Real-time shipment tracking & ETA prediction','Supplier risk scoring & early warning','Inventory anomaly detection','Automated disruption alerts (Slack/email)','Root cause analysis & recommendation engine'],
     benefits: ["Reduce overhead by 85%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-chain-visibility/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-chain-visibility', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-chain-visibility/',
     popular: false,
@@ -3713,7 +4697,11 @@ export const aiServices: Service[] = [
     features: ['Demand forecasting (SKU-level, multi-channel)','Inventory optimization & safety stock calc','Automatic purchase order suggestions','What-if scenario modeling','Supplier lead time prediction'],
     benefits: ["Scale in weeks", "Reduce overhead by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-supply-demand-planner/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-supply-demand-planner', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-supply-demand-planner/',
     popular: false,
@@ -3728,7 +4716,11 @@ export const aiServices: Service[] = [
     features: ['Integration with AWS/GCP carbon APIs','Travel emission estimation from calendars','Supply chain scope 3 modeling','Regulatory reporting templates (ESG)'],
     benefits: ["Reduce overhead by 85%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sustainability-carbon-tracker/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sustainability-carbon-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sustainability-carbon-tracker/',
     popular: false,
@@ -3743,7 +4735,11 @@ export const aiServices: Service[] = [
     features: ['Carbon intensity forecasting per region','Job scheduling to low-carbon time windows','Resource right-sizing recommendations','Sustainability KPI dashboards','Compliance with ESG reporting standards'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sustainable-ops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sustainable-ops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sustainable-ops/',
     popular: false,
@@ -3758,7 +4754,11 @@ export const aiServices: Service[] = [
     features: ['Supplier-scope carbon database from tier-1 to tier-n with Scope 3 quantification','Green-alternative sourcing score with cost-impact tradeoff analysis','CSRD and CBAM compliant auto-reports per quarter per jurisdiction','Regulatory penalty simulator — cost-of-non-compliance per scenario'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-sustainable-supply-chain-radar/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-sustainable-supply-chain-radar', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-sustainable-supply-chain-radar/',
     popular: true,
@@ -3773,7 +4773,11 @@ export const aiServices: Service[] = [
     features: ['Multi-platform AI candidate sourcing','Bias-free resume scoring & ranking','Automated interview scheduling & coordination','Predictive hiring success modeling','Competitor talent mapping & intelligence','DEI analytics & reporting dashboard'],
     benefits: ["Accelerate insight by 40%", "80%+ less manual touch", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-talent-acquisition/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-talent-acquisition', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-talent-acquisition/',
     popular: false,
@@ -3788,7 +4792,11 @@ export const aiServices: Service[] = [
     features: ['Resume parsing & scoring','Candidate-job fit matching','Automated interview scheduling','Bias detection','Offer management'],
     benefits: ["Built-in audit governance", "Reduce overhead by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-talent-acquisition-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-talent-acquisition-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-talent-acquisition-platform/',
     popular: false,
@@ -3803,7 +4811,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Accelerate insight by 85%", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-tax-compliance-calculator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-tax-compliance-calculator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-tax-compliance-calculator/',
     popular: false,
@@ -3818,7 +4830,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-test-automation-framework/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-test-automation-framework', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-test-automation-framework/',
     popular: false,
@@ -3833,7 +4849,11 @@ export const aiServices: Service[] = [
     features: ['Auto-generated test cases from user journeys','Visual regression testing across browsers','AI bug detection with root-cause suggestions','Performance testing & bottleneck analysis','Self-healing test scripts'],
     benefits: ["Sales reps spend 70% less time on CRM data entry \u2014 voice commands do it automatically", "Live coaching during calls closes 15-25% more deals according to Gong and Chorus benchmark data", "Get full-deal visibility in real time: pipeline dashboard updated by voice, not by end-of-week data entry"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-testing-qa/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-testing-qa', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-testing-qa/',
     popular: false,
@@ -3848,7 +4868,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Accelerate insight by 60%", "Scale in weeks", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-threat-hunting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-threat-hunting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-threat-hunting/',
     popular: false,
@@ -3863,7 +4887,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-threat-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-threat-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-threat-intelligence/',
     popular: false,
@@ -3878,7 +4906,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-trading-signal-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-trading-signal-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-trading-signal-engine/',
     popular: false,
@@ -3893,7 +4925,11 @@ export const aiServices: Service[] = [
     features: ['Labeling workforce + tools','Active learning loop','Dataset versioning','Consensus / quality scoring','Synthetic data generation'],
     benefits: ["Accelerate insight by 85%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-training-data-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-training-data-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-training-data-platform/',
     popular: false,
@@ -3908,7 +4944,11 @@ export const aiServices: Service[] = [
     features: ['100+ language Neural Machine Translation','Domain-specific model fine-tuning','Translation memory & glossary integration','Quality scoring & consistency checks','API integration for real-time translation'],
     benefits: ["Accelerate insight by 90%", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-translation-services/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-translation-services', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-translation-services/',
     popular: false,
@@ -3923,7 +4963,11 @@ export const aiServices: Service[] = [
     features: ['Zero-shot voice clone (30 sec sample)','80+ language prosody matching','Emotion + pacing per brand voice','Batch production for script libraries'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-tts-voice-clone/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-tts-voice-clone', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-tts-voice-clone/',
     popular: false,
@@ -3938,7 +4982,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 90%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-tutoring-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-tutoring-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-tutoring-platform/',
     popular: false,
@@ -3953,7 +5001,11 @@ export const aiServices: Service[] = [
     features: ['Real-time object detection & tracking','People counting & heatmaps','License plate recognition (ANPR)','Behavioral anomaly detection','Privacy-blur compliance mode'],
     benefits: ["Accelerate insight by 90%", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-video-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-video-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-video-analytics/',
     popular: false,
@@ -3968,7 +5020,11 @@ export const aiServices: Service[] = [
     features: ['Text-to-video AI engine with scene generation','AI voiceover in 50+ languages with subtitles','Brand kit — colors, logos, auto-applied','Video editing timeline with AI-assisted cuts','Multi-platform export — YouTube, TikTok, Reels','Template marketplace — 500+ pre-built designs'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-video-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-video-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-video-generation/',
     popular: false,
@@ -3983,7 +5039,11 @@ export const aiServices: Service[] = [
     features: ['Text-to-video generation (diffusion + GANs)','Auto storyboard & scene composition','AI voiceover with 50+ languages','Built-in captions & subtitles','Export for social (9:16, 1:1, 16:9)'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-video-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-video-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-video-generator/',
     popular: false,
@@ -3998,7 +5058,11 @@ export const aiServices: Service[] = [
     features: ['YOLOv8/RT-DETR model fine-tune on your SKU','Inference on edge device <30ms per frame','Real-time alarm + MES work-order auto-create','SPC chart + shift defect trend report'],
     benefits: ["Reduce overhead by 90%", "Accelerate insight by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-vision-quality-inspection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-vision-quality-inspection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-vision-quality-inspection/',
     popular: false,
@@ -4013,7 +5077,11 @@ export const aiServices: Service[] = [
     features: ['Defect detection (scratches, dents, misalignments)','Real-time inspection at line speed','Anomaly detection on novel defect types','Self-learning model improvement','Integration with PLCs & MES systems'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-visual-inspection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-visual-inspection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-visual-inspection/',
     popular: false,
@@ -4028,7 +5096,11 @@ export const aiServices: Service[] = [
     features: ['Multimodal embedding (CLIP + custom fine-tune)','Visual similarity search <200ms','Shop-the-look & bundled recommendation','Colour/shape/pattern attribute extraction','OpenSearch / Pinecone / Weaviate connectors'],
     benefits: ["Built-in audit governance", "Accelerate insight by 40%", "Reduce overhead by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-visual-search-recommendation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-visual-search-recommendation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-visual-search-recommendation/',
     popular: false,
@@ -4043,7 +5115,11 @@ export const aiServices: Service[] = [
     features: ['Natural language understanding (NLU)','Real-time speech synthesis & recognition','Call routing & handoff to humans','CRM integration (auto-log calls)','Compliance recording & transcription'],
     benefits: ["Built-in audit governance", "Scale in weeks", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-agent/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-agent', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-agent/',
     popular: false,
@@ -4058,7 +5134,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 40%", "Scale in weeks", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-agent-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-agent-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-agent-builder/',
     popular: false,
@@ -4073,7 +5153,11 @@ export const aiServices: Service[] = [
     features: ['Natural voice synthesis','Real-time speech recognition','Multi-language support','CRM integration','Call analytics and scoring'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-agent-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-agent-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-agent-platform/',
     popular: false,
@@ -4088,7 +5172,11 @@ export const aiServices: Service[] = [
     features: ['Natural language voice processing','Multi-language support (50+ languages)','CRM & ERP integration','Real-time transcription & analytics','Custom wake words & voice branding'],
     benefits: ["Built-in audit governance", "Scale in weeks", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-assistant/',
     popular: false,
@@ -4103,7 +5191,11 @@ export const aiServices: Service[] = [
     features: ['Custom wake-word training','Task execution','Multi-turn context','On-premise deployment','Twilio/Asterisk integration'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-assistant-pro/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-assistant-pro', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-assistant-pro/',
     popular: false,
@@ -4118,7 +5210,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Scale in weeks", "Accelerate insight by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-brand-consistency/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-brand-consistency', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-brand-consistency/',
     popular: false,
@@ -4133,7 +5229,11 @@ export const aiServices: Service[] = [
     features: ['Voice cloning from 30s audio sample','Emotion and tone control — adjust pitch, rate, emphasis','Real-time audio streaming for voice assistants','Multi-speaker conversation generation','Studio-quality audio with noise reduction','Ethical consent tracking and ownership verification'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-cloning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-cloning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-cloning/',
     popular: false,
@@ -4148,7 +5248,11 @@ export const aiServices: Service[] = [
     features: ['Voice clone with 5 min sample','Emotion & tone control','30+ language output','Bulk video rendering API'],
     benefits: ["Accelerate insight by 85%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-cloning-marketing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-cloning-marketing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-cloning-marketing/',
     popular: false,
@@ -4163,7 +5267,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 90%", "Built-in audit governance", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-cloning-studio/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-cloning-studio', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-cloning-studio/',
     popular: false,
@@ -4178,7 +5286,11 @@ export const aiServices: Service[] = [
     features: ['Real-time call transcription with speaker separation across phone, Zoom, Teams','Live deal coaching: sales rep hears contextual prompts mid-call via earpiece or screen pop-up','Voice command CRM update: update stage, log notes, create task — all hands-free','Auto-contact enrichment via Clearbit, ZoomInfo, LinkedIn — contact record complete in 3 seconds','Post-call: auto-summary, action items, next-step suggestions delivered to Slack/CRM within 30 seconds'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-first-crm/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-first-crm', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-first-crm/',
     popular: true,
@@ -4193,7 +5305,11 @@ export const aiServices: Service[] = [
     features: ['ASR (Whisper/Deepgram) multi-language','Intent extraction + slot-filling via LLM','Connector library (calendar/CRM/ticketing)','Privacy-first: on-prem ASR + LLM option'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-voice-to-action-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-voice-to-action-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-voice-to-action-platform/',
     popular: false,
@@ -4208,7 +5324,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-vpc-zero-trust/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-vpc-zero-trust', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-vpc-zero-trust/',
     popular: false,
@@ -4223,7 +5343,11 @@ export const aiServices: Service[] = [
     features: ['Natural-language workflow authoring','100+ pre-built app connectors','AI decision nodes (classify, extract, score)','Human-in-the-loop approval node'],
     benefits: ["Scale in weeks", "Reduce overhead by 60%", "Accelerate insight by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-workflow-automation-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-workflow-automation-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-workflow-automation-builder/',
     popular: false,
@@ -4238,7 +5362,11 @@ export const aiServices: Service[] = [
     features: ['Unlimited workflows + executions','SSO + RBAC + full audit log','Custom LLM / model bring-your-own','Multi-region deploy + disaster recovery','24/7 dedicated support + CSM'],
     benefits: ["Built-in audit governance", "Reduce overhead by 85%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-workflow-automation-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-workflow-automation-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-workflow-automation-enterprise/',
     popular: false,
@@ -4253,7 +5381,11 @@ export const aiServices: Service[] = [
     features: ['Continuous identity verification (adaptive auth)','Context-aware access policies','Device posture scoring + compliance gating','Micro-segmentation per user/session','Real-time threat intelligence integration'],
     benefits: ["Accelerate insight by 85%", "Reduce overhead by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-zero-trust-network-access/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-zero-trust-network-access', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-zero-trust-network-access/',
     popular: false,
@@ -4268,7 +5400,11 @@ export const aiServices: Service[] = [
     features: ['Pre-labeling with foundation models (CLIP, YOLO)','Active learning to prioritize ambiguous samples','Collaborative annotation workspace','Quality metrics & consensus scoring','Export to all major ML data formats'],
     benefits: ["Accelerate insight by 75%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automated-data-labeling/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automated-data-labeling', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automated-data-labeling/',
     popular: false,
@@ -4283,7 +5419,11 @@ export const aiServices: Service[] = [
     features: ['Static analysis + LLM-based reasoning','Security vulnerability scoring (CWE, OWASP)','Auto-suggested patches via diffs','Custom rule engine per team standards','CI/CD integration (GitHub Actions, GitLab CI)'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/autonomous-code-review-agent/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/autonomous-code-review-agent', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/autonomous-code-review-agent/',
     popular: false,
@@ -4298,7 +5438,11 @@ export const aiServices: Service[] = [
     features: ['Growth Opportunity Mapping','Conversion System Design','Retention & Expansion Playbooks','Autonomous Experimentation','Growth Data Foundation','Executive Growth Dashboard'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 60%", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/autonomous-growth-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/autonomous-growth-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/autonomous-growth-intelligence/',
     popular: false,
@@ -4313,7 +5457,11 @@ export const aiServices: Service[] = [
     features: ['Global scan DNS+WHOIS+SSL 24/7','Typosquat + lookalike domain detection','Auto-takedown to registrars + DNS','Alert + dashboard per new domain registered'],
     benefits: ["Built-in audit governance", "Reduce overhead by 40%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/brand-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/brand-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/brand-monitoring/',
     popular: false,
@@ -4328,7 +5476,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/business-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/business-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/business-intelligence/',
     popular: false,
@@ -4343,7 +5495,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/content-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/content-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/content-generation/',
     popular: false,
@@ -4358,7 +5514,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Reduce overhead by 40%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/customer-experience/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/customer-experience', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/customer-experience/',
     popular: false,
@@ -4373,7 +5533,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Reduce overhead by 60%", "Scale in weeks", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/doc-intelligence-v2/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/doc-intelligence-v2', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/doc-intelligence-v2/',
     popular: false,
@@ -4388,7 +5552,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/document-processing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/document-processing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/document-processing/',
     popular: false,
@@ -4403,7 +5571,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Scale in weeks", "Reduce overhead by 90%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/energy-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/energy-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/energy-management/',
     popular: false,
@@ -4418,7 +5590,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Accelerate insight by 90%", "Reduce overhead by 60%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/fraud-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/fraud-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/fraud-detection/',
     popular: false,
@@ -4433,7 +5609,11 @@ export const aiServices: Service[] = [
     features: ['Brand voice tuning','SEO content scoring','Multi-format output','Content calendar integration','Plagiarism & fact checking'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-copywriting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-copywriting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-copywriting/',
     popular: false,
@@ -4448,7 +5628,11 @@ export const aiServices: Service[] = [
     features: ['Secure LLM Deployment','RAG & Knowledge Grounding','Custom Model Fine-Tuning','Multi-Modal Generation','Governance & Compliance','Cost & Performance Optimization'],
     benefits: ["Accelerate insight by 60%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-enterprise/',
     popular: false,
@@ -4463,7 +5647,11 @@ export const aiServices: Service[] = [
     features: ['Risk clause highlighting','Playbook clause matching','Redline suggestion engine','Multi-doc comparison','Workflow routing'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 75%", "Reduce overhead by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-legal-review/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-legal-review', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-legal-review/',
     popular: false,
@@ -4478,7 +5666,11 @@ export const aiServices: Service[] = [
     features: ['Multi-format document ingest','Configurable summary length','Citation-backed extraction','Compliance abstract templates','Bulk processing API'],
     benefits: ["Built-in audit governance", "Reduce overhead by 75%", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-summarization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-summarization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-summarization/',
     popular: false,
@@ -4493,7 +5685,11 @@ export const aiServices: Service[] = [
     features: ['Auto-transcription + captions','Text-to-speech voiceover','Background removal','AI scene description','One-click aspect ratio resize'],
     benefits: ["Accelerate insight by 85%", "80%+ less manual touch", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-video-editor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-video-editor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-video-editor/',
     popular: false,
@@ -4508,7 +5704,11 @@ export const aiServices: Service[] = [
     features: ['Natural TTS + STT','Multi-lingual support','Real-time CRM sync','Sentiment analysis','Call analytics dashboard'],
     benefits: ["Built-in audit governance", "Reduce overhead by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ai-voice-agent/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ai-voice-agent', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ai-voice-agent/',
     popular: false,
@@ -4523,7 +5723,11 @@ export const aiServices: Service[] = [
     features: ['Tabular data synthesis (CTGAN, TVAE)','Image synthesis with diffusion models','Privacy-preserving synthetic data (DP-SGD)','Data augmentation pipelines','Quality metrics (KSTest, coverage)'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Reduce overhead by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-data-synthesis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-data-synthesis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-data-synthesis/',
     popular: false,
@@ -4538,7 +5742,11 @@ export const aiServices: Service[] = [
     features: ['Transcript summarization & theme extraction','Sentiment analysis across user segments','Automatic persona generation with quotes','Journey map creation from session data','Priority ranking of pain points'],
     benefits: ["80%+ less manual touch", "Accelerate insight by 85%", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/generative-ux-research-synthesis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/generative-ux-research-synthesis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/generative-ux-research-synthesis/',
     popular: false,
@@ -4553,7 +5761,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Scale in weeks", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/invoice-ai-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/invoice-ai-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/invoice-ai-automation/',
     popular: false,
@@ -4568,7 +5780,11 @@ export const aiServices: Service[] = [
     features: ['Clause extraction & classification (liability, IP, termination)','Risk scoring per clause (high/medium/low)','Deviation detection from standard templates','Redline suggestions with rationale','Multi-jurisdiction compliance checks'],
     benefits: ["Scale in weeks", "80%+ less manual touch", "Accelerate insight by 90%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/legal-doc-review-ai/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/legal-doc-review-ai', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/legal-doc-review-ai/',
     popular: false,
@@ -4583,7 +5799,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/marketing-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/marketing-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/marketing-automation/',
     popular: false,
@@ -4598,7 +5818,11 @@ export const aiServices: Service[] = [
     features: ['Cloud recording & real-time transcription','Speaker identification & diarization','Action item extraction with assignees','Decision log & key quote highlights','Sync to Notion/Confluence/ClickUp'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Accelerate insight by 75%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/meeting-ai-assistant/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/meeting-ai-assistant', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/meeting-ai-assistant/',
     popular: false,
@@ -4613,7 +5837,11 @@ export const aiServices: Service[] = [
     features: ['Experiment tracking','Model registry & version','ML pipeline CI/CD','Feature store','Model drift monitoring'],
     benefits: ["Accelerate insight by 85%", "80%+ less manual touch", "Reduce overhead by 85%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/mlops-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/mlops-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/mlops-platform/',
     popular: false,
@@ -4628,7 +5856,11 @@ export const aiServices: Service[] = [
     features: ['Person/vehicle/package detect','Loitering & perimeter alerts','License plate recognition','Behavior anomaly flagging','Privacy blur option'],
     benefits: ["Scale in weeks", "Accelerate insight by 60%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/object-detection-surveillance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/object-detection-surveillance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/object-detection-surveillance/',
     popular: false,
@@ -4643,7 +5875,11 @@ export const aiServices: Service[] = [
     features: ['Feature engineering from usage & billing data','Gradient boosting & survival analysis models','Risk score per account (1-100)','Automated retention offer triggers','Dashboard with cohort analysis'],
     benefits: ["Scale in weeks", "Built-in audit governance", "Reduce overhead by 40%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/predictive-churn-risk/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/predictive-churn-risk', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/predictive-churn-risk/',
     popular: false,
@@ -4658,7 +5894,11 @@ export const aiServices: Service[] = [
     features: ['Technographics + intent signal + web engagement','ML model per ICP scoring dimension','ABM target list auto-generated per score tier','CRM sync Salesforce HubSpot Pipedrive'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 75%", "Built-in audit governance"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/predictive-lead-scoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/predictive-lead-scoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/predictive-lead-scoring/',
     popular: false,
@@ -4673,7 +5913,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/predictive-maintenance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/predictive-maintenance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/predictive-maintenance/',
     popular: false,
@@ -4688,7 +5932,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Accelerate insight by 85%", "Reduce overhead by 75%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/quality-assurance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/quality-assurance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/quality-assurance/',
     popular: false,
@@ -4703,7 +5951,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Protect backends from traffic spikes without cloud-proxy lock-in", "API onboarding time for partners drops from weeks to hours", "Usage insights + quota controls save 20-35% on API gateway spend"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/secure-file-transfer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/secure-file-transfer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/secure-file-transfer/',
     popular: false,
@@ -4718,7 +5970,11 @@ export const aiServices: Service[] = [
     features: ['AI-powered automation','Enterprise integration','Real-time analytics'],
     benefits: ["Built-in audit governance", "Accelerate insight by 60%", "80%+ less manual touch"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/supply-chain/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/supply-chain', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/supply-chain/',
     popular: false,
@@ -4733,7 +5989,11 @@ export const aiServices: Service[] = [
     features: ['HNSW + IVF index types','Hybrid scalar + vector filter','Multi-modal embeddings','Autoscaling replicas','REST + gRPC + SDK'],
     benefits: ["Built-in audit governance", "80%+ less manual touch", "Accelerate insight by 60%"],
     pricing: {"basic": "99", "pro": "499", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/vector-database/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/vector-database', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/vector-database/',
     popular: false,
@@ -4748,7 +6008,11 @@ export const aiServices: Service[] = [
     features: ['WCAG 2.2 AA/AAA automated auditing','Screen reader simulation & navigation testing','Auto-generated remediation code snippets','Color contrast & typography analysis','Continuous CI/CD accessibility gates'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/accessibility-compliance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/accessibility-compliance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/accessibility-compliance/',
     popular: false,
@@ -4763,7 +6027,11 @@ export const aiServices: Service[] = [
     features: ['AI anomaly detection (baselines auto-calibrate)','Instant root-cause analysis with dependency graph','Predictive alerting before incidents impact users','Auto-remediation playbooks (restart, scale, reroute)','OpenTelemetry + Prometheus + Grafana native'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-performance-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-performance-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-performance-monitoring/',
     popular: false,
@@ -4778,7 +6046,11 @@ export const aiServices: Service[] = [
     features: ['Unified API gateway','Rate limiting & quotas','API key management','Developer portal','Analytics & tracing'],
     benefits: ["24/7 pager alerts", "ITSM integration", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/api-gateway-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/api-gateway-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/api-gateway-management/',
     popular: false,
@@ -4793,7 +6065,11 @@ export const aiServices: Service[] = [
     features: ['RESTful & GraphQL API design','Third-party API integrations','Webhook architecture & event systems','API gateway & rate limiting','API documentation & versioning (OpenAPI/Swagger)'],
     benefits: ["Automate 95% IT tasks", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/api-integration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/api-integration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/api-integration/',
     popular: false,
@@ -4808,7 +6084,11 @@ export const aiServices: Service[] = [
     features: ['High-performance API gateway (10k+ RPS)','Developer self-service portal','Analytics: usage, latency, errors','API monetization & billing integration','Security: OAuth2, JWT validation, rate limiting'],
     benefits: ["Full RBAC audit", "ITSM integration", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/api-management-gateway/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/api-management-gateway', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/api-management-gateway/',
     popular: false,
@@ -4823,7 +6103,11 @@ export const aiServices: Service[] = [
     features: ['Distributed traces per request','Slow query / endpoint dashboard','Error tracking with stack','SLO burn-rate alerting','Service map dependency view'],
     benefits: ["Guarantee 99.99%+ data availability post-recovery event", "Cut DR drill time from 4+ hours to 15 min with automated test scripts", "Pass SOC 2 / HIPAA audits effortlessly: chain-of-custody logs provisioned automatically"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/apm-application-performance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/apm-application-performance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/apm-application-performance/',
     popular: false,
@@ -4838,7 +6122,11 @@ export const aiServices: Service[] = [
     features: ['Automated chaos experiment runner (Litmus/Chaos Monkey)','Failure scenario library: network, pod, DB, region','Auto-generated recovery playbook','Blast-radius analysis + dependency mapping','Resilience scorecard + monthly score trend'],
     benefits: ["Reduce MTTR by 90%", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/chaos-engineering-svc/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/chaos-engineering-svc', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/chaos-engineering-svc/',
     popular: false,
@@ -4853,7 +6141,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud cost visibility and chargeback/showback','AI-driven rightsizing recommendations','Automated reserved instance and savings plan optimization','Real-time cost anomaly detection and budget alerts','Kubernetes cost optimization (HPA, node optimization)','Tag governance and resource ownership tracking','FinOps maturity assessment and roadmap','Monthly cost optimization reviews and savings tracking'],
     benefits: ["Reduce MTTR by 75%", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-finops-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-finops-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-finops-1/',
     popular: false,
@@ -4868,7 +6160,11 @@ export const aiServices: Service[] = [
     features: ['Kubernetes-native microservice architecture','Event-driven: Kafka/NATS/PubSub patterns','Auto-generated Helm charts + ArgoCD','Distributed tracing OpenTelemetry from bootstrap','GitOps deploy pipeline per environment'],
     benefits: ["Full RBAC audit", "ITSM integration", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-native-app-dev/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-native-app-dev', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-native-app-dev/',
     popular: false,
@@ -4883,7 +6179,11 @@ export const aiServices: Service[] = [
     features: ['Registry vuln scanning (Trivy)','Runtime behavior monitoring (Falco)','OPA admission policy engine','SBOM attestation per image','SLSA Level 3+ supply chain attestation'],
     benefits: ["24/7 pager alerts", "ITSM integration", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/container-security-lifecycle/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/container-security-lifecycle', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/container-security-lifecycle/',
     popular: false,
@@ -4898,7 +6198,11 @@ export const aiServices: Service[] = [
     features: ['Automated threat feed ingestion (50+ sources)','AI-driven threat prioritization (impact scoring)','IOC & TTP matching against your environment','Dark web monitoring for leaked credentials','Executive threat briefings & reporting'],
     benefits: ["Reduce MTTR by 90%", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cyber-threat-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cyber-threat-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cyber-threat-intelligence/',
     popular: false,
@@ -4913,7 +6217,11 @@ export const aiServices: Service[] = [
     features: ['Legacy schema extraction & analysis','AI-powered schema mapping to target','Automated ETL/ELT pipeline generation','Data lineage & impact analysis','Post-migration validation & reconciliation'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-warehouse-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-warehouse-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-warehouse-modernization/',
     popular: false,
@@ -4928,7 +6236,11 @@ export const aiServices: Service[] = [
     features: ['Homogeneous + heterogeneous moves','Online replication with CDC','Schema compatibility analyzer','Rollback automation','Performance validation'],
     benefits: ["Full RBAC audit", "ITSM integration", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/db-migration-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/db-migration-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/db-migration-service/',
     popular: false,
@@ -4943,7 +6255,11 @@ export const aiServices: Service[] = [
     features: ['Natural language to pipeline generation','IaC template creation (Terraform, CloudFormation)','Automated incident runbook drafting','Self-healing deployment rollbacks','Performance anomaly detection & tuning'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Reduce overhead by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/devops-gen-ai-ci-cd/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/devops-gen-ai-ci-cd', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/devops-gen-ai-ci-cd/',
     popular: false,
@@ -4958,7 +6274,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Cut production bugs by 40-70% via automated pre-merge quality gates", "Save 8-12 engineering hours per sprint on manual peer review of style issues", "Automatically stay CVE-clean with zero-day patch alerts CISA KEV + Exploit-DB matched"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/devsecops-pipeline/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/devsecops-pipeline', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/devsecops-pipeline/',
     popular: false,
@@ -4973,7 +6293,11 @@ export const aiServices: Service[] = [
     features: ['Multi-edge provider: Cloudflare/Fastly/Akamai','Edge function CI/CD','Edge ML inference (TFLite/ONNX Runtime)','Regional failover + sticky routing','Per-node observability + alert threshold'],
     benefits: ["ITSM integration", "Full RBAC audit", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/edge-computing-deploy/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/edge-computing-deploy', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/edge-computing-deploy/',
     popular: false,
@@ -4988,7 +6312,11 @@ export const aiServices: Service[] = [
     features: ['Cross-platform device enrollment (Windows, macOS, iOS, Android, Linux)','Automated patch & update deployment','Endpoint detection & response (EDR)','Application whitelisting & app catalog','Remote lock, wipe, and geofencing'],
     benefits: ["24/7 pager alerts", "ITSM integration", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/endpoint-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/endpoint-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/endpoint-management/',
     popular: false,
@@ -5003,7 +6331,11 @@ export const aiServices: Service[] = [
     features: ['Automated backup scheduling','Point-in-time recovery','Ransomware detection and isolation','Geo-redundant replication','Compliance-ready retention policies'],
     benefits: ["Reduce MTTR by 90%", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/enterprise-backup-dr/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/enterprise-backup-dr', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/enterprise-backup-dr/',
     popular: false,
@@ -5018,7 +6350,11 @@ export const aiServices: Service[] = [
     features: ['Pipeline bottleneck analysis & profiling','Code refactoring & parallelization','Migration to cloud-native (Glue, Dataflow, Flink)','Data quality checks & anomaly detection','Cost optimization (spot instances, auto-scaling)'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/etl-pipeline-optimization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/etl-pipeline-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/etl-pipeline-optimization/',
     popular: false,
@@ -5033,7 +6369,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Full RBAC audit", "Reduce MTTR by 75%", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/event-driven-architecture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/event-driven-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/event-driven-architecture/',
     popular: false,
@@ -5048,7 +6388,11 @@ export const aiServices: Service[] = [
     features: ['Static analysis + re-entrancy + overflow checks','Manual line-by-line expert review','Fuzz + invariant testing (Foundry)','Formal verification for critical invariants','Post-fix re-audit within 72 hours'],
     benefits: ["Full RBAC audit", "Reduce MTTR by 75%", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/evm-smart-contract-audit/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/evm-smart-contract-audit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/evm-smart-contract-audit/',
     popular: false,
@@ -5063,7 +6407,11 @@ export const aiServices: Service[] = [
     features: ['Apollo Federation 2 gateway + subgraph composition','Schema registry + CI/CD guardrails','Distributed caching per entity','Auto-generated TS/Java/Python SDKs','Rate limiting + cost analysis per query'],
     benefits: ["Reduce MTTR by 85%", "Automate 95% IT tasks", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/graphql-federation-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/graphql-federation-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/graphql-federation-platform/',
     popular: false,
@@ -5078,7 +6426,11 @@ export const aiServices: Service[] = [
     features: ['24/7 on-call IR team (SANS-certified)','Forensic evidence collection & chain of custody','Containment & eradication planning','Post-incident root cause analysis (RCA)','Executive communication & regulatory reporting'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/incident-response-retainer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/incident-response-retainer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/incident-response-retainer/',
     popular: false,
@@ -5093,7 +6445,11 @@ export const aiServices: Service[] = [
     features: ['OpenAPI 3.1 spec lifecycle — versioning, deprecation, staging','Rate-limit + quota per consumer key with brotten alerting','Managed threat-protection WAF rule set for API endpoints','Schema registry + mocking + developer portal with embedded sandbox'],
     benefits: ["Reduce MTTR by 75%", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-api-gateway-openapi/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-api-gateway-openapi', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-api-gateway-openapi/',
     popular: true,
@@ -5108,7 +6464,11 @@ export const aiServices: Service[] = [
     features: ['Unified gateway supporting REST, GraphQL, and gRPC with multi-protocol schema registry','Auto-generated developer portal with OpenAPI specification docs and try-it console','Rate-limiting, circuit-breaker, mTLS, and JWT claims context injection per route','Per-tenant and per-method usage analytics with monetisation rules'],
     benefits: ["Proactive endpoint threat detection with 4\u00d7 faster MTTR than endpoint scanning alone", "Stay audit-ready 24/7 \u2014 compliance reports generated on demand in one click", "Reduce rogue devices on the corporate network by 80% via mandatory posture checks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-api-management-gateway/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-api-management-gateway', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-api-management-gateway/',
     popular: true,
@@ -5123,7 +6483,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Full RBAC audit", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-api-performance-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-api-performance-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-api-performance-testing/',
     popular: false,
@@ -5138,7 +6502,11 @@ export const aiServices: Service[] = [
     features: ['DAST + SCA for APIs','Authentication flaw detection','Rate-limiting & throttling tests','CI/CD pipeline integration'],
     benefits: ["Automate 95% IT tasks", "Reduce MTTR by 75%", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-apisec-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-apisec-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-apisec-testing/',
     popular: false,
@@ -5153,7 +6521,11 @@ export const aiServices: Service[] = [
     features: ['Auto-discovery of network assets','Compliance and licence tracking','Depreciation schedule engine','End-of-life automation','Audit-ready reporting'],
     benefits: ["Automate 95% IT tasks", "ITSM integration", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-asset-lifecycle/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-asset-lifecycle', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-asset-lifecycle/',
     popular: false,
@@ -5168,7 +6540,11 @@ export const aiServices: Service[] = [
     features: ['Pre-built playbooks (phishing, malware, IAM)','Integration with 200+ security tools','Case management & audit trail','AI-assisted triage suggestions'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-automated-incident-response/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-automated-incident-response', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-automated-incident-response/',
     popular: false,
@@ -5183,7 +6559,11 @@ export const aiServices: Service[] = [
     features: ['Image-level block/snapshot incremental backup','Continuous replication RPO sub-15 min','One-click bare-metal restore = confirmed drill','Test-restore sandbox per schedule, no production impact'],
     benefits: ["Reduce MTTR by 90%", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-backup-disaster-recovery/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-backup-disaster-recovery', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-backup-disaster-recovery/',
     popular: false,
@@ -5198,7 +6578,11 @@ export const aiServices: Service[] = [
     features: ['Immutable backup chain with Lamport-signed tamper-evident restore points','RPO of 5 minutes and RTO of 30 minutes SLA guaranteed in the contract','Air-gapped off-site storage with ransomware snapshot hold holding ransom','Automated DR drill scheduling — report sent to board before quarter-end'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-backup-disaster-recovery-solution/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-backup-disaster-recovery-solution', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-backup-disaster-recovery-solution/',
     popular: true,
@@ -5213,7 +6597,11 @@ export const aiServices: Service[] = [
     features: ['3-2-1-1-airgap backup policy enforced automatically','WORM snapshots every 30 seconds, point-in-time restore to 90 days','Automatic failover testing every 30 minutes with pass/fail report','4-hour RTO and 15-minute RPO SLA with financial credit clause'],
     benefits: ["Built-in audit governance", "Reduce overhead by 75%", "80%+ less manual touch"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-backup-dr-bc-as-a-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-backup-dr-bc-as-a-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-backup-dr-bc-as-a-service/',
     popular: true,
@@ -5228,7 +6616,11 @@ export const aiServices: Service[] = [
     features: ['Smart contract development and deployment','Formal verification and security auditing','Tokenomics and governance design','DeFi protocol integration and development','Enterprise blockchain consulting and strategy'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-blockchain-development/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-blockchain-development', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-blockchain-development/',
     popular: false,
@@ -5243,7 +6635,11 @@ export const aiServices: Service[] = [
     features: ['Application-consistent backups','Cross-region replication','Automated failover testing','DR runbook automation','Compliance (ISO 27001, SOC 2)'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-business-continuity-dr/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-business-continuity-dr', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-business-continuity-dr/',
     popular: false,
@@ -5258,7 +6654,11 @@ export const aiServices: Service[] = [
     features: ['Automated data connection ERP/CRM/HRIS/ADP','Executive KPI cards + drill-through detail','Scenario modelling (what-if sliders)','Scheduled PDF/email executive pack per week'],
     benefits: ["24/7 pager alerts", "Reduce MTTR by 90%", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-business-intelligence-cockpit/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-business-intelligence-cockpit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-business-intelligence-cockpit/',
     popular: false,
@@ -5273,7 +6673,11 @@ export const aiServices: Service[] = [
     features: ['Blast-radius graph builder','ML-predicted outage probability','Change approval workflow','Historical change success rate','SLA impact calculator'],
     benefits: ["Automate 95% IT tasks", "Reduce MTTR by 85%", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-change-risk-analyser/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-change-risk-analyser', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-change-risk-analyser/',
     popular: false,
@@ -5288,7 +6692,11 @@ export const aiServices: Service[] = [
     features: ['SAST/DAST/SCA/container scanning per PR with 5-minute deadline','Vulnerability classification: CWE+CVSS+remotely-exploitable/reachable','Auto-fix PR against approved fix forms — merge approved change','Verified SBOM generated per build with SPDX+cyclonedx exports'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-cicd-security-gate-as-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-cicd-security-gate-as-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-cicd-security-gate-as-service/',
     popular: false,
@@ -5303,7 +6711,11 @@ export const aiServices: Service[] = [
     features: ['CIS and NIST benchmark library','Multi-cloud account scanning','NIST 800-53 and HIPAA profiles','Continuous daily compliance scans','Auto-generated remediation tickets'],
     benefits: ["Full RBAC audit", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-cloud-compliance-scanner/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-cloud-compliance-scanner', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-cloud-compliance-scanner/',
     popular: false,
@@ -5318,7 +6730,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["ITSM integration", "Automate 95% IT tasks", "Reduce MTTR by 60%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-cloud-cost-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-cloud-cost-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-cloud-cost-governance/',
     popular: false,
@@ -5333,7 +6749,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud cost break-down (EC2/RDS/Lambda etc.)','Rightsizing recommendation engine (>50% CPU idle)','RI/SA coverage gap alert + expiry tracker','Chargeback/showback per team/project'],
     benefits: ["24/7 pager alerts", "Automate 95% IT tasks", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-cloud-cost-management-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-cloud-cost-management-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-cloud-cost-management-platform/',
     popular: false,
@@ -5348,7 +6768,11 @@ export const aiServices: Service[] = [
     features: ['Lifecycle policy automation','Intelligent tiering (Intelligent-Tiering, Glacier)','Snapshot retention policies','Cost anomaly detection','Capacity forecasting'],
     benefits: ["24/7 pager alerts", "Automate 95% IT tasks", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-cloud-native-storage/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-cloud-native-storage', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-cloud-native-storage/',
     popular: false,
@@ -5363,7 +6787,11 @@ export const aiServices: Service[] = [
     features: ['Multi-lang static analysis 20+ languages, custom rulesets','CVE/GHSA dependency scanning with severity-graded alerts','Code-smell auditor + complexity hot-spot mapper','Quality-gate CI/CD blocks merge on quality score threshold','IDE plugin: VS Code + JetBrains — inline issue highlight + auto-fix'],
     benefits: ["Built-in audit governance", "Reduce overhead by 75%", "Accelerate insight by 85%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-code-quality-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-code-quality-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-code-quality-governance/',
     popular: false,
@@ -5378,7 +6806,11 @@ export const aiServices: Service[] = [
     features: ['SAST, secret-scan, and dependency-audit running at every pull request','25-plus language ecosystems including TypeScript, Python, Go, Rust, and Java','Automated 1st-pass PR reviewer with inline code comments before human review','Quality score covering maintainability index and cognitive complexity trend'],
     benefits: ["ITSM integration", "Automate 95% IT tasks", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-code-quality-pre-merge/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-code-quality-pre-merge', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-code-quality-pre-merge/',
     popular: false,
@@ -5393,7 +6825,11 @@ export const aiServices: Service[] = [
     features: ['Technology stack assessment & recommendations','Digital transformation roadmap','CTO-as-a-service (fractional)','Vendor evaluation & selection','Technical due diligence for M&A'],
     benefits: ["Reduce MTTR by 40%", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-consulting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-consulting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-consulting/',
     popular: false,
@@ -5408,7 +6844,11 @@ export const aiServices: Service[] = [
     features: ['Automated data catalog','Column-level lineage','Policy-based access control (RBAC/ABAC)','Quality scorecard per dataset'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-data-lakehouse-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-data-lakehouse-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-data-lakehouse-governance/',
     popular: false,
@@ -5423,7 +6863,11 @@ export const aiServices: Service[] = [
     features: ['Schema conversion tools','ETL/ELT pipeline rebuild','Query optimization','Training for data team'],
     benefits: ["Full RBAC audit", "ITSM integration", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-data-warehouse-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-data-warehouse-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-data-warehouse-modernization/',
     popular: false,
@@ -5438,7 +6882,11 @@ export const aiServices: Service[] = [
     features: ['CI/CD pipelines per repo/branch','Artifact registry + SBOM auto-generated','Terraform Cloud/Enterprise workspace sync','Unified ops audit log per pipeline build'],
     benefits: ["Automate 95% IT tasks", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-devops-platform-toolchain/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-devops-platform-toolchain', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-devops-platform-toolchain/',
     popular: false,
@@ -5453,7 +6901,11 @@ export const aiServices: Service[] = [
     features: ['Automated SAST/DAST scanning in CI/CD','Software composition analysis (SCA) for dependencies','Container and Kubernetes security scanning','Infrastructure-as-code security validation (Terraform, CloudFormation)','Secrets detection and rotation automation','SBOM generation and vulnerability tracking','Threat modeling automation','Compliance-as-code policy enforcement'],
     benefits: ["Accelerate insight by 40%", "80%+ less manual touch", "Scale in weeks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-devsecops-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-devsecops-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-devsecops-1/',
     popular: false,
@@ -5468,7 +6920,11 @@ export const aiServices: Service[] = [
     features: ['Platform selection (Shopify/BigCommerce/Salesforce)','Headless storefront (Next.js/Hydrogen)','Payment integration (Stripe/Square/PayPal)','Migration plan minimise downtime maximise SEO transfer'],
     benefits: ["Reduce MTTR by 60%", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-e-commerce-platform-advisor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-e-commerce-platform-advisor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-e-commerce-platform-advisor/',
     popular: false,
@@ -5483,7 +6939,11 @@ export const aiServices: Service[] = [
     features: ['Multi-provider edge orchestration','Edge cache strategy design','Local data residency compliance','Edge function monitoring'],
     benefits: ["Manage 10 000+ endpoints from one console \u2014 cut IT admin time per device 70%", "Self-service app store cuts internal IT helpdesk tickets 50-65%", "Patch compliance rate rises from 55% to 99% with automated maintenance windows"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-edge-computing-deploy/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-edge-computing-deploy', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-edge-computing-deploy/',
     popular: false,
@@ -5498,7 +6958,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cluster management','GitOps-driven deployment','Edge-native storage','Offline-first sync','Observability across regions'],
     benefits: ["Manage 10 000+ endpoints from one console \u2014 cut IT admin time per device 70%", "Self-service app store cuts internal IT helpdesk tickets 50-65%", "Patch compliance rate rises from 55% to 99% with automated maintenance windows"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-edge-computing-orchestration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-edge-computing-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-edge-computing-orchestration/',
     popular: false,
@@ -5513,7 +6977,11 @@ export const aiServices: Service[] = [
     features: ['Next-gen antivirus (NGAV)','Behavior-based threat detection','Incident response playbooks','Quarterly threat hunting reports'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-endpoint-detection-response/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-endpoint-detection-response', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-endpoint-detection-response/',
     popular: false,
@@ -5528,7 +6996,11 @@ export const aiServices: Service[] = [
     features: ['Zero-touch (DEP/Autopilot) + self-enrol portal','OS update enforcement patch policy','Full-disk encryption + TLS 1.3 VPN settings','Remote wipe + lost-device-geofence'],
     benefits: ["ITSM integration", "Full RBAC audit", "Reduce MTTR by 85%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-endpoint-management-macos-windows/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-endpoint-management-macos-windows', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-endpoint-management-macos-windows/',
     popular: false,
@@ -5543,7 +7015,11 @@ export const aiServices: Service[] = [
     features: ['Carbon footprint calculation engine','Diversity metrics dashboard','Governance policy tracker','Report generation (XBRL support)'],
     benefits: ["24/7 pager alerts", "Reduce MTTR by 75%", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-esg-compliance-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-esg-compliance-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-esg-compliance-automation/',
     popular: false,
@@ -5558,7 +7034,11 @@ export const aiServices: Service[] = [
     features: ['AI triage auto-categorise ticket','KB article suggestion per ticket similarity','Auto-routing to correct team/queue','Agent copilot with runbook snippet per ticket'],
     benefits: ["ITSM integration", "Automate 95% IT tasks", "Reduce MTTR by 90%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-help-desk-glucidex/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-help-desk-glucidex', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-help-desk-glucidex/',
     popular: false,
@@ -5573,7 +7053,11 @@ export const aiServices: Service[] = [
     features: ['SSO (SAML 2.0 + OIDC) for all SaaS apps','Adaptive MFA (TOTP/WebAuthn/risk-based)','SCIM auto-provision + de-provision per hire/fire','JIT privileged-access, session recorded'],
     benefits: ["Reduce MTTR by 85%", "Automate 95% IT tasks", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-identity-access-management-sso/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-identity-access-management-sso', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-identity-access-management-sso/',
     popular: false,
@@ -5588,7 +7072,11 @@ export const aiServices: Service[] = [
     features: ['Provisioning/deprovisioning workflows','Access certification campaigns','SoD policy engine','Role mining & optimization','SOD analytics'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-identity-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-identity-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-identity-governance/',
     popular: false,
@@ -5603,7 +7091,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Full RBAC audit", "Reduce MTTR by 40%", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-incident-response-simulator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-incident-response-simulator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-incident-response-simulator/',
     popular: false,
@@ -5618,7 +7110,11 @@ export const aiServices: Service[] = [
     features: ['Device inventory & health monitoring','Remote command & control','Firmware OTA scheduling','Geofencing & alerting'],
     benefits: ["Reduce MTTR by 85%", "Automate 95% IT tasks", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-iot-device-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-iot-device-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-iot-device-management/',
     popular: false,
@@ -5633,7 +7129,11 @@ export const aiServices: Service[] = [
     features: ['Cluster lifecycle automation','Cost allocation per namespace','Security policy as code (OPA/Gatekeeper)','Cross-cloud service mesh'],
     benefits: ["ITSM integration", "Full RBAC audit", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-kubernetes-multicloud/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-kubernetes-multicloud', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-kubernetes-multicloud/',
     popular: false,
@@ -5648,7 +7148,11 @@ export const aiServices: Service[] = [
     features: ['Automated dependency mapping','Service extraction recommendations','StatefulSet migration','Database connection pooling','Blue-green deployment'],
     benefits: ["Reduce MTTR by 85%", "ITSM integration", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-legacy-app-containerization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-legacy-app-containerization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-legacy-app-containerization/',
     popular: false,
@@ -5663,7 +7167,11 @@ export const aiServices: Service[] = [
     features: ['Drag-and-drop UI builder','Role-based access controls','Audit logging','One-click deployment'],
     benefits: ["Reduce MTTR by 75%", "24/7 pager alerts", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-low-code-platform-integration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-low-code-platform-integration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-low-code-platform-integration/',
     popular: false,
@@ -5678,7 +7186,11 @@ export const aiServices: Service[] = [
     features: ['Automated COBOL to Java/TS conversion','Database migration (DB2 → PostgreSQL)','Replatform to Azure/AWS mainframe alternatives','Cutover orchestration','Regression testing suite'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-mainframe-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-mainframe-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-mainframe-modernization/',
     popular: false,
@@ -5693,7 +7205,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud ingestion','Budget thresholds & alerts','Rightsizing AI','Tag compliance enforcement','Department chargeback'],
     benefits: ["Reduce MTTR by 60%", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-multi-cloud-cost-governance/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-multi-cloud-cost-governance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-multi-cloud-cost-governance/',
     popular: false,
@@ -5708,7 +7224,11 @@ export const aiServices: Service[] = [
     features: ['Global backbone (100+ PoPs)','Direct cloud connects','Zero-trust network access','WAN optimization','Central policy management'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Reduce MTTR by 60%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-multi-cloud-networking/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-multi-cloud-networking', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-multi-cloud-networking/',
     popular: false,
@@ -5723,7 +7243,11 @@ export const aiServices: Service[] = [
     features: ['Layer-7 IDS/IPS with Suricata rules','Deep packet inspection + SSL/TLS decryption','Threat intelligence feed (10K+ IOC feed)','Cloud firewall auto-sync (AWS/Azure/GCP)'],
     benefits: ["ITSM integration", "Reduce MTTR by 85%", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-network-firewall-next-generation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-network-firewall-next-generation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-network-firewall-next-generation/',
     popular: false,
@@ -5738,7 +7262,11 @@ export const aiServices: Service[] = [
     features: ['Unified observability (metrics, logs, traces, profiles)','AI-powered anomaly detection and root cause analysis','Automated incident classification and routing','SLO/SLI management with error budget tracking','Predictive alerting — detect issues before users do','Runbook automation and remediation playbooks','Dashboard builder with natural language queries','Integration with PagerDuty, OpsGenie, Slack, and more'],
     benefits: ["24/7 pager alerts", "Automate 95% IT tasks", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-observability-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-observability-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-observability-1/',
     popular: false,
@@ -5753,7 +7281,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-observability-logging/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-observability-logging', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-observability-logging/',
     popular: false,
@@ -5768,7 +7300,11 @@ export const aiServices: Service[] = [
     features: ['OpenTelemetry auto-instrumentation','Log aggregation & search','Distributed tracing','Profiling (CPU/memory)','AI RCA (root cause)'],
     benefits: ["Automate 95% IT tasks", "Reduce MTTR by 75%", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-observability-unified/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-observability-unified', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-observability-unified/',
     popular: false,
@@ -5783,7 +7319,11 @@ export const aiServices: Service[] = [
     features: ['Control mapping (PCI DSS 4.0)','Automated evidence collection','Vulnerability scanning integration','Quarterly assessment workflow','Executive dashboards'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-pcii-compliance-suite/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-pcii-compliance-suite', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-pcii-compliance-suite/',
     popular: false,
@@ -5798,7 +7338,11 @@ export const aiServices: Service[] = [
     features: ['Self-service environment provisioning (Backstage, Port, or custom)','Golden path templates for common architectures','Internal API marketplace and service catalog','Automated deployment pipelines per service type','Developer portal with documentation and onboarding','Abstractions over cloud services for simplicity','Usage tracking and cost attribution per team','Platform observability and SLO management'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "Automate 95% IT tasks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-platform-engineering-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-platform-engineering-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-platform-engineering-1/',
     popular: false,
@@ -5813,7 +7357,11 @@ export const aiServices: Service[] = [
     features: ['HD video meetings + network adaptivity','Persistent team chat + threaded topic','In-meeting whiteboard + live annotation','Calendar sync + async video update per thread'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-remote-collaboration-suites/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-remote-collaboration-suites', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-remote-collaboration-suites/',
     popular: false,
@@ -5828,7 +7376,11 @@ export const aiServices: Service[] = [
     features: ['Automated discovery of servers, cloud resources, IoT devices','Configuration item (CI) relationship mapping','Change impact analysis','License compliance & inventory tracking','Integration with ITSM tools (ServiceNow, Jira)'],
     benefits: ["24/7 pager alerts", "ITSM integration", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-sam-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-sam-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-sam-platform/',
     popular: false,
@@ -5843,7 +7395,11 @@ export const aiServices: Service[] = [
     features: ['SAP ERP BAPI/IDoc adapters','SuccessFactors sync','Ariba network integration','Error reconciliation dashboard','SAP-certified connectors'],
     benefits: ["ITSM integration", "Full RBAC audit", "Reduce MTTR by 60%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-sap-integration-hub/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-sap-integration-hub', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-sap-integration-hub/',
     popular: false,
@@ -5858,7 +7414,11 @@ export const aiServices: Service[] = [
     features: ['Vault as a service','Auto-rotation (certificates, keys)','Just-In-Time access approvals','Audit trail & reporting','K8s operator'],
     benefits: ["ITSM integration", "Automate 95% IT tasks", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-secrets-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-secrets-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-secrets-management/',
     popular: false,
@@ -5873,7 +7433,11 @@ export const aiServices: Service[] = [
     features: ['PGP/GPG encryption','AS2 protocol support','Workflow automation','Compliance reports (HIPAA, PCI)','Detailed audit logs'],
     benefits: ["Full RBAC audit", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-secure-file-transfer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-secure-file-transfer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-secure-file-transfer/',
     popular: false,
@@ -5888,7 +7452,11 @@ export const aiServices: Service[] = [
     features: ['JWT/OAuth validation','Request/response transformation','Response caching (Redis)','Rate limiting & quotas','WebSocket support'],
     benefits: ["Reduce MTTR by 85%", "Automate 95% IT tasks", "24/7 pager alerts"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-serverless-api-gateway/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-serverless-api-gateway', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-serverless-api-gateway/',
     popular: false,
@@ -5903,7 +7471,11 @@ export const aiServices: Service[] = [
     features: ['Drag-and-drop catalogue designer','CMDB auto-import and sync','Multi-language service description','Self-service portal embed','Version history and approval'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-service-catalog-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-service-catalog-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-service-catalog-builder/',
     popular: false,
@@ -5918,7 +7490,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent ticket classification','Auto-resolution engine','Self-service knowledge base','SLA monitoring and escalation','Performance analytics'],
     benefits: ["Prove resilience before incidents: catch single points of failure that $1M incident would surface too late", "Run 20-50 automated experiments per month with zero manual engineering time", "Security team approval gets faster: experiment results serve as evidence of resilience posture"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-service-desk-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-service-desk-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-service-desk-automation/',
     popular: false,
@@ -5933,7 +7509,11 @@ export const aiServices: Service[] = [
     features: ['Core functionality','Professional support','Scalable deployment'],
     benefits: ["Automate 95% IT tasks", "Reduce MTTR by 60%", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-synthetic-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-synthetic-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-synthetic-monitoring/',
     popular: false,
@@ -5948,7 +7528,11 @@ export const aiServices: Service[] = [
     features: ['Multi-platform: Windows, macOS, iOS, Android, ChromeOS, RaspberryPi ESP32 IoT','OS patch deployment with maintenance-window scheduling and rollback protection','Remote actions: wipe, lock, locate, reboot, reset password, revoke certs','Self-service app catalog: users install approved apps without IT ticket','Compliance policies: BitLocker, FileVault, firewall rules, USB restriction, AV enforcement'],
     benefits: ["Reduce overhead by 75%", "Built-in audit governance", "Accelerate insight by 90%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-unified-endpoint-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-unified-endpoint-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-unified-endpoint-management/',
     popular: false,
@@ -5963,7 +7547,11 @@ export const aiServices: Service[] = [
     features: ['Central contract repository','Automated renewal alerts','SLA tracking dashboard','Configurable approval workflows','Vendor spend analytics'],
     benefits: ["Reduce MTTR by 90%", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-vendor-contract-mgmt/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-vendor-contract-mgmt', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-vendor-contract-mgmt/',
     popular: false,
@@ -5978,7 +7566,11 @@ export const aiServices: Service[] = [
     features: ['Security and compliance scorecard','Financial health monitoring','Contract expiry alerting','Periodic self-assessment workflow','Task action feed per vendor'],
     benefits: ["Reduce MTTR by 75%", "Automate 95% IT tasks", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-vendor-trust-portal/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-vendor-trust-portal', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-vendor-trust-portal/',
     popular: false,
@@ -5993,7 +7585,11 @@ export const aiServices: Service[] = [
     features: ['Zero Trust maturity assessment and roadmap','Identity-aware proxy deployment (BeyondCorp model)','Network microsegmentation design and implementation','Multi-factor authentication everywhere (MFA/SSO)','Device trust and endpoint verification','Least-privilege access policy design','Continuous authentication and session management','Zero Trust for remote workforce and third-party access'],
     benefits: ["Eliminate data-silo fragmentation: query raw, curated, and ML features in one place", "Reduce data engineering time 60% vs. maintaining separate lake + warehouse pipelines", "Time-travel enables built-in reproducible data science without manual snapshot management"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-zero-trust-1/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-zero-trust-1', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-zero-trust-1/',
     popular: false,
@@ -6008,7 +7604,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["24/7 pager alerts", "Full RBAC audit", "Reduce MTTR by 85%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/k8s-gitops-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/k8s-gitops-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/k8s-gitops-enterprise/',
     popular: false,
@@ -6023,7 +7623,11 @@ export const aiServices: Service[] = [
     features: ['Cluster design and deployment','Auto-scaling configuration','Service mesh implementation','CI/CD pipeline integration','Cost optimization and rightsizing'],
     benefits: ["Inference latency <50ms for retail and industrial edge use cases vs. 300+ ms round-trip to cloud", "Model version rollover in 30 s vs. hours of cloud-deployment pipeline wrangle", "Offline-first operation means edge store shelf-price updates stay synced even with 2 d of fibre cut"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/kubernetes-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/kubernetes-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/kubernetes-management/',
     popular: false,
@@ -6038,7 +7642,11 @@ export const aiServices: Service[] = [
     features: ['One-command DB deployment (YAML CRD)','Automated streaming backups + PITR','Read-replica auto-failover','Storage auto-scaling (PVC expansion)','Minor/major version rolling upgrades'],
     benefits: ["Reduce overhead by 90%", "Built-in audit governance", "Accelerate insight by 60%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/kubernetes-operator-database/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/kubernetes-operator-database', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/kubernetes-operator-database/',
     popular: false,
@@ -6053,7 +7661,11 @@ export const aiServices: Service[] = [
     features: ['Strangler fig incremental migration plan','Gradual bounded-context extraction per sprint','Dual-run production validation + canary','Feature-flag cutover per module','Anti-corruption layer per legacy interface'],
     benefits: ["Automate 95% IT tasks", "24/7 pager alerts", "Reduce MTTR by 60%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/legacy-app-refactor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/legacy-app-refactor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/legacy-app-refactor/',
     popular: false,
@@ -6068,7 +7680,11 @@ export const aiServices: Service[] = [
     features: ['System analysis & dependency discovery','Strangler fig pattern migration planning','Database migration with CDC (change data capture)','API gateway & service mesh setup','Cut-over planning & rollback strategy'],
     benefits: ["Full RBAC audit", "ITSM integration", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/legacy-system-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/legacy-system-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/legacy-system-modernization/',
     popular: false,
@@ -6083,7 +7699,11 @@ export const aiServices: Service[] = [
     features: ['Structured + unstructured logs','Full-text search with filters','Retention policy tiers','Log-based alerting','OpenTelemetry compatible'],
     benefits: ["Avoid cloud-provider lock-in: move any workload between clouds in hours not months", "Unify cloud spend: typically 15-25% savings from enterprise-wide negotiated discounts", "One security dashboard vs. juggling separate AWS/Azure/GCP security consoles"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/log-aggregation-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/log-aggregation-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/log-aggregation-platform/',
     popular: false,
@@ -6098,7 +7718,11 @@ export const aiServices: Service[] = [
     features: ['Custom UI component development','Enterprise system connectors (SAP, Oracle, legacy)','API Gateway & middleware integration','Performance optimization & caching','Security hardening & audit logging'],
     benefits: ["Automate 95% IT tasks", "Reduce MTTR by 90%", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/low-code-platform-customization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/low-code-platform-customization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/low-code-platform-customization/',
     popular: false,
@@ -6113,7 +7737,11 @@ export const aiServices: Service[] = [
     features: ['COBOL → Java/Python transpiler','Automated data migration','Parallel run validation','Mainframe emulator for testing','Gradual cutover strategy'],
     benefits: ["Reduce Kubernetes infrastructure costs 30-60% after right-sizing and spot-instance adoption", "VPA auto-tuning frees 20-40% over-allocated CPU/memory \u2014 roomier pod budgets without changing limits", "Team chargeback with real cluster usage data eliminates internal cost attribution disputes without finance overhead"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/mainframe-modernization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/mainframe-modernization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/mainframe-modernization/',
     popular: false,
@@ -6128,7 +7756,11 @@ export const aiServices: Service[] = [
     features: ['24/7 security monitoring','AI-powered threat detection','Incident response automation','Proactive threat hunting','Compliance reporting'],
     benefits: ["Reduce Kubernetes infrastructure costs 30-60% after right-sizing and spot-instance adoption", "VPA auto-tuning frees 20-40% over-allocated CPU/memory \u2014 roomier pod budgets without changing limits", "Team chargeback with real cluster usage data eliminates internal cost attribution disputes without finance overhead"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/managed-soc-threat-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/managed-soc-threat-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/managed-soc-threat-intelligence/',
     popular: false,
@@ -6143,7 +7775,11 @@ export const aiServices: Service[] = [
     features: ['SD-WAN design and deployment','Network performance monitoring','Zero-trust segmentation','Traffic optimization policies','Multi-site connectivity management'],
     benefits: ["Reduce change-failure rate 50-80% via declarative GitOps + audit trail", "Deploy environments 5-10\u00d7 faster with automated promotion pipelines", "Eliminate it works on my machine via environment-per-branch workflows"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/network-architecture-sdwan/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/network-architecture-sdwan', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/network-architecture-sdwan/',
     popular: false,
@@ -6158,7 +7794,11 @@ export const aiServices: Service[] = [
     features: ['Synthetic HTTP/TCP probes','NetFlow/IPFIX analysis','Network path visualization','BGP monitoring','SLA breach alerting'],
     benefits: ["Reduce MTTR by 85%", "24/7 pager alerts", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/network-performance-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/network-performance-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/network-performance-monitoring/',
     popular: false,
@@ -6173,7 +7813,11 @@ export const aiServices: Service[] = [
     features: ['Event loop delay monitoring & troubleshooting','Memory profiling & leak detection','CPU & I/O bottleneck analysis','Cluster & worker threads optimization','Garbage collection tuning'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/nodejs-performance-tuning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/nodejs-performance-tuning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/nodejs-performance-tuning/',
     popular: false,
@@ -6188,7 +7832,11 @@ export const aiServices: Service[] = [
     features: ['Log aggregation & full-text search (ELK-compatible)','Metrics collection & dashboards (Prometheus/Grafana)','Distributed tracing (OpenTelemetry)','AI-driven anomaly detection & alerting','SLO/SLI tracking & error budget burn rate'],
     benefits: ["Pay-per-invocation model: 70-90% infra cost reduction vs. always-on servers", "Deploy REST or GraphQL APIs in minutes without DevOps involvement", "Zero-tuning auto-scaling removes over-provisioning and heads-of-department cost savings"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/observability-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/observability-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/observability-platform/',
     popular: false,
@@ -6203,7 +7851,11 @@ export const aiServices: Service[] = [
     features: ['Multi-OS patch support','Automated scheduling','Pre-deployment testing','Compliance reports','One-click rollback'],
     benefits: ["Pay-per-invocation model: 70-90% infra cost reduction vs. always-on servers", "Deploy REST or GraphQL APIs in minutes without DevOps involvement", "Zero-tuning auto-scaling removes over-provisioning and heads-of-department cost savings"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/patch-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/patch-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/patch-management/',
     popular: false,
@@ -6218,7 +7870,11 @@ export const aiServices: Service[] = [
     features: ['Synthetic browser + API monitoring (Playwright)','Continuous load testing in CI pipeline','Flame-graph regression gate per PR','Production profiling (pyroscope/parca)','Quarterly performance roadmap per architecture'],
     benefits: ["24/7 pager alerts", "Reduce MTTR by 60%", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/performance-engineering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/performance-engineering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/performance-engineering/',
     popular: false,
@@ -6233,7 +7889,11 @@ export const aiServices: Service[] = [
     features: ['Cryptographic inventory & quantum risk assessment','PQC algorithm migration planning','Hybrid RSA/PQC implementation guidance','Code & dependency remediation','Executive briefing & compliance roadmap'],
     benefits: ["Automate 95% IT tasks", "Full RBAC audit", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/quantum-ready-security/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/quantum-ready-security', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/quantum-ready-security/',
     popular: false,
@@ -6248,7 +7908,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["Full RBAC audit", "ITSM integration", "Reduce MTTR by 75%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/reliability-sre/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/reliability-sre', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/reliability-sre/',
     popular: false,
@@ -6263,7 +7927,11 @@ export const aiServices: Service[] = [
     features: ['24/7/365 Tier-1/2 support (phone, chat, email)','Remote desktop access & fix (TeamViewer, AnyDesk)','Onboarding/offboarding automation','Incident ticketing & SLA management','Knowledge base & self-service portal'],
     benefits: ["ITSM integration", "Reduce MTTR by 60%", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/remote-it-support/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/remote-it-support', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/remote-it-support/',
     popular: false,
@@ -6278,7 +7946,11 @@ export const aiServices: Service[] = [
     features: ['MVP rapid prototyping (4-6 weeks)','Full-stack architecture design','User authentication & RBAC','Payment integration (Stripe, Paddle)','Analytics & usage tracking built-in'],
     benefits: ["ITSM integration", "24/7 pager alerts", "Full RBAC audit"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/saas-development/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/saas-development', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/saas-development/',
     popular: false,
@@ -6293,7 +7965,11 @@ export const aiServices: Service[] = [
     features: ['24/7 security monitoring (SIEM)','Threat hunting & proactive investigation','Incident response (IR) on call','Compliance reporting (PCI-DSS, HIPAA, GDPR)','Regular executive security briefings'],
     benefits: ["ITSM integration", "Full RBAC audit", "Reduce MTTR by 40%"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/soc-as-a-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/soc-as-a-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/soc-as-a-service/',
     popular: false,
@@ -6308,7 +7984,11 @@ export const aiServices: Service[] = [
     features: ['OpenAPI auto-generated per route with examples','SDK docs with runnable JS/Python/Go code','Architecture decision records from PR discussion','Changelog auto-generated from git tags + commits','Interactive API explorer (Swagger UI) embedded'],
     benefits: ["80%+ less manual touch", "Reduce overhead by 60%", "Scale in weeks"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/tech-writing-docs/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/tech-writing-docs', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/tech-writing-docs/',
     popular: false,
@@ -6323,7 +8003,11 @@ export const aiServices: Service[] = [
     features: ['Automated vulnerability scanning (DAST, SCA, SAST)','Manual penetration testing (white/grey/black box)','Exploit validation & risk scoring','Remediation guidance & proof-of-concept fixes','Compliance reports (PCI-DSS, HIPAA, SOC2)'],
     benefits: ["Automate 95% IT tasks", "Full RBAC audit", "ITSM integration"],
     pricing: {"basic": "129", "pro": "549", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/vulnerability-assessment-penetration-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/vulnerability-assessment-penetration-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/vulnerability-assessment-penetration-testing/',
     popular: false,
@@ -6338,7 +8022,11 @@ export const aiServices: Service[] = [
     features: ['Event-driven refactoring (SNS/SQS/Lambda)','DynamoDB single-table pattern design','Lambda cold-start + provisioned concurrency','Dual-write validation during migration window','RTO/RPO dashboard per migrated workload'],
     benefits: ["Deploy in minutes", "Zero-ops managed", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/aws-serverless-migration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/aws-serverless-migration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/aws-serverless-migration/',
     popular: false,
@@ -6353,7 +8041,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/backup-disaster-recovery/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/backup-disaster-recovery', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/backup-disaster-recovery/',
     popular: false,
@@ -6368,7 +8060,11 @@ export const aiServices: Service[] = [
     features: ['300+ global edge PoPs','Smart caching rules','Automatic image optimization','DDoS mitigation included','Edge-side includes'],
     benefits: ["Built-in anomaly alerts", "Deploy in minutes", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cdn-edge-cache/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cdn-edge-cache', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cdn-edge-cache/',
     popular: false,
@@ -6383,7 +8079,11 @@ export const aiServices: Service[] = [
     features: ['Managed GPU K8s cluster (A100/H100)','Model registry (MLflow) + experiment tracker','Distributed training (PyTorch DDP/DeepSpeed)','vLLM/TGI serving auto-scale 0-to-N'],
     benefits: ["Built-in anomaly alerts", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-ai-mlops-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-ai-mlops-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-ai-mlops-platform/',
     popular: false,
@@ -6398,7 +8098,11 @@ export const aiServices: Service[] = [
     features: ['JWT/OAuth2/API-Key auth per route','Rate-limit (token-bucket) + circuit-breaker','Request/response transform + header injection','Multi-tenant API key management + analytics'],
     benefits: ["Deploy in minutes", "Built-in anomaly alerts", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-api-gateway-enterprise/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-api-gateway-enterprise', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-api-gateway-enterprise/',
     popular: false,
@@ -6413,7 +8117,11 @@ export const aiServices: Service[] = [
     features: ['S3-compatible API (v4 signature)','Hot→Cool→Archive auto-tier policy','Point-in-time restore (last 90 days)','Cross-region async replication + failover'],
     benefits: ["Built-in anomaly alerts", "Save 85% on cloud spend", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-blob-intelligent-tiering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-blob-intelligent-tiering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-blob-intelligent-tiering/',
     popular: false,
@@ -6428,7 +8136,11 @@ export const aiServices: Service[] = [
     features: ['Full dependency graph visualisation','Change impact analysis','Real-time configuration drift alerts','Kubernetes resource aware','Export to SVG and PDF'],
     benefits: ["Built-in anomaly alerts", "Save 85% on cloud spend", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-bom-visualiser/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-bom-visualiser', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-bom-visualiser/',
     popular: false,
@@ -6443,7 +8155,11 @@ export const aiServices: Service[] = [
     features: ['50-plus experiment recipes — latency injection, packet loss, CPU, OOM, and DB failover','Blast-radius boundary per namespace and region','CI integration — run the chaos suite post-deploy per pull request','Auto-generated results report per scenario per run with evidence screenshots'],
     benefits: ["Multi-region HA", "Built-in anomaly alerts", "Save 85% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-chaos-engineering-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-chaos-engineering-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-chaos-engineering-platform/',
     popular: false,
@@ -6458,7 +8174,11 @@ export const aiServices: Service[] = [
     features: ['ML anomaly detection','Root-cause attribution','Budget forecasting','Cost-reduction recommendations','AWS/Azure/GCP unified view'],
     benefits: ["Deploy in minutes", "Multi-region HA", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-cost-anomaly-detector/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-cost-anomaly-detector', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-cost-anomaly-detector/',
     popular: false,
@@ -6473,7 +8193,11 @@ export const aiServices: Service[] = [
     features: ['ML anomaly detection per service/resource group','30-day cost forecast with confidence bands','Root-cause attribution (service, tag, region)','Alert routing (Slack, PagerDuty, email)','AWS, GCP, Azure multi-cloud support'],
     benefits: ["Deploy in minutes", "Save 90% on cloud spend", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-cost-anomaly-detector-ml/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-cost-anomaly-detector-ml', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-cost-anomaly-detector-ml/',
     popular: false,
@@ -6488,7 +8212,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud unified cost visibility','ML-driven instance right-sizing','Reserved instance & savings plan optimizer','Idle resource detection & cleanup','Showback/chargeback automation'],
     benefits: ["Built-in anomaly alerts", "Save 85% on cloud spend", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-cost-optimization-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-cost-optimization-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-cost-optimization-service/',
     popular: false,
@@ -6503,7 +8231,11 @@ export const aiServices: Service[] = [
     features: ['Open-table format ACID engine with Delta Lake or Apache Iceberg','SQL front-end with mesh cardinality optimizer — large multi-table joins run fast','Schema enforcement at write path — no orphan columns enter production tables','BI connectors for Looker, Grafana, Metabase, and Tableau ODBC — no ETL layer needed'],
     benefits: ["Zero-ops managed", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-data-lakehouse-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-data-lakehouse-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-data-lakehouse-platform/',
     popular: true,
@@ -6518,7 +8250,11 @@ export const aiServices: Service[] = [
     features: ['Asynchronous cross-region replication — zero-downtime writes at primary region','Warm-standby spin-up from snapshot in 30 seconds with no manual scripts','Failover runbook executor: 47-step runbook with per-step human halt available','DR test runner schedules quarterly drills and auto-reports pass or fail to management'],
     benefits: ["Built-in anomaly alerts", "Zero-ops managed", "Save 60% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-disaster-recovery-orchestration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-disaster-recovery-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-disaster-recovery-orchestration/',
     popular: false,
@@ -6533,7 +8269,11 @@ export const aiServices: Service[] = [
     features: ['One-click deploy ONNX/TensorRT/GGUF model to global edge PoPs','Cold-warm model cache tiers reduce first-inference latency by 80%+','A/B model rollout: blue-green promotion of new model versions with traffic splitting','Offline-first sync buffer: 24 h message queue for disconnected branch-store sites','Hardware-accelerated inference: works on Jetson, Coral TPU, RK3588 edge hardware'],
     benefits: ["Scale in weeks", "Accelerate insight by 90%", "80%+ less manual touch"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-edge-ai-deployment-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-edge-ai-deployment-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-edge-ai-deployment-platform/',
     popular: true,
@@ -6548,7 +8288,11 @@ export const aiServices: Service[] = [
     features: ['Edge compute in 300+ cities (Cloudflare Workers)','Edge KV/D1/R2 storage region-local','Geo-based routing + smart fallback','Edge cache purge Webhook/API'],
     benefits: ["Zero-ops managed", "Multi-region HA", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-edge-computing-global/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-edge-computing-global', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-edge-computing-global/',
     popular: false,
@@ -6563,7 +8307,11 @@ export const aiServices: Service[] = [
     features: ['Managed Pub-Sub broker with dead-letter queue and exponential backoff retry','Schema registry with per-service event-sourcing and backward compatibility checks','Replay any consumer topic from any timestamp for incident forensics or backfill','Fan-out handler group — subscriber load-balanced and auto-scaled per event type'],
     benefits: ["Built-in anomaly alerts", "Deploy in minutes", "Save 90% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-event-driven-microservices/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-event-driven-microservices', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-event-driven-microservices/',
     popular: true,
@@ -6578,7 +8326,11 @@ export const aiServices: Service[] = [
     features: ['ArgoCD GitOps synced per environment','Argo Rollouts progressive delivery (canary/blue-green)','Terraform EKS/GKE/AKS provisioning','Kyverno admission policies + OPA-Gatekeeper','Drift auto-remediation reconciler'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-gitops-enterprise-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-gitops-enterprise-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-gitops-enterprise-platform/',
     popular: false,
@@ -6593,7 +8345,11 @@ export const aiServices: Service[] = [
     features: ['Unified control plane deploys to any cloud or on-prem with a single API','Standardised cost dashboard: per-workload spend across all clouds, anomaly alerts','Unified security posture: CSPM findings pitched against unified CIS/PCI benchmark','Federated identity: SSO/SAML/OIDC across all clouds','Policy engine OPA — policy-as-code to guard all infrastructure agnostic of provider'],
     benefits: ["Multi-region HA", "Save 85% on cloud spend", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-hybrid-multi-cloud-orchestrator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-hybrid-multi-cloud-orchestrator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-hybrid-multi-cloud-orchestrator/',
     popular: false,
@@ -6608,7 +8364,11 @@ export const aiServices: Service[] = [
     features: ['Cloud-router fabric — single control-plane connects up to 40 VPCs/accounts','Site-to-cloud connectivity via WireGuard tunnel or IPSec with automated failover','Global anycast front-door with WAF + geo-ip routing per user','Zero-trust per-connection IAM authorization beyond the network boundary'],
     benefits: ["Reduce overhead by 60%", "Built-in audit governance", "80%+ less manual touch"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-hybrid-multicloud-networking/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-hybrid-multicloud-networking', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-hybrid-multicloud-networking/',
     popular: true,
@@ -6623,7 +8383,11 @@ export const aiServices: Service[] = [
     features: ['Per-container right-sizing via VPA and workload profiling with safe-in-place patch','Spot-compatible scheduling for bursty workloads onto sporadically preemptible instances','Cost allocation per workload to the owning team or namespace by codebase tag','Idle resource crawler — auto-suspend or delete untouched workloads after 7 idle days'],
     benefits: ["Multi-region HA", "Zero-ops managed", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-kubernetes-cost-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-kubernetes-cost-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-kubernetes-cost-optimizer/',
     popular: false,
@@ -6638,7 +8402,11 @@ export const aiServices: Service[] = [
     features: ['Declarative manifests in Git — single source of truth for every cluster','Drift detection + auto-reconciliation every 60 seconds','Environment promotion: dev → staging → prod with approval gates','Progressive delivery: canary, blue-green, feature flags, canary analysis','Secrets: Vault, AWS Secrets Manager, Azure Key Vault with auto-rotation'],
     benefits: ["Zero-ops managed", "Built-in anomaly alerts", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-kubernetes-gitops-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-kubernetes-gitops-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-kubernetes-gitops-platform/',
     popular: false,
@@ -6653,7 +8421,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud migration planning','Zero-downtime migration execution','Cost optimization & right-sizing','Infrastructure-as-Code (Terraform/Pulumi)','Post-migration performance tuning'],
     benefits: ["Zero-ops managed", "Save 40% on cloud spend", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-migration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-migration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-migration/',
     popular: true,
@@ -6668,7 +8440,11 @@ export const aiServices: Service[] = [
     features: ['6-dimension readiness scorecard','Migration wave planner','TCO comparison analysis','Skill gap heat map','Executive dashboard and PDF report'],
     benefits: ["Multi-region HA", "Deploy in minutes", "Save 75% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-migration-readiness/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-migration-readiness', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-migration-readiness/',
     popular: false,
@@ -6683,7 +8459,11 @@ export const aiServices: Service[] = [
     features: ['Prometheus + Thanos long-term store','Grafana OSS with 400+ dashboards','Loki logs + Tempo traces (shared tenant ID)','Pre-built alert rules per service/database','PagerDuty/OpsGenie on-call routing'],
     benefits: ["Save 85% on cloud spend", "Zero-ops managed", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-observability-stack/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-observability-stack', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-observability-stack/',
     popular: false,
@@ -6698,7 +8478,11 @@ export const aiServices: Service[] = [
     features: ['Auto-scaling — handles 10 to 10 000 000 RPS without configuration change','Serverless HTTP workers Node.js, Python, Go, Rust with edge deployment','Built-in REST + GraphQL API, schema validation, auto-generated OpenAPI spec','Auto-deploy CI/CD pipelines per-branch with staging environments','Auth: OAuth2, API keys, mTLS — all configurable via dashboard'],
     benefits: ["Deploy in minutes", "Built-in anomaly alerts", "Save 90% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-serverless-api-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-serverless-api-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-serverless-api-platform/',
     popular: false,
@@ -6713,7 +8497,11 @@ export const aiServices: Service[] = [
     features: ['Serverless Framework YAML generator','Multi-stage variable layering per env','CI/CD GitHub Actions + automated deploy','DynamoDB/Lambda/API Gateway pre-built blueprints'],
     benefits: ["Accelerate insight by 60%", "Built-in audit governance", "Scale in weeks"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-serverless-framework-deploy/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-serverless-framework-deploy', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-serverless-framework-deploy/',
     popular: false,
@@ -6728,7 +8516,11 @@ export const aiServices: Service[] = [
     features: ['Smart bin-packing job scheduler onto spot per instance-type and availability-zone','Diversity-aware fallback strategy with state checkpoint on preempt signal','SLA mix-ratio optimizer — sets percent on-demand versus percent spot to hold SLA','Graceful preempt handler: two-minute signal with mid-task checkpoint and auto-resume'],
     benefits: ["Deploy in minutes", "Zero-ops managed", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-spot-instance-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-spot-instance-optimizer', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-spot-instance-optimizer/',
     popular: false,
@@ -6743,7 +8535,11 @@ export const aiServices: Service[] = [
     features: ['WORM retention policy per bucket','Litigation hold (no-delete, no-overwrite)','Automated encrypted export to SaaS tools','Automated lifecycle rule change review'],
     benefits: ["Multi-region HA", "Zero-ops managed", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-storage-lifecycle-policy/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-storage-lifecycle-policy', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-storage-lifecycle-policy/',
     popular: false,
@@ -6758,7 +8554,11 @@ export const aiServices: Service[] = [
     features: ['Automatic hot-to-cold tiering','SLA-monitored cold retrieval','Multi-cloud S3, GCS, Azure Blob','Per-team cost attribution','Tiering policy dashboard'],
     benefits: ["Save 75% on cloud spend", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-storage-tiering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-storage-tiering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-storage-tiering/',
     popular: false,
@@ -6773,7 +8573,11 @@ export const aiServices: Service[] = [
     features: ['Identity-verified per-session auth (OIDC/SAML)','Device posture check before granting access','Per-app micro-segmented VPN access','Continuous risk score per session (anomaly detector)'],
     benefits: ["Built-in anomaly alerts", "Save 75% on cloud spend", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cloud-zero-trust-access-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cloud-zero-trust-access-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cloud-zero-trust-access-platform/',
     popular: false,
@@ -6788,7 +8592,11 @@ export const aiServices: Service[] = [
     features: ['Multi-cloud IAM + resource posture scanner','Misconfiguration auto-remediation (Terraform)','Drift detection from desired baseline','Compliance report (SOC 2/ISO 27001/PCI DSS)','Risk scoring per resource + alert on threshold'],
     benefits: ["Multi-region HA", "Deploy in minutes", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cspm-cloud-posture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cspm-cloud-posture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cspm-cloud-posture/',
     popular: false,
@@ -6803,7 +8611,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Save 60% on cloud spend", "Built-in anomaly alerts", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cybersecurity-audit/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cybersecurity-audit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cybersecurity-audit/',
     popular: false,
@@ -6818,7 +8630,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Zero-ops managed", "Built-in anomaly alerts", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-pipeline-architecture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-pipeline-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-pipeline-architecture/',
     popular: false,
@@ -6833,7 +8649,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Zero-ops managed", "Built-in anomaly alerts", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/devops-consulting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/devops-consulting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/devops-consulting/',
     popular: false,
@@ -6848,7 +8668,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Zero-ops managed", "Built-in anomaly alerts", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/digital-workplace/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/digital-workplace', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/digital-workplace/',
     popular: false,
@@ -6863,7 +8687,11 @@ export const aiServices: Service[] = [
     features: ['Automated cross-region replication','RTO/RPO testing dashboard','VM & DB & container backup','One-click failover drills','Air-gapped backup storage'],
     benefits: ["Deploy in minutes", "Built-in anomaly alerts", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/disaster-recovery-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/disaster-recovery-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/disaster-recovery-platform/',
     popular: false,
@@ -6878,7 +8706,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Deploy in minutes", "Built-in anomaly alerts", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/disaster-recovery-services/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/disaster-recovery-services', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/disaster-recovery-services/',
     popular: false,
@@ -6893,7 +8725,11 @@ export const aiServices: Service[] = [
     features: ['Global edge network','Container-based deploys','Offline-first sync','Data residency controls','Edge ML inference'],
     benefits: ["Built-in anomaly alerts", "Zero-ops managed", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/edge-computing-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/edge-computing-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/edge-computing-platform/',
     popular: false,
@@ -6908,7 +8744,11 @@ export const aiServices: Service[] = [
     features: ['Real-time budget alerts','Auto right-sizing engine','Resource tagging enforcement','Chargeback + showback reports','Multi-cloud cost view'],
     benefits: ["Multi-region HA", "Built-in anomaly alerts", "Save 90% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/fn-finops-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/fn-finops-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/fn-finops-platform/',
     popular: false,
@@ -6923,7 +8763,11 @@ export const aiServices: Service[] = [
     features: ['BigQuery + partition-cluster auto-tuning','Dataflow batch + streaming pipelines','Pub/Sub to BigQuery streaming ingestion','Looker Studio + Looker dashboards','GCS Delta Lakehouse (Iceberg/Delta)'],
     benefits: ["Save 40% on cloud spend", "Zero-ops managed", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/gcp-data-analytics-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/gcp-data-analytics-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/gcp-data-analytics-platform/',
     popular: false,
@@ -6938,7 +8782,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Deploy in minutes", "Zero-ops managed", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/identity-access-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/identity-access-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/identity-access-management/',
     popular: false,
@@ -6953,7 +8801,11 @@ export const aiServices: Service[] = [
     features: ['5G network architecture and RF planning','Private 5G network deployment for campuses','Edge computing integration with 5G infrastructure','Network slicing design and implementation','Industrial IoT connectivity and optimization'],
     benefits: ["Multi-region HA", "Deploy in minutes", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-5g-network-deployment/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-5g-network-deployment', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-5g-network-deployment/',
     popular: false,
@@ -6968,7 +8820,11 @@ export const aiServices: Service[] = [
     features: ['API gateway with rate limiting','Developer portal with docs and SDKs','Lifecycle management','Monetization','Real-time analytics'],
     benefits: ["Multi-region HA", "Save 75% on cloud spend", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-api-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-api-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-api-management/',
     popular: false,
@@ -6983,7 +8839,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Zero-ops managed", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-asset-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-asset-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-asset-management/',
     popular: false,
@@ -6998,7 +8858,11 @@ export const aiServices: Service[] = [
     features: ['Predictive capacity forecasting with ML models','Workload trend analysis and seasonal pattern detection','Cloud vs on-prem cost comparison modeling','Automated right-sizing recommendations','Budget impact simulation for capacity decisions'],
     benefits: ["Zero-ops managed", "Deploy in minutes", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-capacity-planning/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-capacity-planning', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-capacity-planning/',
     popular: false,
@@ -7013,7 +8877,11 @@ export const aiServices: Service[] = [
     features: ['Multi-engine provisioning','Automated backups and PITR','AI query optimization','Auto-scaling and HA','Encryption and compliance'],
     benefits: ["Zero-ops managed", "Deploy in minutes", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-database-as-a-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-database-as-a-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-database-as-a-service/',
     popular: false,
@@ -7028,7 +8896,11 @@ export const aiServices: Service[] = [
     features: ['Edge server deployment & configuration','Container orchestration at the edge (K3s, KubeEdge)','IoT device provisioning & lifecycle management','Low-latency AI inference on edge hardware','Offline-first data synchronization with cloud'],
     benefits: ["Detect novel and eye-watering APT attacks missed by signature-based SIEMs", "Threat-hunt coverage that takes hours manually executes autonomously in 2 minutes", "Reduce mean-time-to-respond 60% via auto-generated context-rich incident report"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-edge-computing-solutions/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-edge-computing-solutions', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-edge-computing-solutions/',
     popular: false,
@@ -7043,7 +8915,11 @@ export const aiServices: Service[] = [
     features: ['Domain-driven service decomposition','API gateway design and implementation (Kong, APISIX)','Service mesh deployment (Istio, Linkerd)','Distributed tracing and observability','Event-driven architecture with message brokers'],
     benefits: ["Save 90% on cloud spend", "Built-in anomaly alerts", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-microservices-architecture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-microservices-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-microservices-architecture/',
     popular: false,
@@ -7058,7 +8934,11 @@ export const aiServices: Service[] = [
     features: ['Intent-based network configuration automation','SD-WAN deployment and centralized management','AI-driven traffic routing and QoS optimization','Automated compliance checks and security policy enforcement','Network performance monitoring with predictive alerts'],
     benefits: ["Deploy in minutes", "Built-in anomaly alerts", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-network-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-network-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-network-automation/',
     popular: false,
@@ -7073,7 +8953,11 @@ export const aiServices: Service[] = [
     features: ['Unified observability stack (Prometheus, Grafana, Jaeger)','Custom SLO/SLI definition and dashboard creation','Incident management with automated runbooks','Chaos engineering and resilience testing','SRE consulting and reliability maturity assessment'],
     benefits: ["Multi-region HA", "Zero-ops managed", "Save 75% on cloud spend"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-observability-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-observability-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-observability-platform/',
     popular: false,
@@ -7088,7 +8972,11 @@ export const aiServices: Service[] = [
     features: ['Internal developer platform (IDP) deployment','Self-service infrastructure provisioning','Golden path templates and scaffolding','Developer experience metrics and optimization','Integration with existing CI/CD pipelines'],
     benefits: ["Deploy in minutes", "Save 90% on cloud spend", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-platform-engineering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-platform-engineering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-platform-engineering/',
     popular: false,
@@ -7103,7 +8991,11 @@ export const aiServices: Service[] = [
     features: ['Serverless architecture design and migration','Cold start optimization','Event-driven architecture','Cost monitoring and function optimization','Multi-cloud serverless deployment'],
     benefits: ["Multi-region HA", "Deploy in minutes", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-serverless-architecture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-serverless-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-serverless-architecture/',
     popular: false,
@@ -7118,7 +9010,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Multi-region HA", "Deploy in minutes", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-service-desk/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-service-desk', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-service-desk/',
     popular: false,
@@ -7133,7 +9029,11 @@ export const aiServices: Service[] = [
     features: ['SIP and VoIP infrastructure','Intelligent routing and IVR','Call quality monitoring','AI agent assistance','Omnichannel integration'],
     benefits: ["Built-in anomaly alerts", "Save 75% on cloud spend", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-voice-infrastructure/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-voice-infrastructure', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-voice-infrastructure/',
     popular: false,
@@ -7148,7 +9048,11 @@ export const aiServices: Service[] = [
     features: ['Predictive and on-site RF surveys','Capacity planning and density optimization','IoT and sensor network design','Seamless roaming and load balancing','Security hardening (WPA3, 802.1X, NAC)'],
     benefits: ["Save 40% on cloud spend", "Zero-ops managed", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-wireless-network-design/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-wireless-network-design', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-wireless-network-design/',
     popular: false,
@@ -7163,7 +9067,11 @@ export const aiServices: Service[] = [
     features: ['L4 + L7 simultaneous','Health check + failover','Rate limiting + WAF built-in','Session stickiness config','Anycast global routing'],
     benefits: ["Built-in anomaly alerts", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/load-balancer-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/load-balancer-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/load-balancer-service/',
     popular: false,
@@ -7178,7 +9086,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Save 85% on cloud spend", "Zero-ops managed", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/managed-soc-security/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/managed-soc-security', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/managed-soc-security/',
     popular: false,
@@ -7193,7 +9105,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Run ML and analytics on sensitive data without violating GDPR/CCPA / HIPAA", "Achieve privacy-by-design compliance: prepare for upcoming EU AI Act Article 10 requirements", "Reduce PII exposure within organisation's data estate by 85-95%"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/mobile-development/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/mobile-development', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/mobile-development/',
     popular: false,
@@ -7208,7 +9124,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Deploy in minutes", "Multi-region HA", "Built-in anomaly alerts"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/network-infrastructure/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/network-infrastructure', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/network-infrastructure/',
     popular: false,
@@ -7223,7 +9143,11 @@ export const aiServices: Service[] = [
     features: ['Enterprise-grade implementation','24/7 monitoring','Compliance-ready'],
     benefits: ["Built-in anomaly alerts", "Multi-region HA", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/network-security-operations/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/network-security-operations', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/network-security-operations/',
     popular: false,
@@ -7238,7 +9162,11 @@ export const aiServices: Service[] = [
     features: ['API Gateway + Lambda per route','OpenAPI-first gateway from spec','Per-route WAF + Shield DDoS protection','X-Ray distributed tracing per request','CI/CD spec-driven deploy pipeline'],
     benefits: ["Built-in anomaly alerts", "Multi-region HA", "Zero-ops managed"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/serverless-api-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/serverless-api-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/serverless-api-platform/',
     popular: false,
@@ -7253,7 +9181,11 @@ export const aiServices: Service[] = [
     features: ['Sovereign region deployment (GovCloud/Government)','Data residency enforcement per region','Compliance audit framework (FedRAMP/ITAR/CJIS/HIPAA)','Regional failover within same sovereign zone','Immutable access log audit trail'],
     benefits: ["Zero-ops managed", "Deploy in minutes", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/sovereign-cloud-hosting/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/sovereign-cloud-hosting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/sovereign-cloud-hosting/',
     popular: false,
@@ -7268,7 +9200,11 @@ export const aiServices: Service[] = [
     features: ['Custom CIDR and VPC design','Private subnet with no internet','VPC peering & transit gateway','Centralized network routing','DDoS with clean traffic'],
     benefits: ["Save 75% on cloud spend", "Multi-region HA", "Deploy in minutes"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/virtual-private-cloud/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/virtual-private-cloud', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/virtual-private-cloud/',
     popular: false,
@@ -7283,7 +9219,11 @@ export const aiServices: Service[] = [
     features: ['Identity-aware proxy (IAM to ZTNA gateway)','Per-user + per-device + per-context access policy','Micro-segmentation per app/resource sensitivity','Session recording + threat analytics','Continuous trust evaluation re-auth on risk'],
     benefits: ["Save 75% on cloud spend", "Built-in anomaly alerts", "Multi-region HA"],
     pricing: {"basic": "199", "pro": "899", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/zero-trust-network-access/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/zero-trust-network-access', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/zero-trust-network-access/',
     popular: false,
@@ -7298,7 +9238,11 @@ export const aiServices: Service[] = [
     features: ['Multi-Tbps scrubbing capacity (anycast edge)','ML traffic classification (attack vs legitimate)','HTTP/3 + QUIC + TCP SYN flood protection','Auto-scaling scrubbing clusters','Attack forensics + IoC export to SIEM'],
     benefits: ["Reduce supply-chain attack surface 80%+ through automated SBOM and patch PR automation", "Shrink mean-time-to-patch critical CVEs from weeks to hours via automated PR suggestions", "Achieve SLSA Level 3+ build provenance sufficient for regulated industry compliance"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-ddos-protection-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-ddos-protection-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-ddos-protection-platform/',
     popular: false,
@@ -7313,7 +9257,11 @@ export const aiServices: Service[] = [
     features: ['Continuous internet-facing asset discovery','Domain/IP/subdomain + API enumeration','Shadow-IT detection from DNS + cert transparency','Attack vector prioritization: exploit + impact','Instant alert on new/misconfigured asset'],
     benefits: ["MITRE ATT&CK coverage", "Detect threats 85% faster", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/attack-surface-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/attack-surface-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/attack-surface-management/',
     popular: false,
@@ -7328,7 +9276,11 @@ export const aiServices: Service[] = [
     features: ['Automated OWASP Top 10 scans','API security testing','Infrastructure CVE scan','Exploitable-path chain reports','Remediation ticket integration'],
     benefits: ["Pre-release pentested", "Detect threats 40% faster", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automated-pen-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automated-pen-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automated-pen-testing/',
     popular: false,
@@ -7343,7 +9295,11 @@ export const aiServices: Service[] = [
     features: ['Intelligent automation and orchestration','Enterprise-grade integration','Real-time monitoring and alerts','Scalable multi-tenant architecture'],
     benefits: ["MITRE ATT&CK coverage", "Detect threats 75% faster", "Alert fatigue 90% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/compliance-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/compliance-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/compliance-automation/',
     popular: false,
@@ -7358,7 +9314,11 @@ export const aiServices: Service[] = [
     features: ['Image vulnerability scan','K8s admission control','Runtime threat detection','Secret scanning (registry + env)','SBOM generation on push'],
     benefits: ["Detect threats 85% faster", "Pre-release pentested", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/container-security-runtime/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/container-security-runtime', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/container-security-runtime/',
     popular: false,
@@ -7373,7 +9333,11 @@ export const aiServices: Service[] = [
     features: ['Network & web application penetration testing','Vulnerability scanning & remediation','Security awareness training','Incident response & forensics','Compliance audits (SOC 2, ISO 27001)'],
     benefits: ["Detect threats 90% faster", "SOC2/ISO/HIPAA ready", "Alert fatigue 85% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/cybersecurity/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/cybersecurity', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/cybersecurity/',
     popular: true,
@@ -7388,7 +9352,11 @@ export const aiServices: Service[] = [
     features: ['AES-256 at-rest encryption','Dynamic watermarking','Usage restrictions (view/print)','Access revocation','Audit trail'],
     benefits: ["Alert fatigue 85% reduction", "SOC2/ISO/HIPAA ready", "Detect threats 60% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/digital-rights-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/digital-rights-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/digital-rights-management/',
     popular: false,
@@ -7403,7 +9371,11 @@ export const aiServices: Service[] = [
     features: ['Endpoint + Network + Cloud DLP unified','Content inspection by PII/PHI/PCI/confidential','Policy: block/quarantine/alert per class','Cloud DLP: S3/GDrive/SharePoint/Box/OneDrive','Incident remediation workflow, one-click'],
     benefits: ["SOC2/ISO/HIPAA ready", "MITRE ATT&CK coverage", "Alert fatigue 40% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/enterprise-dlp/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/enterprise-dlp', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/enterprise-dlp/',
     popular: false,
@@ -7418,7 +9390,11 @@ export const aiServices: Service[] = [
     features: ['SSO / SAML / OIDC','MFA / TOTP / WebAuthn','SCIM auto-provisioning','RBAC + ABAC policies','Audit & compliance logs'],
     benefits: ["MITRE ATT&CK coverage", "Detect threats 60% faster", "Alert fatigue 40% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/iam-identity-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/iam-identity-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/iam-identity-platform/',
     popular: false,
@@ -7433,7 +9409,11 @@ export const aiServices: Service[] = [
     features: ['Single sign-on (SSO) with 5000+ app integrations','Adaptive multi-factor authentication with risk scoring','Privileged access management (PAM) with session recording','Automated access provisioning and de-provisioning','Identity governance with access certification workflows'],
     benefits: ["Alert fatigue 60% reduction", "SOC2/ISO/HIPAA ready", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-identity-access-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-identity-access-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-identity-access-management/',
     popular: false,
@@ -7448,7 +9428,11 @@ export const aiServices: Service[] = [
     features: ['24/7 monitoring','Auto detection and classification','Response playbook automation','Digital forensics','Executive reporting'],
     benefits: ["SOC2/ISO/HIPAA ready", "Pre-release pentested", "Detect threats 40% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-incident-response/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-incident-response', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-incident-response/',
     popular: false,
@@ -7463,7 +9447,11 @@ export const aiServices: Service[] = [
     features: ['24x7 SIEM + correlation + threat hunting','50+ threat-intel feeds + IOC auto-block','Incident response + managed alert triage','Monthly exec cyber risk report + trend dashboard'],
     benefits: ["Pre-release pentested", "Detect threats 90% faster", "Alert fatigue 40% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-managed-soc/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-managed-soc', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-managed-soc/',
     popular: false,
@@ -7478,7 +9466,11 @@ export const aiServices: Service[] = [
     features: ['24/7 network traffic monitoring & flow analysis','Centralized SIEM with log aggregation','Threat correlation engine with automated alerting','Custom dashboard & compliance reporting','Integration with firewalls, IDS/IPS, and endpoint protection'],
     benefits: ["Alert fatigue 75% reduction", "Detect threats 75% faster", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-network-security-monitoring/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-network-security-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-network-security-monitoring/',
     popular: false,
@@ -7493,7 +9485,11 @@ export const aiServices: Service[] = [
     features: ['Black-box and white-box penetration testing','Web application and API security testing','Social engineering and phishing simulations','Wireless and network infrastructure testing','Detailed remediation reports with retesting'],
     benefits: ["Detect threats 75% faster", "Alert fatigue 60% reduction", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-penetration-testing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-penetration-testing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-penetration-testing/',
     popular: false,
@@ -7508,7 +9504,11 @@ export const aiServices: Service[] = [
     features: ['Post-quantum cryptography assessment','Quantum vulnerability scanning across systems','NIST PQC migration roadmap development','Quantum-safe encryption implementation','Executive quantum risk briefing and training'],
     benefits: ["80%+ less manual touch", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-quantum-readiness/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-quantum-readiness', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-quantum-readiness/',
     popular: false,
@@ -7523,7 +9523,11 @@ export const aiServices: Service[] = [
     features: ['Identity & Access Management (IAM) modernization','Micro-segmentation of network workloads','Continuous adaptive risk & trust assessment','Device posture checking & conditional access','Privileged Access Management (PAM) integration'],
     benefits: ["SOC2/ISO/HIPAA ready", "Alert fatigue 60% reduction", "Detect threats 60% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-zero-trust-architecture/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-zero-trust-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-zero-trust-architecture/',
     popular: false,
@@ -7538,7 +9542,11 @@ export const aiServices: Service[] = [
     features: ['EDR deployment + 24/7 managed tuning','SIEM log aggregation + correlation rules','SOC Tier-1/2 triage with analyst SLA','Automated kill-chain containment','Monthly executive threat report + KPI dashboard'],
     benefits: ["Detect threats 85% faster", "SOC2/ISO/HIPAA ready", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/managed-edr-siem/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/managed-edr-siem', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/managed-edr-siem/',
     popular: false,
@@ -7553,7 +9561,11 @@ export const aiServices: Service[] = [
     features: ['Private MISP on AWS/GCP/Azure','Automated feed ingestion via STIX/TAXII','Indicator lifecycle (create/update/expire)','Partner sharing via TAXII/STIX','SIEM integration (Splunk/QRadar/Sentinel)'],
     benefits: ["MITRE ATT&CK coverage", "Pre-release pentested", "Alert fatigue 60% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/misp-threat-intel/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/misp-threat-intel', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/misp-threat-intel/',
     popular: false,
@@ -7568,7 +9580,11 @@ export const aiServices: Service[] = [
     features: ['Biometric auth (Face ID/Touch ID)','Magic link email login','Hardware key (YubiKey) support','Risk-based step-up auth','Session management'],
     benefits: ["Surface hidden fraud rings and risk clusters invisible in tabular reports", "Reduce analyst investigation time 50% vs. manual relationship tracing in spreadsheets", "Build recommendation engines faster \u2014 no custom graph DB admin required"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/passwordless-auth/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/passwordless-auth', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/passwordless-auth/',
     popular: false,
@@ -7583,7 +9599,11 @@ export const aiServices: Service[] = [
     features: ['PCI-DSS L1 certified','Tokenization & vaulting','3D Secure 2 support','Adaptive fraud scoring','Multi-currency settlement'],
     benefits: ["Surface hidden fraud rings and risk clusters invisible in tabular reports", "Reduce analyst investigation time 50% vs. manual relationship tracing in spreadsheets", "Build recommendation engines faster \u2014 no custom graph DB admin required"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/payment-compliance-gateway/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/payment-compliance-gateway', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/payment-compliance-gateway/',
     popular: false,
@@ -7598,7 +9618,11 @@ export const aiServices: Service[] = [
     features: ['External + Internal network pentest','Web app/API/mobile/IoT scope included','Full MITRE ATT&CK adversary-emulation','Executive + technical findings report + PoC','Remediation guidance per CVE/severity'],
     benefits: ["SOC2/ISO/HIPAA ready", "Alert fatigue 90% reduction", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/pentest-redteam/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/pentest-redteam', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/pentest-redteam/',
     popular: false,
@@ -7613,7 +9637,11 @@ export const aiServices: Service[] = [
     features: ['Data mapping + inventory + classification','Consent management platform (web + mobile)','DSAR automation (discover/collect/redact/deliver)','Privacy impact assessment per workflow','Regulatory privacy report multi-jurisdiction'],
     benefits: ["Search video archives by description: find the clip of X product in Y city in 5 seconds vs. manual review", "Build visual product search for e-commerce: zero nuisance from differing angle, lighting, crop", "Auto-curate branded content: find all brand mentions in video without human review"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/privacy-program/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/privacy-program', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/privacy-program/',
     popular: false,
@@ -7628,7 +9656,11 @@ export const aiServices: Service[] = [
     features: ['Just-in-time access grants','Session recording & auditing','Credential vaulting','Break-glass account emergency access','Cross-cloud vault sync'],
     benefits: ["Pre-release pentested", "Detect threats 60% faster", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/privileged-access-management/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/privileged-access-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/privileged-access-management/',
     popular: false,
@@ -7643,7 +9675,11 @@ export const aiServices: Service[] = [
     features: ['24/7 ransomware IR hotline activation','Network segmentation + isolation within hours','Immutable backup verify + clean restore','Payment negotiation via IR firm','Post-incident hardening + preventive controls'],
     benefits: ["SOC2/ISO/HIPAA ready", "Pre-release pentested", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ransomware-recovery/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ransomware-recovery', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ransomware-recovery/',
     popular: false,
@@ -7658,7 +9694,11 @@ export const aiServices: Service[] = [
     features: ['Continuous behavioural anomaly detection across endpoint, network, and cloud telemetry','Autonomous attack chain reconstruction with MITRE ATT&CK matrix alignment','Natural-language hunt query builder for analysts without scripting skills','Auto-generated incident reports with timeline, evidence, and recommended mitigations','Low-false-positive ML scoring tuned to each environment via supervised feedback'],
     benefits: ["Detect threats 60% faster", "MITRE ATT&CK coverage", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-ai-threat-hunter/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-ai-threat-hunter', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-ai-threat-hunter/',
     popular: false,
@@ -7673,7 +9713,11 @@ export const aiServices: Service[] = [
     features: ['OAuth2/JWT/SAML auth per route/group','OWASP Top-10 attack pattern detection','Schema drift alert + active API inventory','Bot detection + anomaly scoring per IP/UA'],
     benefits: ["SOC2/ISO/HIPAA ready", "Alert fatigue 75% reduction", "Detect threats 60% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-api-security-gateway/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-api-security-gateway', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-api-security-gateway/',
     popular: false,
@@ -7688,7 +9732,11 @@ export const aiServices: Service[] = [
     features: ['APT29 and MITRE ATT&CK emulation','Ransomware attack simulation','Purple team collaborative workspace','Executive risk scoring report','Detection and response metrics'],
     benefits: ["Alert fatigue 75% reduction", "SOC2/ISO/HIPAA ready", "MITRE ATT&CK coverage"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-bas-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-bas-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-bas-platform/',
     popular: false,
@@ -7703,7 +9751,11 @@ export const aiServices: Service[] = [
     features: ['Remote container browser — the full browser runs in the cloud, pixel-streamed live','Zero download risk — malware, ransomware, and drive-by exploits never touch the endpoint','URL categorisation and DLP inspection on every rendered page','SSL inspection decrypts TLS streams to detect threats encoded within encrypted sessions'],
     benefits: ["Reduce overhead by 90%", "Scale in weeks", "Built-in audit governance"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-browser-isolation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-browser-isolation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-browser-isolation/',
     popular: false,
@@ -7718,7 +9770,11 @@ export const aiServices: Service[] = [
     features: ['Remote browser isolation — all rendering occurs off-device in a cloud sandbox','Drive-by download protection — adware aphishing payloads isolated from endpoint','Credential-forwarding sandbox — test credentials safely no overposting to real accounts','Phishing engine sandbox analysis — 30-day credential-reuse window check in isolated browser'],
     benefits: ["Query 10 billion time-series events in under 2 seconds \u2014 no pre-aggregation required", "P99 query latency <200 ms means SLA dashboards feel instantaneous to ops teams", "Alert fatigue drops 60% vs dumb-threshold alerts because anomaly-detection rules adapt to seasonality"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-browser-isolation-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-browser-isolation-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-browser-isolation-platform/',
     popular: false,
@@ -7733,7 +9789,11 @@ export const aiServices: Service[] = [
     features: ['CloudTrail/Azure Activity/Stackdriver log stream','IAM anomaly patterns (impossible travel/priv-esc)','GuardDuty/Defender/Sentinel alert normalisation','Auto-remediation via Terraform/IaC config push'],
     benefits: ["Query 10 billion time-series events in under 2 seconds \u2014 no pre-aggregation required", "P99 query latency <200 ms means SLA dashboards feel instantaneous to ops teams", "Alert fatigue drops 60% vs dumb-threshold alerts because anomaly-detection rules adapt to seasonality"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-cloud-threat-detection/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-cloud-threat-detection', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-cloud-threat-detection/',
     popular: false,
@@ -7748,7 +9808,11 @@ export const aiServices: Service[] = [
     features: ['Per-application least-privilege access policy from identity to cookie','Device posture context — certificate validity, OS, browser assessment before granting','1-click kill/revoke per user identity across all resources','Full session recording with playable video replay per access session'],
     benefits: ["Detect threats 60% faster", "Alert fatigue 40% reduction", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-cloud-zero-trust-access/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-cloud-zero-trust-access', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-cloud-zero-trust-access/',
     popular: false,
@@ -7763,7 +9827,11 @@ export const aiServices: Service[] = [
     features: ['SOC 2 Type II evidence auto-collection','Control-test automation (30+ pre-built tests)','GRC Evidence Vault (versioned, immutable)','Continuous monitoring dashboard per control'],
     benefits: ["Detect threats 60% faster", "Alert fatigue 40% reduction", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-compliance-audit-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-compliance-audit-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-compliance-audit-platform/',
     popular: false,
@@ -7778,7 +9846,11 @@ export const aiServices: Service[] = [
     features: ['Automated access-review campaign per user/role','SoD (Segregation of Duties) rule engine','Auto-provision/revoke via SCIM API','Entitlement analytics + orphaned-access detection'],
     benefits: ["Detect threats 60% faster", "MITRE ATT&CK coverage", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-identity-governance-igac/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-identity-governance-igac', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-identity-governance-igac/',
     popular: false,
@@ -7793,7 +9865,11 @@ export const aiServices: Service[] = [
     features: ['200+ log source connectors','Log parsing and normalisation','Correlation rule engine','Alert deduplication and enrichment','Forensic timeline with drill-down'],
     benefits: ["Detect threats 40% faster", "SOC2/ISO/HIPAA ready", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-log-orchestration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-log-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-log-orchestration/',
     popular: false,
@@ -7808,7 +9884,11 @@ export const aiServices: Service[] = [
     features: ['Service/workload inventory (K8s/VM/CNI)','East-West micro-segmentation policy designer','Policy deployment + rollback alert','Policy coverage heat-map per namespace'],
     benefits: ["Ship ML models trained on higher-fidelity training data while staying GDPR/CCPA compliant \u2014 no PII exposure", "Accelerate software testing: generate unlimited realistic test data matching production schema in one API call", "CI/CD data pipeline: generate reproducible test data from production spec for integration and acceptance test suites"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-network-segmentation-zero-trust/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-network-segmentation-zero-trust', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-network-segmentation-zero-trust/',
     popular: false,
@@ -7823,7 +9903,11 @@ export const aiServices: Service[] = [
     features: ['Differential privacy budget tracker with dataset privacy score per column','Zero-knowledge proof circuit design and deployment audit for selected use cases','TEE Trusted Execution Environment enclave architecture review and threat model','Synthetic data generator — privacy-preserving by construction with attribute correlation learned'],
     benefits: ["Alert fatigue 90% reduction", "Detect threats 85% faster", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-privacy-enhancing-technologies/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-privacy-enhancing-technologies', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-privacy-enhancing-technologies/',
     popular: false,
@@ -7838,7 +9922,11 @@ export const aiServices: Service[] = [
     features: ['SBOM + VEX generated per build with CycloneDX + SPDX dual-format','CVE + SLSA provenance score every build — compare across time and distributors','Dependency-graph diff per PR — highlight transitive dependency changes before merge','SSL SA L3 attestation with reproducible-build verification per environment'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Accelerate insight by 85%"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-sbom-supply-chain/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-sbom-supply-chain', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-sbom-supply-chain/',
     popular: true,
@@ -7853,7 +9941,11 @@ export const aiServices: Service[] = [
     features: ['HashiCorp Vault managed cluster (HA)','Dynamic secrets (DB/cloud/SSH/K8s)','Lease auto-rotation per secret-type','Full audit log + SOC 2 Type II evidence report'],
     benefits: ["MITRE ATT&CK coverage", "Alert fatigue 60% reduction", "Detect threats 90% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-secrets-management-vault/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-secrets-management-vault', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-secrets-management-vault/',
     popular: false,
@@ -7868,7 +9960,11 @@ export const aiServices: Service[] = [
     features: ['Phishing simulation (template library 200+)','Role-based security training modules','Compliance quiz tracking + certificate','Gamified leaderboard per team/department'],
     benefits: ["Detect threats 75% faster", "Alert fatigue 85% reduction", "SOC2/ISO/HIPAA ready"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-security-awareness-training/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-security-awareness-training', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-security-awareness-training/',
     popular: false,
@@ -7883,7 +9979,11 @@ export const aiServices: Service[] = [
     features: ['Automated SBOM generation per-commit, per-PR, and per-release — CycloneDX + SPDX both supported','SSVC scoring maps CVE severity against exploitability + patch availability in real-time','Automated security PRs: patch suggestion AI opens PR per vulnerable dependency','SLSA provenance: build time + identity verification signed and traceable per artefact','Bill of Materials attestation built into container image and artifact metadata'],
     benefits: ["SOC2/ISO/HIPAA ready", "MITRE ATT&CK coverage", "Detect threats 60% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-supply-chain-sbom/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-supply-chain-sbom', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-supply-chain-sbom/',
     popular: false,
@@ -7898,7 +9998,11 @@ export const aiServices: Service[] = [
     features: ['Auto-generate SBOM per build in SPDX and Cyclone-DX formats','License compliance matrix covering GPL, Apache, MIT, and commercial licenses','CVE matching per SBOM component auto-updated daily from NVD and vendor feeds','Attestation signing and SBOM consumer portal per vendor per OS release'],
     benefits: ["Detect threats 85% faster", "SOC2/ISO/HIPAA ready", "Pre-release pentested"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-supply-chain-sbom-manager/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-supply-chain-sbom-manager', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-supply-chain-sbom-manager/',
     popular: true,
@@ -7913,7 +10017,11 @@ export const aiServices: Service[] = [
     features: ['5000+ IOC feed (IP/Domain/URL/Hash)','MITRE ATT&CK technique coverage matrix','Auto-generate SIEM rule per new IOC','TI enrichment API for alert enrichment pipeline'],
     benefits: ["Pre-release pentested", "MITRE ATT&CK coverage", "Detect threats 60% faster"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-threat-intelligence-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-threat-intelligence-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-threat-intelligence-platform/',
     popular: false,
@@ -7928,7 +10036,11 @@ export const aiServices: Service[] = [
     features: ['Asset inventory per business criticality tier','CVE prioritisation: EPSS + CVSS + exposure','SLA-gated fix workflow (critical = 48h)','Remediation effectiveness (MTTR per tier)'],
     benefits: ["SOC2/ISO/HIPAA ready", "Detect threats 85% faster", "Alert fatigue 75% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-vulnerability-management-pra/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-vulnerability-management-pra', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-vulnerability-management-pra/',
     popular: false,
@@ -7943,7 +10055,11 @@ export const aiServices: Service[] = [
     features: ['OWASP Top-10 core ruleset plus OWASP API Top-10, auto-updated monthly','Bot management with per-request human-versus-bot score and CAPTCHA escalation','DDoS mitigation at CDN edge — SYN flood and HTTP flood absorbed before reaching origin','Geo-block and custom-rule pipeline per region — no platform team PR cycle required'],
     benefits: ["Reduce overhead by 90%", "80%+ less manual touch", "Accelerate insight by 75%"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/security-web-application-firewall/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/security-web-application-firewall', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/security-web-application-firewall/',
     popular: true,
@@ -7958,7 +10074,11 @@ export const aiServices: Service[] = [
     features: ['Real-time log correlation','MITRE ATT&CK grid view','UEBA - user behavior analytics','Automated incident tickets','Compliance dashboards'],
     benefits: ["Reduce no-show tour rate 40% via automated multi-channel reminders", "Capture 80%+ of inbound inquiries automatically \u2014 no human scheduler needed", "Attributing commission to marketing channel closes unstructured lead-gen reporting gap"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/siem-security-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/siem-security-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/siem-security-platform/',
     popular: false,
@@ -7973,7 +10093,11 @@ export const aiServices: Service[] = [
     features: ['SBOM + provenance per build (SPDX/CycloneDX)','SLSA Level 3+ attestation per release','Dependency verification + vuln patch automation','Code-signing pipeline integrity verification','Supply chain dashboard per upstream risk'],
     benefits: ["MITRE ATT&CK coverage", "Pre-release pentested", "Alert fatigue 60% reduction"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/software-supply-chain-sec/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/software-supply-chain-sec', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/software-supply-chain-sec/',
     popular: false,
@@ -7988,7 +10112,11 @@ export const aiServices: Service[] = [
     features: ['Identity-verified every request','Continuous risk evaluation','Least-privilege micro-perimeters','Device posture checking','Full access audit log'],
     benefits: ["Increase student enrolment yield 15-25% via personalised nurture sequences that react to actual engagement behaviour", "Reduce dropout rate 30% via early academic-risk alerts reaching academic advisors automatically", "Cut admissions office administrative time by 60% via automated funnel management"],
     pricing: {"basic": "249", "pro": "1099", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/zero-trust-access/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/zero-trust-access', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/zero-trust-access/',
     popular: false,
@@ -8003,7 +10131,11 @@ export const aiServices: Service[] = [
     features: ['Automated profiling + anomaly scoring per column','Schema drift detect + alert on threshold','GE/Soda/DBT quality gate integration','Auto-fix recommendation per anomaly type','Quality scorecard per data product + owner'],
     benefits: ["Petabyte queries in seconds", "Unified catalog & lineage", "Automated data quality"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-data-quality-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-data-quality-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-data-quality-engine/',
     popular: false,
@@ -8018,7 +10150,11 @@ export const aiServices: Service[] = [
     features: ['NL to ETL: dbt/Glue/Dataflow','Auto-generated transform tests + documentation','Schema mapping + type coercion per column','Schedule + alert (Airflow/Step/Cloud Scheduler)','CLI + UI — iterate pipeline in minutes'],
     benefits: ["Petabyte queries in seconds", "Unified catalog & lineage", "Automated data quality"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-etl-pipeline-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-etl-pipeline-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-etl-pipeline-builder/',
     popular: false,
@@ -8033,7 +10169,11 @@ export const aiServices: Service[] = [
     features: ['400+ pre-built connectors','Visual pipeline builder','Schema drift auto-handling','Data quality assertions','Incremental extraction'],
     benefits: ["Auto-process up to 90% of invoices end-to-end without human touch \u2014 AP team only handles exceptions", "Cut invoice-processing cost from $12-20 per doc to $1-2 per doc", "Eliminate duplicate payment risk with automated PO match \u2014 avoid painful subsequent vendor refunds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/batch-etl-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/batch-etl-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/batch-etl-platform/',
     popular: false,
@@ -8048,7 +10188,11 @@ export const aiServices: Service[] = [
     features: ['dbt model orchestration + Freshness SLA','Column-level lineage graph UI','Semantic Layer (Looker/dbt-metricflow)','In-browser SQL editor + scheduler'],
     benefits: ["Real-time 15s refresh", "Automated data quality", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-analytics-engineering-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-analytics-engineering-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-analytics-engineering-platform/',
     popular: false,
@@ -8063,7 +10207,11 @@ export const aiServices: Service[] = [
     features: ['Per-query and per-table cost tracing','AI rightsizing recommendations','Materialised view recommendations','Tag-based cost governance','Chargeback and showback exports'],
     benefits: ["Unified catalog & lineage", "Automated data quality", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-cost-finops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-cost-finops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-cost-finops/',
     popular: false,
@@ -8078,7 +10226,11 @@ export const aiServices: Service[] = [
     features: ['Deterministic + fuzzy + phonetic matching','Embedding model for compound record matching','Bulk-match upload + reason-code dispute UI','Reconciliation history + export report'],
     benefits: ["Unified catalog & lineage", "Automated data quality", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-data-reconciliation-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-data-reconciliation-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-data-reconciliation-engine/',
     popular: false,
@@ -8093,7 +10245,11 @@ export const aiServices: Service[] = [
     features: ['Multi-format ingest (PDF/DOCX/PPTX/EML)','Parse + semantic chunk + sentence embed','Hybrid BM25+DPR retrieval + cross-encoder rerank','Per-tenant namespace ACL in vector DB'],
     benefits: ["Self-service analytics, no SQL", "Real-time 15s refresh", "Automated data quality"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-document-vector-search/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-document-vector-search', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-document-vector-search/',
     popular: false,
@@ -8108,7 +10264,11 @@ export const aiServices: Service[] = [
     features: ['ETL/ELT pipeline design & deployment','Data lake & warehouse architecture','Real-time stream processing (Kafka, Spark)','Data quality monitoring & validation','Schema evolution & versioning'],
     benefits: ["Real-time 15s refresh", "Automated data quality", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-engineering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-engineering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-engineering/',
     popular: false,
@@ -8123,7 +10283,11 @@ export const aiServices: Service[] = [
     features: ['Append-only event log per aggregate ID','Projection worker auto-subscribes to topics','Snapshot compaction for long-lived aggregates','Read-model API (GraphQL/REST) per projection'],
     benefits: ["Automated data quality", "Real-time 15s refresh", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-event-sourcing-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-event-sourcing-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-event-sourcing-platform/',
     popular: false,
@@ -8138,7 +10302,11 @@ export const aiServices: Service[] = [
     features: ['Offline store (Snowflake/BigQuery/Parquet)','Online store (Redis low-latency <50ms)','Point-in-time correctness per feature','Feature lineage + SDK (Python/Java)'],
     benefits: ["Social media managers publish 5\u00d7 more content per week \u2014 AI drafts + bulk publish removes the bottleneck", "Maintain consistent brand voice across all networks \u2014 tone-guided AI prevents rogue tone on LinkedIn vs TikTok", "Cut time spent per week on content ideation and scheduling by 70-80%"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-feature-store-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-feature-store-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-feature-store-platform/',
     popular: false,
@@ -8153,7 +10321,11 @@ export const aiServices: Service[] = [
     features: ['PostGIS spatial index + SRID auto-detect','Tile-based cluster heatmap (deck.gl/Mapbox)','OSRM/Valhalla route optimisation per order','Geofence trigger alert per asset/customer'],
     benefits: ["Social media managers publish 5\u00d7 more content per week \u2014 AI drafts + bulk publish removes the bottleneck", "Maintain consistent brand voice across all networks \u2014 tone-guided AI prevents rogue tone on LinkedIn vs TikTok", "Cut time spent per week on content ideation and scheduling by 70-80%"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-geospatial-analytics-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-geospatial-analytics-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-geospatial-analytics-engine/',
     popular: false,
@@ -8168,7 +10340,11 @@ export const aiServices: Service[] = [
     features: ['Automated data catalog','End-to-end lineage','PII auto-classification','Policy enforcement engine','GDPR / CCPA compliance'],
     benefits: ["Petabyte queries in seconds", "Automated data quality", "Real-time 15s refresh"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-governance-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-governance-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-governance-platform/',
     popular: false,
@@ -8183,7 +10359,11 @@ export const aiServices: Service[] = [
     features: ['Auto-build relationship graphs from any tabular data via auto-linking columns','Community detection + clustering: Louvain, label propagation, clique percolation','Shortest-path, betweenness, PageRank — 20+ standard graph algorithms','Cypher-like graph query language with visual query builder','Interactive graph visualisation with zoom, filter, highlight, force-layout options'],
     benefits: ["Built-in audit governance", "Accelerate insight by 60%", "Reduce overhead by 40%"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-graph-analytics-engine/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-graph-analytics-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-graph-analytics-engine/',
     popular: false,
@@ -8198,7 +10378,11 @@ export const aiServices: Service[] = [
     features: ['Entity and relationship graph builder from any structured or semi-structured data','Community detection and centrality scoring per node highlighting key connectors','Per-edge anomaly scoring with three-sigma departure auto-alert','GNN-ready feature export for training ML fraud and influence detection models'],
     benefits: ["Self-service analytics, no SQL", "Real-time 15s refresh", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-graph-analytics-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-graph-analytics-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-graph-analytics-platform/',
     popular: true,
@@ -8213,7 +10397,11 @@ export const aiServices: Service[] = [
     features: ['Multi-modal CLIP embeddings for image and video frame similarity','Object, scene, action detection, OCR text extraction from frames and video','Temporal segmentation: shot boundary, scene change, key-frame extraction per video clip','Natural language query: 3 words to find all videos mentioning X brand or Y activity','Vector index: Milvus or Pinecone; scales to 100M+ clips with sub-10ms query'],
     benefits: ["Automated data quality", "Self-service analytics, no SQL", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-image-video-search/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-image-video-search', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-image-video-search/',
     popular: false,
@@ -8228,7 +10416,11 @@ export const aiServices: Service[] = [
     features: ['Grafana Loki index + LogQL query','Log parsing via grok/JSON/regex pipeline','Trace correlation via OpenTelemetry span ID','Hot/warm/cold tiered retention policy'],
     benefits: ["Automated data quality", "Self-service analytics, no SQL", "Real-time 15s refresh"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-log-analytics-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-log-analytics-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-log-analytics-platform/',
     popular: false,
@@ -8243,7 +10435,11 @@ export const aiServices: Service[] = [
     features: ['Column freshness and volume checks','Distribution drift detection','Schema-change alerting','End-to-end lineage viewer','Quality SLA dashboards'],
     benefits: ["Real-time 15s refresh", "Self-service analytics, no SQL", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-observability-monitor/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-observability-monitor', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-observability-monitor/',
     popular: false,
@@ -8258,7 +10454,11 @@ export const aiServices: Service[] = [
     features: ['Column-level regex + ML pattern detection','Auto-generate dynamic data masking policies','Compliance report (GDPR/CCPA/HIPAA)','Alert on PII touching new table/column'],
     benefits: ["Petabyte queries in seconds", "Real-time 15s refresh", "Self-service analytics, no SQL"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-pii-scanner-classifier/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-pii-scanner-classifier', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-pii-scanner-classifier/',
     popular: false,
@@ -8273,7 +10473,11 @@ export const aiServices: Service[] = [
     features: ['Sensor TS ingestion + Pandas validation','Anomaly detector (IsolationForest + Prophet)','Failure risk scoring XGBoost per asset','Auto-created CMMS work-order on threshold'],
     benefits: ["Automated data quality", "Real-time 15s refresh", "Unified catalog & lineage"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-predictive-maintenance-timeseries/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-predictive-maintenance-timeseries', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-predictive-maintenance-timeseries/',
     popular: false,
@@ -8288,7 +10492,11 @@ export const aiServices: Service[] = [
     features: ['Auto-discover assets (warehouse + lakehouse + BI)','Business glossary auto-linked to actual columns','Column-level lineage: table to report to dashboard','Auto-generated data contract per published product','Data quality SLA enforced per data product'],
     benefits: ["80%+ less manual touch", "Built-in audit governance", "Accelerate insight by 40%"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-product-catalog-svc/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-product-catalog-svc', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-product-catalog-svc/',
     popular: false,
@@ -8303,7 +10511,11 @@ export const aiServices: Service[] = [
     features: ['PostgreSQL/BigQuery/Snowflake CDC ingestion','Flink SQL window aggregations (sub-second)','Role-based Superset/Metabase dashboard','Latency SLA alert per dashboard'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-real-time-operational-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-real-time-operational-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-real-time-operational-analytics/',
     popular: false,
@@ -8318,7 +10530,11 @@ export const aiServices: Service[] = [
     features: ['Ingestion: 1 million+ events/second per cluster with exactly-once guarantees','Down-sampling + retention policy: raw for 7 d, 1-minute roll-ups for 90 d, hourly for 3 y','SQL query engine + Python SDK for time-series queries in one familiar language','Alert rules: threshold, rate-of-change, compound condition — Slack, PagerDuty, Email, Webhook','Grafana + PostgreSQL wire-protocol: connect existing dashboards in 2 minutes'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-realtime-time-series-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-realtime-time-series-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-realtime-time-series-analytics/',
     popular: false,
@@ -8333,7 +10549,11 @@ export const aiServices: Service[] = [
     features: ['Flink + Redpanda backbone with sub-second windowed aggregation','Trend-detection + anomaly-alert engine with statistical significance scoring','Opentelemetry per event — correlate any aggregate back to source event in one click','Live dashboard with drill-through per team with RBAC on views and rows'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-realtime-trending-aggregator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-realtime-trending-aggregator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-realtime-trending-aggregator/',
     popular: true,
@@ -8348,7 +10568,11 @@ export const aiServices: Service[] = [
     features: ['Continuous per-interval Top-K aggregation on grouped dimensions with configurable window size','Out-of-norm score per dimension — automatically explains what changed since last window','Sigma-deviation alerting on every time-series window per threshold per metric','Curated drill-down per spike — root-cause dimension linked from the alert context'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-realtime-trending-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-realtime-trending-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-realtime-trending-analytics/',
     popular: false,
@@ -8363,7 +10587,11 @@ export const aiServices: Service[] = [
     features: ['MLflow experiment tracking + model registry','Managed feature store (Feast) auto-provisioned','KServe/Seldon batch + real-time inference','Model CI/CD per training run + gate before prod','GPU scheduling per experiment, no queue'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-science-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-science-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-science-platform/',
     popular: false,
@@ -8378,7 +10606,11 @@ export const aiServices: Service[] = [
     features: ['CDC from 10+ databases','Schema evolution handled','Exactly-once delivery','Conflict resolution config','Backfill historical data'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-sync-engineering/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-sync-engineering', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-sync-engineering/',
     popular: false,
@@ -8393,7 +10625,11 @@ export const aiServices: Service[] = [
     features: ['Generative tabular model: preserves statistical distributions and edge-cases from real data','PII-free guarantee: no real person IDs, SSNs, phone numbers, addresses, or credit card numbers in output','Edge-case preservation: rare events, outliers, null patterns and multi-filed relationship preserved statistically','Schema evolution: same generator continues generating data from updated schema as schema evolves','SDV + CTGAN engine: zero-code, point-and-click configuration or full Python API'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-synthetic-data-generator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-synthetic-data-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-synthetic-data-generator/',
     popular: false,
@@ -8408,7 +10644,11 @@ export const aiServices: Service[] = [
     features: ['Ingest PDF, Images, Audio, and Video with automatic format and codec detection','Auto-classify per schema: invoice, contract, report, or document using layout-aware LLM','OCR and ASR and object-detection hooks applied per detected file type','Natural-language query returns retrieved chunks with cited source passages'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/data-unstructured-data-lake/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/data-unstructured-data-lake', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/data-unstructured-data-lake/',
     popular: false,
@@ -8423,7 +10663,11 @@ export const aiServices: Service[] = [
     features: ['Query performance analysis & optimization','Database schema design & migration','High-availability & replication setup','Automated backup & disaster recovery','Index optimization & caching strategies'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/database-optimization/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/database-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/database-optimization/',
     popular: false,
@@ -8438,7 +10682,11 @@ export const aiServices: Service[] = [
     features: ['Exactly-once delivery guarantee','Windowed aggregations','Schema evolution auto-handle','Kafka / Kinesis connectors','SQL-based transformation'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/etl-streaming-pipeline/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/etl-streaming-pipeline', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/etl-streaming-pipeline/',
     popular: false,
@@ -8453,7 +10701,11 @@ export const aiServices: Service[] = [
     features: ['Feature definition registry per team','Offline feature compute (dbt/SQL transforms)','Online feature serving sub-10ms (Feast/Redis)','Point-in-time correctness validation','Model drift detect + alert on distribution shift'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/feature-engineering-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/feature-engineering-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/feature-engineering-platform/',
     popular: false,
@@ -8468,7 +10720,11 @@ export const aiServices: Service[] = [
     features: ['Neo4j cluster + GDS (community/pagerank)','Knowledge graph from internal docs + relations','Relationship query builder UI','Shortest-path + link-prediction for recommendations','Visual graph explorer + dashboard'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/graph-database-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/graph-database-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/graph-database-analytics/',
     popular: false,
@@ -8483,7 +10739,11 @@ export const aiServices: Service[] = [
     features: ['Domain-oriented data product design','Self-serve data platform implementation','Federated computational governance framework','Data quality and lineage automation','Multi-cloud data lakehouse architecture'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-data-mesh-implementation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-data-mesh-implementation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-data-mesh-implementation/',
     popular: false,
@@ -8498,7 +10758,11 @@ export const aiServices: Service[] = [
     features: ['Metrics + traces + logs + events in single Iceberg format','OpenMetadata catalog + lineage per signal type','Standard SQL query across all observability data','Per-signal retention (hours to years)','Built-in aggregations + rollups for dashboarding'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/observability-lakehouse/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/observability-lakehouse', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/observability-lakehouse/',
     popular: false,
@@ -8513,7 +10777,11 @@ export const aiServices: Service[] = [
     features: ['Sub-second event processing with Flink','Exactly-once guarantees, windowed aggregations','Kafka/Pulsar/Kinesis/S3 connectors','Stateful stream processing (CEP, session windows)','Managed deployment on K8s or serverless'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/realtime-streaming-etl-flink/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/realtime-streaming-etl-flink', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/realtime-streaming-etl-flink/',
     popular: false,
@@ -8528,7 +10796,11 @@ export const aiServices: Service[] = [
     features: ['Semantic layer — named metrics single source of truth','NL to SQL per business question','Dashboard builder (no SQL required)','Semantic model governance + approval workflow','Row/column-level security per user/group'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/self-service-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/self-service-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/self-service-analytics/',
     popular: false,
@@ -8543,7 +10815,11 @@ export const aiServices: Service[] = [
     features: ['Multi-broker: Kafka/Redpanda + connectors','Flink/Spark Streaming windowed aggregation','Sub-second event to alert latency','Anomaly detection per metric stream (Z-score)','Grafana/Looker real-time dashboard'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "149", "pro": "649", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/streaming-realtime-analytics/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/streaming-realtime-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/streaming-realtime-analytics/',
     popular: false,
@@ -8558,7 +10834,11 @@ export const aiServices: Service[] = [
     features: ['Multi-agent workflow DAG editor (visual + code)','Agent handoff + state persistence','Conditional branching + retry policy per step','Human-review gate per critical node','Audit trail per agent + cost tracking'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/agentic-workflow-orchestrator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/agentic-workflow-orchestrator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/agentic-workflow-orchestrator/',
     popular: false,
@@ -8573,7 +10853,11 @@ export const aiServices: Service[] = [
     features: ['Document classification AI','Contract key clause extraction','Email triage + auto-response','Invoice data extraction','No-code workflow builder'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-office-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-office-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-office-automation/',
     popular: false,
@@ -8588,7 +10872,11 @@ export const aiServices: Service[] = [
     features: ['Anomaly detection per host','Auto root-cause diagnosis','Auto-remediation playbooks','Change-freeze awareness','Full audit trail'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/ai-self-healing-infra/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/ai-self-healing-infra', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/ai-self-healing-infra/',
     popular: false,
@@ -8603,7 +10891,11 @@ export const aiServices: Service[] = [
     features: ['Self-service booking agent for commercial property showings','Automated CRM opportunity creation and lead scoring per inquiry source','Multi-channel tour reminders: SMS, email, WhatsApp, push notification','Post-tour nurturing sequence: re-engagement at 48 h, 1w, 2w, 4w with incremental incentives','Leasing-commission attribution: tie closed deals back to originating touchpoints'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-commercial-leasing-tour-scheduler/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-commercial-leasing-tour-scheduler', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-commercial-leasing-tour-scheduler/',
     popular: false,
@@ -8618,7 +10910,11 @@ export const aiServices: Service[] = [
     features: ['OCR + NLP pipeline orchestrating multiple document types in one session','Auto-classification — any document placed in input folder routed to correct intake path','Clause extraction, anomaly flag, and summarisation in same pipeline step','Approval routing with journalised highlight — every step durably signed and trusting'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-document-intelligence-pipeline/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-document-intelligence-pipeline', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-document-intelligence-pipeline/',
     popular: true,
@@ -8633,7 +10929,11 @@ export const aiServices: Service[] = [
     features: ['Inquiry funnel: form → enriched CRM record → personalised nurture sequence per channel','Academic-risk detection via LMS grade-imported pattern scoring','Parent engagement portal with auto-summarised academic progress reports','Alumni lifecycle: graduation anniversary give, re-enrolment incentive, charitable giving prompts','FERPA-compliant data handling with role-based student record access'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-education-student-lifecycle-manager/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-education-student-lifecycle-manager', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-education-student-lifecycle-manager/',
     popular: false,
@@ -8648,7 +10948,11 @@ export const aiServices: Service[] = [
     features: ['Multi-channel product sync for Amazon, Shopify, eBay, Etsy — bidirectional per SKU','Inventory sync across channels — stock depletion reflected across every marketplace in 60 seconds','Dropship workflow — auto-route orders to supplier per stock-level threshold','Auto-review generator sends per-buyer review request post-delivery with personalised template','Return and refund auto-process — auto-compute refund amount and inventory return per policy','Carrier shipping auto-label — auto-chooses cheapest carrier per weight and destination'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-integrated-commerce-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-integrated-commerce-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-integrated-commerce-automation/',
     popular: false,
@@ -8663,7 +10967,11 @@ export const aiServices: Service[] = [
     features: ['Omnichannel cart-to-delivery orchestration across Shopify, BigCommerce, and WooCommerce','Automated RMA and return handling end-to-end — refund, restock, denomination dispatch','Subscription billing orchestrator — proration, cohort billing, proration','Revenue reconciliation engine against payment providers with always-reconciled ledger'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-integrated-commerce-flows/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-integrated-commerce-flows', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-integrated-commerce-flows/',
     popular: true,
@@ -8678,7 +10986,11 @@ export const aiServices: Service[] = [
     features: ['Multi-format OCR: scanned PDF, email attachment, vendor portal, API, paper mail with routing','Three-way match: invoice vs. PO vs. goods-received note auto-compared per line item','GL-code suggestion: vendor + line-item category ML classification with override audit trail','Exception routing: unmatched → human worker queue with one-click approve/reject/edit','ERP posting API stub: NetSuite, QuickBooks, Sage, Xero, Workday all pre-wired'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-invoice-purchase-order-processing/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-invoice-purchase-order-processing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-invoice-purchase-order-processing/',
     popular: false,
@@ -8693,7 +11005,11 @@ export const aiServices: Service[] = [
     features: ['Template library per case type with clause auto-match per case facts entered','E-sign integrates per jurisdiction via DocuSign or HelloSign embedded signing','Deadline auto-calculation per court rules per state','Evidence binder auto-compile with exhibit auto-order by relevance per document','Regulatory filing per authority per batch or per individual case per filing limit','Prior precedent search per case law by citation auto-detected per case type'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-legal-document-preparation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-legal-document-preparation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-legal-document-preparation/',
     popular: false,
@@ -8708,7 +11024,11 @@ export const aiServices: Service[] = [
     features: ['Multi-channel campaign builder works across email, SMS, social, push, and ads','Audience segmentation engine — behavioural and demographic criteria enriched per user','Content calendaring view visualises live campaigns across every channel','Real-time ROI dashboard with cross-channel attribution across up to 10 touchpoints'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-multi-channel-campaign-manager/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-multi-channel-campaign-manager', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-multi-channel-campaign-manager/',
     popular: true,
@@ -8723,7 +11043,11 @@ export const aiServices: Service[] = [
     features: ['Sequence builder with channel-branch logic, A/B test per touch, and configurable delay steps','Unified send and reply inbox — all channels in one conversation thread without context switching','Re-engagement window auto-switches channel per non-engaged status per subscriber','Campaign analytics per channel with path dropout funnel visualisation and MQL revenue tracking'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-multi-channel-campaign-orchestrator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-multi-channel-campaign-orchestrator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-multi-channel-campaign-orchestrator/',
     popular: true,
@@ -8738,7 +11062,11 @@ export const aiServices: Service[] = [
     features: ['Auto-discover process maps from ERP, CRM, and BPM event logs including SAP, Oracle, Salesforce, Jira, and ServiceNow','Conformance checking — compare actual behaviour against the ideal process path with deviation scoring per transaction','Bottleneck, rework, and hotspot analysis — queue time, cycle time, and handover waste per step','RPA opportunity score per step — suggests which steps to auto-route with effort estimate','Executive dashboard with process KPIs, SLA drift, and cost-per-transaction trend'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-process-mining-deep-dive/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-process-mining-deep-dive', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-process-mining-deep-dive/',
     popular: false,
@@ -8753,7 +11081,11 @@ export const aiServices: Service[] = [
     features: ['Event-log ingestion from ERP, CRM, and BPM — 10+ standard connectors','Process discovery — actual vs. intended step map with frequency breakdown','Bottleneck identification — highlight choke points on process with deviation rate','Change-impact simulation — predict how a new step or rule change affects total cost and lead time'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-process-mining-intelligence/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-process-mining-intelligence', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-process-mining-intelligence/',
     popular: false,
@@ -8768,7 +11100,11 @@ export const aiServices: Service[] = [
     features: ['AI content drafting: platform-optimised posts per network with tone + brand voice pre-trained','Content calendar kanban: quarterly calendar with drag-drop scheduling per platform','Bulk publishing: schedule 50+ posts across 6 platforms in one session with platform-native format','Real-time engagement: mentions, DMs, comments all in one inbox with AI-suggested replies','Weekly performance report: top-performing content type, audience growth trend, best posting time slot'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/automation-social-media-content-hub/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/automation-social-media-content-hub', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/automation-social-media-content-hub/',
     popular: false,
@@ -8783,7 +11119,11 @@ export const aiServices: Service[] = [
     features: ['Process event log mining + variant discovery','Bottleneck + wait-time per activity','Automation opportunity ROAS scoring','Target BPMN process design','Automation ROI per identified opportunity'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/bpa-process-analysis/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/bpa-process-analysis', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/bpa-process-analysis/',
     popular: false,
@@ -8798,7 +11138,11 @@ export const aiServices: Service[] = [
     features: ['Automated CI/CD pipeline setup (GitHub Actions, GitLab CI)','Kubernetes orchestration & management','Infrastructure as Code (Terraform, Ansible)','24/7 site reliability monitoring','Blue-green & canary deployments'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/devops-cicd/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/devops-cicd', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/devops-cicd/',
     popular: true,
@@ -8813,7 +11157,11 @@ export const aiServices: Service[] = [
     features: ['Visual DAG designer','Durable execution','Automatic retries & DLQ','Saga pattern support','Webhook triggers'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/event-driven-orchestration/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/event-driven-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/event-driven-orchestration/',
     popular: false,
@@ -8828,7 +11176,11 @@ export const aiServices: Service[] = [
     features: ['Event bus with pub/sub + topic partitioning','Schema registry (Avro, Protobuf, JSON Schema)','Dead-letter queue + manual replay','Exactly-once delivery at-least-once','Cross-region replication + geo-failover'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/event-driven-orchestration-hub/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/event-driven-orchestration-hub', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/event-driven-orchestration-hub/',
     popular: false,
@@ -8843,7 +11195,11 @@ export const aiServices: Service[] = [
     features: ['Infrastructure automation with Terraform and Ansible','Workflow orchestration across IT systems','Self-healing infrastructure with event-driven automation','Compliance enforcement and drift detection','Centralized automation catalog and governance'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-automation-orchestrator/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-automation-orchestrator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-automation-orchestrator/',
     popular: false,
@@ -8858,7 +11214,11 @@ export const aiServices: Service[] = [
     features: ['3D digital twin modeling and visualization','Real-time IoT sensor data ingestion and mapping','Predictive simulation and what-if scenario analysis','Integration with CAD, BIM, and ERP systems','Automated alerts and anomaly detection'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/it-digital-twin-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/it-digital-twin-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/it-digital-twin-platform/',
     popular: false,
@@ -8873,7 +11233,11 @@ export const aiServices: Service[] = [
     features: ['Visual drag-and-drop builder','1000+ integrations','Approval gates & branching','Error handling & retries','Built-in audit log'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/low-code-workflow-builder/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/low-code-workflow-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/low-code-workflow-builder/',
     popular: false,
@@ -8888,7 +11252,11 @@ export const aiServices: Service[] = [
     features: ['Lead scoring + nurture per segment','Multi-channel orchestration: email/SMS/push/ads','Campaign A/B test + auto-optimize per winner','Attribution + analytics per campaign','CRM sync + customer journey canvas'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/marketing-automation-svc/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/marketing-automation-svc', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/marketing-automation-svc/',
     popular: false,
@@ -8903,7 +11271,11 @@ export const aiServices: Service[] = [
     features: ['Real-time dashboards & custom metrics','Proactive alerting (PagerDuty, OpsGenie)','Centralized log aggregation (ELK/Loki)','Distributed tracing (Jaeger, OpenTelemetry)','Uptime monitoring from 20+ global locations'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/monitoring-observability/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/monitoring-observability', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/monitoring-observability/',
     popular: false,
@@ -8918,7 +11290,11 @@ export const aiServices: Service[] = [
     features: ['Anomaly detection per metric/log/trace','Log-based alert pattern — alert less signal more','AI RCA correlating across signals','Auto-generated runbook per incident type','Self-healing action per whitelisted scenario'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/observability-aiops/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/observability-aiops', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/observability-aiops/',
     popular: false,
@@ -8933,7 +11309,11 @@ export const aiServices: Service[] = [
     features: ['Drag-and-drop BPMN process designer','RPA bots for legacy app interactions','Approval routing + SLA tracking','Complete audit trail + compliance logs'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/process-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/process-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/process-automation/',
     popular: false,
@@ -8948,7 +11328,11 @@ export const aiServices: Service[] = [
     features: ['Pub/sub + point-to-point','Exactly-once delivery','Dead-letter queue','Message replay','Multi-region replication'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/queue-messaging-platform/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/queue-messaging-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/queue-messaging-platform/',
     popular: false,
@@ -8963,7 +11347,11 @@ export const aiServices: Service[] = [
     features: ['AI-driven demand forecasting','Multi-modal route optimization','Supplier risk intelligence & monitoring','Automated disruption response playbooks','Warehouse operations AI optimization'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/supply-chain-management-service/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/supply-chain-management-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/supply-chain-management-service/',
     popular: false,
@@ -8978,7 +11366,11 @@ export const aiServices: Service[] = [
     features: ['Real-time GPS tracking','Customs status sync','Demand forecasting ML','Disruption alerting','Multi-carrier dashboard'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/supply-chain-visibility/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/supply-chain-visibility', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/supply-chain-visibility/',
     popular: false,
@@ -8993,7 +11385,11 @@ export const aiServices: Service[] = [
     features: ['500+ app pre-built connectors','Conditional branching + retry logic','Webhook + scheduling + approval steps','Audit log + execution history per workflow'],
     benefits: ["Self-service analytics, no SQL", "Unified catalog & lineage", "Petabyte queries in seconds"],
     pricing: {"basic": "79", "pro": "349", "enterprise": "25000"},
+<<<<<<< HEAD
     contactInfo: { website:'/services/workflow-automation/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+=======
+    contactInfo: { website:'/services/workflow-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+>>>>>>> df2f945b (fix: standardise contact email to kleber@ across servicesData.ts + task board)
     icon: '♿',
     href: '/services/workflow-automation/',
     popular: false,

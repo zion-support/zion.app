@@ -573,14 +573,15 @@
         "title": "Disable typescript.ignoreBuildErrors in next.config.js once type-check is clean",
         "priority": "high",
         "area": "types",
-        "detail": "Build currently silently swallows TS errors \u2014 harmful for CI"
+        "detail": "Build currently silently swallows TS errors — harmful for CI"
       },
       {
-        "id": "brand-book-review-servicesdata-ts-uses-c",
-        "title": "Brand-book review: servicesData.ts uses commercial@, but footer/contact uses kleber@",
+        "id": "canonicalize-services-email-commercial-to-kleber",
+        "title": "Standardise contact email to kleber@ziontechgroup.com across all files",
         "priority": "low",
         "area": "brand",
-        "detail": "Confirm which address appears on service email CTA vs contact footer"
+        "detail": "CANONICAL decided: kleber@. servicesData.ts (599 entries) and servicesData.json (275 entries) both swept commercial→kleber. Footer/contact/Navigation already on kleber. Termux + Windows both consistent. Mac Hermes may need same sweep if key still present.",
+        "status": "done"
       }
     ]
   },
