@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 _Generated: 2026-05-26T19:03:26.991Z_
 =======
 _Generated: 2026-05-24T21:46:47.114Z_
@@ -69,6 +70,9 @@ _Generated: 2026-05-25T02:55:54.924Z_
 =======
 _Generated: 2026-05-25T03:49:46.184Z_
 >>>>>>> 7eaf8499 (chore(app): daily quick improvement audit and fixes)
+=======
+_Generated: 2026-05-25T04:56:08.429Z_
+>>>>>>> 76420900 (chore(app): daily quick improvement audit and fixes)
 
 _No policy history entries yet._ Run `npm run openclaw:actions:policy` to populate.
 
