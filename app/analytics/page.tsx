@@ -22,6 +22,7 @@ export default function Page() {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <span className="text-6xl mb-4 block">{">📊"}</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Analytics & Business Intelligence</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Data analytics, BI dashboards, predictive insights, and AI-powered reporting.</p>
@@ -30,6 +31,9 @@ export default function Page() {
           </div>
 =======
           <span className="text-6xl mb-4 block">{\'→📊\'}</span>
+=======
+          <span className="text-6xl mb-4 block">{'→📊'}</span>
+>>>>>>> 50604a68 (fix(tsx): escape JSX inline quotes in analytics/5g/api-dev service page scripts)
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Data Analytics & Business Intelligence</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.</p>
 >>>>>>> 4bc61ade (fix(sub-pages): JSX encoding + undeclared placeholder vars in 4 industry pages)
