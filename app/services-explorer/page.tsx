@@ -61,6 +61,40 @@ export default function ServicesExplorerPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+      {/* JSON-LD: CollectionPage + BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Service Explorer | Zion Tech Group",
+            description:
+              "Browse and filter 550+ enterprise AI and IT services by category, industry, stage, and keyword.",
+            url: "https://ziontechgroup.com/services-explorer",
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: services.length,
+              itemListElement: services
+                .slice(0, 20)
+                .map((svc: Service, i: number) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  url: `https://ziontechgroup.com/services/${svc.id}`,
+                  name: svc.title,
+                })),
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://ziontechgroup.com" },
+                { "@type": "ListItem", position: 2, name: "Service Explorer", item: "https://ziontechgroup.com/services-explorer" },
+              ],
+            },
+          })),
+        }}
+      />
       <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 

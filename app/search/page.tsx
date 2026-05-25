@@ -107,6 +107,42 @@ export default function SearchPage() {
 
   return (
     <div className="container-page py-12">
+      {/* JSON-LD: SearchResultsPage + BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SearchResultsPage",
+            name: "Service Search | Zion Tech Group",
+            description:
+              "Search 550+ services, solutions, and industry offerings at Zion Tech Group — find the right AI or IT capability instantly.",
+            url: "https://ziontechgroup.com/search",
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems:
+                loaded && !err ? results.length : allServices.length,
+              itemListElement:
+                loaded && !err && query
+                  ? results.slice(0, 20).map((service: ServiceFeedEntry, i: number) => ({
+                      "@type": "ListItem",
+                      position: i + 1,
+                      url: `https://ziontechgroup.com${service.href}`,
+                      name: service.title,
+                    }))
+                  : undefined,
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://ziontechgroup.com" },
+                { "@type": "ListItem", position: 2, name: "Search", item: "https://ziontechgroup.com/search" },
+              ],
+            },
+          })),
+        }}
+      />
       <h1 className="text-3xl font-bold text-white mb-2">Service Search</h1>
       <p className="text-slate-400 mb-8">
         Browse and filter {allServices.length ? allServices.length : ''} AI, IT, Cloud, Security, Data, and Automation services.
