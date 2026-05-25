@@ -599,7 +599,9 @@
         "title": "navigation.ts — fix 6 NavigationLink type: number should be NavigationLink",
         "priority": "medium",
         "area": "types",
-        "detail": "Fixes pre-existing at/import type mismatches in billing/resource constants"
+        "detail": "Fixes pre-existing at/import type mismatches in billing/resource constants",
+        "status": "done",
+        "status_both": "✅"
       },
       {
         "id": "add-schema-org-json-ld-to-service-detail",
@@ -614,7 +616,9 @@
         "title": "Add skip-link + aria-label landmarks to all 148 pages",
         "priority": "medium",
         "area": "a11y",
-        "detail": "Zero skip-links found; 147 of 148 pages lack ARIA landmark strings"
+        "detail": "Zero skip-links found; 147 of 148 pages lack ARIA landmark strings",
+        "status": "done",
+        "status_both": "✅"
       }
     ]
   },
