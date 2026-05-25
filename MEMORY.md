@@ -284,4 +284,13 @@
 - FloatingActionDock: live in `app/components/FloatingActionDock.tsx` — right-side expandable dock on desktop, hidden on mobile, anchor-only on homepage
 
 ### Broken Links: Final Word
-- 62 “broken” service links = internal Next.js chunk paths `/_next/static/chunks/webpack-3383486f79a89402.js` — all present in `out/_next/static/chunks/` (12 files). Auditor false positives. 0 real broken links.
+- 62 "broken" service links = internal Next.js chunk paths `/_next/static/chunks/webpack-3383486f79a89402.js` — all present in `out/_next/static/chunks/` (12 files). Auditor false positives. 0 real broken links.
+
+### Termux TS Cleanup — Complete (2025-05-24)
+- JSX quote fixes: 3 page.tsx files patched (5g-solutions, analytics, api-development)
+- tsconfig.json cleaned: `"types":["node"]` removed
+- serviceCount L354: single-quoted string literal → backtick template literal `${serviceCount}+`
+- FloatingActionDock `SERVICE_COUNT_B` label patched
+- All 6 "me" tasks marked done; board `me.count=6`; push `96893d7`
+- Board state: me=6/6 ✅ | human=3 🟡 | both=3 🟡 | meta: 149 routes, 0 bad entries
+- Remaining: Mac pull + type-check gate — top priority; human/both tasks next
