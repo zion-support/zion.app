@@ -37,6 +37,7 @@
   "exclude": [
     "node_modules",
     "src",
+<<<<<<< HEAD
     "zion.app",
     "apps",
     "archive",
@@ -46,5 +47,8 @@
     "**/*.spec.*",
     "tools",
     "utils"
+=======
+    "zion.app"
+>>>>>>> 72c4bfd3 (chore(tsconfig): exclude zion.app from type-check to reduce noise)
   ]
 }
