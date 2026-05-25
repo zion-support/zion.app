@@ -507,6 +507,7 @@
         "area": "types",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count."
 =======
         "title": "Fix {serviceCount}+ rendering as literal text in page.tsx L354 string-literality",
@@ -523,12 +524,15 @@
         "detail": "Fixed desc string literal to use ES6 template literal so the dynamic service count interpolates in the AI-Powered Matching step-2 card."
 >>>>>>> dfaa4621 (fix(task-board): rewrite zion-site-task-board.json with valid JSON — detail string used unescaped {serviceCount} which broke Node JSON.parse at position 1709 (string-literal now described without brace interpolation))
 =======
-        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count.",
 =======
-        "detail": "desc: '{serviceCount}+...' string literal inside JS object step array becomes `${serviceCount}+` \u2014 was rendering as literal text in 'How It Works / AI-Powered Matching' card (Step 2) instead of dynamic count.",
+>>>>>>> ae84a66e (fix(board): resolve remaining conflict — orphaned } removed, task board valid and synced)
+        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count.",
         "status": "done"
+<<<<<<< HEAD
 >>>>>>> f671eef (fix(board): rebuild corrupted zion-site-task-board.json — restores 10/10 task entries across me/human/both, fix services_626 metadata intact)
 >>>>>>> 3d5a56df (fix(board): rebuild corrupted zion-site-task-board.json — restores 10/10 task entries across me/human/both, fix services_626 metadata intact)
+=======
+>>>>>>> ae84a66e (fix(board): resolve remaining conflict — orphaned } removed, task board valid and synced)
       }
     ]
   },
