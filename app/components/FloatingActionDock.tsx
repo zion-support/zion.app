@@ -8,7 +8,7 @@ const DOCK_ITEMS = [
     id: 'search',
     href: '#',
     emoji: '🔍',
-    label: 'Search 600+ Services',
+    label: 'Search',
     action: 'search',
     color: 'from-blue-500 to-cyan-500',
   },

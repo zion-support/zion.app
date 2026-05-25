@@ -271,7 +271,7 @@ let list = services;
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
-                🛠️ Explore All {serviceCount}+ Services
+                {`🛠️ Explore All ${serviceCount}+ Services`}
               </Link>
               <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
                 ☎ +1 302 464 0950
@@ -771,7 +771,7 @@ let list = services;
           <div className="text-center mb-8">
             <h2 className="text-xl font-bold text-white">Browse by Category</h2>
             <p className="text-slate-400 text-sm mt-1">
-              {serviceCount}+ services across 6 core capability areas
+              {`${serviceCount}+ services across 6 core capability areas`}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

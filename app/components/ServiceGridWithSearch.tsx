@@ -183,7 +183,7 @@ export default function ServiceGridWithSearch() {
 
         {/* ── Quick stats ──────────────────────────────── */}
         <div className="mt-4 flex items-center justify-between text-xs text-slate-600">
-          <span>{626} services · {6} categories</span>
+          <span>{activeCount.toLocaleString()} services · {CATEGORIES.length} categories</span>
           <span>Free search — no account required</span>
         </div>
       </div>
