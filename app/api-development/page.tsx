@@ -21,7 +21,7 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{\'→🔧\'}</span>
+          <span className="text-6xl mb-4 block">{'→🔧'}</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">API Development & Integration</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.</p>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
