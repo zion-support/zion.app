@@ -482,7 +482,7 @@
         "title": "Fix servicesData.ts schema — 18 entries with missing required fields",
         "priority": "medium",
         "area": "types",
-        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults. RESOLVED: audit confirmed 0 entries missing required fields (all 599 entries have title/description/features/benefits/pricing/contactInfo/icon/href).",
+        "detail": "Blocks: 0; missing fields vary per entry. Add title/description/features/benefits/pricing/contactInfo/icon/href with sensible defaults. RESOLVED: audit confirmed 0 entries missing required fields.",
         "status": "done"
       },
       {
@@ -490,8 +490,7 @@
         "title": "Replace all hardcoded service-count literals (600+ / 626 / 627) with serviceCount+",
         "priority": "medium",
         "area": "content",
-        "detail": "0 total occurrences in 0 page.tsx files. Also: ServiceGridWithSearch.tsx L186 {626}/{6} \u2192 activeCount.toLocaleString()/CATEGORIES.length; FloatingActionDock.tsx hardcoded \"600+\" \u2192 SERVICE_COUNT_B template literal; page.tsx L354 string-literal {serviceCount}+ \u2192 template literal ${serviceCount}+.",
-        "status": "done"
+        "detail": "0 total occurrences in 0 page.tsx files. Also: ServiceGridWithSearch.tsx L186 {626}/{6} \u2192 activeCount.toLocaleString()/CATEGORIES.length; FloatingActionDock.tsx hardcoded '600+' \u2192 SERVICE_COUNT_B template literal; page.tsx L354 string-literal {serviceCount}+ \u2192 template literal ${serviceCount}+."
       },
       {
         "id": "remove-or-relocate-jest-setup-ts-__tests",
@@ -506,6 +505,7 @@
         "title": "Fix {serviceCount}+ rendering as literal text in page.tsx L354 string-literal",
         "priority": "high",
         "area": "types",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count."
 =======
@@ -522,6 +522,13 @@
 =======
         "detail": "Fixed desc string literal to use ES6 template literal so the dynamic service count interpolates in the AI-Powered Matching step-2 card."
 >>>>>>> dfaa4621 (fix(task-board): rewrite zion-site-task-board.json with valid JSON — detail string used unescaped {serviceCount} which broke Node JSON.parse at position 1709 (string-literal now described without brace interpolation))
+=======
+        "detail": "desc: \"...{serviceCount}+...\" string literal inside JS object step array becomes ${serviceCount}+ — was rendering as literal text in \"How It Works / AI-Powered Matching\" card (Step 2) instead of dynamic count.",
+=======
+        "detail": "desc: '{serviceCount}+...' string literal inside JS object step array becomes `${serviceCount}+` \u2014 was rendering as literal text in 'How It Works / AI-Powered Matching' card (Step 2) instead of dynamic count.",
+        "status": "done"
+>>>>>>> f671eef (fix(board): rebuild corrupted zion-site-task-board.json — restores 10/10 task entries across me/human/both, fix services_626 metadata intact)
+>>>>>>> 3d5a56df (fix(board): rebuild corrupted zion-site-task-board.json — restores 10/10 task entries across me/human/both, fix services_626 metadata intact)
       }
     ]
   },
