@@ -1,14 +1,6 @@
 // app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Free Port Scanner | Zion Tech Group',
-  description: 'Scan a host for open ports, common TCP services, and security exposure — no sign-up required.',
-};
-
-
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -78,7 +70,7 @@ export default function PortScannerPage() {
   return (
     <div className="container-page py-16">
       <div className="max-w-3xl mx-auto">
-        <Link href="/tools" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
+        <Link href="/tools/" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
         <h1 className="text-4xl font-bold text-white mb-4">🔍 Port Scanner</h1>
         <p className="text-slate-400 mb-8">
           Free online port scanner. Enter a hostname or IP to check 20 of the most common service ports. No download required, runs entirely in your browser.
@@ -168,7 +160,7 @@ export default function PortScannerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/ai-compliance" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/ai-compliance/" className="text-purple-400 hover:underline text-sm">
             Need full infrastructure security monitoring? → IT Endpoint Security Compliance
           </Link>
         </div>

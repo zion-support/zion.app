@@ -2,13 +2,6 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Service Explorer | Zion Tech Group',
-  description: 'Browse and filter enterprise AI and IT services by category, industry, stage, and keyword.',
-};
-
 
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';

@@ -89,13 +89,13 @@ export default async function ServicePage({ params }: PageProps) {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://ziontechgroup.com/services",
+        item: "https://ziontechgroup.com/services/",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: catLabel,
-        item: `https://ziontechgroup.com/services?category=${encodeURIComponent(service.category)}`,
+        item: `https://ziontechgroup.com/services/?category=${encodeURIComponent(service.category)}`,
       },
       {
         "@type": "ListItem",
@@ -125,7 +125,7 @@ export default async function ServicePage({ params }: PageProps) {
           <span className="mx-2">/</span>
           <Link href="/services/" className="hover:text-purple-400 transition">Services</Link>
           <span className="mx-2">/</span>
-          <Link href={`/services?category=${encodeURIComponent(service.category)}`} className="hover:text-purple-400 transition">{catLabel}</Link>
+          <Link href={`/services/?category=${encodeURIComponent(service.category)}`} className="hover:text-purple-400 transition">{catLabel}</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-300">{service.title}</span>
         </nav>
@@ -161,7 +161,7 @@ export default async function ServicePage({ params }: PageProps) {
                 {Object.entries(service.pricing).map(([tier, price]) => (
                   <div key={tier} className="flex justify-between items-center py-2 border-b border-slate-700/50 last:border-0">
                     <span className="text-slate-300 capitalize">{tier}</span>
-                    <span className="text-purple-300 font-semibold">{price}</span>
+                    <span className="text-purple-300 font-semibold">{price as string}</span>
                   </div>
                 ))}
               </div>

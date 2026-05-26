@@ -8,7 +8,7 @@ export default function ServiceCounter() {
   const [displayed, setDisplayed] = useState(0);
   const target  = searchServices.length;
   const started = useRef(false);
-  const raf     = useRef<number>();
+  const raf     = useRef<number>(0);
 
   useEffect(() => {
     if (started.current) return;

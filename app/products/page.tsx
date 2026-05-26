@@ -1,14 +1,7 @@
 // app/products/page.tsx — Products & Platforms
 'use client';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import { allServices } from '@/data/servicesData';
-
-export const metadata: Metadata = {
-  title: 'Products & Platforms | Zion Tech Group',
-  description:
-    'Six product families, ' + allServices.length + ' services — AI, IT, Cloud, Security, Data, and Automation platforms for enterprise.',
-};
 
 const PRODUCTS: readonly {
   key: string;
@@ -142,7 +135,7 @@ export default function ProductsPage() {
           {PRODUCTS.map((p) => (
             <div
               key={p.key}
-              className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 hover:border-emerald-500/50 transition flex flex-col"
+              className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition flex flex-col"
             >
               <div className="text-4xl mb-3">{p.emoji}</div>
               <h2 className="text-xl font-bold text-white mb-1">{p.title}</h2>
@@ -150,7 +143,7 @@ export default function ProductsPage() {
               <ul className="space-y-1.5 mb-6 flex-1">
                 {p.bullets.map((b, i) => (
                   <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                    <span className="text-emerald-400 mt-0.5">•</span>{b}
+                    <span className="text-purple-400 mt-0.5">•</span>{b}
                   </li>
                 ))}
               </ul>
@@ -160,7 +153,7 @@ export default function ProductsPage() {
                 </span>
                 <Link
                   href={p.cta}
-                  className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold"
+                  className="text-purple-400 hover:text-purple-300 text-sm font-semibold"
                 >
                   Browse →
                 </Link>

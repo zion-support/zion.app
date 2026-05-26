@@ -93,7 +93,7 @@ export default function Page() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/consultation"
+              href="/contact/"
               className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
             >
               Book a Strategy Session
@@ -109,7 +109,7 @@ export default function Page() {
 
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link
-            href="/blog"
+            href="/blog/"
             className="text-sm font-medium text-purple-300 transition hover:text-purple-200"
           >
             &larr; Back to all articles

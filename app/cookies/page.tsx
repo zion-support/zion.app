@@ -13,17 +13,17 @@ export default function CookiesPage() {
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="max-w-3xl mx-auto">
-          <Link href="/privacy/" className="text-emerald-400 hover:text-emerald-300 text-sm mb-6 inline-block">
+          <Link href="/privacy/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">
             ← Privacy Policy
           </Link>
 
-          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Cookie Policy
           </h1>
           <p className="text-slate-400 mb-10">
-            Zion Tech Group uses cookies and similar technologies on <Link href="/" className="text-emerald-400 hover:underline">ziontechgroup.com</Link>.
+            Zion Tech Group uses cookies and similar technologies on <Link href="/" className="text-purple-400 hover:underline">ziontechgroup.com</Link>.
             This policy explains what types of cookies we use, why we use them, and how you can manage your preferences.
-            For information about how we handle your personal data, please see our <Link href="/privacy/" className="text-emerald-400 hover:underline">Privacy Policy</Link>.
+            For information about how we handle your personal data, please see our <Link href="/privacy/" className="text-purple-400 hover:underline">Privacy Policy</Link>.
           </p>
 
           <Section num="1" title="What Are Cookies?">
@@ -123,8 +123,8 @@ export default function CookiesPage() {
             <div className="mt-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
               <p className="text-slate-300">
                 <span className="text-white font-semibold">Zion Tech Group</span><br />
-                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:underline">kleber@ziontechgroup.com</a><br />
-                Phone: <a href="tel:+1-302-464-0950" className="text-emerald-400 hover:underline">+1 302 464 0950</a><br />
+                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline">kleber@ziontechgroup.com</a><br />
+                Phone: <a href="tel:+1-302-464-0950" className="text-purple-400 hover:underline">+1 302 464 0950</a><br />
                 Address: 364 E Main St STE 1008, Middletown, DE 19709
               </p>
             </div>
@@ -143,7 +143,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
   return (
     <section className="mb-10">
       <h2 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-        <span className="text-sm font-bold text-emerald-500 bg-emerald-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
+        <span className="text-sm font-bold text-purple-500 bg-purple-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
         {title}
       </h2>
       {children}
@@ -154,7 +154,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
 function CookieCard({ name, purpose, examples, optout }: { name: string; purpose: string; examples: string; optout: string }) {
   return (
     <div className="p-5 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 className="font-semibold text-emerald-300 text-lg mb-2">{name}</h3>
+      <h3 className="font-semibold text-purple-300 text-lg mb-2">{name}</h3>
       <p className="text-slate-300 text-sm mb-2">{purpose}</p>
       <p className="text-slate-400 text-sm mb-1">
         <span className="text-slate-500">Examples:</span> {examples}

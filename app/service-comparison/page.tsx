@@ -2,13 +2,6 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Compare Services | Zion Tech Group',
-  description: 'Side-by-side comparison of AI, IT, cloud, and automation services. Features, pricing, and use cases at a glance.',
-};
-
 
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';

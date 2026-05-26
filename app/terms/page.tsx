@@ -13,11 +13,11 @@ export default function TermsPage() {
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Terms of Service
           </h1>
           <p className="text-slate-400 mb-10">
-            These Terms of Service ("Terms") govern your access to and use of <Link href="/" className="text-emerald-400 hover:underline">ziontechgroup.com</Link> and any services provided by Zion Tech Group ("we", "us", "our"). By accessing the website or engaging our services, you agree to be bound by these Terms.
+            These Terms of Service ("Terms") govern your access to and use of <Link href="/" className="text-purple-400 hover:underline">ziontechgroup.com</Link> and any services provided by Zion Tech Group ("we", "us", "our"). By accessing the website or engaging our services, you agree to be bound by these Terms.
           </p>
 
           <Section num="1" title="Use of the Website">
@@ -107,8 +107,8 @@ export default function TermsPage() {
             <div className="mt-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
               <p className="text-slate-300">
                 <span className="text-white font-semibold">Zion Tech Group</span><br />
-                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:underline">kleber@ziontechgroup.com</a><br />
-                Phone: <a href="tel:+1-302-464-0950" className="text-emerald-400 hover:underline">+1 302 464 0950</a><br />
+                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline">kleber@ziontechgroup.com</a><br />
+                Phone: <a href="tel:+1-302-464-0950" className="text-purple-400 hover:underline">+1 302 464 0950</a><br />
                 Address: 364 E Main St STE 1008, Middletown, DE 19709
               </p>
             </div>
@@ -131,7 +131,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
   return (
     <section className="mb-10">
       <h2 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-        <span className="text-sm font-bold text-emerald-500 bg-emerald-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
+        <span className="text-sm font-bold text-purple-500 bg-purple-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
         {title}
       </h2>
       {children}

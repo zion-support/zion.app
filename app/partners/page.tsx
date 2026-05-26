@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Partners &amp; Alliances',
   description: 'Our technology partners and strategic alliances — AWS, Microsoft, Google Cloud, NVIDIA, OpenAI, and more.',
-  alternates: { canonical: '/partners' },
+  alternates: { canonical: '/partners/' },
 };
 
 import { partners } from '@/data/partners';
@@ -72,7 +72,7 @@ export default function PartnersPage() {
   const tierLabel: Record<string, string> = { Platinum: 'Platinum Partners', Gold: 'Gold Partners', Silver: 'Silver Partners' };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+    <main className="min-h-screen bg-slate-950">
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(partnerSchema) }} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />

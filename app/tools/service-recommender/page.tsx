@@ -1,14 +1,6 @@
 // app/tools/service-recommender/page.tsx
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Service Recommender | Zion Tech Group',
-  description: 'Answer 3 quick questions — our AI finds the best-matched services from our catalog.',
-};
-
-
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';

@@ -1,14 +1,6 @@
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'SSL Certificate Checker | Zion Tech Group',
-  description: 'Free SSL/TLS certificate checker — validate expiry, issuer, grade, and protocol support for any domain.',
-};
-
-
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -54,7 +46,7 @@ export default function SSLCheckerPage() {
   return (
     <div className="container-page py-16">
       <div className="max-w-3xl mx-auto">
-        <Link href="/tools" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
+        <Link href="/tools/" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
         <h1 className="text-4xl font-bold text-white mb-4">🔒 SSL/TLS Certificate Checker</h1>
         <p className="text-slate-400 mb-8">
           Free SSL certificate checker powered by SSL Labs. Enter any domain to check certificate validity, grade, expiry, protocol support, and potential vulnerabilities.
@@ -151,7 +143,7 @@ export default function SSLCheckerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/ai-compliance" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/ai-compliance/" className="text-purple-400 hover:underline text-sm">
             Need help fixing SSL issues? → Security Compliance & Monitoring
           </Link>
         </div>

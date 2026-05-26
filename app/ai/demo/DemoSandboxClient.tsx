@@ -296,7 +296,7 @@ export default function DemoSandboxClient() {
         {/* Footer notes */}
         <div className="mt-12 pt-8 border-t border-slate-800/60 text-center">
           <p className="text-xs text-slate-600">
-            Demo by Zion Tech Group — {services.length} AI, IT, Cloud &amp; automation services indexed locally.
+                          Demo by Zion Tech Group — 600+ AI, IT, Cloud &amp; automation services indexed locally.
             <br />No LLM API calls. No account required. Everything runs in your browser.
           </p>
         </div>

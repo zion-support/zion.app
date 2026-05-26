@@ -1,12 +1,3 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
-  description: 'Answers to the most common questions about our AI services, IT solutions, consulting, and micro-SaaS products.',
-};
-
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -129,13 +120,13 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
-    { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://ziontechgroup.com/faq' },
+    { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://ziontechgroup.com/faq/' },
   ],
 };
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+    <main className="min-h-screen bg-slate-950">
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -167,18 +158,18 @@ export default function FAQPage() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {faqs.map((section, si) => (
           <div key={si} className="mb-16">
-            <h2 className="text-2xl font-bold text-cyan-400 mb-8 pb-2 border-b border-slate-700">
+            <h2 className="text-2xl font-bold text-purple-400 mb-8 pb-2 border-b border-slate-700">
               {section.category}
             </h2>
             <div className="space-y-4">
               {section.questions.map((qa, qi) => (
                 <details
                   key={qi}
-                  className="group bg-slate-900/50 border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-colors"
+                  className="group bg-slate-900/50 border border-slate-700 rounded-xl overflow-hidden hover:border-purple-500/50 transition-colors"
                 >
                   <summary className="cursor-pointer px-6 py-4 font-semibold text-white text-lg flex justify-between items-center">
                     <span>{qa.q}</span>
-                    <span className="text-cyan-400 transition-transform group-open:rotate-180">▼</span>
+                    <span className="text-purple-400 transition-transform group-open:rotate-180">▼</span>
                   </summary>
                   <div className="px-6 py-4 text-slate-300 leading-relaxed">
                     {qa.a}
@@ -192,13 +183,13 @@ export default function FAQPage() {
 
       {/* Contact CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-500/30 rounded-2xl p-12 text-center">
+        <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-2xl p-12 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h3>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             Our team is here to help. Reach out and we'll get back to you within 24 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <a href={`tel:${contactInfo.mobile}`} className="inline-flex items-center gap-2 bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition">
+            <a href={`tel:${contactInfo.mobile}`} className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
               📞 {contactInfo.mobile}
             </a>
             <a href={`mailto:${contactInfo.email}`} className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">

@@ -2,13 +2,6 @@
 'use client';
 
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'AI Services | Zion Tech Group',
-  description: 'Enterprise AI services — chatbots, RAG, computer vision, predictive analytics, autonomous agents, LLM integration, and more.',
-};
-
 
 import { useState, useMemo } from 'react';
 import { allServices } from '@/data/servicesData';
@@ -153,7 +146,7 @@ export default function AIServicesPage() {
             We can build a custom AI solution tailored to your exact requirements. Let's talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="tel:+130****0950" className="btn-primary">📞 +1 302 464 0950</a>
+            <a href="tel:+13024640950" className="btn-primary">📞 +1 302 464 0950</a>
             <Link href="/contact/" className="btn-secondary">✉️ Contact Us</Link>
           </div>
         </div>

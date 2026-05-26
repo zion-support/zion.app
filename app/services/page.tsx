@@ -2,13 +2,6 @@
 'use client';
 
 import { useState, useMemo, Suspense } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Enterprise AI & IT Services | Zion Tech Group',
-  description: 'Browse AI, IT, cloud, security, data analytics, and automation services — from chatbots and RAG to IoT and DevSecOps.',
-};
-
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -89,7 +82,7 @@ function ServicesContent() {
         </div>
         <div className="text-center mt-16">
           <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
-          <p className="text-slate-500 text-sm mt-4">Or call us: <a href="tel:+130****0950" className="text-purple-300">+1 302 464 0950</a></p>
+          <p className="text-slate-500 text-sm mt-4">Or call us: <a href="tel:+13024640950" className="text-purple-300">+1 302 464 0950</a></p>
         </div>
       </div>
     </main>

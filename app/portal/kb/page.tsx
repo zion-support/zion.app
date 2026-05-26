@@ -17,7 +17,7 @@ export default function KnowledgeBasePage() {
 
   return (
     <div className="container-page py-16">
-      <Link href="/portal" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
+      <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F4DA;</div>
         <h1 className="text-4xl font-bold text-white mb-4">Knowledge Base</h1>
@@ -32,7 +32,7 @@ export default function KnowledgeBasePage() {
           ))}
         </div>
         <div className="mt-8 p-4 bg-blue-950/30 rounded-xl border border-blue-500/20">
-          <p className="text-blue-300 text-sm">Can&apos;t find what you need? <a href="/contact" className="underline hover:text-blue-200">Submit a support ticket</a> or <a href="/contact" className="underline hover:text-blue-200">ask our team</a> directly.</p>
+          <p className="text-blue-300 text-sm">Can&apos;t find what you need? <a href="/contact/" className="underline hover:text-blue-200">Submit a support ticket</a> or <a href="/contact/" className="underline hover:text-blue-200">ask our team</a> directly.</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 // app/contact/page.tsx
 import Link from 'next/link';
+import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 
 export const metadata = {
   title: 'Contact Us',
@@ -9,6 +10,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+      <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>

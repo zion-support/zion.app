@@ -86,7 +86,7 @@ const contactInfo = {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+    <main className="min-h-screen bg-slate-950">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]" />
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className={`bg-gradient-to-br ${t.bgColor} border border-slate-700/50 rounded-2xl p-8 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300`}
+              className={`bg-gradient-to-br ${t.bgColor} border border-slate-700/50 rounded-2xl p-8 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300`}
             >
               <div className="flex items-center gap-4 mb-5">
                 <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${t.bgColor.replace('/20','/50')} flex items-center justify-center text-white font-bold text-lg flex-shrink-0`}>
@@ -123,7 +123,7 @@ export default function TestimonialsPage() {
               <p className="text-slate-300 leading-relaxed italic text-lg">
                 &ldquo;{t.text}&rdquo;
               </p>
-              <div className="flex text-cyan-400 mt-4">
+              <div className="flex text-purple-400 mt-4">
                 {'★★★★★'}
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function TestimonialsPage() {
           {caseStudies.map((cs, i) => (
             <div
               key={i}
-              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all"
+              className="bg-slate-900/50 border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div>
@@ -148,13 +148,13 @@ export default function TestimonialsPage() {
                   </span>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-cyan-400">{cs.result.split(',')[0]}</div>
+                  <div className="text-2xl font-bold text-purple-400">{cs.result.split(',')[0]}</div>
                   <div className="text-sm text-slate-400">{cs.result.split(',').slice(1).join(',')}</div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
                 {cs.tech.map((tech, ti) => (
-                  <span key={ti} className="bg-slate-800/50 text-cyan-300 px-3 py-1 rounded-full text-sm">
+                  <span key={ti} className="bg-slate-800/50 text-purple-300 px-3 py-1 rounded-full text-sm">
                     {tech}
                   </span>
                 ))}

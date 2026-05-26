@@ -1,13 +1,6 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Platform Status | Zion Tech Group',
-  description: 'Real-time platform and service status for Zion Tech Group infrastructure — uptime, incidents, and scheduled maintenance.',
-};
-
 
 import { allServices } from '@/data/servicesData';
 
@@ -238,7 +231,7 @@ export default function StatusPage() {
             kleber@ziontechgroup.com
           </a>{' '}
           or call{' '}
-          <a href="tel:+130****0950" className="text-purple-400 hover:text-purple-300">
+          <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300">
             +1 302 464 0950
           </a>.
         </p>

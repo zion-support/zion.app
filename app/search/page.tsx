@@ -2,13 +2,6 @@
 'use client';
 
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Search | Zion Tech Group',
-  description: 'Search our catalog of services, solutions, and industry offerings at Zion Tech Group — find the right AI or IT capability instantly.',
-};
-
 
 import Link from 'next/link';
 

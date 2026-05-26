@@ -21,31 +21,31 @@ export default function Page() {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-6xl mb-4 block">{">🔧"}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{d['title']}</h1>
-          <p className="text-xl text-slate-300 leading-relaxed mb-6">{d['subtitle']}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">API Development & Integration</h1>
+          <p className="text-xl text-slate-300 leading-relaxed mb-6">RESTful and GraphQL API design, microservices integration, API gateway management.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {tags}
+            {[<span key="REST API" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">REST API</span>,<span key="GraphQL" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">GraphQL</span>,<span key="Microservices" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Microservices</span>,<span key="API Gateway" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">API Gateway</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
-        <!-- Features -->
+        {/* Features */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {feat_items}
+            {[<div className="glass-card"><span className="text-3xl block mb-3">🔌</span><h3 className="text-lg font-semibold text-white mb-2">RESTful API Design</h3><p className="text-slate-400 text-sm">Standards-compliant REST API design with OpenAPI 3.1 specification, versioning strategy, and comprehensive documentation.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🕸️</span><h3 className="text-lg font-semibold text-white mb-2">GraphQL Federation</h3><p className="text-slate-400 text-sm">Federated GraphQL architecture for composing multiple microservices into a unified, type-safe API layer.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔐</span><h3 className="text-lg font-semibold text-white mb-2">API Gateway & Security</h3><p className="text-slate-400 text-sm">Enterprise API gateway with rate limiting, authentication, WAF rules, and developer portal with interactive docs.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
           </div>
         </div>
 
-        <!-- Why Zion Tech Group -->
+        {/* Why Zion Tech Group */}
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
           <ul className="space-y-3">
-            {why_items}
+            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Deep expertise in API-first architecture and microservices</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">OpenAPI 3.1 and GraphQL certified engineers on staff</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">End-to-end delivery from design to deployment and monitoring</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>
         </div>
 
-        <!-- Industries -->
+        {/* Industries */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Industries We Serve</h2>
           <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
@@ -53,7 +53,7 @@ export default function Page() {
           </p>
         </div>
 
-        <!-- CTA -->
+        {/* CTA */}
         <section className="cta-section text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Let's Build This Together</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">

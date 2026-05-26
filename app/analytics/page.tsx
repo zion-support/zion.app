@@ -21,31 +21,31 @@ export default function Page() {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-6xl mb-4 block">{">📊"}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{d['title']}</h1>
-          <p className="text-xl text-slate-300 leading-relaxed mb-6">{d['subtitle']}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Analytics & Business Intelligence</h1>
+          <p className="text-xl text-slate-300 leading-relaxed mb-6">Data analytics, BI dashboards, predictive insights, and AI-powered reporting.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {tags}
+            {[<span key="BI Dashboards" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">BI Dashboards</span>,<span key="Predictive Analytics" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Predictive Analytics</span>,<span key="Data Viz" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Data Viz</span>,<span key="AI Insights" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">AI Insights</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
-        <!-- Features -->
+        {/* Features */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {feat_items}
+            {[<div className="glass-card"><span className="text-3xl block mb-3">📈</span><h3 className="text-lg font-semibold text-white mb-2">BI Dashboards</h3><p className="text-slate-400 text-sm">Real-time interactive dashboards with drill-down analytics, custom metrics, and automated reporting across your data sources.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔮</span><h3 className="text-lg font-semibold text-white mb-2">Predictive Analytics</h3><p className="text-slate-400 text-sm">ML-driven forecasting, trend analysis, and anomaly detection to anticipate business outcomes before they happen.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">📊</span><h3 className="text-lg font-semibold text-white mb-2">Data Visualization</h3><p className="text-slate-400 text-sm">Rich visual analytics with charts, heatmaps, geo-maps, and custom data storytelling for executive and operational audiences.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
           </div>
         </div>
 
-        <!-- Why Zion Tech Group -->
+        {/* Why Zion Tech Group */}
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
           <ul className="space-y-3">
-            {why_items}
+            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Proven expertise across BI, ML, and data engineering</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">End-to-end delivery from data pipeline to executive dashboards</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Custom solutions tailored to your industry and scale</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>
         </div>
 
-        <!-- Industries -->
+        {/* Industries */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Industries We Serve</h2>
           <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
@@ -53,7 +53,7 @@ export default function Page() {
           </p>
         </div>
 
-        <!-- CTA -->
+        {/* CTA */}
         <section className="cta-section text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Let's Build This Together</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">

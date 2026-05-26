@@ -9,7 +9,7 @@ export const metadata = {
 export default function BillingPage() {
   return (
     <div className="container-page py-16">
-      <Link href="/portal" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
+      <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F4B3;</div>
         <h1 className="text-4xl font-bold text-white mb-4">Billing &amp; Invoices</h1>
@@ -35,7 +35,7 @@ export default function BillingPage() {
           </div>
         </div>
         <div className="mt-8 p-4 bg-cyan-950/30 rounded-xl border border-cyan-500/20">
-          <p className="text-cyan-300 text-sm">Need a detailed invoice or to update billing info? <a href="/contact" className="underline hover:text-cyan-200">Contact us</a> or call <a href="tel:+13024640950" className="underline">+1 302 464 0950</a>.</p>
+          <p className="text-cyan-300 text-sm">Need a detailed invoice or to update billing info? <a href="/contact/" className="underline hover:text-cyan-200">Contact us</a> or call <a href="tel:+13024640950" className="underline">+1 302 464 0950</a>.</p>
         </div>
       </div>
     </div>

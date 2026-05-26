@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
@@ -20,11 +20,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
-      <ArticleStructuredData
-        headline="AI Agent Frameworks for Business Automation"
+      <BlogPostStructuredData
+        title="AI Agent Frameworks for Business Automation"
         description="Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end."
         datePublished="2026-05-20"
-        slug="ai-agent-frameworks-for-business-automation"
+        url="https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation"
+        author="Zion Tech Group"
       />
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -93,7 +94,7 @@ export default function Page() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/contact/"
               className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
             >
               Book a Strategy Session
@@ -109,7 +110,7 @@ export default function Page() {
 
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link
-            href="/blog"
+            href="/blog/"
             className="text-sm font-medium text-purple-300 transition hover:text-purple-200"
           >
             &larr; Back to all articles

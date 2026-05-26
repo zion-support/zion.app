@@ -1,13 +1,6 @@
 // Health Check Tool — Free autonomous platform status
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Platform Health Check | Zion Tech Group',
-  description: 'Run a free autonomous platform health check — latency, uptime, and certificate status for your hosted services.',
-};
-
 
 import Link from 'next/link';
 
@@ -106,7 +99,7 @@ export default function HealthCheckToolPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
-        <Link href="/status" className="text-emerald-400 hover:text-emerald-300 text-sm mb-6 inline-block">← Status Home</Link>
+        <Link href="/status/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← Status Home</Link>
         <h1 className="text-4xl font-bold mb-2">Platform Health Check 🩺</h1>
         <p className="text-slate-400 mb-8">Autonomous diagnostic — runs every check without any API key or external tool.</p>
 

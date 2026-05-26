@@ -21,31 +21,31 @@ export default function Page() {
 
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-6xl mb-4 block">{">⛓"}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{d['title']}</h1>
-          <p className="text-xl text-slate-300 leading-relaxed mb-6">{d['subtitle']}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blockchain & Web3 Solutions</h1>
+          <p className="text-xl text-slate-300 leading-relaxed mb-6">Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {tags}
+            {[<span key="Smart Contracts" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Smart Contracts</span>,<span key="Supply Chain" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Supply Chain</span>,<span key="Identity" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Identity</span>,<span key="Web3" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
-        <!-- Features -->
+        {/* Features */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {feat_items}
+            {[<div className="glass-card"><span className="text-3xl block mb-3">📋</span><h3 className="text-lg font-semibold text-white mb-2">Smart Contract Development</h3><p className="text-slate-400 text-sm">Custom Solidity/Rust smart contracts with formal verification, gas optimization, and comprehensive security auditing.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔗</span><h3 className="text-lg font-semibold text-white mb-2">Supply Chain Blockchain</h3><p className="text-slate-400 text-sm">Immutable ledger for provenance tracking, supplier verification, and automated compliance across multi-tier supply chains.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🆔</span><h3 className="text-lg font-semibold text-white mb-2">Decentralized Identity</h3><p className="text-slate-400 text-sm">Self-sovereign identity solutions with verifiable credentials, DID management, and privacy-preserving attribute sharing.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
           </div>
         </div>
 
-        <!-- Why Zion Tech Group -->
+        {/* Why Zion Tech Group */}
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
           <ul className="space-y-3">
-            {why_items}
+            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Enterprise-grade blockchain expertise with production deployments</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Regulatory-compliant solutions for financial and supply chain use cases</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Full lifecycle from PoC to mainnet deployment and managed operations</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>
         </div>
 
-        <!-- Industries -->
+        {/* Industries */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Industries We Serve</h2>
           <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
@@ -53,7 +53,7 @@ export default function Page() {
           </p>
         </div>
 
-        <!-- CTA -->
+        {/* CTA */}
         <section className="cta-section text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Let's Build This Together</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">

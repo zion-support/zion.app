@@ -81,7 +81,7 @@ export default function HomePage() {
   // Stage health counts — deterministic from catalog
   const byStage = useMemo(() => {
     const acc: Record<string,number> = { published:0, beta:0, planned:0 };
-    services.forEach((s: any) => { if (Object.hasOwn(acc, s.stage)) acc[s.stage]++; });
+    services.forEach((s: any) => { if (s.stage in acc) acc[s.stage]++; });
     return acc;
   }, [services]);
 
@@ -182,8 +182,8 @@ let list = services;
                    - SCORE_RECENCY   * daysAgo,
         };
       })
-      .filter(Boolean)
-      .sort((a, b) => b._score - a._score)
+      .filter((r): r is NonNullable<typeof r> => r !== null)
+      .sort((a, b) => b!._score - a!._score)
       .slice(0, 6);
     if (merged.length) return merged;
     // Fallback: same formula as original freshFeatures
@@ -328,14 +328,14 @@ let list = services;
                   amber:   'from-amber-500/20 to-yellow-500/10 border-amber-500/30',
                 };
                 return (
-                  <a key={s.stage} href={`/services/stage/${s.stage}`}
+                  <Link key={s.stage} href={`/services/stage/${s.stage}/`}
                     className={`group block rounded-xl border bg-gradient-to-br ${colorMap[s.color]} px-5 py-4 hover:scale-[1.04] hover:border-opacity-60 transition-all min-w-[140px]`}
                   >
                     <div className="text-2xl mb-1">{s.emoji}</div>
                     <div className="text-xl font-bold text-white">{n}</div>
                     <div className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider mt-1">{s.label}</div>
                     <div className="text-[10px] text-slate-500 mt-0.5">{s.sub}</div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -757,9 +757,9 @@ let list = services;
               <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
                 ✉️ Email Us
               </a>
-              <a href="tel:+130****0950" className="btn-secondary text-lg px-10 py-4">
-                ☎ +1 302 464 0950
-              </a>
+              <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
+                                            ☎ +1 302 464 0950
+                                          </a>
             </div>
           </div>
         </div>

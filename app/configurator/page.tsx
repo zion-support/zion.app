@@ -3,13 +3,6 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Solution Configurator | Zion Tech Group',
-  description: 'Answer a few questions — get a custom, itemised service proposal in minutes. AI, IT, cloud, security, data, automation.',
-};
-
 
 import { allServices } from '@/data/servicesData';
 import StepsIndicator from '@/components/StepsIndicator';
@@ -274,7 +267,7 @@ ${services.length > 0 ? `<p style="margin-top:12px;color:#666;font-size:14px">
                       <div className="font-semibold text-white">{s.title}</div>
                       <div className="text-sm text-slate-400 mb-2">{s.description.substring(0, 120)}...</div>
                       <div className="text-purple-300 font-medium">
-                        {Object.values(s.pricing)[0]}
+                        {Object.values(s.pricing)[0] as string}
                       </div>
                     </div>
                   </div>

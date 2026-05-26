@@ -15,7 +15,7 @@ export default function TicketsPage() {
 
   return (
     <div className="container-page py-16">
-      <Link href="/portal" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
+      <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F3AB;</div>
         <h1 className="text-4xl font-bold text-white mb-4">Support Tickets</h1>
@@ -35,7 +35,7 @@ export default function TicketsPage() {
           ))}
         </div>
         <div className="mt-8 p-4 bg-purple-950/30 rounded-xl border border-purple-500/20">
-          <p className="text-purple-300 text-sm">Can&apos;t find what you need? <a href="/contact" className="underline hover:text-purple-200">Submit a support ticket</a> or call <a href="tel:+13024640950" className="underline">+1 302 464 0950</a>.</p>
+          <p className="text-purple-300 text-sm">Can&apos;t find what you need? <a href="/contact/" className="underline hover:text-purple-200">Submit a support ticket</a> or call <a href="tel:+13024640950" className="underline">+1 302 464 0950</a>.</p>
         </div>
       </div>
     </div>

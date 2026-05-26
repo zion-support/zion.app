@@ -82,7 +82,7 @@ ${needsList ? `<h2>Stated Needs</h2><ul>${needsList}</ul>` : ''}
     <div className="min-h-screen bg-slate-950 py-8">
       <div className="container-page">
         <div className="flex justify-between items-center mb-6">
-          <a href="/proposals" className="text-slate-400 hover:text-white text-sm">&larr; Back to Proposals</a>
+          <a href="/proposals/" className="text-slate-400 hover:text-white text-sm">&larr; Back to Proposals</a>
           <button
             onClick={() => {
               const blob = new Blob([html], { type: 'text/html' });

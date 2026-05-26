@@ -1,14 +1,6 @@
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Compare Services | Zion Tech Group',
-  description: 'Side-by-side feature, pricing, and contract comparison for Zion Tech Group service offerings.',
-};
-
-
 
 import { useState, useMemo, useEffect } from 'react';
 import { allServices, type Service } from '../../data/servicesData';

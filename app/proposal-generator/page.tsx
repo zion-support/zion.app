@@ -2,13 +2,6 @@
 'use client';
 
 import { useState } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Proposal Generator | Zion Tech Group',
-  description: 'Generate a custom service proposal in under 5 minutes. Select your stack, set your budget, download PDF-ready output.',
-};
-
 
 import Link from 'next/link';
 

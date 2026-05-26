@@ -1,12 +1,6 @@
 // app/industry-solutions/page.tsx — Industry Solutions Landing
 'use client';
 import { useState, useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Industry Solutions | Zion Tech Group',
-  description: 'Industry-specific AI, IT, and automation solutions for healthcare, fintech, manufacturing, retail, logistics, and more.',
-};
 
 
 import Link from 'next/link';

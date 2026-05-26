@@ -1,13 +1,6 @@
 // app/tools/analytics/page.tsx
 'use client';
 import { useMemo } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Tool Analytics | Zion Tech Group',
-  description: 'Usage and adoption analytics for Zion Tech Group web tools and interactive utilities.',
-};
-
 
 import { getToolVisits } from '@/data/tools_tracker';
 

@@ -1,6 +1,5 @@
 'use client';
 
-export default function ArticleStructuredData({ article }: { article: any }) {
-  // Stub: minimal implementation to satisfy imports during build
+export default function ArticleStructuredData({ article, headline, description, datePublished, slug }: any) {
   return null;
 }

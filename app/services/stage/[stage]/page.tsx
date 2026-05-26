@@ -13,14 +13,14 @@ export async function generateStaticParams() {
   return ['published', 'beta', 'planned'].map((stage) => ({ stage }));
 }
 
-export async function generateMetadata({ params }: { params: { stage: string } }) {
-  const stage = params.stage;
+export async function generateMetadata({ params }: { params: Promise<{ stage: string }> }) {
+  const { stage } = await params;
   const meta = STAGE_META[stage] || STAGE_META.published;
   return { title: `${meta.label} Services | Zion Tech Group`, description: meta.desc };
 }
 
-export default function StagePage({ params }: { params: { stage: string } }) {
-  const stage = params.stage as 'published' | 'beta' | 'planned';
+export default async function StagePage({ params }: { params: Promise<{ stage: string }> }) {
+  const { stage } = await params;
   const meta = STAGE_META[stage] || STAGE_META.published;
   const filtered = allServices.filter((s: Service) => s.stage === stage);
   const otherStages = (['published', 'beta', 'planned'] as const).filter(s => s !== stage);

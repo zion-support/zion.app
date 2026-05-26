@@ -13,13 +13,13 @@ export default function PrivacyPage() {
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-emerald-400 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Privacy Policy
           </h1>
           <p className="text-slate-400 mb-10">
             Last updated: May 22, 2025. Zion Tech Group ("we", "us", "our") respects your privacy and is committed
             to protecting your personal data. This policy explains how we collect, use, and safeguard your
-            information when you visit <Link href="/" className="text-emerald-400 hover:underline">ziontechgroup.com</Link> or engage our services.
+            information when you visit <Link href="/" className="text-purple-400 hover:underline">ziontechgroup.com</Link> or engage our services.
           </p>
 
           {/* 1. Information We Collect */}
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
               <li><strong className="text-white">Contact details</strong> — name, email address, phone number, and mailing address when you submit our contact form, request a proposal, or schedule a consultation.</li>
               <li><strong className="text-white">Company information</strong> — organisation name, size, industry, and operational context when completing our service configurator or request for proposal.</li>
               <li><strong className="text-white">Usage data</strong> — pages visited, time on site, referring URLs, device type, browser version, and interactions with navigation elements collected via first-party analytics. We do not sell or share usage data with third-party advertising networks.</li>
-              <li><strong className="text-white">Cookies</strong> — essential, analytics, preference, and marketing cookies as described in our <Link href="/cookies/" className="text-emerald-400 hover:underline">Cookie Policy</Link>.</li>
+              <li><strong className="text-white">Cookies</strong> — essential, analytics, preference, and marketing cookies as described in our <Link href="/cookies/" className="text-purple-400 hover:underline">Cookie Policy</Link>.</li>
             </ul>
           </Section>
 
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
           <Section num="4" title="Cookies">
             <p className="text-slate-300">
               We use cookies to enhance your browsing experience and analyse site traffic. For a full breakdown of
-              each cookie type, see our <Link href="/cookies/" className="text-emerald-400 hover:underline">Cookie Policy</Link>.
+              each cookie type, see our <Link href="/cookies/" className="text-purple-400 hover:underline">Cookie Policy</Link>.
             </p>
           </Section>
 
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
               Contact-form submissions are retained for 24 months after the last interaction.
               Aggregate analytics data is retained indefinitely on a fully anonymised basis.
               You may request deletion of your personal data at any time by emailing
-              <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:underline"> kleber@ziontechgroup.com</a>.
+              <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline"> kleber@ziontechgroup.com</a>.
             </p>
           </Section>
 
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="text-slate-300 mt-4">
               To exercise any of these rights, please contact us at
-              <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:underline"> kleber@ziontechgroup.com</a>.
+              <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline"> kleber@ziontechgroup.com</a>.
               We will respond within 30 days.
             </p>
           </Section>
@@ -129,8 +129,8 @@ export default function PrivacyPage() {
             <div className="mt-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
               <p className="text-slate-300">
                 <span className="text-white font-semibold">Zion Tech Group</span><br />
-                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:underline">kleber@ziontechgroup.com</a><br />
-                Phone: <a href="tel:+1-302-464-0950" className="text-emerald-400 hover:underline">+1 302 464 0950</a><br />
+                Email: <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline">kleber@ziontechgroup.com</a><br />
+                Phone: <a href="tel:+1-302-464-0950" className="text-purple-400 hover:underline">+1 302 464 0950</a><br />
                 Address: 364 E Main St STE 1008, Middletown, DE 19709
               </p>
             </div>
@@ -152,7 +152,7 @@ function Section({ num, title, children }: { num: string; title: string; childre
   return (
     <section className="mb-10">
       <h2 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-        <span className="text-sm font-bold text-emerald-500 bg-emerald-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
+        <span className="text-sm font-bold text-purple-500 bg-purple-500/10 w-7 h-7 flex items-center justify-center rounded-full">{num}</span>
         {title}
       </h2>
       {children}

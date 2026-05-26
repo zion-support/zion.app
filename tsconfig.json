@@ -41,6 +41,14 @@
   "exclude": [
     "node_modules",
     "src",
-    "zion.app"
+    "zion.app",
+    "apps",
+    "archive",
+    "jest.setup.ts",
+    "__tests__",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "tools",
+    "utils"
   ]
 }
