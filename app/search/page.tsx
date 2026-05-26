@@ -92,7 +92,7 @@ export default function SearchPage() {
   const doSearch = useCallback((q: string) => {
     setQuery(q);
     setActiveCategory('');
-    const url = q.trim() ? `/search?q=${encodeURIComponent(q)}` : '/search';
+    const url = q.trim() ? `/search/?q=${encodeURIComponent(q)}` : '/search/';
     window.history.pushState({}, '', url);
   }, []);
 
