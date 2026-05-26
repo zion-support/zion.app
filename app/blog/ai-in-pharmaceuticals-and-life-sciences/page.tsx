@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Drug discovery, clinical trial optimization, regulatory submissions, and pharmacovigilance. Accelerating life sciences with AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-pharmaceuticals-and-life-sciences',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-in-pharmaceuticals-and-life-sciences/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

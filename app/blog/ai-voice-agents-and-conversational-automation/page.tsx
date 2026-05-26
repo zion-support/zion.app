@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Voice-first customer service, IVR replacement, and multimodal assistants. Deploying AI voice at scale with quality and compliance.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-voice-agents-and-conversational-automation',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-voice-agents-and-conversational-automation/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

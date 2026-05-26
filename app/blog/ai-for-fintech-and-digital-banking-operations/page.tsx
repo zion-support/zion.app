@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Credit scoring, fraud prevention, customer onboarding, and regulatory compliance. AI-powered financial services at scale.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-fintech-and-digital-banking-operations',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-fintech-and-digital-banking-operations/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

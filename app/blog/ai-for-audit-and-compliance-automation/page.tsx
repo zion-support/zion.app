@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Automating evidence collection, compliance checks, and audit report generation. Reducing manual effort and improving audit trail completeness.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-audit-and-compliance-automation',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-audit-and-compliance-automation/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

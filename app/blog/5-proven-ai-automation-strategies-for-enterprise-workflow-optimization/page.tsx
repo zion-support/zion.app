@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

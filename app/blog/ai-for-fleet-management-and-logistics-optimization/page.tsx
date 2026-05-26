@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Route optimization, predictive maintenance, driver behavior analytics, and real-time visibility. How AI transforms fleet operations and reduces costs.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-fleet-management-and-logistics-optimization',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-fleet-management-and-logistics-optimization/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

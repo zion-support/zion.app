@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Quantum machine learning, hybrid classical-quantum pipelines, and optimization. When quantum advantage matters for AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-quantum-computing-and-hybrid-workloads',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-quantum-computing-and-hybrid-workloads/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

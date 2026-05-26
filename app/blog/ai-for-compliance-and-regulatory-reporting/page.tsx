@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Automated compliance monitoring, regulatory change tracking, and audit-ready documentation. Reducing compliance burden with intelligent automation.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-compliance-and-regulatory-reporting',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-compliance-and-regulatory-reporting/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

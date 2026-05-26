@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Conversation intelligence, deal scoring, forecast accuracy, and sales content automation. Turning RevOps into a competitive advantage.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-sales-enablement-and-revenue-operations',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-sales-enablement-and-revenue-operations/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

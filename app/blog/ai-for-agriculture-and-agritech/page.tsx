@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Precision agriculture, crop yield prediction, pest detection, and supply chain optimization. Data-driven farming with AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-agriculture-and-agritech',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-agriculture-and-agritech/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

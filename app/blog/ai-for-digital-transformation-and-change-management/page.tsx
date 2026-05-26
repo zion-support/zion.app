@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Driving organizational change with AI: adoption strategies, stakeholder alignment, training programs, and measuring transformation success.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-digital-transformation-and-change-management',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-digital-transformation-and-change-management/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

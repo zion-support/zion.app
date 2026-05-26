@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/edge-ai-and-iot-deploying-models-at-the-edge',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/edge-ai-and-iot-deploying-models-at-the-edge/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Smart contract analysis, DeFi risk scoring, NFT analytics, and on-chain intelligence. AI meets decentralized systems.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-blockchain-and-web3-operations',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-blockchain-and-web3-operations/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

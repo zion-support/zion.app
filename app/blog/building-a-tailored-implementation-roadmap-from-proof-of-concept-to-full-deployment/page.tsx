@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Embeddings, similarity search, and retrieval-augmented generation. Building enterprise knowledge bases that ground LLMs in your data.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/vector-databases-and-enterprise-rag-systems',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/vector-databases-and-enterprise-rag-systems/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

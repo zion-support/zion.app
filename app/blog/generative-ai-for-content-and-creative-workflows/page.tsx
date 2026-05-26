@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Copy generation, image creation, video editing, and brand consistency. Scaling creative output without sacrificing quality.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/generative-ai-for-content-and-creative-workflows',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/generative-ai-for-content-and-creative-workflows/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

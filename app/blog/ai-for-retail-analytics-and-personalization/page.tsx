@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Demand forecasting, assortment optimization, personalization engines, and loss prevention. Data-driven retail in the age of AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-retail-analytics-and-personalization',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-retail-analytics-and-personalization/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

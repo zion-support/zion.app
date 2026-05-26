@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Intelligent routing, self-service deflection, agent assist, and sentiment analysis. Delivering faster resolution and higher satisfaction.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-customer-service-and-support-automation',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-customer-service-and-support-automation/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

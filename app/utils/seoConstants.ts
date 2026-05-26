@@ -41,7 +41,11 @@ export const STRUCTURED_DATA = {
       contactType: 'customer service',
       email: 'kleber@ziontechgroup.com',
     },
-    sameAs: [],
+    sameAs: [
+      'https://linkedin.com/company/ziontechgroup',
+      'https://twitter.com/ziontechgroup',
+      'https://github.com/Zion-support',
+    ],
   },
   WEBSITE: {
     '@context': 'https://schema.org',

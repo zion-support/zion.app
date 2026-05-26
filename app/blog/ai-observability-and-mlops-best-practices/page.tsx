@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-observability-and-mlops-best-practices',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-observability-and-mlops-best-practices/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

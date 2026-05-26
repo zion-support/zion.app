@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Lease abstraction, tenant analytics, maintenance prediction, and valuation. Transforming property operations with intelligent automation.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-real-estate-and-property-management',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-real-estate-and-property-management/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

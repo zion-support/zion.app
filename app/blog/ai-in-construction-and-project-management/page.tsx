@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Schedule optimization, cost forecasting, risk prediction, and document management. How AI is transforming construction delivery and project controls.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-construction-and-project-management',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-in-construction-and-project-management/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

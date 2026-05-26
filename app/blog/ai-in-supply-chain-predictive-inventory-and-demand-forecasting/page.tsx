@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Anomaly detection, behavioral analysis, SIEM enhancement, and automated response. Using machine learning to identify and respond to threats faster.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-cybersecurity-threat-detection',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-cybersecurity-threat-detection/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Carbon accounting, supply chain emissions, renewable forecasting, and ESG reporting. AI accelerates the path to net zero.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-climate-tech-and-sustainability-operations',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-climate-tech-and-sustainability-operations/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

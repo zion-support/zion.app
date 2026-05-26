@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Unifying customer data, analyzing conversations across channels, and driving next-best-action recommendations. Building a true customer 360.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-conversation-and-customer-analytics',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-conversation-and-customer-analytics/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

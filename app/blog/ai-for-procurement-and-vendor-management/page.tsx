@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Spend analysis, contract extraction, supplier risk scoring, and automated sourcing. Optimizing procurement with intelligent automation.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-procurement-and-vendor-management',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-procurement-and-vendor-management/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

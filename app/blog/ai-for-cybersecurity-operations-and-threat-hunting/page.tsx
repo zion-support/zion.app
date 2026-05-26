@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Threat detection, anomaly analysis, automated response, and security orchestration. How AI augments SOC teams and reduces mean time to detect.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {

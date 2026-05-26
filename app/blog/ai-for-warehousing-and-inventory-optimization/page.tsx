@@ -14,7 +14,8 @@ export const metadata: Metadata = {
       'Pick path optimization, demand forecasting, slotting, and labor planning. Maximizing warehouse throughput and accuracy with intelligent automation.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-warehousing-and-inventory-optimization',
-  },
+  
+    images: [{ url: 'https://ziontechgroup.com/blog/ai-for-warehousing-and-inventory-optimization/og.png', width: 1200, height: 630, alt: 'Zion Tech Group' }],},
 };
 
 export default function Page() {
