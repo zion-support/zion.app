@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Service Health',
   description: 'Live health status for individual Zion Tech Group services — response time, uptime, and incident history.',
-};
+  alternates: { canonical: '/status/service-health' },};
 
 
 import { readFileSync } from 'fs';

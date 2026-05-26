@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Solutions Configurator',
   description: 'Configure your custom AI & IT solutions',
-};
+  alternates: { canonical: '/ai/solutions-configurator' },};
 
 export default function SolutionsConfiguratorPage() {
   return (

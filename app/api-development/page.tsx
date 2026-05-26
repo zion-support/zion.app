@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'API Development & Integration',
   description: 'REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.',
-};
+  alternates: { canonical: '/api-development' },};
 
 export default function Page() {
   return (

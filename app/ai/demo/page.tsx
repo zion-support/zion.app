@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'AI Service Demo Sandbox',
   description:
     'Try Zion\'s AI service matching tool live — no sign-up, no API key, 100% browser-side. Type a use case and get ranked service recommendations instantly.',
-};
+  alternates: { canonical: '/ai/demo' },};
 
 export default function AIDemoPage() {
   return (

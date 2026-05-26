@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Blockchain & Web3 Solutions',
   description: 'Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs — auditable and lawful.',
-};
+  alternates: { canonical: '/blockchain-solutions' },};
 
 export default function Page() {
   return (

@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Proposal Detail | Zion Tech Group',
   description: 'View and download your custom Zion Tech Group service proposal.',
-};
+  alternates: { canonical: '/proposals/view/[id]' },};
 
 
 

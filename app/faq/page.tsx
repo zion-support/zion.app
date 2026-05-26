@@ -1,7 +1,7 @@
 export const metadata: Metadata = {
   title: 'FAQ — Zion Tech Group',
   description: 'Frequently asked questions about Zion Tech Group services, pricing, and implementation.',
-};
+  alternates: { canonical: '/faq' },};
 
 const contactInfo = {
   mobile: '+1 302 464 0950',

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'URL Audit Assistant',
   description: 'Audit your website URLs for broken links and issues',
-};
+  alternates: { canonical: '/ai/url-audit-assistant' },};
 
 export default function UrlAuditAssistantPage() {
   return (

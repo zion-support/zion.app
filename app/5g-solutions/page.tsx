@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: '5G & Private Network Solutions',
   description: 'Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.',
-};
+  alternates: { canonical: '/5g-solutions' },};
 
 export default function Page() {
   return (
