@@ -1,0 +1,26 @@
+{
+"searchServices_count": 599,
+"servicesData_count": 0
+0,
+"categories": {
+"ai": 322,
+"it": 103,
+"cloud": 64,
+"security": 46,
+"data": 36,
+"automation": 28,
+"_note": "from searchServices.ts"
+},
+"stages": {
+"published": 0
+0,
+"beta": 0
+0,
+"planned": 0
+0,
+"_note": "from searchServices.ts"
+},
+"expected_total": 599,
+"discrepancy": 0,
+"status": "OK"
+}
