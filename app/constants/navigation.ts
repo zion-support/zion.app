@@ -418,7 +418,7 @@ export const PRODUCT_LINKS: readonly NavigationLink[] = [
   { name: 'Zion Data Sync', href: '/services/data-sync-engineering/' },
   { name: 'AI Lead Scoring', href: '/services/predictive-lead-scoring/' },
   { name: 'AI Email Marketing Pro', href: '/services/ai-email-campaign-generator/' },
-  { name: 'AI SEO Optimizer', href: '/services/ai-seo-content-optimizer/' },
+  { name: 'AI SEO Optimizer', href: '/services/ai-powered-seo-optimizer/' },
   { name: 'AI Social Media Manager', href: '/services/ai-social-scheduler/' },
   { name: 'AI Meeting Assistant', href: '/services/ai-meeting-assistant-pro/' },
   { name: 'AI Fraud Detection', href: '/services/ai-fraud-detection/' },
