@@ -4,6 +4,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
+import { blogPosts } from './data/blogPosts';
 import serviceIndex from '../public/service-index.json';
 import type { Service } from './data/servicesData';
 import Footer from '@/components/Footer';
@@ -1054,6 +1055,47 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+      {/* ── Blog Posts ── */}
+      <section className="py-20">
+        <div className="container-page">
+          <h2 className="section-heading text-center">📝 Latest from Our Blog</h2>
+          <p className="section-subheading text-center">Recent updates, insights, and announcements from Zion Tech Group</p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {blogPosts.map((post, index) => (
+              <div key={post.id} className="glass-card flex flex-col h-full group hover:border-purple-500/40">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full px-3 py-0.5">
+                      Blog
+                    </span>
+                    <span className="text-xs text-slate-500">{post.date}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors mb-2 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm flex-1 leading-relaxed mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-auto">
+                    <Link href={`/blog/${post.id}`} className="btn-primary text-sm px-6 py-3">
+                      Read More →
+                    </Link>
+                  </div>
+                </div>
+                <div className="w-14 h-14 flex-shrink-0 bg-purple-500/10 rounded-xl flex items-center justify-center">
+                  <span className="text-2xl">📝</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/blog" className="btn-secondary text-lg px-10 py-4">
+              View All Blog Posts →
+            </Link>
+          </div>
       </section>
 
       {/* ── What's New / Fresh Features ── */}
