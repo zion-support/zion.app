@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Press & News | Zion Tech Group',
+  title: 'Press & News',
   description: 'Press releases, media coverage, and news about Zion Tech Group.',
 };
 

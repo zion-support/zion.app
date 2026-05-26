@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Platform Health Check | Zion Tech Group',
+  title: 'Platform Health Check',
   description: 'Check the health of your Zion Tech Group services and APIs.',
 };
 

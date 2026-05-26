@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Enterprise AI & IT Services | Zion Tech Group',
+  title: 'Enterprise AI & IT Services',
   description: 'Browse AI, IT, cloud, security, data, and automation services.',
 };
 

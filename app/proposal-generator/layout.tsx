@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Proposal Generator | Zion Tech Group',
+  title: 'Proposal Generator',
   description: 'Generate a custom proposal in minutes.',
 };
 

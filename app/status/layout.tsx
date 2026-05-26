@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'System Status | Zion Tech Group',
+  title: 'System Status',
   description: 'Real-time status of Zion Tech Group services.',
 };
 

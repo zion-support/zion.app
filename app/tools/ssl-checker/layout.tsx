@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'SSL Certificate Checker | Zion Tech Group',
+  title: 'SSL Certificate Checker',
   description: 'Free SSL/TLS certificate checker for any domain.',
 };
 
