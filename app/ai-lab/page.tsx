@@ -180,10 +180,10 @@ export default function AILabPage() {
             ever leaves your machine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/ai/demo" className="btn-primary text-lg px-10 py-4">
+            <Link href="/ai/demo/" className="btn-primary text-lg px-10 py-4">
               🧪 Try the Demo Sandbox
             </Link>
-            <Link href="/ai/solutions-configurator" className="btn-secondary text-lg px-10 py-4">
+            <Link href="/ai/solutions-configurator/" className="btn-secondary text-lg px-10 py-4">
               ⚡ Launch Configurator
             </Link>
           </div>
@@ -346,7 +346,7 @@ export default function AILabPage() {
           </div>
           <p className="text-slate-500 text-sm mt-4">
             Or call{' '}
-            <a href="tel:+130****0950" className="text-purple-400 hover:text-purple-300">
+            <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300">
               +1 302 464 0950
             </a>
           </p>

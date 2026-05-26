@@ -25,7 +25,7 @@ export default function ProjectsPage() {
             <div key={i} className="bg-slate-800/50 rounded-xl p-5 border border-slate-700">
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-white font-semibold">{p.name}</h3>
-                <span className="text-xs font-semibold text-cyan-300 bg-cyan-900/40 px-2.5 py-1 rounded-full">{p.status}</span>
+                <span className="text-xs font-semibold text-purple-300 bg-purple-900/40 px-2.5 py-1 rounded-full">{p.status}</span>
               </div>
               <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                 <div className={`${p.color} h-full rounded-full`} style={{ width: `${p.progress}%` }} />

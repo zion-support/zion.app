@@ -1,0 +1,297 @@
+{
+  "audit_metadata": {
+    "project": "zion-support.github.io",
+    "site_url": "https://ziontechgroup.com",
+    "audit_date": "2026-05-26T08:33:23Z",
+    "files_scanned": 100,
+    "description": "External link verification audit of all .tsx files in the repository. Checks all href= containing http:// or https:// plus URL constants used in components."
+  },
+  "summary": {
+    "total_links_checked": 21,
+    "ok": 11,
+    "broken": 3,
+    "rate_limited_or_protected": 5,
+    "not_applicable": 2
+  },
+  "broken_links": [
+    {
+      "url": "https://ziontechgroup.com/logo.png",
+      "category": "own_site_asset",
+      "http_status": 404,
+      "status_label": "broken_4xx",
+      "response_time_ms": 291,
+      "files": [
+        "app/page.tsx",
+        "app/services/[id]/page.tsx",
+        "app/components/LocalBusinessStructuredData.tsx",
+        "app/partners/page.tsx",
+        "app/utils/seoConstants.ts"
+      ],
+      "notes": "Logo image referenced in JSON-LD structured data and partners page but does not exist at the published URL. This affects OG images and schema.org markup."
+    },
+    {
+      "url": "https://api.portchecker.net/check",
+      "category": "integration_api",
+      "http_status": 0,
+      "status_label": "dns_resolution_failure",
+      "response_time_ms": 758,
+      "files": [
+        "app/tools/port-scanner/page.tsx"
+      ],
+      "notes": "DNS lookup failed — api.portchecker.net does not resolve. The port scanner tool's backend API is defunct. Will cause runtime errors when users use the port scanner."
+    },
+    {
+      "url": "https://1.1.1.1/cdn-cgi/trace",
+      "category": "integration_api",
+      "http_status": 0,
+      "status_label": "connection_refused",
+      "response_time_ms": 6,
+      "files": [
+        "app/tools/health-check/page.tsx"
+      ],
+      "notes": "Used in health-check tool to verify internet connectivity. Connection refused from this Android environment but may work from production. Not a user-facing link."
+    }
+  ],
+  "rate_limited_or_bot_protected": [
+    {
+      "url": "https://twitter.com/ziontechgroup",
+      "category": "social_link",
+      "http_status": 403,
+      "status_label": "bot_protected",
+      "response_time_ms": 311,
+      "files": [
+        "app/utils/seoConstants.ts",
+        "app/components/Footer.tsx",
+        "app/components/LocalBusinessStructuredData.tsx",
+        "components/Footer.tsx",
+        "app/page.tsx"
+      ],
+      "notes": "Twitter/X returns 403 to automated HEAD requests. The account likely exists — test manually in a browser. Social icon link is functional for human users."
+    },
+    {
+      "url": "https://www.microsoft.com/partner/",
+      "category": "partner_link",
+      "http_status": 403,
+      "status_label": "bot_protected",
+      "response_time_ms": 168,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "Microsoft partner portal returns 403 to bots. Page is valid but requires authenticated browser session. Likely still valid."
+    },
+    {
+      "url": "https://openai.com/partners/",
+      "category": "partner_link",
+      "http_status": 403,
+      "status_label": "bot_protected",
+      "response_time_ms": 186,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "OpenAI partner page returns 403 to automation. The page exists — verify manually."
+    },
+    {
+      "url": "https://www.hashicorp.com/partner",
+      "category": "partner_link",
+      "http_status": 429,
+      "status_label": "rate_limited",
+      "response_time_ms": 196,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "HashiCorp returned rate limit (429). URL is likely valid, just throttling automation."
+    },
+    {
+      "url": "https://www.linkedin.com/in/kleberalcatrao",
+      "category": "social_link",
+      "http_status": 999,
+      "status_label": "bot_protected",
+      "response_time_ms": 304,
+      "files": [
+        "app/partners/page.tsx"
+      ],
+      "notes": "LinkedIn personal profile returns 999 (bot detection). The profile likely exists — verify manually."
+    },
+    {
+      "url": "https://www.linkedin.com/company/ziontechgroup",
+      "category": "social_link",
+      "http_status": 999,
+      "status_label": "bot_protected",
+      "response_time_ms": 347,
+      "files": [
+        "app/utils/seoConstants.ts",
+        "app/components/Footer.tsx",
+        "app/components/LocalBusinessStructuredData.tsx",
+        "components/Footer.tsx",
+        "app/page.tsx"
+      ],
+      "notes": "LinkedIn company page returns 999 to automation. With browser User-Agent returns 200. Functional for human users."
+    }
+  ],
+  "ok_links": [
+    {
+      "url": "https://github.com/ziontechgroup",
+      "category": "social_link",
+      "http_status": 200,
+      "response_time_ms": 449,
+      "files": [
+        "app/utils/seoConstants.ts",
+        "app/components/Footer.tsx",
+        "app/components/LocalBusinessStructuredData.tsx",
+        "components/Footer.tsx"
+      ],
+      "notes": "GitHub organization page accessible."
+    },
+    {
+      "url": "https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709",
+      "category": "external_resource",
+      "http_status": 200,
+      "response_time_ms": 333,
+      "files": [
+        "app/components/ContactFunnel.tsx"
+      ],
+      "notes": "Google Maps link resolves correctly."
+    },
+    {
+      "url": "https://aws.amazon.com/partners/",
+      "category": "partner_link",
+      "http_status": 200,
+      "response_time_ms": 371,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "AWS Partner page accessible."
+    },
+    {
+      "url": "https://cloud.google.com/partners/",
+      "category": "partner_link",
+      "http_status": 200,
+      "response_time_ms": 2243,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "Google Cloud Partner page accessible."
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/partners/",
+      "category": "partner_link",
+      "http_status": 200,
+      "response_time_ms": 341,
+      "files": [
+        "data/partners.ts",
+        "app/data/partners.ts",
+        "app/partners/page.tsx"
+      ],
+      "notes": "NVIDIA Partner page accessible."
+    },
+    {
+      "url": "https://www.ssllabs.com/ssltest/",
+      "category": "integration",
+      "http_status": 200,
+      "response_time_ms": 782,
+      "files": [
+        "app/tools/ssl-checker/page.tsx"
+      ],
+      "notes": "SSL Labs test page accessible."
+    },
+    {
+      "url": "https://api.ssllabs.com/api/v3/analyze",
+      "category": "integration_api",
+      "http_status": 200,
+      "response_time_ms": 642,
+      "files": [
+        "app/tools/ssl-checker/page.tsx"
+      ],
+      "notes": "SSL Labs API responds 200 with proper query parameters (host required)."
+    },
+    {
+      "url": "https://ziontechgroup.com",
+      "category": "own_site",
+      "http_status": 200,
+      "response_time_ms": 283,
+      "files": [
+        "app/layout.tsx",
+        "app/page.tsx",
+        "app/partners/page.tsx",
+        "app/services/[id]/page.tsx",
+        "app/utils/seoConstants.ts",
+        "app/components/ContactFunnel.tsx",
+        "app/components/TestimonialsSection.tsx",
+        "app/tools/health-check/page.tsx"
+      ],
+      "notes": "Main site accessible."
+    },
+    {
+      "url": "https://ziontechgroup.com/og-home.svg",
+      "category": "own_site_asset",
+      "http_status": 200,
+      "response_time_ms": 318,
+      "files": [
+        "app/layout.tsx"
+      ],
+      "notes": "OG image SVG accessible."
+    },
+    {
+      "url": "https://ziontechgroup.com/search",
+      "category": "own_site",
+      "http_status": 200,
+      "response_time_ms": 463,
+      "files": [
+        "app/page.tsx",
+        "app/utils/seoConstants.ts"
+      ],
+      "notes": "Search page accessible."
+    },
+    {
+      "url": "https://schema.org",
+      "category": "structured_data",
+      "http_status": 200,
+      "response_time_ms": 387,
+      "files": [
+        "app/page.tsx",
+        "app/partners/page.tsx",
+        "app/services/[id]/page.tsx",
+        "app/components/SiteBreadcrumbs.tsx",
+        "app/components/LocalBusinessStructuredData.tsx",
+        "app/components/BlogPostStructuredData.tsx",
+        "app/components/TestimonialsSection.tsx",
+        "app/components/ContactFunnel.tsx",
+        "app/faq/page.tsx",
+        "app/tools/roi-calculator/page.tsx"
+      ],
+      "notes": "Schema.org reference accessible (used in JSON-LD @context)."
+    }
+  ],
+  "not_applicable": [
+    {
+      "url": "https://formspree.io/f/xrbpgwdd",
+      "category": "integration_form_endpoint",
+      "http_status": 405,
+      "status_label": "method_not_allowed",
+      "response_time_ms": 317,
+      "files": [
+        "app/partners/page.tsx"
+      ],
+      "notes": "Formspree endpoint expects POST requests only. GET returns 405 which is expected behavior. The form submission works correctly via POST. Not a broken link."
+    },
+    {
+      "url": "https://example.com/search",
+      "category": "example_data",
+      "http_status": null,
+      "files": [
+        "tools/url-encoder-decoder/page.tsx"
+      ],
+      "notes": "Example.com is placeholder demo data in the URL encoder/decoder tool, not a real link. Not checked."
+    }
+  ]
+}

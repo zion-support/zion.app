@@ -1,0 +1,222 @@
+{
+  "auditDate": "2026-05-26",
+  "targetSite": "https://ziontechgroup.com",
+  "projectRoot": "/data/data/com.termux/files/home/zion-support.github.io",
+  "performance": {
+    "pageSizes": {
+      "summary": {
+        "totalPagesChecked": 72,
+        "totalSizeBytes": 3948348,
+        "averageSizeBytes": 54838,
+        "totalSizeKB": 3855,
+        "averageSizeKB": 54
+      },
+      "largestPages": [
+        { "path": "/industry-solutions/", "sizeBytes": 651869, "sizeKB": 637, "httpCode": 200, "loadTimeSec": 0.503, "severity": "CRITICAL" },
+        { "path": "/service-comparison/", "sizeBytes": 480540, "sizeKB": 469, "httpCode": 200, "loadTimeSec": 0.439, "severity": "CRITICAL" },
+        { "path": "/", "sizeBytes": 277121, "sizeKB": 271, "httpCode": 200, "loadTimeSec": 0.187, "severity": "HIGH" },
+        { "path": "/ai-services/", "sizeBytes": 255031, "sizeKB": 249, "httpCode": 200, "loadTimeSec": 0.366, "severity": "HIGH" },
+        { "path": "/blog/", "sizeBytes": 77959, "sizeKB": 76, "httpCode": 200, "loadTimeSec": 0.261, "severity": "MEDIUM" },
+        { "path": "/faq/", "sizeBytes": 65031, "sizeKB": 64, "httpCode": 200, "loadTimeSec": 0.199, "severity": "LOW" },
+        { "path": "/testimonials/", "sizeBytes": 52004, "sizeKB": 51, "httpCode": 200, "loadTimeSec": 0.343, "severity": "LOW" },
+        { "path": "/cookies/", "sizeBytes": 45219, "sizeKB": 44, "httpCode": 200, "loadTimeSec": 0.219, "severity": "LOW" },
+        { "path": "/privacy/", "sizeBytes": 44804, "sizeKB": 44, "httpCode": 200, "loadTimeSec": 0.217, "severity": "LOW" },
+        { "path": "/tools/roi-calculator/", "sizeBytes": 43387, "sizeKB": 42, "httpCode": 200, "loadTimeSec": 0.214, "severity": "LOW" }
+      ],
+      "mediumPages": [
+        { "path": "/terms/", "sizeBytes": 40912, "sizeKB": 40, "httpCode": 200 },
+        { "path": "/ai-lab/", "sizeBytes": 37014, "sizeKB": 36, "httpCode": 200 },
+        { "path": "/tools/", "sizeBytes": 37483, "sizeKB": 37, "httpCode": 200 },
+        { "path": "/pricing/", "sizeBytes": 35083, "sizeKB": 34, "httpCode": 200 },
+        { "path": "/products/", "sizeBytes": 34991, "sizeKB": 34, "httpCode": 200 },
+        { "path": "/solutions/", "sizeBytes": 31287, "sizeKB": 31, "httpCode": 200 },
+        { "path": "/contact/", "sizeBytes": 30328, "sizeKB": 30, "httpCode": 200 }
+      ],
+      "smallPages": [
+        { "path": "/status/", "sizeBytes": 26783, "sizeKB": 26, "httpCode": 200 },
+        { "path": "/careers/", "sizeBytes": 25977, "sizeKB": 25, "httpCode": 200 },
+        { "path": "/press/", "sizeBytes": 25553, "sizeKB": 25, "httpCode": 200 },
+        { "path": "/about/", "sizeBytes": 25036, "sizeKB": 24, "httpCode": 200 },
+        { "path": "/services/", "sizeBytes": 24802, "sizeKB": 24, "httpCode": 200 },
+        { "path": "/tools/health-check/", "sizeBytes": 25216, "sizeKB": 25, "httpCode": 200 },
+        { "path": "/tools/analytics/", "sizeBytes": 25728, "sizeKB": 25, "httpCode": 200 }
+      ],
+      "aiProductPages": {
+        "note": "All ~34 KB each — consistent and reasonable",
+        "averageSizeBytes": 34238,
+        "averageSizeKB": 33,
+        "count": 30
+      },
+      "toolPages": {
+        "note": "Ranging from 25-47 KB",
+        "averageSizeBytes": 31788,
+        "averageSizeKB": 31,
+        "count": 10
+      },
+      "blogPosts": {
+        "note": "All ~32-35 KB each — consistent",
+        "averageSizeBytes": 33154,
+        "averageSizeKB": 32,
+        "count": 10
+      },
+      "homescreenPages": {
+        "note": "Portal, proposals, configurator pages: 12-30 KB",
+        "averageSizeBytes": 26502,
+        "averageSizeKB": 26,
+        "count": 8
+      }
+    },
+    "recommendations": [
+      {
+        "page": "/industry-solutions/",
+        "sizeKB": 637,
+        "priority": "CRITICAL",
+        "suggestion": "Investigate why this page is 637 KB. Likely inline data blobs or large component trees. Consider code-splitting, lazy loading sections, or paginating content."
+      },
+      {
+        "page": "/service-comparison/",
+        "sizeKB": 469,
+        "priority": "CRITICAL",
+        "suggestion": "This comparison page likely embeds all service data inline. Consider fetching from an API endpoint instead of inlining JSON blobs."
+      },
+      {
+        "page": "/",
+        "sizeKB": 271,
+        "priority": "HIGH",
+        "suggestion": "Homepage is large. Check for unused JS bundles, consider dynamic imports for below-fold content, and review third-party scripts."
+      },
+      {
+        "page": "/ai-services/",
+        "sizeKB": 249,
+        "priority": "HIGH",
+        "suggestion": "Likely has inline service data. Consider server-side data fetching and component lazy loading."
+      },
+      {
+        "page": "/blog/",
+        "sizeKB": 76,
+        "priority": "LOW",
+        "suggestion": "Manageable size but could paginate or virtualize blog list for larger post counts."
+      }
+    ]
+  },
+  "accessibility": {
+    "imagesAndAltText": {
+      "status": "PASS",
+      "finding": "No raw <img> tags found in any .tsx file across the entire project. The project uses Next.js without next/image imports, relying instead on CSS backgrounds, SVG-like divs, and emoji characters for visual elements. No missing alt text issues.",
+      "imgTagsFound": 0,
+      "filesWithImgTags": [],
+      "nextImageUsage": {
+        "importsFound": 0,
+        "note": "No next/image imports detected — all visual elements use CSS/styling or emoji"
+      },
+      "emojiAccessibility": {
+        "roleImgWithAriaLabel": 0,
+        "ariaHiddenOnDecorativeIcons": 67,
+        "note": "67 occurrences of aria-hidden='true' used properly on decorative emoji icons, checkmarks, and background decorations. Emojis in text content (headings, button labels) are left visible since they convey meaning as text."
+      }
+    },
+    "headingHierarchy": {
+      "status": "PASS",
+      "finding": "All scanned pages have proper <h1> tags. Heading hierarchy generally follows h1 → h2 → h3 patterns. No pages found without an h1.",
+      "pagesWithH1": 72,
+      "pagesWithoutH1": 0,
+      "h1TagCount": 98,
+      "headingStructure": "Good — every route page includes a descriptive h1 tag styled appropriately. Blog posts use h1 for the article title. Category landing pages use h1 for the page heading. Sub-sections use h2/h3 correctly."
+    },
+    "ariaLabels": {
+      "status": "PASS",
+      "finding": "36 aria-label attributes found across app components providing meaningful labels for interactive elements",
+      "count": 36,
+      "notableUsages": [
+        { "element": "Skip to main content link", "label": "Skip to main content", "file": "AccessibilityEnhancer.tsx" },
+        { "element": "Main navigation", "label": "Main navigation", "file": "Navigation.tsx" },
+        { "element": "Home link (logo)", "label": "Zion Tech Group home", "file": "Navigation.tsx" },
+        { "element": "Search input", "label": "Search services", "file": "Navigation.tsx, SmartSearchBar.tsx" },
+        { "element": "Mobile menu toggle", "label": "Toggle menu", "file": "Navigation.tsx" },
+        { "element": "Breadcrumb navigation", "label": "Breadcrumb", "file": "SiteBreadcrumbs.tsx, Breadcrumb.tsx" },
+        { "element": "Social links (Footer)", "label": "LinkedIn, Twitter/X, GitHub", "file": "Footer.tsx" },
+        { "element": "Quick actions dock", "label": "Quick actions", "file": "FloatingActionDock.tsx" },
+        { "element": "Category filter group", "label": "Category filter", "file": "ServiceGridWithSearch.tsx" },
+        { "element": "Star ratings", "label": "{rating} out of 5 stars", "file": "TestimonialsSection.tsx" },
+        { "element": "Slide indicators", "label": "Slide {i+1}", "file": "ServiceSpotlight.tsx" },
+        { "element": "Carousel controls", "label": "Previous / Next", "file": "ServiceSpotlight.tsx" },
+        { "element": "ROI calculator input", "label": "Monthly investment", "file": "ROICalculator.tsx" },
+        { "element": "Quick view overlay", "label": "Quick view: {title}", "file": "page.tsx" },
+        { "element": "Quick view close button", "label": "Close", "file": "page.tsx" },
+        { "element": "Pricing categories", "label": "{cat.label}", "file": "PricingCalculatorClient.tsx" },
+        { "element": "AI Service Router input", "label": "Describe your need", "file": "AIServiceRouterClient.tsx" },
+        { "element": "Section landmark", "label": "Why {serviceTitle}", "file": "ROICalculator.tsx" }
+      ]
+    },
+    "skipToContent": {
+      "status": "PASS",
+      "finding": "Skip-to-content link present in AccessibilityEnhancer.tsx wrapping the entire app via app/layout.tsx. Targets '#main-content' div.",
+      "implementation": "'use client' component with mount detection for proper SSR handling"
+    },
+    "keyboardNavigation": {
+      "status": "PASS",
+      "finding": "Keyboard navigation helper script injected via AccessibilityEnhancer. Adds .keyboard-nav class to body when Tab key is pressed (supports visible focus styles), removes on mouse click.",
+      "tabIndexUsage": 0,
+      "note": "No custom tabIndex found — default tab order is used, which is generally preferred"
+    },
+    "langAttribute": {
+      "status": "PASS",
+      "finding": "Root <html> tag has lang='en' set in app/layout.tsx"
+    },
+    "structuredData": {
+      "status": "PASS",
+      "finding": "JSON-LD structured data injected in root layout for Organization and Website schemas. Additional structured data components available (LocalBusinessStructuredData.tsx, ArticleStructuredData.tsx, BlogPostStructuredData.tsx)",
+      "schemasFound": ["Organization", "Website"]
+    },
+    "colorContrast": {
+      "status": "NOT_TESTED",
+      "finding": "Manual color contrast verification not performed in this automated scan. Site uses dark theme with white text (rgb(255,255,255)) on dark backgrounds (slate-950 ~rgb(2,6,23)), which provides high contrast by default. Verify interactive states and component-specific color combinations separately.",
+      "note": "A dedicated WCAG Color Contrast Checker tool exists at /tools/color-contrast-checker/ (returns 404 on live site — may need route exposure)"
+    }
+  },
+  "overallAssessment": {
+    "performanceGrade": "C",
+    "accessibilityGrade": "A-",
+    "keyIssues": [
+      {
+        "area": "Performance",
+        "severity": "CRITICAL",
+        "issue": "industry-solutions page is 637 KB — likely the heaviest single page load"
+      },
+      {
+        "area": "Performance",
+        "severity": "CRITICAL",
+        "issue": "service-comparison page is 469 KB — inline service data bloat"
+      },
+      {
+        "area": "Performance",
+        "severity": "HIGH",
+        "issue": "Homepage is 271 KB — should target under 200 KB for initial load"
+      },
+      {
+        "area": "Performance",
+        "severity": "HIGH",
+        "issue": "ai-services page is 249 KB — inline data optimization needed"
+      }
+    ],
+    "strengths": [
+      "Excellent aria-label coverage across navigation, search, social links, breadcrumbs, and interactive widgets",
+      "Skip-to-content link available on all pages",
+      "Keyboard navigation detection with visible focus style support",
+      "Proper lang='en' and structured data present",
+      "No missing alt text issues (no raw <img> tags used)",
+      "All pages have proper h1 tags with consistent heading hierarchy",
+      "Decorative elements properly hidden from screen readers with aria-hidden",
+      "Blog posts are consistently sized at ~32 KB — well optimized"
+    ],
+    "quickWins": [
+      "Investigate inline data blobs in /industry-solutions/ and /service-comparison/ — likely the highest ROI performance fix",
+      "Consider code-splitting homepage hero section from below-fold content to reduce initial payload",
+      "Review ai-services page for inline data that could be fetched server-side"
+    ]
+  },
+  "appPagesWithH1Count": 98,
+  "allTsxFilesScanned": true,
+  "livePagesChecked": 72,
+  "scanNotes": "Scanned all .tsx files across app/, tools/, src/, and root directories. WCAG checks focused on img alt text, heading hierarchy, aria-labels, and skip-to-content. Color contrast was NOT tested programmatically. Performance measured via curl (transfer size, not rendered size)."
+}

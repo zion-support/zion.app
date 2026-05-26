@@ -1,0 +1,2566 @@
+{
+  "generated_at": "2026-05-26T08:35:33.460Z",
+  "total_posts": 54,
+  "cross_cutting_concerns": [
+    {
+      "severity": "minor",
+      "category": "STUB_BREADCRUMB",
+      "description": "All 54 blog posts import Breadcrumb from '@/components/Breadcrumb' which is a non-functional stub that renders hidden <span> elements instead of clickable links. The breadcrumb links (Home → /, Blog → /blog) are not rendered as navigable elements. There is a working SiteBreadcrumbs component available at @/components/SiteBreadcrumbs.tsx that should be used instead."
+    },
+    {
+      "severity": "info",
+      "category": "NO_IMAGES",
+      "description": "No blog posts use images (<img> or Next.js <Image>). All 54 posts are text-only. Consider adding relevant images/illustrations for improved engagement and SEO."
+    }
+  ],
+  "posts": [
+    {
+      "slug": "5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "path": "/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "metadata": {
+        "title": "5 Proven AI Automation Strategies for Enterprise Workflow Optimization",
+        "description": "Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-agent-frameworks-for-business-automation",
+      "path": "/blog/ai-agent-frameworks-for-business-automation",
+      "metadata": {
+        "title": "AI Agent Frameworks for Business Automation",
+        "description": "Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "path": "/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "metadata": {
+        "title": "AI FinOps: Cloud Cost Optimization with Machine Learning",
+        "description": "Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-agriculture-and-agritech",
+      "path": "/blog/ai-for-agriculture-and-agritech",
+      "metadata": {
+        "title": "AI for Agriculture and Agritech",
+        "description": "Precision agriculture, crop yield prediction, pest detection, and supply chain optimization. Data-driven farming with AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-audit-and-compliance-automation",
+      "path": "/blog/ai-for-audit-and-compliance-automation",
+      "metadata": {
+        "title": "AI for Audit and Compliance Automation",
+        "description": "Automating evidence collection, compliance checks, and audit report generation. Reducing manual effort and improving audit trail completeness."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-blockchain-and-web3-operations",
+      "path": "/blog/ai-for-blockchain-and-web3-operations",
+      "metadata": {
+        "title": "AI for Blockchain and Web3 Operations",
+        "description": "Smart contract analysis, DeFi risk scoring, NFT analytics, and on-chain intelligence. AI meets decentralized systems."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-climate-tech-and-sustainability-operations",
+      "path": "/blog/ai-for-climate-tech-and-sustainability-operations",
+      "metadata": {
+        "title": "AI for Climate Tech and Sustainability Operations",
+        "description": "Carbon accounting, supply chain emissions, renewable forecasting, and ESG reporting. AI accelerates the path to net zero."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-compliance-and-regulatory-reporting",
+      "path": "/blog/ai-for-compliance-and-regulatory-reporting",
+      "metadata": {
+        "title": "AI for Compliance and Regulatory Reporting",
+        "description": "Automated compliance monitoring, regulatory change tracking, and audit-ready documentation. Reducing compliance burden with intelligent automation."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-conversation-and-customer-analytics",
+      "path": "/blog/ai-for-conversation-and-customer-analytics",
+      "metadata": {
+        "title": "AI for Conversation and Customer Analytics",
+        "description": "Unifying customer data, analyzing conversations across channels, and driving next-best-action recommendations. Building a true customer 360."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-customer-service-and-support-automation",
+      "path": "/blog/ai-for-customer-service-and-support-automation",
+      "metadata": {
+        "title": "AI for Customer Service and Support Automation",
+        "description": "Intelligent routing, self-service deflection, agent assist, and sentiment analysis. Delivering faster resolution and higher satisfaction."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-cybersecurity-operations-and-threat-hunting",
+      "path": "/blog/ai-for-cybersecurity-operations-and-threat-hunting",
+      "metadata": {
+        "title": "AI for Cybersecurity Operations and Threat Hunting",
+        "description": "Threat detection, anomaly analysis, automated response, and security orchestration. How AI augments SOC teams and reduces mean time to detect."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-cybersecurity-threat-detection",
+      "path": "/blog/ai-for-cybersecurity-threat-detection",
+      "metadata": {
+        "title": "AI for Cybersecurity Threat Detection",
+        "description": "Anomaly detection, behavioral analysis, SIEM enhancement, and automated response. Using machine learning to identify and respond to threats faster."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-digital-transformation-and-change-management",
+      "path": "/blog/ai-for-digital-transformation-and-change-management",
+      "metadata": {
+        "title": "AI for Digital Transformation and Change Management",
+        "description": "Driving organizational change with AI: adoption strategies, stakeholder alignment, training programs, and measuring transformation success."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-document-intelligence-and-intelligent-automation",
+      "path": "/blog/ai-for-document-intelligence-and-intelligent-automation",
+      "metadata": {
+        "title": "AI for Document Intelligence and Intelligent Automation",
+        "description": "IDP, contract analysis, form processing, and knowledge extraction. End-to-end document workflows with AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-fintech-and-digital-banking-operations",
+      "path": "/blog/ai-for-fintech-and-digital-banking-operations",
+      "metadata": {
+        "title": "AI for FinTech and Digital Banking Operations",
+        "description": "Credit scoring, fraud prevention, customer onboarding, and regulatory compliance. AI-powered financial services at scale."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-fleet-and-logistics-operations",
+      "path": "/blog/ai-for-fleet-and-logistics-operations",
+      "metadata": {
+        "title": "AI for Fleet and Logistics Operations",
+        "description": "Route optimization, predictive maintenance, driver compliance, and last-mile delivery automation. Real-world ROI metrics from fleet operators."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-fleet-management-and-logistics-optimization",
+      "path": "/blog/ai-for-fleet-management-and-logistics-optimization",
+      "metadata": {
+        "title": "AI for Fleet Management and Logistics Optimization",
+        "description": "Route optimization, predictive maintenance, driver behavior analytics, and real-time visibility. How AI transforms fleet operations and reduces costs."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-food-and-beverage-operations",
+      "path": "/blog/ai-for-food-and-beverage-operations",
+      "metadata": {
+        "title": "AI for Food and Beverage Operations",
+        "description": "Demand forecasting, quality control, supply chain traceability, and waste reduction. AI across the food value chain."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-gaming-and-esports",
+      "path": "/blog/ai-for-gaming-and-esports",
+      "metadata": {
+        "title": "AI for Gaming and Esports",
+        "description": "Player analytics, anti-cheat, content moderation, and personalized experiences. AI powers the gaming industry."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-government-services-and-public-sector-automation",
+      "path": "/blog/ai-for-government-services-and-public-sector-automation",
+      "metadata": {
+        "title": "AI for Government Services and Public Sector Automation",
+        "description": "Citizen services, permit processing, fraud detection, and operational efficiency. Responsible AI in government with transparency and accountability."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-healthcare-analytics-and-clinical-decision-support",
+      "path": "/blog/ai-for-healthcare-analytics-and-clinical-decision-support",
+      "metadata": {
+        "title": "AI for Healthcare Analytics and Clinical Decision Support",
+        "description": "Clinical documentation, diagnosis assistance, population health, and operational analytics. Responsible AI in healthcare delivery."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "path": "/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "metadata": {
+        "title": "AI for HR and Talent Acquisition: Streamlining Recruitment",
+        "description": "Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-insurance-claims-and-underwriting",
+      "path": "/blog/ai-for-insurance-claims-and-underwriting",
+      "metadata": {
+        "title": "AI for Insurance Claims and Underwriting",
+        "description": "Claims triage, fraud detection, risk assessment, and automated underwriting. Improving accuracy and speed in insurance operations."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-insurance-underwriting-and-claims-automation",
+      "path": "/blog/ai-for-insurance-underwriting-and-claims-automation",
+      "metadata": {
+        "title": "AI for Insurance Underwriting and Claims Automation",
+        "description": "Risk assessment, document extraction, fraud detection, and claims triage. How insurers use AI to improve accuracy and reduce processing time."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-legal-tech-and-contract-intelligence",
+      "path": "/blog/ai-for-legal-tech-and-contract-intelligence",
+      "metadata": {
+        "title": "AI for Legal Tech and Contract Intelligence",
+        "description": "Contract analysis, due diligence automation, legal research, and matter management. AI augments legal workflows."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-media-and-content-production",
+      "path": "/blog/ai-for-media-and-content-production",
+      "metadata": {
+        "title": "AI for Media and Content Production",
+        "description": "Content generation, editing automation, rights management, and audience analytics. How media companies leverage AI for scale and efficiency."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-mining-and-natural-resources-operations",
+      "path": "/blog/ai-for-mining-and-natural-resources-operations",
+      "metadata": {
+        "title": "AI for Mining and Natural Resources Operations",
+        "description": "Predictive maintenance, ore grade estimation, safety monitoring, and supply chain optimization. AI in extractive industries."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-procurement-and-vendor-management",
+      "path": "/blog/ai-for-procurement-and-vendor-management",
+      "metadata": {
+        "title": "AI for Procurement and Vendor Management",
+        "description": "Spend analysis, contract extraction, supplier risk scoring, and automated sourcing. Optimizing procurement with intelligent automation."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-product-development-and-innovation",
+      "path": "/blog/ai-for-product-development-and-innovation",
+      "metadata": {
+        "title": "AI for Product Development and Innovation",
+        "description": "Ideation assistance, market research automation, competitive analysis, and rapid prototyping. Accelerating the product lifecycle with AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-quantum-computing-and-hybrid-workloads",
+      "path": "/blog/ai-for-quantum-computing-and-hybrid-workloads",
+      "metadata": {
+        "title": "AI for Quantum Computing and Hybrid Workloads",
+        "description": "Quantum machine learning, hybrid classical-quantum pipelines, and optimization. When quantum advantage matters for AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-real-estate-and-property-management",
+      "path": "/blog/ai-for-real-estate-and-property-management",
+      "metadata": {
+        "title": "AI for Real Estate and Property Management",
+        "description": "Lease abstraction, tenant analytics, maintenance prediction, and valuation. Transforming property operations with intelligent automation."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-retail-analytics-and-personalization",
+      "path": "/blog/ai-for-retail-analytics-and-personalization",
+      "metadata": {
+        "title": "AI for Retail Analytics and Personalization",
+        "description": "Demand forecasting, assortment optimization, personalization engines, and loss prevention. Data-driven retail in the age of AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-sales-enablement-and-revenue-operations",
+      "path": "/blog/ai-for-sales-enablement-and-revenue-operations",
+      "metadata": {
+        "title": "AI for Sales Enablement and Revenue Operations",
+        "description": "Conversation intelligence, deal scoring, forecast accuracy, and sales content automation. Turning RevOps into a competitive advantage."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-for-warehousing-and-inventory-optimization",
+      "path": "/blog/ai-for-warehousing-and-inventory-optimization",
+      "metadata": {
+        "title": "AI for Warehousing and Inventory Optimization",
+        "description": "Pick path optimization, demand forecasting, slotting, and labor planning. Maximizing warehouse throughput and accuracy with intelligent automation."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-aviation-and-aerospace-operations",
+      "path": "/blog/ai-in-aviation-and-aerospace-operations",
+      "metadata": {
+        "title": "AI in Aviation and Aerospace Operations",
+        "description": "Predictive maintenance, crew scheduling, cargo optimization, and safety analytics. How airlines and aerospace companies use AI for operational excellence."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-construction-and-project-management",
+      "path": "/blog/ai-in-construction-and-project-management",
+      "metadata": {
+        "title": "AI in Construction and Project Management",
+        "description": "Schedule optimization, cost forecasting, risk prediction, and document management. How AI is transforming construction delivery and project controls."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-education-and-learning-systems",
+      "path": "/blog/ai-in-education-and-learning-systems",
+      "metadata": {
+        "title": "AI in Education and Learning Systems",
+        "description": "Adaptive learning, personalized curricula, assessment automation, and administrative efficiency. Transforming education with intelligent systems."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-pharmaceuticals-and-life-sciences",
+      "path": "/blog/ai-in-pharmaceuticals-and-life-sciences",
+      "metadata": {
+        "title": "AI in Pharmaceuticals and Life Sciences",
+        "description": "Drug discovery, clinical trial optimization, regulatory submissions, and pharmacovigilance. Accelerating life sciences with AI."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "path": "/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "metadata": {
+        "title": "AI in Supply Chain: Predictive Inventory and Demand Forecasting",
+        "description": "Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-in-sustainability-and-esg-reporting",
+      "path": "/blog/ai-in-sustainability-and-esg-reporting",
+      "metadata": {
+        "title": "AI in Sustainability and ESG Reporting",
+        "description": "Carbon footprint calculation, supply chain emissions, regulatory compliance, and automated ESG disclosure. Meeting reporting requirements with AI-powered data aggregation."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-observability-and-mlops-best-practices",
+      "path": "/blog/ai-observability-and-mlops-best-practices",
+      "metadata": {
+        "title": "AI Observability and MLOps Best Practices",
+        "description": "Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "path": "/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "metadata": {
+        "title": "AI-Powered Customer Success: Reducing Churn and Driving Expansion",
+        "description": "Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "ai-voice-agents-and-conversational-automation",
+      "path": "/blog/ai-voice-agents-and-conversational-automation",
+      "metadata": {
+        "title": "AI Voice Agents and Conversational Automation",
+        "description": "Voice-first customer service, IVR replacement, and multimodal assistants. Deploying AI voice at scale with quality and compliance."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "path": "/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "metadata": {
+        "title": "Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment",
+        "description": "Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "path": "/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "metadata": {
+        "title": "CRM Automation Trends 2026: AI-Driven Customer Journey Personalization",
+        "description": "AI-powered lead scoring, predictive customer analytics, automated outreach, personalization at scale, and CRM integration with marketing and support."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "path": "/blog/devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "metadata": {
+        "title": "DevOps Automation with AI: Reducing Deployment Failures by 60%",
+        "description": "AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "edge-ai-and-iot-deploying-models-at-the-edge",
+      "path": "/blog/edge-ai-and-iot-deploying-models-at-the-edge",
+      "metadata": {
+        "title": "Edge AI and IoT: Deploying Models at the Edge",
+        "description": "On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "generative-ai-for-content-and-creative-workflows",
+      "path": "/blog/generative-ai-for-content-and-creative-workflows",
+      "metadata": {
+        "title": "Generative AI for Content and Creative Workflows",
+        "description": "Copy generation, image creation, video editing, and brand consistency. Scaling creative output without sacrificing quality."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "low-code-and-no-code-ai-for-rapid-deployment",
+      "path": "/blog/low-code-and-no-code-ai-for-rapid-deployment",
+      "metadata": {
+        "title": "Low-Code and No-Code AI for Rapid Deployment",
+        "description": "Citizen development, workflow automation, and AI builders. Empowering business users to deploy AI without engineering."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "multimodal-ai-vision-and-language-models-in-enterprise",
+      "path": "/blog/multimodal-ai-vision-and-language-models-in-enterprise",
+      "metadata": {
+        "title": "Multimodal AI: Vision and Language Models in Enterprise",
+        "description": "Combining vision and language for document understanding, quality inspection, and customer experience. When and how to deploy multimodal models."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "rag-for-enterprise-knowledge-bases",
+      "path": "/blog/rag-for-enterprise-knowledge-bases",
+      "metadata": {
+        "title": "RAG for Enterprise Knowledge Bases: From Documents to Answers",
+        "description": "Retrieval-augmented generation, chunking strategies, embedding models, and evaluation. Building AI systems that answer questions from your internal documents."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "responsible-ai-practices-for-enterprise-deployment",
+      "path": "/blog/responsible-ai-practices-for-enterprise-deployment",
+      "metadata": {
+        "title": "Responsible AI Practices for Enterprise Deployment",
+        "description": "Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "path": "/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "metadata": {
+        "title": "Securing AI Models: A Practical Guide to Threat Mitigation in Production",
+        "description": "Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    },
+    {
+      "slug": "vector-databases-and-enterprise-rag-systems",
+      "path": "/blog/vector-databases-and-enterprise-rag-systems",
+      "metadata": {
+        "title": "Vector Databases and Enterprise RAG Systems",
+        "description": "Embeddings, similarity search, and retrieval-augmented generation. Building enterprise knowledge bases that ground LLMs in your data."
+      },
+      "links": [
+        {
+          "href": "/contact/",
+          "issue": null
+        },
+        {
+          "href": "/services/",
+          "issue": null
+        },
+        {
+          "href": "/blog/",
+          "issue": null
+        }
+      ],
+      "images": [],
+      "outdated_content": [],
+      "issues": [],
+      "summary": {
+        "broken_links": 0,
+        "missing_images": 0,
+        "outdated_content_items": 0,
+        "missing_metadata": 0,
+        "total_issues": 0
+      }
+    }
+  ],
+  "summary": {
+    "posts_with_broken_links": 0,
+    "posts_with_missing_images": 0,
+    "posts_with_outdated_content": 0,
+    "posts_with_missing_metadata": 0,
+    "total_issues": 0
+  },
+  "all_images": [],
+  "all_links": [
+    {
+      "slug": "5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-agent-frameworks-for-business-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-agent-frameworks-for-business-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-agent-frameworks-for-business-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-agriculture-and-agritech",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-agriculture-and-agritech",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-agriculture-and-agritech",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-audit-and-compliance-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-audit-and-compliance-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-audit-and-compliance-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-blockchain-and-web3-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-blockchain-and-web3-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-blockchain-and-web3-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-climate-tech-and-sustainability-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-climate-tech-and-sustainability-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-climate-tech-and-sustainability-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-compliance-and-regulatory-reporting",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-compliance-and-regulatory-reporting",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-compliance-and-regulatory-reporting",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-conversation-and-customer-analytics",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-conversation-and-customer-analytics",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-conversation-and-customer-analytics",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-customer-service-and-support-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-customer-service-and-support-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-customer-service-and-support-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-operations-and-threat-hunting",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-operations-and-threat-hunting",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-operations-and-threat-hunting",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-threat-detection",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-threat-detection",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-cybersecurity-threat-detection",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-digital-transformation-and-change-management",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-digital-transformation-and-change-management",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-digital-transformation-and-change-management",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-document-intelligence-and-intelligent-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-document-intelligence-and-intelligent-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-document-intelligence-and-intelligent-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fintech-and-digital-banking-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fintech-and-digital-banking-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fintech-and-digital-banking-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-and-logistics-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-and-logistics-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-and-logistics-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-management-and-logistics-optimization",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-management-and-logistics-optimization",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-fleet-management-and-logistics-optimization",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-food-and-beverage-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-food-and-beverage-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-food-and-beverage-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-gaming-and-esports",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-gaming-and-esports",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-gaming-and-esports",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-government-services-and-public-sector-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-government-services-and-public-sector-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-government-services-and-public-sector-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-healthcare-analytics-and-clinical-decision-support",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-healthcare-analytics-and-clinical-decision-support",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-healthcare-analytics-and-clinical-decision-support",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-claims-and-underwriting",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-claims-and-underwriting",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-claims-and-underwriting",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-underwriting-and-claims-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-underwriting-and-claims-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-insurance-underwriting-and-claims-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-legal-tech-and-contract-intelligence",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-legal-tech-and-contract-intelligence",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-legal-tech-and-contract-intelligence",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-media-and-content-production",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-media-and-content-production",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-media-and-content-production",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-mining-and-natural-resources-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-mining-and-natural-resources-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-mining-and-natural-resources-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-procurement-and-vendor-management",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-procurement-and-vendor-management",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-procurement-and-vendor-management",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-product-development-and-innovation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-product-development-and-innovation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-product-development-and-innovation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-quantum-computing-and-hybrid-workloads",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-quantum-computing-and-hybrid-workloads",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-quantum-computing-and-hybrid-workloads",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-real-estate-and-property-management",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-real-estate-and-property-management",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-real-estate-and-property-management",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-retail-analytics-and-personalization",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-retail-analytics-and-personalization",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-retail-analytics-and-personalization",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-sales-enablement-and-revenue-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-sales-enablement-and-revenue-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-sales-enablement-and-revenue-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-warehousing-and-inventory-optimization",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-warehousing-and-inventory-optimization",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-for-warehousing-and-inventory-optimization",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-aviation-and-aerospace-operations",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-aviation-and-aerospace-operations",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-aviation-and-aerospace-operations",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-construction-and-project-management",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-construction-and-project-management",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-construction-and-project-management",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-education-and-learning-systems",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-education-and-learning-systems",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-education-and-learning-systems",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-pharmaceuticals-and-life-sciences",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-pharmaceuticals-and-life-sciences",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-pharmaceuticals-and-life-sciences",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-sustainability-and-esg-reporting",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-sustainability-and-esg-reporting",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-in-sustainability-and-esg-reporting",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-observability-and-mlops-best-practices",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-observability-and-mlops-best-practices",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-observability-and-mlops-best-practices",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "ai-voice-agents-and-conversational-automation",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "ai-voice-agents-and-conversational-automation",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "ai-voice-agents-and-conversational-automation",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "edge-ai-and-iot-deploying-models-at-the-edge",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "edge-ai-and-iot-deploying-models-at-the-edge",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "edge-ai-and-iot-deploying-models-at-the-edge",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "generative-ai-for-content-and-creative-workflows",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "generative-ai-for-content-and-creative-workflows",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "generative-ai-for-content-and-creative-workflows",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "low-code-and-no-code-ai-for-rapid-deployment",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "low-code-and-no-code-ai-for-rapid-deployment",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "low-code-and-no-code-ai-for-rapid-deployment",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "multimodal-ai-vision-and-language-models-in-enterprise",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "multimodal-ai-vision-and-language-models-in-enterprise",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "multimodal-ai-vision-and-language-models-in-enterprise",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "rag-for-enterprise-knowledge-bases",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "rag-for-enterprise-knowledge-bases",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "rag-for-enterprise-knowledge-bases",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "responsible-ai-practices-for-enterprise-deployment",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "responsible-ai-practices-for-enterprise-deployment",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "responsible-ai-practices-for-enterprise-deployment",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "href": "/blog/",
+      "issue": null
+    },
+    {
+      "slug": "vector-databases-and-enterprise-rag-systems",
+      "href": "/contact/",
+      "issue": null
+    },
+    {
+      "slug": "vector-databases-and-enterprise-rag-systems",
+      "href": "/services/",
+      "issue": null
+    },
+    {
+      "slug": "vector-databases-and-enterprise-rag-systems",
+      "href": "/blog/",
+      "issue": null
+    }
+  ]
+}
