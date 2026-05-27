@@ -24,6 +24,7 @@ const catAccent: Record<string, string> = {
   security:  '#fb923c',
   data:      '#34d399',
   automation:'#fb7185',
+  'micro-saas': '#fbbf24',
 };
 
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
@@ -43,6 +44,7 @@ const CATEGORIES = [
   { key: 'security',  label: 'Security Services',     emoji: '🔐', color: 'from-red-500 to-orange-500' },
   { key: 'data',      label: 'Data Analytics',        emoji: '📊', color: 'from-green-500 to-emerald-500' },
   { key: 'automation',label: 'Automation',            emoji: '🤖', color: 'from-pink-500 to-rose-500' },
+  { key: 'micro-saas',label: 'Micro-SaaS Products',   emoji: '🚀', color: 'from-amber-500 to-orange-500' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
@@ -93,7 +95,7 @@ export default function HomePage() {
   // Dynamic stats — auto-update when catalog changes
   const stats = [
     { value: `${serviceCount}+`, label: STAT_SERVICES },
-    { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation' },
+    { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS' },
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
     ];
@@ -262,7 +264,7 @@ let list = services;
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, and automation services — from machine learning to cybersecurity, CRM automation to blockchain.
+            <ServiceCounter /> real-world AI, IT, cloud, security, automation, data, and micro-SaaS services — from machine learning to cybersecurity, CRM to blockchain.
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -273,8 +275,8 @@ let list = services;
                 {`🛠️ Explore All ${serviceCount}+ Services`}
               </Link>
               <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
-                              ☎ +1 302 464 0950
-                            </a>
+                ☎ +1 302 464 0950
+              </a>
             </div>
 
             {/* ── Secondary CTAs — extra discovery links ── */}
@@ -310,7 +312,19 @@ let list = services;
                   <div className="text-sm text-slate-400 mt-1">{s.label}</div>
                 </div>
               ))}
+            </div>
 
+            {/* ── Contact Bar ── */}
+            <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
+              <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                ✉ kleber@ziontechgroup.com
+              </a>
+              <a href="tel:+130****0950" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                ☎ +1 302 464 0950
+              </a>
+              <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-400">
+                📍 364 E Main St STE 1008, Middletown, DE 19709
+              </span>
             </div>
 
             {/* ── Service Pipeline — live stage counts ── */}

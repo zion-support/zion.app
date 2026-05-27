@@ -1,13 +1,13 @@
 {
-  "generated": "2026-05-27T18:38:49.839Z",
-  "count": 617,
+  "generated": "2026-05-27T19:44:16.267Z",
+  "count": 662,
   "categories": {
-    "ai": 318,
-    "it": 110,
+    "ai": 333,
+    "it": 125,
     "data": 39,
     "cloud": 69,
     "security": 51,
-    "automation": 30
+    "automation": 45
   },
   "services": [
     {
@@ -279,6 +279,84 @@
         "Meet compliance requirements"
       ],
       "href": "/services/ai-agents-autonomous",
+      "source": "json"
+    },
+    {
+      "id": "ai-ai-chatbot-builder",
+      "title": "AI Chatbot Builder - No Code",
+      "description": "Drag-and-drop chatbot builder with pre-trained industry templates. Deploy on your website, WhatsApp, or social media in minutes.",
+      "category": "ai",
+      "basic": "$199/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Visual flow builder",
+        "Pre-trained industry templates",
+        "Website, WhatsApp, FB Messenger deploy",
+        "Lead qualification built-in",
+        "CRM integration",
+        "Conversation analytics"
+      ],
+      "benefits": [
+        "Build chatbots without coding",
+        "Deploy in hours not weeks",
+        "Qualify leads automatically",
+        "Reduce support volume 30%"
+      ],
+      "href": "/services/ai-ai-chatbot-builder",
+      "source": "json"
+    },
+    {
+      "id": "ai-ai-data-labeling",
+      "title": "AI Data Labeling and Annotation Platform",
+      "description": "High-quality training data for your ML models. Image, text, video, and audio annotation with quality control and expert labelers.",
+      "category": "ai",
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Image bounding box and segmentation",
+        "Text NER and classification",
+        "Video frame annotation",
+        "Audio transcription and labeling",
+        "Quality control with consensus",
+        "API for automated pipelines"
+      ],
+      "benefits": [
+        "Get training data 10x faster",
+        "95%+ label accuracy",
+        "Scale labeling on demand",
+        "Expert labelers for complex tasks"
+      ],
+      "href": "/services/ai-ai-data-labeling",
+      "source": "json"
+    },
+    {
+      "id": "ai-ai-search-platform",
+      "title": "AI-Powered Search Platform",
+      "description": "Semantic search that understands meaning, not just keywords. Vector search, natural language queries, and personalized results for your content.",
+      "category": "ai",
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Semantic vector search",
+        "Natural language query understanding",
+        "Personalized results per user",
+        "Faceted search and filtering",
+        "Search analytics dashboard",
+        "API-first architecture"
+      ],
+      "benefits": [
+        "Users find what they need 3x faster",
+        "Understands intent not just keywords",
+        "Personalized search experience",
+        "Works with any content source"
+      ],
+      "href": "/services/ai-ai-search-platform",
       "source": "json"
     },
     {
@@ -1198,6 +1276,32 @@
       "source": "json"
     },
     {
+      "id": "ai-content-moderation-ai",
+      "title": "AI Content Moderation",
+      "description": "Automatically detect and filter inappropriate content - text, images, and video. Keep your platform safe and compliant.",
+      "category": "ai",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Text toxicity and hate speech detection",
+        "Image and video content analysis",
+        "Spam and scam detection",
+        "Custom policy rules",
+        "Human review queue",
+        "Real-time and batch processing"
+      ],
+      "benefits": [
+        "Protect your users from harmful content",
+        "Scale moderation without hiring",
+        "Custom policies for your platform",
+        "Real-time detection"
+      ],
+      "href": "/services/ai-content-moderation-ai",
+      "source": "json"
+    },
+    {
       "id": "ai-content-moderation-platform",
       "title": "AI Content Moderation Platform",
       "description": "Multi-modal moderation (text/image/video): NSFW, hate-speech, PII, copyright, brand-safety classifier; moderation queue + human-review.",
@@ -1363,6 +1467,32 @@
         "Coach entire team at scale with call data"
       ],
       "href": "/services/ai-conversation-intelligence",
+      "source": "json"
+    },
+    {
+      "id": "ai-conversational-ai-platform",
+      "title": "Conversational AI Platform",
+      "description": "Build and deploy intelligent chatbots and virtual assistants that understand context, maintain conversation memory, and integrate with your systems.",
+      "category": "ai",
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Multi-language NLU with 95%+ accuracy",
+        "Conversation memory and context",
+        "Omnichannel: web, mobile, WhatsApp, SMS",
+        "CRM and helpdesk integration",
+        "Human handoff with full context",
+        "Analytics: intent, sentiment, resolution"
+      ],
+      "benefits": [
+        "Reduce support costs 40%",
+        "24/7 instant customer responses",
+        "Consistent brand voice at scale",
+        "Handle 1000s of concurrent conversations"
+      ],
+      "href": "/services/ai-conversational-ai-platform",
       "source": "json"
     },
     {
@@ -1808,6 +1938,32 @@
       "source": "json"
     },
     {
+      "id": "ai-demand-forecasting",
+      "title": "AI Demand Forecasting",
+      "description": "Accurate demand predictions using ML models that incorporate seasonality, trends, promotions, weather, and external factors.",
+      "category": "ai",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-model ensemble (ARIMA, Prophet, XGBoost)",
+        "External factor integration (weather, events)",
+        "Promotion and pricing impact modeling",
+        "SKU-level and aggregate forecasts",
+        "Confidence intervals",
+        "What-if scenario planning"
+      ],
+      "benefits": [
+        "Reduce stockouts 40%",
+        "Lower inventory carrying costs",
+        "Optimize procurement timing",
+        "Plan for seasonal demand"
+      ],
+      "href": "/services/ai-demand-forecasting",
+      "source": "json"
+    },
+    {
       "id": "ai-devops-chatbot",
       "title": "AI DevOps Chatbot",
       "description": "Natural language interface to your infrastructure: ask for logs, deployments, metrics, and incidents; get instant answers and auto-remediation suggestions.",
@@ -1854,6 +2010,32 @@
         "Real-time predictions and recommendations"
       ],
       "href": "/services/ai-digital-twin-platform",
+      "source": "json"
+    },
+    {
+      "id": "ai-document-ai-processor",
+      "title": "Document AI - Intelligent Processing",
+      "description": "Extract, classify, and process data from documents with AI. Invoices, contracts, forms, receipts - structured data from unstructured documents.",
+      "category": "ai",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "OCR with 99%+ accuracy",
+        "Invoice and receipt data extraction",
+        "Contract clause identification",
+        "Form field extraction",
+        "Auto-classification by type",
+        "Human-in-the-loop verification"
+      ],
+      "benefits": [
+        "Process documents 20x faster",
+        "Eliminate manual data extraction",
+        "99%+ extraction accuracy",
+        "Audit trail for compliance"
+      ],
+      "href": "/services/ai-document-ai-processor",
       "source": "json"
     },
     {
@@ -2666,6 +2848,32 @@
         "Real-time alerting & blocking"
       ],
       "href": "/services/ai-fraud-detection",
+      "source": "json"
+    },
+    {
+      "id": "ai-fraud-detection-ai",
+      "title": "AI Fraud Detection and Prevention",
+      "description": "Real-time fraud detection for transactions, accounts, and applications. ML models trained on billions of transactions with sub-100ms scoring.",
+      "category": "ai",
+      "basic": "$1,499/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Real-time transaction scoring",
+        "Behavioral biometrics",
+        "Account takeover detection",
+        "Application fraud scoring",
+        "Explainable decline reasons",
+        "Continuous model retraining"
+      ],
+      "benefits": [
+        "Reduce fraud losses 60-80%",
+        "Sub-100ms scoring latency",
+        "Fewer false positives",
+        "Adaptive to new fraud patterns"
+      ],
+      "href": "/services/ai-fraud-detection-ai",
       "source": "json"
     },
     {
@@ -3482,6 +3690,32 @@
       "source": "json"
     },
     {
+      "id": "ai-lead-scoring-ai",
+      "title": "AI Lead Scoring and Qualification",
+      "description": "Automatically score and qualify leads based on behavior, firmographics, and engagement. Prioritize your sales team's time on the best prospects.",
+      "category": "ai",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Behavioral scoring model",
+        "Firmographic enrichment",
+        "Engagement tracking",
+        "Sales-ready lead alerts",
+        "CRM integration",
+        "Custom scoring rules"
+      ],
+      "benefits": [
+        "Focus sales on best leads",
+        "Increase conversion 25-40%",
+        "Reduce sales cycle length",
+        "Data-driven lead prioritization"
+      ],
+      "href": "/services/ai-lead-scoring-ai",
+      "source": "json"
+    },
+    {
       "id": "ai-legal-contract-redaction",
       "title": "AI Legal Contract Redaction",
       "description": "Automatically redacts PII, trade secrets, and privileged information from legal documents before sharing or discovery.",
@@ -4169,6 +4403,32 @@
       "source": "json"
     },
     {
+      "id": "ai-ocr-data-extraction",
+      "title": "OCR and Intelligent Data Extraction",
+      "description": "Advanced OCR with AI-powered data extraction from scanned documents, photos, and PDFs. Handles handwriting, tables, and complex layouts.",
+      "category": "ai",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "99.5%+ OCR accuracy",
+        "Handwriting recognition",
+        "Table and form extraction",
+        "Multi-language support",
+        "Batch processing (10,000+ pages/hr)",
+        "Structured JSON output"
+      ],
+      "benefits": [
+        "Digitize paper documents at scale",
+        "Extract data from any document type",
+        "Process 10,000+ pages per hour",
+        "Structured output ready for databases"
+      ],
+      "href": "/services/ai-ocr-data-extraction",
+      "source": "json"
+    },
+    {
       "id": "ai-office-automation",
       "title": "AI-Powered Office Automation",
       "description": "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing — all with no-code builder.",
@@ -4613,6 +4873,32 @@
       "source": "json"
     },
     {
+      "id": "ai-predictive-analytics-engine",
+      "title": "Predictive Analytics Engine",
+      "description": "Turn historical data into forward-looking insights. Demand forecasting, churn prediction, revenue projection with explainable AI models.",
+      "category": "ai",
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Automated feature engineering",
+        "Time-series forecasting (ARIMA, Prophet, LSTM)",
+        "Churn and LTV prediction",
+        "What-if scenario modeling",
+        "Explainable AI (SHAP values)",
+        "API for real-time predictions"
+      ],
+      "benefits": [
+        "Forecast demand with 90%+ accuracy",
+        "Identify at-risk customers early",
+        "Data-driven decision making",
+        "No data science team required"
+      ],
+      "href": "/services/ai-predictive-analytics-engine",
+      "source": "json"
+    },
+    {
       "id": "ai-predictive-churn",
       "title": "AI Predictive Churn & Retention",
       "description": "Predicts customer churn 30-90 days before event: ML ingests product usage behavior support tickets NPS scores contract data produces ranked at-risk list recommended retention.",
@@ -4682,6 +4968,32 @@
         "Eliminate expensive emergency repairs"
       ],
       "href": "/services/ai-predictive-maintenance",
+      "source": "json"
+    },
+    {
+      "id": "ai-predictive-maintenance-644",
+      "title": "Predictive Maintenance AI",
+      "description": "Predict equipment failures before they happen. IoT sensor data analysis, anomaly detection, and maintenance scheduling optimization.",
+      "category": "ai",
+      "basic": "$799/mo",
+      "pro": "$2,199/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "IoT sensor data ingestion",
+        "Anomaly detection algorithms",
+        "Failure prediction (days/weeks ahead)",
+        "Maintenance scheduling optimization",
+        "Remaining useful life estimates",
+        "Dashboard with equipment health"
+      ],
+      "benefits": [
+        "Reduce unplanned downtime 50%",
+        "Extend equipment life 20%",
+        "Optimize maintenance costs",
+        "Prevent catastrophic failures"
+      ],
+      "href": "/services/ai-predictive-maintenance-644",
       "source": "json"
     },
     {
@@ -5096,6 +5408,32 @@
         "Reduce translation costs by 90%"
       ],
       "href": "/services/ai-realtime-translation",
+      "source": "json"
+    },
+    {
+      "id": "ai-recommendation-engine",
+      "title": "AI Recommendation Engine",
+      "description": "Personalized product, content, and service recommendations. Increase conversion and engagement with collaborative and content-based filtering.",
+      "category": "ai",
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Collaborative filtering",
+        "Content-based recommendations",
+        "Real-time personalization API",
+        "A/B testing framework",
+        "Cold-start handling",
+        "Explainable recommendations"
+      ],
+      "benefits": [
+        "Increase conversion 15-35%",
+        "Higher average order value",
+        "Improved customer satisfaction",
+        "Works from day one with cold start"
+      ],
+      "href": "/services/ai-recommendation-engine",
       "source": "json"
     },
     {
@@ -5654,6 +5992,32 @@
         "Competitor sentiment intelligence for positioning"
       ],
       "href": "/services/ai-sentiment-analysis",
+      "source": "json"
+    },
+    {
+      "id": "ai-sentiment-analysis-api",
+      "title": "Sentiment Analysis API",
+      "description": "Analyze sentiment, emotion, and intent from text in 20+ languages. Monitor brand perception, customer feedback, and social media at scale.",
+      "category": "ai",
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "20+ language support",
+        "Emotion detection (joy, anger, fear, etc.)",
+        "Aspect-based sentiment",
+        "Real-time streaming API",
+        "Historical trend analysis",
+        "Custom model training"
+      ],
+      "benefits": [
+        "Understand customer sentiment at scale",
+        "Detect PR crises early",
+        "Track brand perception trends",
+        "Multi-language support"
+      ],
+      "href": "/services/ai-sentiment-analysis-api",
       "source": "json"
     },
     {
@@ -6648,6 +7012,32 @@
       "source": "json"
     },
     {
+      "id": "ai-voice-ai-assistant",
+      "title": "Voice AI - Speech Recognition and Synthesis",
+      "description": "Build voice-enabled applications with speech-to-text, text-to-speech, and voice biometrics. Support for 30+ languages and custom voice cloning.",
+      "category": "ai",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Speech-to-text 95%+ accuracy",
+        "Natural text-to-speech voices",
+        "Voice biometrics and verification",
+        "30+ language support",
+        "Custom voice cloning",
+        "Real-time streaming"
+      ],
+      "benefits": [
+        "Enable voice interfaces for any app",
+        "Natural-sounding voice synthesis",
+        "Voice-based authentication",
+        "Global language support"
+      ],
+      "href": "/services/ai-voice-ai-assistant",
+      "source": "json"
+    },
+    {
       "id": "ai-voice-assistant",
       "title": "AI Voice Assistant",
       "description": "Enterprise-grade voice AI with natural language understanding, multi-language support, and seamless CRM integration.",
@@ -7116,6 +7506,110 @@
       "source": "json"
     },
     {
+      "id": "automation-compliance-automation",
+      "title": "Compliance Automation Platform",
+      "description": "Automate compliance monitoring, evidence collection, and reporting. SOC2, HIPAA, PCI-DSS, GDPR - continuous compliance not annual audits.",
+      "category": "automation",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Continuous control monitoring",
+        "Automated evidence collection",
+        "Policy management and attestation",
+        "Violation alerting",
+        "Audit-ready reports",
+        "SOC2/HIPAA/PCI/GDPR frameworks"
+      ],
+      "benefits": [
+        "Continuous compliance vs annual scramble",
+        "Reduce audit prep time 80%",
+        "Catch violations in real-time",
+        "Audit-ready at any time"
+      ],
+      "href": "/services/automation-compliance-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-customer-data-sync",
+      "title": "Customer Data Synchronization",
+      "description": "Keep customer data consistent across all your systems. Real-time sync between CRM, marketing, support, and billing platforms.",
+      "category": "automation",
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Real-time bidirectional sync",
+        "200+ app connectors",
+        "Conflict resolution rules",
+        "Data transformation mapping",
+        "Sync monitoring and alerts",
+        "Historical sync audit"
+      ],
+      "benefits": [
+        "Single source of truth for customer data",
+        "Eliminate data silos",
+        "Real-time consistency",
+        "Reduce data errors 90%"
+      ],
+      "href": "/services/automation-customer-data-sync",
+      "source": "json"
+    },
+    {
+      "id": "automation-data-pipeline-automation",
+      "title": "Data Pipeline Automation",
+      "description": "Build, schedule, and monitor data pipelines. ETL/ELT, data quality checks, and orchestration for analytics and ML workflows.",
+      "category": "automation",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Visual pipeline builder",
+        "100+ data source connectors",
+        "Data quality validation",
+        "Scheduling and orchestration",
+        "Error alerting and retry",
+        "Lineage and impact analysis"
+      ],
+      "benefits": [
+        "Reliable data for analytics",
+        "Automate complex ETL workflows",
+        "Data quality guaranteed",
+        "Full lineage tracking"
+      ],
+      "href": "/services/automation-data-pipeline-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-deployment-automation",
+      "title": "Deployment Automation and CI/CD",
+      "description": "Automate build, test, and deployment pipelines. Zero-downtime deployments, rollback, and environment management.",
+      "category": "automation",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Visual pipeline builder",
+        "Multi-environment management",
+        "Zero-downtime deployments",
+        "Automatic rollback on failure",
+        "Infrastructure as code",
+        "Deployment analytics"
+      ],
+      "benefits": [
+        "Deploy 10x more frequently",
+        "Zero-downtime releases",
+        "Automatic rollback on issues",
+        "Full deployment visibility"
+      ],
+      "href": "/services/automation-deployment-automation",
+      "source": "json"
+    },
+    {
       "id": "automation-document-intelligence-pipeline",
       "title": "Legal Document Intelligence Pipeline",
       "description": "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause extraction, anomaly flag, e-signature ready, approval routing.",
@@ -7140,6 +7634,32 @@
       "source": "json"
     },
     {
+      "id": "automation-document-processing-automated",
+      "title": "Automated Document Processing",
+      "description": "End-to-end document processing: intake, classification, data extraction, validation, routing, and archival. Eliminate manual document handling.",
+      "category": "automation",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Multi-channel document intake",
+        "AI classification and routing",
+        "Data extraction with validation",
+        "Approval workflows",
+        "ERP/CRM integration",
+        "Full audit trail"
+      ],
+      "benefits": [
+        "Process documents 20x faster",
+        "Eliminate manual data entry",
+        "99%+ extraction accuracy",
+        "Complete audit compliance"
+      ],
+      "href": "/services/automation-document-processing-automated",
+      "source": "json"
+    },
+    {
       "id": "automation-education-student-lifecycle-manager",
       "title": "Education Student Lifecycle Manager",
       "description": "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imported at-risk alerts.",
@@ -7161,6 +7681,58 @@
         "Cut admissions office administrative time by 60% via automated funnel management"
       ],
       "href": "/services/automation-education-student-lifecycle-manager",
+      "source": "json"
+    },
+    {
+      "id": "automation-email-automation-engine",
+      "title": "Email Automation Engine",
+      "description": "Automate email workflows: drip campaigns, follow-ups, nurture sequences, and triggered communications based on user behavior.",
+      "category": "automation",
+      "basic": "$99/mo",
+      "pro": "$299/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Visual email sequence builder",
+        "Behavioral triggers",
+        "Personalization with merge tags",
+        "A/B testing automation",
+        "Deliverability optimization",
+        "Analytics and reporting"
+      ],
+      "benefits": [
+        "Nurture leads on autopilot",
+        "Personalized at scale",
+        "Increase email engagement 3x",
+        "Save 10+ hours/week"
+      ],
+      "href": "/services/automation-email-automation-engine",
+      "source": "json"
+    },
+    {
+      "id": "automation-hr-onboarding-automation",
+      "title": "HR Onboarding Automation",
+      "description": "Automate the entire employee onboarding journey: paperwork, training, equipment, access provisioning, and check-ins.",
+      "category": "automation",
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Digital paperwork and e-signatures",
+        "Training plan automation",
+        "IT access provisioning",
+        "Equipment ordering",
+        "30/60/90 day check-ins",
+        "Manager and buddy assignments"
+      ],
+      "benefits": [
+        "Reduce onboarding time 60%",
+        "Consistent experience for every hire",
+        "New employees productive faster",
+        "HR saves 5 hours per hire"
+      ],
+      "href": "/services/automation-hr-onboarding-automation",
       "source": "json"
     },
     {
@@ -7211,6 +7783,58 @@
         "Reconciliation engine runs grid-matching at 0400 and alerts you before staff arrive"
       ],
       "href": "/services/automation-integrated-commerce-flows",
+      "source": "json"
+    },
+    {
+      "id": "automation-inventory-automation",
+      "title": "Inventory Automation and Optimization",
+      "description": "Automate inventory tracking, reordering, and optimization. Demand forecasting, safety stock calculation, and supplier management.",
+      "category": "automation",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Real-time inventory tracking",
+        "Automated reorder points",
+        "Demand forecasting integration",
+        "Supplier management",
+        "Multi-location support",
+        "Shrinkage detection"
+      ],
+      "benefits": [
+        "Eliminate stockouts and overstock",
+        "Reduce carrying costs 20%",
+        "Automate purchase orders",
+        "Real-time visibility"
+      ],
+      "href": "/services/automation-inventory-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-invoice-processing-automated",
+      "title": "Automated Invoice Processing",
+      "description": "Capture, extract, validate, and process invoices automatically. Match against POs, route for approval, and post to accounting systems.",
+      "category": "automation",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "OCR invoice capture",
+        "Line-item extraction",
+        "PO matching and validation",
+        "Approval routing",
+        "ERP/accounting integration",
+        "Duplicate detection"
+      ],
+      "benefits": [
+        "Process invoices 15x faster",
+        "Eliminate data entry errors",
+        "Early payment discounts captured",
+        "Full audit trail"
+      ],
+      "href": "/services/automation-invoice-processing-automated",
       "source": "json"
     },
     {
@@ -7312,6 +7936,32 @@
       "source": "json"
     },
     {
+      "id": "automation-notification-automation",
+      "title": "Smart Notification Automation",
+      "description": "Intelligent notification routing and management. Right message, right channel, right time. Reduce notification fatigue while ensuring critical alerts are seen.",
+      "category": "automation",
+      "basic": "$99/mo",
+      "pro": "$249/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-channel: email, SMS, push, Slack",
+        "Smart routing rules",
+        "Priority-based escalation",
+        "Quiet hours and preferences",
+        "Delivery confirmation",
+        "Notification analytics"
+      ],
+      "benefits": [
+        "Reduce notification noise 60%",
+        "Critical alerts always seen",
+        "Respect user preferences",
+        "Higher engagement rates"
+      ],
+      "href": "/services/automation-notification-automation",
+      "source": "json"
+    },
+    {
       "id": "automation-process-mining-deep-dive",
       "title": "Process Mining Deep Dive",
       "description": "Deep-dive process analytics: auto-discover process maps from ERP, CRM, and BPM event logs; conformance checking per transaction; bottleneck and rework hotspot analysis with cycle-time and handover waste; RPA opportunity scoring per step; executive KPI dashboard.",
@@ -7361,6 +8011,84 @@
       "source": "json"
     },
     {
+      "id": "automation-report-automation",
+      "title": "Automated Report Generation",
+      "description": "Automatically generate and distribute reports. Pull data from multiple sources, format, and deliver on schedule. Excel, PDF, PowerPoint, and dashboards.",
+      "category": "automation",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-source data aggregation",
+        "Scheduled report generation",
+        "Excel, PDF, PowerPoint output",
+        "Email and Slack distribution",
+        "Template library",
+        "Drill-down dashboards"
+      ],
+      "benefits": [
+        "Eliminate manual report building",
+        "Always up-to-date reports",
+        "Distribute automatically",
+        "Self-service drill-down"
+      ],
+      "href": "/services/automation-report-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-rpa-process-automation",
+      "title": "RPA - Robotic Process Automation",
+      "description": "Automate repetitive software tasks with software robots. Data entry, form filling, report generation, system integration - no APIs needed.",
+      "category": "automation",
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Visual process recorder",
+        "Drag-drop workflow builder",
+        "Screen scraping and OCR",
+        "Excel, PDF, email automation",
+        "Error handling and retry logic",
+        "Execution monitoring dashboard"
+      ],
+      "benefits": [
+        "Automate 80% of repetitive tasks",
+        "24/7 operation without breaks",
+        "Zero errors vs manual entry",
+        "ROI typically under 3 months"
+      ],
+      "href": "/services/automation-rpa-process-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-social-media-automation",
+      "title": "Social Media Automation Suite",
+      "description": "Automate social media posting, monitoring, and engagement. Content curation, optimal scheduling, and response automation.",
+      "category": "automation",
+      "basic": "$149/mo",
+      "pro": "$399/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Auto-posting to 8+ platforms",
+        "Content curation from RSS/AI",
+        "Optimal timing per platform",
+        "Auto-responses to common queries",
+        "Mention monitoring",
+        "Engagement analytics"
+      ],
+      "benefits": [
+        "Save 10+ hours/week on social",
+        "Consistent posting schedule",
+        "Never miss a mention",
+        "Data-driven content strategy"
+      ],
+      "href": "/services/automation-social-media-automation",
+      "source": "json"
+    },
+    {
       "id": "automation-social-media-content-hub",
       "title": "Social Media Content Hub & Publisher",
       "description": "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, Instagram, Facebook, TikTok, YouTube), real-time engagement monitoring, and weekly performance reporting.",
@@ -7382,6 +8110,58 @@
         "Cut time spent per week on content ideation and scheduling by 70-80%"
       ],
       "href": "/services/automation-social-media-content-hub",
+      "source": "json"
+    },
+    {
+      "id": "automation-testing-automation",
+      "title": "Automated Testing Platform",
+      "description": "Automated software testing: UI, API, performance, and security. CI/CD integration with parallel execution and detailed reporting.",
+      "category": "automation",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Visual test recorder",
+        "API testing builder",
+        "Performance and load testing",
+        "Security vulnerability scanning",
+        "CI/CD integration",
+        "Parallel test execution"
+      ],
+      "benefits": [
+        "10x faster test execution",
+        "Catch bugs before production",
+        "Reduce QA costs 50%",
+        "Continuous quality in CI/CD"
+      ],
+      "href": "/services/automation-testing-automation",
+      "source": "json"
+    },
+    {
+      "id": "automation-workflow-automation-platform",
+      "title": "Workflow Automation Platform",
+      "description": "Connect your apps and automate business processes. Visual workflow builder with 200+ app integrations and conditional logic.",
+      "category": "automation",
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Visual workflow builder",
+        "200+ app integrations",
+        "Conditional logic and branching",
+        "Scheduled and trigger-based flows",
+        "Error handling and notifications",
+        "Team collaboration features"
+      ],
+      "benefits": [
+        "Eliminate manual handoffs between apps",
+        "Automate multi-step processes",
+        "Reduce process time 70%",
+        "No coding required"
+      ],
+      "href": "/services/automation-workflow-automation-platform",
       "source": "json"
     },
     {
@@ -10632,6 +11412,32 @@
       "source": "json"
     },
     {
+      "id": "it-automated-patching",
+      "title": "Automated Patch Management",
+      "description": "Keep all systems current with automated patching for Windows, macOS, Linux, third-party apps. Testing, approval workflows, rollback.",
+      "category": "it",
+      "basic": "$199/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Auto OS patching (Win, Mac, Linux)",
+        "Third-party app patching",
+        "Pre-deployment test sandbox",
+        "Approval workflows and scheduling",
+        "Instant rollback on issues",
+        "Compliance patch reporting"
+      ],
+      "benefits": [
+        "Close vulns within 48 hours",
+        "Eliminate manual patching",
+        "Test before deploy",
+        "Audit-ready reports"
+      ],
+      "href": "/services/it-automated-patching",
+      "source": "json"
+    },
+    {
       "id": "it-automation-orchestrator",
       "title": "IT Automation & Orchestration Platform",
       "description": "Enterprise IT automation platform with workflow orchestration, infrastructure provisioning, configuration management, and self-healing system capabilities.",
@@ -10726,6 +11532,32 @@
         "RPO of 15 minutes means zero more than 15 minutes of data lost"
       ],
       "href": "/services/it-backup-dr-bc-as-a-service",
+      "source": "json"
+    },
+    {
+      "id": "it-backup-dr-suite",
+      "title": "Backup and Disaster Recovery (BDR) Suite",
+      "description": "Enterprise backup and DR with automated failover, ransomware protection, and tested recovery procedures.",
+      "category": "it",
+      "basic": "$349/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Continuous incremental backups (15-min RPO)",
+        "Automated DR failover testing",
+        "Immutable ransomware-proof backups",
+        "Cloud and on-prem targets",
+        "Point-in-time DB recovery",
+        "Documented recovery runbooks"
+      ],
+      "benefits": [
+        "Recover from any outage in under 4 hours",
+        "Ransomware-proof backups",
+        "Tested recovery plans",
+        "Meet compliance retention"
+      ],
+      "href": "/services/it-backup-dr-suite",
       "source": "json"
     },
     {
@@ -10946,6 +11778,32 @@
         "Cloud spend allocated fairly each month"
       ],
       "href": "/services/it-cloud-cost-management-platform",
+      "source": "json"
+    },
+    {
+      "id": "it-cloud-migration-express",
+      "title": "Cloud Migration Express - Lift, Shift and Optimize",
+      "description": "End-to-end cloud migration: assessment, planning, migration, optimization, post-migration support. AWS, Azure, GCP certified engineers.",
+      "category": "it",
+      "basic": "$1,999/mo",
+      "pro": "$4,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Full infrastructure assessment",
+        "Detailed migration plan with rollback",
+        "Zero-downtime migration",
+        "Post-migration optimization (35% savings)",
+        "Data validation checks",
+        "Team training"
+      ],
+      "benefits": [
+        "Migrate without business interruption",
+        "Reduce infrastructure costs 30-50%",
+        "Auto-scaling eliminates capacity planning",
+        "Enterprise security from day one"
+      ],
+      "href": "/services/it-cloud-migration-express",
       "source": "json"
     },
     {
@@ -11410,6 +12268,32 @@
       "source": "json"
     },
     {
+      "id": "it-endpoint-protection",
+      "title": "Endpoint Protection and Device Security",
+      "description": "Next-gen antivirus, EDR, and device management. Protect laptops, desktops, servers, mobile from malware, ransomware, zero-day.",
+      "category": "it",
+      "basic": "$499/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "AI-powered next-gen antivirus",
+        "Endpoint detection and response",
+        "Device encryption enforcement",
+        "Application whitelisting",
+        "USB and media controls",
+        "Threat hunting and investigation"
+      ],
+      "benefits": [
+        "Block zero-day threats with AI",
+        "Detect and respond to active threats",
+        "Meet cyber insurance requirements",
+        "Centralized endpoint visibility"
+      ],
+      "href": "/services/it-endpoint-protection",
+      "source": "json"
+    },
+    {
       "id": "it-endpoint-security-compliance",
       "title": "Endpoint Security & Compliance Monitor",
       "description": "EDR and XDR endpoint coverage with compliance attestation: CIS benchmark checks, disk-encrypt status, OS patch-level verification, software-inventory SBOM per asset, CISA KEV auto-detection, and SCAP reporting for regulated assessments.",
@@ -11455,6 +12339,32 @@
         "Endpoint firewall stops lateral movement as EDR detects and alarms"
       ],
       "href": "/services/it-endpoint-security-compliance-monitor",
+      "source": "json"
+    },
+    {
+      "id": "it-enterprise-vpn",
+      "title": "Enterprise VPN and Secure Remote Access",
+      "description": "Secure remote access with zero-trust network access, split tunneling, and MFA for all connections.",
+      "category": "it",
+      "basic": "$249/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Zero-trust network access (ZTNA)",
+        "Split tunneling for performance",
+        "Multi-factor authentication",
+        "Auto VPN client deployment",
+        "Connection analytics",
+        "All major platforms"
+      ],
+      "benefits": [
+        "Secure access from anywhere",
+        "Zero-trust: never trust always verify",
+        "Better performance with split tunnel",
+        "Full connection visibility"
+      ],
+      "href": "/services/it-enterprise-vpn",
       "source": "json"
     },
     {
@@ -11650,6 +12560,58 @@
       "source": "json"
     },
     {
+      "id": "it-it-asset-mgmt",
+      "title": "IT Asset Management and Inventory",
+      "description": "Complete IT asset lifecycle from procurement to disposal. Track hardware, licenses, warranties, compliance from one dashboard.",
+      "category": "it",
+      "basic": "$249/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Automated asset discovery",
+        "Software license compliance",
+        "Warranty and maintenance alerts",
+        "Hardware lifecycle planning",
+        "Disposal certificates",
+        "Financial depreciation tracking"
+      ],
+      "benefits": [
+        "Know exactly what you have",
+        "Avoid license penalties",
+        "Plan refreshes proactively",
+        "Audit-ready documentation"
+      ],
+      "href": "/services/it-it-asset-mgmt",
+      "source": "json"
+    },
+    {
+      "id": "it-it-strategy-consulting",
+      "title": "IT Strategy and Digital Transformation Consulting",
+      "description": "Fractional CIO/CTO services: technology roadmap, vendor evaluation, digital transformation planning, and IT governance.",
+      "category": "it",
+      "basic": "$1,999/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Current-state tech assessment",
+        "3-year roadmap with budget",
+        "Vendor evaluation and RFP management",
+        "IT governance framework",
+        "Digital transformation workshops",
+        "Monthly strategy sessions"
+      ],
+      "benefits": [
+        "Enterprise IT leadership at fraction of cost",
+        "Confident tech investment decisions",
+        "Align IT with business goals",
+        "Avoid costly mistakes"
+      ],
+      "href": "/services/it-it-strategy-consulting",
+      "source": "json"
+    },
+    {
       "id": "it-itil-service-management",
       "title": "ITIL Service Management (ITSM) Platform",
       "description": "Full ITIL-aligned service management with AI-powered ticketing, change management automation, CMDB discovery, and self-service portal for enterprise IT operations.",
@@ -11795,6 +12757,32 @@
       "source": "json"
     },
     {
+      "id": "it-managed-it-ops",
+      "title": "Complete Managed IT Operations",
+      "description": "Full-service IT management. We become your IT department - helpdesk, infrastructure, security, monitoring, and strategic planning.",
+      "category": "it",
+      "basic": "$1,499/mo",
+      "pro": "$3,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "24/7 network monitoring",
+        "Unlimited helpdesk (phone, email, remote)",
+        "Proactive maintenance and patching",
+        "IT budget and vendor management",
+        "Quarterly tech reviews",
+        "Dedicated account manager"
+      ],
+      "benefits": [
+        "Flat predictable IT costs",
+        "24/7 coverage without hiring",
+        "Proactive prevention vs reactive fixes",
+        "Strategic IT roadmap"
+      ],
+      "href": "/services/it-managed-it-ops",
+      "source": "json"
+    },
+    {
       "id": "it-managed-soc",
       "title": "Managed SOC + Threat Intelligence as a Service",
       "description": "24x7 managed SOC: SIEM event correlation threat hunting from 50+ feeds incident response managed alert triage monthly executive cyber risk report compliance evidence B2B enterprise.",
@@ -11814,6 +12802,32 @@
         "IOC auto-block reduces incident dwell time"
       ],
       "href": "/services/it-managed-soc",
+      "source": "json"
+    },
+    {
+      "id": "it-mdm-device-mgmt",
+      "title": "Mobile Device Management (MDM) Suite",
+      "description": "Manage and secure all company and BYOD devices. Enforce policies, deploy apps, remote wipe lost devices.",
+      "category": "it",
+      "basic": "$299/mo",
+      "pro": "$749/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "iOS, Android, Windows, macOS enrollment",
+        "Auto security policy enforcement",
+        "App deployment and management",
+        "Remote lock and wipe",
+        "HIPAA/PCI compliance reporting",
+        "BYOD containerization"
+      ],
+      "benefits": [
+        "Secure company data on any device",
+        "Deploy apps to 1000s instantly",
+        "Meet mobile compliance",
+        "Separate work/personal on BYOD"
+      ],
+      "href": "/services/it-mdm-device-mgmt",
       "source": "json"
     },
     {
@@ -11939,6 +12953,32 @@
       "source": "json"
     },
     {
+      "id": "it-network-security-audit",
+      "title": "Comprehensive Network Security Audit",
+      "description": "Deep security assessment: network architecture, access controls, vulnerability scanning, pentesting, compliance gaps, and remediation roadmap.",
+      "category": "it",
+      "basic": "$2,499/mo",
+      "pro": "$5,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "External and internal vuln scanning",
+        "Penetration testing by certified hackers",
+        "Network architecture review",
+        "Access control audit",
+        "HIPAA/PCI/SOC2 gap analysis",
+        "Prioritized remediation roadmap"
+      ],
+      "benefits": [
+        "Find vulnerabilities before attackers",
+        "Meet compliance requirements",
+        "Actionable remediation plan",
+        "Reduce breach risk 80%+"
+      ],
+      "href": "/services/it-network-security-audit",
+      "source": "json"
+    },
+    {
       "id": "it-network-security-monitoring",
       "title": "Network Security Monitoring & SIEM",
       "description": "Real-time network traffic analysis, threat correlation, and centralized Security Information and Event Management (SIEM) for enterprises requiring continuous security posture visibility.",
@@ -11961,6 +13001,32 @@
         "Meet regulatory requirements with automated reports"
       ],
       "href": "/services/it-network-security-monitoring",
+      "source": "json"
+    },
+    {
+      "id": "it-nextgen-firewall",
+      "title": "Next-Gen Firewall Management and Monitoring",
+      "description": "Deploy, configure, monitor NGFWs with intrusion prevention, web filtering, application control, 24/7 threat monitoring.",
+      "category": "it",
+      "basic": "$399/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "NGFW deployment and rule optimization",
+        "Intrusion prevention system",
+        "SSL/TLS inspection",
+        "Web and application filtering",
+        "24/7 SOC monitoring",
+        "Monthly health reports"
+      ],
+      "benefits": [
+        "Block advanced threats at network edge",
+        "Control application usage",
+        "Prevent data exfiltration",
+        "Compliance-ready config"
+      ],
+      "href": "/services/it-nextgen-firewall",
       "source": "json"
     },
     {
@@ -12062,6 +13128,32 @@
         "Proactive anomaly detection"
       ],
       "href": "/services/it-observability-unified",
+      "source": "json"
+    },
+    {
+      "id": "it-outsourced-helpdesk",
+      "title": "Outsourced IT Helpdesk (Tier 1-2)",
+      "description": "White-label or co-branded IT helpdesk. Certified technicians handle password resets, software issues, hardware troubleshooting, onboarding.",
+      "category": "it",
+      "basic": "$999/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Unlimited tickets (phone, chat, email)",
+        "CompTIA A+ certified technicians",
+        "Under 5-min first response",
+        "Escalation for complex issues",
+        "Your environment knowledge base",
+        "SLA-backed response times"
+      ],
+      "benefits": [
+        "24/7 support without hiring",
+        "Under 5-min response",
+        "Scales for onboarding surges",
+        "Detailed ticket analytics"
+      ],
+      "href": "/services/it-outsourced-helpdesk",
       "source": "json"
     },
     {
@@ -12313,6 +13405,32 @@
       "source": "json"
     },
     {
+      "id": "it-server-infra-mgmt",
+      "title": "Server and Infrastructure Management",
+      "description": "24/7 management of physical and virtual servers: monitoring, patching, capacity planning, performance tuning, incident response.",
+      "category": "it",
+      "basic": "$599/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "24/7 server monitoring",
+        "OS and app patch management",
+        "Capacity planning and right-sizing",
+        "Performance baseline and tuning",
+        "Under 15-min incident response",
+        "Monthly health reports"
+      ],
+      "benefits": [
+        "Uptime with proactive monitoring",
+        "Auto security patch compliance",
+        "Optimized performance",
+        "Predictable costs"
+      ],
+      "href": "/services/it-server-infra-mgmt",
+      "source": "json"
+    },
+    {
       "id": "it-serverless-api-gateway",
       "title": "Serverless API Gateway",
       "description": "Fully managed API gateway with rate limiting, auth, caching, and transformation. Pay-per-request pricing, auto-scaling to millions of RPS.",
@@ -12559,6 +13677,32 @@
       "source": "json"
     },
     {
+      "id": "it-voip-unified-comms",
+      "title": "VoIP and Unified Communications Setup",
+      "description": "Deploy business phone systems, video conferencing, and team messaging. Replace legacy PBX with modern cloud comms.",
+      "category": "it",
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "$1,299/mo",
+      "popular": false,
+      "features": [
+        "Cloud PBX with unlimited extensions",
+        "HD video conferencing (500 participants)",
+        "Call routing, IVR, auto-attendant",
+        "Call recording and analytics",
+        "CRM integration",
+        "Mobile and desk phone support"
+      ],
+      "benefits": [
+        "Reduce phone costs 40-60%",
+        "Work from anywhere",
+        "Professional auto-attendant",
+        "Scales as you grow"
+      ],
+      "href": "/services/it-voip-unified-comms",
+      "source": "json"
+    },
+    {
       "id": "it-wireless-network-design",
       "title": "Wireless Network Design & Optimization",
       "description": "Enterprise Wi-Fi and wireless infrastructure design, site surveys, RF optimization, and capacity planning for campuses, warehouses, and smart buildings.",
@@ -12581,6 +13725,32 @@
         "Future-proof for Wi-Fi 6E and Wi-Fi 7"
       ],
       "href": "/services/it-wireless-network-design",
+      "source": "json"
+    },
+    {
+      "id": "it-workstation-provisioning",
+      "title": "Workstation Setup and Provisioning",
+      "description": "Fast standardized deployment. Configure laptops/desktops with your software stack, security policies, user profiles - ready day one.",
+      "category": "it",
+      "basic": "$149/mo",
+      "pro": "$349/mo",
+      "enterprise": "$799/mo",
+      "popular": false,
+      "features": [
+        "Standard hardware imaging",
+        "Automated software installation",
+        "Security policy application",
+        "User profile migration",
+        "Asset tag and inventory",
+        "Remote setup available"
+      ],
+      "benefits": [
+        "New employees productive day one",
+        "Standardized secure configs",
+        "No IT bottlenecks for onboarding",
+        "Complete asset inventory"
+      ],
+      "href": "/services/it-workstation-provisioning",
       "source": "json"
     },
     {

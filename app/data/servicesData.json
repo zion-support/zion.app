@@ -19760,5 +19760,1535 @@
     "category": "ai",
     "popular": false,
     "industry": "Marketing"
+  },
+  {
+    "id": "it-managed-it-ops",
+    "title": "Complete Managed IT Operations",
+    "description": "Full-service IT management. We become your IT department - helpdesk, infrastructure, security, monitoring, and strategic planning.",
+    "features": [
+      "24/7 network monitoring",
+      "Unlimited helpdesk (phone, email, remote)",
+      "Proactive maintenance and patching",
+      "IT budget and vendor management",
+      "Quarterly tech reviews",
+      "Dedicated account manager"
+    ],
+    "benefits": [
+      "Flat predictable IT costs",
+      "24/7 coverage without hiring",
+      "Proactive prevention vs reactive fixes",
+      "Strategic IT roadmap"
+    ],
+    "pricing": {
+      "basic": "$1,499/mo",
+      "pro": "$3,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-managed-it-ops",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🖥️",
+    "href": "/services/it-managed-it-ops",
+    "popular": true,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-network-security-audit",
+    "title": "Comprehensive Network Security Audit",
+    "description": "Deep security assessment: network architecture, access controls, vulnerability scanning, pentesting, compliance gaps, and remediation roadmap.",
+    "features": [
+      "External and internal vuln scanning",
+      "Penetration testing by certified hackers",
+      "Network architecture review",
+      "Access control audit",
+      "HIPAA/PCI/SOC2 gap analysis",
+      "Prioritized remediation roadmap"
+    ],
+    "benefits": [
+      "Find vulnerabilities before attackers",
+      "Meet compliance requirements",
+      "Actionable remediation plan",
+      "Reduce breach risk 80%+"
+    ],
+    "pricing": {
+      "basic": "$2,499/mo",
+      "pro": "$5,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-network-security-audit",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🛡️",
+    "href": "/services/it-network-security-audit",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-cloud-migration-express",
+    "title": "Cloud Migration Express - Lift, Shift and Optimize",
+    "description": "End-to-end cloud migration: assessment, planning, migration, optimization, post-migration support. AWS, Azure, GCP certified engineers.",
+    "features": [
+      "Full infrastructure assessment",
+      "Detailed migration plan with rollback",
+      "Zero-downtime migration",
+      "Post-migration optimization (35% savings)",
+      "Data validation checks",
+      "Team training"
+    ],
+    "benefits": [
+      "Migrate without business interruption",
+      "Reduce infrastructure costs 30-50%",
+      "Auto-scaling eliminates capacity planning",
+      "Enterprise security from day one"
+    ],
+    "pricing": {
+      "basic": "$1,999/mo",
+      "pro": "$4,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-cloud-migration-express",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "☁️",
+    "href": "/services/it-cloud-migration-express",
+    "popular": true,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-backup-dr-suite",
+    "title": "Backup and Disaster Recovery (BDR) Suite",
+    "description": "Enterprise backup and DR with automated failover, ransomware protection, and tested recovery procedures.",
+    "features": [
+      "Continuous incremental backups (15-min RPO)",
+      "Automated DR failover testing",
+      "Immutable ransomware-proof backups",
+      "Cloud and on-prem targets",
+      "Point-in-time DB recovery",
+      "Documented recovery runbooks"
+    ],
+    "benefits": [
+      "Recover from any outage in under 4 hours",
+      "Ransomware-proof backups",
+      "Tested recovery plans",
+      "Meet compliance retention"
+    ],
+    "pricing": {
+      "basic": "$349/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-backup-dr-suite",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💾",
+    "href": "/services/it-backup-dr-suite",
+    "popular": true,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-voip-unified-comms",
+    "title": "VoIP and Unified Communications Setup",
+    "description": "Deploy business phone systems, video conferencing, and team messaging. Replace legacy PBX with modern cloud comms.",
+    "features": [
+      "Cloud PBX with unlimited extensions",
+      "HD video conferencing (500 participants)",
+      "Call routing, IVR, auto-attendant",
+      "Call recording and analytics",
+      "CRM integration",
+      "Mobile and desk phone support"
+    ],
+    "benefits": [
+      "Reduce phone costs 40-60%",
+      "Work from anywhere",
+      "Professional auto-attendant",
+      "Scales as you grow"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "$1,299/mo"
+    },
+    "contactInfo": {
+      "website": "/services/it-voip-unified-comms",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📞",
+    "href": "/services/it-voip-unified-comms",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-it-strategy-consulting",
+    "title": "IT Strategy and Digital Transformation Consulting",
+    "description": "Fractional CIO/CTO services: technology roadmap, vendor evaluation, digital transformation planning, and IT governance.",
+    "features": [
+      "Current-state tech assessment",
+      "3-year roadmap with budget",
+      "Vendor evaluation and RFP management",
+      "IT governance framework",
+      "Digital transformation workshops",
+      "Monthly strategy sessions"
+    ],
+    "benefits": [
+      "Enterprise IT leadership at fraction of cost",
+      "Confident tech investment decisions",
+      "Align IT with business goals",
+      "Avoid costly mistakes"
+    ],
+    "pricing": {
+      "basic": "$1,999/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-it-strategy-consulting",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎯",
+    "href": "/services/it-it-strategy-consulting",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-server-infra-mgmt",
+    "title": "Server and Infrastructure Management",
+    "description": "24/7 management of physical and virtual servers: monitoring, patching, capacity planning, performance tuning, incident response.",
+    "features": [
+      "24/7 server monitoring",
+      "OS and app patch management",
+      "Capacity planning and right-sizing",
+      "Performance baseline and tuning",
+      "Under 15-min incident response",
+      "Monthly health reports"
+    ],
+    "benefits": [
+      "Uptime with proactive monitoring",
+      "Auto security patch compliance",
+      "Optimized performance",
+      "Predictable costs"
+    ],
+    "pricing": {
+      "basic": "$599/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-server-infra-mgmt",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🖧",
+    "href": "/services/it-server-infra-mgmt",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-endpoint-protection",
+    "title": "Endpoint Protection and Device Security",
+    "description": "Next-gen antivirus, EDR, and device management. Protect laptops, desktops, servers, mobile from malware, ransomware, zero-day.",
+    "features": [
+      "AI-powered next-gen antivirus",
+      "Endpoint detection and response",
+      "Device encryption enforcement",
+      "Application whitelisting",
+      "USB and media controls",
+      "Threat hunting and investigation"
+    ],
+    "benefits": [
+      "Block zero-day threats with AI",
+      "Detect and respond to active threats",
+      "Meet cyber insurance requirements",
+      "Centralized endpoint visibility"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-endpoint-protection",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔒",
+    "href": "/services/it-endpoint-protection",
+    "popular": true,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-mdm-device-mgmt",
+    "title": "Mobile Device Management (MDM) Suite",
+    "description": "Manage and secure all company and BYOD devices. Enforce policies, deploy apps, remote wipe lost devices.",
+    "features": [
+      "iOS, Android, Windows, macOS enrollment",
+      "Auto security policy enforcement",
+      "App deployment and management",
+      "Remote lock and wipe",
+      "HIPAA/PCI compliance reporting",
+      "BYOD containerization"
+    ],
+    "benefits": [
+      "Secure company data on any device",
+      "Deploy apps to 1000s instantly",
+      "Meet mobile compliance",
+      "Separate work/personal on BYOD"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$749/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-mdm-device-mgmt",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📱",
+    "href": "/services/it-mdm-device-mgmt",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-enterprise-vpn",
+    "title": "Enterprise VPN and Secure Remote Access",
+    "description": "Secure remote access with zero-trust network access, split tunneling, and MFA for all connections.",
+    "features": [
+      "Zero-trust network access (ZTNA)",
+      "Split tunneling for performance",
+      "Multi-factor authentication",
+      "Auto VPN client deployment",
+      "Connection analytics",
+      "All major platforms"
+    ],
+    "benefits": [
+      "Secure access from anywhere",
+      "Zero-trust: never trust always verify",
+      "Better performance with split tunnel",
+      "Full connection visibility"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-enterprise-vpn",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔐",
+    "href": "/services/it-enterprise-vpn",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-nextgen-firewall",
+    "title": "Next-Gen Firewall Management and Monitoring",
+    "description": "Deploy, configure, monitor NGFWs with intrusion prevention, web filtering, application control, 24/7 threat monitoring.",
+    "features": [
+      "NGFW deployment and rule optimization",
+      "Intrusion prevention system",
+      "SSL/TLS inspection",
+      "Web and application filtering",
+      "24/7 SOC monitoring",
+      "Monthly health reports"
+    ],
+    "benefits": [
+      "Block advanced threats at network edge",
+      "Control application usage",
+      "Prevent data exfiltration",
+      "Compliance-ready config"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-nextgen-firewall",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧱",
+    "href": "/services/it-nextgen-firewall",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-workstation-provisioning",
+    "title": "Workstation Setup and Provisioning",
+    "description": "Fast standardized deployment. Configure laptops/desktops with your software stack, security policies, user profiles - ready day one.",
+    "features": [
+      "Standard hardware imaging",
+      "Automated software installation",
+      "Security policy application",
+      "User profile migration",
+      "Asset tag and inventory",
+      "Remote setup available"
+    ],
+    "benefits": [
+      "New employees productive day one",
+      "Standardized secure configs",
+      "No IT bottlenecks for onboarding",
+      "Complete asset inventory"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$349/mo",
+      "enterprise": "$799/mo"
+    },
+    "contactInfo": {
+      "website": "/services/it-workstation-provisioning",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💻",
+    "href": "/services/it-workstation-provisioning",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-outsourced-helpdesk",
+    "title": "Outsourced IT Helpdesk (Tier 1-2)",
+    "description": "White-label or co-branded IT helpdesk. Certified technicians handle password resets, software issues, hardware troubleshooting, onboarding.",
+    "features": [
+      "Unlimited tickets (phone, chat, email)",
+      "CompTIA A+ certified technicians",
+      "Under 5-min first response",
+      "Escalation for complex issues",
+      "Your environment knowledge base",
+      "SLA-backed response times"
+    ],
+    "benefits": [
+      "24/7 support without hiring",
+      "Under 5-min response",
+      "Scales for onboarding surges",
+      "Detailed ticket analytics"
+    ],
+    "pricing": {
+      "basic": "$999/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-outsourced-helpdesk",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎧",
+    "href": "/services/it-outsourced-helpdesk",
+    "popular": true,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-automated-patching",
+    "title": "Automated Patch Management",
+    "description": "Keep all systems current with automated patching for Windows, macOS, Linux, third-party apps. Testing, approval workflows, rollback.",
+    "features": [
+      "Auto OS patching (Win, Mac, Linux)",
+      "Third-party app patching",
+      "Pre-deployment test sandbox",
+      "Approval workflows and scheduling",
+      "Instant rollback on issues",
+      "Compliance patch reporting"
+    ],
+    "benefits": [
+      "Close vulns within 48 hours",
+      "Eliminate manual patching",
+      "Test before deploy",
+      "Audit-ready reports"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-automated-patching",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔧",
+    "href": "/services/it-automated-patching",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "it-it-asset-mgmt",
+    "title": "IT Asset Management and Inventory",
+    "description": "Complete IT asset lifecycle from procurement to disposal. Track hardware, licenses, warranties, compliance from one dashboard.",
+    "features": [
+      "Automated asset discovery",
+      "Software license compliance",
+      "Warranty and maintenance alerts",
+      "Hardware lifecycle planning",
+      "Disposal certificates",
+      "Financial depreciation tracking"
+    ],
+    "benefits": [
+      "Know exactly what you have",
+      "Avoid license penalties",
+      "Plan refreshes proactively",
+      "Audit-ready documentation"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-it-asset-mgmt",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📦",
+    "href": "/services/it-it-asset-mgmt",
+    "popular": false,
+    "category": "it",
+    "industry": "General"
+  },
+  {
+    "id": "ai-conversational-ai-platform",
+    "title": "Conversational AI Platform",
+    "description": "Build and deploy intelligent chatbots and virtual assistants that understand context, maintain conversation memory, and integrate with your systems.",
+    "features": [
+      "Multi-language NLU with 95%+ accuracy",
+      "Conversation memory and context",
+      "Omnichannel: web, mobile, WhatsApp, SMS",
+      "CRM and helpdesk integration",
+      "Human handoff with full context",
+      "Analytics: intent, sentiment, resolution"
+    ],
+    "benefits": [
+      "Reduce support costs 40%",
+      "24/7 instant customer responses",
+      "Consistent brand voice at scale",
+      "Handle 1000s of concurrent conversations"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-conversational-ai-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🤖",
+    "href": "/services/ai-conversational-ai-platform",
+    "popular": true,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-predictive-analytics-engine",
+    "title": "Predictive Analytics Engine",
+    "description": "Turn historical data into forward-looking insights. Demand forecasting, churn prediction, revenue projection with explainable AI models.",
+    "features": [
+      "Automated feature engineering",
+      "Time-series forecasting (ARIMA, Prophet, LSTM)",
+      "Churn and LTV prediction",
+      "What-if scenario modeling",
+      "Explainable AI (SHAP values)",
+      "API for real-time predictions"
+    ],
+    "benefits": [
+      "Forecast demand with 90%+ accuracy",
+      "Identify at-risk customers early",
+      "Data-driven decision making",
+      "No data science team required"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-predictive-analytics-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📈",
+    "href": "/services/ai-predictive-analytics-engine",
+    "popular": true,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-document-ai-processor",
+    "title": "Document AI - Intelligent Processing",
+    "description": "Extract, classify, and process data from documents with AI. Invoices, contracts, forms, receipts - structured data from unstructured documents.",
+    "features": [
+      "OCR with 99%+ accuracy",
+      "Invoice and receipt data extraction",
+      "Contract clause identification",
+      "Form field extraction",
+      "Auto-classification by type",
+      "Human-in-the-loop verification"
+    ],
+    "benefits": [
+      "Process documents 20x faster",
+      "Eliminate manual data extraction",
+      "99%+ extraction accuracy",
+      "Audit trail for compliance"
+    ],
+    "pricing": {
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-document-ai-processor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📄",
+    "href": "/services/ai-document-ai-processor",
+    "popular": true,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-ai-chatbot-builder",
+    "title": "AI Chatbot Builder - No Code",
+    "description": "Drag-and-drop chatbot builder with pre-trained industry templates. Deploy on your website, WhatsApp, or social media in minutes.",
+    "features": [
+      "Visual flow builder",
+      "Pre-trained industry templates",
+      "Website, WhatsApp, FB Messenger deploy",
+      "Lead qualification built-in",
+      "CRM integration",
+      "Conversation analytics"
+    ],
+    "benefits": [
+      "Build chatbots without coding",
+      "Deploy in hours not weeks",
+      "Qualify leads automatically",
+      "Reduce support volume 30%"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ai-chatbot-builder",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💬",
+    "href": "/services/ai-ai-chatbot-builder",
+    "popular": true,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-recommendation-engine",
+    "title": "AI Recommendation Engine",
+    "description": "Personalized product, content, and service recommendations. Increase conversion and engagement with collaborative and content-based filtering.",
+    "features": [
+      "Collaborative filtering",
+      "Content-based recommendations",
+      "Real-time personalization API",
+      "A/B testing framework",
+      "Cold-start handling",
+      "Explainable recommendations"
+    ],
+    "benefits": [
+      "Increase conversion 15-35%",
+      "Higher average order value",
+      "Improved customer satisfaction",
+      "Works from day one with cold start"
+    ],
+    "pricing": {
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-recommendation-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎯",
+    "href": "/services/ai-recommendation-engine",
+    "popular": false,
+    "category": "ai",
+    "industry": "E-Commerce"
+  },
+  {
+    "id": "ai-fraud-detection-ai",
+    "title": "AI Fraud Detection and Prevention",
+    "description": "Real-time fraud detection for transactions, accounts, and applications. ML models trained on billions of transactions with sub-100ms scoring.",
+    "features": [
+      "Real-time transaction scoring",
+      "Behavioral biometrics",
+      "Account takeover detection",
+      "Application fraud scoring",
+      "Explainable decline reasons",
+      "Continuous model retraining"
+    ],
+    "benefits": [
+      "Reduce fraud losses 60-80%",
+      "Sub-100ms scoring latency",
+      "Fewer false positives",
+      "Adaptive to new fraud patterns"
+    ],
+    "pricing": {
+      "basic": "$1,499/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-fraud-detection-ai",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🛡️",
+    "href": "/services/ai-fraud-detection-ai",
+    "popular": true,
+    "category": "ai",
+    "industry": "Finance"
+  },
+  {
+    "id": "ai-sentiment-analysis-api",
+    "title": "Sentiment Analysis API",
+    "description": "Analyze sentiment, emotion, and intent from text in 20+ languages. Monitor brand perception, customer feedback, and social media at scale.",
+    "features": [
+      "20+ language support",
+      "Emotion detection (joy, anger, fear, etc.)",
+      "Aspect-based sentiment",
+      "Real-time streaming API",
+      "Historical trend analysis",
+      "Custom model training"
+    ],
+    "benefits": [
+      "Understand customer sentiment at scale",
+      "Detect PR crises early",
+      "Track brand perception trends",
+      "Multi-language support"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-sentiment-analysis-api",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "😊",
+    "href": "/services/ai-sentiment-analysis-api",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-ocr-data-extraction",
+    "title": "OCR and Intelligent Data Extraction",
+    "description": "Advanced OCR with AI-powered data extraction from scanned documents, photos, and PDFs. Handles handwriting, tables, and complex layouts.",
+    "features": [
+      "99.5%+ OCR accuracy",
+      "Handwriting recognition",
+      "Table and form extraction",
+      "Multi-language support",
+      "Batch processing (10,000+ pages/hr)",
+      "Structured JSON output"
+    ],
+    "benefits": [
+      "Digitize paper documents at scale",
+      "Extract data from any document type",
+      "Process 10,000+ pages per hour",
+      "Structured output ready for databases"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ocr-data-extraction",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "👁️",
+    "href": "/services/ai-ocr-data-extraction",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-voice-ai-assistant",
+    "title": "Voice AI - Speech Recognition and Synthesis",
+    "description": "Build voice-enabled applications with speech-to-text, text-to-speech, and voice biometrics. Support for 30+ languages and custom voice cloning.",
+    "features": [
+      "Speech-to-text 95%+ accuracy",
+      "Natural text-to-speech voices",
+      "Voice biometrics and verification",
+      "30+ language support",
+      "Custom voice cloning",
+      "Real-time streaming"
+    ],
+    "benefits": [
+      "Enable voice interfaces for any app",
+      "Natural-sounding voice synthesis",
+      "Voice-based authentication",
+      "Global language support"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-voice-ai-assistant",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎙️",
+    "href": "/services/ai-voice-ai-assistant",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-ai-search-platform",
+    "title": "AI-Powered Search Platform",
+    "description": "Semantic search that understands meaning, not just keywords. Vector search, natural language queries, and personalized results for your content.",
+    "features": [
+      "Semantic vector search",
+      "Natural language query understanding",
+      "Personalized results per user",
+      "Faceted search and filtering",
+      "Search analytics dashboard",
+      "API-first architecture"
+    ],
+    "benefits": [
+      "Users find what they need 3x faster",
+      "Understands intent not just keywords",
+      "Personalized search experience",
+      "Works with any content source"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ai-search-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔍",
+    "href": "/services/ai-ai-search-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-predictive-maintenance-644",
+    "title": "Predictive Maintenance AI",
+    "description": "Predict equipment failures before they happen. IoT sensor data analysis, anomaly detection, and maintenance scheduling optimization.",
+    "features": [
+      "IoT sensor data ingestion",
+      "Anomaly detection algorithms",
+      "Failure prediction (days/weeks ahead)",
+      "Maintenance scheduling optimization",
+      "Remaining useful life estimates",
+      "Dashboard with equipment health"
+    ],
+    "benefits": [
+      "Reduce unplanned downtime 50%",
+      "Extend equipment life 20%",
+      "Optimize maintenance costs",
+      "Prevent catastrophic failures"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-predictive-maintenance-644",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚙️",
+    "href": "/services/ai-predictive-maintenance-644",
+    "popular": true,
+    "category": "ai",
+    "industry": "Manufacturing"
+  },
+  {
+    "id": "ai-demand-forecasting",
+    "title": "AI Demand Forecasting",
+    "description": "Accurate demand predictions using ML models that incorporate seasonality, trends, promotions, weather, and external factors.",
+    "features": [
+      "Multi-model ensemble (ARIMA, Prophet, XGBoost)",
+      "External factor integration (weather, events)",
+      "Promotion and pricing impact modeling",
+      "SKU-level and aggregate forecasts",
+      "Confidence intervals",
+      "What-if scenario planning"
+    ],
+    "benefits": [
+      "Reduce stockouts 40%",
+      "Lower inventory carrying costs",
+      "Optimize procurement timing",
+      "Plan for seasonal demand"
+    ],
+    "pricing": {
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-demand-forecasting",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📊",
+    "href": "/services/ai-demand-forecasting",
+    "popular": false,
+    "category": "ai",
+    "industry": "Retail"
+  },
+  {
+    "id": "ai-content-moderation-ai",
+    "title": "AI Content Moderation",
+    "description": "Automatically detect and filter inappropriate content - text, images, and video. Keep your platform safe and compliant.",
+    "features": [
+      "Text toxicity and hate speech detection",
+      "Image and video content analysis",
+      "Spam and scam detection",
+      "Custom policy rules",
+      "Human review queue",
+      "Real-time and batch processing"
+    ],
+    "benefits": [
+      "Protect your users from harmful content",
+      "Scale moderation without hiring",
+      "Custom policies for your platform",
+      "Real-time detection"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-content-moderation-ai",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🛡️",
+    "href": "/services/ai-content-moderation-ai",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-lead-scoring-ai",
+    "title": "AI Lead Scoring and Qualification",
+    "description": "Automatically score and qualify leads based on behavior, firmographics, and engagement. Prioritize your sales team's time on the best prospects.",
+    "features": [
+      "Behavioral scoring model",
+      "Firmographic enrichment",
+      "Engagement tracking",
+      "Sales-ready lead alerts",
+      "CRM integration",
+      "Custom scoring rules"
+    ],
+    "benefits": [
+      "Focus sales on best leads",
+      "Increase conversion 25-40%",
+      "Reduce sales cycle length",
+      "Data-driven lead prioritization"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-lead-scoring-ai",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏆",
+    "href": "/services/ai-lead-scoring-ai",
+    "popular": true,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "ai-ai-data-labeling",
+    "title": "AI Data Labeling and Annotation Platform",
+    "description": "High-quality training data for your ML models. Image, text, video, and audio annotation with quality control and expert labelers.",
+    "features": [
+      "Image bounding box and segmentation",
+      "Text NER and classification",
+      "Video frame annotation",
+      "Audio transcription and labeling",
+      "Quality control with consensus",
+      "API for automated pipelines"
+    ],
+    "benefits": [
+      "Get training data 10x faster",
+      "95%+ label accuracy",
+      "Scale labeling on demand",
+      "Expert labelers for complex tasks"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ai-data-labeling",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏷️",
+    "href": "/services/ai-ai-data-labeling",
+    "popular": false,
+    "category": "ai",
+    "industry": "General"
+  },
+  {
+    "id": "automation-rpa-process-automation",
+    "title": "RPA - Robotic Process Automation",
+    "description": "Automate repetitive software tasks with software robots. Data entry, form filling, report generation, system integration - no APIs needed.",
+    "features": [
+      "Visual process recorder",
+      "Drag-drop workflow builder",
+      "Screen scraping and OCR",
+      "Excel, PDF, email automation",
+      "Error handling and retry logic",
+      "Execution monitoring dashboard"
+    ],
+    "benefits": [
+      "Automate 80% of repetitive tasks",
+      "24/7 operation without breaks",
+      "Zero errors vs manual entry",
+      "ROI typically under 3 months"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-rpa-process-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🤖",
+    "href": "/services/automation-rpa-process-automation",
+    "popular": true,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-workflow-automation-platform",
+    "title": "Workflow Automation Platform",
+    "description": "Connect your apps and automate business processes. Visual workflow builder with 200+ app integrations and conditional logic.",
+    "features": [
+      "Visual workflow builder",
+      "200+ app integrations",
+      "Conditional logic and branching",
+      "Scheduled and trigger-based flows",
+      "Error handling and notifications",
+      "Team collaboration features"
+    ],
+    "benefits": [
+      "Eliminate manual handoffs between apps",
+      "Automate multi-step processes",
+      "Reduce process time 70%",
+      "No coding required"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-workflow-automation-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚡",
+    "href": "/services/automation-workflow-automation-platform",
+    "popular": true,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-document-processing-automated",
+    "title": "Automated Document Processing",
+    "description": "End-to-end document processing: intake, classification, data extraction, validation, routing, and archival. Eliminate manual document handling.",
+    "features": [
+      "Multi-channel document intake",
+      "AI classification and routing",
+      "Data extraction with validation",
+      "Approval workflows",
+      "ERP/CRM integration",
+      "Full audit trail"
+    ],
+    "benefits": [
+      "Process documents 20x faster",
+      "Eliminate manual data entry",
+      "99%+ extraction accuracy",
+      "Complete audit compliance"
+    ],
+    "pricing": {
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-document-processing-automated",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📄",
+    "href": "/services/automation-document-processing-automated",
+    "popular": true,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-email-automation-engine",
+    "title": "Email Automation Engine",
+    "description": "Automate email workflows: drip campaigns, follow-ups, nurture sequences, and triggered communications based on user behavior.",
+    "features": [
+      "Visual email sequence builder",
+      "Behavioral triggers",
+      "Personalization with merge tags",
+      "A/B testing automation",
+      "Deliverability optimization",
+      "Analytics and reporting"
+    ],
+    "benefits": [
+      "Nurture leads on autopilot",
+      "Personalized at scale",
+      "Increase email engagement 3x",
+      "Save 10+ hours/week"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-email-automation-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📧",
+    "href": "/services/automation-email-automation-engine",
+    "popular": false,
+    "category": "automation",
+    "industry": "Marketing"
+  },
+  {
+    "id": "automation-report-automation",
+    "title": "Automated Report Generation",
+    "description": "Automatically generate and distribute reports. Pull data from multiple sources, format, and deliver on schedule. Excel, PDF, PowerPoint, and dashboards.",
+    "features": [
+      "Multi-source data aggregation",
+      "Scheduled report generation",
+      "Excel, PDF, PowerPoint output",
+      "Email and Slack distribution",
+      "Template library",
+      "Drill-down dashboards"
+    ],
+    "benefits": [
+      "Eliminate manual report building",
+      "Always up-to-date reports",
+      "Distribute automatically",
+      "Self-service drill-down"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-report-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📊",
+    "href": "/services/automation-report-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-invoice-processing-automated",
+    "title": "Automated Invoice Processing",
+    "description": "Capture, extract, validate, and process invoices automatically. Match against POs, route for approval, and post to accounting systems.",
+    "features": [
+      "OCR invoice capture",
+      "Line-item extraction",
+      "PO matching and validation",
+      "Approval routing",
+      "ERP/accounting integration",
+      "Duplicate detection"
+    ],
+    "benefits": [
+      "Process invoices 15x faster",
+      "Eliminate data entry errors",
+      "Early payment discounts captured",
+      "Full audit trail"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-invoice-processing-automated",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧾",
+    "href": "/services/automation-invoice-processing-automated",
+    "popular": true,
+    "category": "automation",
+    "industry": "Finance"
+  },
+  {
+    "id": "automation-data-pipeline-automation",
+    "title": "Data Pipeline Automation",
+    "description": "Build, schedule, and monitor data pipelines. ETL/ELT, data quality checks, and orchestration for analytics and ML workflows.",
+    "features": [
+      "Visual pipeline builder",
+      "100+ data source connectors",
+      "Data quality validation",
+      "Scheduling and orchestration",
+      "Error alerting and retry",
+      "Lineage and impact analysis"
+    ],
+    "benefits": [
+      "Reliable data for analytics",
+      "Automate complex ETL workflows",
+      "Data quality guaranteed",
+      "Full lineage tracking"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-data-pipeline-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔗",
+    "href": "/services/automation-data-pipeline-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-social-media-automation",
+    "title": "Social Media Automation Suite",
+    "description": "Automate social media posting, monitoring, and engagement. Content curation, optimal scheduling, and response automation.",
+    "features": [
+      "Auto-posting to 8+ platforms",
+      "Content curation from RSS/AI",
+      "Optimal timing per platform",
+      "Auto-responses to common queries",
+      "Mention monitoring",
+      "Engagement analytics"
+    ],
+    "benefits": [
+      "Save 10+ hours/week on social",
+      "Consistent posting schedule",
+      "Never miss a mention",
+      "Data-driven content strategy"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$399/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-social-media-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📱",
+    "href": "/services/automation-social-media-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "Marketing"
+  },
+  {
+    "id": "automation-inventory-automation",
+    "title": "Inventory Automation and Optimization",
+    "description": "Automate inventory tracking, reordering, and optimization. Demand forecasting, safety stock calculation, and supplier management.",
+    "features": [
+      "Real-time inventory tracking",
+      "Automated reorder points",
+      "Demand forecasting integration",
+      "Supplier management",
+      "Multi-location support",
+      "Shrinkage detection"
+    ],
+    "benefits": [
+      "Eliminate stockouts and overstock",
+      "Reduce carrying costs 20%",
+      "Automate purchase orders",
+      "Real-time visibility"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-inventory-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📦",
+    "href": "/services/automation-inventory-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "Retail"
+  },
+  {
+    "id": "automation-hr-onboarding-automation",
+    "title": "HR Onboarding Automation",
+    "description": "Automate the entire employee onboarding journey: paperwork, training, equipment, access provisioning, and check-ins.",
+    "features": [
+      "Digital paperwork and e-signatures",
+      "Training plan automation",
+      "IT access provisioning",
+      "Equipment ordering",
+      "30/60/90 day check-ins",
+      "Manager and buddy assignments"
+    ],
+    "benefits": [
+      "Reduce onboarding time 60%",
+      "Consistent experience for every hire",
+      "New employees productive faster",
+      "HR saves 5 hours per hire"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-hr-onboarding-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "👥",
+    "href": "/services/automation-hr-onboarding-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-compliance-automation",
+    "title": "Compliance Automation Platform",
+    "description": "Automate compliance monitoring, evidence collection, and reporting. SOC2, HIPAA, PCI-DSS, GDPR - continuous compliance not annual audits.",
+    "features": [
+      "Continuous control monitoring",
+      "Automated evidence collection",
+      "Policy management and attestation",
+      "Violation alerting",
+      "Audit-ready reports",
+      "SOC2/HIPAA/PCI/GDPR frameworks"
+    ],
+    "benefits": [
+      "Continuous compliance vs annual scramble",
+      "Reduce audit prep time 80%",
+      "Catch violations in real-time",
+      "Audit-ready at any time"
+    ],
+    "pricing": {
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-compliance-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "✅",
+    "href": "/services/automation-compliance-automation",
+    "popular": true,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-testing-automation",
+    "title": "Automated Testing Platform",
+    "description": "Automated software testing: UI, API, performance, and security. CI/CD integration with parallel execution and detailed reporting.",
+    "features": [
+      "Visual test recorder",
+      "API testing builder",
+      "Performance and load testing",
+      "Security vulnerability scanning",
+      "CI/CD integration",
+      "Parallel test execution"
+    ],
+    "benefits": [
+      "10x faster test execution",
+      "Catch bugs before production",
+      "Reduce QA costs 50%",
+      "Continuous quality in CI/CD"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-testing-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧪",
+    "href": "/services/automation-testing-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-deployment-automation",
+    "title": "Deployment Automation and CI/CD",
+    "description": "Automate build, test, and deployment pipelines. Zero-downtime deployments, rollback, and environment management.",
+    "features": [
+      "Visual pipeline builder",
+      "Multi-environment management",
+      "Zero-downtime deployments",
+      "Automatic rollback on failure",
+      "Infrastructure as code",
+      "Deployment analytics"
+    ],
+    "benefits": [
+      "Deploy 10x more frequently",
+      "Zero-downtime releases",
+      "Automatic rollback on issues",
+      "Full deployment visibility"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-deployment-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🚀",
+    "href": "/services/automation-deployment-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-customer-data-sync",
+    "title": "Customer Data Synchronization",
+    "description": "Keep customer data consistent across all your systems. Real-time sync between CRM, marketing, support, and billing platforms.",
+    "features": [
+      "Real-time bidirectional sync",
+      "200+ app connectors",
+      "Conflict resolution rules",
+      "Data transformation mapping",
+      "Sync monitoring and alerts",
+      "Historical sync audit"
+    ],
+    "benefits": [
+      "Single source of truth for customer data",
+      "Eliminate data silos",
+      "Real-time consistency",
+      "Reduce data errors 90%"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-customer-data-sync",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔄",
+    "href": "/services/automation-customer-data-sync",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
+  },
+  {
+    "id": "automation-notification-automation",
+    "title": "Smart Notification Automation",
+    "description": "Intelligent notification routing and management. Right message, right channel, right time. Reduce notification fatigue while ensuring critical alerts are seen.",
+    "features": [
+      "Multi-channel: email, SMS, push, Slack",
+      "Smart routing rules",
+      "Priority-based escalation",
+      "Quiet hours and preferences",
+      "Delivery confirmation",
+      "Notification analytics"
+    ],
+    "benefits": [
+      "Reduce notification noise 60%",
+      "Critical alerts always seen",
+      "Respect user preferences",
+      "Higher engagement rates"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$249/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-notification-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔔",
+    "href": "/services/automation-notification-automation",
+    "popular": false,
+    "category": "automation",
+    "industry": "General"
   }
 ]

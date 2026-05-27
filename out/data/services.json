@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-27T18:38:52.501Z",
-  "count": 617,
+  "generated": "2026-05-27T19:44:16.916Z",
+  "count": 662,
   "categories": {
-    "it": 110,
-    "ai": 318,
-    "automation": 30,
+    "it": 125,
+    "ai": 333,
+    "automation": 45,
     "data": 39,
     "cloud": 69,
     "security": 51
@@ -107,6 +107,33 @@
       "href": "/services/ai-agents-autonomous",
       "category": "ai",
       "industry": "Transportation & Logistics",
+      "popular": false
+    },
+    {
+      "id": "ai-ai-chatbot-builder",
+      "title": "AI Chatbot Builder - No Code",
+      "description": "Drag-and-drop chatbot builder with pre-trained industry templates. Deploy on your website, WhatsApp, or social media in minutes.",
+      "href": "/services/ai-ai-chatbot-builder",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "ai-ai-data-labeling",
+      "title": "AI Data Labeling and Annotation Platform",
+      "description": "High-quality training data for your ML models. Image, text, video, and audio annotation with quality control and expert labelers.",
+      "href": "/services/ai-ai-data-labeling",
+      "category": "ai",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "ai-ai-search-platform",
+      "title": "AI-Powered Search Platform",
+      "description": "Semantic search that understands meaning, not just keywords. Vector search, natural language queries, and personalized results for your content.",
+      "href": "/services/ai-ai-search-platform",
+      "category": "ai",
+      "industry": "General",
       "popular": false
     },
     {
@@ -443,6 +470,15 @@
       "popular": false
     },
     {
+      "id": "ai-content-moderation-ai",
+      "title": "AI Content Moderation",
+      "description": "Automatically detect and filter inappropriate content - text, images, and video. Keep your platform safe and compliant.",
+      "href": "/services/ai-content-moderation-ai",
+      "category": "ai",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "ai-content-moderation-platform",
       "title": "AI Content Moderation Platform",
       "description": "Multi-modal moderation (text/image/video): NSFW, hate-speech, PII, copyright, brand-safety classifier; moderation queue + human-review.",
@@ -504,6 +540,15 @@
       "category": "ai",
       "industry": "Marketing & Sales",
       "popular": false
+    },
+    {
+      "id": "ai-conversational-ai-platform",
+      "title": "Conversational AI Platform",
+      "description": "Build and deploy intelligent chatbots and virtual assistants that understand context, maintain conversation memory, and integrate with your systems.",
+      "href": "/services/ai-conversational-ai-platform",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "ai-copilot-enterprise",
@@ -668,6 +713,15 @@
       "popular": false
     },
     {
+      "id": "ai-demand-forecasting",
+      "title": "AI Demand Forecasting",
+      "description": "Accurate demand predictions using ML models that incorporate seasonality, trends, promotions, weather, and external factors.",
+      "href": "/services/ai-demand-forecasting",
+      "category": "ai",
+      "industry": "Retail",
+      "popular": false
+    },
+    {
       "id": "ai-devops-chatbot",
       "title": "AI DevOps Chatbot",
       "description": "Natural language interface to your infrastructure: ask for logs, deployments, metrics, and incidents; get instant answers and auto-remediation suggestions.",
@@ -684,6 +738,15 @@
       "category": "ai",
       "industry": "Technology",
       "popular": false
+    },
+    {
+      "id": "ai-document-ai-processor",
+      "title": "Document AI - Intelligent Processing",
+      "description": "Extract, classify, and process data from documents with AI. Invoices, contracts, forms, receipts - structured data from unstructured documents.",
+      "href": "/services/ai-document-ai-processor",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "ai-document-classifier",
@@ -983,6 +1046,15 @@
       "popular": false
     },
     {
+      "id": "ai-fraud-detection-ai",
+      "title": "AI Fraud Detection and Prevention",
+      "description": "Real-time fraud detection for transactions, accounts, and applications. ML models trained on billions of transactions with sub-100ms scoring.",
+      "href": "/services/ai-fraud-detection-ai",
+      "category": "ai",
+      "industry": "Finance",
+      "popular": true
+    },
+    {
       "id": "ai-fraud-detection-finance",
       "title": "AI Fraud Detection for Finance",
       "description": "Real-time transaction monitoring for banks, fintechs, and accounting firms with explainable AI decisions and SAR report generation.",
@@ -1280,6 +1352,15 @@
       "popular": true
     },
     {
+      "id": "ai-lead-scoring-ai",
+      "title": "AI Lead Scoring and Qualification",
+      "description": "Automatically score and qualify leads based on behavior, firmographics, and engagement. Prioritize your sales team's time on the best prospects.",
+      "href": "/services/ai-lead-scoring-ai",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
+    },
+    {
       "id": "ai-legal-contract-redaction",
       "title": "AI Legal Contract Redaction",
       "description": "Automatically redacts PII, trade secrets, and privileged information from legal documents before sharing or discovery.",
@@ -1532,6 +1613,15 @@
       "popular": false
     },
     {
+      "id": "ai-ocr-data-extraction",
+      "title": "OCR and Intelligent Data Extraction",
+      "description": "Advanced OCR with AI-powered data extraction from scanned documents, photos, and PDFs. Handles handwriting, tables, and complex layouts.",
+      "href": "/services/ai-ocr-data-extraction",
+      "category": "ai",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "ai-office-automation",
       "title": "AI-Powered Office Automation",
       "description": "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing — all with no-code builder.",
@@ -1694,6 +1784,15 @@
       "popular": false
     },
     {
+      "id": "ai-predictive-analytics-engine",
+      "title": "Predictive Analytics Engine",
+      "description": "Turn historical data into forward-looking insights. Demand forecasting, churn prediction, revenue projection with explainable AI models.",
+      "href": "/services/ai-predictive-analytics-engine",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
+    },
+    {
       "id": "ai-predictive-churn",
       "title": "AI Predictive Churn & Retention",
       "description": "Predicts customer churn 30-90 days before event: ML ingests product usage behavior support tickets NPS scores contract data produces ranked at-risk list recommended retention.",
@@ -1719,6 +1818,15 @@
       "category": "ai",
       "industry": "Healthcare",
       "popular": false
+    },
+    {
+      "id": "ai-predictive-maintenance-644",
+      "title": "Predictive Maintenance AI",
+      "description": "Predict equipment failures before they happen. IoT sensor data analysis, anomaly detection, and maintenance scheduling optimization.",
+      "href": "/services/ai-predictive-maintenance-644",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "popular": true
     },
     {
       "id": "ai-predictive-maintenance-advisor",
@@ -1871,6 +1979,15 @@
       "href": "/services/ai-realtime-translation",
       "category": "ai",
       "industry": "Technology",
+      "popular": false
+    },
+    {
+      "id": "ai-recommendation-engine",
+      "title": "AI Recommendation Engine",
+      "description": "Personalized product, content, and service recommendations. Increase conversion and engagement with collaborative and content-based filtering.",
+      "href": "/services/ai-recommendation-engine",
+      "category": "ai",
+      "industry": "E-Commerce",
       "popular": false
     },
     {
@@ -2078,6 +2195,15 @@
       "href": "/services/ai-sentiment-analysis",
       "category": "ai",
       "industry": "Marketing & Sales",
+      "popular": false
+    },
+    {
+      "id": "ai-sentiment-analysis-api",
+      "title": "Sentiment Analysis API",
+      "description": "Analyze sentiment, emotion, and intent from text in 20+ languages. Monitor brand perception, customer feedback, and social media at scale.",
+      "href": "/services/ai-sentiment-analysis-api",
+      "category": "ai",
+      "industry": "General",
       "popular": false
     },
     {
@@ -2441,6 +2567,15 @@
       "popular": false
     },
     {
+      "id": "ai-voice-ai-assistant",
+      "title": "Voice AI - Speech Recognition and Synthesis",
+      "description": "Build voice-enabled applications with speech-to-text, text-to-speech, and voice biometrics. Support for 30+ languages and custom voice cloning.",
+      "href": "/services/ai-voice-ai-assistant",
+      "category": "ai",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "ai-voice-assistant",
       "title": "AI Voice Assistant",
       "description": "Enterprise-grade voice AI with natural language understanding, multi-language support, and seamless CRM integration.",
@@ -2612,6 +2747,42 @@
       "popular": false
     },
     {
+      "id": "automation-compliance-automation",
+      "title": "Compliance Automation Platform",
+      "description": "Automate compliance monitoring, evidence collection, and reporting. SOC2, HIPAA, PCI-DSS, GDPR - continuous compliance not annual audits.",
+      "href": "/services/automation-compliance-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "automation-customer-data-sync",
+      "title": "Customer Data Synchronization",
+      "description": "Keep customer data consistent across all your systems. Real-time sync between CRM, marketing, support, and billing platforms.",
+      "href": "/services/automation-customer-data-sync",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "automation-data-pipeline-automation",
+      "title": "Data Pipeline Automation",
+      "description": "Build, schedule, and monitor data pipelines. ETL/ELT, data quality checks, and orchestration for analytics and ML workflows.",
+      "href": "/services/automation-data-pipeline-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "automation-deployment-automation",
+      "title": "Deployment Automation and CI/CD",
+      "description": "Automate build, test, and deployment pipelines. Zero-downtime deployments, rollback, and environment management.",
+      "href": "/services/automation-deployment-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "automation-document-intelligence-pipeline",
       "title": "Legal Document Intelligence Pipeline",
       "description": "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause extraction, anomaly flag, e-signature ready, approval routing.",
@@ -2621,12 +2792,39 @@
       "popular": true
     },
     {
+      "id": "automation-document-processing-automated",
+      "title": "Automated Document Processing",
+      "description": "End-to-end document processing: intake, classification, data extraction, validation, routing, and archival. Eliminate manual document handling.",
+      "href": "/services/automation-document-processing-automated",
+      "category": "automation",
+      "industry": "General",
+      "popular": true
+    },
+    {
       "id": "automation-education-student-lifecycle-manager",
       "title": "Education Student Lifecycle Manager",
       "description": "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imported at-risk alerts.",
       "href": "/services/automation-education-student-lifecycle-manager",
       "category": "automation",
       "industry": "Financial Services",
+      "popular": false
+    },
+    {
+      "id": "automation-email-automation-engine",
+      "title": "Email Automation Engine",
+      "description": "Automate email workflows: drip campaigns, follow-ups, nurture sequences, and triggered communications based on user behavior.",
+      "href": "/services/automation-email-automation-engine",
+      "category": "automation",
+      "industry": "Marketing",
+      "popular": false
+    },
+    {
+      "id": "automation-hr-onboarding-automation",
+      "title": "HR Onboarding Automation",
+      "description": "Automate the entire employee onboarding journey: paperwork, training, equipment, access provisioning, and check-ins.",
+      "href": "/services/automation-hr-onboarding-automation",
+      "category": "automation",
+      "industry": "General",
       "popular": false
     },
     {
@@ -2645,6 +2843,24 @@
       "href": "/services/automation-integrated-commerce-flows",
       "category": "automation",
       "industry": "Financial Services",
+      "popular": true
+    },
+    {
+      "id": "automation-inventory-automation",
+      "title": "Inventory Automation and Optimization",
+      "description": "Automate inventory tracking, reordering, and optimization. Demand forecasting, safety stock calculation, and supplier management.",
+      "href": "/services/automation-inventory-automation",
+      "category": "automation",
+      "industry": "Retail",
+      "popular": false
+    },
+    {
+      "id": "automation-invoice-processing-automated",
+      "title": "Automated Invoice Processing",
+      "description": "Capture, extract, validate, and process invoices automatically. Match against POs, route for approval, and post to accounting systems.",
+      "href": "/services/automation-invoice-processing-automated",
+      "category": "automation",
+      "industry": "Finance",
       "popular": true
     },
     {
@@ -2684,6 +2900,15 @@
       "popular": true
     },
     {
+      "id": "automation-notification-automation",
+      "title": "Smart Notification Automation",
+      "description": "Intelligent notification routing and management. Right message, right channel, right time. Reduce notification fatigue while ensuring critical alerts are seen.",
+      "href": "/services/automation-notification-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "automation-process-mining-deep-dive",
       "title": "Process Mining Deep Dive",
       "description": "Deep-dive process analytics: auto-discover process maps from ERP, CRM, and BPM event logs; conformance checking per transaction; bottleneck and rework hotspot analysis with cycle-time and handover waste; RPA opportunity scoring per step; executive KPI dashboard.",
@@ -2702,6 +2927,33 @@
       "popular": false
     },
     {
+      "id": "automation-report-automation",
+      "title": "Automated Report Generation",
+      "description": "Automatically generate and distribute reports. Pull data from multiple sources, format, and deliver on schedule. Excel, PDF, PowerPoint, and dashboards.",
+      "href": "/services/automation-report-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "automation-rpa-process-automation",
+      "title": "RPA - Robotic Process Automation",
+      "description": "Automate repetitive software tasks with software robots. Data entry, form filling, report generation, system integration - no APIs needed.",
+      "href": "/services/automation-rpa-process-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "automation-social-media-automation",
+      "title": "Social Media Automation Suite",
+      "description": "Automate social media posting, monitoring, and engagement. Content curation, optimal scheduling, and response automation.",
+      "href": "/services/automation-social-media-automation",
+      "category": "automation",
+      "industry": "Marketing",
+      "popular": false
+    },
+    {
       "id": "automation-social-media-content-hub",
       "title": "Social Media Content Hub & Publisher",
       "description": "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, Instagram, Facebook, TikTok, YouTube), real-time engagement monitoring, and weekly performance reporting.",
@@ -2709,6 +2961,24 @@
       "category": "automation",
       "industry": "Marketing & Sales",
       "popular": false
+    },
+    {
+      "id": "automation-testing-automation",
+      "title": "Automated Testing Platform",
+      "description": "Automated software testing: UI, API, performance, and security. CI/CD integration with parallel execution and detailed reporting.",
+      "href": "/services/automation-testing-automation",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "automation-workflow-automation-platform",
+      "title": "Workflow Automation Platform",
+      "description": "Connect your apps and automate business processes. Visual workflow builder with 200+ app integrations and conditional logic.",
+      "href": "/services/automation-workflow-automation-platform",
+      "category": "automation",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "autonomous-code-review-agent",
@@ -3908,6 +4178,15 @@
       "popular": false
     },
     {
+      "id": "it-automated-patching",
+      "title": "Automated Patch Management",
+      "description": "Keep all systems current with automated patching for Windows, macOS, Linux, third-party apps. Testing, approval workflows, rollback.",
+      "href": "/services/it-automated-patching",
+      "category": "it",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "it-automation-orchestrator",
       "title": "IT Automation & Orchestration Platform",
       "description": "Enterprise IT automation platform with workflow orchestration, infrastructure provisioning, configuration management, and self-healing system capabilities.",
@@ -3941,6 +4220,15 @@
       "href": "/services/it-backup-dr-bc-as-a-service",
       "category": "it",
       "industry": "Retail & E-Commerce",
+      "popular": true
+    },
+    {
+      "id": "it-backup-dr-suite",
+      "title": "Backup and Disaster Recovery (BDR) Suite",
+      "description": "Enterprise backup and DR with automated failover, ransomware protection, and tested recovery procedures.",
+      "href": "/services/it-backup-dr-suite",
+      "category": "it",
+      "industry": "General",
       "popular": true
     },
     {
@@ -4023,6 +4311,15 @@
       "category": "it",
       "industry": "Technology",
       "popular": false
+    },
+    {
+      "id": "it-cloud-migration-express",
+      "title": "Cloud Migration Express - Lift, Shift and Optimize",
+      "description": "End-to-end cloud migration: assessment, planning, migration, optimization, post-migration support. AWS, Azure, GCP certified engineers.",
+      "href": "/services/it-cloud-migration-express",
+      "category": "it",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "it-cloud-native-storage",
@@ -4196,6 +4493,15 @@
       "popular": false
     },
     {
+      "id": "it-endpoint-protection",
+      "title": "Endpoint Protection and Device Security",
+      "description": "Next-gen antivirus, EDR, and device management. Protect laptops, desktops, servers, mobile from malware, ransomware, zero-day.",
+      "href": "/services/it-endpoint-protection",
+      "category": "it",
+      "industry": "General",
+      "popular": true
+    },
+    {
       "id": "it-endpoint-security-compliance",
       "title": "Endpoint Security & Compliance Monitor",
       "description": "EDR and XDR endpoint coverage with compliance attestation: CIS benchmark checks, disk-encrypt status, OS patch-level verification, software-inventory SBOM per asset, CISA KEV auto-detection, and SCAP reporting for regulated assessments.",
@@ -4211,6 +4517,15 @@
       "href": "/services/it-endpoint-security-compliance-monitor",
       "category": "it",
       "industry": "Financial Services",
+      "popular": false
+    },
+    {
+      "id": "it-enterprise-vpn",
+      "title": "Enterprise VPN and Secure Remote Access",
+      "description": "Secure remote access with zero-trust network access, split tunneling, and MFA for all connections.",
+      "href": "/services/it-enterprise-vpn",
+      "category": "it",
+      "industry": "General",
       "popular": false
     },
     {
@@ -4286,6 +4601,24 @@
       "popular": false
     },
     {
+      "id": "it-it-asset-mgmt",
+      "title": "IT Asset Management and Inventory",
+      "description": "Complete IT asset lifecycle from procurement to disposal. Track hardware, licenses, warranties, compliance from one dashboard.",
+      "href": "/services/it-it-asset-mgmt",
+      "category": "it",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "it-it-strategy-consulting",
+      "title": "IT Strategy and Digital Transformation Consulting",
+      "description": "Fractional CIO/CTO services: technology roadmap, vendor evaluation, digital transformation planning, and IT governance.",
+      "href": "/services/it-it-strategy-consulting",
+      "category": "it",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "it-itil-service-management",
       "title": "ITIL Service Management (ITSM) Platform",
       "description": "Full ITIL-aligned service management with AI-powered ticketing, change management automation, CMDB discovery, and self-service portal for enterprise IT operations.",
@@ -4340,12 +4673,30 @@
       "popular": false
     },
     {
+      "id": "it-managed-it-ops",
+      "title": "Complete Managed IT Operations",
+      "description": "Full-service IT management. We become your IT department - helpdesk, infrastructure, security, monitoring, and strategic planning.",
+      "href": "/services/it-managed-it-ops",
+      "category": "it",
+      "industry": "General",
+      "popular": true
+    },
+    {
       "id": "it-managed-soc",
       "title": "Managed SOC + Threat Intelligence as a Service",
       "description": "24x7 managed SOC: SIEM event correlation threat hunting from 50+ feeds incident response managed alert triage monthly executive cyber risk report compliance evidence B2B enterprise.",
       "href": "/services/it-managed-soc",
       "category": "security",
       "industry": "Financial Services",
+      "popular": false
+    },
+    {
+      "id": "it-mdm-device-mgmt",
+      "title": "Mobile Device Management (MDM) Suite",
+      "description": "Manage and secure all company and BYOD devices. Enforce policies, deploy apps, remote wipe lost devices.",
+      "href": "/services/it-mdm-device-mgmt",
+      "category": "it",
+      "industry": "General",
       "popular": false
     },
     {
@@ -4394,12 +4745,30 @@
       "popular": false
     },
     {
+      "id": "it-network-security-audit",
+      "title": "Comprehensive Network Security Audit",
+      "description": "Deep security assessment: network architecture, access controls, vulnerability scanning, pentesting, compliance gaps, and remediation roadmap.",
+      "href": "/services/it-network-security-audit",
+      "category": "it",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "it-network-security-monitoring",
       "title": "Network Security Monitoring & SIEM",
       "description": "Real-time network traffic analysis, threat correlation, and centralized Security Information and Event Management (SIEM) for enterprises requiring continuous security posture visibility.",
       "href": "/services/it-network-security-monitoring",
       "category": "security",
       "industry": "Telecommunications",
+      "popular": false
+    },
+    {
+      "id": "it-nextgen-firewall",
+      "title": "Next-Gen Firewall Management and Monitoring",
+      "description": "Deploy, configure, monitor NGFWs with intrusion prevention, web filtering, application control, 24/7 threat monitoring.",
+      "href": "/services/it-nextgen-firewall",
+      "category": "it",
+      "industry": "General",
       "popular": false
     },
     {
@@ -4437,6 +4806,15 @@
       "category": "it",
       "industry": "Technology",
       "popular": false
+    },
+    {
+      "id": "it-outsourced-helpdesk",
+      "title": "Outsourced IT Helpdesk (Tier 1-2)",
+      "description": "White-label or co-branded IT helpdesk. Certified technicians handle password resets, software issues, hardware troubleshooting, onboarding.",
+      "href": "/services/it-outsourced-helpdesk",
+      "category": "it",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "it-pcii-compliance-suite",
@@ -4526,6 +4904,15 @@
       "href": "/services/it-secure-file-transfer",
       "category": "it",
       "industry": "Financial Services",
+      "popular": false
+    },
+    {
+      "id": "it-server-infra-mgmt",
+      "title": "Server and Infrastructure Management",
+      "description": "24/7 management of physical and virtual servers: monitoring, patching, capacity planning, performance tuning, incident response.",
+      "href": "/services/it-server-infra-mgmt",
+      "category": "it",
+      "industry": "General",
       "popular": false
     },
     {
@@ -4619,12 +5006,30 @@
       "popular": false
     },
     {
+      "id": "it-voip-unified-comms",
+      "title": "VoIP and Unified Communications Setup",
+      "description": "Deploy business phone systems, video conferencing, and team messaging. Replace legacy PBX with modern cloud comms.",
+      "href": "/services/it-voip-unified-comms",
+      "category": "it",
+      "industry": "General",
+      "popular": false
+    },
+    {
       "id": "it-wireless-network-design",
       "title": "Wireless Network Design & Optimization",
       "description": "Enterprise Wi-Fi and wireless infrastructure design, site surveys, RF optimization, and capacity planning for campuses, warehouses, and smart buildings.",
       "href": "/services/it-wireless-network-design",
       "category": "cloud",
       "industry": "Retail & E-Commerce",
+      "popular": false
+    },
+    {
+      "id": "it-workstation-provisioning",
+      "title": "Workstation Setup and Provisioning",
+      "description": "Fast standardized deployment. Configure laptops/desktops with your software stack, security policies, user profiles - ready day one.",
+      "href": "/services/it-workstation-provisioning",
+      "category": "it",
+      "industry": "General",
       "popular": false
     },
     {
