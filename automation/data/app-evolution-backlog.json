@@ -7,7 +7,8 @@
   ],
   "newIdeas": [
     "Add industry-specific landing pages",
-    "Implement A/B testing for CTAs"
+    "Implement A/B testing for CTAs",
+    "[Layout/Design] Ensure consistent max-width containers: Not all content appears to be wrapped in a consistent max-width container. Use a shared layout wrapper (e.g., max-w-7xl mx-auto px-4) to keep content readable on large screens."
   ],
   "implementationTasks": [
     {
@@ -101,5 +102,6 @@
     "Implement A/B testing for CTAs"
   ],
   "schemaVersion": 1,
-  "updatedAt": "2026-05-27T13:17:56.109Z"
+  "updatedAt": "2026-05-27T21:13:44.964Z",
+  "layoutDesignIntelMerge": "2026-05-27T21:13:44.964Z"
 }
