@@ -1,0 +1,91 @@
+name: Autonomous Writer Queue Guard
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+concurrency:
+  group: autonomous-writer-queue-guard
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+jobs:
+  queue-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+      GITHUB_RUN_ID: ${{ github.run_id }}
+      QUEUE_GUARD_BRANCH: main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run queue guard
+        run: npm run autonomy:queue-guard
+
+      - name: Upload queue guard artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-writer-queue-guard-${{ github.run_id }}
+          path: |
+            automation/reports/autonomous-writer-queue-guard-latest.json
+            automation/reports/autonomous-writer-queue-guard-latest.md
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Escalate writer queue incident
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomous-writer-queue-guard-latest.json"
+          [ -f "$report" ] || exit 0
+          severity=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.severity||'ok')")
+          if [ "$severity" = "ok" ]; then
+            echo "No writer queue incident to escalate."
+            export ISSUE_FINGERPRINT="autonomous-writer-queue"
+            export CLOSE_COMMENT="Auto-closing: writer queue guard reports healthy."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log((r.activeWriterRuns||[]).length)")
+          body_file="autonomous-writer-queue-incident.md"
+          {
+            echo "## Writer queue contention"
+            echo ""
+            echo "- **Dedupe key:** \`autonomous-writer-queue\`"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Severity: \`$severity\`"
+            echo "- Active writer runs: \`$count\`"
+            echo ""
+            echo "### Active runs"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const run of (r.activeWriterRuns||[])){console.log('- '+run.name+' (#'+run.run_number+', '+run.status+')')}"
+          } > "$body_file"
+          export ISSUE_TITLE="Autonomous writer queue contention"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="autonomous-writer-queue"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

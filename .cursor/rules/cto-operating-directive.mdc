@@ -1,0 +1,15 @@
+---
+description: CTO-level priorities—continuous improvement, additive automation, main as SoT, contact/email consistency
+alwaysApply: true
+---
+
+# CTO operating directive (Zion)
+
+- **Read** `docs/CTO-OPERATING-PHILOSOPHY.md` for the full, grounded mandate (in-repo vs hosting/credentials) and **`USER.md`** for the owner’s standing autonomous-work permission.
+- **Main branch:** Treat `main` as the single source of truth; merge with conflicts resolved locally; avoid destructive git history rewrites on shared branches.
+- **Additive automation:** Prefer **new** scripts/workflows under `automation/`, `commands/`, `.github/workflows/` instead of gutting existing agent factories unless fixing a concrete bug.
+- **Contact routing:** Use **`app/utils/seoConstants.ts` → `CONTACT_INFO.email`** for commercial inquiries (`commercial@ziontechgroup.com`). Do not scatter one-off marketing emails for the primary contact funnel.
+- **GitHub Actions:** Audit and improve **incrementally** (permissions, triggers, safety); do not delete workflow files unless replacement is merged and justified.
+- **Deployment:** Do not assume access to production or org secrets; ship code and workflows that CI can run; document what operators must configure on GitHub/hosting.
+- **Honesty:** Do not claim live deploys or infinite loops without verifiable automation (workflow run, script, report artifact).
+- **Owner mandate (2026-03-21):** Kleber reiterated standing permission for autonomous in-repo improvement and deployment-aligned work; canonical wording in **`USER.md`**; mirror in SOUL/HEARTBEAT/MEMORY/`memory`/AGENTS as continuity (never commit secrets).

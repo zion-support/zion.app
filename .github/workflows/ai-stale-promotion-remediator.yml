@@ -1,0 +1,95 @@
+name: AI Stale Promotion Remediator
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ai-stale-promotion-remediator
+  cancel-in-progress: false
+
+on:
+  workflow_run:
+    workflows: [AI Stale Promotion Guard]
+    types:
+      - completed
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  remediate:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      STALE_PROMOTION_REMEDIATION_THRESHOLD: "3"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Prime stale promotion report
+        env:
+          DEPLOY_WATCHDOG_BASE_URL: https://ziontechgroup.com
+          DEPLOY_WATCHDOG_ROUTES_FILE: config/smoke-routes.txt
+          DEPLOY_WATCHDOG_MAX_ROUTES: 20
+          DEPLOY_WATCHDOG_ATTEMPTS: 2
+          DEPLOY_WATCHDOG_INTERVAL_MS: 12000
+          STALE_PROMOTION_FAILURE_THRESHOLD: "3"
+        run: |
+          npm run deploy:watchdog || true
+          npm run promotions:stale:guard
+
+      - name: Run stale promotion remediator
+        run: node automation/ai-stale-promotion-remediator.cjs
+
+      - name: Upload remediator artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: stale-promotion-remediator-${{ github.run_id }}
+          path: |
+            automation/reports/stale-promotion-remediation-latest.json
+            automation/reports/stale-promotion-guard-latest.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Create remediation PR when catalog changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/stale-promotion-remediation-latest.json"
+          [ -f "$report" ] || exit 0
+          changed=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.changed ? '1' : '0')")
+          if [ "$changed" != "1" ]; then
+            echo "No remediation changes to propose."
+            exit 0
+          fi
+
+          branch="stale-promotion-remediation-${{ github.run_id }}"
+          git checkout -b "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/config/aiCatalog.ts automation/reports/stale-promotion-remediation-latest.json
+          git commit -m "chore(promotion): auto-demote stale promoted routes"
+          git push origin "$branch"
+
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "chore(promotion): auto-demote stale promoted routes" \
+            --body "Auto-demotes repeatedly unhealthy promoted routes from homepage/catalog targeting arrays while preserving route definitions. Generated automatically by stale promotion remediator after consecutive deploy-watchdog failures."

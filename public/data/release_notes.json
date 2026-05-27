@@ -1,0 +1,75 @@
+{
+  "description": "Release signal dataset \u2014 drives the 'What's New' homepage section",
+  "updated_at": "2025-06-12",
+  "entries": [
+    {
+      "id": "generative-ai-enterprise",
+      "released_at": "2025-01-15",
+      "changelog": "Unified generative AI fabric combining foundation model orchestration, RAG pipelines, and enterprise governance in one managed platform. Deploy fine-tuned models or connect any provider \u2014 OpenAI, Anthropic, or self-hosted.",
+      "changelog_summary": "Unified generative AI, RAG, and model orchestration for enterprise deployments",
+      "tags": [
+        "new",
+        "ai"
+      ],
+      "featured": true
+    },
+    {
+      "id": "ai-contract-review",
+      "released_at": "2025-03-08",
+      "changelog": "AI Contract Review auto-extracts clauses, flags risks, compares against your standard terms, and generates redlines \u2014 reducing contract review time by ~70% with full audit trail.",
+      "changelog_summary": "AI contract review with risk flagging and auto-redline \u2014 70% faster",
+      "tags": [
+        "new",
+        "enhanced",
+        "ai"
+      ],
+      "featured": true
+    },
+    {
+      "id": "cloud-cost-ai-optimizer",
+      "released_at": "2025-04-22",
+      "changelog": "Cloud Cost AI Optimizer continuously rightsizes your AWS, GCP, and Azure spend using predictive ML, auto-applying savings recommendations with approval gates.",
+      "changelog_summary": "Predictive ML continuously rightsizes AWS/GCP/Azure spend with auto-apply savings",
+      "tags": [
+        "new",
+        "cloud"
+      ],
+      "featured": true
+    },
+    {
+      "id": "ai-customer-support-agent",
+      "released_at": "2025-02-10",
+      "changelog": "24/7 AI Customer Support Agent with multi-channel sync (email, chat, phone), sentiment-aware escalation, and CRM writeback \u2014 reduces resolution time by 60%.",
+      "changelog_summary": "24/7 multi-channel AI support with sentiment-aware escalation and CRM writeback",
+      "tags": [
+        "new",
+        "improved",
+        "ai"
+      ],
+      "featured": true
+    },
+    {
+      "id": "security-zero-trust-architecture",
+      "released_at": "2025-05-01",
+      "changelog": "Zero Trust Architecture service redesigns your network perimeter with identity-first access, micro-segmentation, and continuous verification \u2014 meeting NIST SP 800-207 and Zero Trust Maturity Model Level 3+ criteria.",
+      "changelog_summary": "Identity-first network redesign meeting NIST ZT Level 3+ criteria",
+      "tags": [
+        "new",
+        "security"
+      ],
+      "featured": true
+    },
+    {
+      "id": "observability-platform",
+      "released_at": "2025-06-12",
+      "changelog": "Unified Observability Platform merges logs, metrics, traces, and APM into a single pane of glass with AI-powered anomaly detection and auto-root-cause analysis.",
+      "changelog_summary": "Unified logs/metrics/traces/APM with AI anomaly detection and RCA",
+      "tags": [
+        "new",
+        "data",
+        "improved"
+      ],
+      "featured": true
+    }
+  ]
+}

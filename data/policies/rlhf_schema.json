@@ -1,0 +1,120 @@
+{
+  "version": "1.0",
+  "description": "Schema for RLHF (Reinforcement Learning from Human Feedback) pipeline data.",
+  "data_types": [
+    {
+      "name": "PreferencePair",
+      "description": "A binary comparison: model_vs_rlhf = [response_A, response_B] with label.",
+      "fields": {
+        "pair_id": "str — unique UUID",
+        "run_id": "str — originating run artifact id",
+        "email_id": "str — originating email / thread id",
+        "intent_label": "str — V26 intent label (urgent, billing, …)",
+        "intent_confidence": "float — V26 confidence (0.0-1.0)",
+        "context": {
+          "sender": "str",
+          "subject": "str",
+          "body_snippet": "str — first 500 chars",
+          "thread_depth": "int",
+          "has_action_items": "bool",
+          "recommended_reply_all": "bool",
+          "escalation_triggered": "bool"
+        },
+        "response_a": {
+          "body": "str",
+          "tone": "str",
+          "auto_sent": "bool",
+          "intent_confidence": "float",
+          "grammar_score": "float",
+          "reply_all_set": "bool",
+          "model_version": "str"
+        },
+        "response_b": {
+          "body": "str",
+          "tone": "str",
+          "auto_sent": "bool",
+          "intent_confidence": "float",
+          "grammar_score": "float",
+          "reply_all_set": "bool",
+          "model_version": "str"
+        },
+        "label": "str — 'prefer_a' | 'prefer_b' | 'tie' | 'bad_both'",
+        "labeler": "str — 'human' | 'llm_judge' | 'auto_bootstrap'",
+        "reward_signals": {
+          "intent_match_score": "float (0.0-1.0)",
+          "reply_quality_score": "float (0.0-1.0)  [grammar + clarity + tone]",
+          "reply_all_correctness": "float (0.0-1.0)",
+          "action_item_coverage": "float (0.0-1.0)",
+          "combined_reward": "float (0.0-1.0)  [weighted sum of sub-signals]"
+        },
+        "metadata": {
+          "v_stage": "str",
+          "captured_at": "str — ISO-8601",
+          "trace_id": "str — originating trace id",
+          "run_artifacts_path": "str"
+        }
+      }
+    },
+    {
+      "name": "RLHFRunRecord",
+      "description": "One complete V26 run snapshot with all RLHF-relevant signals captured.",
+      "fields": {
+        "run_id": "str — UUID",
+        "v_stage": "str — 'V26', 'V27', …",
+        "started_at": "str — ISO-8601",
+        "completed_at": "str — ISO-8601",
+        "mode": "str — 'dry_run' | 'send' | 'sandbox'",
+        "emails_processed": "int",
+        "auto_sent_count": "int",
+        "escalated_count": "int",
+        "reply_all_count": "int",
+        "avg_intent_confidence": "float",
+        "avg_grammar_score": "float",
+        "flagged_count": "int — emails flagged for human review",
+        "preference_pairs": "int — raw pair count in this run",
+        "reward_model_version": "str",
+        "run_artifacts_path": "str — artifact id from V26 run log",
+        "quality_breakdown": {
+          "high_confidence_auto_sent": "int",
+          "low_confidence_auto_sent": "int — potential false positive",
+          "high_confidence_escalated": "int — correct refusal to auto-send",
+          "low_confidence_sent_manually": "int — human corrected"
+        },
+        "rlhf_gaps_detected": [
+          {
+            "gap_type": "str — 'false_positive' | 'false_negative' | 'reply_all_breach' | 'tone_mismatch' | 'missing_action_item'",
+            "email_id": "str",
+            "intent_label": "str",
+            "description": "str",
+            "suggested_fix": "str",
+            "severity": "str — 'low' | 'medium' | 'high'"
+          }
+        ],
+        "metadata": {
+          "trace_id": "str",
+          "host": "str",
+          "python": "str"
+        }
+      }
+    },
+    {
+      "name": "RLHFRunSummary",
+      "description": "Aggregated summary across N runs — used to detect drift and feed V41.",
+      "fields": {
+        "summary_id": "str — UUID",
+        "v_stage": "str",
+        "run_ids": ["str — list of run ids"],
+        "total_emails": "int",
+        "total_pairs": "int",
+        "positive_outcomes": "int — auto-sent with high confidence",
+        "negative_outcomes": "int — false positive / bad reply",
+        "reply_all_violations": "int",
+        "avg_combined_reward": "float (0.0-1.0)",
+        "reward_trend": "str — 'improving' | 'stable' | 'declining'",
+        "proposed_intent_policy_update": "dict or null — suggested rule for intent_policy_db",
+        "proposed_v41_actions": ["str"],
+        "generated_at": "str — ISO-8601"
+      }
+    }
+  ]
+}

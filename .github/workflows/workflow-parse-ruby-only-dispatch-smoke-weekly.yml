@@ -1,0 +1,36 @@
+# Ensures workflow-parse-ruby-only-dispatch.yml keeps manual Ruby-only parse anchors (grep-only).
+
+name: workflow parse-ruby-only dispatch smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 8 * * 3' # Wednesdays 08:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-parse-ruby-only-dispatch-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  parse-ruby-only-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: workflow-parse-ruby-only-dispatch.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-parse-ruby-only-dispatch.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow Ruby parse only (manual)' "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'group: workflow-parse-ruby-only-dispatch' "$f"
+          grep -Fq 'Parse workflow YAML' "$f"
+          grep -Fq 'ruby scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          echo "ok: $f"

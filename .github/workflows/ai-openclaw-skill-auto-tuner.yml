@@ -1,0 +1,79 @@
+name: AI Openclaw Skill Auto Tuner
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-openclaw-skill-auto-tuner
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '10 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  tune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run skill cadence audit
+        run: npm run openclaw:skills:audit
+
+      - name: Run Openclaw skill auto tuner
+        run: npm run openclaw:skills:tune
+
+      - name: Upload tuner artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: openclaw-skill-auto-tuner-${{ github.run_id }}
+          path: |
+            automation/reports/openclaw-skill-cadence-audit-latest.json
+            automation/reports/openclaw-skill-auto-tuner-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Escalate stabilize mode
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/openclaw-skill-auto-tuner-latest.json"
+          [ -f "$report" ] || exit 0
+          mode=$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));console.log(j.decision?.mode||'unknown')")
+          if [ "$mode" != "stabilize" ]; then
+            export ISSUE_FINGERPRINT="openclaw-skill-auto-tuner-stabilize"
+            export CLOSE_COMMENT="Auto-closing: Openclaw skill auto tuner returned to steady/accelerate mode."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="openclaw-skill-auto-tuner.md"
+          {
+            echo "## Openclaw skill auto tuner entered stabilize mode"
+            echo ""
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Report: \`automation/reports/openclaw-skill-auto-tuner-latest.json\`"
+            echo ""
+            node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));const d=j.decision?.recommended||{};console.log('### Recommended runtime');console.log('- frequencySeconds: '+(d.frequencySeconds??'n/a'));console.log('- maxParallel: '+(d.maxParallel??'n/a'));console.log('');console.log('### Notes');console.log('- '+(j.recommendation||'n/a'));"
+          } > "$body_file"
+          export ISSUE_TITLE="Openclaw skill auto tuner stabilize mode"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="automation,openclaw,reliability"
+          export ISSUE_FINGERPRINT="openclaw-skill-auto-tuner-stabilize"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

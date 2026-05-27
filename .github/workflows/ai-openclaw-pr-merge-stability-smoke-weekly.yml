@@ -1,0 +1,34 @@
+# Ensures ai-openclaw-pr-merge-stability.yml keeps merge stability anchors (grep-only).
+name: ai openclaw PR merge stability workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '54 11 * * 3' # Wednesdays 11:54 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-pr-merge-stability-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-pr-merge-stability-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-pr-merge-stability.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-pr-merge-stability.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: OpenClaw PR merge stability' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'automation/**' "$f"
+          grep -Fq 'package-lock.json' "$f"
+          grep -Fq 'group: openclaw-pr-merge-stability-' "$f"
+          grep -Fq 'cancel-in-progress: true' "$f"
+          grep -Fq 'npm run openclaw:autonomy:stability' "$f"
+          grep -Fq 'openclaw-hotfile:thread' "$f"
+          grep -Fq 'npm run lint:check' "$f"
+          echo "ok: $f"

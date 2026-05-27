@@ -1,0 +1,35 @@
+# Ensures docs/NEXT-AUTONOMOUS-IDEAS.md keeps backlog anchors (grep-only).
+
+name: docs/next autonomous ideas smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 8 * * 0' # Sundays 08:25 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-next-autonomous-ideas-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  next-ideas-doc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Next autonomous ideas doc anchors
+        run: |
+          set -euo pipefail
+          test -f docs/NEXT-AUTONOMOUS-IDEAS.md
+          test -s docs/NEXT-AUTONOMOUS-IDEAS.md
+          grep -Fq '# Next autonomous improvement ideas (backlog)' docs/NEXT-AUTONOMOUS-IDEAS.md
+          grep -Fq 'CTO-OPERATING-PHILOSOPHY.md' docs/NEXT-AUTONOMOUS-IDEAS.md
+          grep -Fq 'lint:check' docs/NEXT-AUTONOMOUS-IDEAS.md
+          grep -Fq 'AGENT-QUICKSTART.md' docs/NEXT-AUTONOMOUS-IDEAS.md
+          grep -Fq 'check-merge-conflict-markers.cjs' docs/NEXT-AUTONOMOUS-IDEAS.md
+          echo 'ok: docs/NEXT-AUTONOMOUS-IDEAS.md'

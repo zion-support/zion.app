@@ -1,0 +1,60 @@
+# AI App Visit Intelligence
+# Visits ziontechgroup.com, audits for intelligence improvements, deploys new ideas.
+# Runs weekly and on manual dispatch. Commits and pushes to main.
+
+name: AI App Visit Intelligence
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes to main'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: false
+        type: boolean
+      skip_llm:
+        description: 'Skip LLM steps (heuristic-only)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  app-visit-intelligence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run app visit intelligence orchestrator
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false') && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy && '1' || '' }}
+          SKIP_LLM: ${{ github.event.inputs.skip_llm && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: node automation/ai-app-visit-intelligence-orchestrator.cjs

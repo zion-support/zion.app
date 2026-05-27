@@ -1,0 +1,67 @@
+# Production Smoke Test
+# Runs after deploy-on-push completes. Verifies key pages return 200.
+# Useful for post-deploy validation without blocking the deploy job.
+
+name: Production Smoke Test
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-smoke-test
+  cancel-in-progress: true
+
+on:
+  workflow_run:
+    workflows: [Deploy on Push]
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  smoke-test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Validate promoted routes
+        run: npm run routes:promotions:check
+
+      - name: Netlify deploy removed (migrated to GitHub Pages)
+        if: false
+        run: sleep 120
+
+      - name: Smoke test key pages
+        run: |
+          set -euo pipefail
+          failed=0
+          while IFS= read -r path; do
+            if [ -z "$path" ] || [[ "$path" == \#* ]]; then
+              continue
+            fi
+            url="https://ziontechgroup.com$path"
+            status=$(curl --silent --show-error --max-time 5 -o /dev/null -w "%{http_code}" "$url" || echo "000")
+            if [ "$status" = "200" ]; then
+              echo "✅ $path ($status)"
+            else
+              echo "❌ $path ($status)"
+              failed=1
+            fi
+          done < config/smoke-routes.txt
+          if [ $failed -eq 1 ]; then
+            echo "::warning::Some pages failed smoke test"
+          fi
+        continue-on-error: true

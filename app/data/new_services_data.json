@@ -1,0 +1,90 @@
+[
+  {
+    "category": "data",
+    "id": "data-graph-analytics-platform",
+    "title": "Graph Analytics Platform",
+    "description": "Graph database + analytics engine: property-graph storage, Cypher query engine, built-in community-detection, shortest-path, centrality algorithms, real-time graph query API. Supports Neo4j and Amazon Neptune query syntax.",
+    "basic": "3999",
+    "pro": "11999",
+    "enterprise": "39999",
+    "popular": true,
+    "features": [
+      "Property-graph storage with dual indexing on node and relationship",
+      "Cypher-compatible query engine \u2014 query any connected graph reachable in 2 hops",
+      "Built-in algorithms \u2014 community detection, shortest-path, and centrality",
+      "Real-time graph query API with connection pooling and per-query SLA"
+    ],
+    "benefits": [
+      "Find connected threat actors across 6 degrees of separation in under 5 seconds",
+      "Recommendation engine queries execute across millions of edges with sub-10ms guarantees",
+      "Community detection finds hidden groups without supervised model",
+      "Cypher query verbosity means less SQL boilerplate for anything graph-connected"
+    ]
+  },
+  {
+    "category": "data",
+    "id": "data-image-video-search-engine",
+    "title": "Image & Video Search Engine",
+    "description": "Visual search as a platform: CLIP-based embedding store, vector index with Qdrant/Pinecone, OCR + object/face/scene tag per frame, timestamped search in videos, content-aware smart cropping and reflow.",
+    "basic": "3499",
+    "pro": "9999",
+    "enterprise": "34999",
+    "popular": true,
+    "features": [
+      "CLIP-based embedding store with Qdrant or Pinecone vector index backend",
+      "Full OCR + object/face/scene tag per frame in every video processed",
+      "Timestamped search in video \u2014 jump to the frame where a concept appears",
+      "Content-aware smart cropping and visual reflow for multi-format output"
+    ],
+    "benefits": [
+      "Search catalogues of millions of images using natural language instead of keywords",
+      "Find a specific person or object across thousands of hours of footage in seconds",
+      "OCR indexing turns video into searchable text transcript gallery",
+      "Content-aware output means one reflow job publisher delivers 12 aspect ratios from one source"
+    ]
+  },
+  {
+    "category": "data",
+    "id": "data-realtime-trending-aggregator",
+    "title": "Real-time Event & Trending Aggregator",
+    "description": "Streaming data platform: Flink/Redpanda backbone, windowed aggregation at sub-second latency, trend-detection anomaly alerts, opentelemetry distributed-tracing per event, dashboarding per team with live drill-through.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": true,
+    "features": [
+      "Flink + Redpanda backbone with sub-second windowed aggregation",
+      "Trend-detection + anomaly-alert engine with statistical significance scoring",
+      "Opentelemetry per event \u2014 correlate any aggregate back to source event in one click",
+      "Live dashboard with drill-through per team with RBAC on views and rows"
+    ],
+    "benefits": [
+      "Know what your product or your API are doing as they're happening, not the next morning",
+      "Trend-detection alerting on spikes in errors or latency catches outages before customers call",
+      "Per-event tracing means no more 'event-lost' midnight firefight",
+      "Time-limited dashboard views are the right way to share live data with stakeholders"
+    ]
+  },
+  {
+    "category": "data",
+    "id": "data-unstructured-data-lake",
+    "title": "Unstructured Data Lake",
+    "description": "Managed object store on blob backend with auto-ingest, schema-on-read catalog with Awake-based parsing (Parquet/Delta/JSON/CSV/Avro), cost-tiered storage (hot/warm/cold), built-in PII detection, OBIEE/Looker connector.",
+    "basic": "2499",
+    "pro": "7499",
+    "enterprise": "22999",
+    "popular": false,
+    "features": [
+      "Auto-ingest from S3/ADLS/GCS every 60 seconds or on demand",
+      "Schema-on-read catalog with Awakes parsing across Parquet, Delta, JSON, CSV, and Avro",
+      "Cost-tiered hot/warm/cold storage with auto-archive policy per dataset",
+      "Built-in PII detection with obfuscation or recommend per-field redact action"
+    ],
+    "benefits": [
+      "One platform for unstructured and structured data removes the lake/warehouse ping-pong",
+      "PII detected and flagged before anyone queries unexpectedly sensitive columns",
+      "Cost-tiered storage means you save 70%+ on cold archive retention vs. always-hot bucket",
+      "Awake-building based parsers means every file type is read correctly without ETL pipeline changes"
+    ]
+  }
+]

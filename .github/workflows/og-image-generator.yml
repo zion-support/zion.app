@@ -1,0 +1,74 @@
+permissions:
+  contents: read
+name: Autonomous Open Graph Image Generator
+true:
+  schedule:
+  - cron: 0 1 * * *
+  workflow_dispatch: null
+jobs:
+  og-generate:
+    name: Generate OG Images
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies (including Playwright)
+      run: 'npm ci --include=dev
+
+        npx playwright install chromium
+
+        '
+    - name: Run OG Image Generator
+      id: generator
+      continue-on-error: true
+      run: 'node automation/og-image-generator.cjs > /tmp/og-generator-output.txt
+        || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload OG images artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: og-images
+        path: public/og-images/*.png
+        retention-days: 30
+    - name: Upload manifest artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: og-images-manifest
+        path: .hermes/memory/og-images/manifest.json
+        retention-days: 30
+    - name: Commit generated OG images
+      if: steps.generator.outputs.exit_code == '0'
+      run: 'git config user.name "openclaw-automation"
+
+        git config user.email "openclaw@ziontechgroup.com"
+
+        git add public/og-images/
+
+        git diff --cached --quiet || git commit -m "feat(auto): generate OG images
+        for content"
+
+        git push origin HEAD:${{ github.ref }}
+
+        '
+    - name: Notify Telegram on completion
+      if: success()
+      run: "COUNT=$(find public/og-images -name '*.png' 2>/dev/null | wc -l)\nnode\
+        \ automation/notify-telegram.js \"\U0001F5BC\uFE0F OG image generator: updated\
+        \ ${COUNT} images.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F OG image generator failed.\
+        \ Check workflow logs.\"\n"
+    timeout-minutes: 10

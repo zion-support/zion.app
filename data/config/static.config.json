@@ -1,0 +1,25 @@
+{
+  "autopilot": {
+    "max_thread_depth": 10,
+    "reply_all_guard": true,
+    "shift_stubs": {
+      "ci": true,
+      "local": true
+    },
+    "tiers": {
+      "tier:110k hitl + gating": {
+        "max_reply_all_depth": 3
+      },
+      "civil_contracts": {
+        "max_reply_all_depth": 2
+      },
+      "lock": {
+        "max_reply_all_depth": 0
+      }
+    },
+    "tiers_default": {
+      "max_reply_all_depth": 4
+    },
+    "deadline_seconds": 1200
+  }
+}

@@ -1,0 +1,83 @@
+name: AI workflow failure triage hourly
+
+permissions:
+  actions: read
+  contents: write
+
+on:
+  schedule:
+    - cron: "11 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ai-workflow-failure-triage-hourly
+  cancel-in-progress: false
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Build workflow failure triage report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p automation/reports
+          gh run list --limit 80 --json workflowName,conclusion,status,url,createdAt > automation/reports/workflow-failure-triage-latest.json
+          node <<'NODE'
+          const fs = require('fs');
+          const p = 'automation/reports/workflow-failure-triage-latest.json';
+          const runs = JSON.parse(fs.readFileSync(p, 'utf8'));
+          const failed = runs.filter(r => r.conclusion === 'failure');
+          const grouped = new Map();
+          for (const r of failed) grouped.set(r.workflowName, (grouped.get(r.workflowName) || 0) + 1);
+          const top = [...grouped.entries()].sort((a,b) => b[1]-a[1]).slice(0, 20);
+          const lines = [];
+          lines.push('# Workflow failure triage');
+          lines.push('');
+          lines.push(`- generatedAt: ${new Date().toISOString()}`);
+          lines.push(`- recentRuns: ${runs.length}`);
+          lines.push(`- failedRuns: ${failed.length}`);
+          lines.push('');
+          lines.push('## Top failing workflows');
+          if (!top.length) lines.push('- none');
+          for (const [name, count] of top) lines.push(`- ${name}: ${count}`);
+          lines.push('');
+          lines.push('## Latest failed runs');
+          for (const r of failed.slice(0, 20)) lines.push(`- ${r.workflowName} | ${r.createdAt} | ${r.url}`);
+          fs.writeFileSync('automation/reports/workflow-failure-triage-latest.md', lines.join('\n') + '\n');
+          NODE
+
+      - name: Upload triage artifact
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: workflow-failure-triage-${{ github.run_id }}
+          path: |
+            automation/reports/workflow-failure-triage-latest.json
+            automation/reports/workflow-failure-triage-latest.md
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit triage report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/workflow-failure-triage-latest.json automation/reports/workflow-failure-triage-latest.md
+          if git diff --staged --quiet; then
+            echo "No triage report changes."
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): refresh workflow failure triage"

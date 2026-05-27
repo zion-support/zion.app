@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-10-16T17:25:59.729Z",
+  "issues": [
+    {
+      "type": "Twitter Card tags",
+      "message": "Twitter Card tags are present",
+      "severity": "low"
+    },
+    {
+      "type": "Structured data",
+      "message": "Structured data is present",
+      "severity": "medium"
+    },
+    {
+      "type": "Heading structure",
+      "message": "H1 tag is present",
+      "severity": "high"
+    },
+    {
+      "type": "Alt attributes for images",
+      "message": "Images have alt attributes",
+      "severity": "high"
+    }
+  ],
+  "recommendations": [
+    "✅ Title tag is present",
+    "✅ Meta description is present",
+    "✅ Meta keywords are present",
+    "✅ Open Graph tags are present",
+    "✅ Canonical URL is present",
+    "✅ Robots meta tag is present",
+    "🔧 Structured data is present",
+    "🔧 H1 tag is present",
+    "🔧 Images have alt attributes"
+  ],
+  "score": 55
+}

@@ -1,0 +1,38 @@
+name: AI Actions pin strict guard
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/**'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/**'
+
+concurrency:
+  group: ai-actions-pin-strict-guard
+  cancel-in-progress: true
+
+jobs:
+  strict-pin-audit:
+    if: github.event_name == 'workflow_dispatch' || (vars.ACTIONS_PIN_STRICT == 'true' && (github.event_name == 'pull_request' || (github.event_name == 'push' && vars.ACTIONS_PIN_STRICT_MAIN_PUSH == 'true')))
+    uses: ./.github/workflows/reusable-workflow-ci.yml
+    with:
+      run_contracts: true
+    timeout-minutes: 15
+
+  strict-pin-hint:
+    if: ${{ always() && needs.strict-pin-audit.result == 'failure' }}
+    needs: strict-pin-audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Hint on strict pin failure
+        run: |
+          echo "::notice::Strict pin runs on pull_request (workflow file changes) when ACTIONS_PIN_STRICT=true. Optional: set ACTIONS_PIN_STRICT_MAIN_PUSH=true to also run on push to main. Set ACTIONS_PIN_STRICT=false to disable, or run npm run pin-actions / weekly pin workflow to SHA-pin remaining actions."

@@ -1,0 +1,106 @@
+name: AI Broken Link Fixer Agent
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ai-broken-link-fixer
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '30 6 * * 1,4'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: false
+        default: 'run'
+        type: choice
+        options:
+          - run
+          - scan
+      check_external:
+        description: 'Check external links'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+  push:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'src/**'
+      - 'components/**'
+
+jobs:
+  broken-link-fixer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run AI Broken Link Fixer Agent
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTO_COMMIT: 'true'
+          AUTO_PUSH: 'false'
+          MAX_LINKS_PER_RUN: '500'
+          CHECK_EXTERNAL: ${{ inputs.check_external || 'true' }}
+          INTERVAL_SECONDS: '15'
+          EXTERNAL_TIMEOUT: '3000'
+          MAX_CONCURRENT_CHECKS: '50'
+          PARALLEL_PROCESSING: 'true'
+          MAX_CONCURRENT_FILES: '20'
+          INPUT_MODE: ${{ inputs.mode || 'run' }}
+        run: node automation/ai-broken-link-fixer.cjs "$INPUT_MODE"
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: broken-link-report-${{ github.run_id }}
+          path: |
+            automation/reports/broken-link-fixer-latest-report.json
+            automation/logs/ai-broken-link-fixer.log
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Push changes
+        if: success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict — skipping push."
+            git rebase --abort || true
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh

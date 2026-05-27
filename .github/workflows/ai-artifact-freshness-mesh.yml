@@ -1,0 +1,83 @@
+name: AI Artifact Freshness Mesh
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+concurrency:
+  group: ai-artifact-freshness-mesh
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '15 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  freshness-mesh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run artifact freshness mesh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_FRESHNESS_AUTO_HEAL: "1"
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run artifacts:freshness:mesh
+        continue-on-error: true
+
+      - name: Upload mesh report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: artifact-freshness-mesh-${{ github.run_id }}
+          path: automation/reports/artifact-freshness-mesh-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Open or close issue based on mesh status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/artifact-freshness-mesh-latest.json"
+          [ -f "$report" ] || exit 0
+          stale_count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.staleCount||0))")
+          if [ "$stale_count" = "0" ]; then
+            export ISSUE_FINGERPRINT="artifact-freshness-mesh"
+            export CLOSE_COMMENT="Auto-closing: artifact freshness mesh recovered."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="artifact-freshness-mesh.md"
+          {
+            echo "## Artifact freshness mesh stale reports detected"
+            echo ""
+            echo "- Stale report count: **${stale_count}**"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Mesh report: \`automation/reports/artifact-freshness-mesh-latest.json\`"
+            echo ""
+            echo "### Stale targets"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.results||[])){if(item.stale){console.log('- '+item.key+' ('+item.file+') ageHours='+(item.ageHours ?? 'n/a')+' workflow='+item.workflow)}}"
+          } > "$body_file"
+          export ISSUE_TITLE="Artifact freshness mesh stale reports detected"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="artifact-freshness-mesh"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

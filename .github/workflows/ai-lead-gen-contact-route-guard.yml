@@ -1,0 +1,77 @@
+name: AI lead gen contact route guard
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+concurrency:
+  group: ai-lead-gen-contact-route-guard
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Lead-gen contact guard
+        id: guard
+        continue-on-error: true
+        env:
+          LEAD_GEN_BASE_URL: https://ziontechgroup.com
+          LEAD_GEN_EXPECTED_EMAIL: kleber@ziontechgroup.com
+        run: node scripts/automation/lead-gen-contact-route-guard.cjs
+
+      - name: Open deduped issue on contact guard failure
+        if: steps.guard.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: Lead-gen contact route guard failed
+          ISSUE_FINGERPRINT: lead-gen-contact-route-guard
+          ISSUE_LABELS: bug,automation
+          COOLDOWN_HOURS: '1'
+        run: |
+          cat > lead-gen-contact-guard.md <<'EOF'
+          ## Lead-gen contact route guard failed
+
+          - **Dedupe key:** `lead-gen-contact-route-guard`
+          - Base URL: `https://ziontechgroup.com`
+          - Expected email: `kleber@ziontechgroup.com`
+          - Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EOF
+          export ISSUE_BODY_FILE=lead-gen-contact-guard.md
+          export ISSUE_FINGERPRINT="lead-gen-contact-route-guard"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+
+      - name: Close issue on guard recovery
+        if: steps.guard.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: lead-gen-contact-route-guard
+          CLOSE_COMMENT: "Auto-closing: lead-gen contact route guard recovered."
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true
+
+      - name: Fail workflow if guard failed
+        if: steps.guard.outcome != 'success'
+        run: |
+          echo "::error::Lead-gen contact route guard failed."
+          exit 1

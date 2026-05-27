@@ -1,0 +1,36 @@
+# Ensures .github/labeler.yml and auto-label workflow keep expected label-routing anchors (grep-only).
+
+name: labeler config smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 7 * * 2' # Tuesdays 07:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-labeler-config-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  labeler-config:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Labeler config and auto-label anchors
+        run: |
+          set -euo pipefail
+          test -f .github/labeler.yml
+          test -s .github/labeler.yml
+          grep -Fq 'ci:' .github/labeler.yml
+          grep -Fq 'automation:' .github/labeler.yml
+          grep -Fq 'frontend:' .github/labeler.yml
+          grep -Fq 'documentation:' .github/labeler.yml
+          grep -Fq "configuration-path: .github/labeler.yml" .github/workflows/auto-label.yml
+          grep -Fq 'actions/labeler@' .github/workflows/auto-label.yml
+          echo 'ok: labeler config + auto-label workflow'

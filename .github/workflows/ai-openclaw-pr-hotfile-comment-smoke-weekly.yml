@@ -1,0 +1,36 @@
+# Ensures ai-openclaw-pr-hotfile-comment.yml keeps hot-file PR routing anchors (grep-only).
+name: ai openclaw PR hot-file advisory workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '53 11 * * 3' # Wednesdays 11:53 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-pr-hotfile-comment-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-pr-hotfile-comment-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-pr-hotfile-comment.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-pr-hotfile-comment.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Openclaw PR hot-file advisory' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'types: [opened, synchronize]' "$f"
+          grep -Fq 'group: openclaw-pr-hotfile-' "$f"
+          grep -Fq 'cancel-in-progress: true' "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'pull-requests: write' "$f"
+          grep -Fq 'npm run openclaw:conflict:predict' "$f"
+          grep -Fq 'npm run openclaw:hot:patch:route' "$f"
+          grep -Fq 'openclaw-pr-hotfile-comment.cjs' "$f"
+          grep -Fq 'openclaw-pr-hotfile-labels.cjs' "$f"
+          echo "ok: $f"

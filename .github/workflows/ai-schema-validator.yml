@@ -1,0 +1,251 @@
+name: AI Schema.org Validator
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-schema-validator-${{ github.event_name }}
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: '0 8 * * 2'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**/page.tsx'
+      - 'app/**/layout.tsx'
+      - 'app/components/SEO**'
+  workflow_dispatch:
+
+jobs:
+  schema-audit:
+    name: Schema.org Structured Data Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build site
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Audit structured data in built pages
+        id: audit
+        run: |
+          mkdir -p schema-reports
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const glob = require('glob');
+
+          const outputDir = fs.existsSync('out') ? 'out' : 'dist';
+          const htmlFiles = glob.sync(outputDir + '/**/index.html').slice(0, 40);
+          const results = [];
+
+          for (const file of htmlFiles) {
+            const content = fs.readFileSync(file, 'utf-8');
+            const route = '/' + path.relative(outputDir, path.dirname(file)).replace(/\\\\/g, '/');
+
+            const ldJsonMatches = content.match(/<script[^>]*type=[\"']application\/ld\+json[\"'][^>]*>([\s\S]*?)<\/script>/gi) || [];
+            const schemas = ldJsonMatches.map(m => {
+              const jsonStr = m.replace(/<\/?script[^>]*>/gi, '').trim();
+              try { return JSON.parse(jsonStr); } catch { return null; }
+            }).filter(Boolean);
+
+            const hasOg = /<meta[^>]*property=[\"']og:/i.test(content);
+            const hasTwitter = /<meta[^>]*name=[\"']twitter:/i.test(content);
+            const titleMatch = content.match(/<title>([^<]+)<\/title>/);
+            const descMatch = content.match(/<meta[^>]*name=[\"']description[\"'][^>]*content=[\"']([^\"']+)/i);
+
+            results.push({
+              route: route === '/.' ? '/' : route,
+              schemaCount: schemas.length,
+              schemaTypes: schemas.map(s => s['@type'] || 'unknown'),
+              hasOpenGraph: hasOg,
+              hasTwitterCards: hasTwitter,
+              title: titleMatch ? titleMatch[1].substring(0, 80) : null,
+              description: descMatch ? descMatch[1].substring(0, 120) : null,
+              issues: [
+                ...(!schemas.length ? ['No structured data (JSON-LD)'] : []),
+                ...(!hasOg ? ['Missing Open Graph tags'] : []),
+                ...(!hasTwitter ? ['Missing Twitter Card tags'] : []),
+                ...(!titleMatch ? ['Missing title tag'] : []),
+                ...(!descMatch ? ['Missing meta description'] : []),
+              ],
+            });
+          }
+
+          const summary = {
+            totalPages: results.length,
+            withSchema: results.filter(r => r.schemaCount > 0).length,
+            withoutSchema: results.filter(r => r.schemaCount === 0).length,
+            withOg: results.filter(r => r.hasOpenGraph).length,
+            withTwitter: results.filter(r => r.hasTwitterCards).length,
+            schemaTypes: [...new Set(results.flatMap(r => r.schemaTypes))],
+          };
+
+          fs.writeFileSync('schema-reports/schema-audit.json', JSON.stringify({ summary, pages: results }, null, 2));
+          console.log(JSON.stringify(summary, null, 2));
+          "
+
+          echo "audited=true" >> "$GITHUB_OUTPUT"
+
+      - name: AI Schema Recommendations
+        if: steps.audit.outputs.audited == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — skipping AI recommendations"
+            cat schema-reports/schema-audit.json | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          s = data['summary']
+          print(f'Pages: {s[\"totalPages\"]}, With schema: {s[\"withSchema\"]}, Without: {s[\"withoutSchema\"]}')
+          print(f'Schema types found: {\", \".join(s[\"schemaTypes\"]) if s[\"schemaTypes\"] else \"none\"}')" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          AUDIT_DATA=$(python3 -c "
+          import json
+          with open('schema-reports/schema-audit.json') as f:
+            data = json.load(f)
+          compact = {
+            'summary': data['summary'],
+            'pages_with_issues': [p for p in data['pages'] if p['issues']][:15]
+          }
+          print(json.dumps(compact))
+          ")
+
+          PAYLOAD=$(python3 -c "
+          import json
+          audit = json.loads('''$(echo "$AUDIT_DATA" | sed "s/'/\\\\'/g")''')
+
+          prompt = '''Analyze the schema.org structured data audit for ziontechgroup.com (AI solutions platform).
+
+          Audit Results:
+          ''' + json.dumps(audit, indent=2) + '''
+
+          Provide:
+          1. **Current State Assessment** — What structured data exists and what's missing
+          2. **Priority Recommendations** — Top 5 schema.org types to add (e.g., Organization, Product, Service, FAQPage, BreadcrumbList)
+          3. **Implementation Examples** — JSON-LD code snippets for the top 3 recommended schemas, customized for Zion Tech Group
+          4. **Page-Specific Fixes** — For the pages with most issues, what specific structured data to add
+          5. **SEO Impact Estimate** — Expected search visibility improvements from implementing these schemas
+
+          Focus on schemas that drive rich snippets in Google Search results.'''
+
+          payload = {
+            'model': 'openrouter/auto',
+            'max_tokens': 3000,
+            'messages': [
+              {'role': 'system', 'content': 'You are a technical SEO specialist with deep expertise in schema.org structured data and Google Search rich results. Provide specific, implementable JSON-LD code examples.'},
+              {'role': 'user', 'content': prompt}
+            ]
+          }
+          print(json.dumps(payload))
+          ")
+
+          RESPONSE=$(curl -sS --max-time 90 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-SchemaAudit" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          ANALYSIS=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'No analysis returned.')
+          except Exception as e:
+              print(f'AI analysis error: {e}')
+          ")
+
+          echo "$ANALYSIS" > schema-reports/ai-schema-recommendations.md
+
+          {
+            echo "## Schema.org Structured Data Audit"
+            echo ""
+            echo "$ANALYSIS"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && hashFiles('schema-reports/ai-schema-recommendations.md') != ''
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '### Schema.org Audit\n\n';
+            try {
+              const report = JSON.parse(fs.readFileSync('schema-reports/schema-audit.json', 'utf-8'));
+              const s = report.summary;
+              body += `| Metric | Count |\n|--------|-------|\n`;
+              body += `| Pages scanned | ${s.totalPages} |\n`;
+              body += `| With structured data | ${s.withSchema} |\n`;
+              body += `| Without structured data | ${s.withoutSchema} |\n`;
+              body += `| With Open Graph | ${s.withOg} |\n\n`;
+
+              if (fs.existsSync('schema-reports/ai-schema-recommendations.md')) {
+                const recs = fs.readFileSync('schema-reports/ai-schema-recommendations.md', 'utf-8');
+                if (recs.length > 100) {
+                  body += '<details><summary>AI Recommendations</summary>\n\n' + recs.substring(0, 3000) + '\n\n</details>';
+                }
+              }
+            } catch (e) {
+              body += 'Schema audit completed. Check workflow artifacts for details.';
+            }
+
+            body += '\n\n---\n> Automated schema.org audit | Run #' + context.runNumber;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### Schema.org Audit')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: schema-audit-${{ github.run_id }}
+          path: schema-reports/
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,75 @@
+name: AI Stale Promotion Re-promoter
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  workflow_run:
+    workflows: [AI Stale Promotion Guard]
+    types:
+      - completed
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  repromote:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      STALE_PROMOTION_RECOVERY_THRESHOLD: "4"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Prime stale promotion report
+        env:
+          DEPLOY_WATCHDOG_BASE_URL: https://ziontechgroup.com
+          DEPLOY_WATCHDOG_ROUTES_FILE: config/smoke-routes.txt
+          DEPLOY_WATCHDOG_MAX_ROUTES: 20
+          DEPLOY_WATCHDOG_ATTEMPTS: 2
+          DEPLOY_WATCHDOG_INTERVAL_MS: 12000
+          STALE_PROMOTION_FAILURE_THRESHOLD: "3"
+        run: |
+          npm run deploy:watchdog || true
+          npm run promotions:stale:guard
+          npm run promotions:confidence:report
+
+      - name: Run stale promotion re-promoter
+        run: node automation/ai-stale-promotion-repromoter.cjs
+
+      - name: Create re-promotion PR when catalog changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/stale-promotion-repromotion-latest.json"
+          [ -f "$report" ] || exit 0
+          changed=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.changed ? '1' : '0')")
+          if [ "$changed" != "1" ]; then
+            echo "No re-promotion changes to propose."
+            exit 0
+          fi
+          branch="stale-promotion-repromotion-${{ github.run_id }}"
+          git checkout -b "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/config/aiCatalog.ts automation/reports/stale-promotion-repromotion-latest.json
+          git commit -m "chore(promotion): auto-recover healthy promoted routes"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "chore(promotion): auto-recover healthy promoted routes" --body "Auto-restores previously demoted promoted routes once route health recovery threshold is met for consecutive checks."
+

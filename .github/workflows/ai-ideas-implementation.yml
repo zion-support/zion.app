@@ -1,0 +1,91 @@
+# AI Ideas to Implementation
+# Maximum-velocity content pipeline: ideation + evolution ideas + blog + front page + product pages.
+# Runs 4x daily (4/8/12/16 UTC) for fastest content velocity.
+# Requires: OPENROUTER_API_KEY (Netlify build hook removed → GitHub Pages)
+
+name: AI Ideas to Implementation
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+    - cron: '0 8 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+    inputs:
+      max_blog_posts:
+        description: 'Max blog posts (default 6)'
+        required: false
+        default: '6'
+      max_product_pages:
+        description: 'New product pages to create (default 1)'
+        required: false
+        default: '1'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+      skip_product_pages:
+        description: 'Skip product page creator'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  ideas-impl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Secret preflight
+        env:
+          REQUIRED_SECRETS: OPENROUTER_API_KEY
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: npm run secrets:preflight
+
+      - name: Autonomous quality gate
+        run: npm run autonomy:prepush-gate
+
+      - name: Run ideas to implementation pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+          AUTO_COMMIT: "1"
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          MAX_BLOG_POSTS: ${{ github.event.inputs.max_blog_posts || '6' }}
+          MAX_PRODUCT_PAGES: ${{ github.event.inputs.max_product_pages || '1' }}
+          SKIP_PRODUCT_PAGES: ${{ github.event.inputs.skip_product_pages && '1' || '' }}
+          ENFORCE_QUALITY_GATES: "1"
+        run: |
+          set -euo pipefail
+          node automation/ai-ideas-to-implementation-pipeline.cjs
+          COMMIT_MESSAGE="chore(content): AI ideas to implementation - blog + front page + product pages" \
+          TARGET_BRANCH=main \
+          PUSH_RETRIES=3 \
+          TRIGGER_DEPLOY="${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}" \
+          # NETLIFY_BUILD_HOOK removed (migrated to GitHub Pages) \
+          npm run autonomy:safe-release

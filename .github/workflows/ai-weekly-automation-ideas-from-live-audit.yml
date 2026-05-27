@@ -1,0 +1,90 @@
+# Weekly Automation Ideas From Live Audit
+# Runs live UX audit, site link audit, live nav audit (if needed), then
+# ai-automation-ideas-from-live-audit to merge automation improvement ideas
+# into app-evolution-backlog. Commits backlog when updated.
+# Schedule: Sun 8 UTC. workflow_dispatch.
+
+name: AI Weekly Automation Ideas From Live Audit
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-weekly-automation-ideas-from-live-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 8 * * 0'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push backlog when updated'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  automation-ideas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Live Site UX Audit
+        run: node automation/ai-live-site-ux-audit-agent.cjs || true
+
+      - name: Site Link Audit
+        run: node automation/ai-site-link-audit-automation.cjs audit || true
+
+      - name: Live Navigation Audit
+        run: npm run nav:live-audit || true
+
+      - name: Automation ideas from live audit
+        id: automation_ideas
+        run: |
+          OUT=$(node automation/ai-automation-ideas-from-live-audit.cjs 2>&1)
+          echo "$OUT"
+          if echo "$OUT" | grep -q "Merged [1-9]"; then
+            echo "backlog_updated=true" >> $GITHUB_OUTPUT
+          else
+            echo "backlog_updated=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push backlog
+        if: steps.automation_ideas.outputs.backlog_updated == 'true' && (github.event_name == 'schedule' || github.event.inputs.auto_commit == 'true')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add automation/data/app-evolution-backlog.json
+          if git diff --staged --quiet; then
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(automation): merge automation ideas from live audit into evolution backlog"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: automation-ideas-live-audit-${{ github.run_id }}
+          path: |
+            automation/reports/live-site-ux-audit-latest.json
+            automation/reports/site-link-audit-latest.json
+            automation/reports/live-navigation-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "automation-invoice-purchase-order-processing",
+    "title": "Invoice & Purchase Order Processing",
+    "description": "AI-powered invoice + PO processing pipeline: scans, OCR, vendor matching via payment history, line-item validation vs. PO, three-way match against GRN, GL-code auto-suggestion, ERP posting stub, and exception-routing for unmatched documents.",
+    "icon": "📄",
+    "features": ["Multi-format OCR: scanned PDF, email attachment, vendor portal, API, paper mail with routing", "Three-way match: invoice vs. PO vs. goods-received note auto-compared per line item", "GL-code suggestion: vendor + line-item category ML classification with override audit trail", "Exception routing: unmatched → human worker queue with one-click approve/reject/edit", "ERP posting API stub: NetSuite, QuickBooks, Sage, Xero, Workday all pre-wired"],
+    "benefits": ["Auto-process up to 90% of invoices end-to-end without human touch — AP team only handles exceptions", "Cut invoice-processing cost from $12-20 per doc to $1-2 per doc", "Eliminate duplicate payment risk with automated PO match — avoid painful subsequent vendor refunds"],
+    "pricing": {"basic": "149", "pro": "549", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/automation-invoice-purchase-order-processing", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/automation-invoice-purchase-order-processing",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Invoice & Purchase Order Processing",
+    "is_featured": false
+  }
+]

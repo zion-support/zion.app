@@ -1,0 +1,26 @@
+# Scheduled full grep guard pass on main (bash + grep only; no Node/npm). Complements path-scoped workflow-grep-guards-fast.yml.
+
+name: Workflow grep guards (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '55 6 * * 0' # Sundays 06:55 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-grep-guards-weekly
+  cancel-in-progress: true
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Run workflow grep guards (full)
+        run: bash scripts/automation/run-workflow-grep-guards.sh

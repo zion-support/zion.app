@@ -1,0 +1,35 @@
+# Ensures README.md stays a useful repo entry (onboarding + quality commands; grep-only).
+
+name: README.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '3 8 * * 1' # Mondays 08:03 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-readme-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: README project entry
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -s README.md
+          grep -Fq '# Zion Tech Group' README.md
+          grep -Fq 'https://ziontechgroup.com' README.md
+          grep -Fq 'npm run dev' README.md
+          grep -Fq 'npm run lint:check' README.md
+          grep -Fq 'Next.js App Router' README.md
+          echo 'ok: README.md'

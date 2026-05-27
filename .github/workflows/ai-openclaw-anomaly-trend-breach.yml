@@ -1,0 +1,49 @@
+name: OpenClaw anomaly trend breach guard
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: openclaw-anomaly-trend-breach
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Evaluate anomaly trend breach and reconcile issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          WINDOW_HOURS: '24'
+          BREACH_WARN_MIN_CRITICAL: '3'
+          BREACH_CRIT_MIN_CRITICAL: '5'
+          ISSUE_FINGERPRINT_WARN: 'openclaw-runner-anomaly-trend-breach|24h|v1'
+          ISSUE_TITLE_WARN: '[automation] OpenClaw anomaly trend breach'
+          ISSUE_LABELS_WARN: 'automation,openclaw,automation-slo-warning'
+          ISSUE_FINGERPRINT_CRIT: 'openclaw-runner-anomaly-trend-breach|24h|critical|v1'
+          ISSUE_TITLE_CRIT: '[automation] OpenClaw anomaly trend breach critical'
+          ISSUE_LABELS_CRIT: 'automation,openclaw,automation-slo-critical'
+          WARN_WEBHOOK_URL: ${{ secrets.OPENCLAW_ANOMALY_TREND_WARN_WEBHOOK }}
+          CRIT_WEBHOOK_URL: ${{ secrets.OPENCLAW_ANOMALY_TREND_CRIT_WEBHOOK }}
+        run: node automation/openclaw-anomaly-trend-breach-guard.cjs

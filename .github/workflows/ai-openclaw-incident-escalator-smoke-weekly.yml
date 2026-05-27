@@ -1,0 +1,32 @@
+# Ensures ai-openclaw-incident-escalator.yml keeps incident escalation anchors (grep-only).
+name: ai openclaw incident escalator workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '51 11 * * 3' # Wednesdays 11:51 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-incident-escalator-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-incident-escalator-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-incident-escalator.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-incident-escalator.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Openclaw Incident Escalator' "$f"
+          grep -Fq "cron: '55 */6 * * *'" "$f"
+          grep -Fq 'npm run openclaw:autonomous-once' "$f"
+          grep -Fq 'openclaw-autonomous-app-improver-latest.json' "$f"
+          grep -Fq 'openclaw-incident-escalation' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          echo "ok: $f"

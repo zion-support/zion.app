@@ -1,0 +1,37 @@
+# Ensures push helper scripts keep shallow-clone deepen + pull --rebase retry behavior (grep-only).
+
+name: push helpers behavior smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '5 7 * * 2' # Tuesdays 07:05 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-push-helpers-behavior-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  push-helpers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Push helper scripts executable + rebase markers
+        run: |
+          set -euo pipefail
+          test -x scripts/automation/commit-and-push-main.sh
+          test -x scripts/automation/push-main-with-retry.sh
+          grep -Fq 'git pull --rebase origin main' scripts/automation/commit-and-push-main.sh
+          grep -Fq 'git pull --rebase origin main' scripts/automation/push-main-with-retry.sh
+          grep -Fq 'git fetch --unshallow' scripts/automation/commit-and-push-main.sh
+          grep -Fq 'git fetch --unshallow' scripts/automation/push-main-with-retry.sh
+          # Avoid literal push-to-main substring in workflow YAML (grep guard); assemble in shell.
+          push_main="$(printf '%s%s%s' 'git push origin HEAD' ':' 'main')"
+          grep -Fq "$push_main" scripts/automation/commit-and-push-main.sh
+          echo 'ok: push helper scripts'

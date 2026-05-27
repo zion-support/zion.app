@@ -1,0 +1,78 @@
+name: AI AI Lab integrity smoke contract
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-ai-lab-integrity-smoke-contract
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/ai-lab-integrity-guardian.cjs'
+      - 'app/ai-lab/ai-lab-tools.ts'
+      - 'automation/data/pages-to-visit.json'
+      - 'config/smoke-routes.txt'
+      - 'scripts/automation/generate-smoke-routes.cjs'
+      - 'automation/validate-ai-lab-route-contract.cjs'
+      - 'automation/lib/incident-cooldown-mesh.cjs'
+      - '.github/workflows/ai-ai-lab-integrity-smoke-contract.yml'
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      AUTO_REMEDIATE: '0'
+      AUTO_OPEN_ISSUE: '0'
+      AUTO_PAGES_VISIT_BACKFILL: '0'
+      AUTO_SMOKE_ROUTES_SYNC: '0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: AI Lab route contract (catalog ↔ visit list ↔ smoke)
+        run: npm run validate:ai-lab-route-contract
+
+      - name: Run integrity guard (report-only mode)
+        run: npm run ai-lab:integrity
+
+      - name: Validate smoke routes when sync requested
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const p = 'automation/reports/ai-lab-integrity-latest.json';
+          if (!fs.existsSync(p)) {
+            console.log('No integrity report found; skipping smoke routes contract.');
+            process.exit(0);
+          }
+          const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (!j || j.autoSmokeRoutesSync !== true) {
+            console.log('autoSmokeRoutesSync disabled in report; skipping.');
+            process.exit(0);
+          }
+          if (j.smokeRoutesSynced === true || Number(j.remediatedCount || 0) > 0) {
+            console.log('Smoke routes sync is relevant; enforcing smoke:routes:check');
+            process.exit(10);
+          }
+          console.log('No remediation in this run; contract check not required.');
+          NODE
+          status=$?
+          if [ "$status" -eq 10 ]; then
+            npm run smoke:routes:check
+          elif [ "$status" -ne 0 ]; then
+            exit "$status"
+          fi

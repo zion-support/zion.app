@@ -1,0 +1,14 @@
+{
+  "improvements": [
+    {
+      "timestamp": "2026-05-19T03:00:09.376279+00:00",
+      "change": {
+        "type": "language_optimization",
+        "sender": "airbnb.com>",
+        "current_lang": "pt",
+        "messages": 400,
+        "improvement": "Portuguese template personalization"
+      }
+    }
+  ]
+}

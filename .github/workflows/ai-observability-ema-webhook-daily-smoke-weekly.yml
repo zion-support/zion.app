@@ -1,0 +1,46 @@
+# Ensures ai-observability-ema-webhook-daily.yml keeps schedule/issue snapshot anchors (grep-only).
+name: ai observability ema webhook daily workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '5 12 * * 2' # Tuesdays 12:05 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-observability-ema-webhook-daily-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  ema-webhook-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-observability-ema-webhook-daily.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-observability-ema-webhook-daily.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Observability EMA webhook digest' "$f"
+          grep -Fq 'group: ai-observability-ema-webhook-daily' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '17 14 * * *'" "$f"
+          grep -Fq 'generate-automation-issue-index.cjs' "$f"
+          grep -Fq 'fingerprint-delta-webhook.cjs' "$f"
+          grep -Fq 'observability-ema-webhook-digest.cjs' "$f"
+          grep -Fq 'generate-automation-health-snapshot.cjs' "$f"
+          grep -Fq 'Commit cooldown state' "$f"
+          grep -Fq 'GITHUB_TOKEN:' "$f"
+          grep -Fq 'github.token' "$f"
+          grep -Fq 'observability-webhook-state.json' "$f"
+          grep -Fq 'observability-ema-fp-history.json' "$f"
+          grep -Fq 'fingerprint-delta-webhook-state.json' "$f"
+          grep -Fq 'automation-health-latest.json' "$f"
+          grep -Fq 'automation-health-history.json' "$f"
+          echo "ok: $f"

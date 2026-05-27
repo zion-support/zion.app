@@ -1,0 +1,43 @@
+# Ensures workflow-grep-subset-dispatch.yml keeps manual subset options and routing anchors (grep-only).
+
+name: workflow grep subset dispatch smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 8 * * 3' # Wednesdays 08:25 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-grep-subset-dispatch-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  subset-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: workflow-grep-subset-dispatch.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-grep-subset-dispatch.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow grep subset (manual)' "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'subset:' "$f"
+          grep -Fq 'push-token' "$f"
+          grep -Fq 'bash scripts/automation/run-workflow-grep-guards.sh --push-token' "$f"
+          grep -Fq 'node automation/github-workflow-integrity-auditor.cjs' "$f"
+          grep -Fq 'bash -n scripts/automation/commit-and-push-main.sh' "$f"
+          echo "ok: $f"

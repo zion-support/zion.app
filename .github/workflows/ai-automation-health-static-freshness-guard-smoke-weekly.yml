@@ -1,0 +1,39 @@
+# Ensures ai-automation-health-static-freshness-guard.yml keeps schedule/incident anchors (grep-only).
+name: ai automation health static freshness guard smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 12 * * 2' # Tuesdays 12:25 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automation-health-static-freshness-guard-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  freshness-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-automation-health-static-freshness-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automation-health-static-freshness-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Automation health static freshness guard' "$f"
+          grep -Fq "cron: '12 */6 * * *'" "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'check-automation-health-static-freshness.cjs' "$f"
+          grep -Fq 'automation-health-static-freshness-' "$f"
+          grep -Fq 'automation-health-static-freshness-latest.json' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'automation-health-static-freshness' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          echo "ok: $f"

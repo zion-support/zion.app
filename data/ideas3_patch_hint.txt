@@ -1,0 +1,14 @@
+# IDEAS-3 PATCH SITE — intelligent_email_responder_v26.py
+# After reply_all_dec is set and before the quality gate (L~1576):
+#
+#   from pathlib import Path as _P
+#   import sys; sys.path.insert(0, str(_P(__file__).resolve().parent.parent / "data"))
+#   from cc_memory import suggest_cc_from_memory
+#
+#   _mem_cc = suggest_cc_from_memory(sender, tid, members)
+#   if _mem_cc:
+#       use_cc = f"{use_cc}, {_mem_cc}" if use_cc else _mem_cc
+#       _log({"run_id": RUN_ID, "phase": "thread_memory_cc",
+#             "sender": sender, "thread_id": tid, "added": _mem_cc})
+#
+# Only applies when policy allows auto_ack CC.

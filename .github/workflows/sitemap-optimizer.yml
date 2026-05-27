@@ -1,0 +1,73 @@
+permissions:
+  contents: read
+name: Autonomous Dynamic Sitemap & Route Priority Optimizer
+true:
+  schedule:
+  - cron: 0 6 * * 0
+  workflow_dispatch: null
+jobs:
+  sitemap:
+    name: Sitemap Optimizer
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Sitemap Optimizer
+      id: sitemap
+      continue-on-error: true
+      run: 'node automation/sitemap-optimizer.cjs > /tmp/sitemap-output.txt || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload sitemap artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: sitemap-xml
+        path: public/sitemap.xml
+        retention-days: 7
+    - name: Commit updated sitemap.xml
+      if: steps.sitemap.outputs.exit_code == '0'
+      run: 'git config user.name "openclaw-automation"
+
+        git config user.email "openclaw@ziontechgroup.com"
+
+        git add public/sitemap.xml
+
+        git diff --cached --quiet || git commit -m "chore(auto): update sitemap.xml
+        with fresh priorities and lastmod"
+
+        git push origin HEAD:${{ github.ref }}
+
+        '
+    - name: Ping search engines (Google)
+      if: steps.sitemap.outputs.exit_code == '0'
+      run: 'curl -s "http://www.google.com/ping?sitemap=https://ziontechgroup.com/sitemap.xml"
+        > /dev/null
+
+        '
+    - name: Ping search engines (Bing)
+      if: steps.sitemap.outputs.exit_code == '0'
+      run: 'curl -s "http://www.bing.com/ping?sitemap=https://ziontechgroup.com/sitemap.xml"
+        > /dev/null
+
+        '
+    - name: Notify Telegram on update
+      if: steps.sitemap.outputs.exit_code == '0'
+      run: "node automation/notify-telegram.js \"\U0001F5FA\uFE0F Sitemap updated\
+        \ with fresh priorities and changefreq.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Sitemap optimizer encountered\
+        \ errors. Check workflow logs.\"\n"
+    timeout-minutes: 10

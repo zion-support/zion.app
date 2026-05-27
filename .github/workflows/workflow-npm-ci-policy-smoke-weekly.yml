@@ -1,0 +1,26 @@
+# Ruby-free weekly smoke: npm ci install-line policy only (very fast).
+
+name: Workflow npm ci policy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '55 6 * * 2' # Tuesdays 06:55 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-npm-ci-policy-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  npm-ci-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: npm ci policy guards (subset)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --npm-ci-policy

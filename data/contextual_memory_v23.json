@@ -1,0 +1,45 @@
+{
+  "senders": {
+    "github.com": {
+      "name": "Kleber Garcia Alcatrao",
+      "threads": [
+        "19e4511f0f7e71ca",
+        "19e45111973435f0",
+        "19e4510925498c92"
+      ],
+      "known_entities": [],
+      "preferences": {},
+      "total_interactions": 3,
+      "first_contact": "2026-05-20T11:16:01.205572+00:00",
+      "last_contact": "2026-05-20T11:16:01.210347+00:00",
+      "summary": "3 interactions | Main intent: unknown | Last: [Zion-support/zion-support.github.io] Run failed: "
+    }
+  },
+  "conversations": [
+    {
+      "thread_id": "19e4511f0f7e71ca",
+      "timestamp": "2026-05-20T11:16:01.206102+00:00",
+      "subject": "[Zion-support/zion-support.github.io] Run failed: Minimal Build Test - main (3411135)",
+      "snippet": "[Zion-support/zion-support.github.io] Minimal Build Test workflow run Minimal Build Test: All jobs have failed View workflow run Status Job Annotations Minimal Build Test / minimal Failed in 32 seconds",
+      "intent": "unknown",
+      "entities": []
+    },
+    {
+      "thread_id": "19e45111973435f0",
+      "timestamp": "2026-05-20T11:16:01.209052+00:00",
+      "subject": "[Zion-support/zion-support.github.io] Run failed: Deploy to GitHub Pages - main (3411135)",
+      "snippet": "[Zion-support/zion-support.github.io] Deploy to GitHub Pages workflow run Deploy to GitHub Pages: Some jobs were not successful View workflow run Status Job Annotations Deploy to GitHub Pages / build",
+      "intent": "unknown",
+      "entities": []
+    },
+    {
+      "thread_id": "19e4510925498c92",
+      "timestamp": "2026-05-20T11:16:01.210367+00:00",
+      "subject": "[Zion-support/zion-support.github.io] Run failed: .github/workflows/ai-actions-pin-strict-guard.yml - main (3411135)",
+      "snippet": "[Zion-support/zion-support.github.io] .github/workflows/ai-actions-pin-strict-guard.yml workflow run .github/workflows/ai-actions-pin-strict-guard.yml: No jobs were run View workflow run \u2014 You are",
+      "intent": "unknown",
+      "entities": []
+    }
+  ],
+  "entities": {}
+}

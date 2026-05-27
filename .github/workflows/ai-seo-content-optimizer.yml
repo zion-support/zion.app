@@ -1,0 +1,171 @@
+name: AI SEO & Content Optimizer
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-seo-optimizer
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 9 * * 3'
+  workflow_dispatch:
+
+jobs:
+  seo-optimize:
+    name: SEO & Content Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Collect page metadata
+        id: metadata
+        run: |
+          mkdir -p seo-reports
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const glob = require('glob');
+
+          const pages = glob.sync('app/**/page.tsx', { ignore: ['node_modules/**'] });
+          const report = [];
+
+          for (const page of pages.slice(0, 30)) {
+            const content = fs.readFileSync(page, 'utf-8');
+            const route = '/' + path.dirname(page).replace('app/', '').replace('app', '');
+
+            const titleMatch = content.match(/title\s*[:=]\s*['\x60\"]([^'\x60\"]+)['\x60\"]/);
+            const descMatch = content.match(/description\s*[:=]\s*['\x60\"]([^'\x60\"]+)['\x60\"]/);
+            const h1Match = content.match(/<h1[^>]*>([^<]+)<\/h1>/);
+
+            report.push({
+              route: route.replace(/\/\//g, '/'),
+              file: page,
+              title: titleMatch ? titleMatch[1] : null,
+              description: descMatch ? descMatch[1] : null,
+              h1: h1Match ? h1Match[1] : null,
+              hasTitle: !!titleMatch,
+              hasDescription: !!descMatch,
+              hasH1: !!h1Match,
+            });
+          }
+
+          fs.writeFileSync('seo-reports/metadata-audit.json', JSON.stringify(report, null, 2));
+
+          const missing = report.filter(p => !p.hasTitle || !p.hasDescription);
+          console.log('Total pages scanned:', report.length);
+          console.log('Missing title:', report.filter(p => !p.hasTitle).length);
+          console.log('Missing description:', report.filter(p => !p.hasDescription).length);
+          console.log('Missing H1:', report.filter(p => !p.hasH1).length);
+          "
+
+          echo "scanned=true" >> "$GITHUB_OUTPUT"
+
+      - name: AI SEO analysis via OpenRouter
+        if: steps.metadata.outputs.scanned == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — skipping AI analysis"
+            exit 0
+          fi
+
+          METADATA=$(cat seo-reports/metadata-audit.json | python3 -c "import sys,json; data=json.load(sys.stdin); print(json.dumps(data[:20]))")
+
+          PAYLOAD=$(python3 -c "
+          import json, sys
+          metadata = $METADATA
+          prompt = '''Analyze this SEO metadata audit for ziontechgroup.com (a Next.js AI solutions website).
+          For each page with issues, provide specific, actionable SEO improvements.
+          Focus on: missing/weak titles, missing/short descriptions, keyword optimization for AI/tech services.
+          Keep suggestions practical and ready to implement. Use markdown formatting.
+
+          Page metadata:
+          ''' + json.dumps(metadata, indent=2)
+
+          payload = {
+              'model': 'openrouter/auto',
+              'max_tokens': 2048,
+              'messages': [
+                  {'role': 'system', 'content': 'You are an SEO expert specializing in B2B technology and AI services websites. Provide actionable, specific SEO recommendations.'},
+                  {'role': 'user', 'content': prompt}
+              ]
+          }
+          print(json.dumps(payload))
+          ")
+
+          RESPONSE=$(curl -sS --max-time 60 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-SEO" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          ANALYSIS=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'No analysis returned.')
+          except Exception as e:
+              print(f'AI analysis error: {e}')
+          ")
+
+          echo "$ANALYSIS" > seo-reports/ai-seo-analysis.md
+
+          {
+            echo "## AI SEO Analysis"
+            echo ""
+            echo "$ANALYSIS"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Build verification
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Generate sitemap stats
+        run: |
+          if [ -d "out" ]; then
+            HTML_COUNT=$(find out -name '*.html' | wc -l)
+            SITEMAP_EXISTS="false"
+            [ -f "out/sitemap.xml" ] && SITEMAP_EXISTS="true"
+
+            {
+              echo ""
+              echo "### Build & Sitemap Stats"
+              echo ""
+              echo "| Metric | Value |"
+              echo "|--------|-------|"
+              echo "| HTML pages | **${HTML_COUNT}** |"
+              echo "| Sitemap present | **${SITEMAP_EXISTS}** |"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload SEO report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: seo-report-${{ github.run_id }}
+          path: seo-reports/
+          if-no-files-found: ignore
+          retention-days: 30

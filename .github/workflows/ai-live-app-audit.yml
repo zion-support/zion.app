@@ -1,0 +1,131 @@
+# AI Live App Audit
+# Fetches key live pages, runs UX + site link audits, writes report; optionally runs fix agents and commits.
+# Schedule: Friday 8 UTC. workflow_dispatch with apply_fix and auto_commit.
+# Complements: ai-live-ux-audit (Tue), ai-app-visit-audit-implement-deploy (Wed/Sat).
+
+name: AI Live App Audit
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 8 * * 5'
+  workflow_dispatch:
+    inputs:
+      apply_fix:
+        description: 'Run broken link fixer and UX auto-fix (if applicable)'
+        required: false
+        default: false
+        type: boolean
+      auto_commit:
+        description: 'Commit and push fixes to main'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: ai-live-app-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      HUGGINGFACE_HUB_TOKEN: ${{ secrets.HUGGINGFACE_HUB_TOKEN }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+      FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
+      COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Live Site UX Audit
+        run: node automation/ai-live-site-ux-audit-agent.cjs
+
+      - name: Site Link Audit
+        run: node automation/ai-site-link-audit-automation.cjs audit
+
+      - name: SEO meta audit (quick)
+        run: node automation/ai-seo-meta-auditor.cjs audit 2>/dev/null || true
+
+      - name: Write live app audit report
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const dir = path.join(process.cwd(), 'automation', 'reports');
+            let ux = {};
+            let siteLinks = {};
+            let seo = {};
+            try {
+              ux = JSON.parse(fs.readFileSync(path.join(dir, 'live-site-ux-audit-latest.json'), 'utf8'));
+            } catch (_) {}
+            try {
+              siteLinks = JSON.parse(fs.readFileSync(path.join(dir, 'site-link-audit-latest.json'), 'utf8'));
+            } catch (_) {}
+            try {
+              seo = JSON.parse(fs.readFileSync(path.join(dir, 'seo-meta-report.json'), 'utf8'));
+            } catch (_) {}
+            const report = {
+              timestamp: new Date().toISOString(),
+              ux: { score: ux.score, checksOk: (ux.checks || []).filter(c => c.ok).length, total: (ux.checks || []).length },
+              siteLinks: { internalLinks: siteLinks.internalLinks || siteLinks.totalLinks || 0, broken: siteLinks.broken || 0, pagesChecked: siteLinks.pagesChecked || 0 },
+              seo: { pagesAudited: (seo.pages || []).length, issuesCount: (seo.pages || []).reduce((n, p) => n + (p.issues || []).length, 0), avgScore: seo.summary && typeof seo.summary.averageScore === 'number' ? seo.summary.averageScore : null },
+            };
+            fs.mkdirSync(dir, { recursive: true });
+            fs.writeFileSync(path.join(dir, 'live-app-audit-latest.json'), JSON.stringify(report, null, 2));
+            console.log('Report written: automation/reports/live-app-audit-latest.json');
+          "
+
+      - name: Run fix agents (optional)
+        if: github.event.inputs.apply_fix == 'true'
+        run: |
+          node automation/ai-broken-link-fixer.cjs run || true
+          node automation/ai-live-site-ux-auto-fix-agent.cjs || true
+
+      - name: Configure git and commit
+        if: github.event.inputs.auto_commit == 'true' && success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          STATUS=$(git status --porcelain)
+          if [ -n "$STATUS" ]; then
+            git add -A
+            bash scripts/automation/commit-and-push-main.sh "chore(app): live app audit - UX and link fixes"
+          fi
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: live-app-audit-${{ github.run_id }}
+          path: |
+            automation/reports/live-app-audit-latest.json
+            automation/reports/live-site-ux-audit-latest.json
+            automation/reports/site-link-audit-latest.json
+            automation/reports/seo-meta-report.json
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,11 @@
+# Python dependencies for Zion Tech Group automation agents
+# Install: pip install -r commands/requirements-agents.txt
+
+# Lead Discovery Agent (Crunchbase, Apollo, PostgreSQL)
+requests>=2.28.0
+psycopg2-binary>=2.9.0
+
+# Email Interaction Agent (Gmail via gog, AI replies)
+python-dotenv>=1.0.0
+
+# Feature Promotion Agent - no extra deps (stdlib only)

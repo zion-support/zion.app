@@ -1,0 +1,75 @@
+name: AI Openclaw Freshness SLA
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '40 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  freshness-sla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh Openclaw report (best effort)
+        run: npm run openclaw:autonomous-once
+        continue-on-error: true
+
+      - name: Evaluate Openclaw freshness SLA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          export COOLDOWN_HOURS=$(node -p "try{const j=require('./automation/reports/incident-suppression-registry-latest.json');Number(j.slaCooldownHours||j.openclawCooldownHours||12)}catch(e){12}")
+          report="automation/reports/openclaw-autonomous-app-improver-latest.json"
+          if [ ! -f "$report" ]; then
+            age_seconds=999999
+            failures=999
+            successes=0
+          else
+            age_seconds=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));const ts=Date.parse(r.updatedAt||''); if(!Number.isFinite(ts)){console.log(999999)} else {console.log(Math.floor((Date.now()-ts)/1000));}")
+            failures=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.failures||0))")
+            successes=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.successes||0))")
+          fi
+          echo "Openclaw report age seconds: $age_seconds"
+          echo "Openclaw successes/failures: $successes/$failures"
+          if [ "$age_seconds" -le 5400 ] && [ "$failures" -le $((successes + 5)) ]; then
+            echo "Openclaw freshness SLA satisfied."
+            export ISSUE_FINGERPRINT="openclaw-freshness-sla"
+            export CLOSE_COMMENT="Auto-closing: Openclaw freshness SLA recovered in latest run."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="openclaw-freshness-sla.md"
+          {
+            echo "## Openclaw freshness SLA breach"
+            echo ""
+            echo "- **Dedupe key:** \`openclaw-freshness-sla\`"
+            echo ""
+            echo "- Report: \`automation/reports/openclaw-autonomous-app-improver-latest.json\`"
+            echo "- Age seconds: ${age_seconds}"
+            echo "- Successes: ${successes}"
+            echo "- Failures: ${failures}"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo ""
+            echo "SLA requires report age <= 5400 seconds and no severe failure burst."
+          } > "$body_file"
+          export ISSUE_TITLE="Openclaw freshness SLA breach"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="openclaw-freshness-sla"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

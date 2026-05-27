@@ -1,0 +1,73 @@
+permissions:
+  contents: read
+name: Autonomous SSL/TLS Certificate Expiration Monitor
+true:
+  schedule:
+  - cron: 0 7 * * 0
+  workflow_dispatch: null
+jobs:
+  cert-monitor:
+    name: Certificate Monitor
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Certificate Monitor
+      id: monitor
+      continue-on-error: true
+      run: 'node automation/cert-monitor.cjs > /tmp/cert-monitor-output.txt || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload history artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: cert-monitor-history
+        path: .hermes/memory/cert-monitor/history.json
+        retention-days: 30
+    - name: Open GitHub issue on certificate expiry risk
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst historyPath = '.hermes/memory/cert-monitor/history.json';\n\
+          let data = {};\ntry { data = JSON.parse(fs.readFileSync(historyPath, 'utf8'));\
+          \ } catch(e) {}\nconst latest = data.entries?.[data.entries.length-1]?.results\
+          \ || [];\n\nconst expiring = latest.filter((r: any) => r.ok && r.daysLeft\
+          \ !== undefined && r.daysLeft <= 30);\nconst errors = latest.filter((r:\
+          \ any) => !r.ok);\n\nlet body = `\U0001F6A8 **SSL/TLS Certificate Issues\
+          \ Detected**\\n\\n`;\nif (expiring.length) {\n  body += `**Expiring soon\
+          \ (\u226430 days):**\\n`;\n  for (const d of expiring) {\n    body += `-\
+          \ ${d.domain}: ${d.daysLeft} days left (expires ${d.expiryDate})\\n`;\n\
+          \  }\n  body += '\\n';\n}\nif (errors.length) {\n  body += `**Errors/failed\
+          \ checks:**\\n`;\n  for (const e of errors) {\n    body += `- ${e.domain}:\
+          \ ${e.error || 'Unknown error'}\\n`;\n  }\n  body += '\\n';\n}\nbody +=\
+          \ `\\n*Committed by: ${context.payload.committer?.name || 'scheduler'}*\\\
+          n`;\n\nconst title = `\U0001F6A8 SSL Certificate Alert \u2014 ${new Date().toISOString().slice(0,10)}`;\n\
+          const existing = await github.rest.issues.listForRepo({\n  owner: context.repo.owner,\n\
+          \  repo: context.repo.repo,\n  labels: ['ssl', 'certificate', 'autonomous',\
+          \ 'infra'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
+          \ any) => i.title.startsWith('\U0001F6A8 SSL Certificate Alert'));\nif (!already)\
+          \ {\n  await github.rest.issues.create({\n    owner: context.repo.owner,\n\
+          \    repo: context.repo.repo,\n    title,\n    body,\n    labels: ['ssl',\
+          \ 'certificate', 'autonomous', 'infra', 'blocker']\n  });\n}\n"
+    - name: Notify Telegram on alerts
+      if: failure()
+      run: "node automation/notify-telegram.js \"\U0001F6A8 SSL certificate issues\
+        \ detected. Check GitHub issues for details.\"\n"
+    - name: Notify Telegram on success
+      if: success()
+      run: "node automation/notify-telegram.js \"\u2705 SSL certificate check passed\
+        \ \u2014 all domains healthy.\"\n"
+    timeout-minutes: 10

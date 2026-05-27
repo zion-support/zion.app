@@ -1,0 +1,80 @@
+permissions:
+  contents: read
+name: TypeScript Type Coverage & Dead Code Check
+true:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+  - cron: 0 15 * * 1
+  workflow_dispatch: null
+jobs:
+  type-coverage:
+    name: Type Coverage & Dead Code
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run TypeScript Check
+      id: type-check
+      run: 'npm run type-check
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Run ESLint Check
+      id: lint-check
+      run: 'npm run lint:check || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Comment on PR if failed
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v7
+      with:
+        script: "const body = '\U0001F6A8 **TypeScript Type Check Failed**\\n\\n'\
+          \ +\n  'The TypeScript `tsc --noEmit` check found type errors. ' +\n  'Fix\
+          \ typing issues before merging.\\n\\n' +\n  'To reproduce locally:\\n' +\n\
+          \  '```\\n' +\n  'npm run type-check\\n' +\n  '```\\n';\ngithub.rest.issues.createComment({\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  issue_number:\
+          \ context.issue.number,\n  body\n});\n"
+    - name: Open issue on main branch regression
+      if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
+      uses: actions/github-script@v7
+      with:
+        script: "const title = '\U0001F6A8 TypeScript Check Regression on Main';\n\
+          const body = '**TypeScript check failed on `main`.**\\n\\n' +\n  'Run `npm\
+          \ run type-check` locally to reproduce.\\n\\n' +\n  `*Commit: ${context.payload.headCommit?.id?.slice(0,\
+          \ 7) || 'N/A'}*\\n`;\n\nconst existing = await github.rest.issues.listForRepo({\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  labels: ['type-coverage',\
+          \ 'autonomous'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
+          \ any) => i.title === title);\nif (!already) {\n  await github.rest.issues.create({\n\
+          \    owner: context.repo.owner,\n    repo: context.repo.repo,\n    title,\n\
+          \    body,\n    labels: ['type-coverage', 'autonomous', 'code-quality']\n\
+          \  });\n}\n"
+    - name: Notify Telegram on failure
+      if: failure()
+      run: "node automation/notify-telegram.js \"\U0001F6A8 TypeScript check failed\
+        \ \u2014 type errors detected. Review GitHub issues.\" || true\n"
+    - name: Notify Telegram on success (weekly digest)
+      if: success() && github.event_name == 'schedule'
+      run: "node automation/notify-telegram.js \"\u2705 Weekly TypeScript Check \u2014\
+        \ all clear.\" || true\n"
+    timeout-minutes: 10

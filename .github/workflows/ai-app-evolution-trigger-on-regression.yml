@@ -1,0 +1,80 @@
+# AI App Evolution Trigger on Regression
+# When performance regression is detected by ai-app-quality-audit, runs app improvement
+# evolution pipeline with quality checks enabled to implement fixes.
+# Runs: After ai-app-quality-audit completes (workflow_run)
+
+name: AI App Evolution Trigger on Regression
+
+permissions:
+  contents: write
+
+on:
+  workflow_run:
+    workflows: ['AI App Quality Audit']
+    types:
+      - completed
+  workflow_dispatch:
+
+concurrency:
+  group: app-evolution-trigger
+  cancel-in-progress: false
+
+jobs:
+  check-and-trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Download quality reports
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          run-id: ${{ github.event.workflow_run.id || github.run_id }}
+          name: quality-audit-reports
+        continue-on-error: true
+
+      - name: Check for regression
+        id: evolve
+        run: |
+          HAS_REGRESSION=false
+          for f in quality-audit-reports/automation/reports/performance-regression-latest.json quality-audit-reports/performance-regression-latest.json automation/reports/performance-regression-latest.json; do
+            if [ -f "$f" ]; then
+              REGRESSIONS=$(jq -r '.regressions | length // 0' "$f" 2>/dev/null || echo 0)
+              if [ "$REGRESSIONS" -gt 0 ]; then
+                HAS_REGRESSION=true
+                echo "Regression detected: $REGRESSIONS category(ies)"
+                break
+              fi
+            fi
+          done
+          if [ "$HAS_REGRESSION" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run_evolution=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_evolution=false" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        if: steps.evolve.outputs.run_evolution == 'true'
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Run app improvement evolution with quality checks
+        if: steps.evolve.outputs.run_evolution == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUTO_COMMIT: '1'
+          TRIGGER_DEPLOY: ''
+          SKIP_CONTENT: '1'
+          TRIGGER_FIXES: '1'
+          SKIP_LIGHTHOUSE: ''
+          SKIP_PERF_REGRESSION: ''
+          SKIP_LIVE_A11Y: ''
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          npm ci --prefer-offline --no-audit --fund=false
+          node automation/ai-app-improvement-evolution-pipeline.cjs

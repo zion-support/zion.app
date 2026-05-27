@@ -1,0 +1,65 @@
+permissions:
+  contents: read
+name: Autonomous Changelog Generator
+true:
+  push:
+    branches:
+    - main
+  workflow_dispatch: null
+jobs:
+  changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Changelog Generator
+      id: changelog
+      continue-on-error: true
+      run: 'node automation/changelog-generator.cjs > /tmp/changelog-output.txt ||
+        true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload changelog artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: changelog-md
+        path: CHANGELOG.md
+        retention-days: 7
+    - name: Commit updated CHANGELOG.md
+      if: steps.changelog.outputs.exit_code == '0'
+      run: 'git config user.name "openclaw-automation"
+
+        git config user.email "openclaw@ziontechgroup.com"
+
+        git add CHANGELOG.md
+
+        git diff --cached --quiet || git commit -m "docs(auto): update changelog with
+        recent changes"
+
+        git push origin HEAD:${{ github.ref }}
+
+        '
+    - name: Notify Telegram on update
+      if: steps.changelog.outputs.exit_code == '0' && success()
+      run: "# Count new entries added (rough check)\nnode automation/notify-telegram.js\
+        \ \"\U0001F4CB Changelog updated with latest commits.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Changelog generator\
+        \ encountered errors. Check workflow logs.\"\n"
+    timeout-minutes: 10

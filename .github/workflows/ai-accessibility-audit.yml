@@ -1,0 +1,136 @@
+name: AI Accessibility Audit
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-a11y-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'src/**'
+      - 'components/**'
+  schedule:
+    - cron: '0 8 * * 2'
+  workflow_dispatch:
+
+jobs:
+  accessibility-audit:
+    name: Accessibility Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Serve and run axe audit
+        id: audit
+        run: |
+          npx serve dist -l 3000 &
+          SERVER_PID=$!
+          sleep 3
+
+          mkdir -p a11y-results
+
+          PAGES=("/" "/solutions/" "/services/" "/about/" "/contact/" "/blog/" "/pricing/")
+          TOTAL_VIOLATIONS=0
+          REPORT=""
+
+          for PAGE in "${PAGES[@]}"; do
+            URL="http://localhost:3000${PAGE}"
+            echo "Auditing: $URL"
+
+            RESULT=$(npx @axe-core/cli "$URL" --exit --stdout 2>/dev/null || true)
+
+            VIOLATIONS=$(echo "$RESULT" | grep -c "Violation" || echo "0")
+            TOTAL_VIOLATIONS=$((TOTAL_VIOLATIONS + VIOLATIONS))
+
+            if [ "$VIOLATIONS" -gt 0 ]; then
+              BADGE="🔴"
+            else
+              BADGE="🟢"
+            fi
+            REPORT="${REPORT}| ${BADGE} \`${PAGE}\` | ${VIOLATIONS} |\n"
+          done
+
+          kill $SERVER_PID || true
+
+          echo "total=$TOTAL_VIOLATIONS" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Accessibility Audit Results"
+            echo ""
+            echo "| Page | Violations |"
+            echo "|------|------------|"
+            echo -e "$REPORT"
+            echo ""
+            if [ "$TOTAL_VIOLATIONS" -eq 0 ]; then
+              echo "All audited pages passed accessibility checks."
+            else
+              echo "**${TOTAL_VIOLATIONS} total violation(s)** found across audited pages."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const total = '${{ steps.audit.outputs.total }}';
+            const emoji = total === '0' ? '🟢' : '🔴';
+            const body = `### ${emoji} Accessibility Audit
+
+            **${total}** accessibility violation(s) detected across key pages.
+
+            > Run #${context.runNumber} on \`${context.sha.substring(0, 7)}\``;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### ') && c.body.includes('Accessibility Audit')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Warn on critical violations
+        if: steps.audit.outputs.total != '0'
+        run: |
+          echo "::warning::Found ${{ steps.audit.outputs.total }} accessibility violation(s). Review the audit summary."

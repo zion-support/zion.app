@@ -1,0 +1,97 @@
+name: AI Build Fixer
+
+permissions:
+  contents: write
+  issues: write
+  actions: read
+
+concurrency:
+  group: ai-build-fixer
+  cancel-in-progress: false
+
+on:
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: false
+        default: 'run'
+        type: choice
+        options:
+          - run
+          - check
+          - continuous
+
+jobs:
+  fix-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure')
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run AI Build Fixer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTO_COMMIT: 'true'
+          AUTO_PUSH: 'false'
+          MAX_FIX_ATTEMPTS: '10'
+          CLEAN_BUILD_ON_FAIL: 'true'
+          CONTINUOUS_BUILD_FIXER: 'true'
+          BUILD_CHECK_INTERVAL: '1'
+          FAST_MODE: 'true'
+          PARALLEL_FIXES: 'true'
+          INPUT_MODE: ${{ inputs.mode || 'run' }}
+        run: node automation/ai-build-fixer-agent.cjs "$INPUT_MODE"
+
+      - name: Upload build fixer report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: build-fixer-report-${{ github.run_id }}
+          path: |
+            automation/reports/build-fixer-latest.json
+            automation/logs/ai-build-fixer*.log
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Push changes
+        if: success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict — skipping push."
+            git rebase --abort || true
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh

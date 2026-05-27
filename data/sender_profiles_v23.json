@@ -1,0 +1,351 @@
+{
+  "substack.com": {
+    "name": "newsletter",
+    "emails": [
+      "newsletter@substack.com"
+    ],
+    "domains": [
+      "substack.com"
+    ],
+    "first_contact": "2026-05-20T08:35:34.408939+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "general": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-20T08:35:34.408979+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  },
+  "github.com": {
+    "name": "notifications",
+    "emails": [
+      "Kleber Garcia Alcatrao <notifications@github.com>",
+      "notifications@github.com"
+    ],
+    "domains": [
+      "github.com"
+    ],
+    "first_contact": "2026-05-20T11:13:12.413133+00:00",
+    "total_messages": 6,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "support": 6
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:35:50.406364+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3
+    ]
+  },
+  "example.com": {
+    "name": "Alice",
+    "emails": [
+      "test@example.com",
+      "guest@example.com",
+      "Alice <alice@example.com>"
+    ],
+    "domains": [
+      "example.com"
+    ],
+    "first_contact": "2026-05-21T05:13:09.511101+00:00",
+    "total_messages": 6,
+    "formality": "neutral",
+    "language": "pt",
+    "intents": {
+      "booking": 5,
+      "support": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T12:04:15.839777+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3,
+      -3,
+      -3,
+      -3,
+      -3
+    ]
+  },
+  "airbnb.com": {
+    "name": "client",
+    "emails": [
+      "guest@airbnb.com",
+      "client@airbnb.com"
+    ],
+    "domains": [
+      "airbnb.com"
+    ],
+    "first_contact": "2026-05-21T05:15:49.080542+00:00",
+    "total_messages": 3,
+    "formality": "neutral",
+    "language": "en",
+    "intents": {
+      "booking": 3
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:47:33.041160+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3,
+      -3
+    ]
+  },
+  "medium.com": {
+    "name": "newsletter",
+    "emails": [
+      "newsletter@medium.com"
+    ],
+    "domains": [
+      "medium.com"
+    ],
+    "first_contact": "2026-05-21T05:15:49.101703+00:00",
+    "total_messages": 3,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "general": 3
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:47:25.864312+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3,
+      -3
+    ]
+  },
+  "enterprise.com": {
+    "name": "cmo",
+    "emails": [
+      "cmo@enterprise.com"
+    ],
+    "domains": [
+      "enterprise.com"
+    ],
+    "first_contact": "2026-05-21T05:35:50.408324+00:00",
+    "total_messages": 2,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "sales": 2
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:47:25.861525+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3
+    ]
+  },
+  "company.com": {
+    "name": "ops",
+    "emails": [
+      "ops@company.com"
+    ],
+    "domains": [
+      "company.com"
+    ],
+    "first_contact": "2026-05-21T05:47:25.863529+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "support": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:47:25.863537+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  },
+  "co.com": {
+    "name": "ops",
+    "emails": [
+      "ops@co.com"
+    ],
+    "domains": [
+      "co.com"
+    ],
+    "first_contact": "2026-05-21T05:47:33.034058+00:00",
+    "total_messages": 3,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "support": 3
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:53:53.867128+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3,
+      -3
+    ]
+  },
+  "internal.com": {
+    "name": "staff",
+    "emails": [
+      "staff@internal.com"
+    ],
+    "domains": [
+      "internal.com"
+    ],
+    "first_contact": "2026-05-21T05:47:33.041858+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "general": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:47:33.041866+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  },
+  "t.com": {
+    "name": "t",
+    "emails": [
+      "t@t.com"
+    ],
+    "domains": [
+      "t.com"
+    ],
+    "first_contact": "2026-05-21T05:53:46.975864+00:00",
+    "total_messages": 2,
+    "formality": "neutral",
+    "language": "en",
+    "intents": {
+      "support": 1,
+      "booking": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:53:46.982344+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3,
+      -3
+    ]
+  },
+  "x.com": {
+    "name": "x",
+    "emails": [
+      "x@x.com"
+    ],
+    "domains": [
+      "x.com"
+    ],
+    "first_contact": "2026-05-21T05:53:46.984110+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "general": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T05:53:46.984118+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  },
+  "partner.com": {
+    "name": "Bob",
+    "emails": [
+      "Bob <bob@partner.com>"
+    ],
+    "domains": [
+      "partner.com"
+    ],
+    "first_contact": "2026-05-21T12:04:15.862952+00:00",
+    "total_messages": 1,
+    "formality": "casual",
+    "language": "en",
+    "intents": {
+      "sales": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T12:04:15.862961+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  },
+  "client.com": {
+    "name": "Carla",
+    "emails": [
+      "Carla <carla@client.com>"
+    ],
+    "domains": [
+      "client.com"
+    ],
+    "first_contact": "2026-05-21T12:04:15.864963+00:00",
+    "total_messages": 1,
+    "formality": "neutral",
+    "language": "unknown",
+    "intents": {
+      "support": 1
+    },
+    "avg_response_minutes": null,
+    "response_times": [],
+    "last_interaction": "2026-05-21T12:04:15.864971+00:00",
+    "preferred_time": -3,
+    "reply_pattern": "unknown",
+    "urgency_patterns": {},
+    "contact_hours": [
+      -3
+    ]
+  }
+}

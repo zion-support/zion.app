@@ -1,0 +1,29 @@
+# Ensures workflow-push-helpers-bash-weekly.yml keeps Friday schedule + bash -n helpers (grep-only).
+name: push helpers bash weekly smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '38 10 * * 4' # Thursdays 10:38 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-push-helpers-bash-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  bash-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-push-helpers-bash-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-push-helpers-bash-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow push helpers bash syntax (weekly)' "$f"
+          grep -Fq "cron: '3 7 * * 5'" "$f"
+          grep -Fq 'group: workflow-push-helpers-bash-weekly' "$f"
+          grep -Fq 'bash -n scripts/automation/commit-and-push-main.sh' "$f"
+          echo "ok: $f"

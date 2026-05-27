@@ -1,0 +1,31 @@
+{
+  "predictions": [
+    {
+      "timestamp": "2026-05-18T21:26:56.014300+00:00",
+      "forecast": {
+        "expected": 0.0,
+        "conservative": 0.0,
+        "optimistic": 0.0,
+        "deals_tracked": 2,
+        "total_deal_value": 0
+      },
+      "deals": [
+        {
+          "subject": "New HPE Stock - Quote in 1 Hour",
+          "value": 0,
+          "stage": "proposal",
+          "sentiment": "neutral",
+          "confidence": 0.6
+        },
+        {
+          "subject": "[Zion-support/zion-support.github.io] Run failed: OpenAPI Contract Drift Detector - main (93a0692)",
+          "value": 0,
+          "stage": "closed",
+          "sentiment": "neutral",
+          "confidence": 0.8
+        }
+      ],
+      "documents": 0
+    }
+  ]
+}

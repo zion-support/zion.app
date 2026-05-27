@@ -1,0 +1,86 @@
+name: AI Workflow Flake Detector
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: ai-workflow-flake-detector
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '10 15 * * 1'
+  workflow_dispatch:
+
+jobs:
+  flake-detector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      FLAKE_BRANCH: main
+      FLAKE_LOOKBACK_DAYS: "14"
+      FLAKE_MAX_WORKFLOWS: "40"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Generate workflow flake report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node automation/ai-workflow-flake-detector.cjs
+
+      - name: Upload flake report artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: workflow-flakes-${{ github.run_id }}
+          path: automation/reports/workflow-flakes-latest.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open issue for flaky workflows
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/workflow-flakes-latest.json"
+          [ -f "$report" ] || exit 0
+          count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.flaggedCount||0)")
+          if [ "$count" = "0" ]; then
+            echo "No flaky workflows detected."
+            export ISSUE_FINGERPRINT="workflow-flakes-detected"
+            export CLOSE_COMMENT="Auto-closing: no workflow flakes detected."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="workflow-flakes.md"
+          {
+            echo "## Workflow flakes detected"
+            echo ""
+            echo "- Flagged workflow count: **${count}**"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Rule: failure immediately followed by success in recent history."
+            echo ""
+            echo "### Flagged workflows"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const wf of (r.flagged||[])){console.log('- '+wf.name+' (flakes: '+wf.flakeCount+', runs: '+wf.totalRuns+')')}"
+          } > "$body_file"
+          export ISSUE_TITLE="Workflow flakes detected"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="enhancement"
+          export ISSUE_FINGERPRINT="workflow-flakes-detected"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

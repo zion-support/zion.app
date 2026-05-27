@@ -1,0 +1,27 @@
+# Ruby-free weekly smoke: setup-node + .nvmrc + npm cache path policy only (very fast).
+# Full validate runs in workflow-validate-light-weekly / reusable-workflow-ci.
+
+name: Workflow setup-node policy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '50 6 * * 1' # Mondays 06:50 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-setup-node-policy-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  setup-node-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup-node policy guards (subset)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --setup-node-policy

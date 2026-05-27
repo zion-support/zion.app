@@ -1,0 +1,69 @@
+name: API Schema Validation
+true:
+  pull_request:
+    branches:
+    - main
+    paths:
+    - app/api/**
+    - openapi/**
+    - ' automation/api-schema-validator.cjs'
+    - .github/workflows/api-schema-validation.yml
+  push:
+    branches:
+    - main
+    paths:
+    - app/api/**
+    - openapi/**
+  workflow_dispatch: null
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  schema-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Validate API schemas
+      env:
+        API_SCHEMA_API_DIR: app/api
+        API_SCHEMA_OPENAPI_DIR: openapi
+        API_SCHEMA_REQUIRE_REQUEST: ${{ secrets.API_SCHEMA_REQUIRE_REQUEST || 'true'
+          }}
+        API_SCHEMA_REQUIRE_RESPONSE: ${{ secrets.API_SCHEMA_REQUIRE_RESPONSE || 'true'
+          }}
+        API_SCHEMA_CHECK_OPENAPI: ${{ secrets.API_SCHEMA_CHECK_OPENAPI || 'false'
+          }}
+      run: node automation/api-schema-validator.cjs
+    - name: Post PR comment on failure
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nlet statePath = '.hermes/memory/api-schema/history.json';\n\
+          let comment = '\U0001F6A8 **API Schema Validation Failed**\\n\\n';\ncomment\
+          \ += 'One or more API routes are missing required Zod validation schemas.\
+          \ Please ensure each `route.ts` exports:\\n';\ncomment += '- `export const\
+          \ schema = z.object(...)` for request validation (or `requestSchema`)\\\
+          n';\ncomment += '- `export const responseSchema = z.object(...)` (or `outputSchema`)\
+          \ for response typing\\n\\n';\ntry {\n  const history = JSON.parse(fs.readFileSync(statePath,\
+          \ 'utf8'));\n  const latest = history[history.length - 1];\n  if (latest\
+          \ && latest.violations) {\n    comment += '**Violations:**\\n';\n    latest.violations.forEach(v\
+          \ => {\n      comment += `- ${v}\\n`;\n    });\n  }\n} catch (e) {\n  comment\
+          \ += 'Could not load violation details.';\n}\ncomment += '\\n*See workflow\
+          \ logs for full details.*';\ngithub.rest.issues.createComment({\n  issue_number:\
+          \ context.issue.number,\n  owner: context.repo.owner,\n  repo: context.repo.repo,\n\
+          \  body: comment\n});\n"
+    - name: Notify Telegram on failure
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F API Schema Validation\
+        \ failed on ${{ github.repository }} (PR #${{ github.event.pull_request.number\
+        \ || 'main push' }}). Check: ${{ github.server_url }}/${{ github.repository\
+        \ }}/actions/runs/${{ github.run_id }}\"\n"
+    timeout-minutes: 10

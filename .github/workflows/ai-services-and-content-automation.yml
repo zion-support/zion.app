@@ -1,0 +1,150 @@
+# AI Services & Content Automation
+# Promotes under-featured Zion AI products to front page and creates new product pages.
+# Runs without LLM (heuristic/template fallback) — no OPENROUTER_API_KEY required.
+# Schedule: 3x daily (6 AM, 12 PM, 6 PM UTC) for more services and content on front page.
+# Uses content-commit concurrency to avoid parallel commits with burst/rapid/velocity.
+
+name: AI Services & Content Automation
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 6 * * 0'
+    - cron: '0 12 * * 0'
+    - cron: '0 18 * * 0'
+    - cron: '0 6 * * 1'
+    - cron: '0 12 * * 1'
+    - cron: '0 18 * * 1'
+    - cron: '0 6 * * 2'
+    - cron: '0 12 * * 2'
+    - cron: '0 18 * * 2'
+    - cron: '0 6 * * 3'
+    - cron: '0 12 * * 3'
+    - cron: '0 18 * * 3'
+    - cron: '0 6 * * 4'
+    - cron: '0 12 * * 4'
+    - cron: '0 18 * * 4'
+    - cron: '0 6 * * 5'
+    - cron: '0 12 * * 5'
+    - cron: '0 18 * * 5'
+    - cron: '0 6 * * 6'
+    - cron: '0 12 * * 6'
+    - cron: '0 18 * * 6'
+  workflow_dispatch:
+    inputs:
+      skip_services_advertise:
+        description: 'Skip services advertiser (promote apps to front page)'
+        required: false
+        default: false
+        type: boolean
+      skip_product_pages:
+        description: 'Skip product page creator'
+        required: false
+        default: false
+        type: boolean
+      skip_template_blog:
+        description: 'Skip template blog creation'
+        required: false
+        default: false
+        type: boolean
+      skip_template_case_studies:
+        description: 'Skip template case studies'
+        required: false
+        default: false
+        type: boolean
+      skip_app_collections:
+        description: 'Skip app collections advertiser'
+        required: false
+        default: false
+        type: boolean
+      max_product_pages:
+        description: 'New product pages to create (default 6)'
+        required: false
+        default: '6'
+      max_template_blog:
+        description: 'Template blog posts per run (default 4)'
+        required: false
+        default: '4'
+      max_template_case_studies:
+        description: 'Template case studies per run (default 4)'
+        required: false
+        default: '4'
+      max_add:
+        description: 'Max apps to promote to front page (default 12)'
+        required: false
+        default: '12'
+      max_app_collections_add:
+        description: 'Max app collections to promote (default 5)'
+        required: false
+        default: '5'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  services-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Secret preflight (deploy only)
+        if: github.event_name == 'schedule' || github.event.inputs.trigger_deploy != 'false'
+        env:
+          REQUIRED_SECRETS: OPENROUTER_API_KEY
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: npm run secrets:preflight
+
+      - name: Autonomous quality gate
+        run: npm run autonomy:prepush-gate
+
+      - name: Run services and content automation
+        env:
+          AUTO_COMMIT: "1"
+          SKIP_IDEATION: "1"
+          SKIP_BLOG: "1"
+          SKIP_FRONT_PAGE: "1"
+          SKIP_LIVE_SITE_AUDIT: "1"
+          SKIP_SERVICES_ADVERTISE: ${{ github.event.inputs.skip_services_advertise && '1' || '' }}
+          SKIP_PRODUCT_PAGES: ${{ github.event.inputs.skip_product_pages && '1' || '' }}
+          SKIP_TEMPLATE_BLOG: ${{ github.event.inputs.skip_template_blog && '1' || '' }}
+          SKIP_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.skip_template_case_studies && '1' || '' }}
+          SKIP_APP_COLLECTIONS: ${{ github.event.inputs.skip_app_collections && '1' || '' }}
+          MAX_APP_COLLECTIONS_ADD: ${{ github.event.inputs.max_app_collections_add || '5' }}
+          MAX_PRODUCT_PAGES: ${{ github.event.inputs.max_product_pages || '6' }}
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '4' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '4' }}
+          MAX_ADD: ${{ github.event.inputs.max_add || '12' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          set -euo pipefail
+          node automation/ai-services-and-content-automation.cjs
+          COMMIT_MESSAGE="chore(content): AI services and content - promote apps, new product pages" \
+          TARGET_BRANCH=main \
+          PUSH_RETRIES=3 \
+          RUN_BUILD=1 \
+          TRIGGER_DEPLOY="${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}" \
+          # NETLIFY_BUILD_HOOK removed (migrated to GitHub Pages) \
+          npm run autonomy:safe-release

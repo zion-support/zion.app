@@ -1,0 +1,32 @@
+[
+  {
+    "id": "data-graph-analytics-engine",
+    "title": "Graph Analytics & Network Intelligence Engine",
+    "description": "Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-path analysis, centrality scoring, and interactive visual exploration with Cypher-like query language.",
+    "icon": "🕸️",
+    "features": ["Auto-build relationship graphs from any tabular data via auto-linking columns", "Community detection + clustering: Louvain, label propagation, clique percolation", "Shortest-path, betweenness, PageRank — 20+ standard graph algorithms", "Cypher-like graph query language with visual query builder", "Interactive graph visualisation with zoom, filter, highlight, force-layout options"],
+    "benefits": ["Surface hidden fraud rings and risk clusters invisible in tabular reports", "Reduce analyst investigation time 50% vs. manual relationship tracing in spreadsheets", "Build recommendation engines faster — no custom graph DB admin required"],
+    "pricing": {"basic": "149", "pro": "599", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/data-graph-analytics-engine", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/data-graph-analytics-engine",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Graph Analytics & Network Intelligence Engine",
+    "is_featured": false
+  },
+  {
+    "id": "data-image-video-search",
+    "title": "Image & Video Semantic Search",
+    "description": "CLIP + multi-modal embedding semantic search across image and video libraries: object/scene/action detection, temporal segmentation, thumbnail clustering, natural-language query support, and vector-powered similarity matching at scale.",
+    "icon": "🎬",
+    "features": ["Multi-modal CLIP embeddings for image and video frame similarity", "Object, scene, action detection, OCR text extraction from frames and video", "Temporal segmentation: shot boundary, scene change, key-frame extraction per video clip", "Natural language query: 3 words to find all videos mentioning X brand or Y activity", "Vector index: Milvus or Pinecone; scales to 100M+ clips with sub-10ms query"],
+    "benefits": ["Search video archives by description: find the clip of X product in Y city in 5 seconds vs. manual review", "Build visual product search for e-commerce: zero nuisance from differing angle, lighting, crop", "Auto-curate branded content: find all brand mentions in video without human review"],
+    "pricing": {"basic": "199", "pro": "749", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/data-image-video-search", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/data-image-video-search",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Image & Video Semantic Search",
+    "is_featured": false
+  }
+]

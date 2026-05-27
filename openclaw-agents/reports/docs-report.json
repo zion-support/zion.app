@@ -1,0 +1,169 @@
+{
+  "timestamp": "2026-04-07T23:23:24.103Z",
+  "agent": "documentation",
+  "files": [
+    {
+      "name": "ABTestProvider",
+      "path": "app/components/ABTestProvider.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIChatWidget",
+      "path": "app/components/AIChatWidget.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIDocumentAnalyzer",
+      "path": "app/components/AIDocumentAnalyzer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIExperienceLoader",
+      "path": "app/components/AIExperienceLoader.tsx",
+      "hasDocumentation": false,
+      "hasProps": false,
+      "exported": true
+    },
+    {
+      "name": "AIROICalculator",
+      "path": "app/components/AIROICalculator.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIServiceHealthMonitor",
+      "path": "app/components/AIServiceHealthMonitor.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIToolCard",
+      "path": "app/components/AIToolCard.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AIVoiceAssistant",
+      "path": "app/components/AIVoiceAssistant.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AccessibilityComponents",
+      "path": "app/components/AccessibilityComponents.tsx",
+      "hasDocumentation": false,
+      "hasProps": false,
+      "exported": true
+    },
+    {
+      "name": "AdvancedAccessibilityEnhancer",
+      "path": "app/components/AdvancedAccessibilityEnhancer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedPerformanceEnhancer",
+      "path": "app/components/AdvancedPerformanceEnhancer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedPerformanceMonitor",
+      "path": "app/components/AdvancedPerformanceMonitor.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedPerformanceOptimizer",
+      "path": "app/components/AdvancedPerformanceOptimizer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedSEOEnhancer",
+      "path": "app/components/AdvancedSEOEnhancer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedSEOOptimizer",
+      "path": "app/components/AdvancedSEOOptimizer.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AdvancedSEOOptimizer_new",
+      "path": "app/components/AdvancedSEOOptimizer_new.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AiSiteHealthPanel",
+      "path": "app/components/AiSiteHealthPanel.tsx",
+      "hasDocumentation": false,
+      "hasProps": false,
+      "exported": true
+    },
+    {
+      "name": "Analytics",
+      "path": "app/components/Analytics.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AnalyticsProvider",
+      "path": "app/components/AnalyticsProvider.tsx",
+      "hasDocumentation": false,
+      "hasProps": true,
+      "exported": true
+    },
+    {
+      "name": "AnalyticsTracker",
+      "path": "app/components/AnalyticsTracker.tsx",
+      "hasDocumentation": true,
+      "hasProps": false,
+      "exported": true
+    }
+  ],
+  "missing": [],
+  "generated": [
+    "ABTestProvider",
+    "AIChatWidget",
+    "AIDocumentAnalyzer",
+    "AIExperienceLoader",
+    "AIROICalculator",
+    "AIServiceHealthMonitor",
+    "AIToolCard",
+    "AIVoiceAssistant",
+    "AccessibilityComponents",
+    "AdvancedAccessibilityEnhancer",
+    "AdvancedPerformanceEnhancer",
+    "AdvancedPerformanceMonitor",
+    "AdvancedPerformanceOptimizer",
+    "AdvancedSEOEnhancer",
+    "AdvancedSEOOptimizer",
+    "AdvancedSEOOptimizer_new",
+    "AiSiteHealthPanel",
+    "Analytics",
+    "AnalyticsProvider"
+  ],
+  "apiRoutes": 2
+}

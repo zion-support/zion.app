@@ -1,0 +1,32 @@
+# Ensures dependency-review.yml keeps PR gate + dependency-review-action policy (grep-only).
+name: dependency review smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '8 11 * * 4' # Thursdays 11:08 UTC
+  workflow_dispatch:
+concurrency:
+  group: dependency-review-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  dependency-review-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: dependency-review.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/dependency-review.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Dependency Review' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'pull-requests: write' "$f"
+          grep -Fq 'group: dependency-review-' "$f"
+          grep -Fq 'actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48' "$f"
+          grep -Fq 'fail-on-severity: high' "$f"
+          grep -Fq 'deny-licenses: GPL-3.0, AGPL-3.0' "$f"
+          echo "ok: $f"

@@ -1,0 +1,44 @@
+# Ensures ai-app-visit-audit-implement-deploy.yml keeps schedule/pipeline/push anchors (grep-only).
+name: ai app visit audit implement deploy workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '50 12 * * 2' # Tuesdays 12:50 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-app-visit-audit-implement-deploy-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  app-visit-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-app-visit-audit-implement-deploy.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-app-visit-audit-implement-deploy.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: App Visit Audit Implement Deploy' "$f"
+          grep -Fq 'group: app-visit-audit-deploy' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 12 * * 3'" "$f"
+          grep -Fq "cron: '0 14 * * 6'" "$f"
+          grep -Fq 'auto_commit:' "$f"
+          grep -Fq 'trigger_deploy:' "$f"
+          grep -Fq 'skip_ux_audit:' "$f"
+          grep -Fq 'skip_layout_design:' "$f"
+          grep -Fq 'skip_evolution_apply:' "$f"
+          grep -Fq 'ai-app-evolution-audit-pipeline.cjs' "$f"
+          grep -Fq 'app-evolution-audit-report' "$f"
+          grep -Fq 'app-evolution-audit-pipeline-latest.json' "$f"
+          grep -Fq 'token:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

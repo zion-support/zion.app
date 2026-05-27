@@ -1,0 +1,115 @@
+name: AI autonomy intelligence planner
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-autonomy-intelligence-planner
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 8 * * *'
+
+jobs:
+  planner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh base observability reports
+        continue-on-error: true
+        env:
+          ZION_BASE_URL: ${{ vars.ZION_PRODUCTION_URL }}
+          SMOKE_USE_ROTATION: '1'
+          SMOKE_SAMPLE_ROUTES: '5'
+          SMOKE_FAIL_ON_ERROR: '0'
+          SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+        run: |
+          npm run smoke:production:sample || true
+          npm run smoke:health:append || true
+          npm run gha:audit:npm-cache || true
+          npm run routes:drift:sitemap || true
+          npm run reports:aggregate || true
+          npm run aggregate:regression:check || true
+          npm run release:risk:score || true
+          npm run observability:digest || true
+
+      - name: Build autonomy intelligence plan
+        run: npm run autonomy:intelligence:plan
+
+      - name: Escalate autonomy intelligence degradation
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomy-intelligence-plan-latest.json"
+          [ -f "$report" ] || exit 0
+          score="$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));process.stdout.write(String(j.autonomyScore ?? '100'));")"
+          if [ "${score}" -ge 70 ]; then
+            echo "Autonomy score healthy/watch (${score}); skip escalation."
+            exit 0
+          fi
+          body="autonomy-intelligence-degraded.md"
+          {
+            echo "## Autonomy intelligence score degraded"
+            echo ""
+            echo "- **Dedupe key:** \`autonomy-intelligence-plan\`"
+            echo "- **Score:** ${score}"
+            echo ""
+            echo "Top suggested actions:"
+            node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));for (const a of (j.topActions||[]).slice(0,5)){console.log('- `'+(a.command||'n/a')+'` — '+(a.reason||'n/a'));}"
+            echo ""
+            echo "```json"
+            node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));console.log(JSON.stringify(j,null,2).slice(0,12000));"
+            echo "```"
+          } > "$body"
+          export ISSUE_TITLE="Autonomy intelligence score degraded"
+          export ISSUE_FINGERPRINT="autonomy-intelligence-plan"
+          export ISSUE_LABELS="automation,bug"
+          export ISSUE_BODY_FILE="$body"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+
+      - name: Close autonomy intelligence issue on recovery
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomy-intelligence-plan-latest.json"
+          [ -f "$report" ] || exit 0
+          score="$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));process.stdout.write(String(j.autonomyScore ?? '0'));")"
+          if [ "${score}" -lt 80 ]; then
+            echo "Recovery threshold not met (${score} < 80)."
+            exit 0
+          fi
+          export ISSUE_FINGERPRINT="autonomy-intelligence-plan"
+          export CLOSE_COMMENT="Auto-closing: autonomy intelligence score recovered to ${score}."
+          node scripts/automation/gh-issue-close-on-recovery.cjs || true
+
+      - name: Upload planner report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomy-intelligence-plan-${{ github.run_id }}
+          path: |
+            automation/reports/autonomy-intelligence-plan-latest.json
+            automation/reports/observability-digest-latest.json
+            automation/reports/release-risk-score-latest.json
+          if-no-files-found: ignore
+          retention-days: 30

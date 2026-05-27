@@ -1,0 +1,99 @@
+name: AI autonomous runtime guardian
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+concurrency:
+  group: ai-autonomous-runtime-guardian
+  cancel-in-progress: true
+
+jobs:
+  runtime_guardian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run runtime guardian
+        id: runtime
+        run: node automation/autonomous-runtime-guardian.cjs
+
+      - name: Build runtime fix-agent plan
+        run: node automation/autonomous-runtime-fix-agent-factory.cjs
+
+      - name: Execute runtime fix-agent actions (gated, dry-run default)
+        id: runtime_fix
+        env:
+          AUTONOMOUS_RUNTIME_FIX_APPLY: ${{ vars.AUTONOMOUS_RUNTIME_FIX_APPLY || 'false' }}
+          AUTONOMOUS_RUNTIME_FIX_MAX_ACTIONS: ${{ vars.AUTONOMOUS_RUNTIME_FIX_MAX_ACTIONS || '3' }}
+        run: node automation/autonomous-runtime-fix-agent-executor.cjs
+
+      - name: Raise deduped issue on critical runtime status
+        if: steps.runtime.outputs.runtime_status == 'critical'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Autonomous runtime guardian critical findings"
+          ISSUE_BODY_FILE: automation/reports/autonomous-runtime-fix-agent-plan-latest.md
+          ISSUE_LABELS: "automation,runtime,self-heal,critical"
+          ISSUE_FINGERPRINT: autonomous-runtime-guardian-critical
+          COOLDOWN_HOURS: "6"
+        run: |
+          export ISSUE_FINGERPRINT="autonomous-runtime-guardian-critical"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+
+      - name: Raise deduped issue on sustained warning degradation
+        if: steps.runtime.outputs.runtime_warning_escalate == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Autonomous runtime guardian sustained warning degradation"
+          ISSUE_BODY_FILE: automation/reports/autonomous-runtime-fix-agent-plan-latest.md
+          ISSUE_LABELS: "automation,runtime,self-heal,warning"
+          ISSUE_FINGERPRINT: autonomous-runtime-guardian-warning-streak
+          COOLDOWN_HOURS: "12"
+        run: |
+          export ISSUE_FINGERPRINT="autonomous-runtime-guardian-warning-streak"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+
+      - name: Close warning degradation issue on recovery
+        if: steps.runtime.outputs.runtime_warning_close == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Autonomous runtime guardian sustained warning degradation"
+          ISSUE_FINGERPRINT: autonomous-runtime-guardian-warning-streak
+          ISSUE_CLOSE_COMMENT_FILE: automation/reports/autonomous-runtime-fix-agent-plan-latest.md
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs
+
+      - name: Upload runtime guardian artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-runtime-guardian-${{ github.run_id }}
+          path: |
+            automation/reports/autonomous-runtime-guardian-latest.json
+            automation/reports/autonomous-runtime-guardian-history.json
+            automation/reports/autonomous-runtime-guardian-warning-state.json
+            automation/reports/autonomous-runtime-fix-agent-queue.json
+            automation/reports/autonomous-runtime-fix-agent-plan-latest.json
+            automation/reports/autonomous-runtime-fix-agent-plan-latest.md
+            automation/reports/autonomous-runtime-fix-agent-execution-latest.json
+          if-no-files-found: ignore
+          retention-days: 14

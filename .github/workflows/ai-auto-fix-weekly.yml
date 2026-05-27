@@ -1,0 +1,35 @@
+permissions:
+  contents: read
+name: AI Auto Fix Weekly
+true:
+  schedule:
+  - cron: 0 2 * * 0
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version-file: .nvmrc
+    - name: Install dependencies
+      run: npm ci
+    - name: Run npm audit fix
+      run: npm audit fix
+    - name: Run lint fix
+      run: npm run lint:fix
+    - name: Run type check
+      run: npm run type-check
+    - name: Commit changes
+      run: "git config --local user.email \"action@github.com\"\ngit config --local\
+        \ user.name \"GitHub Action\"\ngit checkout -b auto-fix/$(date +%Y-%m-%d)\n\
+        if ! git diff --quiet; then\n  git add -a\n  git commit -m \"chore: auto-fix\
+        \ dependencies and lint\"\n  git push origin HEAD\n  gh pr create --title\
+        \ \"Auto-fix: dependencies and lint\" --body \"Automated fixes from the AI\
+        \ Auto Fix Weekly workflow.\" --base main --head $(git rev-parse --abbrev-ref\
+        \ HEAD)\nfi\n"
+    timeout-minutes: 10

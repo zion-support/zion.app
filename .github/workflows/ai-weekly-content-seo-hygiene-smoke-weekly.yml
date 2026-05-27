@@ -1,0 +1,40 @@
+# Ensures ai-weekly-content-seo-hygiene.yml keeps schedule/report anchors (grep-only).
+name: ai weekly content seo hygiene workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '50 12 * * 3' # Wednesdays 12:50 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-weekly-content-seo-hygiene-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  hygiene-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-weekly-content-seo-hygiene.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-weekly-content-seo-hygiene.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Weekly Content & SEO Hygiene' "$f"
+          grep -Fq 'group: ai-weekly-content-seo-hygiene' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 6 * * 1'" "$f"
+          grep -Fq 'ai-content-freshness-agent.cjs' "$f"
+          grep -Fq 'ai-seo-meta-auditor.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'weekly-content-seo-hygiene-' "$f"
+          grep -Fq 'content-freshness-latest.json' "$f"
+          grep -Fq 'seo-meta-report.json' "$f"
+          echo "ok: $f"

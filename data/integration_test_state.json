@@ -1,0 +1,25 @@
+{
+  "failures": {
+    "email_prioritizer.py": {
+      "count": 0,
+      "lastFail": "2026-05-13",
+      "issueUrl": null
+    },
+    "contract_watchdog.py": {
+      "count": 2,
+      "lastFail": "2026-05-14",
+      "issueUrl": null
+    },
+    "invoice_reminder.py": {
+      "count": 2,
+      "lastFail": "2026-05-14",
+      "issueUrl": null
+    },
+    "thread_summarizer.py": {
+      "count": 1,
+      "lastFail": "2026-05-14",
+      "issueUrl": null
+    }
+  },
+  "lastRun": "2026-05-14"
+}

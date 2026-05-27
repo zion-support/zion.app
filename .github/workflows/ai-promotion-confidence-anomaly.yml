@@ -1,0 +1,69 @@
+name: AI Promotion Confidence Anomaly Detector
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '35 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  confidence-anomaly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Compute adaptive threshold artifact
+        run: node automation/compute-promotion-anomaly-threshold.cjs
+
+      - name: Detect confidence trend divergence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/promotion-confidence-history.json"
+          [ -f "$report" ] || exit 0
+          divergence=$(node -e "const fs=require('fs');const h=JSON.parse(fs.readFileSync('$report','utf8'));const last7=h.slice(-7);const last30=h.slice(-30);const avg=a=>a.length?Math.round(a.reduce((s,x)=>s+Number(x.avgScore||0),0)/a.length):100;const d=avg(last30)-avg(last7);console.log(d)")
+          threshold_report="automation/reports/promotion-anomaly-threshold-latest.json"
+          threshold=$(node -e "const fs=require('fs');const p=process.argv[1]; if(!fs.existsSync(p)){console.log(12);process.exit(0)}; const r=JSON.parse(fs.readFileSync(p,'utf8')); console.log(Number(r.adaptiveThreshold||12));" "$threshold_report")
+          echo "Confidence divergence: $divergence"
+          echo "Adaptive threshold: $threshold"
+          if [ "$divergence" -lt "$threshold" ]; then
+            export ISSUE_FINGERPRINT="promotion-confidence-anomaly"
+            export CLOSE_COMMENT="Auto-closing: confidence anomaly recovered below threshold."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="$(mktemp)"
+          {
+            echo "## Promotion confidence anomaly"
+            echo ""
+            echo "- Divergence threshold: >= ${threshold} (adaptive)"
+            echo "- Current divergence: ${divergence}"
+            echo "- Source: \`automation/reports/promotion-confidence-history.json\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } > "$body_file"
+          export ISSUE_TITLE="Promotion confidence anomaly detected"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="promotion-confidence-anomaly"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+          rm -f "$body_file"
+

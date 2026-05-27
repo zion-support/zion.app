@@ -1,0 +1,27 @@
+# Ruby-free weekly smoke: top-level permissions + invalid keys (subset of run-workflow-grep-guards).
+# PR/push coverage: workflow-permissions-guard.yml; this schedule catches drift if path filters miss an edge case.
+
+name: Workflow permissions smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '40 6 * * 4' # Thursdays 06:40 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-permissions-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  permissions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Permissions guards (subset)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --permissions

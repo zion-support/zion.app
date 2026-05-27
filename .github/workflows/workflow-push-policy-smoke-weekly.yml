@@ -1,0 +1,27 @@
+# Ruby-free weekly smoke: no raw push to main, concurrency on pushers, cancel-in-progress policy (subset of run-workflow-grep-guards).
+# PR/push coverage: workflow-report-push-guard.yml; this schedule adds a scheduled backstop.
+
+name: Workflow push policy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '50 6 * * 5' # Fridays 06:50 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-push-policy-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  push-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Push policy guards (subset)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --push

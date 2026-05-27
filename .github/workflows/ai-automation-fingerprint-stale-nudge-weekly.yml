@@ -1,0 +1,40 @@
+name: AI Automation fingerprint stale nudge
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '55 15 * * 3'
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automation-fingerprint-stale-nudge
+  cancel-in-progress: false
+
+jobs:
+  stale-nudge:
+    if: vars.AUTOMATION_FP_STALE_NUDGE_DAYS != '' && vars.AUTOMATION_FP_STALE_NUDGE_DAYS != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Nudge stale fingerprint incidents
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STALE_NUDGE_DAYS: ${{ vars.AUTOMATION_FP_STALE_NUDGE_DAYS }}
+          STALE_NUDGE_COOLDOWN_DAYS: ${{ vars.AUTOMATION_FP_STALE_NUDGE_COOLDOWN_DAYS }}
+        run: node scripts/automation/gh-automation-fingerprint-stale-nudge.cjs

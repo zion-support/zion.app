@@ -1,0 +1,82 @@
+name: AI Automation fingerprint digest freshness
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 16 * * 4'
+
+concurrency:
+  group: ai-automation-fingerprint-digest-freshness
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Check last successful digest run age
+        id: run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DIGEST_FRESHNESS_MAX_HOURS: ${{ vars.AUTOMATION_FP_DIGEST_FRESHNESS_MAX_HOURS }}
+        run: |
+          set -euo pipefail
+          if node automation/check-fingerprint-digest-freshness.cjs; then
+            echo "stale=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Escalate stale digest SLA
+        if: steps.run.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: 'SLA: automation fingerprint digest workflow success is stale'
+          ISSUE_FINGERPRINT: fingerprint-digest-sla-stale
+          ISSUE_LABELS: automation-incident,bug
+          COOLDOWN_HOURS: ${{ vars.AUTOMATION_FP_DIGEST_FRESHNESS_COOLDOWN_HOURS }}
+        run: |
+          set -euo pipefail
+          body_file="$(mktemp)"
+          {
+            echo "## Fingerprint digest freshness breach"
+            echo ""
+            echo "The weekly **AI Automation fingerprint incident digest** workflow has no successful run within the configured max age."
+            echo ""
+            echo "### Recent runs (last 8)"
+            gh run list --workflow ai-automation-fingerprint-digest-weekly.yml --limit 8 --json conclusion,updatedAt,status,url,displayTitle || true
+            echo ""
+            echo "_Dispatch: \`workflow_dispatch\` on \`ai-automation-fingerprint-digest-freshness.yml\` to re-check._"
+          } > "$body_file"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_FINGERPRINT="fingerprint-digest-sla-stale"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+          rm -f "$body_file"
+
+      - name: Close stale digest SLA issue on recovery
+        if: steps.run.outputs.stale != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: fingerprint-digest-sla-stale
+          CLOSE_COMMENT: "Auto-closing: fingerprint digest freshness is within SLA."
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true

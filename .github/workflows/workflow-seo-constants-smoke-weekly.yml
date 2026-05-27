@@ -1,0 +1,35 @@
+# Ensures app/utils/seoConstants.ts keeps commercial contact + canonical site anchors (grep-only).
+
+name: app/seoConstants smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '50 6 * * 1' # Mondays 06:50 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-seo-constants-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  seo-constants:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: seoConstants.ts anchors
+        run: |
+          set -euo pipefail
+          test -f app/utils/seoConstants.ts
+          test -s app/utils/seoConstants.ts
+          grep -Fq 'export const CONTACT_INFO' app/utils/seoConstants.ts
+          grep -Fq 'commercial@ziontechgroup.com' app/utils/seoConstants.ts
+          grep -Fq 'export const SITE_URL' app/utils/seoConstants.ts
+          grep -Fq 'https://ziontechgroup.com' app/utils/seoConstants.ts
+          grep -Fq 'export const SITE_NAME' app/utils/seoConstants.ts
+          echo 'ok: app/utils/seoConstants.ts'

@@ -1,0 +1,35 @@
+# Ensures AGENTS.md keeps core session + safety continuity (grep-only).
+
+name: AGENTS.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '5 8 * * 2' # Tuesdays 08:05 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-agents-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  agents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: AGENTS.md continuity anchors
+        run: |
+          set -euo pipefail
+          test -f AGENTS.md
+          test -s AGENTS.md
+          grep -Fq '# AGENTS.md - Your Workspace' AGENTS.md
+          grep -Fq 'Read `SOUL.md`' AGENTS.md
+          grep -Fq 'Read `USER.md`' AGENTS.md
+          grep -Fq 'never commit secrets' AGENTS.md
+          grep -Fq 'memory/YYYY-MM-DD.md' AGENTS.md
+          echo 'ok: AGENTS.md'

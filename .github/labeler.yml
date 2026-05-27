@@ -1,0 +1,55 @@
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - '.eslint*'
+          - 'tsconfig*'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+
+automation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'automation/**'
+          - 'scripts/automation/**'
+          - 'ecosystem.config.cjs'
+
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'app/**'
+          - 'components/**'
+          - 'src/**'
+          - 'public/**'
+
+styling:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.css'
+          - '**/*.scss'
+          - 'tailwind.config.*'
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'next.config.*'
+          - 'tsconfig*'
+          - 'jest.config.*'
+          - 'ecosystem.config.cjs'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.test.*'
+          - '**/*.spec.*'
+          - '__tests__/**'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - 'docs/**'

@@ -1,0 +1,54 @@
+# AI Advanced-AI Content Engine
+# Focused automation for advanced AI solutions:
+# - Runs ai-content-maximum-pipeline with the advanced-AI orchestrator enabled.
+# - Auto-commits and pushes to main when content changes are generated.
+# - Deploy handled by GitHub Pages (was Netlify build hook)
+
+name: AI Advanced-AI Content
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    # Three times per day to keep advanced AI content fresh
+    - cron: '0 3 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 19 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  advanced-ai-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run advanced-AI content pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          # Ensure advanced-AI orchestrator is enabled inside maximum pipeline
+          SKIP_ADVANCED_AI: ""
+          AUTO_COMMIT: "1"
+          TRIGGER_DEPLOY: "1"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-content-maximum-pipeline.cjs
+          # ai-content-maximum-pipeline handles git add/commit/push and optional deploy
+

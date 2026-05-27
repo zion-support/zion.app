@@ -1,0 +1,54 @@
+name: AI Telemetry Snapshot Scheduler
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '12 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: ai-telemetry-snapshot-scheduler
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Commit telemetry snapshot bundle
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES="automation/reports/openclaw-autonomous-app-improver-latest.json automation/reports/pm2-config-drift-guard-latest.json automation/reports/pm2-restart-guardian-latest.json automation/reports/pm2-slo-latest.json"
+          git add $FILES || true
+          if git diff --staged --quiet; then
+            echo "No telemetry changes to snapshot."
+            exit 0
+          fi
+          if ! node automation/telemetry-snapshot-significant.cjs $FILES; then
+            echo "No significant telemetry diff; skipping commit."
+            git restore --staged $FILES || true
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): hourly telemetry snapshot"

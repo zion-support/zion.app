@@ -1,0 +1,75 @@
+name: AI weekly automation health digest
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 8 * * 1'
+
+concurrency:
+  group: ai-weekly-automation-health-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build weekly automation health digest
+        id: digest
+        run: node automation/weekly-automation-health-digest.cjs
+
+      - name: Upsert regression digest issue (dedupe)
+        if: steps.digest.outputs.regression_alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Automation health weekly regression digest"
+          ISSUE_BODY_FILE: automation/reports/weekly-automation-health-digest-latest.md
+          ISSUE_LABELS: "automation,observability,weekly-digest"
+          ISSUE_FINGERPRINT: automation-health-weekly-regression-digest
+          COOLDOWN_HOURS: "168"
+        run: |
+          export ISSUE_FINGERPRINT="automation-health-weekly-regression-digest"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+
+      - name: Owner assignment + webhook fanout + recovery close
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTOMATION_DIGEST_SLACK_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_SLACK_WEBHOOK }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GENERIC_WEBHOOK_URL: ${{ secrets.GENERIC_WEBHOOK_URL }}
+          WEEKLY_HEALTH_OWNER_SLA_DAYS: ${{ vars.WEEKLY_HEALTH_OWNER_SLA_DAYS }}
+          WEEKLY_HEALTH_OWNER_SLA_COOLDOWN_HOURS: ${{ vars.WEEKLY_HEALTH_OWNER_SLA_COOLDOWN_HOURS }}
+        run: node automation/weekly-automation-health-followup.cjs || true
+
+      - name: Upload digest artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: weekly-automation-health-digest-${{ github.run_id }}
+          path: |
+            automation/reports/weekly-automation-health-digest-latest.md
+            automation/reports/weekly-automation-health-digest-latest.json
+            automation/reports/weekly-automation-health-owner-mentions-state.json
+            automation/reports/weekly-automation-health-webhook-state.json
+          if-no-files-found: ignore
+          retention-days: 30

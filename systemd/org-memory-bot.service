@@ -1,0 +1,19 @@
+[Unit]
+Description=Zion Org Memory Telegram Bot
+After=network.target openclaw-gateway.service
+Wants=openclaw-gateway.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/.openclaw/workspace/zion.app
+Environment="TELEGRAM_BOT_TOKEN=8716864917:AAG7Ug3t2B_S39ebSXS58B1xJnTrWaM3Xq0"
+Environment="TELEGRAM_CHAT_ID=8435383377"
+ExecStart=/usr/bin/python3 commands/org_memory_telegram_bot.py
+Restart=always
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

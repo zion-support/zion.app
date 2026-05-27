@@ -1,0 +1,33 @@
+# Ensures ai-automation-audit.yml keeps audit/setup nodes and report upload anchors (grep-only).
+name: ai automation audit workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '3 12 * * 3' # Wednesdays 12:03 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-automation-audit-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  automation-audit-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-automation-audit.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automation-audit.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Automation Audit' "$f"
+          grep -Fq 'group: ai-automation-audit' "$f"
+          grep -Fq "cron: '0 11 * * 6'" "$f"
+          grep -Fq 'ai-automation-audit-agent.cjs run' "$f"
+          grep -Fq 'ai-automation-self-healing-agent.cjs run' "$f"
+          grep -Fq 'automation-audit-latest.json' "$f"
+          grep -Fq 'automation-audit-report' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

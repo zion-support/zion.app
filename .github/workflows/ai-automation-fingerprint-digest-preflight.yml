@@ -1,0 +1,44 @@
+name: AI Automation fingerprint digest preflight
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - 'automation/**'
+      - '.github/workflows/ai-automation-fingerprint-digest-weekly.yml'
+      - '.github/workflows/ai-automation-fingerprint-digest-preflight.yml'
+
+concurrency:
+  group: ai-automation-fingerprint-digest-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Syntax-check fingerprint digest script
+        run: node --check automation/generate-automation-fingerprint-incident-digest.cjs
+
+      - name: Run digest without token (stub path)
+        env:
+          DIGEST_DRY_RUN: '1'
+        run: node automation/generate-automation-fingerprint-incident-digest.cjs
+
+      - name: Automation preflight (all scripts + npm audit)
+        run: npm run automation:preflight

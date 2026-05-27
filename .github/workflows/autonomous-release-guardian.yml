@@ -1,0 +1,87 @@
+name: Autonomous Release Guardian
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: autonomous-release-guardian
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  release-guardian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      RELEASE_GUARDIAN_BASE_URL: https://ziontechgroup.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run release guardian
+        run: npm run autonomy:release-guardian
+
+      - name: Upload release guardian artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-release-guardian-${{ github.run_id }}
+          path: |
+            automation/reports/autonomous-release-guardian-latest.json
+            automation/reports/autonomous-release-guardian-latest.md
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Escalate release health incident
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomous-release-guardian-latest.json"
+          [ -f "$report" ] || exit 0
+          severity=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.severity||'ok')")
+          if [ "$severity" = "ok" ]; then
+            echo "No release incident to escalate."
+            export ISSUE_FINGERPRINT="autonomous-release-guardian"
+            export CLOSE_COMMENT="Auto-closing: release guardian reports healthy."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          unhealthy=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.unhealthyCount||0)")
+          body_file="autonomous-release-guardian-incident.md"
+          {
+            echo "## Release guardian alert"
+            echo ""
+            echo "- **Dedupe key:** \`autonomous-release-guardian\`"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Severity: \`$severity\`"
+            echo "- Unhealthy routes: \`$unhealthy\`"
+            echo ""
+            echo "### Route list"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const route of (r.unhealthyRoutes||[])){console.log('- '+route)}"
+          } > "$body_file"
+          export ISSUE_TITLE="Autonomous Release Guardian alert"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="autonomous-release-guardian"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

@@ -1,0 +1,2 @@
+{"ts": "2026-05-20T14:17:36.240260+00:00", "phase": "template_regression", "key": "sales", "rolling_5_avg": 54.4, "flag": "regression", "action": "regression", "score_history": [75.0, 72.0, 55.0, 40.0, 30.0]}
+{"ts": "2026-05-20T14:18:57.624917+00:00", "phase": "template_regression", "key": "sales", "rolling_5_avg": 54.4, "flag": "regression", "action": "regression", "score_history": [75.0, 72.0, 55.0, 40.0, 30.0]}

@@ -1,0 +1,107 @@
+name: Autonomous AI Developer
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: autonomous-ai-developer
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: false
+        default: 'run'
+        type: choice
+        options:
+          - run
+          - continuous
+
+jobs:
+  autonomous-development:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run AI Autonomous Developer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER || 'anthropic' }}
+          AUTO_COMMIT: 'true'
+          AUTO_PUSH: 'false'
+          MAX_CHANGES_PER_RUN: '20'
+          CONTINUOUS_MODE: 'true'
+          INTERVAL_MINUTES: '5'
+          INPUT_MODE: ${{ inputs.mode || 'run' }}
+        run: node automation/ai-autonomous-developer.cjs "$INPUT_MODE"
+
+      - name: Push changes
+        if: success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict — skipping push."
+            git rebase --abort || true
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh
+
+      - name: Generate Summary Report
+        if: always()
+        run: |
+          echo "## Autonomous AI Development Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "automation/reports/autonomous-dev-latest.json" ]; then
+            echo "### Analysis Results" >> "$GITHUB_STEP_SUMMARY"
+            jq -r '
+              "**Health Score:** \(.analysis.healthScore // "N/A")/10\n" +
+              "**Total Files:** \(.analysis.totalFiles // "N/A")\n" +
+              "**Modifications:** attempted=\(.modifications.attempted // 0), successful=\(.modifications.successful // 0), failed=\(.modifications.failed // 0)"
+            ' automation/reports/autonomous-dev-latest.json >> "$GITHUB_STEP_SUMMARY" || echo "Report parsing failed" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No report generated" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-dev-reports-${{ github.run_id }}
+          path: |
+            automation/reports/*.json
+            automation/logs/*.log
+          if-no-files-found: ignore
+          retention-days: 14

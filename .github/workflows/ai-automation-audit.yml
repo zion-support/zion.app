@@ -1,0 +1,57 @@
+# AI Automation Audit
+# Audits automation ecosystem: agents, workflows, cron. Identifies issues and suggests improvements.
+# Runs: Weekly Saturday 11 AM UTC, or workflow_dispatch
+#
+# Setup: Add OPENROUTER_API_KEY to repo secrets for LLM-powered suggestions.
+
+name: AI Automation Audit
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-automation-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 11 * * 6'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Automation preflight
+        run: npm run automation:preflight
+
+      - name: Run automation audit
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: meta-llama/llama-3.2-3b-instruct:free
+        run: node automation/ai-automation-audit-agent.cjs run
+
+      - name: Run automation self-healing
+        run: node automation/ai-automation-self-healing-agent.cjs run
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: automation-audit-report
+          path: automation/reports/automation-audit-latest.json
+          if-no-files-found: ignore

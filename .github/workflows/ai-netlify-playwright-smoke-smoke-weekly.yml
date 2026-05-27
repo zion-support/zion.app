@@ -1,0 +1,32 @@
+# Ensures ai-netlify-playwright-smoke.yml keeps schedule, Playwright install, and report anchors (grep-only).
+name: ai netlify playwright smoke workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '36 11 * * 3' # Wednesdays 11:36 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-netlify-playwright-smoke-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  netlify-playwright-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-netlify-playwright-smoke.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-netlify-playwright-smoke.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Netlify Playwright smoke' "$f"
+          grep -Fq 'group: ai-netlify-playwright-smoke' "$f"
+          grep -Fq "cron: '45 */3 * * *'" "$f"
+          grep -Fq 'npx playwright install chromium --with-deps' "$f"
+          grep -Fq 'npm run smoke:netlify:playwright' "$f"
+          grep -Fq 'netlify-playwright-smoke-latest.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

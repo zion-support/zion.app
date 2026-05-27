@@ -1,0 +1,77 @@
+name: AI observability digest
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-observability-digest
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 7 * * 3'
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Production smoke sample
+        continue-on-error: true
+        env:
+          ZION_BASE_URL: ${{ vars.ZION_PRODUCTION_URL }}
+          SMOKE_USE_ROTATION: '1'
+          SMOKE_SAMPLE_ROUTES: '5'
+          SMOKE_FAIL_ON_ERROR: '0'
+        run: node automation/scheduled-production-smoke.cjs
+
+      - name: GHA npm cache audit
+        run: node automation/gha-npm-cache-audit.cjs
+
+      - name: Route vs sitemap drift
+        env:
+          SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+        run: node automation/app-route-sitemap-drift.cjs
+
+      - name: Append smoke health snapshot
+        continue-on-error: true
+        run: npm run smoke:health:append
+
+      - name: Release risk score (partial inputs OK)
+        continue-on-error: true
+        run: node automation/release-risk-score.cjs
+
+      - name: Merge observability digest
+        run: node automation/observability-digest.cjs
+
+      - name: Build autonomy intelligence plan
+        run: node automation/autonomy-intelligence-planner.cjs
+
+      - name: Upload digest
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: observability-digest-${{ github.run_id }}
+          path: |
+            automation/reports/observability-digest-latest.json
+            automation/reports/scheduled-production-smoke-latest.json
+            automation/reports/gha-npm-cache-audit-latest.json
+            automation/reports/app-route-sitemap-drift-latest.json
+            automation/reports/release-risk-score-latest.json
+            automation/reports/autonomy-intelligence-plan-latest.json
+          if-no-files-found: ignore
+          retention-days: 30

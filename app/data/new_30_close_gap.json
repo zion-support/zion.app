@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cloud-chaos-engineering-platform",
+    "title": "Chaos Engineering Platform",
+    "description": "Controlled chaos engineering platform: declarative experiments (CPU spike, network latency, AZ failure, DB partition), automated safety guards (rollback on P95 breach), experiment dashboard, blast-radius scoring, and steady-state hypothesis builder — all without writing infrastructure code.",
+    "icon": "💥",
+    "features": ["Declarative experiments: inject CPU hog, memory pressure, network latency, AZ kill, DB partition via YAML", "Automated safety guards: auto-abort and rollback on SLA breach or P95 threshold violation", "Experiment history + roll-up steady-state score built automatically from past runs", "Blast-radius estimation pre-run: ML model predicts blast radius across 200+ service dependencies", "Blast radius visualisation: service dependency map showing hypothesised impact of failure"],
+    "benefits": ["Prove resilience before incidents: catch single points of failure that $1M incident would surface too late", "Run 20-50 automated experiments per month with zero manual engineering time", "Security team approval gets faster: experiment results serve as evidence of resilience posture"],
+    "pricing": {"basic": "149", "pro": "549", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-chaos-engineering-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-chaos-engineering-platform",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Chaos Engineering Platform",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-kubernetes-cost-optimizer",
+    "title": "Kubernetes Cost Optimizer",
+    "description": "Right-sizing and workload-packing engine for Kubernetes clusters: real-time resource-right sizing per pod, spot-instance fallback for stateless workloads, automated HPA/VPA updates, chargeback/showback dashboards, and monthly bill reduction reports.",
+    "icon": "💰",
+    "features": ["Right-sizing: ML-based recommendation for CPU/memory requests vs limits based on 7d usage window", "Workload packing: improved cluster utilisation by consolidating bin-packed workloads across nodes", "Spot-instance mixer: production workloads automatically use spot with on-demand fallback in same pool", "VPA(re)writer: automated Vertical Pod Autoscaler merge proposals as PR per each workload", "Showback/chargeback dashboards per-team, per-service, per-namespace from actual cluster usage"],
+    "benefits": ["Reduce Kubernetes infrastructure costs 30-60% after right-sizing and spot-instance adoption", "VPA auto-tuning frees 20-40% over-allocated CPU/memory — roomier pod budgets without changing limits", "Team chargeback with real cluster usage data eliminates internal cost attribution disputes without finance overhead"],
+    "pricing": {"basic": "0", "pro": "49", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-kubernetes-cost-optimizer", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-kubernetes-cost-optimizer",
+    "category": "cloud",
+    "popular": true,
+    "nav_name": "Kubernetes Cost Optimizer",
+    "is_featured": false
+  },
+  {
+    "id": "data-synthetic-data-generator",
+    "title": "Synthetic Data Generator & Privacy Shield",
+    "description": "Generative synthetic data platform for ML training, software testing, and GDPR/CCPA privacy compliance: maintains statistical distributions of real data while producing 100% synthetic records that pass all real-world QA and validation tests without human PII.",
+    "icon": "🎭",
+    "features": ["Generative tabular model: preserves statistical distributions and edge-cases from real data", "PII-free guarantee: no real person IDs, SSNs, phone numbers, addresses, or credit card numbers in output", "Edge-case preservation: rare events, outliers, null patterns and multi-filed relationship preserved statistically", "Schema evolution: same generator continues generating data from updated schema as schema evolves", "SDV + CTGAN engine: zero-code, point-and-click configuration or full Python API"],
+    "benefits": ["Ship ML models trained on higher-fidelity training data while staying GDPR/CCPA compliant — no PII exposure", "Accelerate software testing: generate unlimited realistic test data matching production schema in one API call", "CI/CD data pipeline: generate reproducible test data from production spec for integration and acceptance test suites"],
+    "pricing": {"basic": "99", "pro": "399", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/data-synthetic-data-generator", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/data-synthetic-data-generator",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Synthetic Data Generator & Privacy Shield",
+    "is_featured": false
+  },
+  {
+    "id": "automation-social-media-content-hub",
+    "title": "Social Media Content Hub & Publisher",
+    "description": "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, Instagram, Facebook, TikTok, YouTube), real-time engagement monitoring, and weekly performance reporting.",
+    "icon": "📢",
+    "features": ["AI content drafting: platform-optimised posts per network with tone + brand voice pre-trained", "Content calendar kanban: quarterly calendar with drag-drop scheduling per platform", "Bulk publishing: schedule 50+ posts across 6 platforms in one session with platform-native format", "Real-time engagement: mentions, DMs, comments all in one inbox with AI-suggested replies", "Weekly performance report: top-performing content type, audience growth trend, best posting time slot"],
+    "benefits": ["Social media managers publish 5× more content per week — AI drafts + bulk publish removes the bottleneck", "Maintain consistent brand voice across all networks — tone-guided AI prevents rogue tone on LinkedIn vs TikTok", "Cut time spent per week on content ideation and scheduling by 70-80%"],
+    "pricing": {"basic": "79", "pro": "299", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/automation-social-media-content-hub", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/automation-social-media-content-hub",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Social Media Content Hub & Publisher",
+    "is_featured": false
+  }
+]

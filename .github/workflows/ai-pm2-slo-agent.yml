@@ -1,0 +1,111 @@
+name: AI PM2 SLO Agent
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-pm2-slo-agent
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '50 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  slo-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run PM2 SLO agent (one-shot)
+        run: PM2_SLO_RUN_ONCE=1 node automation/ai-pm2-slo-agent.cjs
+
+      - name: Upload PM2 SLO artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: pm2-slo-agent-${{ github.run_id }}
+          path: |
+            automation/reports/pm2-slo-latest.json
+            automation/reports/pm2-slo-history.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: GitHub issues for PM2 SLO (critical vs warning)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          source scripts/automation/gh-issue-cooldown.sh
+          export COOLDOWN_HOURS=$(gh_issue_cooldown_hours_from_registry)
+          report="automation/reports/pm2-slo-latest.json"
+          [ -f "$report" ] || exit 0
+
+          critical_count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.criticalCount||0))")
+          warning_count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.warningCount||0))")
+
+          if [ "$critical_count" = "0" ] && [ "$warning_count" = "0" ]; then
+            echo "PM2 SLO: no warnings or criticals."
+            export CLOSE_COMMENT="Auto-closing: PM2 SLO recovered in latest run."
+            ISSUE_FINGERPRINT=pm2-slo-critical-breach node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            ISSUE_FINGERPRINT=pm2-slo-warnings-noncritical node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+
+          if [ "$critical_count" != "0" ]; then
+            body_file="$(mktemp)"
+            {
+              echo "## PM2 SLO critical breach"
+              echo ""
+              echo "- Repository: \`${{ github.repository }}\`"
+              echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              echo "- Critical app count: ${critical_count}"
+              echo ""
+              echo "### Apps (critical)"
+              node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.apps||[])){if(item.severity==='critical' && !item.healthy){console.log('- \`'+item.name+'\` ('+item.reasons.join('; ')+')')}}"
+              echo ""
+              echo "Investigate PM2 restart behavior and app health for listed services."
+            } > "$body_file"
+            export ISSUE_TITLE="PM2 SLO critical breach detected"
+            export ISSUE_BODY_FILE="$body_file"
+            export ISSUE_LABEL="bug"
+            export ISSUE_FINGERPRINT="pm2-slo-critical-breach"
+            node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+            rm -f "$body_file"
+            exit 0
+          fi
+
+          body_file="$(mktemp)"
+          {
+            echo "## PM2 SLO warnings (non-critical)"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Warning app count: ${warning_count}"
+            echo ""
+            echo "### Apps (warning)"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.apps||[])){if(item.severity==='warning' && !item.healthy){console.log('- \`'+item.name+'\` ('+item.reasons.join('; ')+')')}}"
+            echo ""
+            echo "Review restart deltas and stopped-app ignores (\`PM2_SLO_IGNORE_STOPPED_APPS\`) as needed."
+          } > "$body_file"
+          export ISSUE_TITLE="PM2 SLO warnings (non-critical)"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABEL="automation"
+          export ISSUE_FINGERPRINT="pm2-slo-warnings-noncritical"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+          rm -f "$body_file"

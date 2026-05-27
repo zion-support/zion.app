@@ -1,0 +1,36 @@
+# Ensures workflow-permissions-guard.yml keeps trigger scope and grep-guard invocation anchors (grep-only).
+
+name: workflow permissions guard smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '15 8 * * 3' # Wednesdays 08:15 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-permissions-guard-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  permissions-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: workflow-permissions-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-permissions-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow permissions guard' "$f"
+          grep -Fq '.github/workflows/**/*.yml' "$f"
+          grep -Fq '.github/workflows/**/*.yaml' "$f"
+          grep -Fq 'scripts/automation/run-workflow-grep-guards.sh' "$f"
+          grep -Fq 'run-workflow-grep-guards.sh --permissions' "$f"
+          echo "ok: $f"

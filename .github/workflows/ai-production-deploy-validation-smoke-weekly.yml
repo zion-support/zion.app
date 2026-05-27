@@ -1,0 +1,34 @@
+# Ensures ai-production-deploy-validation.yml keeps workflow_run chain and validation anchors (grep-only).
+name: ai production deploy validation workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '37 11 * * 3' # Wednesdays 11:37 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-production-deploy-validation-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  deploy-validation-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-production-deploy-validation.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-production-deploy-validation.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Production Deploy Validation' "$f"
+          grep -Fq 'group: ai-production-deploy-validation' "$f"
+          grep -Fq 'workflows: [Deploy on Push]' "$f"
+          grep -Fq 'Wait for Netlify build' "$f"
+          grep -Fq 'npm run sitemap:validate' "$f"
+          grep -Fq 'npm run seo:audit' "$f"
+          grep -Fq 'https://ziontechgroup.com' "$f"
+          grep -Fq 'seo-meta-report.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

@@ -1,0 +1,71 @@
+name: AI lead routing synthetic intelligence v2
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 */4 * * *'
+
+concurrency:
+  group: ai-lead-routing-synthetic-intelligence-v2
+  cancel-in-progress: true
+
+jobs:
+  lead_routing_v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run lead routing synthetic v2
+        id: leadv2
+        run: node automation/lead-routing-synthetic-intelligence-v2.cjs
+
+      - name: Raise deduped issue on critical degradation
+        if: steps.leadv2.outputs.lead_routing_v2_status == 'critical'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Lead routing synthetic intelligence v2 degraded"
+          ISSUE_BODY_FILE: automation/reports/lead-routing-synthetic-intelligence-v2-latest.md
+          ISSUE_LABELS: "automation,lead-gen,routing,critical"
+          ISSUE_FINGERPRINT: lead-routing-synthetic-intelligence-v2-degraded
+          COOLDOWN_HOURS: "6"
+        run: |
+          export ISSUE_FINGERPRINT="lead-routing-synthetic-intelligence-v2-degraded"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+
+      - name: Close degradation issue on recovery
+        if: steps.leadv2.outputs.lead_routing_v2_status != 'critical'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Lead routing synthetic intelligence v2 degraded"
+          ISSUE_FINGERPRINT: lead-routing-synthetic-intelligence-v2-degraded
+          ISSUE_CLOSE_COMMENT_FILE: automation/reports/lead-routing-synthetic-intelligence-v2-latest.md
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: lead-routing-synthetic-intelligence-v2-${{ github.run_id }}
+          path: |
+            automation/reports/lead-routing-synthetic-intelligence-v2-latest.json
+            automation/reports/lead-routing-synthetic-intelligence-v2-latest.md
+          if-no-files-found: ignore
+          retention-days: 14

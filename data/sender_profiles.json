@@ -1,0 +1,53 @@
+{
+  "airbnb.com>": {
+    "formality": "casual",
+    "language": "pt",
+    "total_messages": 750,
+    "last_updated": "2026-05-19T09:00:55.697923"
+  },
+  "ziontechgroup.com>": {
+    "formality": "casual",
+    "language": "pt",
+    "total_messages": 7,
+    "last_updated": "2026-05-18T21:00:47.808562"
+  },
+  "test.sender1@example.com": {
+    "display_name": "test.sender1@example.com",
+    "first_seen": "2026-05-20T12:20:37.028945+00:00",
+    "intent_stats": {
+      "urgent": {
+        "total": 2,
+        "success": 0
+      }
+    },
+    "success_rate": 0.0,
+    "avg_response_minutes": 0.0,
+    "last_updated": "2026-05-20T12:29:22.747155+00:00"
+  },
+  "test.sender2@example.com": {
+    "display_name": "test.sender2@example.com",
+    "first_seen": "2026-05-20T12:20:37.030142+00:00",
+    "intent_stats": {
+      "general": {
+        "total": 2,
+        "success": 0
+      }
+    },
+    "success_rate": 0.0,
+    "avg_response_minutes": 0.0,
+    "last_updated": "2026-05-20T12:29:22.749480+00:00"
+  },
+  "test.sender3@example.com": {
+    "display_name": "test.sender3@example.com",
+    "first_seen": "2026-05-20T12:20:37.030576+00:00",
+    "intent_stats": {
+      "booking": {
+        "total": 2,
+        "success": 0
+      }
+    },
+    "success_rate": 0.0,
+    "avg_response_minutes": 0.0,
+    "last_updated": "2026-05-20T12:29:22.750367+00:00"
+  }
+}

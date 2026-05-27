@@ -1,0 +1,114 @@
+permissions:
+  contents: read
+name: Autonomous Bundle Split Analyzer
+true:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+  - cron: 0 17 * * 2
+  workflow_dispatch: null
+jobs:
+  bundle-split:
+    name: Bundle Split Analyzer
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Build site (generate stats)
+      run: npm run build
+    - name: Run Bundle Split Analyzer
+      id: analyzer
+      continue-on-error: true
+      env:
+        GITHUB_SHA: ${{ github.sha }}
+        GITHUB_REF: ${{ github.ref }}
+      run: 'node automation/bundle-split-analyzer.cjs > /tmp/bundle-split-output.txt
+        || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload report artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: bundle-split-report
+        path: '.hermes/memory/bundle-split/latest-report.json
+
+          .hermes/memory/bundle-split/baseline-stats.json
+
+          '
+        retention-days: 7
+    - name: Check for warnings
+      run: "if [ \"${{ steps.analyzer.outputs.exit_code }}\" -ne 0 ]; then\n  echo\
+        \ \"Bundle split warnings detected\"\n  exit 1\nfi\n"
+    - name: Comment on PR with recommendations
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
+          let body = '\U0001F4E6 **Bundle Split Analysis \u2014 Recommendations**\\\
+          n\\n';\ntry {\n  const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'));\n\
+          \  if (data.warnings === 0) {\n    body += 'All route bundles within thresholds.\
+          \ Great job!';\n  } else {\n    body += `Found **${data.warnings}** route(s)\
+          \ with large bundles:\\n\\n`;\n    for (const route of data.routes.filter(r\
+          \ => r.warnings.length)) {\n      body += `### ${route.route} (${route.gzipTotalKB}KB\
+          \ gzipped)\\n`;\n      if (route.initial) body += `_Initial chunk \u2014\
+          \ critical for LCP_\\n`;\n      for (const rec of route.recommendations)\
+          \ {\n        body += `- ${rec}\\n`;\n      }\n      body += '\\n';\n   \
+          \ }\n    body += '\U0001F4A1 Consider applying these dynamic import optimizations\
+          \ to improve initial load performance.';\n  }\n} catch (e) {\n  body +=\
+          \ 'Could not parse report. Check workflow logs.';\n}\ngithub.rest.issues.createComment({\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  issue_number:\
+          \ context.issue.number,\n  body\n});\n"
+    - name: Open GitHub issue on main branch regressions
+      if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
+          const title = '\U0001F4E6 Bundle Split Regressions on Main';\nlet body =\
+          \ '**Route bundle sizes have grown.** Consider code splitting to improve\
+          \ initial page load.\\n\\n';\ntry {\n  const data = JSON.parse(fs.readFileSync(reportPath,\
+          \ 'utf8'));\n  body += `**Routes exceeding thresholds:** ${data.warnings}\\\
+          n\\n`;\n  for (const route of data.routes.filter(r => r.warnings.length))\
+          \ {\n    body += `- **${route.route}** \u2014 ${route.gzipTotalKB}KB gzipped\
+          \ ${route.initial ? '(initial chunk)' : ''}\\n`;\n    for (const rec of\
+          \ route.recommendations) {\n      body += `  > ${rec}\\n`;\n    }\n    body\
+          \ += '\\n';\n  }\n} catch (e) {\n  body += 'Could not parse full report;\
+          \ see artifact.\\n';\n}\nbody += `\\n*Committed by: ${context.payload.committer?.name\
+          \ || 'unknown'}*\\n`;\nbody += `*Commit: ${context.payload.headCommit?.id?.slice(0,\
+          \ 7) || 'N/A'}*\\n`;\n\nconst existing = await github.rest.issues.listForRepo({\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  labels: ['bundle-split',\
+          \ 'performance'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
+          \ any) => i.title === title);\nif (!already) {\n  await github.rest.issues.create({\n\
+          \    owner: context.repo.owner,\n    repo: context.repo.repo,\n    title,\n\
+          \    body,\n    labels: ['bundle-split', 'performance', 'autonomous']\n\
+          \  });\n}\n"
+    - name: Weekly Telegram Digest (only on schedule & success)
+      if: success() && github.event_name == 'schedule'
+      run: "node automation/notify-telegram.js \"\u2705 Weekly bundle split scan complete\
+        \ \u2014 $(cat .hermes/memory/bundle-split/latest-report.json | jq -r '.routes\
+        \ | map(select(.warnings | length > 0)) | length') routes need attention.\"\
+        \n"
+    - name: Notify Telegram on failure
+      if: failure()
+      run: "node automation/notify-telegram.js \"\U0001F6A8 Bundle split analyzer\
+        \ found large route bundles. Check GitHub issues for details.\"\n"
+    timeout-minutes: 10

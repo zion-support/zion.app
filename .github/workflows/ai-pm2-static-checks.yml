@@ -1,0 +1,117 @@
+name: AI PM2 static checks
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ai-pm2-static-checks
+  cancel-in-progress: false
+
+on:
+  pull_request:
+    paths:
+      - 'automation/**'
+      - 'automation/config/pm2-singleton-policy.json'
+      - 'ecosystem.config.cjs'
+      - 'package.json'
+      - 'commands/deploy.cjs'
+      - 'app/ai-lab/ai-lab-tools.ts'
+      - 'automation/data/pages-to-visit.json'
+      - 'config/smoke-routes.txt'
+      - 'automation/validate-ai-lab-route-contract.cjs'
+      - 'automation/lib/incident-cooldown-mesh.cjs'
+      - '.github/workflows/ai-pm2-static-checks.yml'
+      - '.github/workflows/ai-pm2-ops-digest.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'automation/**'
+      - 'automation/config/pm2-singleton-policy.json'
+      - 'ecosystem.config.cjs'
+      - 'package.json'
+      - 'commands/deploy.cjs'
+      - 'app/ai-lab/ai-lab-tools.ts'
+      - 'automation/data/pages-to-visit.json'
+      - 'config/smoke-routes.txt'
+      - 'automation/validate-ai-lab-route-contract.cjs'
+      - 'automation/lib/incident-cooldown-mesh.cjs'
+      - '.github/workflows/ai-pm2-static-checks.yml'
+      - '.github/workflows/ai-pm2-ops-digest.yml'
+  workflow_dispatch:
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: PM2 config drift guard (no PM2 daemon required)
+        run: npm run pm2:drift-guard:once
+
+      - name: Validate ecosystem script paths exist
+        run: npm run ecosystem:validate-scripts
+
+      - name: Validate PM2 singleton policy vs ecosystem
+        run: npm run validate:pm2-singleton-ecosystem
+
+      - name: AI Lab route contract
+        run: npm run validate:ai-lab-route-contract
+
+      - name: PM2 report size budget (PR — warn-only)
+        if: github.event_name == 'pull_request'
+        env:
+          PM2_REPORT_BUDGET_FAIL_ON_EXCEED: '0'
+        run: npm run pm2:report-budget:once
+
+      - name: PM2 report size budget (main / dispatch — enforce)
+        if: github.event_name != 'pull_request'
+        run: npm run pm2:report-budget:once
+
+      - name: PR comment — PM2 drift summary
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: node automation/ai-pm2-pr-drift-comment.cjs
+
+      - name: Ensure PM2 PR labels exist
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create pm2 --color BFD4F0 --description "PM2 ecosystem" 2>/dev/null || true
+          gh label create automation --color 0E8A16 --description "Automation" 2>/dev/null || true
+
+      - name: Label PR when ecosystem.config.cjs changes
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR="${{ github.event.pull_request.number }}"
+          if gh pr diff "$PR" --name-only 2>/dev/null | grep -qx 'ecosystem.config.cjs'; then
+            gh pr edit "$PR" --add-label pm2 --add-label automation || true
+          fi
+
+      - name: Lint
+        run: npm run lint:check
+
+      - name: Type check
+        run: npm run type-check

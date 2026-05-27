@@ -1,0 +1,88 @@
+name: AI PM2 Config Drift Guard
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-pm2-config-drift-guard
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '35 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  drift-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run PM2 config drift guard
+        run: npm run pm2:drift-guard:once
+
+      - name: Upload PM2 drift report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: pm2-config-drift-${{ github.run_id }}
+          path: automation/reports/pm2-config-drift-guard-latest.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open issue when drift is detected
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/pm2-config-drift-guard-latest.json"
+          [ -f "$report" ] || exit 0
+          drift_count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.driftCount||0))")
+          if [ "$drift_count" = "0" ]; then
+            echo "No PM2 config drift detected."
+            export ISSUE_FINGERPRINT="pm2-config-drift"
+            export CLOSE_COMMENT="Auto-closing: PM2 config drift guard reports no drift."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="$(mktemp)"
+          {
+            echo "## PM2 config drift detected"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Detected at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            echo "- Drift count: ${drift_count}"
+            echo ""
+            echo "### Missing PM2 apps referenced by npm scripts"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.npmScriptsWithMissingApps||[])){console.log('- `'+item.scriptName+'` -> '+item.missingApps.join(', '))}"
+            echo ""
+            echo "### Missing PM2 apps in direct commands"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.npmDirectCommandsWithMissingApps||[])){console.log('- `'+item.scriptName+'` -> '+item.app)}"
+            echo ""
+            echo "### Ecosystem app entries with missing script paths"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.ecosystemAppsWithMissingScripts||[])){console.log('- `'+item.app+'` -> '+String(item.script))}"
+            echo ""
+            echo "Please align \`package.json\` PM2 scripts with \`ecosystem.config.cjs\` app names."
+          } > "$body_file"
+          export ISSUE_TITLE="PM2 config drift detected"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="pm2-config-drift"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+          rm -f "$body_file"

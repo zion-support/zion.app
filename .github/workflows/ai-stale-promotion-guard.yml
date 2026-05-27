@@ -1,0 +1,103 @@
+name: AI Stale Promotion Guard
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-stale-promotion-guard
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '35 14 * * *'
+  workflow_run:
+    workflows: [Deploy on Push]
+    types:
+      - completed
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  stale-promotion-guard:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      STALE_PROMOTION_FAILURE_THRESHOLD: "3"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Prime deploy watchdog report
+        env:
+          DEPLOY_WATCHDOG_BASE_URL: https://ziontechgroup.com
+          DEPLOY_WATCHDOG_ROUTES_FILE: config/smoke-routes.txt
+          DEPLOY_WATCHDOG_MAX_ROUTES: 20
+          DEPLOY_WATCHDOG_ATTEMPTS: 2
+          DEPLOY_WATCHDOG_INTERVAL_MS: 12000
+        run: npm run deploy:watchdog
+        continue-on-error: true
+
+      - name: Run stale promotion guard
+        run: node automation/ai-stale-promotion-guard.cjs
+
+      - name: Generate promotion confidence report
+        run: node automation/generate-promotion-confidence-report.cjs
+
+      - name: Upload stale promotion guard artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: stale-promotion-guard-${{ github.run_id }}
+          path: |
+            automation/reports/stale-promotion-guard-latest.json
+            automation/reports/promotion-health-history.json
+            automation/reports/promotion-confidence-latest.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open issue for stale promoted routes
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/stale-promotion-guard-latest.json"
+          [ -f "$report" ] || exit 0
+          count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log((r.staleCandidates||[]).length)")
+          if [ "$count" = "0" ]; then
+            echo "No stale promoted routes."
+            export ISSUE_FINGERPRINT="stale-promoted-routes"
+            export CLOSE_COMMENT="Auto-closing: no stale promoted routes."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="stale-promotions.md"
+          {
+            echo "## Stale promoted routes"
+            echo ""
+            echo "- Stale candidate count: **${count}**"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Rule: route failed 3+ consecutive checks"
+            echo ""
+            echo "### Candidates"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.staleCandidates||[])){console.log('- '+item.route+' (consecutive failures: '+item.consecutiveFailures+')')}"
+          } > "$body_file"
+          export ISSUE_TITLE="Stale promoted routes detected"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="stale-promoted-routes"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

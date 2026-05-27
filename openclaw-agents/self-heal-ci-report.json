@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-04-05T11:17:04.122Z",
+  "checks": [
+    {
+      "name": "workflow-files",
+      "status": "ok",
+      "count": 369
+    },
+    {
+      "name": "workflow-yaml",
+      "status": "ok"
+    },
+    {
+      "name": "secret-netlify_auth_token",
+      "status": "missing"
+    },
+    {
+      "name": "secret-gh_token",
+      "status": "missing"
+    },
+    {
+      "name": "pm2-processes",
+      "status": "ok",
+      "running": 17,
+      "stopped": 0
+    }
+  ],
+  "failures": [],
+  "fixes": [],
+  "status": "healthy"
+}

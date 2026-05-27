@@ -1,0 +1,58 @@
+# AI App Audit Automation
+# Audits live ziontechgroup.com with OpenRouter LLM, generates improvement suggestions.
+# Runs: Weekly Saturday 10 AM UTC, or workflow_dispatch
+#
+# Setup: Add OPENROUTER_API_KEY to repo secrets (Settings → Secrets → Actions)
+# for LLM-powered audit. Uses meta-llama/llama-3.2-3b-instruct:free by default.
+
+name: AI App Audit Automation
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 10 * * 6'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Automation preflight
+        run: npm run automation:preflight
+
+      - name: Run app audit
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: node automation/ai-app-audit-automation-agent.cjs run
+
+      - name: Apply audit suggestions
+        if: success()
+        run: node automation/ai-app-audit-implementation-agent.cjs run
+
+      - name: Upload report
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-audit-report
+          path: automation/reports/app-audit-automation-latest.json
+
+      - name: Upload suggestions
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-audit-suggestions
+          path: automation/data/app-audit-suggestions.json

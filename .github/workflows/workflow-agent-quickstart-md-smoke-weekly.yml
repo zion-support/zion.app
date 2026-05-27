@@ -1,0 +1,37 @@
+# Ensures docs/AGENT-QUICKSTART.md keeps onboarding + safety anchors (grep-only).
+
+name: docs/agent quickstart smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 8 * * 0' # Sundays 08:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-agent-quickstart-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  agent-quickstart-doc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Agent quickstart doc anchors
+        run: |
+          set -euo pipefail
+          test -f docs/AGENT-QUICKSTART.md
+          test -s docs/AGENT-QUICKSTART.md
+          grep -Fq '# Agent quickstart (local)' docs/AGENT-QUICKSTART.md
+          grep -Fq 'AGENTS.md' docs/AGENT-QUICKSTART.md
+          grep -Fq 'SOUL.md' docs/AGENT-QUICKSTART.md
+          grep -Fq 'USER.md' docs/AGENT-QUICKSTART.md
+          grep -Fq 'npm run lint:check' docs/AGENT-QUICKSTART.md
+          grep -Fq 'Never commit' docs/AGENT-QUICKSTART.md
+          grep -Fq '.env' docs/AGENT-QUICKSTART.md
+          echo 'ok: docs/AGENT-QUICKSTART.md'

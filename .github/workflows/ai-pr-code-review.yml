@@ -1,0 +1,150 @@
+name: AI PR Code Review
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai-review:
+    name: AI Code Review
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Get diff
+        id: diff
+        run: |
+          DIFF=$(git diff origin/main...HEAD -- '*.ts' '*.tsx' '*.js' '*.jsx' '*.css' '*.yml' '*.yaml' '*.json' \
+            ':!package-lock.json' ':!*.lock' ':!.next/**' ':!out/**' | head -c 12000)
+          if [ -z "$DIFF" ]; then
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "empty=false" >> "$GITHUB_OUTPUT"
+            EOF_MARKER=$(openssl rand -hex 16)
+            {
+              echo "content<<${EOF_MARKER}"
+              echo "$DIFF"
+              echo "${EOF_MARKER}"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: AI Review via OpenRouter
+        if: steps.diff.outputs.empty == 'false'
+        id: review
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          DIFF_CONTENT=$(cat <<'DIFF_END'
+          ${{ steps.diff.outputs.content }}
+          DIFF_END
+          )
+
+          ESCAPED_DIFF=$(echo "$DIFF_CONTENT" | python3 -c "import sys,json; print(json.dumps(sys.stdin.read()))")
+
+          PAYLOAD=$(cat <<PAYLOAD_END
+          {
+            "model": "openrouter/auto",
+            "max_tokens": 2048,
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a senior code reviewer for a Next.js 15 App Router static-export website (TypeScript, Tailwind CSS). Review the git diff and provide actionable feedback. Focus on: bugs, security issues, performance problems, TypeScript errors, accessibility concerns, and SEO impact. Be concise. Use markdown formatting. If the code looks good, say so briefly."
+              },
+              {
+                "role": "user",
+                "content": "Review this pull request diff:\n\n${ESCAPED_DIFF}"
+              }
+            ]
+          }
+          PAYLOAD_END
+          )
+
+          RESPONSE=$(curl -sS --max-time 60 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-CI" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          REVIEW=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              if msg:
+                  print(msg)
+              else:
+                  print('AI review returned empty response.')
+          except Exception as e:
+              print(f'Failed to parse AI response: {e}')
+          ")
+
+          EOF_MARKER=$(openssl rand -hex 16)
+          {
+            echo "body<<${EOF_MARKER}"
+            echo "$REVIEW"
+            echo "${EOF_MARKER}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post review comment
+        if: steps.diff.outputs.empty == 'false' && steps.review.outputs.body != ''
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const review = `### AI Code Review
+
+            ${{ steps.review.outputs.body }}
+
+            ---
+            > Automated review via OpenRouter AI | Run #${context.runNumber}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### AI Code Review')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body: review,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body: review,
+              });
+            }
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## AI PR Code Review"
+            echo ""
+            if [ "${{ steps.diff.outputs.empty }}" = "true" ]; then
+              echo "No reviewable code changes detected."
+            else
+              echo "AI review completed and posted as PR comment."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

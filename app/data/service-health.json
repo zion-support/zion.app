@@ -1,0 +1,4384 @@
+{
+  "accessibility-compliance": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "advanced-ai-enterprise-intelligence-hub": {
+    "last_status": 200,
+    "last_duration": 0.116,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "agentic-workflow-orchestrator": {
+    "last_status": 200,
+    "last_duration": 0.087,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-3d-asset-generator": {
+    "last_status": 200,
+    "last_duration": 0.164,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-accessibility-auditor": {
+    "last_status": 200,
+    "last_duration": 0.145,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-accessibility-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-ad-copy-generator": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-agent-safety-evaluation": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-agent-tool-builder": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-agentic-workflows": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-agents-autonomous": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-aiops-anomaly-detection": {
+    "last_status": 200,
+    "last_duration": 0.086,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-analytics": {
+    "last_status": 200,
+    "last_duration": 0.097,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-api-orchestration-layer": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-automated-reporting": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-automation": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-autonomous-code-deployment": {
+    "last_status": 200,
+    "last_duration": 0.095,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-autonomous-qa-engineering": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-bdr-sdr": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-bom-procurement": {
+    "last_status": 200,
+    "last_duration": 0.092,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-brand-voice-guardian": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-bug-to-issue-router": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-call-center-voice-analytics": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-campaign-predictor": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-caption-subtitle-generator": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-carbon-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-chatbot-builder-pro": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-chatbot-omnichannel": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-chronic-disease-tracker": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cloud-cost-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-assistant-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-audit-security": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-migration": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-migration-assistant": {
+    "last_status": 200,
+    "last_duration": 0.085,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-migration-modernization": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-review-assistant": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-reviewer": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-reviewer-pro": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-code-vulnerability-scanner": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-codebase-doc-generator": {
+    "last_status": 200,
+    "last_duration": 0.073,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-competitive-intel-engine": {
+    "last_status": 200,
+    "last_duration": 0.082,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-competitive-price-tracker": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-competitor-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-compliance": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-compliance-generator": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-computer-vision": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-computer-vision-shelf-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.095,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-content-generation": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-content-localization": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-content-moderation": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-content-moderation-platform": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-content-moderation-suite": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-context-engineering-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-contract-analyzer-pro": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-contract-lifecycle-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-contract-manager": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-contract-review": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-conversation-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-conversational-hr-onboarding": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-copilot-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-credit-underwriting": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-crm-automation-suite": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cro-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cross-lingual-bridge": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cross-lingual-meeting-bridge": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cultural-fit-screener": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-360": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-sentiment-analytics": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-sentiment-tracker": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-success-predictor": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-support": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-customer-support-agent": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-cyber-threat-hunting": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-dashboard-designer": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-data-quality-engine": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-data-quality-fabric": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-data-quality-guardian": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-ddos-protection-platform": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-deepfake-detection": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-devops-chatbot": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-digital-twin-platform": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-document-classifier": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-document-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-document-qa": {
+    "last_status": 200,
+    "last_duration": 0.025,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-driven-api-design-assistant": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-driven-customer-segmentation": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-drug-discovery": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-drug-discovery-assistant": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-drug-discovery-platform": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-drug-interaction-checker": {
+    "last_status": 200,
+    "last_duration": 0.014,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-dyslexia-assist": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-ecommerce-smart-search": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-edge-realtime-inference": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-education-adaptive-tutor": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-education-tutor": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-email-campaign-generator": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-email-marketing": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-employee-experience": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-energy-optimization": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-ethics-audit-1": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-ethics-governance": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-etl-pipeline-builder": {
+    "last_status": 200,
+    "last_duration": 0.014,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-exam-proctoring": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-expense-audit": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-feature-store": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-federated-learning": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fedrisk-compliance": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-financial-forecasting": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-financial-fraud-detection": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-finetuning-alignment-pipelines": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fintech-fraud-graph": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-for-code-migration": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-form-filler-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.024,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-foundation-models-custom-training": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fraud-detection": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fraud-detection-finance": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fraud-detection-real-time": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fraud-pattern-analyzer": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-fullstack-test-generator": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-gen-app-dev-1": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-generative-synthetic-patient-data": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-genomic-analysis": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-glassdoor-review-analyzer": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-governance-compliance": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-governance-trust": {
+    "last_status": 200,
+    "last_duration": 0.02,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-grant-matcher": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-growth-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-hiring-pipeline-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.022,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-hr-assistant": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-infra-provisioner": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-insurance-claims": {
+    "last_status": 200,
+    "last_duration": 0.021,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-insurance-pricing": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-integration-apis": {
+    "last_status": 200,
+    "last_duration": 0.019,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-intelligent-routing": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-interview-conduct-bot": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-it-helpdesk": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-job-description-kit": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-job-matcher": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-base-agent": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-base-rag": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-graph": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-graph-builder": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-graph-search-deep": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-graph-search-engine": {
+    "last_status": 200,
+    "last_duration": 0.016,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-knowledge-management": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-kubernetes-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-kyc-aml-compliance": {
+    "last_status": 200,
+    "last_duration": 0.022,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-lead-enricher": {
+    "last_status": 200,
+    "last_duration": 0.018,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-lead-generation": {
+    "last_status": 200,
+    "last_duration": 0.015,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-legal-contract-redaction": {
+    "last_status": 200,
+    "last_duration": 0.017,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-legal-doc-review": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-legal-document-analysis": {
+    "last_status": 200,
+    "last_duration": 0.095,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-legal-redline": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-legal-research": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-llm-router-pro": {
+    "last_status": 200,
+    "last_duration": 0.083,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-load-testing": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-log-analysis": {
+    "last_status": 200,
+    "last_duration": 0.103,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-low-code-integration": {
+    "last_status": 200,
+    "last_duration": 0.066,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-machine-translation-quality": {
+    "last_status": 200,
+    "last_duration": 0.098,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-marine-fisheries-sustainability": {
+    "last_status": 200,
+    "last_duration": 0.072,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-marketing-copy-generator": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-media-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-medical-image-diagnosis": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-medical-imaging": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-meeting-assistant-pro": {
+    "last_status": 200,
+    "last_duration": 0.073,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-meeting-notes-summary": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-meeting-preread": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-meeting-summarizer-pro": {
+    "last_status": 200,
+    "last_duration": 0.066,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-memory-agents-long-horizon": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-mental-health-chatbot": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-metadata-management": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-model-orchestration": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-multimodal-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-multimodal-video-understanding": {
+    "last_status": 200,
+    "last_duration": 0.105,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-newsletter-engagement": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-nutrition-meal-planner": {
+    "last_status": 200,
+    "last_duration": 0.092,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-observability-mlops": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-observability-turbo": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-omnichannel-chatbot": {
+    "last_status": 200,
+    "last_duration": 0.11,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-pdf-engine": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-personal-finance-coach": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-personalisation-engine-realtime": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-personalization-engine": {
+    "last_status": 200,
+    "last_duration": 0.101,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-personalized-learning": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-post-purchase-care": {
+    "last_status": 200,
+    "last_duration": 0.102,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-incident-postmortem": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-log-anomaly-detection": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-passwordless-auth": {
+    "last_status": 200,
+    "last_duration": 0.115,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-pr-drafting": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-question-answering": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-seo-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-tech-debt-quantifier": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-test-generation": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-powered-ui-generator": {
+    "last_status": 200,
+    "last_duration": 0.174,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-prd-story-gen": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-churn": {
+    "last_status": 200,
+    "last_duration": 0.086,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-fraud-detection-streaming": {
+    "last_status": 200,
+    "last_duration": 0.102,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-maintenance": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-maintenance-advisor": {
+    "last_status": 200,
+    "last_duration": 0.107,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-maintenance-factory": {
+    "last_status": 200,
+    "last_duration": 0.11,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-maintenance-industrial": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-supply-chain-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-predictive-workforce-planning": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-presentation-maker": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-privilege-access-manager": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-procurement": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-product-analytics": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-product-analytics-insights": {
+    "last_status": 200,
+    "last_duration": 0.099,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-product-photo-enhancer": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-profitability-dashboard": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-project-planning": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-quality-inspection": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-quantum-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-rag-knowledge-systems": {
+    "last_status": 200,
+    "last_duration": 0.096,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-real-estate-valuation": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-real-time-translation-platform": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-realtime-translation": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-red-team-automation": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-regulated-industries": {
+    "last_status": 200,
+    "last_duration": 0.109,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-regulatory-compliance-monitor": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-reinforcement-learning-ops": {
+    "last_status": 200,
+    "last_duration": 0.082,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-reinforcement-learning-optimiser": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-resume-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.079,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-retail-personalization": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-retail-recommendation-engine": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-revenue-clarity": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-revenue-ops": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-revenue-optimization": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-revenue-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-roadmap-strategy": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-robotics-integration": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-rpa-automation": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-rpa-platform": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-rx-prior-auth": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sales-coach": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sales-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-secrets-management": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-security-responsible-ai": {
+    "last_status": 200,
+    "last_duration": 0.063,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-self-healing-kubernetes-platform": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sentiment-analysis": {
+    "last_status": 200,
+    "last_duration": 0.082,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sentiment-brand-pulse": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-seo-content-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-seo-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-serverless-platform": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-smart-document-redactor": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-social-scheduler": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-social-sentiment-tracker": {
+    "last_status": 200,
+    "last_duration": 0.176,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-spatial-computing": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-spatial-computing-3d-scene": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-speech-voice-solutions": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-strategy-roadmap": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-chain": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-chain-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.1,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-chain-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-chain-predictor": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-chain-visibility": {
+    "last_status": 200,
+    "last_duration": 0.087,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-supply-demand-planner": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sustainability-carbon-tracker": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sustainable-ops": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-sustainable-supply-chain-radar": {
+    "last_status": 200,
+    "last_duration": 0.125,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-talent-acquisition": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-talent-acquisition-platform": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-tax-compliance-calculator": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-test-automation-framework": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-testing-qa": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-threat-hunting": {
+    "last_status": 200,
+    "last_duration": 0.108,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-threat-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.086,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-trading-signal-engine": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-training-data-platform": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-translation-services": {
+    "last_status": 200,
+    "last_duration": 0.147,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-tts-voice-clone": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-tutoring-platform": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-video-analytics": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-video-generation": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-video-generator": {
+    "last_status": 200,
+    "last_duration": 0.112,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-vision-quality-inspection": {
+    "last_status": 200,
+    "last_duration": 0.204,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-visual-inspection": {
+    "last_status": 200,
+    "last_duration": 0.149,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-visual-search-recommendation": {
+    "last_status": 200,
+    "last_duration": 0.101,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-agent": {
+    "last_status": 200,
+    "last_duration": 0.119,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-agent-builder": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-agent-platform": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-assistant": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-assistant-pro": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-brand-consistency": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-cloning": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-cloning-marketing": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-cloning-studio": {
+    "last_status": 200,
+    "last_duration": 0.063,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-first-crm": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-voice-to-action-platform": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-vpc-zero-trust": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-workflow-automation-builder": {
+    "last_status": 200,
+    "last_duration": 0.075,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-workflow-automation-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-zero-trust-network-access": {
+    "last_status": 200,
+    "last_duration": 0.09,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automated-data-labeling": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "autonomous-code-review-agent": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "autonomous-growth-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "brand-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "business-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.103,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "computer-vision-inspection": {
+    "last_status": 200,
+    "last_duration": 0.187,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "content-generation": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "customer-experience": {
+    "last_status": 200,
+    "last_duration": 0.075,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "doc-intelligence-v2": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "document-processing": {
+    "last_status": 200,
+    "last_duration": 0.078,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "energy-management": {
+    "last_status": 200,
+    "last_duration": 0.18,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "fraud-detection": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-copywriting": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-legal-review": {
+    "last_status": 200,
+    "last_duration": 0.144,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-summarization": {
+    "last_status": 200,
+    "last_duration": 0.147,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-video-editor": {
+    "last_status": 200,
+    "last_duration": 0.137,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ai-voice-agent": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-data-synthesis": {
+    "last_status": 200,
+    "last_duration": 0.131,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "generative-ux-research-synthesis": {
+    "last_status": 200,
+    "last_duration": 0.177,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "hr-analytics": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "invoice-ai-automation": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "legal-doc-review-ai": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "marketing-automation": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "meeting-ai-assistant": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "mlops-platform": {
+    "last_status": 200,
+    "last_duration": 0.046,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "object-detection-surveillance": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "predictive-churn-risk": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "predictive-lead-scoring": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "predictive-maintenance": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "quality-assurance": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "secure-file-transfer": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "supply-chain": {
+    "last_status": 200,
+    "last_duration": 0.19,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "vector-database": {
+    "last_status": 200,
+    "last_duration": 0.078,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-performance-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.102,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "api-gateway-management": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "api-integration": {
+    "last_status": 200,
+    "last_duration": 0.111,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "api-management-gateway": {
+    "last_status": 200,
+    "last_duration": 0.3,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "apm-application-performance": {
+    "last_status": 200,
+    "last_duration": 0.139,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "chaos-engineering-svc": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-cost-ai-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-finops-1": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-native-app-dev": {
+    "last_status": 200,
+    "last_duration": 0.23,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "container-security-lifecycle": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cyber-threat-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-warehouse-modernization": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "db-migration-service": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "devops-gen-ai-ci-cd": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "devsecops-pipeline": {
+    "last_status": 200,
+    "last_duration": 0.17,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "edge-computing-deploy": {
+    "last_status": 200,
+    "last_duration": 0.047,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "endpoint-management": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "enterprise-backup-dr": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "etl-pipeline-optimization": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "event-driven-architecture": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "evm-smart-contract-audit": {
+    "last_status": 200,
+    "last_duration": 0.075,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "graphql-federation-platform": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "incident-response-retainer": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-gateway-ai": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-gateway-management": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-gateway-openapi": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-management-gateway": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-performance-testing": {
+    "last_status": 200,
+    "last_duration": 0.11,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-apisec-testing": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-asset-lifecycle": {
+    "last_status": 200,
+    "last_duration": 0.072,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-automated-incident-response": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-backup-disaster-recovery": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-backup-disaster-recovery-solution": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-backup-dr-bc-as-a-service": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-blockchain-development": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-business-continuity-dr": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-business-intelligence-cockpit": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-change-risk-analyser": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-cicd-security-gate-as-service": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-cloud-compliance-scanner": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-cloud-cost-governance": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-cloud-cost-management-platform": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-cloud-native-storage": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-code-quality-governance": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-code-quality-pre-merge": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-consulting": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-data-lakehouse-governance": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-data-warehouse-modernization": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-devops-platform-toolchain": {
+    "last_status": 200,
+    "last_duration": 0.047,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-devsecops-1": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-digital-workplace-platform": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-e-commerce-platform-advisor": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-edge-computing-deploy": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-edge-computing-orchestration": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-endpoint-detection-response": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-endpoint-management-macos-windows": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-endpoint-security-compliance": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-endpoint-security-compliance-monitor": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-esg-compliance-automation": {
+    "last_status": 200,
+    "last_duration": 0.104,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-help-desk-glucidex": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-identity-access-management-sso": {
+    "last_status": 200,
+    "last_duration": 0.102,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-identity-governance": {
+    "last_status": 200,
+    "last_duration": 0.073,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-incident-response-simulator": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-iot-device-management": {
+    "last_status": 200,
+    "last_duration": 0.151,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-itil-service-management": {
+    "last_status": 200,
+    "last_duration": 0.108,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-kubernetes-multicloud": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-legacy-app-containerization": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-low-code-platform-integration": {
+    "last_status": 200,
+    "last_duration": 0.063,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-mainframe-modernization": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-multi-cloud-cost-governance": {
+    "last_status": 200,
+    "last_duration": 0.23,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-multi-cloud-networking": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-network-firewall-next-generation": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-observability-1": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-observability-logging": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-observability-unified": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-pcii-compliance-suite": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-platform-engineering-1": {
+    "last_status": 200,
+    "last_duration": 0.233,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-remote-collaboration-suites": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-sam-platform": {
+    "last_status": 200,
+    "last_duration": 0.096,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-sap-integration-hub": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-secrets-management": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-secure-file-transfer": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-serverless-api-gateway": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-service-catalog-builder": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-service-desk-automation": {
+    "last_status": 200,
+    "last_duration": 0.083,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-synthetic-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-unified-endpoint-management": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-vendor-contract-mgmt": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-vendor-trust-portal": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-zero-trust-1": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "k8s-gitops-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "kubernetes-management": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "kubernetes-operator-database": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "legacy-app-refactor": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "legacy-system-modernization": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "log-aggregation-platform": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "low-code-platform-customization": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "mainframe-modernization": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "managed-soc-threat-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "network-architecture-sdwan": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "network-performance-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "nodejs-performance-tuning": {
+    "last_status": 200,
+    "last_duration": 0.087,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "observability-platform": {
+    "last_status": 200,
+    "last_duration": 0.21,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "patch-management": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "performance-engineering": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "quantum-ready-security": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "reliability-sre": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "remote-it-support": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "saas-development": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "soc-as-a-service": {
+    "last_status": 200,
+    "last_duration": 0.079,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "tech-writing-docs": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "vulnerability-assessment-penetration-testing": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "api-development": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "aws-serverless-migration": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "backup-disaster-recovery": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cdn-edge-cache": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-ai-mlops-platform": {
+    "last_status": 200,
+    "last_duration": 0.062,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-api-gateway-enterprise": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-blob-intelligent-tiering": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-bom-visualiser": {
+    "last_status": 200,
+    "last_duration": 0.066,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-chaos-engineering-platform": {
+    "last_status": 200,
+    "last_duration": 0.083,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-container-registry-trivy-scan": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-cost-anomaly-detector": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-cost-anomaly-detector-ml": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-cost-optimization-service": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-data-lakehouse-platform": {
+    "last_status": 200,
+    "last_duration": 0.074,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-disaster-recovery-orchestration": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-edge-ai-deployment-platform": {
+    "last_status": 200,
+    "last_duration": 0.077,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-edge-computing-global": {
+    "last_status": 200,
+    "last_duration": 0.087,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-event-driven-microservices": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-gitops-enterprise-platform": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-hybrid-multi-cloud-orchestrator": {
+    "last_status": 200,
+    "last_duration": 0.117,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-hybrid-multicloud-networking": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-kubernetes-cost-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.108,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-kubernetes-gitops-platform": {
+    "last_status": 200,
+    "last_duration": 0.126,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-migration": {
+    "last_status": 200,
+    "last_duration": 0.115,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-migration-readiness": {
+    "last_status": 200,
+    "last_duration": 0.146,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-observability-stack": {
+    "last_status": 200,
+    "last_duration": 0.124,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-serverless-api-platform": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-serverless-framework-deploy": {
+    "last_status": 200,
+    "last_duration": 0.124,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-spot-instance-optimizer": {
+    "last_status": 200,
+    "last_duration": 0.083,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-storage-lifecycle-policy": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-storage-tiering": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cloud-zero-trust-access-platform": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cspm-cloud-posture": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cybersecurity-audit": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-pipeline-architecture": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "devops-consulting": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "digital-workplace": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "disaster-recovery-platform": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "disaster-recovery-services": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "edge-computing-platform": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "fn-finops-platform": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "gcp-data-analytics-platform": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "hybrid-multi-cloud-net": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "identity-access-management": {
+    "last_status": 200,
+    "last_duration": 0.076,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-5g-network-deployment": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-api-management": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-asset-management": {
+    "last_status": 200,
+    "last_duration": 0.072,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-capacity-planning": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-database-as-a-service": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-disaster-recovery": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-edge-computing-solutions": {
+    "last_status": 200,
+    "last_duration": 0.048,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-kubernetes-management": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-microservices-architecture": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-network-automation": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-observability-platform": {
+    "last_status": 200,
+    "last_duration": 0.098,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-platform-engineering": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-serverless-architecture": {
+    "last_status": 200,
+    "last_duration": 0.071,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-service-desk": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-voice-infrastructure": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-wireless-network-design": {
+    "last_status": 200,
+    "last_duration": 0.072,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "load-balancer-service": {
+    "last_status": 200,
+    "last_duration": 0.183,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "managed-soc-security": {
+    "last_status": 200,
+    "last_duration": 0.147,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "mobile-development": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "network-infrastructure": {
+    "last_status": 200,
+    "last_duration": 0.103,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "network-security-operations": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "serverless-api-platform": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "sovereign-cloud-hosting": {
+    "last_status": 200,
+    "last_duration": 0.075,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "virtual-private-cloud": {
+    "last_status": 200,
+    "last_duration": 0.097,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "zero-trust-network-access": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "attack-surface-management": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automated-pen-testing": {
+    "last_status": 200,
+    "last_duration": 0.097,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "compliance-automation": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "compliance-automation-engine": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "container-security-runtime": {
+    "last_status": 200,
+    "last_duration": 0.101,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "cybersecurity": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "digital-rights-management": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "enterprise-dlp": {
+    "last_status": 200,
+    "last_duration": 0.085,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "iam-identity-platform": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-identity-access-management": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-incident-response": {
+    "last_status": 200,
+    "last_duration": 0.063,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-managed-soc": {
+    "last_status": 200,
+    "last_duration": 0.193,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-network-security-monitoring": {
+    "last_status": 200,
+    "last_duration": 0.417,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-penetration-testing": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-quantum-readiness": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-zero-trust-architecture": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "managed-edr-siem": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "misp-threat-intel": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "passwordless-auth": {
+    "last_status": 200,
+    "last_duration": 0.048,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "payment-compliance-gateway": {
+    "last_status": 200,
+    "last_duration": 0.104,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "pentest-redteam": {
+    "last_status": 200,
+    "last_duration": 0.163,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "privacy-program": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "privileged-access-management": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ransomware-recovery": {
+    "last_status": 200,
+    "last_duration": 0.075,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-ai-threat-hunter": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-api-security-gateway": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-bas-platform": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-browser-isolation": {
+    "last_status": 200,
+    "last_duration": 0.081,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-browser-isolation-platform": {
+    "last_status": 200,
+    "last_duration": 0.069,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-cloud-threat-detection": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-cloud-zero-trust-access": {
+    "last_status": 200,
+    "last_duration": 0.103,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-compliance-audit-platform": {
+    "last_status": 200,
+    "last_duration": 0.078,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-identity-governance-igac": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-log-orchestration": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-network-segmentation-zero-trust": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-privacy-enhancing-technologies": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-privacy-program-automation": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-privileged-access-management": {
+    "last_status": 200,
+    "last_duration": 0.047,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-sbom-supply-chain": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-secrets-management-vault": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-security-awareness-training": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-supply-chain-sbom": {
+    "last_status": 200,
+    "last_duration": 0.11,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-supply-chain-sbom-manager": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-threat-intelligence-platform": {
+    "last_status": 200,
+    "last_duration": 0.073,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-vulnerability-management-pra": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "security-web-application-firewall": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "siem-security-platform": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "software-supply-chain-sec": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "zero-trust-access": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "analytics-attribution-mix": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "batch-etl-platform": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-analytics-engineering-platform": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-cost-finops": {
+    "last_status": 200,
+    "last_duration": 0.096,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-data-reconciliation-engine": {
+    "last_status": 200,
+    "last_duration": 0.045,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-document-vector-search": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-engineering": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-event-sourcing-platform": {
+    "last_status": 200,
+    "last_duration": 0.099,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-feature-store-platform": {
+    "last_status": 200,
+    "last_duration": 0.08,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-geospatial-analytics-engine": {
+    "last_status": 200,
+    "last_duration": 0.068,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-governance-platform": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-graph-analytics-engine": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-graph-analytics-platform": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-image-video-search": {
+    "last_status": 200,
+    "last_duration": 0.049,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-image-video-search-engine": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-lakehouse": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-log-analytics-platform": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-observability-monitor": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-pii-scanner-classifier": {
+    "last_status": 200,
+    "last_duration": 0.18,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-predictive-maintenance-timeseries": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-product-catalog-svc": {
+    "last_status": 200,
+    "last_duration": 0.106,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-real-time-operational-analytics": {
+    "last_status": 200,
+    "last_duration": 0.169,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-realtime-time-series-analytics": {
+    "last_status": 200,
+    "last_duration": 0.097,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-realtime-trending-aggregator": {
+    "last_status": 200,
+    "last_duration": 0.082,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-realtime-trending-analytics": {
+    "last_status": 200,
+    "last_duration": 0.064,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-science-platform": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-sync-engineering": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-synthetic-data-generator": {
+    "last_status": 200,
+    "last_duration": 0.086,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "data-unstructured-data-lake": {
+    "last_status": 200,
+    "last_duration": 0.054,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "database-optimization": {
+    "last_status": 200,
+    "last_duration": 0.168,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "etl-streaming-pipeline": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "feature-engineering-platform": {
+    "last_status": 200,
+    "last_duration": 0.061,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "graph-database-analytics": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-data-mesh-implementation": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "observability-lakehouse": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "realtime-streaming-etl-flink": {
+    "last_status": 200,
+    "last_duration": 0.089,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "self-service-analytics": {
+    "last_status": 200,
+    "last_duration": 0.067,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "streaming-realtime-analytics": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-office-automation": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "ai-self-healing-infra": {
+    "last_status": 200,
+    "last_duration": 0.103,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-commercial-leasing-tour-scheduler": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-document-intelligence-pipeline": {
+    "last_status": 200,
+    "last_duration": 0.094,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-education-student-lifecycle-manager": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-integrated-commerce-automation": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-integrated-commerce-flows": {
+    "last_status": 200,
+    "last_duration": 0.056,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-invoice-purchase-order-processing": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-legal-document-preparation": {
+    "last_status": 200,
+    "last_duration": 0.375,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-multi-channel-campaign-manager": {
+    "last_status": 200,
+    "last_duration": 0.057,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-multi-channel-campaign-orchestrator": {
+    "last_status": 200,
+    "last_duration": 0.07,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-process-mining-deep-dive": {
+    "last_status": 200,
+    "last_duration": 0.065,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-process-mining-intelligence": {
+    "last_status": 200,
+    "last_duration": 0.06,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "automation-social-media-content-hub": {
+    "last_status": 200,
+    "last_duration": 0.078,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "bpa-process-analysis": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "devops-cicd": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "event-driven-orchestration": {
+    "last_status": 200,
+    "last_duration": 0.088,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "event-driven-orchestration-hub": {
+    "last_status": 200,
+    "last_duration": 0.082,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-automation-orchestrator": {
+    "last_status": 200,
+    "last_duration": 0.098,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "it-digital-twin-platform": {
+    "last_status": 200,
+    "last_duration": 0.091,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "low-code-workflow-builder": {
+    "last_status": 200,
+    "last_duration": 0.093,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "marketing-automation-svc": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "monitoring-observability": {
+    "last_status": 200,
+    "last_duration": 0.05,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "observability-aiops": {
+    "last_status": 200,
+    "last_duration": 0.055,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "process-automation": {
+    "last_status": 200,
+    "last_duration": 0.047,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "queue-messaging-platform": {
+    "last_status": 200,
+    "last_duration": 0.058,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "rpa-intelligent-automation": {
+    "last_status": 200,
+    "last_duration": 0.051,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "rx-prior-auth": {
+    "last_status": 200,
+    "last_duration": 0.053,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "supply-chain-management-service": {
+    "last_status": 200,
+    "last_duration": 0.148,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "supply-chain-visibility": {
+    "last_status": 200,
+    "last_duration": 0.052,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  },
+  "workflow-automation": {
+    "last_status": 200,
+    "last_duration": 0.059,
+    "last_run_ts": 1779360569,
+    "consec_fails": 0,
+    "first_fail_ts": null
+  }
+}

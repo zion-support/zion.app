@@ -1,0 +1,75 @@
+name: AI route vs sitemap drift
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-route-sitemap-drift
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 11 * * 2'
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+      ROUTE_DRIFT_ISSUE_THRESHOLD: '5'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Compare app routes to production sitemap
+        id: drift
+        run: node automation/app-route-sitemap-drift.cjs
+
+      - name: Drift recovery gate
+        id: driftgate
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const p = 'automation/reports/app-route-sitemap-drift-latest.json';
+          const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+          const thr = Number(process.env.ROUTE_DRIFT_ISSUE_THRESHOLD || '5');
+          const bad = Boolean(j.sitemapError) || j.counts.inAppNotSitemap >= thr;
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `recovery_ok=${bad ? 'false' : 'true'}\n`);
+          NODE
+
+      - name: Upload drift report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-route-sitemap-drift-${{ github.run_id }}
+          path: automation/reports/app-route-sitemap-drift-latest.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: Escalate on route/sitemap drift threshold
+        if: steps.driftgate.outputs.recovery_ok != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ROUTE_DRIFT_ISSUE_THRESHOLD: '5'
+        run: node automation/route-sitemap-drift-escalate.cjs
+
+      - name: Close drift issue on recovery
+        if: steps.driftgate.outputs.recovery_ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: route-sitemap-drift
+          CLOSE_COMMENT: Auto-closing route/sitemap drift recovered (within threshold).
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true

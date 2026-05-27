@@ -1,0 +1,28 @@
+name: Workflow Ruby parse + bash grep (manual, no npm)
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-ruby-bash-validate-dispatch
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
+        run: ruby scripts/automation/parse-github-workflows-yaml.rb
+
+      - name: Workflow grep guards (bash)
+        run: bash scripts/automation/run-workflow-grep-guards.sh
+
+      - name: Push helper scripts (bash -n)
+        run: bash -n scripts/automation/commit-and-push-main.sh && bash -n scripts/automation/push-main-with-retry.sh

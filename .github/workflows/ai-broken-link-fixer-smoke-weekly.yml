@@ -1,0 +1,38 @@
+# Ensures ai-broken-link-fixer.yml keeps schedule/inputs and push-disabled safety anchors (grep-only).
+name: ai broken link fixer workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '4 12 * * 3' # Wednesdays 12:04 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-broken-link-fixer-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  broken-link-fixer-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-broken-link-fixer.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-broken-link-fixer.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Broken Link Fixer Agent' "$f"
+          grep -Fq 'group: ai-broken-link-fixer' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '30 6 * * 1,4'" "$f"
+          grep -Fq 'mode:' "$f"
+          grep -Fq 'options:' "$f"
+          grep -Fq 'scan' "$f"
+          grep -Fq 'push:' "$f"
+          grep -Fq 'push-main-with-retry.sh' "$f"
+          grep -Fq "AUTO_PUSH: 'false'" "$f"
+          grep -Fq 'MAX_LINKS_PER_RUN' "$f"
+          grep -Fq 'ai-broken-link-fixer.cjs' "$f"
+          grep -Fq 'broken-link-report-' "$f"
+          echo "ok: $f"

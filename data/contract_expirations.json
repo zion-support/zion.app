@@ -1,0 +1,33 @@
+{
+  "contracts": [],
+  "alerts": [
+    {
+      "timestamp": "2026-05-18T21:37:14.809617+00:00",
+      "contract": "AWS Services",
+      "expires": "2026-07-15",
+      "days": 58,
+      "value": 2500
+    },
+    {
+      "timestamp": "2026-05-18T21:37:14.809617+00:00",
+      "contract": "Cloudflare",
+      "expires": "2026-08-01",
+      "days": 75,
+      "value": 150
+    },
+    {
+      "timestamp": "2026-05-18T21:37:14.809617+00:00",
+      "contract": "SendGrid",
+      "expires": "2026-06-30",
+      "days": 43,
+      "value": 300
+    },
+    {
+      "timestamp": "2026-05-18T21:37:14.809617+00:00",
+      "contract": "GitHub Enterprise",
+      "expires": "2026-07-01",
+      "days": 44,
+      "value": 2160
+    }
+  ]
+}

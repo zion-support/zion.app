@@ -1,0 +1,41 @@
+{
+  "name": "Zion Tech Group - AI Solutions",
+  "short_name": "Zion AI",
+  "description": "Leading AI solutions provider with 200+ services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "AI Services",
+      "url": "/ai",
+      "description": "Browse our AI services"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact",
+      "description": "Get in touch"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+name: AI PM2 ops digest
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-pm2-ops-digest
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: PM2 drift guard (snapshot for digest)
+        run: npm run pm2:drift-guard:once
+
+      - name: PM2 report budget (warn-only)
+        env:
+          PM2_REPORT_BUDGET_FAIL_ON_EXCEED: '0'
+        run: npm run pm2:report-budget:once
+
+      - name: Build ops digest (CI mode — optional Telegram)
+        env:
+          PM2_OPS_DIGEST_CI: '1'
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_WORKFLOW: ${{ github.workflow }}
+          GITHUB_SERVER_URL: ${{ github.server_url }}
+        run: |
+          if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+            node automation/ai-pm2-ops-digest-agent.cjs --telegram
+          else
+            node automation/ai-pm2-ops-digest-agent.cjs
+          fi
+
+      - name: Upload PM2 ops digest
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: pm2-ops-digest-${{ github.run_id }}
+          path: automation/reports/pm2-ops-digest-latest.json
+          if-no-files-found: error
+          retention-days: 14

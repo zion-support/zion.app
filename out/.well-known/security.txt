@@ -1,0 +1,12 @@
+# Security.txt — Zion Tech Group
+# https://ziontechgroup.com/.well-known/security.txt
+
+Contact: mailto:kleber@ziontechgroup.com
+Encryption: https://keys.openpgp.org/search?q=kleber%40ziontechgroup.com
+Preferred-Languages: en, pt
+Canonical: https://ziontechgroup.com/.well-known/security.txt
+Policy: https://ziontechgroup.com/security-policy
+Hiring: https://ziontechgroup.com/careers
+
+# This file is based on the security.txt specification (RFC 9116).
+# Please report security issues responsibly.

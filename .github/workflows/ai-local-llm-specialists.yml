@@ -1,0 +1,58 @@
+# AI Local LLM Specialists
+# Runs SEO, Conversion, and Content Improvement specialist agents in parallel.
+# Uses Ollama (local) or OpenRouter in CI. Weekly on Thursday + manual dispatch.
+
+name: AI Local LLM Specialists
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 14 * * 4'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: false
+        type: boolean
+      merge_to_backlog:
+        description: 'Merge quick wins into evolution backlog'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  local-llm-specialists:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run local LLM specialists orchestrator
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false') && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy && '1' || '' }}
+          MERGE_TO_BACKLOG: ${{ github.event.inputs.merge_to_backlog != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: node automation/ai-local-llm-specialists-orchestrator.cjs run

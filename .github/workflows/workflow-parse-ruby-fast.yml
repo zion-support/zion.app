@@ -1,0 +1,31 @@
+# Fast feedback when workflow YAML contract rules change (no Node/npm).
+
+name: Workflow Ruby parse (parser file)
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/automation/parse-github-workflows-yaml.rb'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/automation/parse-github-workflows-yaml.rb'
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-parse-ruby-fast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
+        run: ruby scripts/automation/parse-github-workflows-yaml.rb

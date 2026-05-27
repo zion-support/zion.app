@@ -1,0 +1,35 @@
+# Ensures ai-production-smoke-scheduled.yml keeps schedule/escalation anchors (grep-only).
+name: ai production smoke scheduled workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '38 11 * * 3' # Wednesdays 11:38 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-production-smoke-scheduled-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  scheduled-production-smoke-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-production-smoke-scheduled.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-production-smoke-scheduled.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI production smoke sample' "$f"
+          grep -Fq 'group: ai-production-smoke-scheduled' "$f"
+          grep -Fq "cron: '25 */6 * * *'" "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'ZION_BASE_URL: ${{ vars.ZION_PRODUCTION_URL }}' "$f"
+          grep -Fq 'scheduled-production-smoke.cjs' "$f"
+          grep -Fq 'append-smoke-health-snapshot.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

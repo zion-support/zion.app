@@ -1,0 +1,36 @@
+# Ensures lighthouse-ci.yml keeps PR/schedule triggers, build, and Lighthouse audit anchors (grep-only).
+name: lighthouse ci workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '33 11 * * 3' # Wednesdays 11:33 UTC
+  workflow_dispatch:
+concurrency:
+  group: lighthouse-ci-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  lighthouse-ci-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: lighthouse-ci.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/lighthouse-ci.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Lighthouse CI' "$f"
+          grep -Fq 'group: lighthouse-' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq "branches: [main]" "$f"
+          grep -Fq "cron: '0 6 * * 1'" "$f"
+          grep -Fq 'name: Performance Audit' "$f"
+          grep -Fq 'npm ci --prefer-offline --no-audit --fund=false' "$f"
+          grep -Fq 'npm run build' "$f"
+          grep -Fq 'npx lighthouse http://localhost:3000' "$f"
+          grep -Fq 'only-categories=performance,accessibility,best-practices,seo' "$f"
+          grep -Fq 'actions/github-script@' "$f"
+          echo "ok: $f"

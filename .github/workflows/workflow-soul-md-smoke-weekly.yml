@@ -1,0 +1,35 @@
+# Ensures SOUL.md keeps identity + continuity cross-links (grep-only).
+
+name: SOUL.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '9 8 * * 4' # Thursdays 08:09 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-soul-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  soul:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: SOUL.md continuity anchors
+        run: |
+          set -euo pipefail
+          test -f SOUL.md
+          test -s SOUL.md
+          grep -Fq '# SOUL.md - Who You Are' SOUL.md
+          grep -Fq '## Core Truths' SOUL.md
+          grep -Fq 'USER.md' SOUL.md
+          grep -Fq 'AGENTS.md' SOUL.md
+          grep -Fq 'HEARTBEAT.md' SOUL.md
+          echo 'ok: SOUL.md'

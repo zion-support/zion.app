@@ -1,0 +1,133 @@
+# Weekly Live Site Link Audit
+# Runs site link audit against production (ziontechgroup.com), uploads report,
+# and creates/updates an issue if broken links exceed threshold.
+# Schedule: Thu 9 UTC. workflow_dispatch.
+
+name: AI Weekly Live Link Audit
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-weekly-live-link-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 9 * * 4'
+  workflow_dispatch:
+    inputs:
+      broken_threshold:
+        description: 'Create/update issue if broken links exceed this count'
+        required: false
+        default: 5
+        type: number
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run live site link audit
+        run: npm run site:links:audit
+
+      - name: Parse report and set output
+        id: report
+        run: |
+          REPORT="automation/reports/site-link-audit-latest.json"
+          if [ ! -f "$REPORT" ]; then
+            echo "broken=0" >> "$GITHUB_OUTPUT"
+            echo "total_links=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          BROKEN=$(node -e "
+            try {
+              const d = require('./automation/reports/site-link-audit-latest.json');
+              console.log(d.broken ?? d.brokenLinks?.length ?? 0);
+            } catch (e) { console.log(0); }
+          ")
+          TOTAL=$(node -e "
+            try {
+              const d = require('./automation/reports/site-link-audit-latest.json');
+              console.log(d.totalLinks ?? d.allLinks?.length ?? 0);
+            } catch (e) { console.log(0); }
+          ")
+          echo "broken=$BROKEN" >> "$GITHUB_OUTPUT"
+          echo "total_links=$TOTAL" >> "$GITHUB_OUTPUT"
+
+      - name: Set threshold exceeded
+        id: threshold
+        run: |
+          THRESHOLD="${{ github.event.inputs.broken_threshold }}"
+          if [ -z "$THRESHOLD" ]; then THRESHOLD=5; fi
+          BROKEN="${{ steps.report.outputs.broken }}"
+          if [ -n "$BROKEN" ] && [ "$BROKEN" -ge "$THRESHOLD" ] 2>/dev/null; then
+            echo "exceeded=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exceeded=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update issue when broken links exceed threshold
+        if: steps.threshold.outputs.exceeded == 'true'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const broken = Number('${{ steps.report.outputs.broken }}') || 0;
+            const totalLinks = '${{ steps.report.outputs.total_links }}' || '0';
+            const threshold = Number('${{ github.event.inputs.broken_threshold || 5 }}') || 5;
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              labels: 'broken-links',
+              per_page: 5,
+            });
+
+            const title = `Live site link audit: ${broken} broken link(s) (threshold ${threshold})`;
+            const body = `## Weekly Live Link Audit\n\n` +
+              `**Broken links:** ${broken}\n` +
+              `**Total links scanned:** ${totalLinks}\n\n` +
+              `Run \`npm run site:links:audit\` or the [broken link fixer workflow](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/ai-broken-link-fixer.yml). ` +
+              `Consider \`ai-live-app-audit\` with apply_fix.\n\n` +
+              `[Workflow run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`;
+
+            const existing = issues.find(i => i.title.includes('Live site link audit'));
+            if (existing) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: existing.number,
+                body: `Update: **${broken}** broken link(s) as of ${new Date().toISOString().split('T')[0]}.\n\n${body}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                ...context.repo,
+                title,
+                body,
+                labels: ['broken-links', 'automation'],
+              });
+            }
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: live-link-audit-${{ github.run_id }}
+          path: automation/reports/site-link-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 30

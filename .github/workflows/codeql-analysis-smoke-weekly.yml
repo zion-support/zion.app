@@ -1,0 +1,33 @@
+# Ensures codeql-analysis.yml keeps schedule + CodeQL init/autobuild/analyze pins (grep-only).
+name: CodeQL analysis smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '14 11 * * 4' # Thursdays 11:14 UTC
+  workflow_dispatch:
+concurrency:
+  group: codeql-analysis-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  codeql-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: codeql-analysis.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/codeql-analysis.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: CodeQL Security Analysis' "$f"
+          grep -Fq "cron: '0 4 * * 1'" "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'security-events: write' "$f"
+          grep -Fq "language: ['javascript-typescript']" "$f"
+          grep -Fq 'github/codeql-action/init@b1bff81932f5cdfc8695c7752dcee935dcd061c8' "$f"
+          grep -Fq 'queries: security-and-quality' "$f"
+          grep -Fq 'github/codeql-action/analyze@b1bff81932f5cdfc8695c7752dcee935dcd061c8' "$f"
+          echo "ok: $f"

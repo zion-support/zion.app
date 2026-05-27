@@ -1,0 +1,46 @@
+name: AI Cron Tuner
+
+on:
+  schedule:
+    - cron: '0 5 * * 1' # Weekly, Monday 05:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-cron-tuner
+  cancel-in-progress: false
+
+jobs:
+  cron-tuner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run cron tuner
+        run: npm run cron:tuner
+
+      - name: Print summary
+        run: npm run cron:tuner-summary
+
+      - name: Upload cron tuner report
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: cron-tuner-report
+          path: automation/reports/cron-tuner-latest.json
+

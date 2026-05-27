@@ -1,0 +1,58 @@
+name: Test Coverage Enforcement
+true:
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch: null
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      with:
+        fetch-depth: 0
+    - name: Setup Node
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run tests with coverage
+      run: npm test -- --coverage --silent
+    - name: Enforce coverage thresholds
+      env:
+        COVERAGE_MIN_GLOBAL: ${{ secrets.COVERAGE_MIN_GLOBAL || '80' }}
+        COVERAGE_REGRESSION_PCT: ${{ secrets.COVERAGE_REGRESSION_PCT || '5' }}
+        COVERAGE_INPUT: coverage/coverage-final.json
+        COVERAGE_UPDATE_BASELINE_ON_MAIN: ${{ secrets.COVERAGE_UPDATE_BASELINE_ON_MAIN
+          || 'false' }}
+        GITHUB_REF: ${{ github.ref }}
+        GITHUB_EVENT_NAME: ${{ github.event_name }}
+      run: node automation/test-coverage-enforcer.cjs
+    - name: Post coverage comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+      with:
+        script: "const fs = require('fs');\nlet comment = '\U0001F4CA **Test Coverage\
+          \ Report**\\n\\n';\ntry {\n  const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json',\
+          \ 'utf8'));\n  const total = summary.total;\n  comment += `- **Global:**\
+          \ ${total.lines.pct.toFixed(2)}% lines, ${total.branches.pct.toFixed(2)}%\
+          \ branches, ${total.functions.pct.toFixed(2)}% functions, ${total.statements.pct.toFixed(2)}%\
+          \ statements\\n`;\n} catch (e) {\n  comment += '\u26A0\uFE0F Could not parse\
+          \ coverage summary.';\n}\ncomment += '\\n*Coverage thresholds: global \u2265\
+          \ 80%, regression \u2264 5%. Baseline will update on merge to main.*';\n\
+          github.rest.issues.createComment({\n  issue_number: context.issue.number,\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  body: comment\n\
+          });\n"
+    - name: Notify Telegram on failure
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Test coverage check\
+        \ failed on ${{ github.repository }} PR #${{ github.event.pull_request.number\
+        \ || 'unknown' }}. See: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{\
+        \ github.run_id }}\"\n"
+    timeout-minutes: 10

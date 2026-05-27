@@ -1,0 +1,195 @@
+name: AI Smart Release Notes
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: ai-release-notes
+  cancel-in-progress: false
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '*.md'
+      - '.github/workflows/**'
+      - 'automation/reports/**'
+  workflow_dispatch:
+
+jobs:
+  release-notes:
+    name: Generate AI Release Notes
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 50
+
+      - name: Gather recent changes
+        id: changes
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+
+          if [ -n "$LAST_TAG" ]; then
+            COMMITS=$(git log "${LAST_TAG}..HEAD" --pretty=format:"%h %s" --no-merges | head -30)
+            FILES_CHANGED=$(git diff --stat "${LAST_TAG}..HEAD" -- '*.ts' '*.tsx' '*.css' '*.yml' | tail -1)
+          else
+            COMMITS=$(git log --pretty=format:"%h %s" --no-merges -20)
+            FILES_CHANGED=$(git diff --stat HEAD~20..HEAD -- '*.ts' '*.tsx' '*.css' '*.yml' 2>/dev/null | tail -1)
+          fi
+
+          if [ -z "$COMMITS" ]; then
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "empty=false" >> "$GITHUB_OUTPUT"
+          echo "last_tag=$LAST_TAG" >> "$GITHUB_OUTPUT"
+
+          EOF_MARKER=$(openssl rand -hex 16)
+          {
+            echo "commits<<${EOF_MARKER}"
+            echo "$COMMITS"
+            echo "${EOF_MARKER}"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "stats<<${EOF_MARKER}"
+            echo "$FILES_CHANGED"
+            echo "${EOF_MARKER}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate AI release notes
+        if: steps.changes.outputs.empty != 'true'
+        id: notes
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — generating basic release notes"
+            {
+              echo "## What's Changed"
+              echo ""
+              echo "${{ steps.changes.outputs.commits }}" | while IFS= read -r line; do
+                echo "- ${line}"
+              done
+            } > release-notes.md
+            echo "generated=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          COMMITS_DATA=$(cat <<'COMMITS_END'
+          ${{ steps.changes.outputs.commits }}
+          COMMITS_END
+          )
+
+          ESCAPED=$(echo "$COMMITS_DATA" | python3 -c "import sys,json; print(json.dumps(sys.stdin.read()))")
+
+          PAYLOAD=$(cat <<PAYLOAD_END
+          {
+            "model": "openrouter/auto",
+            "max_tokens": 2048,
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a technical writer generating release notes for Zion Tech Group, an AI solutions platform (Next.js website). Write clear, user-facing release notes from commit messages. Group changes into categories: Features, Improvements, Bug Fixes, Infrastructure. Use emoji prefixes. Be concise but informative. Format as markdown."
+              },
+              {
+                "role": "user",
+                "content": "Generate professional release notes from these commits:\n\n${ESCAPED}\n\nStats: ${{ steps.changes.outputs.stats }}"
+              }
+            ]
+          }
+          PAYLOAD_END
+          )
+
+          RESPONSE=$(curl -sS --max-time 60 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-ReleaseNotes" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          NOTES=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'Release notes generation returned empty response.')
+          except Exception as e:
+              print(f'Failed to parse AI response: {e}')
+          ")
+
+          echo "$NOTES" > release-notes.md
+          echo "generated=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update release
+        if: steps.notes.outputs.generated == 'true'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const notes = fs.readFileSync('release-notes.md', 'utf-8');
+            const today = new Date().toISOString().split('T')[0];
+            const tagName = `v${today.replace(/-/g, '.')}`;
+            const sha = context.sha;
+
+            try {
+              await github.rest.git.createRef({
+                ...context.repo,
+                ref: `refs/tags/${tagName}`,
+                sha: sha,
+              });
+            } catch (e) {
+              if (e.status === 422) {
+                const suffix = `-${context.runNumber}`;
+                await github.rest.git.createRef({
+                  ...context.repo,
+                  ref: `refs/tags/${tagName}${suffix}`,
+                  sha: sha,
+                });
+              }
+            }
+
+            const { data: releases } = await github.rest.repos.listReleases({
+              ...context.repo,
+              per_page: 1,
+            });
+
+            const existingToday = releases.find(r => r.tag_name.startsWith(tagName));
+
+            if (existingToday) {
+              await github.rest.repos.updateRelease({
+                ...context.repo,
+                release_id: existingToday.id,
+                body: notes,
+              });
+              core.info(`Updated release ${existingToday.tag_name}`);
+            } else {
+              await github.rest.repos.createRelease({
+                ...context.repo,
+                tag_name: tagName,
+                name: `Release ${today}`,
+                body: notes,
+                draft: false,
+                prerelease: false,
+              });
+              core.info(`Created release ${tagName}`);
+            }
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## AI Release Notes"
+            echo ""
+            if [ -f release-notes.md ]; then
+              cat release-notes.md
+            else
+              echo "No release notes generated."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,136 @@
+name: Bundle Size Tracker
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: bundle-size-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'src/**'
+      - 'components/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.*'
+      - 'tsconfig.json'
+  workflow_dispatch:
+
+jobs:
+  bundle-size:
+    name: Analyze Bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build PR branch
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Measure PR bundle
+        id: pr_size
+        run: |
+          if [ -d "out" ]; then
+            SIZE=$(du -sb out | awk '{print $1}')
+            SIZE_MB=$(echo "scale=2; $SIZE / 1048576" | bc)
+            JS_SIZE=$(find out -name '*.js' -exec du -cb {} + 2>/dev/null | tail -1 | awk '{print $1}' || echo 0)
+            JS_MB=$(echo "scale=2; ${JS_SIZE:-0} / 1048576" | bc)
+            CSS_SIZE=$(find out -name '*.css' -exec du -cb {} + 2>/dev/null | tail -1 | awk '{print $1}' || echo 0)
+            CSS_KB=$(echo "scale=2; ${CSS_SIZE:-0} / 1024" | bc)
+            HTML_COUNT=$(find out -name '*.html' | wc -l)
+          elif [ -d ".next" ]; then
+            SIZE=$(du -sb .next | awk '{print $1}')
+            SIZE_MB=$(echo "scale=2; $SIZE / 1048576" | bc)
+            JS_SIZE=$(find .next -name '*.js' -exec du -cb {} + 2>/dev/null | tail -1 | awk '{print $1}' || echo 0)
+            JS_MB=$(echo "scale=2; ${JS_SIZE:-0} / 1048576" | bc)
+            CSS_SIZE=$(find .next -name '*.css' -exec du -cb {} + 2>/dev/null | tail -1 | awk '{print $1}' || echo 0)
+            CSS_KB=$(echo "scale=2; ${CSS_SIZE:-0} / 1024" | bc)
+            HTML_COUNT=$(find .next -name '*.html' | wc -l)
+          else
+            echo "No build output found"
+            exit 1
+          fi
+
+          echo "total_size=$SIZE" >> "$GITHUB_OUTPUT"
+          echo "total_mb=$SIZE_MB" >> "$GITHUB_OUTPUT"
+          echo "js_mb=$JS_MB" >> "$GITHUB_OUTPUT"
+          echo "css_kb=$CSS_KB" >> "$GITHUB_OUTPUT"
+          echo "html_count=$HTML_COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Generate summary
+        run: |
+          {
+            echo "## Bundle Size Report"
+            echo ""
+            echo "| Metric | Value |"
+            echo "|--------|-------|"
+            echo "| Total build size | **${{ steps.pr_size.outputs.total_mb }} MB** |"
+            echo "| JavaScript | **${{ steps.pr_size.outputs.js_mb }} MB** |"
+            echo "| CSS | **${{ steps.pr_size.outputs.css_kb }} KB** |"
+            echo "| HTML pages | **${{ steps.pr_size.outputs.html_count }}** |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const totalMb = '${{ steps.pr_size.outputs.total_mb }}';
+            const jsMb = '${{ steps.pr_size.outputs.js_mb }}';
+            const cssKb = '${{ steps.pr_size.outputs.css_kb }}';
+            const htmlCount = '${{ steps.pr_size.outputs.html_count }}';
+
+            const body = `### Bundle Size Report
+
+            | Metric | Value |
+            |--------|-------|
+            | Total build | **${totalMb} MB** |
+            | JavaScript | **${jsMb} MB** |
+            | CSS | **${cssKb} KB** |
+            | HTML pages | **${htmlCount}** |
+
+            > Run #${context.runNumber} on \`${context.sha.substring(0, 7)}\``;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### Bundle Size Report')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

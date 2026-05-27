@@ -1,0 +1,34 @@
+# Ensures ai-openclaw-anomaly-trend-breach.yml keeps breach guard anchors (grep-only).
+name: ai openclaw anomaly trend breach guard workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '47 11 * * 3' # Wednesdays 11:47 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-anomaly-trend-breach-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-anomaly-trend-breach-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-anomaly-trend-breach.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-anomaly-trend-breach.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: OpenClaw anomaly trend breach guard' "$f"
+          grep -Fq 'group: openclaw-anomaly-trend-breach' "$f"
+          grep -Fq "cron: '17 * * * *'" "$f"
+          grep -Fq 'openclaw-anomaly-trend-breach-guard.cjs' "$f"
+          grep -Fq 'openclaw-runner-anomaly-trend-breach|24h|v1' "$f"
+          grep -Fq 'automation-slo-warning' "$f"
+          grep -Fq 'automation-slo-critical' "$f"
+          grep -Fq 'OPENCLAW_ANOMALY_TREND_WARN_WEBHOOK' "$f"
+          grep -Fq 'OPENCLAW_ANOMALY_TREND_CRIT_WEBHOOK' "$f"
+          echo "ok: $f"

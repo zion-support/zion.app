@@ -1,0 +1,63 @@
+permissions:
+  contents: read
+name: Autonomous Structured Data (Schema.org) Validator
+true:
+  schedule:
+  - cron: 0 9 * * 1
+  workflow_dispatch: null
+jobs:
+  schema-validate:
+    name: Validate Structured Data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci --include=dev
+    - name: Ensure local site is accessible
+      id: check-site
+      continue-on-error: true
+      run: "# Try to hit the site; if down, attempt local build+start (best-effort)\n\
+        if curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000 | grep -q\
+        \ '^2'; then\n  echo \"site_up=true\" >> $GITHUB_OUTPUT\nelse\n  echo \"Site\
+        \ not up; attempting local build...\"\n  npm run build || true\n  # Background\
+        \ start (non-blocking; validator may still fail if site doesn't respond)\n\
+        \  nohup npm start &>/tmp/next-start.log &\n  sleep 30\n  echo \"site_up=attempted\"\
+        \ >> $GITHUB_OUTPUT\nfi\n"
+    - name: Run Schema Validator
+      id: validator
+      continue-on-error: true
+      run: 'node automation/schema-validator.cjs > /tmp/schema-validator-output.txt
+        || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload validator artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: schema-validator-state
+        path: '.hermes/memory/schema-validator/
+
+          /tmp/schema-validator-output.txt
+
+          '
+        retention-days: 30
+    - name: Notify Telegram on completion
+      if: success()
+      run: "node automation/notify-telegram.js \"\U0001F50D Schema validator: weekly\
+        \ scan complete. Check workflow artifacts for details.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Schema validator failed\
+        \ or site unreachable. Check workflow logs.\"\n"
+    timeout-minutes: 10

@@ -1,0 +1,164 @@
+{
+  "timestamp": "2025-10-28T03:25:25.737Z",
+  "summary": {
+    "total": 28,
+    "successful": 25,
+    "failed": 3,
+    "methods": {
+      "direct": 4,
+      "conflict_resolved": 21,
+      "failed": 3
+    }
+  },
+  "systemChecks": {
+    "typeCheck": false,
+    "buildCheck": false,
+    "testCheck": true,
+    "allPassed": false
+  },
+  "successful": [
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-0447",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-04f2",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-20bc",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-2c49",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-3258",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-4fcf",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-7189",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-7340",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-7fbe",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-8e17",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-9b98",
+      "success": true,
+      "method": "direct"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-a631",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-ab18",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-afd7",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-b557",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-bca7",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-e2a1",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-e7c1",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "fix-all-errors-main",
+      "success": true,
+      "method": "direct"
+    },
+    {
+      "branch": "fix-all-errors-main-v2",
+      "success": true,
+      "method": "direct"
+    },
+    {
+      "branch": "fix-errors-main",
+      "success": true,
+      "method": "direct"
+    },
+    {
+      "branch": "fix-errors-main-merge",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "fix-typescript-errors-20251027-230555",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "fix-typescript-errors-and-merge-conflicts",
+      "success": true,
+      "method": "conflict_resolved"
+    },
+    {
+      "branch": "fix-unused-imports-merged",
+      "success": true,
+      "method": "conflict_resolved"
+    }
+  ],
+  "failed": [
+    {
+      "branch": "clean-main-2",
+      "success": false,
+      "reason": "merge_failed"
+    },
+    {
+      "branch": "cursor/fix-errors-and-merge-to-main-f8bc",
+      "success": false,
+      "reason": "conflict_resolution_failed"
+    },
+    {
+      "branch": "fix-errors-clean-merge",
+      "success": false,
+      "reason": "conflict_resolution_failed"
+    }
+  ],
+  "status": "success"
+}

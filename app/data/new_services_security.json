@@ -1,0 +1,134 @@
+[
+  {
+    "category": "security",
+    "id": "security-ai-threat-hunter",
+    "title": "AI-Powered Threat Hunter",
+    "description": "MDR-as-a-Service with AI: 24/7 SOC analysts augmented by LLM intent-classifier, MITRE ATT&CK correlation, automated response playbooks, 15-min neutralisation SLA, monthly threat-intel executive report.",
+    "basic": "7999",
+    "pro": "19999",
+    "enterprise": "69999",
+    "popular": true,
+    "features": [
+      "24/7 SOC team augmented by LLM threat-intent classifier",
+      "MITRE ATT&CK ATT&CK correlation and Kill-Chain (TTP-level) mapping",
+      "Automated response playbook \u2014 detection to containment in under 15 minutes",
+      "Monthly threat-intelligence executive report for the board with risk trend"
+    ],
+    "benefits": [
+      "Enterprise-grade protection at 67% of the cost of a 3-person in-house SOC",
+      "Detect and contain threats 15 minutes from detection to neutralisation",
+      "LLM-intent classifier finds zero-day TTPs that rule engines miss",
+      "Monthly executive report means you know your true security posture without reading analyst logs"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-api-security-gateway",
+    "title": "API Security Gateway",
+    "description": "API attack protection: real-time schema-drift detection using learning-baseline, anomaly scoring against OpenAPI spec, abuse/price-scraping/bot-detection per endpoint, auto-block/auto-remediate per OWASP API top-10.",
+    "basic": "3499",
+    "pro": "9999",
+    "enterprise": "34999",
+    "popular": true,
+    "features": [
+      "Real-time schema drift detection against auto-generated metadata baseline",
+      "Anomaly scoring per endpoint using learning-baseline per consumer id",
+      "Abuse, price-scraping, and bot-detection with geo + device fingerprinting",
+      "Auto-block and auto-remediate per OWASP API Top-10 rule"
+    ],
+    "benefits": [
+      "Credential stuffing and account-takeover APIs blocked before they hit backends",
+      "Dynamic schema drift means zero false-positives on normal API versioning",
+      "Abuse/price-scraping detection recovers $100K+ in lost revenue per year",
+      "API blocked within 500ms \u2014 faster than any adversary tool can script"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-cloud-zero-trust-access",
+    "title": "Cloud Zero Trust Access (ZTNA)",
+    "description": "Zero trust network access for cloud and on-prem resources: per-application least-privilege policy, device posture context, 1-click revoke per identity, 75% faster access time for legitimate users, full session recording.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "19999",
+    "popular": false,
+    "features": [
+      "Per-application least-privilege access policy from identity to cookie",
+      "Device posture context \u2014 certificate validity, OS, browser assessment before granting",
+      "1-click kill/revoke per user identity across all resources",
+      "Full session recording with playable video replay per access session"
+    ],
+    "benefits": [
+      "Users blessedly fast SSH and HTTPS access without tear-down VPN",
+      "1-click revocation keeps compromised identity blast-radius strictly bounded",
+      "Privileged access introduced with per-session fine-grained token and audit trail",
+      "Access offboarded exactly when employee leaves \u2014 zero lingering shadow-permissions"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-browser-isolation-platform",
+    "title": "Browser Isolation Platform",
+    "description": "Remote browser isolation: inspect every uncertified or risky site in cloud sandbox, drive-by download protection, credential-forwarding safe mock environment, phishing-engine sandbox analysis, bandwidth savings 30+.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": false,
+    "features": [
+      "Remote browser isolation \u2014 all rendering occurs off-device in a cloud sandbox",
+      "Drive-by download protection \u2014 adware aphishing payloads isolated from endpoint",
+      "Credential-forwarding sandbox \u2014 test credentials safely no overposting to real accounts",
+      "Phishing engine sandbox analysis \u2014 30-day credential-reuse window check in isolated browser"
+    ],
+    "benefits": [
+      "Zero malware reaches endpoint from the unclassified internet",
+      "Phishing credential reuse checks take 5 minutes not 5 days",
+      "Bandwidth savings of over 30% vs. full browser VDI",
+      "IT picks up no new virus protection costs on client OS"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-privacy-enhancing-technologies",
+    "title": "Privacy Enhancing Tech (PET) Platform",
+    "description": "PET middleware for regulated industries: on-the-fly tokenisation of PII, homomorphic-encryption-ready operator, output differential-privacy noise injection, audit log with deterministic proofs, FIPS 140-2 validated.",
+    "basic": "4999",
+    "pro": "14999",
+    "enterprise": "49999",
+    "popular": false,
+    "features": [
+      "On-the-fly PII tokenisation \u2014 column and field-level granularity with deterministic mapping",
+      "Homomorphic-encryption-ready operator \u2014 compute on encrypted fields without decryption",
+      "Output differential-privacy noise injection \u2014 per-query budgetable budget",
+      "Audit log with immutable Merkle-tree proof per transformation event in log"
+    ],
+    "benefits": [
+      "Meets GDPR Art. 25 / HIPAA / PCI-DSS without rip-and-replace",
+      "On-the-fly tokenisation means zero raw-PII exposure in analytics pipelines",
+      "Homomorphic compute on encrypted fields makes privacy preserve-compute finally practical",
+      "Deterministic audit log with Merkle proofs satisfies even the strictest regulator audits"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-sbom-supply-chain",
+    "title": "SBOM & Supply Chain Security",
+    "description": "Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.",
+    "basic": "2499",
+    "pro": "7999",
+    "enterprise": "27999",
+    "popular": true,
+    "features": [
+      "SBOM + VEX generated per build with CycloneDX + SPDX dual-format",
+      "CVE + SLSA provenance score every build \u2014 compare across time and distributors",
+      "Dependency-graph diff per PR \u2014 highlight transitive dependency changes before merge",
+      "SSL SA L3 attestation with reproducible-build verification per environment"
+    ],
+    "benefits": [
+      "Meet US Executive Order 14028 requirements with zero manual SBOM work",
+      "PR-level dependency-diff halted before merge for transitive dependency changes",
+      "Provenance scoring means you know what source you trust and what to question",
+      "Regulatory audit readiness \u2014 attestation and SBOM already on-demand"
+    ]
+  }
+]

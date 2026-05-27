@@ -1,0 +1,90 @@
+# App Visit → Audit → Implement → Deploy
+# Canonical workflow: visit ziontechgroup.com, run full evolution audit pipeline,
+# implement improvements, commit and push to main, trigger Netlify deploy.
+# Runs: Wed 12 UTC, Sat 14 UTC, and workflow_dispatch.
+
+name: App Visit Audit Implement Deploy
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 12 * * 3'
+    - cron: '0 14 * * 6'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes to main'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: true
+        type: boolean
+      skip_ux_audit:
+        description: 'Skip live site UX audit'
+        required: false
+        default: false
+        type: boolean
+      skip_layout_design:
+        description: 'Skip layout design audit and implementation'
+        required: false
+        default: false
+        type: boolean
+      skip_evolution_apply:
+        description: 'Skip evolution backlog apply (AUTO_APPLY)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: app-visit-audit-deploy
+  cancel-in-progress: false
+
+jobs:
+  visit-audit-implement-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Automation preflight (syntax & health)
+        run: npm run automation:preflight
+
+      - name: Run visit → audit → implement → deploy pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false') && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ (github.event_name == 'schedule' || github.event.inputs.trigger_deploy != 'false') && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          SKIP_UX_AUDIT: ${{ github.event.inputs.skip_ux_audit == 'true' && '1' || '' }}
+          SKIP_LAYOUT_DESIGN: ${{ github.event.inputs.skip_layout_design == 'true' && '1' || '' }}
+          SKIP_EVOLUTION_APPLY: ${{ github.event.inputs.skip_evolution_apply == 'true' && '1' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-app-evolution-audit-pipeline.cjs
+
+      - name: Upload pipeline report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-evolution-audit-report
+          path: automation/reports/app-evolution-audit-pipeline-latest.json

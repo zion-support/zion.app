@@ -1,0 +1,1049 @@
+{
+  "<comercial@praia.digital>": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 6.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<kleber@ziontechgroup.com>": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 5.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 8.4,
+        "question_ratio": 0.0,
+        "exclamation_count": 2
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 6.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 9.333333333333334,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 9.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 8.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 5.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 4.6,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 10.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 3.8333333333333335,
+        "question_ratio": 0.16666666666666666,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 5.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 6.2,
+        "question_ratio": 0.2,
+        "exclamation_count": 1
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 5.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 24.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 18.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 35.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 11.666666666666666,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 16.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 32.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 46.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 6.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 18.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "suporte@agilize.zendesk.com": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 6.0,
+        "question_ratio": 0.0,
+        "exclamation_count": 2
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<suporte+idRW2VNY-E4M93@agilize.zendesk.com>": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 10.333333333333334,
+        "question_ratio": 0.0,
+        "exclamation_count": 1
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<fernanda@ziontechgroup.com>": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<carlos@ziontechgroup.com>": {
+    "styles": [
+      {
+        "formality": "neutral",
+        "avg_sentence_length": 7.75,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<kalcatrao@hotmail.com>": {
+    "styles": [
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "kleber@ziontechgroup.com": {
+    "styles": [
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  },
+  "<donotreply@wordpress.com>": {
+    "styles": [
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      },
+      {
+        "formality": "casual",
+        "avg_sentence_length": 15.5,
+        "question_ratio": 0.0,
+        "exclamation_count": 0
+      }
+    ],
+    "preferences": {
+      "prefers_formal": false
+    }
+  }
+}

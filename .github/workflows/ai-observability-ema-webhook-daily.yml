@@ -1,0 +1,97 @@
+name: Observability EMA webhook digest
+
+permissions:
+  contents: write
+  issues: read
+
+on:
+  schedule:
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+
+# Serialize runs: commits/pushes to main must not overlap.
+concurrency:
+  group: ai-observability-ema-webhook-daily
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Automation issue index (for EMA digest + fingerprint delta)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/generate-automation-issue-index.cjs
+
+      - name: Fingerprint delta webhook (new automation-fp issues)
+        env:
+          AUTOMATION_DIGEST_SLACK_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_SLACK_WEBHOOK }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GENERIC_WEBHOOK_URL: ${{ secrets.GENERIC_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node automation/fingerprint-delta-webhook.cjs || true
+
+      - name: Threshold digest (Slack / Discord optional)
+        env:
+          AUTOMATION_DIGEST_SLACK_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_SLACK_WEBHOOK }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GENERIC_WEBHOOK_URL: ${{ secrets.GENERIC_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OBSERVABILITY_PAGERDUTY_ROUTING_KEY: ${{ secrets.OBSERVABILITY_PAGERDUTY_ROUTING_KEY }}
+          OBSERVABILITY_OPSGENIE_WEBHOOK_URL: ${{ secrets.OBSERVABILITY_OPSGENIE_WEBHOOK_URL }}
+        run: node automation/observability-ema-webhook-digest.cjs
+
+      - name: Refresh automation health snapshot
+        run: node scripts/automation/generate-automation-health-snapshot.cjs
+
+      - name: Commit cooldown state
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f automation/reports/observability-webhook-state.json ]; then
+            git add -f automation/reports/observability-webhook-state.json
+          fi
+          if [ -f automation/reports/observability-ema-fp-history.json ]; then
+            git add -f automation/reports/observability-ema-fp-history.json
+          fi
+          if [ -f automation/reports/fingerprint-delta-webhook-state.json ]; then
+            git add -f automation/reports/fingerprint-delta-webhook-state.json
+          fi
+          if [ -f automation/reports/automation-health-latest.json ]; then
+            git add -f automation/reports/automation-health-latest.json
+          fi
+          if [ -f automation/reports/automation-health-history.json ]; then
+            git add -f automation/reports/automation-health-history.json
+          fi
+          if [ -f public/api/automation-health.json ]; then
+            git add -f public/api/automation-health.json
+          fi
+          if [ -f public/api/automation-health-history.json ]; then
+            git add -f public/api/automation-health-history.json
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): observability webhook state + trend history"

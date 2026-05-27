@@ -1,0 +1,40 @@
+# Ensures ai-weekly-security-audit.yml keeps schedule/issue/report anchors (grep-only).
+name: ai weekly security audit workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '45 12 * * 3' # Wednesdays 12:45 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-weekly-security-audit-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  weekly-security-audit-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-weekly-security-audit.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-weekly-security-audit.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Weekly Security Audit' "$f"
+          grep -Fq 'group: ai-weekly-security-audit' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 5 * * 0'" "$f"
+          grep -Fq 'ai-dependency-vulnerability-alert-agent.cjs' "$f"
+          grep -Fq 'actions/github-script@' "$f"
+          grep -Fq 'labels: ['"'"'security'"'"', '"'"'dependencies'"'"']' "$f"
+          grep -Fq 'security-audit-' "$f"
+          grep -Fq 'dependency-vulnerability-alert-latest.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

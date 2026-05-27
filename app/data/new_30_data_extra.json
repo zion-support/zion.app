@@ -1,0 +1,17 @@
+[
+  {
+    "id": "data-realtime-time-series-analytics",
+    "title": "Real-Time Time-Series Analytics Platform",
+    "description": "High-throughput real-time analytics for IoT, monitoring, and business metrics: stores, aggregates, and queries billions of events per day at <200ms p99 latency. Includes alert rules, anomaly detection, SQL + Python query engine, dashboards, and Grafana/PostgreSQL-compatible endpoints.",
+    "icon": "📈",
+    "features": ["Ingestion: 1 million+ events/second per cluster with exactly-once guarantees", "Down-sampling + retention policy: raw for 7 d, 1-minute roll-ups for 90 d, hourly for 3 y", "SQL query engine + Python SDK for time-series queries in one familiar language", "Alert rules: threshold, rate-of-change, compound condition — Slack, PagerDuty, Email, Webhook", "Grafana + PostgreSQL wire-protocol: connect existing dashboards in 2 minutes"],
+    "benefits": ["Query 10 billion time-series events in under 2 seconds — no pre-aggregation required", "P99 query latency <200 ms means SLA dashboards feel instantaneous to ops teams", "Alert fatigue drops 60% vs dumb-threshold alerts because anomaly-detection rules adapt to seasonality"],
+    "pricing": {"basic": "149", "pro": "599", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/data-realtime-time-series-analytics", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/data-realtime-time-series-analytics",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Real-Time Time-Series Analytics Platform",
+    "is_featured": false
+  }
+]

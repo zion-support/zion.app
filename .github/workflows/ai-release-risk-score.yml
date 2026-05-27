@@ -1,0 +1,100 @@
+name: AI release risk score
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 6 * * *'
+
+concurrency:
+  group: ai-release-risk-score
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+      SMOKE_FAIL_ON_ERROR: '0'
+      SMOKE_USE_ROTATION: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh signals (smoke, drift, aggregate, regression diff)
+        run: |
+          set -uo pipefail
+          npm run smoke:production:sample || true
+          npm run smoke:health:append || true
+          npm run routes:drift:sitemap || true
+          npm run reports:aggregate || true
+          npm run aggregate:regression:check || true
+          npm run aggregate:regression:diff || true
+          npm run aggregate:regression:diff:history || true
+          node automation/release-risk-score.cjs
+          node automation/append-release-risk-history.cjs || true
+          node automation/release-risk-prom-metrics.cjs || true
+
+      - name: Upload release risk artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: release-risk-score-${{ github.run_id }}
+          path: |
+            automation/reports/release-risk-score-latest.json
+            automation/reports/release-risk-history.json
+            automation/reports/release-risk-metrics.prom
+            automation/reports/aggregate-regression-diff-latest.json
+            automation/reports/app-route-sitemap-drift-latest.json
+            automation/reports/scheduled-production-smoke-latest.json
+          if-no-files-found: ignore
+          retention-days: 21
+
+      - name: Release risk webhook notify (optional)
+        if: success()
+        env:
+          AUTOMATION_DIGEST_SLACK_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GENERIC_WEBHOOK_URL: ${{ secrets.GENERIC_WEBHOOK_URL }}
+          OBSERVABILITY_PAGERDUTY_ROUTING_KEY: ${{ secrets.OBSERVABILITY_PAGERDUTY_ROUTING_KEY }}
+          OBSERVABILITY_OPSGENIE_WEBHOOK_URL: ${{ secrets.OBSERVABILITY_OPSGENIE_WEBHOOK_URL }}
+        run: node automation/release-risk-webhook-notify.cjs || true
+
+      - name: Release risk recovery close (optional)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/release-risk-recovery-close.cjs || true
+
+      - name: Escalate on high risk (cooldown-aware)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/release-risk-escalate.cjs || true
+
+      - name: Acceleration guard (worsening/recovery)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/release-risk-acceleration-guard.cjs || true
+
+      - name: Strict fail on critical risk (repo var RELEASE_RISK_SCORE_STRICT)
+        if: ${{ success() && vars.RELEASE_RISK_SCORE_STRICT == '1' }}
+        run: |
+          node -e "const fs=require('fs');const p='automation/reports/release-risk-score-latest.json';const j=JSON.parse(fs.readFileSync(p,'utf8'));const r=Number(j.riskScore);if(!Number.isFinite(r)||r>=75){console.error('release-risk strict: riskScore',r,'>= 75');process.exit(1);}console.log('release-risk strict ok',r);"

@@ -1,0 +1,104 @@
+# AI Weekly Dependency Hygiene
+# Runs npm audit and dependency outdated report; uploads artifacts.
+# Optionally opens an issue when critical/high vulnerabilities are found.
+# Schedule: Sunday 08:00 UTC. workflow_dispatch.
+
+name: AI Weekly Dependency Hygiene
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-weekly-dependency-hygiene
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 8 * * 0'
+  workflow_dispatch:
+    inputs:
+      create_issue_on_critical:
+        description: 'Create/update issue when critical or high vulns found'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  dependency-hygiene:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: npm audit (JSON)
+        id: audit
+        run: |
+          npm audit --json > automation/reports/npm-audit-latest.json 2>/dev/null || true
+          if [ -f automation/reports/npm-audit-latest.json ]; then
+            CRITICAL=$(node -e "try{const a=require('./automation/reports/npm-audit-latest.json');console.log(a.metadata?.vulnerabilities?.critical||0)}catch(e){console.log(0)}")
+            HIGH=$(node -e "try{const a=require('./automation/reports/npm-audit-latest.json');console.log(a.metadata?.vulnerabilities?.high||0)}catch(e){console.log(0)}")
+            echo "critical=$CRITICAL" >> "$GITHUB_OUTPUT"
+            echo "high=$HIGH" >> "$GITHUB_OUTPUT"
+          else
+            echo "critical=0" >> "$GITHUB_OUTPUT"
+            echo "high=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dependency outdated report
+        run: node automation/ai-dependency-outdated-agent.cjs run || true
+
+      - name: Upload hygiene reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: dependency-hygiene-${{ github.run_id }}
+          path: |
+            automation/reports/npm-audit-latest.json
+            automation/reports/dependency-outdated-latest.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Create issue on critical/high vulnerabilities
+        if: (github.event_name == 'schedule' || github.event.inputs.create_issue_on_critical == 'true') && (steps.audit.outputs.critical != '0' || steps.audit.outputs.high != '0')
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const critical = parseInt('${{ steps.audit.outputs.critical }}', 10) || 0;
+            const high = parseInt('${{ steps.audit.outputs.high }}', 10) || 0;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              labels: 'dependencies',
+              per_page: 10,
+            });
+            const title = 'Dependency vulnerabilities (npm audit)';
+            const existing = issues.find(i => i.title.includes(title));
+            const body = `## Weekly Dependency Hygiene\n\n**Critical:** ${critical}\n**High:** ${high}\n\nRun \`npm audit\` and \`npm run deps:outdated\` for details. Artifacts are attached to the workflow run.`;
+            if (existing) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: existing.number,
+                body: `Updated at ${new Date().toISOString()}. Critical: ${critical}, High: ${high}.`,
+              });
+            } else {
+              await github.rest.issues.create({
+                ...context.repo,
+                title: `⚠️ ${title} – ${critical} critical, ${high} high`,
+                body,
+                labels: ['dependencies', 'automation'],
+              });
+            }

@@ -1,0 +1,90 @@
+[
+  {
+    "category": "automation",
+    "id": "automation-integrated-commerce-flows",
+    "title": "Integrated Commerce Flow Orchestrator",
+    "description": "Commerce workflow automation: cart-to-delivery orchestrator connecting Shopify/BigCommerce/WooCommerce with payment and shipping providers, automated RMA/return-handling, subscription-billing orchestrator, revenue reconciliation engine.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": true,
+    "features": [
+      "Omnichannel cart-to-delivery orchestration across Shopify, BigCommerce, and WooCommerce",
+      "Automated RMA and return handling end-to-end \u2014 refund, restock, denomination dispatch",
+      "Subscription billing orchestrator \u2014 proration, cohort billing, proration",
+      "Revenue reconciliation engine against payment providers with always-reconciled ledger"
+    ],
+    "benefits": [
+      "Cart-to-cash end-to-end down from 15 MAN-days to 2 hours",
+      "No more manually matching payment-provider tables to order inboxes",
+      "Subscription proration calculated correctly for thousands of cohorts without manual process",
+      "Reconciliation engine runs grid-matching at 0400 and alerts you before staff arrive"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-document-intelligence-pipeline",
+    "title": "Legal Document Intelligence Pipeline",
+    "description": "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause extraction, anomaly flag, e-signature ready, approval routing.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": true,
+    "features": [
+      "OCR + NLP pipeline orchestrating multiple document types in one session",
+      "Auto-classification \u2014 any document placed in input folder routed to correct intake path",
+      "Clause extraction, anomaly flag, and summarisation in same pipeline step",
+      "Approval routing with journalised highlight \u2014 every step durably signed and trusting"
+    ],
+    "benefits": [
+      "Digitise 10,000 pages of paper documents in under 48 hours with 97% accuracy",
+      "Doc throughput of 1,000 pages/hr goes to right business flow automatically without manual triage",
+      "Anomaly flag on invoices or contracts reduces processing teams' manual review time 90%",
+      "Digital signature path removes the engraving bottleneck of physical signature"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-multi-channel-campaign-manager",
+    "title": "Multi-Channel Campaign Manager",
+    "description": "Orchestrate campaigns across email, SMS, social, push, and ads from one campaign studio: audience-segmentation engine, content-Calendar view, A/B-n testing, real-time ROI dashboard, attribution across 10 channels.",
+    "basic": "2499",
+    "pro": "7499",
+    "enterprise": "22999",
+    "popular": true,
+    "features": [
+      "Multi-channel campaign builder works across email, SMS, social, push, and ads",
+      "Audience segmentation engine \u2014 behavioural and demographic criteria enriched per user",
+      "Content calendaring view visualises live campaigns across every channel",
+      "Real-time ROI dashboard with cross-channel attribution across up to 10 touchpoints"
+    ],
+    "benefits": [
+      "One studio replaces 5 tools, per-channel billing at unified rate",
+      "A/B testing \u2014 test visual, copy, and send-time combinations and compare across channels",
+      "Cross-channel attribution means you know which channel drove each dollar of conversion",
+      "Campaign studio saves marketing teams 10+ hours per week on campaign coordination"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-process-mining-intelligence",
+    "title": "Process Mining Intelligence",
+    "description": "Event-log based process discovery: take event-logs from ERP, CRM, BPM systems, discover actual vs. intended process maps, identify bottleneck and deviation, quantify handoff wait time, change-impact simulation.",
+    "basic": "3999",
+    "pro": "11999",
+    "enterprise": "39999",
+    "popular": false,
+    "features": [
+      "Event-log ingestion from ERP, CRM, and BPM \u2014 10+ standard connectors",
+      "Process discovery \u2014 actual vs. intended step map with frequency breakdown",
+      "Bottleneck identification \u2014 highlight choke points on process with deviation rate",
+      "Change-impact simulation \u2014 predict how a new step or rule change affects total cost and lead time"
+    ],
+    "benefits": [
+      "Find the 20% of process steps that consume 80% of cycle time",
+      "Run change simulation before deploying to production \u2014 score change risk before approval",
+      "Compliance audit trail \u2014 every generation and run timestamped schema-ready",
+      "Process mining means DRI returns to business unit with insights they trust without translator"
+    ]
+  }
+]

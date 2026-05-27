@@ -1,0 +1,82 @@
+# AI Layout Design Automation
+# Full pipeline: UX audit + layout audit + implementation. Optional commit & deploy.
+# Requires: OPENROUTER_API_KEY (Netlify build hook removed → GitHub Pages)
+
+name: AI Layout Design Automation
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 10 * * 2'
+    - cron: '0 11 * * 5'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes'
+        required: false
+        default: false
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: false
+        type: boolean
+      skip_ux_audit:
+        description: 'Skip live site UX audit'
+        required: false
+        default: false
+        type: boolean
+      skip_layout_audit:
+        description: 'Skip layout design audit'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  layout-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run layout design automation pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' && '1') || (github.event.inputs.auto_commit == 'true' && '1') || '' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy == 'true' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          SKIP_UX_AUDIT: ${{ github.event.inputs.skip_ux_audit == 'true' && '1' || '' }}
+          SKIP_LAYOUT_AUDIT: ${{ github.event.inputs.skip_layout_audit == 'true' && '1' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-layout-design-automation-pipeline-full.cjs
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: layout-design-automation-${{ github.run_id }}
+          path: |
+            automation/reports/live-site-ux-audit-latest.json
+            automation/reports/live-site-ux-auto-fix-latest.json
+            automation/reports/layout-design-audit-latest.json
+            automation/reports/layout-design-implementation-latest.json
+            automation/reports/layout-design-automation-pipeline-latest.json
+          if-no-files-found: ignore
+          retention-days: 30

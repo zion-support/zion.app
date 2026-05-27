@@ -1,0 +1,89 @@
+name: AI AI Lab hub links smoke
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-ai-lab-hub-links-smoke-weekly
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 12 * * 4'
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
+
+      - name: Smoke production AI Lab links
+        env:
+          ZION_PRODUCTION_URL: ${{ vars.ZION_PRODUCTION_URL }}
+          OUT_FILE: automation/reports/ai-lab-hub-links-smoke-prod.json
+          TARGET_NAME: production
+          AI_LAB_HUB_LINKS_FAIL_ON_ERROR: '0'
+        run: node scripts/automation/ai-lab-hub-links-playwright.cjs
+
+      - name: Preview URL lookup retired (Netlify removed)
+        if: false
+        id: preview_url
+        run: echo "Preview URL lookup retired"
+
+      - name: Smoke preview AI Lab links
+        if: steps.preview_url.outputs.url != ''
+        env:
+          ZION_BASE_URL: ${{ steps.preview_url.outputs.url }}
+          OUT_FILE: automation/reports/ai-lab-hub-links-smoke-preview.json
+          TARGET_NAME: preview
+          AI_LAB_HUB_LINKS_FAIL_ON_ERROR: '0'
+        run: node scripts/automation/ai-lab-hub-links-playwright.cjs
+
+      - name: Compare preview vs production
+        env:
+          AI_LAB_HUB_COMPARE_FAIL_ON_REGRESSION: '0'
+        run: node automation/ai-lab-hub-links-compare.cjs
+
+      - name: Escalate or close recovery
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COOLDOWN_HOURS: '12'
+          AI_LAB_HUB_FLAKE_SUPPRESS_SCORE: '0.65'
+          AI_LAB_HUB_FLAKE_SUPPRESS_SAMPLES: '5'
+          AI_LAB_HUB_WARNING_SLACK_WEBHOOK: ${{ secrets.AI_LAB_HUB_WARNING_SLACK_WEBHOOK }}
+          AI_LAB_HUB_WARNING_DISCORD_WEBHOOK: ${{ secrets.AI_LAB_HUB_WARNING_DISCORD_WEBHOOK }}
+          AI_LAB_HUB_CRITICAL_SLACK_WEBHOOK: ${{ secrets.AI_LAB_HUB_CRITICAL_SLACK_WEBHOOK }}
+          AI_LAB_HUB_CRITICAL_DISCORD_WEBHOOK: ${{ secrets.AI_LAB_HUB_CRITICAL_DISCORD_WEBHOOK }}
+          AI_LAB_HUB_CRITICAL_PAGERDUTY_ROUTING_KEY: ${{ secrets.AI_LAB_HUB_CRITICAL_PAGERDUTY_ROUTING_KEY }}
+        run: node automation/ai-lab-hub-links-escalate.cjs
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: ai-lab-hub-links-smoke-${{ github.run_id }}
+          path: |
+            automation/reports/ai-lab-hub-links-smoke-prod.json
+            automation/reports/ai-lab-hub-links-smoke-preview.json
+            automation/reports/ai-lab-hub-links-smoke-compare-latest.json
+            automation/reports/ai-lab-hub-links-smoke-compare-history.json
+            automation/reports/ai-lab-hub-links-flake-state.json
+          if-no-files-found: ignore
+          retention-days: 14

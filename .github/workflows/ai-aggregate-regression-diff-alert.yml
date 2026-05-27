@@ -1,0 +1,96 @@
+name: AI aggregate regression diff alert
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 */12 * * *'
+
+concurrency:
+  group: ai-aggregate-regression-diff-alert
+  cancel-in-progress: false
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build aggregate + regression snapshot
+        run: npm run reports:aggregate && npm run aggregate:regression:check
+
+      - name: Compute regression diff
+        run: npm run aggregate:regression:diff
+
+      - name: Append regression diff history
+        run: npm run aggregate:regression:diff:history
+
+      - name: Upload regression diff artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: aggregate-regression-diff-${{ github.run_id }}
+          path: |
+            automation/reports/aggregate-regression-diff-latest.json
+            automation/reports/aggregate-regression-diff-history.json
+            automation/reports/aggregate-regression-diff-state.json
+          if-no-files-found: ignore
+          retention-days: 21
+
+      - name: Escalate when regression worsened
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          DIFF_FILE="automation/reports/aggregate-regression-diff-latest.json"
+          [ -f "$DIFF_FILE" ] || exit 0
+          WORSENED="$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$DIFF_FILE','utf8'));process.stdout.write(j.worsened?'1':'0')")"
+          RECOVERED="$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$DIFF_FILE','utf8'));process.stdout.write(j.recovered?'1':'0')")"
+          echo "worsened=$WORSENED" >> "$GITHUB_OUTPUT"
+          echo "recovered=$RECOVERED" >> "$GITHUB_OUTPUT"
+          if [ "$WORSENED" != "1" ]; then
+            echo "No worsening detected."
+            exit 0
+          fi
+          BODY="aggregate-regression-diff-body.md"
+          {
+            echo "## Aggregate regression worsened compared to previous snapshot"
+            echo ""
+            echo "- **Dedupe key:** \`aggregate-regression-diff-worsened\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo ""
+            echo '```json'
+            cat "$DIFF_FILE"
+            echo '```'
+          } > "$BODY"
+          export ISSUE_TITLE="Aggregate regression worsened"
+          export ISSUE_FINGERPRINT="aggregate-regression-diff-worsened"
+          export ISSUE_LABELS="bug,automation"
+          export ISSUE_BODY_FILE="$BODY"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+
+      - name: Close regression-diff issue on recovery
+        if: steps.gate.outputs.recovered == '1' && steps.gate.outputs.worsened != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: aggregate-regression-diff-worsened
+          CLOSE_COMMENT: Auto-closing aggregate regression diff issue after recovery.
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true

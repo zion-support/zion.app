@@ -1,0 +1,163 @@
+name: Lighthouse CI
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'src/**'
+      - 'components/**'
+      - 'public/**'
+      - 'next.config.*'
+      - 'tailwind.config.*'
+      - 'package.json'
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: Performance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Serve and audit
+        run: |
+          npx serve out -l 3000 &
+          SERVER_PID=$!
+          sleep 3
+
+          mkdir -p lighthouse-results
+
+          npx lighthouse http://localhost:3000 \
+            --chrome-flags="--headless --no-sandbox" \
+            --output=json \
+            --output=html \
+            --output-path=lighthouse-results/report \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --quiet
+
+          kill $SERVER_PID || true
+
+      - name: Parse scores
+        id: scores
+        run: |
+          REPORT="lighthouse-results/report.report.json"
+          if [ ! -f "$REPORT" ]; then
+            echo "No Lighthouse report found"
+            exit 1
+          fi
+
+          PERF=$(node -e "const r=require('./$REPORT');console.log(Math.round(r.categories.performance.score*100))")
+          A11Y=$(node -e "const r=require('./$REPORT');console.log(Math.round(r.categories.accessibility.score*100))")
+          BP=$(node -e "const r=require('./$REPORT');console.log(Math.round(r.categories['best-practices'].score*100))")
+          SEO=$(node -e "const r=require('./$REPORT');console.log(Math.round(r.categories.seo.score*100))")
+
+          echo "perf=$PERF" >> "$GITHUB_OUTPUT"
+          echo "a11y=$A11Y" >> "$GITHUB_OUTPUT"
+          echo "bp=$BP" >> "$GITHUB_OUTPUT"
+          echo "seo=$SEO" >> "$GITHUB_OUTPUT"
+
+          badge() { [ "$1" -ge 90 ] && echo "🟢" || { [ "$1" -ge 50 ] && echo "🟠" || echo "🔴"; }; }
+
+          {
+            echo "## Lighthouse Performance Report"
+            echo ""
+            echo "| Category | Score |"
+            echo "|----------|-------|"
+            echo "| $(badge $PERF) Performance | **$PERF** |"
+            echo "| $(badge $A11Y) Accessibility | **$A11Y** |"
+            echo "| $(badge $BP) Best Practices | **$BP** |"
+            echo "| $(badge $SEO) SEO | **$SEO** |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const perf = '${{ steps.scores.outputs.perf }}';
+            const a11y = '${{ steps.scores.outputs.a11y }}';
+            const bp = '${{ steps.scores.outputs.bp }}';
+            const seo = '${{ steps.scores.outputs.seo }}';
+
+            const badge = (s) => s >= 90 ? '🟢' : s >= 50 ? '🟠' : '🔴';
+
+            const body = `### Lighthouse Report
+
+            | Category | Score |
+            |----------|-------|
+            | ${badge(perf)} Performance | **${perf}** |
+            | ${badge(a11y)} Accessibility | **${a11y}** |
+            | ${badge(bp)} Best Practices | **${bp}** |
+            | ${badge(seo)} SEO | **${seo}** |
+
+            > Run #${context.runNumber} on \`${context.sha.substring(0, 7)}\``;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### Lighthouse Report')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...context.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Fail on low performance
+        run: |
+          PERF=${{ steps.scores.outputs.perf }}
+          if [ "$PERF" -lt 50 ]; then
+            echo "::error::Performance score ($PERF) is below threshold (50)"
+            exit 1
+          fi
+
+      - name: Upload report
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        if: always()
+        with:
+          name: lighthouse-report-${{ github.run_id }}
+          path: lighthouse-results/
+          retention-days: 14

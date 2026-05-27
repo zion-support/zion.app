@@ -1,0 +1,35 @@
+# Ensures core-web-vitals-monitor.yml keeps schedule, production URL, and CWV measurement anchors (grep-only).
+name: core web vitals monitor workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '34 11 * * 3' # Wednesdays 11:34 UTC
+  workflow_dispatch:
+concurrency:
+  group: core-web-vitals-monitor-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  cwv-monitor-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: core-web-vitals-monitor.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/core-web-vitals-monitor.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Core Web Vitals Monitor' "$f"
+          grep -Fq 'group: core-web-vitals' "$f"
+          grep -Fq "cron: '0 */12 * * *'" "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'name: Measure Core Web Vitals' "$f"
+          grep -Fq 'npm install -g lighthouse chrome-launcher' "$f"
+          grep -Fq 'https://ziontechgroup.com' "$f"
+          grep -Fq 'cwv-reports' "$f"
+          grep -Fq 'actions/github-script@' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

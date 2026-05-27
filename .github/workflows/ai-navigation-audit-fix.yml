@@ -1,0 +1,92 @@
+# AI Navigation Audit & Fix
+# Runs nav audit (run + optional fix), then optional commit/push.
+# Schedule: Wed + Sat 8:00 UTC. Manual: workflow_dispatch with apply_fix and/or auto_commit.
+#
+# - run: full audit (broken links, footer vs nav) + LLM suggestions
+# - fix: apply safe fixes (e.g. sync footer links to RESOURCE_LINKS)
+# - commit: commit and push when changes exist (use with apply_fix or after manual fixes)
+
+name: AI Navigation Audit & Fix
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 8 * * 3,6'
+  workflow_dispatch:
+    inputs:
+      apply_fix:
+        description: 'Apply safe navigation fixes (sync footer to nav)'
+        required: false
+        default: false
+        type: boolean
+      auto_commit:
+        description: 'Commit and push changes'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: ai-navigation-audit-fix
+  cancel-in-progress: false
+
+jobs:
+  nav-audit-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run navigation audit
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: npm run nav:audit
+
+      - name: Apply safe navigation fixes
+        if: github.event.inputs.apply_fix == 'true' || github.event_name == 'schedule'
+        run: npm run nav:audit-fix
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: nav-audit-report-${{ github.run_id }}
+          path: automation/reports/navigation-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Commit and push
+        if: github.event.inputs.auto_commit == 'true' && success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(nav): apply navigation audit fixes [automated]"
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            git rebase --abort || true
+            echo "::warning::Rebase conflict — skipping push."
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh

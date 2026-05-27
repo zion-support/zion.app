@@ -1,0 +1,30 @@
+# Ensures workflow-node-contracts-dispatch.yml keeps contracts-only manual path (grep-only).
+name: workflow node contracts dispatch smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '8 9 * * 4' # Thursdays 09:08 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-node-contracts-dispatch-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  node-contracts-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-node-contracts-dispatch.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-node-contracts-dispatch.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow Node contracts only (manual)' "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'group: workflow-node-contracts-dispatch' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          grep -Fq 'npm run workflows:contracts:node' "$f"
+          echo "ok: $f"

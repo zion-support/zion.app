@@ -1,0 +1,27 @@
+# Ruby-free weekly smoke: SHA + canonical-pin policy only (fast).
+# Full YAML parse + contracts run in workflow-validate-light-weekly / reusable-workflow-ci.
+
+name: Workflow action pin smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '20 6 * * 0' # Sundays 06:20 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-action-pin-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  pin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Canonical action pins (grep --pin)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --pin

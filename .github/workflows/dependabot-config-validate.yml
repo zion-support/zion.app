@@ -1,0 +1,34 @@
+# Ensures .github/dependabot.yml stays valid YAML (catch bad merges / manual edits).
+
+name: Dependabot config validate
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - '.github/dependabot.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.github/dependabot.yml'
+  schedule:
+    - cron: '15 7 * * 1' # Mondays 07:15 UTC (paired with weekly Actions dependency PRs)
+  workflow_dispatch:
+
+concurrency:
+  group: dependabot-config-validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  yaml:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Parse dependabot.yml
+        run: |
+          ruby -r yaml -e 'YAML.load_file(".github/dependabot.yml"); puts "ok dependabot config"'

@@ -1,0 +1,182 @@
+name: AI Content Quality Auditor
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-content-quality
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      max_pages:
+        description: 'Maximum pages to audit'
+        required: false
+        default: '25'
+        type: string
+
+jobs:
+  content-audit:
+    name: AI Content Quality Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Extract page content for audit
+        id: extract
+        run: |
+          MAX_PAGES="${{ inputs.max_pages || '25' }}"
+          mkdir -p content-reports
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const glob = require('glob');
+
+          const pages = glob.sync('app/**/page.tsx', { ignore: ['node_modules/**'] });
+          const maxPages = parseInt('${MAX_PAGES}', 10);
+          const audit = [];
+
+          for (const page of pages.slice(0, maxPages)) {
+            const content = fs.readFileSync(page, 'utf-8');
+            const route = '/' + path.dirname(page).replace('app/', '').replace('app', '');
+
+            const titleMatch = content.match(/title\s*[:=]\s*['\x60\"]([^'\x60\"]+)['\x60\"]/);
+            const descMatch = content.match(/description\s*[:=]\s*['\x60\"]([^'\x60\"]+)['\x60\"]/);
+
+            const textBlocks = content.match(/<(?:p|h[1-6]|span|li)[^>]*>([^<]{20,})<\//g) || [];
+            const textContent = textBlocks
+              .map(b => b.replace(/<[^>]+>/g, '').trim())
+              .filter(t => t.length > 20)
+              .slice(0, 5)
+              .join(' | ');
+
+            const wordCount = content.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(w => w.length > 2).length;
+
+            audit.push({
+              route: route.replace(/\/\//g, '/'),
+              file: page,
+              title: titleMatch ? titleMatch[1] : null,
+              description: descMatch ? descMatch[1] : null,
+              sampleText: textContent.substring(0, 300),
+              estimatedWordCount: wordCount,
+              hasCtaButton: /(?:Get Started|Contact|Book|Start|Schedule|Learn More)/i.test(content),
+              hasSocialProof: /(?:testimonial|client|review|case.?study|trusted)/i.test(content),
+            });
+          }
+
+          fs.writeFileSync('content-reports/content-extract.json', JSON.stringify(audit, null, 2));
+          console.log('Extracted content from ' + audit.length + ' pages');
+          "
+
+          echo "extracted=true" >> "$GITHUB_OUTPUT"
+
+      - name: AI Content Quality Analysis
+        if: steps.extract.outputs.extracted == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — skipping AI analysis"
+            exit 0
+          fi
+
+          CONTENT=$(python3 -c "
+          import json
+          with open('content-reports/content-extract.json') as f:
+            data = json.load(f)
+          print(json.dumps(data[:15], indent=2))
+          ")
+
+          PAYLOAD=$(python3 -c "
+          import json, sys
+          content = json.loads('''${CONTENT}'''.replace('\n', ' '))
+
+          prompt = '''You are auditing the content quality of ziontechgroup.com, an AI solutions and engineering delivery platform.
+
+          Analyze these pages and score each on a 1-10 scale for:
+          1. **Content Clarity** — Is the value proposition clear?
+          2. **Brand Voice** — Does it sound professional, confident, and technical?
+          3. **SEO Readiness** — Are title/description optimized for search?
+          4. **Conversion Optimization** — Are there CTAs and social proof?
+          5. **Content Depth** — Is there enough substantive content?
+
+          For each page, provide:
+          - Overall score (1-10)
+          - Top issue to fix
+          - Specific improvement suggestion
+
+          Then provide a summary with:
+          - Average quality score across all pages
+          - Top 3 site-wide improvements
+          - Pages that need urgent attention
+
+          Page data:
+          ''' + json.dumps(content, indent=2)
+
+          payload = {
+            'model': 'openrouter/auto',
+            'max_tokens': 3000,
+            'messages': [
+              {'role': 'system', 'content': 'You are a senior content strategist and UX writer specializing in B2B SaaS and AI technology companies. Provide specific, actionable content quality analysis with scores. Use markdown tables and formatting.'},
+              {'role': 'user', 'content': prompt}
+            ]
+          }
+          print(json.dumps(payload))
+          ")
+
+          RESPONSE=$(curl -sS --max-time 90 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-ContentAudit" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          ANALYSIS=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'No analysis returned.')
+          except Exception as e:
+              print(f'AI analysis error: {e}')
+          ")
+
+          echo "$ANALYSIS" > content-reports/ai-content-quality-report.md
+
+          {
+            echo "## AI Content Quality Audit"
+            echo ""
+            echo "**Date:** $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo "**Pages analyzed:** $(python3 -c "import json; print(len(json.load(open('content-reports/content-extract.json'))))")"
+            echo ""
+            echo "$ANALYSIS"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload content report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: content-quality-report-${{ github.run_id }}
+          path: content-reports/
+          if-no-files-found: ignore
+          retention-days: 30

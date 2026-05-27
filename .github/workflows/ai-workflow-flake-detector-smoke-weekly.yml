@@ -1,0 +1,35 @@
+# Ensures ai-workflow-flake-detector.yml keeps schedule, reports, and issue hooks (grep-only).
+name: ai workflow flake detector workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '40 11 * * 3' # Wednesdays 11:40 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-workflow-flake-detector-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  workflow-flake-detector-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-workflow-flake-detector.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-workflow-flake-detector.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Workflow Flake Detector' "$f"
+          grep -Fq 'group: ai-workflow-flake-detector' "$f"
+          grep -Fq "cron: '10 15 * * 1'" "$f"
+          grep -Fq 'actions: read' "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'ai-workflow-flake-detector.cjs' "$f"
+          grep -Fq 'workflow-flakes-latest.json' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

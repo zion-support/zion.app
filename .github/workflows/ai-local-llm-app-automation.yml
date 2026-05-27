@@ -1,0 +1,58 @@
+# AI Local LLM App Automation
+# Orchestrates app improvement and evolution using LLM (Ollama local, OpenRouter in CI).
+# Runs weekly and on manual dispatch. Implements ideas, applies improvements, commits and deploys.
+
+name: AI Local LLM App Automation
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 12 * * 3'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: false
+        type: boolean
+      create_pages:
+        description: 'Create missing pages when site link audit finds broken'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  local-llm-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run local LLM app automation pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false') && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy && '1' || '' }}
+          CREATE_PAGES: ${{ github.event.inputs.create_pages && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: node automation/ai-local-llm-app-automation-pipeline.cjs run

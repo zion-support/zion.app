@@ -1,0 +1,36 @@
+# Ensures .cursor/rules/autonomy-and-continuous-improvement.mdc keeps autonomy + safety anchors (grep-only).
+
+name: cursor/autonomy rule smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 6 * * 1' # Mondays 06:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-autonomy-rule-mdc-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  autonomy-mdc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Autonomy continuous-improvement rule anchors
+        run: |
+          set -euo pipefail
+          test -f .cursor/rules/autonomy-and-continuous-improvement.mdc
+          test -s .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq 'Zion Autonomy & Continuous Improvement' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq 'AGENTS.md' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq 'Never commit secrets' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq '.github/workflows/' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq '.nvmrc' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          grep -Fq 'MEMORY.md' .cursor/rules/autonomy-and-continuous-improvement.mdc
+          echo 'ok: .cursor/rules/autonomy-and-continuous-improvement.mdc'

@@ -1,0 +1,43 @@
+# Ensures ai-aggregate-regression-diff-alert.yml keeps schedule/issue/artifact anchors (grep-only).
+name: ai aggregate regression diff alert workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '45 12 * * 2' # Tuesdays 12:45 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-aggregate-regression-diff-alert-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  diff-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-aggregate-regression-diff-alert.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-aggregate-regression-diff-alert.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI aggregate regression diff alert' "$f"
+          grep -Fq 'group: ai-aggregate-regression-diff-alert' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '10 */12 * * *'" "$f"
+          grep -Fq 'aggregate:regression:diff' "$f"
+          grep -Fq 'aggregate:regression:diff:history' "$f"
+          grep -Fq 'aggregate-regression-diff-' "$f"
+          grep -Fq 'aggregate-regression-diff-latest.json' "$f"
+          grep -Fq 'aggregate-regression-diff-history.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

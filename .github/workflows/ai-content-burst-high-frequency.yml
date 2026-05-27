@@ -1,0 +1,98 @@
+# AI Content Burst High Frequency
+# Template + industry content 8x daily for maximum volume without extra LLM cost.
+# Runs content burst (template blog, case studies, industry pages, services advertiser, optional product pages).
+# Commit + push to main + deploy. Concurrency: content-commit.
+
+name: AI Content Burst High Frequency
+
+concurrency:
+  group: autonomous-main-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 19 * * *'
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    inputs:
+      max_template_blog:
+        description: 'Template blog posts per run (default 4)'
+        required: false
+        default: '4'
+      max_template_case_studies:
+        description: 'Template case studies per run (default 4)'
+        required: false
+        default: '4'
+      max_industry_pages:
+        description: 'Industry solution pages (default 2)'
+        required: false
+        default: '2'
+      max_product_pages:
+        description: 'Product pages (default 1)'
+        required: false
+        default: '1'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  burst-high-freq:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      NEXT_BUILD_WORKER_COUNT: 1
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run content burst (high frequency)
+        env:
+          AUTO_COMMIT: "1"
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '4' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '4' }}
+          MAX_INDUSTRY_PAGES: ${{ github.event.inputs.max_industry_pages || '2' }}
+          MAX_PRODUCT_PAGES: ${{ github.event.inputs.max_product_pages || '1' }}
+          MAX_ADD: "3"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-content-burst-agent.cjs
+
+      - name: Commit and push if burst did not commit
+        if: success()
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git add -A
+          if ! git diff --staged --quiet; then
+            bash scripts/automation/commit-and-push-main.sh "chore(content): content burst high frequency - template blog + case studies + industry pages"
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

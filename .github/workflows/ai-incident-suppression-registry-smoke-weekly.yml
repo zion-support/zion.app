@@ -1,0 +1,39 @@
+# Ensures ai-incident-suppression-registry.yml keeps schedule/push/report anchors (grep-only).
+name: ai incident suppression registry workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 12 * * 2' # Tuesdays 12:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-incident-suppression-registry-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  suppression-registry-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-incident-suppression-registry.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-incident-suppression-registry.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Incident Suppression Registry' "$f"
+          grep -Fq 'group: ai-incident-suppression-registry' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '17 */6 * * *'" "$f"
+          grep -Fq 'generate-incident-suppression-registry.cjs' "$f"
+          grep -Fq 'incident-suppression-registry-latest.json' "$f"
+          grep -Fq 'Commit and push' "$f"
+          grep -Fq 'token:' "$f" && grep -Fq 'github.token' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

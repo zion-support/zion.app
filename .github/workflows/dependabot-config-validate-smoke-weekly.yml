@@ -1,0 +1,31 @@
+# Ensures dependabot-config-validate.yml keeps schedule + Ruby parse step (grep-only).
+name: dependabot config validate smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '50 9 * * 4' # Thursdays 09:50 UTC
+  workflow_dispatch:
+concurrency:
+  group: dependabot-config-validate-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  dependabot-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: dependabot-config-validate.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/dependabot-config-validate.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Dependabot config validate' "$f"
+          grep -Fq '.github/dependabot.yml' "$f"
+          grep -Fq "cron: '15 7 * * 1'" "$f"
+          grep -Fq 'group: dependabot-config-validate-' "$f"
+          grep -Fq 'github.ref' "$f"
+          grep -Fq 'YAML.load_file(".github/dependabot.yml")' "$f"
+          echo "ok: $f"

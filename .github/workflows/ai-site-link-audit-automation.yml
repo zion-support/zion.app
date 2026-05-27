@@ -1,0 +1,66 @@
+name: AI Site Link Audit Automation
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-site-link-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 8 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      create_pages:
+        description: 'Create missing pages via OpenRouter LLM'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  site-link-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run Site Link Audit
+        id: audit
+        run: |
+          OUTPUT=$(npm run site:links:audit 2>&1)
+          echo "$OUTPUT" | tail -60
+          echo "audit_output<<EOF" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Missing Pages (if requested)
+        if: github.event.inputs.create_pages == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          npm run site:links:audit-fix || true
+
+      - name: Upload audit artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: site-link-audit-${{ github.run_id }}
+          path: automation/reports/site-link-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 14

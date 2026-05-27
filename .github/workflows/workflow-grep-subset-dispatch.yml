@@ -1,0 +1,114 @@
+name: Workflow grep subset (manual)
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      subset:
+        description: 'Grep subset, dependabot, CODEOWNERS, package dedup, merge-conflict scan, Ruby/integrity/bash, policy subsets / push-token'
+        required: true
+        default: pin
+        type: choice
+        options:
+          - pin
+          - permissions
+          - push
+          - setup-node-policy
+          - npm-ci-policy
+          - runs-on-policy
+          - policy-fast
+          - push-token
+          - all
+          - ruby
+          - integrity
+          - bash
+          - dependabot
+          - merge-conflicts
+          - codeowners
+          - package-dedup
+
+concurrency:
+  group: workflow-grep-subset-dispatch
+  cancel-in-progress: true
+
+jobs:
+  tooling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        if: ${{ inputs.subset == 'integrity' || inputs.subset == 'merge-conflicts' || inputs.subset == 'package-dedup' }}
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        if: ${{ inputs.subset == 'integrity' || inputs.subset == 'merge-conflicts' || inputs.subset == 'package-dedup' }}
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
+        if: ${{ inputs.subset == 'ruby' }}
+        run: ruby scripts/automation/parse-github-workflows-yaml.rb
+
+      - name: Workflow integrity audit
+        if: ${{ inputs.subset == 'integrity' }}
+        run: node automation/github-workflow-integrity-auditor.cjs
+
+      - name: Upload integrity report
+        if: ${{ always() && inputs.subset == 'integrity' }}
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: github-workflow-integrity-audit-subset-${{ github.run_id }}
+          path: automation/reports/github-workflow-integrity-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Bash syntax (push helper scripts)
+        if: ${{ inputs.subset == 'bash' }}
+        run: bash -n scripts/automation/commit-and-push-main.sh && bash -n scripts/automation/push-main-with-retry.sh
+
+      - name: Parse dependabot.yml (Ruby)
+        if: ${{ inputs.subset == 'dependabot' }}
+        run: |
+          ruby -r yaml -e 'YAML.load_file(".github/dependabot.yml"); puts "ok dependabot config"'
+
+      - name: Check merge conflict markers (tracked files)
+        if: ${{ inputs.subset == 'merge-conflicts' }}
+        run: node scripts/automation/check-merge-conflict-markers.cjs
+
+      - name: CODEOWNERS file present (non-empty)
+        if: ${{ inputs.subset == 'codeowners' }}
+        run: bash -c 'test -f .github/CODEOWNERS && test -s .github/CODEOWNERS && echo ok .github/CODEOWNERS'
+
+      - name: package.json script keys (no duplicates)
+        if: ${{ inputs.subset == 'package-dedup' }}
+        run: node scripts/automation/check-package-script-duplicates.cjs
+
+      - name: Run grep guard subset
+        if: ${{ inputs.subset != 'ruby' && inputs.subset != 'integrity' && inputs.subset != 'bash' && inputs.subset != 'dependabot' && inputs.subset != 'merge-conflicts' && inputs.subset != 'codeowners' && inputs.subset != 'package-dedup' }}
+        run: |
+          set -euo pipefail
+          case "${{ inputs.subset }}" in
+            pin)                bash scripts/automation/run-workflow-grep-guards.sh --pin ;;
+            permissions)        bash scripts/automation/run-workflow-grep-guards.sh --permissions ;;
+            push)               bash scripts/automation/run-workflow-grep-guards.sh --push ;;
+            setup-node-policy)  bash scripts/automation/run-workflow-grep-guards.sh --setup-node-policy ;;
+            npm-ci-policy)      bash scripts/automation/run-workflow-grep-guards.sh --npm-ci-policy ;;
+            runs-on-policy)     bash scripts/automation/run-workflow-grep-guards.sh --runs-on-policy ;;
+            policy-fast)        bash scripts/automation/run-workflow-grep-guards.sh --policy-fast ;;
+            push-token)         bash scripts/automation/run-workflow-grep-guards.sh --push-token ;;
+            all)                bash scripts/automation/run-workflow-grep-guards.sh ;;
+            *)
+              echo "::error::Unknown subset: ${{ inputs.subset }}"
+              exit 2
+              ;;
+          esac

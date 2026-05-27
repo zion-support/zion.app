@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ai-fintech-fraud-graph",
+    "title": "AI Fintech Fraud Graph",
+    "description": "Real-time graph analytics for financial fraud: GNN-powered anomaly scoring per transaction, known-fraudster link analysis, blacklist connectivity, and SAR-ready audit evidence packs for US/EU/UK regulated institutions.",
+    "icon": "🔗",
+    "features": ["GNN-powered transaction graph scoring every 100ms", "Known-fraudster link analysis with weighted shortest-path matching", "Multi-jurisdiction SAR evidence pack (US, EU, UK)", "Real-time blockchain address risk tags (10K+ flagged addresses)", "Audit-trail export: JSONL + PDF report batch export"],
+    "benefits": ["Detect 95% of known fraud patterns within 48 hours of go-live", "Reduce false positives 60% vs rule-based engines", "Comply with FinCEN/EU AMLD/UK POCA SAR requirements out of the box", "Cut fraud analyst review time from 40 min to <5 min per case"],
+    "pricing": {"basic": "299", "pro": "999", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-fintech-fraud-graph", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-fintech-fraud-graph",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "AI Fintech Fraud Graph",
+    "is_featured": true
+  },
+  {
+    "id": "ai-cross-lingual-bridge",
+    "title": "AI Cross-Lingual Bridge",
+    "description": "Enterprise-grade cross-language content and support platform: semantic translation, accent-normalised speech, multilingual chatbot/knowledge base build, automatic locale detection, and compliance-checked glossary management across 80+ language pairs.",
+    "icon": "🌐",
+    "features": ["Semantic translation engine (80+ language pairs, trains on in-domain corpus)", "Accent-normalised speech-to-text and TTS per locale", "Auto language/region detection with confidence scoring", "Webhook-ready multilingual chatbot builder", "CSV/XLIFF glossary import + compliance glossary lock"],
+    "benefits": ["Launch multi-market support 3× faster vs. hiring per-market translators", "Reduce mistranslation incidents by 80% in regulated industries", "Customer support CSAT score rises 25% post-localisation"],
+    "pricing": {"basic": "199", "pro": "749", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-cross-lingual-bridge", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-cross-lingual-bridge",
+    "category": "ai",
+    "popular": false,
+    "nav_name": "AI Cross-Lingual Bridge",
+    "is_featured": false
+  },
+  {
+    "id": "ai-carbon-optimizer",
+    "title": "AI Carbon Footprint Optimizer",
+    "description": "Automated Scope 1-3 carbon accounting: ingests utility bills, cloud usage, travel itineraries, supplier invoices, and calculates real-time carbon intensity scores with prioritised reduction actions and ESG report-ready outputs.",
+    "icon": "🌿",
+    "features": ["Scope 1-3 automatic accounting from bills, APIs, and invoices", "Machine learning intensity factors per city, data-centre, and carrier", "Priority-ranked action plan generated weekly", "ESG/CSRD-ready report PDF and CSV exports", "Alerts: budget exceeded, deviation from reduction trajectory"],
+    "benefits": ["Cut ESG reporting cost ~80% by automating data collection and calculation", "Finish CSRD-ready ESG report in 3 days vs. 3 weeks manually", "Reduce carbon intensity 15-30% in 12 months with AI action plans"],
+    "pricing": {"basic": "149", "pro": "499", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-carbon-optimizer", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-carbon-optimizer",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "AI Carbon Footprint Optimizer",
+    "is_featured": true
+  },
+  {
+    "id": "ai-knowledge-graph-search-deep",
+    "title": "AI Knowledge Graph Search Engine",
+    "description": "Deep semantic search across structured + unstructured corporate knowledge: auto-builds a navigable knowledge graph from Confluence, Slack, Drive, Jira, and CRM; facet navigation, path-finding between related entities, and answer synthesis with cited sources.",
+    "icon": "🔍",
+    "features": ["Auto-ingest: Confluence, Slack, Drive, Jira, Notion, SharePoint", "Auto-built navigable knowledge graph with entity recognition", "Faceted navigation + path finder (A→B shortest path through relations)", "Answer synthesis with inline citations + source confidence scores", "On-prem AIR-gapped deployment option for public-sector / PHI"],
+    "benefits": ["Answer how-do-I type queries in seconds that previously took hours of searching", "Eliminate 40-70% of repeated support tickets by surfacing canonical answers", "Build a living knowledge graph without manual taxonomy work"],
+    "pricing": {"basic": "249", "pro": "849", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-knowledge-graph-search-deep", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-knowledge-graph-search-deep",
+    "category": "ai",
+    "popular": true,
+     "nav_name": "AI Knowledge Graph Search Engine",
+    "is_featured": true
+  }
+]

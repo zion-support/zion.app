@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Jest quarantine list",
+  "type": "object",
+  "properties": {
+    "paths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Test file paths (relative) to skip in default CI run"
+    }
+  },
+  "required": ["paths"]
+}

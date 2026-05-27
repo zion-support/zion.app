@@ -1,0 +1,97 @@
+name: AI GitHub workflow integrity audit (daily)
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ai-github-workflow-integrity-audit-daily
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run workflow integrity auditor
+        run: node automation/github-workflow-integrity-auditor.cjs --no-fail
+
+      - name: Compute workflow trust score
+        run: node automation/workflow-trust-score.cjs
+
+      - name: Build issue body
+        run: |
+          set -euo pipefail
+          node -e "const fs=require('fs');const p='automation/reports/github-workflow-integrity-audit-latest.json';const j=JSON.parse(fs.readFileSync(p,'utf8'));const lines=['## GitHub workflow integrity audit','','- status: **'+j.status+'**','- workflowCount: '+j.workflowCount,'- findings: '+j.counts.totalFindings,''];for(const f of (j.findings||[]).slice(0,20)){lines.push('- ['+f.severity+'] '+f.type+' '+(f.file||f.name||'')+' '+(f.detail||''));}fs.writeFileSync('automation/reports/github-workflow-integrity-audit-body.md',lines.join('\n')+'\n');"
+
+      - name: Escalate integrity issue when degraded
+        if: ${{ hashFiles('automation/reports/github-workflow-integrity-audit-latest.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          status=$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('automation/reports/github-workflow-integrity-audit-latest.json','utf8'));process.stdout.write(String(j.status||'healthy'));")
+          if [ "$status" = "healthy" ]; then
+            ISSUE_FINGERPRINT="github-workflow-integrity-audit" \
+            CLOSE_COMMENT="Auto-closing: GitHub workflow integrity audit recovered to healthy." \
+            node scripts/automation/gh-issue-close-on-recovery.cjs
+          else
+            export ISSUE_TITLE="GitHub workflow integrity drift detected"
+            export ISSUE_BODY_FILE="automation/reports/github-workflow-integrity-audit-body.md"
+            export ISSUE_FINGERPRINT="github-workflow-integrity-audit"
+            export ISSUE_LABELS="bug,automation,automation-slo-warning"
+            export COOLDOWN_HOURS="24"
+            node scripts/automation/gh-issue-dedupe-or-create.cjs
+          fi
+
+      - name: Upload integrity artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: github-workflow-integrity-audit-${{ github.run_id }}
+          path: |
+            automation/reports/github-workflow-integrity-audit-latest.json
+            automation/reports/github-workflow-integrity-audit-body.md
+            automation/reports/workflow-trust-score-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Commit integrity report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/github-workflow-integrity-audit-latest.json
+          if [ -f automation/reports/workflow-trust-score-latest.json ]; then
+            git add -f automation/reports/workflow-trust-score-latest.json
+          fi
+          if git diff --staged --quiet; then
+            echo "No workflow integrity report changes."
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): refresh workflow integrity audit"

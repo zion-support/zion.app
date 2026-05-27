@@ -1,0 +1,43 @@
+name: Workflow YAML sanity
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/**/*.yml"
+      - ".github/workflows/**/*.yaml"
+      - ".github/workflows/reusable-workflow-ci.yml"
+      - "scripts/automation/parse-github-workflows-yaml.rb"
+      - "scripts/automation/run-workflow-grep-guards.sh"
+      - "scripts/automation/commit-and-push-main.sh"
+      - "scripts/automation/push-main-with-retry.sh"
+      - "scripts/automation/check-merge-conflict-markers.cjs"
+      - "scripts/automation/check-package-script-duplicates.cjs"
+      - "automation/audit-push-helper-adoption.cjs"
+      - "package.json"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/**/*.yml"
+      - ".github/workflows/**/*.yaml"
+      - ".github/workflows/reusable-workflow-ci.yml"
+      - "scripts/automation/parse-github-workflows-yaml.rb"
+      - "scripts/automation/run-workflow-grep-guards.sh"
+      - "scripts/automation/commit-and-push-main.sh"
+      - "scripts/automation/push-main-with-retry.sh"
+      - "scripts/automation/check-merge-conflict-markers.cjs"
+      - "scripts/automation/check-package-script-duplicates.cjs"
+      - "automation/audit-push-helper-adoption.cjs"
+      - "package.json"
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-yaml-sanity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    uses: ./.github/workflows/reusable-workflow-ci.yml
+    timeout-minutes: 14

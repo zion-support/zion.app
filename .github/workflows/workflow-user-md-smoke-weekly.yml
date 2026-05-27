@@ -1,0 +1,35 @@
+# Ensures USER.md keeps owner context and standing mandate text (grep-only).
+
+name: USER.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '7 8 * * 3' # Wednesdays 08:07 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-user-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  user:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: USER.md standing mandate anchors
+        run: |
+          set -euo pipefail
+          test -f USER.md
+          test -s USER.md
+          grep -Fq '# USER.md - Sobre Kleber' USER.md
+          grep -Fq 'Standing mandate' USER.md
+          grep -Fq 'no secrets in git' USER.md
+          grep -Fq 'AGENTS.md' USER.md
+          grep -Fq 'CTO-OPERATING-PHILOSOPHY.md' USER.md
+          echo 'ok: USER.md'

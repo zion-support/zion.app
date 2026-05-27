@@ -1,0 +1,34 @@
+# Ensures MEMORY.md keeps curated log shape and continuity cross-links (grep-only).
+
+name: MEMORY.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '13 8 * * 6' # Saturdays 08:13 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-memory-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  memory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: MEMORY.md log + continuity anchors
+        run: |
+          set -euo pipefail
+          test -f MEMORY.md
+          test -s MEMORY.md
+          grep -Fq '- [System]' MEMORY.md
+          grep -Fq 'SOUL/HEARTBEAT/MEMORY' MEMORY.md
+          grep -Fq '`USER.md`' MEMORY.md
+          grep -Fq '`AGENTS.md`' MEMORY.md
+          echo 'ok: MEMORY.md'

@@ -1,0 +1,84 @@
+name: AI PM2 Restart Guardian
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-pm2-restart-guardian
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '20 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  restart-guardian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run PM2 restart guardian (one-shot)
+        run: PM2_GUARD_RUN_ONCE=1 PM2_AUTO_HEAL=false node automation/ai-pm2-restart-guardian.cjs
+
+      - name: Upload PM2 restart guardian report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: pm2-restart-guardian-${{ github.run_id }}
+          path: |
+            automation/reports/pm2-restart-guardian-latest.json
+            automation/reports/pm2-restart-guardian-history.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open issue when unhealthy PM2 apps are detected
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          source scripts/automation/gh-issue-cooldown.sh
+          export COOLDOWN_HOURS=$(gh_issue_cooldown_hours_from_registry)
+          report="automation/reports/pm2-restart-guardian-latest.json"
+          [ -f "$report" ] || exit 0
+          unhealthy_count=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.unhealthyCount||0))")
+          if [ "$unhealthy_count" = "0" ]; then
+            echo "No PM2 restart-guardian alerts."
+            export ISSUE_FINGERPRINT="pm2-restart-guardian-alert"
+            export CLOSE_COMMENT="Auto-closing: PM2 restart guardian is healthy in latest run."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="$(mktemp)"
+          {
+            echo "## PM2 restart guardian alert"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Unhealthy app count: ${unhealthy_count}"
+            echo ""
+            echo "### Unhealthy apps"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.unhealthy||[])){console.log('- `'+item.name+'` ('+item.reasons.join('; ')+')')}"
+            echo ""
+            echo "Review PM2 process status and restart logs for the listed apps."
+          } > "$body_file"
+          export ISSUE_TITLE="PM2 restart guardian alert"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABEL="bug"
+          export ISSUE_FINGERPRINT="pm2-restart-guardian-alert"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+          rm -f "$body_file"

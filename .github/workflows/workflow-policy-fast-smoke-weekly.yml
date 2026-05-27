@@ -1,0 +1,26 @@
+# Ruby-free weekly smoke: setup-node + npm ci + runs-on policy in one run (no pin/permissions/push).
+
+name: Workflow policy fast smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '12 7 * * 4' # Thursdays 07:12 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-policy-fast-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  policy-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Policy fast guards (setup-node + npm-ci + runs-on)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --policy-fast

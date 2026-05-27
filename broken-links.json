@@ -1,0 +1,14 @@
+[
+  {
+    "file": "tools/ssl-checker/page.tsx",
+    "link": "/services/ai-compliance"
+  },
+  {
+    "file": "tools/port-scanner/page.tsx",
+    "link": "/services/ai-compliance"
+  },
+  {
+    "file": "components/Footer.tsx",
+    "link": "/sitemap.xml"
+  }
+]

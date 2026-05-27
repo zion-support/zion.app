@@ -1,0 +1,77 @@
+# AI Navigation & Pages Audit
+# Runs full nav audit + site link audit + industry discovery + homepage sync.
+# Schedule: Weekly Thursday 9:30 AM UTC (after nav improvement)
+# Manual: workflow_dispatch with create_pages to create missing pages via LLM.
+#
+# Setup: OPENROUTER_API_KEY for LLM suggestions and page creation.
+
+name: AI Navigation & Pages Audit
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '30 9 * * 4'
+  workflow_dispatch:
+    inputs:
+      create_pages:
+        description: 'Create missing pages via industry discovery + site link audit'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: ai-navigation-pages-audit
+  cancel-in-progress: false
+
+jobs:
+  nav-pages-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run navigation & pages audit
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.create_pages }}" = "true" ]; then
+            npm run nav:pages:audit-create
+          else
+            npm run nav:pages:audit
+          fi
+      - name: Upload reports
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: nav-pages-reports
+          path: |
+            automation/reports/navigation-audit-latest.json
+            automation/reports/site-link-audit-latest.json
+            automation/reports/navigation-pages-audit-latest.json
+            automation/reports/industry-solution-discovery-latest.json
+            automation/reports/homepage-industry-sync-latest.json
+          if-no-files-found: ignore
+      - name: Commit and push navigation/page fixes
+        if: success() && (github.event_name == 'schedule' || github.event.inputs.create_pages == 'true')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            exit 0
+          fi
+          git add -A
+          bash scripts/automation/commit-and-push-main.sh "chore(nav): navigation & pages audit auto-fixes"

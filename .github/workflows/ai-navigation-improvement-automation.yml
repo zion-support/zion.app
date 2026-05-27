@@ -1,0 +1,60 @@
+# AI Navigation Improvement Automation
+# Audits ziontechgroup.com navigation + site links with OpenRouter LLM suggestions.
+# Runs: Weekly Thursday 9 AM UTC, or workflow_dispatch
+#
+# Setup: Add OPENROUTER_API_KEY to repo secrets for LLM suggestions.
+
+name: AI Navigation Improvement Automation
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 9 * * 4'
+  workflow_dispatch:
+    inputs:
+      create_pages:
+        description: 'Create missing pages via OpenRouter'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  nav-improve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run navigation & pages audit
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.create_pages }}" = "true" ]; then
+            npm run nav:pages:audit-create
+          else
+            npm run nav:pages:audit
+          fi
+
+      - name: Upload reports
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: nav-pages-reports
+          path: |
+            automation/reports/navigation-audit-latest.json
+            automation/reports/navigation-improvement-audit-latest.json
+            automation/reports/site-link-audit-latest.json
+            automation/reports/navigation-pages-audit-latest.json
+          if-no-files-found: ignore

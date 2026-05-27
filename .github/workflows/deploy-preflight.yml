@@ -1,0 +1,69 @@
+name: Deploy Preflight
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      trigger_deploy:
+        description: 'Trigger deploy (GitHub Pages)'
+        required: false
+        default: false
+        type: boolean
+      site_link_audit:
+        description: 'Run site link audit before deploy'
+        required: false
+        default: true
+        type: boolean
+      deploy_readiness:
+        description: 'Run deployment readiness check (blocks deploy if not ready)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Lint
+        run: npm run lint:check
+      - name: Type check
+        run: npm run type-check
+      - name: Navigation audit (quick scan)
+        run: npm run nav:audit-scan
+      - name: Build (strict preflight)
+        run: npm run build:check
+      - name: Verify build output
+        run: |
+          if [ -d "dist" ]; then
+            echo "Build output: dist ($(find dist -name '*.html' | wc -l) pages)"
+          elif [ -d "out" ]; then
+            echo "Build output: out ($(find out -name '*.html' | wc -l) pages)"
+          else
+            echo "::error::Build output not found (expected dist or out)"
+            exit 1
+          fi
+      - name: Site link audit (validate no broken links)
+        if: github.event.inputs.site_link_audit != 'false'
+        run: npm run site:links:validate
+      - name: Deployment readiness check
+        if: github.event.inputs.trigger_deploy == 'true' && github.event.inputs.deploy_readiness != 'false'
+        run: npm run deploy:readiness
+      - name: Trigger deploy (was Netlify, now skipped)
+        if: false
+        run: |
+          echo "Deploy step skipped — Netlify retired, use GitHub Pages via deploy-on-push.yml"

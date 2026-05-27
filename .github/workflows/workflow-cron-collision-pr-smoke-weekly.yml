@@ -1,0 +1,33 @@
+# Ensures workflow-cron-collision-pr.yml keeps path triggers + tuner + artifact wiring (grep-only).
+name: workflow cron collision PR smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '56 9 * * 4' # Thursdays 09:56 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-cron-collision-pr-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  cron-collision-pr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-cron-collision-pr.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-cron-collision-pr.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow cron collision report (PR / main)' "$f"
+          grep -Fq '.github/workflows/**' "$f"
+          grep -Fq 'ai-cron-collision-tuner.cjs' "$f"
+          grep -Fq 'group: workflow-cron-collision-pr-' "$f"
+          grep -Fq 'github.ref' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          grep -Fq 'cron-collision-pr-' "$f"
+          grep -Fq 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' "$f"
+          echo "ok: $f"
