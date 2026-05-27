@@ -1,13 +1,16 @@
 {
-  "generated": "2026-05-27T19:44:16.267Z",
-  "count": 662,
+  "generated": "2026-05-27T20:33:23.143Z",
+  "count": 737,
   "categories": {
     "ai": 333,
     "it": 125,
-    "data": 39,
+    "data": 54,
     "cloud": 69,
-    "security": 51,
-    "automation": 45
+    "security": 66,
+    "automation": 45,
+    "devops": 15,
+    "blockchain": 15,
+    "iot": 15
   },
   "services": [
     {
@@ -8289,6 +8292,396 @@
       "source": "json"
     },
     {
+      "id": "blockchain-blockchain-supply-chain",
+      "title": "Blockchain Supply Chain Tracking",
+      "description": "Track products from origin to consumer with immutable blockchain records. Provenance, authenticity, and compliance.",
+      "category": "blockchain",
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Immutable product provenance",
+        "QR code and NFC scanning",
+        "Temperature and condition monitoring",
+        "Compliance documentation",
+        "Consumer-facing verification",
+        "Integration with ERP systems"
+      ],
+      "benefits": [
+        "Prove product authenticity",
+        "End-to-end traceability",
+        "Consumer trust and verification",
+        "Compliance-ready documentation"
+      ],
+      "href": "/services/blockchain-blockchain-supply-chain",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-cross-chain-bridge",
+      "title": "Cross-Chain Bridge Development",
+      "description": "Enable asset and data transfer between blockchains. Secure bridge with fraud detection and liquidity management.",
+      "category": "blockchain",
+      "basic": "$1,999/mo",
+      "pro": "$5,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-chain asset transfer",
+        "Fraud detection and rate limiting",
+        "Liquidity pool management",
+        "Validator consensus mechanism",
+        "Real-time monitoring and alerts",
+        "Insurance fund mechanisms"
+      ],
+      "benefits": [
+        "Connect any two blockchains",
+        "Secure transfer with fraud detection",
+        "Automated liquidity management",
+        "Real-time monitoring"
+      ],
+      "href": "/services/blockchain-cross-chain-bridge",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-crypto-payment-gateway",
+      "title": "Cryptocurrency Payment Gateway",
+      "description": "Accept crypto payments in your store or app. Auto-conversion to fiat, multi-chain support, and compliant.",
+      "category": "blockchain",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Accept BTC ETH USDC and 50+ more",
+        "Auto-convert to fiat optional",
+        "Blockchain confirmation tracking",
+        "Invoice and checkout integration",
+        "Compliance and tax reporting",
+        "Woocommerce Shopify integration"
+      ],
+      "benefits": [
+        "Accept 50+ cryptocurrencies",
+        "Auto-convert to avoid volatility",
+        "Compliance-ready reporting",
+        "Easy e-commerce integration"
+      ],
+      "href": "/services/blockchain-crypto-payment-gateway",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-cryptocurrency-wallet",
+      "title": "Cryptocurrency Wallet Development",
+      "description": "Secure multi-chain crypto wallet with DeFi integration, NFT support, and institutional-grade security.",
+      "category": "blockchain",
+      "basic": "$999/mo",
+      "pro": "$2,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-chain support BTC/ETH/SOL",
+        "DeFi protocol integration",
+        "NFT display and management",
+        "Hardware wallet support",
+        "Biometric authentication",
+        "Transaction simulation"
+      ],
+      "benefits": [
+        "Secure multi-chain wallet",
+        "Institutional-grade security",
+        "Native DeFi integration",
+        "NFT management built-in"
+      ],
+      "href": "/services/blockchain-cryptocurrency-wallet",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-dao-governance-platform",
+      "title": "DAO Governance Platform",
+      "description": "Build decentralized governance for your community. Voting, proposals, treasury management, and delegation.",
+      "category": "blockchain",
+      "basic": "$799/mo",
+      "pro": "$1,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "On-chain and off-chain voting",
+        "Token-weighted and quadratic",
+        "Proposal lifecycle management",
+        "Treasury multisig management",
+        "Delegation and voting rights",
+        "Governance analytics"
+      ],
+      "benefits": [
+        "Professional DAO governance",
+        "Flexible voting mechanisms",
+        "Transparent treasury",
+        "Community engagement tools"
+      ],
+      "href": "/services/blockchain-dao-governance-platform",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-defi-protocol-development",
+      "title": "DeFi Protocol Development",
+      "description": "Design and build DeFi protocols: DEX, lending, yield farming, staking, and liquidations. Secure and auditized.",
+      "category": "blockchain",
+      "basic": "$2,499/mo",
+      "pro": "$6,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Automated Market Maker AMM",
+        "Lending and borrowing",
+        "Yield farming and staking",
+        "Liquidation engine",
+        "Oracle integration Chainlink",
+        "Flash loan protection"
+      ],
+      "benefits": [
+        "Launch DeFi products securely",
+        "Battle-tested patterns",
+        "Oracle-integrated pricing",
+        "Flash loan attack protection"
+      ],
+      "href": "/services/blockchain-defi-protocol-development",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-metaverse-development",
+      "title": "Metaverse and Virtual World Development",
+      "description": "Build immersive virtual worlds for events, commerce, and social interaction. VR, AR, and web-based 3D.",
+      "category": "blockchain",
+      "basic": "$1,299/mo",
+      "pro": "$3,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "3D world builder",
+        "Avatar customization",
+        "Spatial voice chat",
+        "Virtual commerce and NFTs",
+        "VR and AR support",
+        "Cross-platform web/mobile/VR"
+      ],
+      "benefits": [
+        "Launch virtual experiences",
+        "Monetize with virtual commerce",
+        "Cross-platform reach",
+        "Immersive brand experiences"
+      ],
+      "href": "/services/blockchain-metaverse-development",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-nft-marketplace-dev",
+      "title": "NFT Marketplace Development",
+      "description": "Build a custom NFT marketplace with minting, auctions, royalties, and multi-chain support. OpenSea alternative.",
+      "category": "blockchain",
+      "basic": "$1,499/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Multi-chainEthereum/Polygon/Solana",
+        "Minting and lazy minting",
+        "English and Dutch auctions",
+        "Creator royalty enforcement",
+        "User wallet integration",
+        "Admin dashboard and analytics"
+      ],
+      "benefits": [
+        "Launch your own NFT marketplace",
+        "Multi-chain from day one",
+        "Creator royalty protection",
+        "Custom branding and UX"
+      ],
+      "href": "/services/blockchain-nft-marketplace-dev",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-oracle-integration",
+      "title": "Blockchain Oracle Integration",
+      "description": "Connect smart contracts to real-world data with Chainlink, Band, or custom oracle solutions.",
+      "category": "blockchain",
+      "basic": "$449/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Chainlink price feeds",
+        "Custom oracle development",
+        "Off-chain computation",
+        "Verifiable randomness VRF",
+        "Cross-chain messaging CCIP",
+        "Keepers for automation"
+      ],
+      "benefits": [
+        "Real reliable off-chain data",
+        "Verifiable random numbers",
+        "Cross-chain communication",
+        "Automated smart contract triggers"
+      ],
+      "href": "/services/blockchain-oracle-integration",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-security-token-platform",
+      "title": "Security Token Offering (STO) Platform",
+      "description": "Issue and manage security tokens that comply with SEC, MiFID, and other regulatory frameworks.",
+      "category": "blockchain",
+      "basic": "$2,499/mo",
+      "pro": "$7,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Regulatory compliance engine",
+        "Investor accreditation verification",
+        "KYC/AML integration",
+        "Dividend and distribution automation",
+        "Secondary trading support",
+        "Investor dashboard and reporting"
+      ],
+      "benefits": [
+        "Compliant tokenized securities",
+        "Automated distribution",
+        "Global investor access",
+        "Regulatory-ready from day one"
+      ],
+      "href": "/services/blockchain-security-token-platform",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-smart-contract-auditing",
+      "title": "Smart Contract Security Audit",
+      "description": "Comprehensive smart contract security review. Manual code review plus automated scanning for DeFi, NFT, and DAO contracts.",
+      "category": "blockchain",
+      "basic": "$2,999/mo",
+      "pro": "$7,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Manual code review by experts",
+        "Automated vulnerability scanning",
+        "Gas optimization analysis",
+        "Economic attack simulation",
+        "Compliance checking",
+        "Detailed remediation report"
+      ],
+      "benefits": [
+        "Prevent costly exploits",
+        "Optimize gas costs 30%",
+        "Economic attack testing",
+        "Audit-ready documentation"
+      ],
+      "href": "/services/blockchain-smart-contract-auditing",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-token-creation-launch",
+      "title": "Token Creation and Launch Service",
+      "description": "Create and launch your token: utility, governance, or security token. Full compliance and marketing support.",
+      "category": "blockchain",
+      "basic": "$1,999/mo",
+      "pro": "$4,999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "ERC-20/BEP-20/SPL token creation",
+        "Tokenomics design and modeling",
+        "Fair launch mechanics",
+        "Liquidity pool setup",
+        "Regulatory compliance review",
+        "Launch strategy and marketing"
+      ],
+      "benefits": [
+        "Launch a compliant token",
+        "Professional tokenomics",
+        "Fair launch mechanisms",
+        "Regulatory guidance"
+      ],
+      "href": "/services/blockchain-token-creation-launch",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-token-gating",
+      "title": "Token-Gating and Access Control",
+      "description": "Restrict access to content, features, or events based on token ownership. Web3 membership and loyalty.",
+      "category": "blockchain",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Token-gated content access",
+        "Dynamic NFT memberships",
+        "Tiered access levels",
+        "Integration with Shopify and Discord",
+        "Analytics on token holder engagement",
+        "Automated access management"
+      ],
+      "benefits": [
+        "Monetize exclusive content",
+        "Build token-holder communities",
+        "Dynamic membership benefits",
+        "Automated access control"
+      ],
+      "href": "/services/blockchain-token-gating",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-web3-analytics",
+      "title": "Web3 and Blockchain Analytics",
+      "description": "Track and analyze on-chain activity. Wallet tracking, DeFi analytics, NFT marketplace intelligence.",
+      "category": "blockchain",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Wallet activity tracking",
+        "DeFi protocol analytics",
+        "NFT marketplace intelligence",
+        "Whale and smart money alerts",
+        "Risk scoring for addresses",
+        "Custom dashboards and API"
+      ],
+      "benefits": [
+        "Track any wallet or protocol",
+        "Smart money movement alerts",
+        "Risk assessment for DeFi",
+        "Competitive NFT intelligence"
+      ],
+      "href": "/services/blockchain-web3-analytics",
+      "source": "json"
+    },
+    {
+      "id": "blockchain-web3-authentication",
+      "title": "Web3 Authentication and Identity",
+      "description": "Blockchain-based authentication and decentralized identity. Replace passwords with wallet sign-in.",
+      "category": "blockchain",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Wallet-based sign-in SIWE",
+        "Decentralized identity DID",
+        "Credential verification",
+        "Session management",
+        "Multi-chain wallet support",
+        "Compatible with Web3Auth"
+      ],
+      "benefits": [
+        "Passwordless authentication",
+        "Decentralized identity control",
+        "Multi-chain wallet support",
+        "Improved security"
+      ],
+      "href": "/services/blockchain-web3-authentication",
+      "source": "json"
+    },
+    {
       "id": "bpa-process-analysis",
       "title": "Business Process Analysis (BPA)",
       "description": "Process discovery + event log mining, variant discovery, bottleneck detection, automation opportunity scoring. Output: BPMN design + automation ROI per task.",
@@ -9411,6 +9804,32 @@
       "source": "json"
     },
     {
+      "id": "data-advanced-analytics-r",
+      "title": "Advanced Analytics with R and Python service.",
+      "description": "Statistical modeling, machine learning, and advanced analytics using R, Python, and Jupyter. For teams without data scientists.",
+      "category": "data",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Jupyter notebooks as a service",
+        "R and Python model deployment",
+        "Statistical modeling support",
+        "AutoML for common use cases",
+        "Scheduled model execution",
+        "Result dashboards"
+      ],
+      "benefits": [
+        "Advanced analytics without data scientists",
+        "Deploy R/Python models easily",
+        "Automated machine learning",
+        "Scheduled recurring models"
+      ],
+      "href": "/services/data-advanced-analytics-r",
+      "source": "json"
+    },
+    {
       "id": "data-analytics-engineering-platform",
       "title": "Analytics Engineering Platform",
       "description": "dbt core orchestration, lineage graph, semantic layer, freshness SLAs, and an in-browser model explorer for SQL analysts.",
@@ -9432,6 +9851,32 @@
         "Analysts self-serve without data-eng on-call"
       ],
       "href": "/services/data-analytics-engineering-platform",
+      "source": "json"
+    },
+    {
+      "id": "data-business-intelligence-platform",
+      "title": "Business Intelligence Platform",
+      "description": "Self-service BI with drag-and-drop dashboards, SQL editor, and 100+ data source connections. Power BI and Tableau alternative.",
+      "category": "data",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Drag-and-drop dashboard builder",
+        "SQL editor with autocomplete",
+        "100+ data source connectors",
+        "Real-time data refresh",
+        "Row-level security",
+        "Embedded analytics for your app"
+      ],
+      "benefits": [
+        "Self-service analytics for everyone",
+        "Connect any data source",
+        "Real-time dashboards",
+        "Embed analytics in your product"
+      ],
+      "href": "/services/data-business-intelligence-platform",
       "source": "json"
     },
     {
@@ -9460,6 +9905,136 @@
       "source": "json"
     },
     {
+      "id": "data-customer-data-platform",
+      "title": "Customer Data Platform (CDP)",
+      "description": "Unify customer data from all sources into a single profile. Segmentation, activation, and privacy compliance.",
+      "category": "data",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Cross-channel identity resolution",
+        "Real-time segmentation",
+        "Audience activation to 50+ destinations",
+        "Privacy and consent management",
+        "Customer 360-degree view",
+        "Predictive customer scoring"
+      ],
+      "benefits": [
+        "Single customer view across channels",
+        "Activate segments in real-time",
+        "Privacy-compliant by design",
+        "Increase LTV with personalization"
+      ],
+      "href": "/services/data-customer-data-platform",
+      "source": "json"
+    },
+    {
+      "id": "data-data-governance-platform",
+      "title": "Data Governance and Catalog",
+      "description": "Discover, catalog, and govern all organizational data. Data quality, lineage, access policies, and compliance.",
+      "category": "data",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Automated data catalog",
+        "Data lineage tracking",
+        "Quality rules and monitoring",
+        "Access policy automation",
+        "PII detection and masking",
+        "Compliance reporting"
+      ],
+      "benefits": [
+        "Know what data you have",
+        "Automated data quality",
+        "Compliance-ready governance",
+        "Data lineage for audits"
+      ],
+      "href": "/services/data-data-governance-platform",
+      "source": "json"
+    },
+    {
+      "id": "data-data-marketplace",
+      "title": "Internal Data Marketplace",
+      "description": "A self-service marketplace where teams discover, request, and share datasets. Data as a product.",
+      "category": "data",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Self-service data discovery",
+        "Request access workflows",
+        "Data quality ratings",
+        "Usage analytics",
+        "Publisher and consumer roles",
+        "Automated provisioning"
+      ],
+      "benefits": [
+        "Democratize data access",
+        "Reduce data request time 90%",
+        "Anyone can publish datasets",
+        "Track data usage"
+      ],
+      "href": "/services/data-data-marketplace",
+      "source": "json"
+    },
+    {
+      "id": "data-data-migration-service",
+      "title": "Data Migration Service",
+      "description": "Migrate data between systems with zero data loss. CRM migrations, database migrations, and cloud data transfers.",
+      "category": "data",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Source-to-target mapping",
+        "Data transformation and cleansing",
+        "Validation and reconciliation",
+        "Zero-downtime cutover",
+        "Rollback planning",
+        "Post-migration validation"
+      ],
+      "benefits": [
+        "Zero data loss migration",
+        "Automated transformation",
+        "Reconciliation testing",
+        "Rollback capability"
+      ],
+      "href": "/services/data-data-migration-service",
+      "source": "json"
+    },
+    {
+      "id": "data-data-quality-service",
+      "title": "Data Quality as a Service",
+      "description": "Continuous data quality monitoring, validation, and remediation. Trust your data again.",
+      "category": "data",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Automated quality rule detection",
+        "Data profiling and statistics",
+        "Anomaly detection on data",
+        "Remediation workflows",
+        "Quality score dashboards",
+        "SLA monitoring for data"
+      ],
+      "benefits": [
+        "Trust your data quality",
+        "Catch data issues before reports",
+        "Automated quality monitoring",
+        "Data quality SLAs"
+      ],
+      "href": "/services/data-data-quality-service",
+      "source": "json"
+    },
+    {
       "id": "data-data-reconciliation-engine",
       "title": "Data Reconciliation Engine",
       "description": "Automated record matching across source-of-truth systems with fuzzy/phonetic/ML matching and a reconciliation dispute UI.",
@@ -9484,6 +10059,32 @@
       "source": "json"
     },
     {
+      "id": "data-data-warehouse-modern",
+      "title": "Modern Data Warehouse Setup",
+      "description": "Build a cloud data warehouse with Snowflake, BigQuery, or Redshift. Schema design, ETL, optimization, and cost controls.",
+      "category": "data",
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Snowflake/BigQuery/Redshift",
+        "Schema design and optimization",
+        "ETL/ELT pipeline setup",
+        "Cost monitoring and controls",
+        "Data governance and catalog",
+        "Performance optimization"
+      ],
+      "benefits": [
+        "Centralized analytics data",
+        "Optimized for performance and cost",
+        "Self-service for analysts",
+        "Governed and cataloged"
+      ],
+      "href": "/services/data-data-warehouse-modern",
+      "source": "json"
+    },
+    {
       "id": "data-document-vector-search",
       "title": "Document Intelligence + Vector Search",
       "description": "Chunk embed store in vector DB; hybrid BM25 + dense retrieval; semantic reranking; per-tenant document isolation.",
@@ -9505,6 +10106,32 @@
         "Build a RAG/QA pipeline in days"
       ],
       "href": "/services/data-document-vector-search",
+      "source": "json"
+    },
+    {
+      "id": "data-embedded-analytics",
+      "title": "Embedded Analytics for SaaS",
+      "description": "White-label analytics you embed in your own product. Charts, dashboards, and self-service analytics for your customers.",
+      "category": "data",
+      "basic": "$349/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "White-label embeddable charts",
+        "Self-service customer dashboards",
+        "Multi-tenant data isolation",
+        "API-first architecture",
+        "Custom theming and branding",
+        "Usage-based billing support"
+      ],
+      "benefits": [
+        "Add analytics to your product",
+        "White-label and fully customizable",
+        "Multi-tenant by design",
+        "Usage-based pricing support"
+      ],
+      "href": "/services/data-embedded-analytics",
       "source": "json"
     },
     {
@@ -9578,6 +10205,32 @@
         "Feature governance = compliant ML"
       ],
       "href": "/services/data-feature-store-platform",
+      "source": "json"
+    },
+    {
+      "id": "data-geospatial-analytics",
+      "title": "Geospatial Analytics and Mapping",
+      "description": "Location intelligence: geocoding, spatial analysis, route optimization, and interactive maps for business decisions.",
+      "category": "data",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Geocoding and reverse geocoding",
+        "Spatial clustering analysis",
+        "Route optimization",
+        "Interactive map visualizations",
+        "Trade area analysis",
+        "Location-based recommendations"
+      ],
+      "benefits": [
+        "Optimize with location intelligence",
+        "Route optimization saves 20% fuel",
+        "Understand geographic patterns",
+        "Interactive maps for dashboards"
+      ],
+      "href": "/services/data-geospatial-analytics",
       "source": "json"
     },
     {
@@ -9751,6 +10404,32 @@
       "source": "json"
     },
     {
+      "id": "data-lakehouse-architecture",
+      "title": "Lakehouse Architecture Design",
+      "description": "Design and implement a lakehouse architecture combining data lake flexibility with data warehouse performance.",
+      "category": "data",
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Delta Lake/Iceberg/Hudi setup",
+        "Unified batch and streaming",
+        "Schema enforcement and evolution",
+        "Time travel and versioning",
+        "Cost-optimized storage layers",
+        "Governance and access control"
+      ],
+      "benefits": [
+        "Best of data lakes and warehouses",
+        "Unified analytics platform",
+        "Cost-optimized storage",
+        "Full governance and lineage"
+      ],
+      "href": "/services/data-lakehouse-architecture",
+      "source": "json"
+    },
+    {
       "id": "data-log-analytics-platform",
       "title": "Log Analytics & SIP Platform",
       "description": "Petabyte-scale log ingestion, structured parsing, Grafana/Loki/Tempo correlation, and retention tiered hot/warm/cold.",
@@ -9772,6 +10451,32 @@
         "Pay-per-GB ingested, no cluster overhead"
       ],
       "href": "/services/data-log-analytics-platform",
+      "source": "json"
+    },
+    {
+      "id": "data-master-data-management",
+      "title": "Master Data Management (MDM)",
+      "description": "Create a single source of truth for customers, products, suppliers, and locations. Golden records and deduplication.",
+      "category": "data",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Golden record creation",
+        "Automated deduplication",
+        "Hierarchical management",
+        "Data stewards workflow",
+        "Real-time synchronization",
+        "Data quality scoring"
+      ],
+      "benefits": [
+        "One source of truth for all data",
+        "Eliminate duplicate records",
+        "Automated data quality",
+        "Real-time sync to all systems"
+      ],
+      "href": "/services/data-master-data-management",
       "source": "json"
     },
     {
@@ -9896,6 +10601,32 @@
       "source": "json"
     },
     {
+      "id": "data-real-time-analytics",
+      "title": "Real-Time Streaming Analytics",
+      "description": "Process and analyze data in real-time. Kafka, Flink, and Kinesis for sub-second analytics on streaming data.",
+      "category": "data",
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Apache Kafka/Flink setup",
+        "Real-time dashboards",
+        "Streaming data quality",
+        "Event-driven architecture",
+        "Sub-second latency analytics",
+        "Anomaly detection on streams"
+      ],
+      "benefits": [
+        "React to events in real-time",
+        "Sub-second analytics latency",
+        "Event-driven architecture",
+        "Quality at streaming scale"
+      ],
+      "href": "/services/data-real-time-analytics",
+      "source": "json"
+    },
+    {
       "id": "data-real-time-operational-analytics",
       "title": "Real-Time Operational Analytics",
       "description": "Sub-second analytics on operational DB change streams: CDC Kafka Flink aggregations → Superset/Metabase dashboards.",
@@ -9992,6 +10723,32 @@
       "source": "json"
     },
     {
+      "id": "data-reporting-automation",
+      "title": "Enterprise Reporting Automation",
+      "description": "Automate the creation, formatting, and distribution of operational reports. Excel, PDF, PowerPoint, and more.",
+      "category": "data",
+      "basic": "$249/mo",
+      "pro": "$649/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Multi-source data aggregation",
+        "Template-based report generation",
+        "Scheduled and trigger-based",
+        "Excel PDF PowerPoint output",
+        "Email and Slack distribution",
+        "Drill-down and self-service"
+      ],
+      "benefits": [
+        "Eliminate manual reports",
+        "Always up-to-date data",
+        "Distribute automatically",
+        "Self-service drill-down"
+      ],
+      "href": "/services/data-reporting-automation",
+      "source": "json"
+    },
+    {
       "id": "data-science-platform",
       "title": "Data Science Platform (Managed)",
       "description": "Managed data science on Kubernetes: MLflow tracking, model registry, managed feature store, KServe/Seldon inference, model CI/CD, GPU scheduling. Batch + real-time inference.",
@@ -10063,6 +10820,32 @@
         "CI/CD data pipeline: generate reproducible test data from production spec for integration and acceptance test suites"
       ],
       "href": "/services/data-synthetic-data-generator",
+      "source": "json"
+    },
+    {
+      "id": "data-text-analytics-nlp",
+      "title": "Text Analytics and NLP Service",
+      "description": "Extract insights from text: entity extraction, topic modeling, text classification, and search relevance.",
+      "category": "data",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Named entity recognition NER",
+        "Topic modeling and clustering",
+        "Text classification",
+        "Search relevance tuning",
+        "Multi-language support 20+",
+        "Custom model training"
+      ],
+      "benefits": [
+        "Extract structured data from text",
+        "Auto-classify support tickets",
+        "Improve search relevance",
+        "Insights from customer feedback"
+      ],
+      "href": "/services/data-text-analytics-nlp",
       "source": "json"
     },
     {
@@ -10165,6 +10948,58 @@
       "source": "json"
     },
     {
+      "id": "devops-api-gateway-management",
+      "title": "API Gateway and Management",
+      "description": "Design, deploy, and manage APIs with rate limiting, authentication, versioning, and analytics.",
+      "category": "devops",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "API design and documentation",
+        "Rate limiting and throttling",
+        "OAuth/JWT/API key auth",
+        "Usage analytics and monetization",
+        "Versioning and deprecation",
+        "Developer portal"
+      ],
+      "benefits": [
+        "Secure and scale any API",
+        "API monetization ready",
+        "Developer self-service portal",
+        "Full API lifecycle"
+      ],
+      "href": "/services/devops-api-gateway-management",
+      "source": "json"
+    },
+    {
+      "id": "devops-chaos-engineering",
+      "title": "Chaos Engineering and Resilience Testing",
+      "description": "Proactively find weaknesses before outages. Controlled chaos experiments to validate system resilience.",
+      "category": "devops",
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "GameDay planning and execution",
+        "Fault injection network/CPU/disk",
+        "Automated resilience scoring",
+        "Failure scenario library",
+        "Recovery time validation",
+        "Compliance resilience reporting"
+      ],
+      "benefits": [
+        "Find weaknesses before outages",
+        "Validate recovery procedures",
+        "Improve MTBF 3x",
+        "Meet resilience compliance"
+      ],
+      "href": "/services/devops-chaos-engineering",
+      "source": "json"
+    },
+    {
       "id": "devops-cicd",
       "title": "DevOps & CI/CD Automation",
       "description": "End-to-end CI/CD pipelines, container orchestration, GitOps workflows, and site reliability engineering.",
@@ -10187,6 +11022,32 @@
         "Self-healing infrastructure"
       ],
       "href": "/services/devops-cicd",
+      "source": "json"
+    },
+    {
+      "id": "devops-cicd-pipeline-builder",
+      "title": "CI/CD Pipeline Builder",
+      "description": "Automated build, test, and deployment pipelines for GitHub Actions, GitLab CI, and Jenkins. Configured and managed for your stack.",
+      "category": "devops",
+      "basic": "$199/mo",
+      "pro": "$549/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Visual pipeline editor",
+        "GitHub Actions/GitLab CI/Jenkins",
+        "Automated testing integration",
+        "Docker and K8s deployment",
+        "Rollback and canary releases",
+        "Pipeline analytics"
+      ],
+      "benefits": [
+        "Deploy 10x more frequently",
+        "Catch bugs before production",
+        "Zero-downtime deployments",
+        "Full pipeline visibility"
+      ],
+      "href": "/services/devops-cicd-pipeline-builder",
       "source": "json"
     },
     {
@@ -10213,6 +11074,136 @@
       "source": "json"
     },
     {
+      "id": "devops-container-orchestration",
+      "title": "Kubernetes and Container Orchestration",
+      "description": "Deploy, manage, and scale containerized applications. EKS, AKS, GKE, or self-managed Kubernetes clusters.",
+      "category": "devops",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Managed K8s (EKS/AKS/GKE)",
+        "Helm chart library",
+        "Auto-scaling HPA/VPA",
+        "Service mesh Istio/Linkerd",
+        "Prometheus/Grafana monitoring",
+        "Container security scanning"
+      ],
+      "benefits": [
+        "Scale applications automatically",
+        "99.99% uptime with self-healing",
+        "Reduce infrastructure costs 40%",
+        "Standardized deployments"
+      ],
+      "href": "/services/devops-container-orchestration",
+      "source": "json"
+    },
+    {
+      "id": "devops-cost-optimization",
+      "title": "Cloud Cost Optimization Service",
+      "description": "Continuous cloud cost monitoring, right-sizing, reserved instance management, and waste elimination.",
+      "category": "devops",
+      "basic": "$299/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Multi-cloud cost dashboard",
+        "Idle resource detection",
+        "Reserved instance planning",
+        "Rightsizing recommendations",
+        "Billing anomaly alerts",
+        "Monthly optimization reports"
+      ],
+      "benefits": [
+        "Reduce cloud costs 35% average",
+        "Eliminate wasted resources",
+        "Optimize reserved capacity",
+        "FinOps best practices"
+      ],
+      "href": "/services/devops-cost-optimization",
+      "source": "json"
+    },
+    {
+      "id": "devops-data-engineering-pipelines",
+      "title": "Data Engineering Pipeline Service",
+      "description": "Build and maintain data pipelines: ingestion, transformation, quality, and orchestration with dbt, Airflow, Spark.",
+      "category": "devops",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "dbt transformation orchestration",
+        "Airflow/Dagster pipeline management",
+        "Data quality testing framework",
+        "Schema evolution handling",
+        "Data lineage tracking",
+        "Modern data stack setup"
+      ],
+      "benefits": [
+        "Reliable data pipelines",
+        "Data quality guaranteed",
+        "Full lineage visibility",
+        "Scale elastically"
+      ],
+      "href": "/services/devops-data-engineering-pipelines",
+      "source": "json"
+    },
+    {
+      "id": "devops-database-ops",
+      "title": "Database Operations and Optimization",
+      "description": "Managed database ops: performance tuning, backup, replication, migration for PostgreSQL, MySQL, MongoDB, Redis.",
+      "category": "devops",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Performance tuning and query optimization",
+        "Automated backup and PITR",
+        "Read replica management",
+        "Schema migration automation",
+        "24/7 monitoring and alerting",
+        "Cross-cloud deployment"
+      ],
+      "benefits": [
+        "Optimize query performance 10x",
+        "Tested and verified backups",
+        "Scale reads with replication",
+        "Zero-downtime migrations"
+      ],
+      "href": "/services/devops-database-ops",
+      "source": "json"
+    },
+    {
+      "id": "devops-devsecops-security",
+      "title": "DevSecOps Security Pipeline",
+      "description": "Shift security left with automated scanning. SAST, DAST, SCA, and container scanning in your CI/CD.",
+      "category": "devops",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "SAST SonarQube/Semgrep",
+        "Snyk/Trivy container scanning",
+        "Dependency vulnerability scanning",
+        "Secret detection GitLeaks",
+        "Compliance as code",
+        "Security dashboard"
+      ],
+      "benefits": [
+        "Find vulnerabilities before production",
+        "Automated compliance checking",
+        "No manual security audits",
+        "Developer-friendly security"
+      ],
+      "href": "/services/devops-devsecops-security",
+      "source": "json"
+    },
+    {
       "id": "devops-gen-ai-ci-cd",
       "title": "Generative AI for DevOps & CI/CD",
       "description": "AI-powered DevOps: auto-generate CI/CD pipelines, infrastructure-as-code, deployment scripts, and incident runbooks from natural language specifications.",
@@ -10235,6 +11226,188 @@
         "Consistent infrastructure standards"
       ],
       "href": "/services/devops-gen-ai-ci-cd",
+      "source": "json"
+    },
+    {
+      "id": "devops-gitops-workflows",
+      "title": "GitOps Workflows and Automation",
+      "description": "Implement GitOps for infrastructure and application deployment. All changes via Git - auditable and reversible.",
+      "category": "devops",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "ArgoCD/Flux deployment",
+        "Git-based infrastructure management",
+        "Auto-sync from Git repos",
+        "Drift detection and correction",
+        "Multi-cluster management",
+        "RBAC and policy enforcement"
+      ],
+      "benefits": [
+        "All changes auditable via Git",
+        "Automatic drift correction",
+        "Multi-cluster from one repo",
+        "Developer-friendly workflows"
+      ],
+      "href": "/services/devops-gitops-workflows",
+      "source": "json"
+    },
+    {
+      "id": "devops-incident-management",
+      "title": "Incident Management and Response",
+      "description": "End-to-end incident management: detection, triage, communication, resolution, and post-mortem.",
+      "category": "devops",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Incident detection and auto-triage",
+        "On-call scheduling and escalation",
+        "Status page automation",
+        "Post-mortem templates",
+        "SLI/SLO tracking",
+        "Runbook automation"
+      ],
+      "benefits": [
+        "Reduce MTTR 60%",
+        "Never miss on-call handoff",
+        "Blameless post-mortems",
+        "Data-driven reliability"
+      ],
+      "href": "/services/devops-incident-management",
+      "source": "json"
+    },
+    {
+      "id": "devops-infrastructure-as-code",
+      "title": "Infrastructure as Code (IaC) Service",
+      "description": "Define and manage infrastructure with Terraform, Pulumi, or CloudFormation. Version-controlled, repeatable, auditable infrastructure.",
+      "category": "devops",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Terraform/Pulumi/CloudFormation",
+        "Multi-cloud (AWS, Azure, GCP)",
+        "State management and drift detection",
+        "Cost optimization scanning",
+        "Security compliance checks",
+        "Module library"
+      ],
+      "benefits": [
+        "Provision infrastructure in minutes",
+        "Version-controlled infrastructure",
+        "Prevent configuration drift",
+        "Reduce cloud costs 30%"
+      ],
+      "href": "/services/devops-infrastructure-as-code",
+      "source": "json"
+    },
+    {
+      "id": "devops-mlops-ml-pipelines",
+      "title": "MLOps and ML Pipeline Service",
+      "description": "Operationalize ML models: training pipelines, model registry, A/B testing, monitoring, and automated retraining.",
+      "category": "devops",
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "ML training pipeline automation",
+        "Model registry and versioning",
+        "A/B model testing",
+        "Drift detection and auto-retrain",
+        "Feature store management",
+        "GPU resource optimization"
+      ],
+      "benefits": [
+        "Deploy ML models 10x faster",
+        "Never serve a stale model",
+        "Full model lineage",
+        "Optimize GPU costs 40%"
+      ],
+      "href": "/services/devops-mlops-ml-pipelines",
+      "source": "json"
+    },
+    {
+      "id": "devops-observability-platform",
+      "title": "Observability and Monitoring Platform",
+      "description": "Full-stack observability: logs, metrics, traces, and alerts. Unified view of infrastructure and applications.",
+      "category": "devops",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Centralized logging ELK/Loki",
+        "Metrics with Prometheus",
+        "Distributed tracing Jaeger",
+        "AI anomaly detection",
+        "Custom SLO dashboards",
+        "PagerDuty/Opsgenie integration"
+      ],
+      "benefits": [
+        "Detect issues before customers do",
+        "MTTR reduced 70%",
+        "Single pane of glass",
+        "Proactive alerting"
+      ],
+      "href": "/services/devops-observability-platform",
+      "source": "json"
+    },
+    {
+      "id": "devops-platform-engineering",
+      "title": "Internal Developer Platform (IDP)",
+      "description": "Build an internal developer platform for self-service. Golden paths, templates, and automated provisioning.",
+      "category": "devops",
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Self-service developer portal",
+        "Golden path templates",
+        "Automated environment provisioning",
+        "Developer experience analytics",
+        "Backstage.io deployment",
+        "Service catalog"
+      ],
+      "benefits": [
+        "Developer productivity 3x",
+        "Standardize best practices",
+        "Reduce onboarding to hours",
+        "Self-service infrastructure"
+      ],
+      "href": "/services/devops-platform-engineering",
+      "source": "json"
+    },
+    {
+      "id": "devops-release-management",
+      "title": "Release Management and Feature Flags",
+      "description": "Control feature releases with flags, gradual rollouts, and instant rollbacks. Reduce deployment risk.",
+      "category": "devops",
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Feature flag management",
+        "Gradual rollouts 1% to 100%",
+        "Instant rollback",
+        "A/B testing framework",
+        "Audit trail for all changes",
+        "CI/CD integration"
+      ],
+      "benefits": [
+        "Ship features without risk",
+        "Instant rollback if issues",
+        "Test in production safely",
+        "Data-driven rollout decisions"
+      ],
+      "href": "/services/devops-release-management",
       "source": "json"
     },
     {
@@ -11143,6 +12316,396 @@
         "Scale proportionally with growth"
       ],
       "href": "/services/invoice-ai-automation",
+      "source": "json"
+    },
+    {
+      "id": "iot-asset-tracking-iot",
+      "title": "Real-Time Asset Tracking",
+      "description": "GPS and RFID-based asset tracking for fleets, equipment, and inventory. Know where everything is, always.",
+      "category": "iot",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "GPS and RFID tracking",
+        "Geofencing with alerts",
+        "Asset utilization analytics",
+        "Maintenance history per asset",
+        "Theft detection and recovery",
+        "Integration with ERP and WMS"
+      ],
+      "benefits": [
+        "Know where every asset is",
+        "Reduce asset loss 90%",
+        "Optimize utilization",
+        "Automated maintenance triggers"
+      ],
+      "href": "/services/iot-asset-tracking-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-connected-health-iot",
+      "title": "Remote Patient Monitoring IoT",
+      "description": "IoT-enabled remote patient monitoring: vital signs, medication adherence, and alert escalation for healthcare providers.",
+      "category": "iot",
+      "basic": "$449/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Wearable vital sign monitoring",
+        "Medication adherence tracking",
+        "Alert escalation workflows",
+        "HIPAA-compliant data platform",
+        "Integration with EHR systems",
+        "Family caregiver dashboard"
+      ],
+      "benefits": [
+        "Reduce readmissions 30%",
+        "24/7 patient monitoring",
+        "HIPAA-compliant platform",
+        "Family peace of mind"
+      ],
+      "href": "/services/iot-connected-health-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-digital-twin-service",
+      "title": "Digital Twin Development",
+      "description": "Create virtual replicas of physical assets, processes, or systems. Simulate scenarios and predict outcomes before implementing.",
+      "category": "iot",
+      "basic": "$999/mo",
+      "pro": "$2,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "3D model and simulation",
+        "Real-time sensor data integration",
+        "What-if scenario modeling",
+        "Predictive failure simulation",
+        "Performance optimization",
+        "Integration with SCADA and MES"
+      ],
+      "benefits": [
+        "Simulate before you build",
+        "Predict failures before they happen",
+        "Optimize performance virtually",
+        "Reduce physical prototyping costs"
+      ],
+      "href": "/services/iot-digital-twin-service",
+      "source": "json"
+    },
+    {
+      "id": "iot-edge-ai-inference",
+      "title": "Edge AI Inference Service",
+      "description": "Deploy and manage AI models at the edge. Low-latency inference on devices without cloud dependency.",
+      "category": "iot",
+      "basic": "$449/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Model optimization for edge",
+        "Edge deployment automation",
+        "Model versioning and updates",
+        "Offline inference support",
+        "Device performance monitoring",
+        "Cloud-edge orchestration"
+      ],
+      "benefits": [
+        "Sub-100ms inference latency",
+        "Works offline without cloud",
+        "Deploy models to thousands of devices",
+        "Continuous model improvement"
+      ],
+      "href": "/services/iot-edge-ai-inference",
+      "source": "json"
+    },
+    {
+      "id": "iot-energy-management-iot",
+      "title": "IoT Energy Management System",
+      "description": "Real-time energy monitoring and optimization. Smart meters, load balancing, and demand response.",
+      "category": "iot",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Smart meter integration",
+        "Real-time consumption monitoring",
+        "Load balancing and optimization",
+        "Demand response automation",
+        "Solar and battery integration",
+        "Utility bill analysis and savings"
+      ],
+      "benefits": [
+        "Reduce energy costs 25%",
+        "Automated demand response",
+        "Solar and battery optimization",
+        "Real-time consumption visibility"
+      ],
+      "href": "/services/iot-energy-management-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-environmental-monitoring",
+      "title": "Environmental IoT Monitoring",
+      "description": "Monitor air quality, water quality, noise levels, and environmental conditions. Compliance and ESG reporting.",
+      "category": "iot",
+      "basic": "$199/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Air quality PM2.5/PM10/VOC",
+        "Water quality monitoring",
+        "Noise level measurement",
+        "Temperature and humidity",
+        "ESG compliance reporting",
+        "Historical trend analysis"
+      ],
+      "benefits": [
+        "Real-time environmental data",
+        "Automated ESG reporting",
+        "Compliance-ready monitoring",
+        "Historical trend analysis"
+      ],
+      "href": "/services/iot-environmental-monitoring",
+      "source": "json"
+    },
+    {
+      "id": "iot-fleet-management-iot",
+      "title": "Fleet Management IoT Platform",
+      "description": "GPS tracking, driver behavior monitoring, fuel optimization, and maintenance scheduling for vehicle fleets.",
+      "category": "iot",
+      "basic": "$249/mo",
+      "pro": "$699/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Real-time GPS tracking",
+        "Driver behavior scoring",
+        "Fuel consumption optimization",
+        "Route optimization",
+        "Maintenance scheduling",
+        "ELD and compliance reporting"
+      ],
+      "benefits": [
+        "Reduce fuel costs 20%",
+        "Improve driver safety",
+        "Optimize routes automatically",
+        "Compliance-ready ELD"
+      ],
+      "href": "/services/iot-fleet-management-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-iot-cybersecurity",
+      "title": "IoT Cybersecurity Service",
+      "description": "Secure your IoT devices and networks. Device authentication, firmware security, encryption, and threat detection.",
+      "category": "iot",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Device identity and authentication",
+        "Firmware security scanning",
+        "Network segmentation for IoT",
+        "Encrypted data transmission",
+        "Anomaly detection on device",
+        "Compliance IEC 62443"
+      ],
+      "benefits": [
+        "Secure every IoT device",
+        "Prevent botnet recruitment",
+        "Encrypted data in transit",
+        "IEC 62443 compliance"
+      ],
+      "href": "/services/iot-iot-cybersecurity",
+      "source": "json"
+    },
+    {
+      "id": "iot-iot-data-platform",
+      "title": "IoT Data Platform and Analytics",
+      "description": "Ingest, store, and analyze massive IoT data streams. Time-series database, real-time dashboards, and predictive analytics.",
+      "category": "iot",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Time-series database (TimescaleDB)",
+        "Real-time stream processing",
+        "Custom dashboard builder",
+        "Predictive analytics on IoT",
+        "Data lake integration",
+        "API for third-party access"
+      ],
+      "benefits": [
+        "Billions of events processed",
+        "Real-time IoT analytics",
+        "Predictive insights",
+        "Open data API"
+      ],
+      "href": "/services/iot-iot-data-platform",
+      "source": "json"
+    },
+    {
+      "id": "iot-iot-device-management",
+      "title": "IoT Device Management Platform",
+      "description": "Connect, monitor, and manage millions of IoT devices. OTA updates, telemetry, alerts, and device lifecycle.",
+      "category": "iot",
+      "basic": "$449/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Device provisioning and onboarding",
+        "Real-time telemetry and commands",
+        "Over-the-air OTA firmware updates",
+        "Device health monitoring",
+        "Rule-based alerting",
+        "Edge computing management"
+      ],
+      "benefits": [
+        "Manage millions of devices",
+        "Zero-touch provisioning",
+        "Remote firmware updates",
+        "Real-time device health"
+      ],
+      "href": "/services/iot-iot-device-management",
+      "source": "json"
+    },
+    {
+      "id": "iot-predictive-maintenance-iot",
+      "title": "IoT Predictive Maintenance",
+      "description": "Sensor-based equipment monitoring with ML prediction of failures. Reduce unplanned downtime 50%.",
+      "category": "iot",
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Vibration and temperature sensors",
+        "ML failure prediction models",
+        "Maintenance scheduling optimization",
+        "Spare parts inventory integration",
+        "Equipment health scoring",
+        "ROI tracking dashboard"
+      ],
+      "benefits": [
+        "Reduce unplanned downtime 50%",
+        "Extend equipment life 20%",
+        "Optimize maintenance schedule",
+        "Track ROI in real-time"
+      ],
+      "href": "/services/iot-predictive-maintenance-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-smart-agriculture-iot",
+      "title": "Smart Agriculture IoT Solution",
+      "description": "Precision agriculture with soil sensors, weather stations, drone monitoring, and irrigation automation.",
+      "category": "iot",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Soil moisture and nutrient monitoring",
+        "Weather station integration",
+        "Drone crop health imaging",
+        "Automated irrigation control",
+        "Yield prediction models",
+        "Pest and disease early detection"
+      ],
+      "benefits": [
+        "Increase crop yield 15-25%",
+        "Reduce water usage 40%",
+        "Early pest detection",
+        "Data-driven farming decisions"
+      ],
+      "href": "/services/iot-smart-agriculture-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-smart-building-automation",
+      "title": "Smart Building Automation system.",
+      "description": "IoT-based building management: HVAC, lighting, access control, and energy optimization. Reduce energy costs 30%.",
+      "category": "iot",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "HVAC optimization and scheduling",
+        "Smart lighting with occupancy",
+        "Access control integration",
+        "Energy monitoring and reporting",
+        "Indoor air quality monitoring",
+        "Mobile app for tenants"
+      ],
+      "benefits": [
+        "Reduce energy costs 30%",
+        "Automated comfort optimization",
+        "Improved air quality",
+        "Professional building management"
+      ],
+      "href": "/services/iot-smart-building-automation",
+      "source": "json"
+    },
+    {
+      "id": "iot-smart-retail-iot",
+      "title": "Smart Retail IoT Solution",
+      "description": "In-store analytics, smart shelves, customer tracking, and automated checkout using IoT sensors and computer vision.",
+      "category": "iot",
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Foot traffic heatmaps and conversion",
+        "Smart shelf weight sensors",
+        "Customer journey tracking",
+        "Automated checkout systems",
+        "Inventory accuracy 99%",
+        "Personalized in-store offers"
+      ],
+      "benefits": [
+        "Increase conversion 15%",
+        "Real-time inventory accuracy",
+        "Understand customer behavior",
+        "Automated checkout"
+      ],
+      "href": "/services/iot-smart-retail-iot",
+      "source": "json"
+    },
+    {
+      "id": "iot-wearable-tech-dev",
+      "title": "Wearable Technology Development",
+      "description": "Design and build wearable devices: health trackers, smart glasses, industrial safety wearables.",
+      "category": "iot",
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Custom hardware design",
+        "BLE and WiFi connectivity",
+        "Health sensor integration",
+        "Mobile companion app",
+        "Cloud data platform",
+        "FDA compliance guidance"
+      ],
+      "benefits": [
+        "Custom wearable solutions",
+        "Health and safety tracking",
+        "Real-time alerts",
+        "Regulatory guidance"
+      ],
+      "href": "/services/iot-wearable-tech-dev",
       "source": "json"
     },
     {
@@ -15496,6 +17059,58 @@
       "source": "json"
     },
     {
+      "id": "security-business-continuity",
+      "title": "Business Continuity and DR Planning",
+      "description": "Comprehensive BC planning: risk assessment, BCP documentation, DR testing, crisis communication.",
+      "category": "security",
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Business impact analysis BIA",
+        "BCP and DR plan documentation",
+        "DR testing and validation",
+        "Crisis communication templates",
+        "Recovery time objective planning",
+        "Tabletop exercise facilitation"
+      ],
+      "benefits": [
+        "Tested recovery plans",
+        "Meet compliance BC/DR",
+        "Know your RTO and RPO",
+        "Crisis-ready organization"
+      ],
+      "href": "/services/security-business-continuity",
+      "source": "json"
+    },
+    {
+      "id": "security-cloud-security-posture",
+      "title": "Cloud Security Posture Management",
+      "description": "Continuous cloud security monitoring: misconfiguration detection, compliance, auto-remediation.",
+      "category": "security",
+      "basic": "$349/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Multi-cloud misconfiguration detection",
+        "Compliance monitoring CIS/NIST",
+        "Auto-remediation of violations",
+        "IAM and permission analysis",
+        "Network security group audit",
+        "Cost and security optimization"
+      ],
+      "benefits": [
+        "Eliminate cloud misconfigurations",
+        "Continuous compliance monitoring",
+        "Auto-fix violations",
+        "Multi-cloud visibility"
+      ],
+      "href": "/services/security-cloud-security-posture",
+      "source": "json"
+    },
+    {
       "id": "security-cloud-threat-detection",
       "title": "Cloud Threat Detection & Response",
       "description": "CloudTrail/CloudAudit log analytics, IAM anomaly detection (impossible travel, priv-esc pattern), GuardDuty integration, auto-remediation.",
@@ -15568,6 +17183,110 @@
       "source": "json"
     },
     {
+      "id": "security-compliance-automation-soc2",
+      "title": "SOC 2 Compliance Automation",
+      "description": "Automate SOC 2 compliance: evidence collection, control monitoring, policies, and audit-ready reports.",
+      "category": "security",
+      "basic": "$999/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Automated evidence collection",
+        "Continuous control monitoring",
+        "Policy management",
+        "Vendor risk management",
+        "Audit-ready reports on demand",
+        "SOC 2 Type I and Type II"
+      ],
+      "benefits": [
+        "Continuous compliance vs annual",
+        "Reduce audit prep 80%",
+        "Catch control failures real-time",
+        "Audit-ready anytime"
+      ],
+      "href": "/services/security-compliance-automation-soc2",
+      "source": "json"
+    },
+    {
+      "id": "security-data-loss-prevention",
+      "title": "Data Loss Prevention (DLP)",
+      "description": "Prevent sensitive data from leaving your organization. Content inspection, endpoint, cloud, and email DLP.",
+      "category": "security",
+      "basic": "$399/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Content inspection and classification",
+        "Endpoint DLP agents",
+        "Cloud SaaS/IaaS DLP",
+        "Email DLP and encryption",
+        "USB and media controls",
+        "GDPR/HIPAA policy templates"
+      ],
+      "benefits": [
+        "Prevent data breaches from insiders",
+        "Compliance-ready DLP policies",
+        "Monitor data at rest and in use",
+        "Automated incident response"
+      ],
+      "href": "/services/security-data-loss-prevention",
+      "source": "json"
+    },
+    {
+      "id": "security-email-security-gateway",
+      "title": "Advanced Email Security Gateway",
+      "description": "Protect against phishing, BEC, spam, and zero-day email threats with AI-powered analysis.",
+      "category": "security",
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "AI phishing and BEC detection",
+        "Attachment sandboxing",
+        "URL rewriting and time-of-click",
+        "DMARC/DKIM/SPF management",
+        "Email encryption TLS/S-MIME",
+        "DLP for email"
+      ],
+      "benefits": [
+        "Block 99.9% of phishing",
+        "Prevent BEC and impersonation",
+        "Automated DMARC enforcement",
+        "Secure encryption"
+      ],
+      "href": "/services/security-email-security-gateway",
+      "source": "json"
+    },
+    {
+      "id": "security-identity-access-management",
+      "title": "Identity and Access Management (IAM)",
+      "description": "Centralized identity with SSO, MFA, privileged access management, and lifecycle automation.",
+      "category": "security",
+      "basic": "$499/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Single Sign-On for all apps",
+        "Adaptive MFA",
+        "Privileged access management",
+        "Automated user lifecycle",
+        "Directory synchronization",
+        "Access certification"
+      ],
+      "benefits": [
+        "One identity for all apps",
+        "Eliminate password fatigue",
+        "Automated compliance reviews",
+        "Prevent account compromise"
+      ],
+      "href": "/services/security-identity-access-management",
+      "source": "json"
+    },
+    {
       "id": "security-identity-governance-igac",
       "title": "Identity Governance & Administration (IGA)",
       "description": "Automated access review, SoD policy check, certification campaign, identity auto-provisioning/revocation, and entitlement analytics.",
@@ -15589,6 +17308,32 @@
         "Remove orphaned accounts before they are exploited"
       ],
       "href": "/services/security-identity-governance-igac",
+      "source": "json"
+    },
+    {
+      "id": "security-incident-response-retainer",
+      "title": "Incident Response Retainer",
+      "description": "Guaranteed incident response when you need it. Pre-negotiated rates, dedicated team, immediate activation.",
+      "category": "security",
+      "basic": "$1,499/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Pre-negotiated IR rates",
+        "Dedicated IR team on standby",
+        "Under 1-hour activation",
+        "Forensic investigation",
+        "Legal and PR coordination",
+        "Post-incident hardening"
+      ],
+      "benefits": [
+        "Expert IR team in under 1 hour",
+        "Pre-negotiated costs",
+        "Forensic capabilities",
+        "Legal and PR included"
+      ],
+      "href": "/services/security-incident-response-retainer",
       "source": "json"
     },
     {
@@ -15638,6 +17383,32 @@
         "Policy as code = versioned + auditable"
       ],
       "href": "/services/security-network-segmentation-zero-trust",
+      "source": "json"
+    },
+    {
+      "id": "security-penetration-testing",
+      "title": "Penetration Testing and Red Team",
+      "description": "Comprehensive security testing by certified ethical hackers. Web apps, APIs, networks, mobile, and cloud.",
+      "category": "security",
+      "basic": "$2,499/mo",
+      "pro": "$6,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "OWASP Top 10 web app testing",
+        "API security assessment",
+        "Network pentest internal/external",
+        "Mobile app iOS/Android testing",
+        "Cloud configuration review",
+        "Detailed remediation report"
+      ],
+      "benefits": [
+        "Find vulnerabilities before attackers",
+        "Meet compliance requirements",
+        "Actionable remediation roadmap",
+        "Certified testers OSCP/CEH"
+      ],
+      "href": "/services/security-penetration-testing",
       "source": "json"
     },
     {
@@ -15715,6 +17486,32 @@
       "source": "json"
     },
     {
+      "id": "security-ransomware-protection",
+      "title": "Ransomware Protection and Recovery",
+      "description": "Multi-layer ransomware defense: prevention, detection, response, and recovery with immutable backups.",
+      "category": "security",
+      "basic": "$799/mo",
+      "pro": "$1,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "AI-powered ransomware detection",
+        "Immutable backup strategy",
+        "Network segmentation review",
+        "EDR with anti-ransomware",
+        "Incident response runbook",
+        "Recovery testing"
+      ],
+      "benefits": [
+        "Detect ransomware in seconds",
+        "Recover within hours",
+        "Immutable backups can't encrypt",
+        "Tested recovery"
+      ],
+      "href": "/services/security-ransomware-protection",
+      "source": "json"
+    },
+    {
       "id": "security-sbom-supply-chain",
       "title": "SBOM & Supply Chain Security",
       "description": "Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.",
@@ -15787,6 +17584,58 @@
       "source": "json"
     },
     {
+      "id": "security-security-awareness-training-690",
+      "title": "Security Awareness Training",
+      "description": "Engaging security training with phishing simulations, interactive modules, and compliance tracking.",
+      "category": "security",
+      "basic": "$99/mo",
+      "pro": "$249/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Interactive training modules",
+        "Automated phishing simulations",
+        "Role-based training paths",
+        "Compliance tracking and reporting",
+        "Gamification and leaderboards",
+        "Custom policy content"
+      ],
+      "benefits": [
+        "Reduce phishing clicks 80%",
+        "Compliance-ready records",
+        "Engaging not boring",
+        "Measure culture improvement"
+      ],
+      "href": "/services/security-security-awareness-training-690",
+      "source": "json"
+    },
+    {
+      "id": "security-soc-as-a-service",
+      "title": "SOC-as-a-Service - 24/7 Security Operations",
+      "description": "24/7 security operations center without the cost. Our SOC analysts monitor, detect, and respond to threats.",
+      "category": "security",
+      "basic": "$1,999/mo",
+      "pro": "$4,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "24/7 threat monitoring",
+        "SIEM management and tuning",
+        "Incident response and containment",
+        "Threat intelligence feeds",
+        "Compliance reporting SOC2/HIPAA/PCI",
+        "Dedicated security analyst"
+      ],
+      "benefits": [
+        "Enterprise SOC at SMB pricing",
+        "Under 15-min threat detection",
+        "Expert analysts on demand",
+        "Compliance-ready 24/7"
+      ],
+      "href": "/services/security-soc-as-a-service",
+      "source": "json"
+    },
+    {
       "id": "security-supply-chain-sbom",
       "title": "Supply Chain SBOM & Vulnerability Intelligence",
       "description": "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification — closing the software supply-chain attack window at build time.",
@@ -15835,6 +17684,58 @@
       "source": "json"
     },
     {
+      "id": "security-supply-chain-security",
+      "title": "Supply Chain Security",
+      "description": "Secure software supply chain: SBOM generation, dependency scanning, vendor risk, third-party code audit.",
+      "category": "security",
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Software Bill of Materials SBOM",
+        "Open-source dependency scanning",
+        "Vendor security assessments",
+        "Third-party code audit",
+        "License compliance checking",
+        "Supply chain risk scoring"
+      ],
+      "benefits": [
+        "Know what is in your software",
+        "Prevent supply-chain attacks",
+        "Vendor risk visibility",
+        "Compliance-ready SBOM"
+      ],
+      "href": "/services/security-supply-chain-security",
+      "source": "json"
+    },
+    {
+      "id": "security-threat-intelligence",
+      "title": "Cyber Threat Intelligence",
+      "description": "Proactive threat intelligence: dark web monitoring, IOC feeds, threat actor tracking, briefings.",
+      "category": "security",
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Dark web monitoring credentials/data",
+        "IOC feeds and threat feeds",
+        "Threat actor tracking",
+        "Industry-specific briefings",
+        "Incident context enrichment",
+        "Threat intelligence platform"
+      ],
+      "benefits": [
+        "Know threats before they hit",
+        "Dark web credential alerts",
+        "Enriched incident context",
+        "Industry threat landscape"
+      ],
+      "href": "/services/security-threat-intelligence",
+      "source": "json"
+    },
+    {
       "id": "security-threat-intelligence-platform",
       "title": "Threat Intelligence Platform",
       "description": "Curated IOC/IOA feed, TI graph, MITRE ATT&CK mapping, automated SIEM rule generation, and TI alert enrichment pipeline.",
@@ -15856,6 +17757,32 @@
         "Zero false-positive noise from curated IOC"
       ],
       "href": "/services/security-threat-intelligence-platform",
+      "source": "json"
+    },
+    {
+      "id": "security-vulnerability-management",
+      "title": "Continuous Vulnerability Management",
+      "description": "Continuous asset discovery, vulnerability scanning, prioritization, and remediation tracking.",
+      "category": "security",
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom",
+      "popular": false,
+      "features": [
+        "Automated asset discovery",
+        "Continuous vulnerability scanning",
+        "Risk-based prioritization CVSS+EPSS",
+        "Remediation tracking and SLAs",
+        "Patch management integration",
+        "Executive and technical dashboards"
+      ],
+      "benefits": [
+        "See all assets and vulnerabilities",
+        "Prioritize what matters most",
+        "Track remediation progress",
+        "Meet compliance scanning"
+      ],
+      "href": "/services/security-vulnerability-management",
       "source": "json"
     },
     {
@@ -15904,6 +17831,32 @@
         "Ops team can write custom JSON rules without any platform team PR cycle"
       ],
       "href": "/services/security-web-application-firewall",
+      "source": "json"
+    },
+    {
+      "id": "security-zero-trust-architecture",
+      "title": "Zero Trust Architecture Implementation",
+      "description": "Design and implement zero trust security. Never trust, always verify for users, devices, networks, apps.",
+      "category": "security",
+      "basic": "$2,999/mo",
+      "pro": "$7,999/mo",
+      "enterprise": "Custom",
+      "popular": true,
+      "features": [
+        "Identity-centric security model",
+        "Micro-segmentation",
+        "Continuous verification",
+        "Least privilege access",
+        "Device trust scoring",
+        "Network analytics and visibility"
+      ],
+      "benefits": [
+        "Eliminate lateral movement threats",
+        "Secure remote access by default",
+        "Reduce breach impact 90%",
+        "Future-proof architecture"
+      ],
+      "href": "/services/security-zero-trust-architecture",
       "source": "json"
     },
     {

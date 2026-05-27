@@ -25,6 +25,9 @@ const catAccent: Record<string, string> = {
   data:      '#34d399',
   automation:'#fb7185',
   'micro-saas': '#fbbf24',
+  devops:    '#22d3ee',
+  blockchain: '#fbbf24',
+  iot:       '#2dd4bf',
 };
 
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
@@ -45,6 +48,9 @@ const CATEGORIES = [
   { key: 'data',      label: 'Data Analytics',        emoji: '📊', color: 'from-green-500 to-emerald-500' },
   { key: 'automation',label: 'Automation',            emoji: '🤖', color: 'from-pink-500 to-rose-500' },
   { key: 'micro-saas',label: 'Micro-SaaS Products',   emoji: '🚀', color: 'from-amber-500 to-orange-500' },
+  { key: 'devops',    label: 'DevOps and Platform',   emoji: '⚙️', color: 'from-cyan-500 to-blue-500' },
+  { key: 'blockchain',label: 'Blockchain and Web3',   emoji: '⛓️', color: 'from-yellow-500 to-amber-600' },
+  { key: 'iot',       label: 'IoT and Edge',          emoji: '📡', color: 'from-teal-500 to-green-500' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
