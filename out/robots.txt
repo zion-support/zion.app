@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
 Sitemap: https://ziontechgroup.com/sitemap.xml
-Disallow: /api/
-Crawl-delay: 1

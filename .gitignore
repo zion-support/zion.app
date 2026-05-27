@@ -10,3 +10,4 @@ zion.app
 .env.local
 .DS_Store
 Thumbs.db
+.gh-pages-temp

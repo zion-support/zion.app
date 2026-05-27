@@ -1,13 +1,13 @@
 {
-  "generated": "2026-05-27T01:00:06.394Z",
-  "count": 602,
+  "generated": "2026-05-27T18:38:49.839Z",
+  "count": 617,
   "categories": {
-    "ai": 307,
+    "ai": 318,
     "it": 110,
     "data": 39,
-    "cloud": 68,
-    "security": 49,
-    "automation": 29
+    "cloud": 69,
+    "security": 51,
+    "automation": 30
   },
   "services": [
     {
@@ -13029,6 +13029,395 @@
         "Onboard new team members with context"
       ],
       "href": "/services/meeting-ai-assistant",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-code-reviewer",
+      "title": "Micro-SAAS AI Code Reviewer",
+      "description": "AI-powered code review that catches bugs, security vulnerabilities, and performance issues before merge. Supports 40+ languages.",
+      "category": "ai",
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "449",
+      "popular": true,
+      "features": [
+        "Automated code review",
+        "Security vulnerability detection",
+        "Performance suggestions",
+        "Style enforcement",
+        "Custom rules engine",
+        "CI/CD integration"
+      ],
+      "benefits": [
+        "Catch bugs before production",
+        "Enforce coding standards",
+        "Reduce review time by 80%",
+        "Security-first approach"
+      ],
+      "href": "/services/micro-saas-ai-code-reviewer",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-contract-analyzer",
+      "title": "Micro-SAAS AI Contract Analyzer",
+      "description": "AI-powered contract review and analysis. Automatically extracts key terms, flags risky clauses, compares against templates, and generates summary reports.",
+      "category": "ai",
+      "basic": "149",
+      "pro": "449",
+      "enterprise": "1299",
+      "popular": true,
+      "features": [
+        "Clause extraction & classification",
+        "Risk scoring engine",
+        "Template comparison",
+        "Redline suggestions",
+        "Multi-language support",
+        "Version tracking"
+      ],
+      "benefits": [
+        "80% faster contract review",
+        "Never miss critical clauses",
+        "Standardize contract language",
+        "Reduce legal costs"
+      ],
+      "href": "/services/micro-saas-ai-contract-analyzer",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-customer-onboarding",
+      "title": "Micro-SAAS AI Customer Onboarding Platform",
+      "description": "Automated customer onboarding workflows with AI-guided product tours, personalized checklists, and progress tracking.",
+      "category": "ai",
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499",
+      "popular": false,
+      "features": [
+        "AI-guided product tours",
+        "Personalized onboarding paths",
+        "Progress analytics",
+        "Automated email sequences",
+        "In-app guidance",
+        "Success milestone tracking"
+      ],
+      "benefits": [
+        "60% faster time-to-value",
+        "Higher activation rates",
+        "Reduced support tickets",
+        "Scalable onboarding"
+      ],
+      "href": "/services/micro-saas-ai-customer-onboarding",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-cybersecurity-monitor",
+      "title": "Micro-SAAS AI Cybersecurity Monitor",
+      "description": "Continuous AI-powered cybersecurity monitoring for SMBs. Detects threats in real-time, auto-remediates common attacks, and provides compliance reporting.",
+      "category": "security",
+      "basic": "149",
+      "pro": "399",
+      "enterprise": "999",
+      "popular": true,
+      "features": [
+        "24/7 threat detection",
+        "Auto-remediation",
+        "Vulnerability scanning",
+        "Compliance reporting",
+        "Dark web monitoring",
+        "Incident response playbooks"
+      ],
+      "benefits": [
+        "Enterprise security at SMB cost",
+        "Zero-day threat protection",
+        "Compliance made easy",
+        "Peace of mind 24/7"
+      ],
+      "href": "/services/micro-saas-ai-cybersecurity-monitor",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-data-backup",
+      "title": "Micro-SAAS AI Smart Data Backup",
+      "description": "Intelligent backup solution with AI-powered deduplication, anomaly detection, and automatic recovery testing.",
+      "category": "cloud",
+      "basic": "29",
+      "pro": "79",
+      "enterprise": "249",
+      "popular": false,
+      "features": [
+        "AI deduplication",
+        "Anomaly detection",
+        "Auto recovery testing",
+        "Cross-platform support",
+        "Encryption at rest and in transit",
+        "Ransomware protection"
+      ],
+      "benefits": [
+        "50% storage savings",
+        "Detect backup anomalies",
+        "Verified recoveries",
+        "Ransomware-proof"
+      ],
+      "href": "/services/micro-saas-ai-data-backup",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-email-responder",
+      "title": "Micro-SAAS AI Smart Email Responder",
+      "description": "Intelligent email management that categorizes, prioritizes, drafts replies, and sends responses with human-in-the-loop approval.",
+      "category": "ai",
+      "basic": "39",
+      "pro": "99",
+      "enterprise": "299",
+      "popular": true,
+      "features": [
+        "Smart categorization",
+        "Priority scoring",
+        "Auto-draft replies",
+        "Reply-all verification",
+        "Sentiment analysis",
+        "Follow-up reminders"
+      ],
+      "benefits": [
+        "Inbox zero every day",
+        "Never miss important emails",
+        "Consistent response quality",
+        "10x faster email processing"
+      ],
+      "href": "/services/micro-saas-ai-email-responder",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-expense-tracker",
+      "title": "Micro-SAAS AI Expense Tracker & Approval",
+      "description": "Smart expense management with AI receipt scanning, automatic categorization, policy enforcement, and approval workflows.",
+      "category": "ai",
+      "basic": "39",
+      "pro": "99",
+      "enterprise": "299",
+      "popular": false,
+      "features": [
+        "AI receipt scanning",
+        "Auto-categorization",
+        "Policy enforcement",
+        "Approval workflows",
+        "Accounting integration",
+        "Real-time reporting"
+      ],
+      "benefits": [
+        "90% faster expense processing",
+        "Policy compliance guaranteed",
+        "Real-time spend visibility",
+        "Audit-ready reports"
+      ],
+      "href": "/services/micro-saas-ai-expense-tracker",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-hr-recruitment",
+      "title": "Micro-SAAS AI HR Recruitment Platform",
+      "description": "AI-powered recruitment platform that screens resumes, ranks candidates, schedules interviews, and predicts hiring success.",
+      "category": "ai",
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1799",
+      "popular": false,
+      "features": [
+        "AI resume screening",
+        "Candidate ranking",
+        "Interview scheduling",
+        "Predictive hiring analytics",
+        "ATS integration",
+        "Diversity analytics"
+      ],
+      "benefits": [
+        "70% faster time-to-hire",
+        "Better quality hires",
+        "Reduced bias",
+        "Lower recruitment costs"
+      ],
+      "href": "/services/micro-saas-ai-hr-recruitment",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-invoice-processor",
+      "title": "Micro-SAAS AI Invoice Processor",
+      "description": "Automated invoice data extraction and processing using AI. Reads PDF/scan invoices, extracts line items, validates against POs, and syncs with accounting systems.",
+      "category": "ai",
+      "basic": "79",
+      "pro": "249",
+      "enterprise": "799",
+      "popular": true,
+      "features": [
+        "OCR + AI data extraction",
+        "Multi-format PDF/scan support",
+        "ERP/accounting integration",
+        "Auto-validation against POs",
+        "Exception handling dashboard"
+      ],
+      "benefits": [
+        "95% reduction in manual data entry",
+        "Process invoices in seconds",
+        "Eliminate human errors",
+        "Real-time visibility"
+      ],
+      "href": "/services/micro-saas-ai-invoice-processor",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-meeting-minutes",
+      "title": "Micro-SAAS AI Meeting Minutes Generator",
+      "description": "Automatically generates structured meeting minutes from video/audio recordings. AI identifies action items, decisions, and key discussion points.",
+      "category": "ai",
+      "basic": "29",
+      "pro": "79",
+      "enterprise": "199",
+      "popular": true,
+      "features": [
+        "Auto-transcription",
+        "Action item extraction",
+        "Decision tracking",
+        "Speaker identification",
+        "Calendar integration",
+        "Searchable archive"
+      ],
+      "benefits": [
+        "Never take manual minutes",
+        "100% capture of decisions",
+        "Accountability through action items",
+        "Searchable meeting history"
+      ],
+      "href": "/services/micro-saas-ai-meeting-minutes",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-project-manager",
+      "title": "Micro-SAAS AI Project Manager",
+      "description": "AI-powered project management that auto-creates tasks from conversations, predicts delays, and optimizes resource allocation.",
+      "category": "automation",
+      "basic": "49",
+      "pro": "129",
+      "enterprise": "349",
+      "popular": false,
+      "features": [
+        "Auto-task creation from chat",
+        "Delay prediction",
+        "Resource optimization",
+        "Status report generation",
+        "Risk identification",
+        "Gantt chart auto-generation"
+      ],
+      "benefits": [
+        "Never miss a task",
+        "Predict delays before they happen",
+        "Optimize team utilization",
+        "Automated stakeholder updates"
+      ],
+      "href": "/services/micro-saas-ai-project-manager",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-social-media-manager",
+      "title": "Micro-SAAS AI Social Media Manager",
+      "description": "AI-powered social media management. Auto-generates posts, schedules content, analyzes engagement, and provides competitor insights.",
+      "category": "ai",
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "399",
+      "popular": false,
+      "features": [
+        "AI content generation",
+        "Multi-platform scheduling",
+        "Engagement analytics",
+        "Competitor monitoring",
+        "Hashtag optimization",
+        "A/B testing"
+      ],
+      "benefits": [
+        "10x content output",
+        "Optimal posting times",
+        "Data-driven strategy",
+        "Unified dashboard"
+      ],
+      "href": "/services/micro-saas-ai-social-media-manager",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-translation-engine",
+      "title": "Micro-SAAS AI Translation Engine",
+      "description": "Enterprise-grade AI translation for documents, websites, and real-time communication. Supports 100+ languages with domain-specific fine-tuning.",
+      "category": "ai",
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "449",
+      "popular": false,
+      "features": [
+        "100+ languages",
+        "Domain-specific models",
+        "Document translation",
+        "Real-time chat translation",
+        "Website localization",
+        "API access"
+      ],
+      "benefits": [
+        "Near-human quality",
+        "Domain-specific accuracy",
+        "Real-time communication",
+        "API-first"
+      ],
+      "href": "/services/micro-saas-ai-translation-engine",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-vulnerability-scanner",
+      "title": "Micro-SAAS AI Vulnerability Scanner",
+      "description": "Continuous AI-powered vulnerability scanning for web applications, APIs, and infrastructure with auto-remediation.",
+      "category": "security",
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499",
+      "popular": false,
+      "features": [
+        "Web app + API scanning",
+        "Infrastructure scanning",
+        "Business impact prioritization",
+        "Auto-remediation scripts",
+        "Compliance mapping",
+        "Continuous monitoring"
+      ],
+      "benefits": [
+        "Find vulnerabilities before attackers",
+        "Prioritize by actual risk",
+        "Auto-fix common issues",
+        "Continuous protection"
+      ],
+      "href": "/services/micro-saas-ai-vulnerability-scanner",
+      "source": "json"
+    },
+    {
+      "id": "micro-saas-ai-website-builder",
+      "title": "Micro-SAAS AI Website Builder",
+      "description": "AI-powered website builder that creates professional websites from a simple description. Includes SEO optimization, responsive design, and built-in analytics.",
+      "category": "ai",
+      "basic": "19",
+      "pro": "49",
+      "enterprise": "149",
+      "popular": true,
+      "features": [
+        "AI design generation",
+        "SEO auto-optimization",
+        "Responsive templates",
+        "Built-in analytics",
+        "E-commerce ready",
+        "Custom domain support"
+      ],
+      "benefits": [
+        "Launch in minutes not weeks",
+        "Professional design without a designer",
+        "SEO-optimized from day one",
+        "No coding required"
+      ],
+      "href": "/services/micro-saas-ai-website-builder",
       "source": "json"
     },
     {

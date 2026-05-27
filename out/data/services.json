@@ -1,13 +1,13 @@
 {
-  "generated": "2026-05-27T01:00:58.490Z",
-  "count": 602,
+  "generated": "2026-05-27T18:38:52.501Z",
+  "count": 617,
   "categories": {
     "it": 110,
-    "ai": 307,
-    "automation": 29,
+    "ai": 318,
+    "automation": 30,
     "data": 39,
-    "cloud": 68,
-    "security": 49
+    "cloud": 69,
+    "security": 51
   },
   "services": [
     {
@@ -4788,6 +4788,141 @@
       "category": "ai",
       "industry": "Technology",
       "popular": false
+    },
+    {
+      "id": "micro-saas-ai-code-reviewer",
+      "title": "Micro-SAAS AI Code Reviewer",
+      "description": "AI-powered code review that catches bugs, security vulnerabilities, and performance issues before merge. Supports 40+ languages.",
+      "href": "/services/micro-saas-ai-code-reviewer",
+      "category": "ai",
+      "industry": "Technology",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-contract-analyzer",
+      "title": "Micro-SAAS AI Contract Analyzer",
+      "description": "AI-powered contract review and analysis. Automatically extracts key terms, flags risky clauses, compares against templates, and generates summary reports.",
+      "href": "/services/micro-saas-ai-contract-analyzer",
+      "category": "ai",
+      "industry": "Legal",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-customer-onboarding",
+      "title": "Micro-SAAS AI Customer Onboarding Platform",
+      "description": "Automated customer onboarding workflows with AI-guided product tours, personalized checklists, and progress tracking.",
+      "href": "/services/micro-saas-ai-customer-onboarding",
+      "category": "ai",
+      "industry": "SaaS",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-cybersecurity-monitor",
+      "title": "Micro-SAAS AI Cybersecurity Monitor",
+      "description": "Continuous AI-powered cybersecurity monitoring for SMBs. Detects threats in real-time, auto-remediates common attacks, and provides compliance reporting.",
+      "href": "/services/micro-saas-ai-cybersecurity-monitor",
+      "category": "security",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-data-backup",
+      "title": "Micro-SAAS AI Smart Data Backup",
+      "description": "Intelligent backup solution with AI-powered deduplication, anomaly detection, and automatic recovery testing.",
+      "href": "/services/micro-saas-ai-data-backup",
+      "category": "cloud",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-email-responder",
+      "title": "Micro-SAAS AI Smart Email Responder",
+      "description": "Intelligent email management that categorizes, prioritizes, drafts replies, and sends responses with human-in-the-loop approval.",
+      "href": "/services/micro-saas-ai-email-responder",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-expense-tracker",
+      "title": "Micro-SAAS AI Expense Tracker & Approval",
+      "description": "Smart expense management with AI receipt scanning, automatic categorization, policy enforcement, and approval workflows.",
+      "href": "/services/micro-saas-ai-expense-tracker",
+      "category": "ai",
+      "industry": "Finance",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-hr-recruitment",
+      "title": "Micro-SAAS AI HR Recruitment Platform",
+      "description": "AI-powered recruitment platform that screens resumes, ranks candidates, schedules interviews, and predicts hiring success.",
+      "href": "/services/micro-saas-ai-hr-recruitment",
+      "category": "ai",
+      "industry": "HR",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-invoice-processor",
+      "title": "Micro-SAAS AI Invoice Processor",
+      "description": "Automated invoice data extraction and processing using AI. Reads PDF/scan invoices, extracts line items, validates against POs, and syncs with accounting systems.",
+      "href": "/services/micro-saas-ai-invoice-processor",
+      "category": "ai",
+      "industry": "Finance",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-meeting-minutes",
+      "title": "Micro-SAAS AI Meeting Minutes Generator",
+      "description": "Automatically generates structured meeting minutes from video/audio recordings. AI identifies action items, decisions, and key discussion points.",
+      "href": "/services/micro-saas-ai-meeting-minutes",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
+    },
+    {
+      "id": "micro-saas-ai-project-manager",
+      "title": "Micro-SAAS AI Project Manager",
+      "description": "AI-powered project management that auto-creates tasks from conversations, predicts delays, and optimizes resource allocation.",
+      "href": "/services/micro-saas-ai-project-manager",
+      "category": "automation",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-social-media-manager",
+      "title": "Micro-SAAS AI Social Media Manager",
+      "description": "AI-powered social media management. Auto-generates posts, schedules content, analyzes engagement, and provides competitor insights.",
+      "href": "/services/micro-saas-ai-social-media-manager",
+      "category": "ai",
+      "industry": "Marketing",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-translation-engine",
+      "title": "Micro-SAAS AI Translation Engine",
+      "description": "Enterprise-grade AI translation for documents, websites, and real-time communication. Supports 100+ languages with domain-specific fine-tuning.",
+      "href": "/services/micro-saas-ai-translation-engine",
+      "category": "ai",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-vulnerability-scanner",
+      "title": "Micro-SAAS AI Vulnerability Scanner",
+      "description": "Continuous AI-powered vulnerability scanning for web applications, APIs, and infrastructure with auto-remediation.",
+      "href": "/services/micro-saas-ai-vulnerability-scanner",
+      "category": "security",
+      "industry": "General",
+      "popular": false
+    },
+    {
+      "id": "micro-saas-ai-website-builder",
+      "title": "Micro-SAAS AI Website Builder",
+      "description": "AI-powered website builder that creates professional websites from a simple description. Includes SEO optimization, responsive design, and built-in analytics.",
+      "href": "/services/micro-saas-ai-website-builder",
+      "category": "ai",
+      "industry": "General",
+      "popular": true
     },
     {
       "id": "misp-threat-intel",

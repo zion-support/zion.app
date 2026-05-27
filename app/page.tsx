@@ -12,6 +12,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
+import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -291,7 +292,7 @@ let list = services;
 
             {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-8 text-slate-400 text-sm mb-12">
-              {['BBB Accredited','100% US-Based Team','SLA Guaranteed','HIPAA Compliant'].map(t => (
+              {['US-Based Team','SLA Guaranteed','HIPAA Compliant','24/7 Support','617+ Services'].map(t => (
                 <div key={t} className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -340,6 +341,9 @@ let list = services;
           </div>
         </div>
       </section>
+
+      {/* ── Service Match Quiz — Interactive AI Tool ── */}
+      <ServiceMatchQuiz />
 
       {/* ── How It Works ── */}
       <section className="py-20">
