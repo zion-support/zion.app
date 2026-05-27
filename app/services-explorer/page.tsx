@@ -92,10 +92,22 @@ export default function ServicesExplorerPage() {
                 { "@type": "ListItem", position: 2, name: "Service Explorer", item: "https://ziontechgroup.com/services-explorer" },
               ],
             },
-          })),
+          }),
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "CollectionPage",\n  "name": "Service Explorer",\n  "description": "Interactive explorer for all 550+ enterprise AI and IT services \\u2014 filter by category, industry, and keywords.",\n  "url": "https://ziontechgroup.com/services-explorer"\n}') }} />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Service Explorer",
+            description: "Interactive explorer for all 550+ enterprise AI and IT services — filter by category, industry, and keywords.",
+            url: "https://ziontechgroup.com/services-explorer",
+          }),
+        }}
+      />
       <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 

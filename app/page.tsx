@@ -168,7 +168,7 @@ let list = services;
         const svc = lookup.get(r.id);
         if (!svc) return null;
         const daysAgo = Math.max(0, Math.round((now - new Date(r.released_at).getTime()) / DAY));
-        const tagCount = (r.tags || []).filter(t => ENTRY_TAG_MAP[t]).length;
+        const tagCount = (r.tags || []).filter((t: string) => ENTRY_TAG_MAP[t]).length;
         return {
           id: r.id, title: r.changelog_summary || r.changelog.slice(0, 80) + '...',
           desc: r.changelog,

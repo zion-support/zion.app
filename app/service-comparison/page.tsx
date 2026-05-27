@@ -80,10 +80,10 @@ export default function ServiceComparisonPage() {
                 { "@type": "ListItem", position: 3, name: "Compare Services", item: "https://ziontechgroup.com/service-comparison" },
               ],
             },
-          })),
+          }),
         }}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "WebPage",\n  "name": "Service Comparison",\n  "description": "Side-by-side comparison of AI, IT, cloud, and automation services from Zion Tech Group \\u2014 features, pricing, portfolio at a glance.",\n  "url": "https://ziontechgroup.com/service-comparison"\n}') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({   "@context": "https://schema.org",   "@type": "WebPage",   "name": "Service Comparison",   "description": "Side-by-side comparison of AI, IT, cloud, and automation services from Zion Tech Group — features, pricing, portfolio at a glance.",   "url": "https://ziontechgroup.com/service-comparison" }) }} />
       {/* ── Header ── */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>

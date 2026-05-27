@@ -260,7 +260,7 @@ export default function DemoSandboxClient() {
                       </div>
                       <p className="text-xs text-slate-400 mt-1 line-clamp-2">{s.description}</p>
                       <div className="flex flex-wrap gap-1 mt-2">
-                        {s.features.slice(0, 4).map(f => (
+                        {s.features.slice(0, 4).map((f: string) => (
                           <span key={f} className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800/40 text-slate-500">
                             {f}
                           </span>

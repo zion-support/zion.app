@@ -29,7 +29,6 @@ export default function Page() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Data Analytics & Business Intelligence</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.</p>
->>>>>>> 4bc61ade (fix(sub-pages): JSX encoding + undeclared placeholder vars in 4 industry pages)
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
@@ -44,7 +43,6 @@ export default function Page() {
         {/* Why Zion Tech Group */}
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
-<<<<<<< HEAD
           <ul className="space-y-3">
             {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Proven expertise across BI, ML, and data engineering</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">End-to-end delivery from data pipeline to executive dashboards</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Custom solutions tailored to your industry and scale</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>

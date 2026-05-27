@@ -31,7 +31,6 @@ export default function Page() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">5G & Private Network Solutions</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.</p>
->>>>>>> 4bc61ade (fix(sub-pages): JSX encoding + undeclared placeholder vars in 4 industry pages)
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
@@ -56,7 +55,6 @@ export default function Page() {
         {/* Why Zion Tech Group */}
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
-<<<<<<< HEAD
           <ul className="space-y-3">
             {[
               'Deep expertise in 5G NR, edge computing, and IoT architecture',

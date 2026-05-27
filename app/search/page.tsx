@@ -106,7 +106,7 @@ export default function SearchPage() {
   }, [loaded, err, allServices.length, results.length, activeCategory, feedMeta, qLower]);
 
   return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify('{\n  "@context": "https://schema.org",\n  "@type": "SearchResultsPage",\n  "name": "Search Results",\n  "description": "Search 550+ AI, IT, cloud, security, data analytics, and automation services from Zion Tech Group.",\n  "url": "https://ziontechgroup.com/search"\n}') }} />
+    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({   "@context": "https://schema.org",   "@type": "SearchResultsPage",   "name": "Search Results",   "description": "Search 550+ AI, IT, cloud, security, data analytics, and automation services from Zion Tech Group.",   "url": "https://ziontechgroup.com/search" }) }} />
     <div className="container-page py-12">
       {/* JSON-LD: SearchResultsPage + BreadcrumbList */}
       <script
@@ -141,7 +141,7 @@ export default function SearchPage() {
                 { "@type": "ListItem", position: 2, name: "Search", item: "https://ziontechgroup.com/search" },
               ],
             },
-          })),
+          }),
         }}
       />
       <h1 className="text-3xl font-bold text-white mb-2">Service Search</h1>
@@ -237,5 +237,6 @@ export default function SearchPage() {
         </div>
       )}
     </div>
+    </>
   );
 }
