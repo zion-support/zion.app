@@ -801,6 +801,12 @@ let list = services;
               { key: 'V41+', name: 'Reply-All Guardian', emoji: '🛡️', color: 'from-violet-500/20 to-purple-500/10 border-violet-500/30',
                 desc: 'Enforces CC/BCC correctness before every send. Prevents data leaks. All Reply-All decisions logged with full CC chain transparency.',
                 tech: 'CC/BCC enforcement · Leak prevention · Audit trail' },
+              { key: 'V49', name: 'Priority Inbox Router', emoji: '🎯', color: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/30',
+                desc: 'Every email scored 0-100: urgency × sender importance × thread value × sentiment. Routes to Urgent/Today/This Week/Batch queues with SLA labels. Never miss a critical email again.',
+                tech: '4-queue routing · SLA labels · Sender tier learning' },
+              { key: 'V50', name: 'Email Coaching Copilot', emoji: '✨', color: 'from-yellow-500/20 to-amber-500/10 border-yellow-500/30',
+                desc: 'Real-time coaching as you type: suggests better phrasing, flags defensive language, detects passive aggression, recommends shorter sentences, and improves professional etiquette — like Grammarly for business email.',
+                tech: 'Real-time suggestions · Tone coaching · Professional etiquette' },
             ].map(mod => (
               <div key={mod.key} className={`rounded-xl border bg-gradient-to-br ${mod.color} p-5 hover:scale-[1.02] transition-all`}>
                 <div className="flex items-center gap-3 mb-3">
