@@ -12,6 +12,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
+import ServiceAdvisorWidget from '@/components/ServiceAdvisorWidget';
 
 
 // Category accent color for showcase cards
@@ -95,6 +96,7 @@ export default function HomePage() {
     const [quickView, setQuickView] = useState<Service | null>(null);
     const [releaseNotes, setReleaseNotes] = useState<any[]>([]);
     const [search, setSearch] = useState('');
+    const [advisorOpen, setAdvisorOpen] = useState(false);
     const [catFilter, setCatFilter] = useState<string | null>(null);
 
   // Dynamic stats — auto-update when catalog changes
@@ -1036,6 +1038,16 @@ let list = services;
         </div>
       </section>
     <FloatingActionDock />
+    <ServiceAdvisorWidget
+      services={services.map((s: any) => ({
+        id: s.id, title: s.title, description: s.description,
+        category: s.category, pricing: s.pricing || { basic: '499' },
+        features: s.features || [], benefits: s.benefits || [],
+        popular: s.popular || false,
+      }))}
+      isOpen={advisorOpen}
+      onToggle={() => setAdvisorOpen(prev => !prev)}
+    />
     </main>
   );
 }
