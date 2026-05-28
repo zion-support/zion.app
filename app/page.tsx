@@ -3,6 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { newMicroSaaS } from './data/newMicroSaaS';
 import { allServices } from './data/servicesData';
 import { searchServices } from './data/searchServices';
 import type { Service } from './data/servicesData';
@@ -91,13 +92,26 @@ export default function HomePage() {
     const [search, setSearch] = useState('');
     const [catFilter, setCatFilter] = useState<string | null>(null);
 
-  // Dynamic stats — auto-update when catalog changes
+// Dynamic stats — auto-update when catalog changes
   const stats = [
     { value: `${serviceCount}+`, label: STAT_SERVICES },
     { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation' },
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
-    ];
+  ];
+
+  // First 3 featured Micro-SaaS highlights
+  const featuredMicroSaaS = newMicroSaaS.slice(0, 3);
+
+  // Services advertising section data
+  const serviceCategories = [
+    { key: 'ai',        label: 'AI Services',      emoji: '🧠', price: '$299/mo', href: '/services?category=ai' },
+    { key: 'it',        label: 'IT Services',       emoji: '🖥️', price: '$199/mo', href: '/services?category=it' },
+    { key: 'cloud',     label: 'Cloud Services',     emoji: '☁️', price: '$399/mo', href: '/services?category=cloud' },
+    { key: 'security',  label: 'Security Services',  emoji: '🔐', price: '$499/mo', href: '/services?category=security' },
+    { key: 'data',      label: 'Data Analytics',     emoji: '📊', price: '$299/mo', href: '/services?category=data' },
+    { key: 'automation',label: 'Automation',        emoji: '🤖', price: '$149/mo', href: '/services?category=automation' },
+  ];
 
   // Fetch release-signal dataset on mount
   useEffect(() => {
@@ -341,6 +355,116 @@ let list = services;
               })}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Trusted By / Our Clients ── */}
+      <section className="py-12 border-t border-slate-800/50">
+        <div className="container-page">
+          <p className="text-center text-slate-500 text-sm mb-8 uppercase tracking-wider font-semibold">Trusted by industry leaders worldwide</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="h-16 bg-slate-800/60 rounded-lg border border-slate-700/50 flex items-center justify-center"
+              >
+                <span className="text-slate-600 text-xs font-medium">Client {i + 1}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Services Showcase Banner ── */}
+      <section className="py-16">
+        <div className="container-page">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-3">
+              ⚡ 700+ AI, IT &amp; Cloud Services
+            </h2>
+            <p className="text-slate-400 text-sm">
+              From AI automation to enterprise cloud infrastructure — we&apos;ve got your covered
+            </p>
+          </div>
+
+          {/* 6 Category Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {serviceCategories.map((cat) => {
+              const meta = getCategoryMeta(cat.key);
+              return (
+                <Link key={cat.key} href={cat.href}
+                  className="group relative rounded-xl p-5 bg-slate-900/70 border border-slate-700/50 hover:border-purple-500/40 hover:scale-[1.03] transition-all duration-200 shadow-lg overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${meta.color} opacity-[0.06] group-hover:opacity-10 transition-opacity`} />
+                  <div className="relative flex items-start justify-between">
+                    <div>
+                      <div className="text-3xl mb-2">{cat.emoji}</div>
+                      <div className="text-base font-semibold text-white group-hover:text-purple-300 transition-colors">{cat.label}</div>
+                    </div>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-xs font-bold bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full border border-purple-500/30">
+                        From {cat.price}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Contact Strip */}
+          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-300 bg-slate-900/50 rounded-xl py-4 px-6 border border-slate-700/40 max-w-4xl mx-auto">
+            <span>📞 <a href="tel:+130****0950" className="hover:text-purple-400">+1 302 464 0950</a></span>
+            <span className="text-slate-600">|</span>
+            <span>✉️ <a href="mailto:kleber@ziontechgroup.com" className="hover:text-purple-400">kleber@ziontechgroup.com</a></span>
+            <span className="text-slate-600">|</span>
+            <span>📍 364 E Main St STE 1008 Middletown DE 19709</span>
+          </div>
+
+          {/* Why Choose Zion? */}
+          <div className="mt-10">
+            <h3 className="text-xl font-bold text-center mb-6 gradient-text">Why Choose Zion?</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {[
+                { emoji: '🏆', title: 'Enterprise-Grade Quality', sub: 'Built for scale, tested for reliability' },
+                { emoji: '⚡', title: '24/7 Autonomous Operation', sub: 'Runs itself, reports when needed' },
+                { emoji: '💰', title: 'Transparent Pricing', sub: 'No hidden fees, clear ROI' },
+                { emoji: '🤝', title: 'Local Experts', sub: 'Based in Delaware, serving worldwide' },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center text-center p-4 bg-slate-900/40 rounded-xl border border-slate-800/60 hover:border-purple-500/30 transition-colors">
+                  <div className="text-3xl mb-2">{item.emoji}</div>
+                  <div className="text-sm font-semibold text-white mb-1">{item.title}</div>
+                  <div className="text-xs text-slate-400">{item.sub}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Micro-SaaS Highlights */}
+          {featuredMicroSaaS.length > 0 && (
+            <div className="mt-10">
+              <h3 className="text-xl font-bold text-center mb-6 gradient-text">🚀 Featured Micro-SaaS</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+                {featuredMicroSaaS.map((svc) => (
+                  <Link key={svc.id} href={svc.href || `/services/${svc.id}`}
+                    className="group relative rounded-xl p-5 bg-slate-900/60 border border-slate-700/50 hover:border-cyan-500/40 hover:scale-[1.03] transition-all duration-200 shadow-lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">{svc.icon}</span>
+                      <span className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-1">{svc.title}</span>
+                    </div>
+                    <p className="text-xs text-slate-400 line-clamp-2 mb-3">{svc.description}</p>
+                    <div className="flex items-center gap-2">
+                      {svc.pricing && svc.pricing.pro && (
+                        <span className="text-xs font-bold bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded-full border border-cyan-500/30">
+                          {svc.pricing.pro}
+                        </span>
+                      )}
+                      <span className="text-xs text-slate-500">Popular ✦</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

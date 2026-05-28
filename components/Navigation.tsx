@@ -117,11 +117,20 @@ const Navigation: React.FC = () => {
                   </Link>
                   <Link
                     href="/services"
-                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors border-t border-slate-700/40 pt-2.5 mt-0.5"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
                     <span className="text-lg">🛠️</span>
                     <span className="flex-1">View All Services</span>
+                    <span className="text-xs text-slate-500">→</span>
+                  </Link>
+                  <Link
+                    href="/micro-saas"
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors border-t border-slate-700/40 pt-2.5 mt-0.5"
+                    onClick={() => setIsServicesOpen(false)}
+                  >
+                    <span className="text-lg">🚀</span>
+                    <span className="flex-1">View All Micro-SaaS</span>
                     <span className="text-xs text-slate-500">→</span>
                   </Link>
                 </div>
@@ -220,6 +229,13 @@ const Navigation: React.FC = () => {
                 onClick={toggleMenu}
               >
                 🛠️ All Services
+              </Link>
+              <Link
+                href="/micro-saas"
+                className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
+              >
+                🚀 All Micro-SaaS
               </Link>
               <Link
                 href="/contact"
