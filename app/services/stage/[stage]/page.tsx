@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ stage: st
 export default async function StagePage({ params }: { params: Promise<{ stage: string }> }) {
   const { stage } = await params;
   const meta = STAGE_META[stage] || STAGE_META.published;
-  const filtered = allServices.filter((s: Service) => s.stage === stage);
+  const filtered = allServices.filter((s) => (s as any).stage === stage);
   const otherStages = (['published', 'beta', 'planned'] as const).filter(s => s !== stage);
 
   return (
@@ -42,7 +42,7 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {otherStages.map((s) => (
             <Link key={s} href={`/services/stage/${s}`} className="px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-900/50 border border-slate-700/50 text-slate-400 hover:border-purple-500/50 hover:text-purple-300 transition">
-              {STAGE_META[s].emoji} {STAGE_META[s].label} ({allServices.filter((sv: Service) => sv.stage === s).length})
+              {STAGE_META[s].emoji} {STAGE_META[s].label} ({allServices.filter((sv) => (sv as any).stage === s).length})
             </Link>
           ))}
         </div>

@@ -23,9 +23,11 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./app/*"
-      ]
+      "@/*": ["./app/*"],
+      "@/components/*": ["./app/components/*", "./components/*"],
+      "@/public/*": ["./public/*"],
+      "@/data/*": ["./app/data/*"],
+      "@/utils/*": ["./app/utils/*"]
     },
     "types": [
       "node"

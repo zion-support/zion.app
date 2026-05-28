@@ -50,7 +50,7 @@ export default function Navigation() {
 
   function isActive(href: string): boolean {
     if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
+    return pathname ? pathname.startsWith(href) : false;
   }
 
   function NavLink({ link }: { link: NavigationLink }) {

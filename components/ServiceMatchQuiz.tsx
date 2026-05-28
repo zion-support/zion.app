@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { allServices } from '../../app/data/servicesData';
+import { allServices } from '@/data/servicesData';
 
 // ── Quiz Questions ──
 const QUESTIONS = [
