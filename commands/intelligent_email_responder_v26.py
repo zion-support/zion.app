@@ -2225,7 +2225,7 @@ class V26Responder:
                   "thread_id": tid})
         except Exception:
             pass
- _analyze_response_effectiveness(tid, intent_label, "send", tone_data, min_qc["overall_score"], round((time.monotonic() - t0) * 1000, 1))
+        _analyze_response_effectiveness(tid, intent_label, "send", tone_data, min_qc["overall_score"], round((time.monotonic() - t0) * 1000, 1))
 
         result = add_to_result(email, {"action": "send", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
