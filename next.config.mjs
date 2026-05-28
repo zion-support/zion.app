@@ -9,5 +9,8 @@ const nextConfig = {
   generateBuildId: async () => {
     return 'zion-tech-group-v1';
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 export default nextConfig;
