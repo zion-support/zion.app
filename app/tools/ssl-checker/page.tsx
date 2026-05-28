@@ -143,7 +143,7 @@ export default function SSLCheckerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/security-compliance-audit-platform" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/it-endpoint-security-compliance" className="text-purple-400 hover:underline text-sm">
             Need help fixing SSL issues? → Security Compliance & Monitoring
           </Link>
         </div>

@@ -1,10 +1,1 @@
-[
-  {
-    "file": "app/tools/port-scanner/page.tsx",
-    "link": "services/it-endpoint-security-compliance"
-  },
-  {
-    "file": "app/tools/ssl-checker/page.tsx",
-    "link": "services/security-compliance-audit-platform"
-  }
-]
+[]
