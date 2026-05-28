@@ -89,6 +89,175 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
     },
+    // NEW MICRO-SAAS, IT & AI SERVICES
+    {
+      icon: '🤖',
+      title: 'AI Email Intelligence Suite',
+      description: 'Intelligent email analysis, auto-responses, sentiment detection, and smart Reply-All automation for business email management.',
+      features: [
+        'Case-by-case email classification',
+        'AI-powered response generation',
+        'Smart Reply-All with CC routing',
+        'Sentiment & urgency detection',
+        'Automatic follow-up scheduling'
+      ],
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      textColor: 'text-amber-400',
+    },
+    {
+      icon: '🔮',
+      title: 'Predictive Lead Scoring AI',
+      description: 'Machine learning models that analyze visitor behavior to predict and prioritize high-quality leads with 94% accuracy.',
+      features: [
+        'Behavioral pattern analysis',
+        'Real-time lead scoring',
+        'Conversion probability prediction',
+        'Priority-based routing',
+        'CRM integration (Salesforce, HubSpot)'
+      ],
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      textColor: 'text-pink-400',
+    },
+    {
+      icon: '⚡',
+      title: 'Autonomous CI/CD Guardian',
+      description: 'Self-healing CI/CD pipelines that automatically detect build failures, fix syntax errors, and redeploy with zero downtime.',
+      features: [
+        'Automatic error detection & repair',
+        'Self-healing build pipelines',
+        'Smart rollback on failure',
+        'Continuous optimization',
+        'Multi-cloud deployment sync'
+      ],
+      color: 'bg-gradient-to-br from-violet-500 to-purple-600',
+      textColor: 'text-violet-400',
+    },
+    {
+      icon: '📱',
+      title: 'Cross-Platform Sync Engine',
+      description: 'Real-time bidirectional synchronization across email, calendar, CRM, and 50+ business tools with conflict resolution.',
+      features: [
+        'Gmail, Outlook, Yahoo sync',
+        'Google Calendar two-way sync',
+        'Salesforce/HubSpot integration',
+        'Slack & Teams notifications',
+        'Conflict-free merge logic'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+    },
+    {
+      icon: '🧠',
+      title: 'AI Knowledge Base Architect',
+      description: 'Automatically indexes, summarizes, and serves relevant knowledge articles based on email context and user queries.',
+      features: [
+        'Semantic search engine',
+        'Auto article suggestions',
+        'Document ingestion & indexing',
+        'Multi-language support',
+        'Usage analytics dashboard'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+    },
+    {
+      icon: '🔔',
+      title: 'Smart Notification Orchestrator',
+      description: 'AI-powered notification system that intelligently routes, prioritizes, and summarizes alerts across all communication channels.',
+      features: [
+        'Smart priority ranking',
+        'Deduplication engine',
+        'Custom escalation rules',
+        'Multi-channel delivery (SMS, Email, Push)',
+        'Quiet hours & do-not-disturb'
+      ],
+      color: 'bg-gradient-to-br from-red-500 to-pink-600',
+      textColor: 'text-red-400',
+    },
+    {
+      icon: '🛡️',
+      title: 'Autonomous Security Operations',
+      description: '24/7 AI-driven SOC that monitors threats, auto-patches vulnerabilities, and responds to incidents in under 60 seconds.',
+      features: [
+        'Real-time threat detection',
+        'Automated vulnerability patching',
+        'Incident response automation',
+        'Compliance report generation',
+        'SIEM integration (Splunk, Datadog)'
+      ],
+      color: 'bg-gradient-to-br from-slate-600 to-gray-800',
+      textColor: 'text-slate-300',
+    },
+    {
+      icon: '📈',
+      title: 'Revenue Intelligence Analytics',
+      description: 'End-to-end revenue attribution and forecasting using AI that tracks every customer touchpoint from first contact to closed deal.',
+      features: [
+        'Multi-touch attribution modeling',
+        'Revenue forecasting AI',
+        'Churn prediction alerts',
+        'Sales pipeline optimization',
+        'Executive BI dashboards'
+      ],
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+    },
+    {
+      icon: '🌊',
+      title: 'Cloud Cost Optimization AI',
+      description: 'Intelligent cloud resource optimization that reduces AWS/Azure/GCP costs by 40% through automated right-sizing and scheduling.',
+      features: [
+        'Automatic resource right-sizing',
+        'Scheduled scaling automation',
+        'Reserved instance optimization',
+        'Cost anomaly detection',
+        'Multi-cloud cost comparison'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+    },
+    {
+      icon: '🔗',
+      title: 'API Integration Fabric',
+      description: 'No-code integration platform connecting 200+ SaaS apps with intelligent data mapping, transformation, and real-time sync.',
+      features: [
+        '200+ pre-built connectors',
+        'Visual data mapper',
+        'Real-time & scheduled sync',
+        'Webhook orchestration',
+        'Error handling & retry logic'
+      ],
+      color: 'bg-gradient-to-br from-yellow-500 to-amber-600',
+      textColor: 'text-yellow-400',
+    },
+    {
+      icon: '🎯',
+      title: 'AI-Powered Competitive Intelligence',
+      description: 'Automated competitor monitoring, pricing analysis, and market trend detection with daily actionable insights delivered to your inbox.',
+      features: [
+        'Competitor pricing tracking',
+        'Product feature monitoring',
+        'Market trend detection',
+        'Sentiment analysis on reviews',
+        'Weekly intelligence reports'
+      ],
+      color: 'bg-gradient-to-br from-fuchsia-500 to-pink-600',
+      textColor: 'text-fuchsia-400',
+    },
+    {
+      icon: '💼',
+      title: 'Autonomous Proposal Generator',
+      description: 'AI that analyzes RFPs, RFIs, and client requirements to generate customized proposals, Statements of Work, and contracts in minutes.',
+      features: [
+        'Automatic requirement extraction',
+        'Template-based proposal generation',
+        'Pricing calculator integration',
+        'Compliance check automation',
+        'E-signature workflow (DocuSign)'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-violet-600',
+      textColor: 'text-purple-400',
+    },
   ];
 
   const technologies = [
