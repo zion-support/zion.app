@@ -763,35 +763,61 @@ let list = services;
         </div>
       </section>
 
-      {/* ── Category Deep-Link Strip — all 6 categories, live counts ───────── */}
-      <section className="py-12 bg-slate-900/20 border-y border-slate-800/60">
+      {/* ── AI Email Intelligence Suite — V42-V46 email responder modules ── */}
+      <section className="py-16 bg-gradient-to-b from-purple-950/30 to-slate-950 border-y border-purple-500/20">
         <div className="container-page">
-          <div className="text-center mb-8">
-            <h2 className="text-xl font-bold text-white">Browse by Category</h2>
-            <p className="text-slate-400 text-sm mt-1">
-              {`${serviceCount}+ services across 6 core capability areas`}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-4">
+              <span className="text-green-400">●</span> Smart Email Intelligence — New
+            </div>
+            <h2 className="text-2xl font-bold text-white mb-2">🤖 AI-Powered Email Intelligence Suite</h2>
+            <p className="text-slate-400 text-sm max-w-2xl mx-auto">
+              Six intelligent email modules that analyze every message case-by-case, choose the right tone, route to the best response strategy, and learn continuously from every interaction.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {CATEGORIES.map((cat) => {
-              const count = services.filter((s: any) => s.category === cat.key).length;
-              return (
-                <Link
-                  key={cat.key}
-                  href={`/services/?category=${cat.key}`}
-                  className="group relative flex flex-col items-center gap-2 p-5 rounded-2xl border border-slate-700/60 bg-slate-800/40 hover:border-purple-500/50 hover:bg-slate-800/70 transition-all"
-                >
-                  <span className="text-3xl group-hover:scale-110 transition-transform">{cat.emoji}</span>
-                  <span className="text-sm font-semibold text-slate-200 group-hover:text-white text-center leading-snug">
-                    {cat.label}
-                  </span>
-                  <span className="text-xs font-medium text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full">
-                    {count} services
-                  </span>
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-[0.06] transition-opacity pointer-events-none`} />
-                </Link>
-              );
-            })}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {[
+              { key: 'V42', name: 'Smart Response Router', emoji: '🧭', color: 'from-purple-500/20 to-indigo-500/10 border-purple-500/30',
+                desc: 'Classifies 11 intent types per email. Routes each to optimal tone, timing, and Reply-All strategy. Handles: sales, support, billing, partnership, meeting requests, and more.',
+                tech: 'NLP intent classification · CC enforcement · Tone routing' },
+              { key: 'V43', name: 'Sender Preference Memory', emoji: '🧠', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30',
+                desc: 'Learns each sender\'s preferred tone, response length, best time to reply, and Reply-All habits over time. Personalized responses without templates.',
+                tech: 'Continuous learning · Per-sender profiles · Adaptation engine' },
+              { key: 'V44', name: 'Thread Outcome Tracker', emoji: '📊', color: 'from-green-500/20 to-emerald-500/10 border-green-500/30',
+                desc: 'Tracks every sent email. Escalates silently at 48h with follow-up or human-review flags. Closes the loop between send and reply — learning from every outcome.',
+                tech: '48h escalation engine · Closed-loop learning · Escalation actions' },
+              { key: 'V45', name: 'Drip Sequence Engine', emoji: '📧', color: 'from-pink-500/20 to-rose-500/10 border-pink-500/30',
+                desc: 'Multi-touch email sequences: cold sales (3-touch), meeting requests (2-touch), re-engagement (3-touch). Smart delays adapt to opens. Sequence pauses on reply.',
+                tech: '4 sequence templates · Open-tracking · Pause-on-reply' },
+              { key: 'V46', name: 'Response Quality Grader', emoji: '✅', color: 'from-amber-500/20 to-orange-500/10 border-amber-500/30',
+                desc: 'Every email scored 0-100 before send: tone match, length fit, Reply-All correctness, placeholder check, completeness. Auto-fixes placeholders. Flags &lt;70 for review.',
+                tech: '5-dimension scoring · Auto-fix · Human review queue' },
+              { key: 'V41+', name: 'Reply-All Guardian', emoji: '🛡️', color: 'from-red-500/20 to-orange-500/10 border-red-500/30',
+                desc: 'Enforces CC/BCC correctness before every send. Prevents data leaks. All Reply-All decisions logged with full CC chain transparency.',
+                tech: 'CC/BCC enforcement · Leak prevention · Audit trail' },
+            ].map(mod => (
+              <div key={mod.key} className={`rounded-xl border bg-gradient-to-br ${mod.color} p-5 hover:scale-[1.02] transition-all`}>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl">{mod.emoji}</span>
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-purple-300 bg-purple-500/15 px-2 py-0.5 rounded">{mod.key}</span>
+                    <h3 className="text-sm font-bold text-white leading-tight mt-1">{mod.name}</h3>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-xs leading-relaxed mb-3">{mod.desc}</p>
+                <div className="flex flex-wrap gap-1">
+                  {mod.tech.split(' · ').map(t => (
+                    <span key={t} className="text-[10px] text-slate-500 bg-slate-800/60 border border-slate-700/50 px-1.5 py-0.5 rounded">{t}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-slate-500 text-xs mb-3">Available as standalone modules or integrated AI email intelligence suite</p>
+            <a href="mailto:kleber@ziontechgroup.com?subject=Email Intelligence Suite Inquiry"
+               className="btn-primary text-sm px-6 py-2.5 inline-flex items-center gap-2">
+              🤖 Request Email Intelligence Demo →</a>
           </div>
         </div>
       </section>
@@ -895,7 +921,7 @@ let list = services;
                 gradient: 'from-purple-500 to-indigo-500',
                 desc: 'Type your need in plain language — AI matches you to the top services in real time. Zero server calls.',
                 tag: 'New',
-                features: ['627 services scored live', 'Keyword + synonym expansion', 'Top-12 ranked results'],
+                features: ['602 services scored live', 'Keyword + synonym expansion', 'Top-12 ranked results'],
               },
               {
                 name: 'ROI Calculator',
