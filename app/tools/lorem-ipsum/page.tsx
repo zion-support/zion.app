@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function LoremIpsum() {
+
+export const metadata = {
+  title: "Lorem Ipsum Generator",
+  description: "",
+};
+
+
   const [count, setCount] = useState(150);
   const [text, setText] = useState('');
 
@@ -23,9 +29,7 @@ export default function LoremIpsum() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head>
-        <title>Lorem Ipsum Generator</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Lorem Ipsum Generator</h1>
       <p className="mb-4">Generate random Lorem Ipsum text.</p>
       <div className="mb-4">

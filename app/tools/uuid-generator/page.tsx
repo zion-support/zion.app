@@ -1,10 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function UuidGenerator() {
+
+export const metadata = {
+  title: "Free UUID Generator | Zion Tech Group",
+  description: "",
+};
+
+
   const [uuid, setUuid] = useState('');
   const generate = () => {
     // Use crypto.randomUUID if available, fallback to manual generation
@@ -20,9 +26,7 @@ export default function UuidGenerator() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head>
-        <title>Free UUID Generator | Zion Tech Group</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">UUID v4 Generator</h1>
       <p className="mb-6 text-gray-300">Click the button to generate a random UUID (version 4). Perfect for quickly creating unique identifiers.</p>
       <div className="flex flex-col items-center space-y-4">

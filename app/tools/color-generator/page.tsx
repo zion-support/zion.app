@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 function randomHex(): string {
@@ -8,13 +7,20 @@ function randomHex(): string {
 }
 
 export default function ColorGenerator() {
+
+export const metadata = {
+  title: "Random Color Generator",
+  description: "",
+};
+
+
   const [color, setColor] = useState(randomHex());
 
   const generate = () => setColor(randomHex());
 
   return (
     <main className="mx-auto max-w-3xl p-8 text-center">
-      <Head><title>Random Color Generator</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Random Color Generator</h1>
       <div className="p-6 rounded" style={{backgroundColor:color, color:'#fff'}}>
         <h2 className="text-2xl">{color}</h2>

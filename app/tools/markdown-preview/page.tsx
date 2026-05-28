@@ -1,17 +1,21 @@
 "use client";
 
 import { useState } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 
 export default function MarkdownPreview() {
+
+export const metadata = {
+  title: "Free Markdown Preview | Zion Tech Group",
+  description: "",
+};
+
+
   const [markdown, setMarkdown] = useState('# Welcome to the Markdown Preview\n\nType some *markdown* on the left pane to see the rendered output.')
 
   return (
     <main className="mx-auto max-w-5xl p-8">
-      <Head>
-        <title>Free Markdown Preview | Zion Tech Group</title>
-      </Head>
+      
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/2">
           <label className="block mb-2 text-sm font-medium text-gray-700">

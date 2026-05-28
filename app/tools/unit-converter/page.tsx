@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 const units = {
@@ -19,6 +18,13 @@ const units = {
 };
 
 export default function UnitConverter() {
+
+export const metadata = {
+  title: "Unit Converter",
+  description: "",
+};
+
+
   const [type, setType] = useState("length");
   const [from, setFrom] = useState("meters");
   const [to, setTo] = useState("kilometers");
@@ -36,7 +42,7 @@ export default function UnitConverter() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head><title>Unit Converter</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Unit Converter</h1>
       <div className="mb-4">
         <label className="mr-2">Category:</label>

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
 const products = [
@@ -23,11 +22,16 @@ const products = [
 ];
 
 export default function DigitalProducts() {
+
+export const metadata = {
+  title: "Digital Products | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Digital Products | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Digital Products</h1>
       <p className="mb-6 text-gray-300">
         Buy our curated digital products and accelerate your AI‑powered projects.

@@ -1,10 +1,16 @@
 'use client';
 
-import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function FreeNewsletterPage() {
+
+export const metadata = {
+  title: "Free Newsletter Signup | Zion Tech Group",
+  description: "",
+};
+
+
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -28,9 +34,7 @@ export default function FreeNewsletterPage() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head>
-        <title>Free Newsletter Signup | Zion Tech Group</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Join Our Free Newsletter</h1>
       <p className="mb-6 text-gray-300">Get the latest AI insights, tutorials, and product updates—no cost, no fuss.</p>
       <form className="rounded-xl border border-slate-700 bg-slate-900/50 p-6 space-y-4" onSubmit={handleSubmit}>

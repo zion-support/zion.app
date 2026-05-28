@@ -1,12 +1,16 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function CalendarPage() {
+
+export const metadata = {
+  title: "Free Calendar Invite | Zion Tech Group",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head>
-        <title>Free Calendar Invite | Zion Tech Group</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Schedule a Free Discovery Call</h1>
       <p className="mb-6 text-gray-300">Use the button below to choose a convenient time via Calendly’s free tier.</p>
       <div className="flex justify-center">

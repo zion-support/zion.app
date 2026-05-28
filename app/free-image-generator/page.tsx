@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function ImageGenerator() {
+
+export const metadata = {
+  title: "Free Image Generator | Zion Tech Group",
+  description: "",
+};
+
+
   const [url, setUrl] = useState('https://picsum.photos/800/600');
   const [error, setError] = useState(false);
 
@@ -21,9 +27,7 @@ export default function ImageGenerator() {
 
   return (
     <main className="mx-auto max-w-5xl p-8">
-      <Head>
-        <title>Free Image Generator | Zion Tech Group</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Free Random Image Generator</h1>
       <p className="mb-6 text-gray-300">Generate free high‑resolution images with a single click.</p>
       <div className="rounded-3xl border border-slate-700 bg-slate-900/70 p-6 shadow-2xl shadow-purple-700/20">

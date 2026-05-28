@@ -1,9 +1,15 @@
 'use client';
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function JsonFormatter() {
+
+export const metadata = {
+  title: "JSON Formatter",
+  description: "",
+};
+
+
   const [input, setInput] = useState('{}');
   const [output, setOutput] = useState('');
   const format = () => {
@@ -16,7 +22,7 @@ export default function JsonFormatter() {
   };
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head><title>JSON Formatter</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">JSON Formatter</h1>
       <textarea value={input} onChange={e=>setInput(e.target.value)} className="w-full h-32 p-3 border rounded" placeholder="Paste raw JSON"></textarea>
       <div className="mt-2 flex space-x-2">

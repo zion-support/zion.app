@@ -1,9 +1,15 @@
 "use client";
 
-import Head from 'next/head';
 import { useState } from 'react';
 
 export default function Newsletter() {
+
+export const metadata = {
+  title: "Newsletter | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -29,9 +35,7 @@ export default function Newsletter() {
 
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Newsletter | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h1>
       <p className="mb-6">Stay updated with the latest AI insights, product releases, and industry news.</p>
       <form className="grid gap-4 max-w-md" onSubmit={handleSubmit}>

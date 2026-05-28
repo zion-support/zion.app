@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 function parseIngredient(line: string) {
@@ -13,6 +12,13 @@ function parseIngredient(line: string) {
 }
 
 export default function RecipeConverter() {
+
+export const metadata = {
+  title: "Recipe Converter",
+  description: "",
+};
+
+
   const [servings, setServings] = useState(2);
   const [targetServings, setTargetServings] = useState(4);
   const [input, setInput] = useState('');
@@ -32,7 +38,7 @@ export default function RecipeConverter() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head><title>Recipe Converter</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Recipe Converter</h1>
       <div className="mb-4">
         <label className="mr-2">Original servings:</label>

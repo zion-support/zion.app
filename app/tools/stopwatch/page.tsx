@@ -1,9 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function Stopwatch() {
+
+export const metadata = {
+  title: "Stopwatch",
+  description: "",
+};
+
+
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
 
@@ -30,7 +36,7 @@ export default function Stopwatch() {
 
   return (
     <main className="mx-auto max-w-md p-8 text-center">
-      <Head><title>Stopwatch</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Stopwatch</h1>
       <div className="text-6xl font-mono mb-4">{format(time)}</div>
       <div className="space-x-4">

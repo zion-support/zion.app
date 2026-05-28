@@ -1,12 +1,16 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Donate() {
+
+export const metadata = {
+  title: "Donate | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Donate | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Support Zion Tech Group</h1>
       <p className="mb-6">Your contribution helps us keep building free, open‑source AI tools and services.</p>
       <div className="grid gap-4 md:grid-cols-2">

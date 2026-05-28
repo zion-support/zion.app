@@ -1,12 +1,16 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Monetization() {
+
+export const metadata = {
+  title: "Monetization | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Monetization | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Monetization Options</h1>
       <p className="mb-6">Explore various ways to support and gain access to Zion Tech Group services.</p>
       <div className="grid gap-6 md:grid-cols-2">

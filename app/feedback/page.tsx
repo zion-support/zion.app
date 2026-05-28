@@ -1,14 +1,18 @@
 'use client';
 
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function FeedbackPage() {
+
+export const metadata = {
+  title: "Feedback | Zion Tech Group",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Feedback | Zion Tech Group</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Share Your Feedback</h1>
       <p className="mb-6 text-gray-300">
         Help us improve! Use the free Google Form below to submit your thoughts, suggestions, or report any issues.

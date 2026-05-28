@@ -1,9 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function JokeGenerator() {
+
+export const metadata = {
+  title: "Random Joke Generator",
+  description: "",
+};
+
+
   const [joke, setJoke] = useState<{setup:string, punchline:string}|null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +29,7 @@ export default function JokeGenerator() {
 
   return (
     <main className="mx-auto max-w-2xl p-8 text-center">
-      <Head><title>Random Joke Generator</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Random Joke</h1>
       {loading ? <p>Loading...</p> : joke && (
         <div className="mb-4">

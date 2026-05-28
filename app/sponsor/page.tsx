@@ -1,11 +1,15 @@
-import Head from 'next/head';
 
 export default function Sponsor() {
+
+export const metadata = {
+  title: "Sponsor | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Sponsor | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Become a Sponsor</h1>
       <p className="mb-6">Support Zion Tech Group through sponsorship. Your contributions help us maintain and expand our open‑source AI ecosystem.</p>
       <div className="grid gap-4 md:grid-cols-2">

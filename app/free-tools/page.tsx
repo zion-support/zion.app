@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 
 const tools = [
@@ -35,11 +34,16 @@ const tools = [
 ];
 
 export default function FreeToolsPage() {
+
+export const metadata = {
+  title: "Free Tools | {process.env.NEXT_PUBLIC_APP_NAME}",
+  description: "",
+};
+
+
   return (
     <main className="mx-auto max-w-4xl p-8">
-      <Head>
-        <title>Free Tools | {process.env.NEXT_PUBLIC_APP_NAME}</title>
-      </Head>
+      
       <h1 className="text-3xl font-bold mb-4">Free Tools & Resources</h1>
       <p className="mb-6">Explore a curated list of powerful free tools that help you build, deploy, and scale your projects without cost.</p>
       <ul className="space-y-4 list-none">

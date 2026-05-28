@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function WordCounter() {
+
+export const metadata = {
+  title: "Word Counter",
+  description: "",
+};
+
+
   const [text, setText] = useState('');
   const [count, setCount] = useState(0);
 
@@ -14,7 +20,7 @@ export default function WordCounter() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head><title>Word Counter</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Word Counter</h1>
       <textarea value={text} onChange={e=>setText(e.target.value)} className="w-full h-48 p-3 border rounded" placeholder="Paste your text here"/>\n      <div className="mt-4">
         <button onClick={countWords} className="px-4 py-2 bg-indigo-600 text-white rounded">Count Words</button>

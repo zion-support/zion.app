@@ -1,9 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function CurrencyConverter() {
+
+export const metadata = {
+  title: "Currency Converter",
+  description: "",
+};
+
+
   const [amount, setAmount] = useState(1);
   const [from, setFrom] = useState('USD');
   const [to, setTo] = useState('EUR');
@@ -29,7 +35,7 @@ export default function CurrencyConverter() {
 
   return (
     <main className="mx-auto max-w-3xl p-8">
-      <Head><title>Currency Converter</title></Head>
+      
       <h1 className="text-3xl font-bold mb-4">Currency Converter</h1>
       <div className="mb-4">
         <input type="number" value={amount} onChange={e=>setAmount(parseFloat(e.target.value)||0)} className="border rounded p-1 mr-2" />
