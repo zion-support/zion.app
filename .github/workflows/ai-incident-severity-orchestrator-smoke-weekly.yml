@@ -1,0 +1,35 @@
+# Ensures ai-incident-severity-orchestrator.yml keeps schedule/escalation anchors (grep-only).
+name: ai incident severity orchestrator workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '30 12 * * 2' # Tuesdays 12:30 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-incident-severity-orchestrator-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  incident-severity-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-incident-severity-orchestrator.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-incident-severity-orchestrator.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Incident Severity Orchestrator' "$f"
+          grep -Fq "cron: '23 */4 * * *'" "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'ai-incident-severity-orchestrator.cjs' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

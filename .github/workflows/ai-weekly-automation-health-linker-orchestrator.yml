@@ -1,0 +1,52 @@
+name: AI weekly automation health linker orchestrator
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '12 */6 * * *'
+
+concurrency:
+  group: ai-weekly-automation-health-linker-orchestrator
+  cancel-in-progress: false
+
+jobs:
+  linker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run weekly health linker orchestrator
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEEKLY_HEALTH_LINKER_CONFIDENCE_MIN: ${{ vars.WEEKLY_HEALTH_LINKER_CONFIDENCE_MIN }}
+          WEEKLY_HEALTH_LINKER_WARN_DAYS: ${{ vars.WEEKLY_HEALTH_LINKER_WARN_DAYS }}
+          WEEKLY_HEALTH_LINKER_CRIT_DAYS: ${{ vars.WEEKLY_HEALTH_LINKER_CRIT_DAYS }}
+          WEEKLY_HEALTH_LINKER_WINDOW_HOURS: ${{ vars.WEEKLY_HEALTH_LINKER_WINDOW_HOURS }}
+        run: node automation/weekly-automation-health-linker-orchestrator.cjs
+
+      - name: Upload linker state artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: weekly-health-linker-${{ github.run_id }}
+          path: automation/reports/weekly-automation-health-linker-state.json
+          if-no-files-found: ignore
+          retention-days: 30

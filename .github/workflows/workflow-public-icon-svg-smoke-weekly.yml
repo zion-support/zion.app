@@ -1,0 +1,34 @@
+# Ensures public/icon.svg stays present for layout metadata / PWA (grep-only).
+
+name: public/icon.svg smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '1 8 * * 0' # Sundays 08:01 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-public-icon-svg-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  icon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: icon.svg shape
+        run: |
+          set -euo pipefail
+          test -f public/icon.svg
+          test -s public/icon.svg
+          grep -Fq '<svg xmlns="http://www.w3.org/2000/svg"' public/icon.svg
+          grep -Fq 'viewBox="0 0 256 256"' public/icon.svg
+          grep -Fq 'aria-label="Zion Tech Group icon"' public/icon.svg
+          grep -Fq '</svg>' public/icon.svg
+          echo 'ok: public/icon.svg'

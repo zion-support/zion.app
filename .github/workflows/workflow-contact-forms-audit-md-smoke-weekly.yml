@@ -1,0 +1,35 @@
+# Ensures CONTACT-FORMS-AUDIT.md stays present with commercial funnel + CONTACT_INFO anchors (grep-only).
+
+name: contact forms audit doc smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '45 8 * * 0' # Sundays 08:45 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-contact-forms-audit-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  contact-forms-audit-doc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Contact forms audit doc anchors
+        run: |
+          set -euo pipefail
+          test -f CONTACT-FORMS-AUDIT.md
+          test -s CONTACT-FORMS-AUDIT.md
+          grep -Fq 'Contact Forms Audit' CONTACT-FORMS-AUDIT.md
+          grep -Fq 'commercial@ziontechgroup.com' CONTACT-FORMS-AUDIT.md
+          grep -Fq 'seoConstants.ts' CONTACT-FORMS-AUDIT.md
+          grep -Fq 'CONTACT_INFO.email' CONTACT-FORMS-AUDIT.md
+          grep -Fq '## Summary' CONTACT-FORMS-AUDIT.md
+          echo 'ok: CONTACT-FORMS-AUDIT.md'

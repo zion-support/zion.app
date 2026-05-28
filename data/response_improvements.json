@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-19T02:17:54.289821+00:00",
+  "opportunities": [],
+  "suggestions": [],
+  "templates": {
+    "booking": {
+      "enhanced": true,
+      "changes": [
+        "Added dynamic date insertion from email entities",
+        "Improved Portuguese/English language detection",
+        "Added urgency-based timing estimates"
+      ]
+    },
+    "urgent": {
+      "enhanced": true,
+      "changes": [
+        "Dynamic urgency level classification",
+        "Added context-aware response timing",
+        "Improved tone matching for critical emails"
+      ]
+    },
+    "sales": {
+      "enhanced": true,
+      "changes": [
+        "Better value proposition language",
+        "Dynamic pricing reference handling",
+        "Follow-up reminder integration"
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+# Weekly Layout Design Automation
+# Runs full pipeline (UX audit + layout audit + apply), commits and pushes to main.
+# Complements: ai-layout-design-audit (Sat, report only), ai-layout-improvement (Tue, improvement agent).
+
+name: AI Layout Design Automation (Weekly)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-layout-design-automation-weekly
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 11 * * 5'
+  workflow_dispatch:
+
+jobs:
+  layout-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      LAYOUT_AUDIT_URL: https://ziontechgroup.com
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run layout design automation (audit + apply + commit)
+        run: AUTO_COMMIT=1 node automation/ai-layout-design-automation-pipeline-full.cjs
+        continue-on-error: true
+
+      - name: Push to main
+        if: success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict — skipping push."
+            git rebase --abort || true
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh
+
+      - name: Upload pipeline report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: layout-design-automation-${{ github.run_id }}
+          path: automation/reports/
+          if-no-files-found: ignore
+          retention-days: 30

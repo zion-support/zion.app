@@ -1,0 +1,96 @@
+name: AI App Improvement Specialist
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ai-app-improvement-specialist
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 12 * * 5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Operation mode'
+        required: false
+        default: 'standard'
+        type: choice
+        options:
+          - standard
+          - aggressive
+          - conservative
+      max_improvements:
+        description: 'Max improvements to apply'
+        required: false
+        default: '15'
+        type: string
+
+jobs:
+  improve-app:
+    name: Run App Improvement Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 1
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run AI App Improvement Specialist
+        env:
+          AAIS_MODE: ${{ inputs.mode || 'standard' }}
+          AAIS_MAX_IMPROVEMENTS: ${{ inputs.max_improvements || '15' }}
+          AAIS_AUTO_COMMIT: 'true'
+          AAIS_AUTO_PUSH: 'false'
+          AAIS_MIN_HEALTH: '80'
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/ai-app-improvement-specialist.cjs run
+
+      - name: Push changes
+        if: success()
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+          git fetch origin main --depth=1
+          if ! git rebase origin/main; then
+            echo "::warning::Rebase conflict — skipping push."
+            git rebase --abort || true
+            exit 0
+          fi
+          bash scripts/automation/push-main-with-retry.sh
+
+      - name: Upload report
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        if: always()
+        with:
+          name: app-improvement-report-${{ github.run_id }}
+          path: |
+            automation/reports/improvement-specialist/*.json
+            automation/logs/aais-*.log
+          if-no-files-found: ignore
+          retention-days: 14

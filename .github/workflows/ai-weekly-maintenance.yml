@@ -1,0 +1,56 @@
+name: AI Weekly Maintenance
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-weekly-maintenance
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 12 * * 4'
+  workflow_dispatch:
+
+jobs:
+  weekly-maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Dependency outdated check
+        run: node automation/ai-dependency-outdated-agent.cjs run
+
+      - name: Dead code detector
+        run: node automation/ai-dead-code-detector-agent.cjs run
+
+      - name: Bundle size monitor
+        run: node automation/ai-bundle-size-monitor-agent.cjs run
+
+      - name: Upload maintenance reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: weekly-maintenance-${{ github.run_id }}
+          path: |
+            automation/reports/dependency-outdated-latest.json
+            automation/reports/dead-code-detector-latest.json
+            automation/reports/bundle-size-monitor-latest.json
+            automation/data/bundle-size-history.json
+            automation/data/dependency-outdated-history.json
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,0 +1,99 @@
+# AI Content Accelerator - High-Throughput Off-Peak Runs
+# Runs 2x daily (1 AM, 14 UTC) with maximum template content creation.
+# Fills gaps between burst/rapid/velocity for fastest possible content growth.
+# Uses content-commit concurrency to avoid parallel commits.
+
+name: AI Content Accelerator
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+    inputs:
+      max_template_blog:
+        description: 'Template blog posts (default 15)'
+        required: false
+        default: '15'
+      max_template_case_studies:
+        description: 'Template case studies (default 15)'
+        required: false
+        default: '15'
+      max_industry_pages:
+        description: 'Industry solution pages (default 8)'
+        required: false
+        default: '8'
+      max_product_pages:
+        description: 'New product pages (default 5)'
+        required: false
+        default: '5'
+      max_add:
+        description: 'Apps to promote to front page (default 10)'
+        required: false
+        default: '10'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  accelerator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      NEXT_BUILD_WORKER_COUNT: 1
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run content accelerator (high-throughput template-only)
+        env:
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '15' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '15' }}
+          MAX_INDUSTRY_PAGES: ${{ github.event.inputs.max_industry_pages || '8' }}
+          MAX_PRODUCT_PAGES: ${{ github.event.inputs.max_product_pages || '5' }}
+          MAX_ADD: ${{ github.event.inputs.max_add || '10' }}
+        run: node automation/ai-content-burst-agent.cjs
+
+      - name: Validate build (catch content errors before push)
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit, push, and deploy
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(content): content accelerator - high-throughput template blog + case studies + industry + product pages"
+            git push
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

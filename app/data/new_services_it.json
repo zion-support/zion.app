@@ -1,0 +1,90 @@
+[
+  {
+    "category": "it",
+    "id": "it-api-gateway-openapi",
+    "title": "API Gateway + OpenAPI Management",
+    "description": "Enterprise API gateway: OpenAPI 3.1 lifecycle, rate-limit/quota per key, threat-protection WAF rules, schema registry, live API analytics, developer portal with interactive docs and sandbox.",
+    "basic": "1499",
+    "pro": "4999",
+    "enterprise": "14999",
+    "popular": true,
+    "features": [
+      "OpenAPI 3.1 spec lifecycle \u2014 versioning, deprecation, staging",
+      "Rate-limit + quota per consumer key with brotten alerting",
+      "Managed threat-protection WAF rule set for API endpoints",
+      "Schema registry + mocking + developer portal with embedded sandbox"
+    ],
+    "benefits": [
+      "Govern 1000+ endpoints from one control plane",
+      "Publish API docs that developers actually use",
+      "Threat protection without touching your WAF",
+      "Analytics surface shows which endpoints under-utilised and which overloaded"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-backup-dr-bc-as-a-service",
+    "title": "Backup / DR/BCaaS",
+    "description": "Managed backup and disaster recovery: 3-2-1-1-airgap policy, every-30s WORM snapshots, point-in-time restore to 90 days, failover tests every 30 min, 4-hour RTO, 15-min RPO SLA.",
+    "basic": "1999",
+    "pro": "6999",
+    "enterprise": "24999",
+    "popular": true,
+    "features": [
+      "3-2-1-1-airgap backup policy enforced automatically",
+      "WORM snapshots every 30 seconds, point-in-time restore to 90 days",
+      "Automatic failover testing every 30 minutes with pass/fail report",
+      "4-hour RTO and 15-minute RPO SLA with financial credit clause"
+    ],
+    "benefits": [
+      "Sleep through outages knowing data is immutably air-gapped",
+      "Show board-level DR readiness on demand with pass/fail reports",
+      "RTO of 4 hours means only half a day of downtime in worst case",
+      "RPO of 15 minutes means zero more than 15 minutes of data lost"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-cicd-security-gate-as-service",
+    "title": "CI/CD Security Gate-as-a-Service",
+    "description": "Shift-left CI/CD security: SAST/DAST/SCA/containers per PR/push branch gate with auto-fix PRs for vulnerabilities, SBOM generation, false-positive suppression.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": false,
+    "features": [
+      "SAST/DAST/SCA/container scanning per PR with 5-minute deadline",
+      "Vulnerability classification: CWE+CVSS+remotely-exploitable/reachable",
+      "Auto-fix PR against approved fix forms \u2014 merge approved change",
+      "Verified SBOM generated per build with SPDX+cyclonedx exports"
+    ],
+    "benefits": [
+      "Halt every vulnerability before it reaches staging",
+      "No more opening a vulnerability ticket and forgetting",
+      "Open-source dependency risks eliminated before deployment",
+      "SBOM-fed SLA means regulatory customers can verify your software BOM on demand"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-endpoint-security-compliance-monitor",
+    "title": "Endpoint Security & Compliance Monitor",
+    "description": "Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PCI/SOX/ISO27001 with automated audit evidence export.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": false,
+    "features": [
+      "EDR engine with behavioural analytics, endpoint firewall, exploit prevention",
+      "Patch catalog covering CVE/third-party blobs \u2014 auto-deploy fix per deployment group",
+      "Compliance posture dashboard for HIPAA/PCI/SOX/ISO27001/GDPR",
+      "Automated audit evidence export package per framework on demand"
+    ],
+    "benefits": [
+      "Know every endpoint's compliance posture without sending a device offsite",
+      "Zip-based export package means one-click audit response per framework",
+      "Patch CVE not by its disclosure date but by its patch-readiness score",
+      "Endpoint firewall stops lateral movement as EDR detects and alarms"
+    ]
+  }
+]

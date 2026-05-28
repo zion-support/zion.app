@@ -1,0 +1,87 @@
+name: Autonomous Quality Drift Sentinel
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: autonomous-quality-drift-sentinel
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '45 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  quality-drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run quality drift sentinel
+        run: npm run autonomy:quality-drift
+
+      - name: Upload quality drift artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-quality-drift-${{ github.run_id }}
+          path: |
+            automation/reports/autonomous-quality-drift-latest.json
+            automation/reports/autonomous-quality-drift-latest.md
+            automation/reports/autonomous-quality-drift-history.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Escalate quality drift incident
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomous-quality-drift-latest.json"
+          [ -f "$report" ] || exit 0
+          severity=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.severity||'ok')")
+          failed=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.failedCount||0)")
+          if [ "$severity" = "ok" ]; then
+            echo "No quality drift incident to escalate."
+            export ISSUE_FINGERPRINT="autonomous-quality-drift"
+            export CLOSE_COMMENT="Auto-closing: quality drift sentinel reports healthy."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="autonomous-quality-drift-incident.md"
+          {
+            echo "## Quality drift alert"
+            echo ""
+            echo "- **Dedupe key:** \`autonomous-quality-drift\`"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Severity: \`$severity\`"
+            echo "- Failed checks: \`$failed\`"
+            echo ""
+            echo "### Failing checks"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const c of (r.checks||[])){if(!c.passed){console.log('- '+c.id+' (streak '+c.failureStreak+', exit '+c.exitCode+')')}}"
+          } > "$body_file"
+          export ISSUE_TITLE="Autonomous Quality Drift alert"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="autonomous-quality-drift"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

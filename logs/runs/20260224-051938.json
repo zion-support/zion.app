@@ -1,0 +1,13 @@
+{
+  "action": "smoke",
+  "url": "https://ziontechgroup.com",
+  "headless": true,
+  "ts": "20260224-051938",
+  "ok": true,
+  "title": "Zion Tech Group - AI Solutions & Technology Services",
+  "current_url": "https://ziontechgroup.com/",
+  "screenshot": "/Users/kleberalcatrao/.openclaw/workspace/logs/screenshots/20260224-051938.png",
+  "html_len": 48029,
+  "has_form": false,
+  "duration_s": 5.544
+}

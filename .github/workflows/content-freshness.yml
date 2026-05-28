@@ -1,0 +1,52 @@
+permissions:
+  contents: read
+name: Autonomous Content Freshness & Stale Content Archiver
+true:
+  schedule:
+  - cron: 0 10 * * 2
+  workflow_dispatch: null
+jobs:
+  freshness-check:
+    name: Content Freshness Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci --include=dev
+    - name: Run Content Freshness Scanner
+      id: scanner
+      continue-on-error: true
+      run: 'node automation/content-freshness.cjs > /tmp/freshness-output.txt || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload freshness artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: content-freshness-state
+        path: '.hermes/memory/content-freshness/
+
+          /tmp/freshness-output.txt
+
+          '
+        retention-days: 30
+    - name: Notify Telegram on completion
+      if: success()
+      run: "node automation/notify-telegram.js \"\U0001F552 Content freshness scan\
+        \ complete. Check artifacts for stale content count.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Content freshness scan\
+        \ failed. Check workflow logs.\"\n"
+    timeout-minutes: 10

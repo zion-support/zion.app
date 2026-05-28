@@ -1,0 +1,74 @@
+# AI App Evolution Automation
+# Audits ziontechgroup.com, generates evolution ideas via OpenRouter LLM,
+# updates backlog and report. Optional: commit and push to main.
+# Runs: Weekly Sunday 11 AM UTC, or workflow_dispatch
+
+name: AI App Evolution Automation
+
+concurrency:
+  group: ai-app-evolution-automation
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 11 * * 0'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push evolution backlog to main'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  evolution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run app evolution (audit + ideas)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/auto
+          AUTO_APPLY: '0'
+          AUTO_COMMIT: ${{ github.event.inputs.auto_commit == 'true' || github.event_name == 'schedule' }}
+        run: node automation/ai-app-evolution-automation-agent.cjs run
+
+      - name: Commit and push evolution backlog (fallback)
+        if: (github.event.inputs.auto_commit == 'true' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f automation/data/app-evolution-backlog.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(automation): app evolution backlog"
+
+      - name: Upload evolution report
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-evolution-report
+          path: |
+            automation/reports/app-evolution-automation-latest.json
+            automation/data/app-evolution-backlog.json
+            automation/data/app-audit-suggestions.json

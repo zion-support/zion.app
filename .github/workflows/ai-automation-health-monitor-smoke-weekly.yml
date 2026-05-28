@@ -1,0 +1,33 @@
+# Ensures ai-automation-health-monitor.yml keeps schedule and health-report anchors (grep-only).
+name: ai automation health monitor workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '42 11 * * 3' # Wednesdays 11:42 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-automation-health-monitor-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  automation-health-monitor-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-automation-health-monitor.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automation-health-monitor.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Automation Health Monitor' "$f"
+          grep -Fq 'group: ai-automation-health-monitor' "$f"
+          grep -Fq "cron: '0 8 * * *'" "$f"
+          grep -Fq 'npm run automation:health' "$f"
+          grep -Fq 'npm run cron:health' "$f"
+          grep -Fq 'health-monitor-latest.json' "$f"
+          grep -Fq 'cron-health-monitor.log' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

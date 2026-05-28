@@ -1,0 +1,72 @@
+name: AI Content Generator Ultra
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    # Twice daily content generation bursts to supplement existing pipelines
+    - cron: '15 3 * * *'
+    - cron: '45 15 * * *'
+  workflow_dispatch:
+    inputs:
+      bulk_count:
+        description: 'Number of content pieces to generate (default 10)'
+        required: false
+        default: '10'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  content-generator-ultra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Generate content via AI Content Generator
+        env:
+          BULK_COUNT: ${{ github.event.inputs.bulk_count || '10' }}
+        run: node automation/ai-content-generator-automation.cjs bulk "$BULK_COUNT"
+
+      - name: Validate build
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit, push, and deploy
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            bash scripts/automation/commit-and-push-main.sh "chore(content): generator ultra - blogs + services + case studies"
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi
+

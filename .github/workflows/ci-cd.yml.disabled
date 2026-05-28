@@ -1,0 +1,124 @@
+name: CI/CD Pipeline
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: "--max-old-space-size=4096"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: package-lock.json
+      
+      - name: Configure npm PATH
+        run: |
+          echo "/root/.npm-global/bin" >> $GITHUB_PATH
+          echo "/usr/local/bin" >> $GITHUB_PATH
+          echo "npm config set cache /tmp/.npm-cache"
+          echo "npm config set progress false"
+      
+      - name: Install Next.js globally
+        run: npm install -g next@16.2.0
+        continue-on-error: false
+      - name: Restore Next.js cache
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-next-
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Automation preflight
+        id: automation_preflight
+        run: npm run automation:preflight
+      - name: AI Lab integrity guard
+        id: ai_lab_integrity
+        run: npm run ai-lab:integrity-check
+      - name: Smoke routes drift check
+        id: smoke_routes
+        run: npm run smoke:routes:check
+      - name: Homepage AI sync check
+        id: homepage_ai_sync
+        run: npm run homepage:ai-sync:check
+      - name: Lint (errors-only)
+        id: lint
+        run: npx eslint . --ignore-pattern ".next/**" --ignore-pattern "out/**" --ignore-pattern "dist/**" --ignore-pattern "build/**" --quiet
+      - name: Type check
+        id: typecheck
+        run: npm run type-check
+      - name: Test
+        id: test
+        run: npm run test:ci
+      - name: Build (strict preflight)
+        id: build
+        run: |
+          set -euo pipefail
+          npm run build:check
+          if [ -d "dist" ]; then
+            PAGE_COUNT=$(find dist -name '*.html' | wc -l)
+            BUILD_SIZE=$(du -sh dist | awk '{print $1}')
+          elif [ -d "out" ]; then
+            PAGE_COUNT=$(find out -name '*.html' | wc -l)
+            BUILD_SIZE=$(du -sh out | awk '{print $1}')
+          elif [ -d ".next" ]; then
+            PAGE_COUNT=$(find .next -name '*.html' 2>/dev/null | wc -l)
+            BUILD_SIZE=$(du -sh .next | awk '{print $1}')
+          else
+            PAGE_COUNT=0
+            BUILD_SIZE="unknown"
+          fi
+          echo "pages=$PAGE_COUNT" >> "$GITHUB_OUTPUT"
+          echo "size=$BUILD_SIZE" >> "$GITHUB_OUTPUT"
+
+      - name: Sitemap validation
+        if: success()
+        continue-on-error: true
+        run: npm run sitemap:validate
+
+      - name: CI Summary
+        if: always()
+        run: |
+          {
+            echo "## CI/CD Pipeline Results"
+            echo ""
+            echo "| Check | Status |"
+            echo "|-------|--------|"
+            echo "| Automation Preflight | ${{ steps.automation_preflight.outcome == 'success' && '✅' || (steps.automation_preflight.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| AI Lab Integrity Guard | ${{ steps.ai_lab_integrity.outcome == 'success' && '✅' || (steps.ai_lab_integrity.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Smoke Routes Drift Check | ${{ steps.smoke_routes.outcome == 'success' && '✅' || (steps.smoke_routes.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Homepage AI Sync Check | ${{ steps.homepage_ai_sync.outcome == 'success' && '✅' || (steps.homepage_ai_sync.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Lint | ${{ steps.lint.outcome == 'success' && '✅' || (steps.lint.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Type Check | ${{ steps.typecheck.outcome == 'success' && '✅' || (steps.typecheck.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Tests | ${{ steps.test.outcome == 'success' && '✅' || (steps.test.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo "| Build | ${{ steps.build.outcome == 'success' && '✅' || (steps.build.outcome == 'cancelled' && '⏭️' || '❌') }} |"
+            echo ""
+            if [ "${{ steps.build.outcome }}" = "success" ]; then
+              echo "**Build output:** ${{ steps.build.outputs.size }} (${{ steps.build.outputs.pages }} pages)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

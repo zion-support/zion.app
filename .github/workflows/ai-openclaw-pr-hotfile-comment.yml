@@ -1,0 +1,61 @@
+name: AI Openclaw PR hot-file advisory
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+concurrency:
+  group: openclaw-pr-hotfile-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh hot-file router snapshot
+        run: |
+          set -euo pipefail
+          npm run openclaw:conflict:predict
+          npm run openclaw:hot:patch:route
+
+      - name: Comment and label when PR touches hot files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          PR="${{ github.event.pull_request.number }}"
+          FILES="$(gh pr diff "$PR" --name-only | paste -sd "," -)"
+          export FILES
+          node automation/openclaw-pr-hotfile-comment.cjs > /tmp/hot.md
+          if grep -q 'no hot-file overlap' /tmp/hot.md; then echo "No overlap"; exit 0; fi
+          if grep -q 'no changed files' /tmp/hot.md; then echo "No files"; exit 0; fi
+          gh pr comment "$PR" --body-file /tmp/hot.md
+          LABELS="$(node automation/openclaw-pr-hotfile-labels.cjs | xargs || true)"
+          if [ -z "$LABELS" ]; then echo "No labels"; exit 0; fi
+          for lb in $LABELS; do
+            gh label create "$lb" --color "0052CC" 2>/dev/null || true
+          done
+          args=()
+          for lb in $LABELS; do args+=(--add-label "$lb"); done
+          gh pr edit "$PR" "${args[@]}" || true

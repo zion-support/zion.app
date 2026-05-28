@@ -1,0 +1,97 @@
+name: AI MTTR SLO guard (daily)
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ai-mttr-slo-guard-daily
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '45 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh automation issue index (with MTTR)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/generate-automation-issue-index.cjs
+
+      - name: Ensure SLO labels exist
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create automation-slo-warning --color FBCA04 --description "Automation SLO warning" 2>/dev/null || true
+          gh label create automation-slo-critical --color B60205 --description "Automation SLO critical" 2>/dev/null || true
+
+      - name: MTTR SLO guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MTTR_SLO_WARNING_HOURS: '24'
+          MTTR_SLO_CRITICAL_HOURS: '48'
+          MTTR_SLO_CRITICAL_STREAK: '2'
+          # PagerDuty only when critical streak + enough open automation-fp issues + cooldown satisfied
+          MTTR_SLO_PD_MIN_OPEN_FP: '3'
+          MTTR_SLO_PD_COOLDOWN_HOURS: '24'
+          MTTR_SLO_FP_REGRESSION_HOURS: '6'
+          MTTR_SLO_PAGERDUTY_ROUTING_KEY: ${{ secrets.MTTR_SLO_PAGERDUTY_ROUTING_KEY }}
+        run: node automation/ai-mttr-slo-guard.cjs
+
+      - name: Upload MTTR guard artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: mttr-slo-guard-${{ github.run_id }}
+          path: |
+            automation/reports/automation-open-issues-index-latest.json
+            automation/reports/automation-issue-mttr-history.json
+            automation/reports/mttr-slo-guard-latest.json
+            automation/reports/mttr-slo-guard-state.json
+            automation/reports/automation-mttr-slo-metrics.prom
+            automation/reports/automation-incident-cooldown-mesh.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Commit MTTR SLO state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/automation-open-issues-index-latest.json
+          git add -f automation/reports/automation-issue-mttr-history.json
+          git add -f automation/reports/mttr-slo-guard-latest.json
+          git add -f automation/reports/mttr-slo-guard-state.json
+          git add -f automation/reports/automation-mttr-slo-metrics.prom
+          git add -f automation/reports/automation-incident-cooldown-mesh.json
+          if git diff --staged --quiet; then
+            echo "No MTTR guard state changes."
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): refresh MTTR SLO guard state"

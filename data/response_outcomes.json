@@ -1,0 +1,25 @@
+{
+  "repeatclient.com": [
+    {
+      "intent": "support",
+      "outcome": "positive",
+      "template_key": "support_issue",
+      "response_body": "Hi Alice! I've investigated the login issue and it's fixed now. The problem was an expired session token — please try logging in again. Let me know if it persists! — Kleber, Zion Tech Group",
+      "ts": "2026-05-20T14:07:00.867190+00:00"
+    },
+    {
+      "intent": "support",
+      "outcome": "positive",
+      "template_key": "general",
+      "response_body": "Hi Alice! Looking into your login problem now. Give me a few minutes and I'll update you. — Kleber",
+      "ts": "2026-05-20T14:07:00.867594+00:00"
+    },
+    {
+      "intent": "support",
+      "outcome": "positive",
+      "template_key": "general",
+      "response_body": "Hi Alice! The token renewal failed. I'm escalating to engineering and will update you shortly. — Kleber",
+      "ts": "2026-05-20T14:07:00.867761+00:00"
+    }
+  ]
+}

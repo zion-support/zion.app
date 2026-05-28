@@ -1,0 +1,295 @@
+ts,intent,lang,template,quality,g_score,sender
+2026-05-20T23:37:55+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-20T23:37:55+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-20T23:44:41+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-20T23:44:41+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-20T23:44:41+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-20T23:46:54+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-20T23:46:54+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-20T23:46:54+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-20T23:49:36+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-20T23:49:36+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-20T23:49:36+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T00:05:42+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T00:05:42+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T00:05:42+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T00:11:31+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T00:11:31+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T00:15:44+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T00:15:44+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T00:15:44+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:24:11+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:24:11+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:24:11+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:26:03+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:26:03+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:26:03+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:26:03+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:26:03+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:26:20+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:26:20+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:26:32+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:26:32+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:26:32+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:33:44+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:33:44+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:33:44+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:35:34+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:35:34+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:35:34+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:38:28+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:38:28+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T07:38:28+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T07:38:28+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T07:38:28+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T08:49:18+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T08:49:18+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T08:49:18+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>
+2026-05-21T08:51:30+0000,sales,en,"Hi {name}!
+
+Thanks for reaching out. I'll review your inquiry and prepare a tailored proposal.
+
+—
+{signature}",96.4,100.0,Bob <bob@partner.com>
+2026-05-21T08:51:30+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,PayPal <paypal@paypal.com>
+2026-05-21T08:51:30+0000,general,en,"Hi {name}!
+
+Thanks for reaching out. I've received your message and I'll get back to you with details shortly.
+
+—
+{signature}",96.4,100.0,New User <new@example.com>

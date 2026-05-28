@@ -1,0 +1,19 @@
+name: Minimal Build Test
+true:
+  workflow_dispatch: null
+  push:
+    branches:
+    - main
+jobs:
+  minimal:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6.0.2
+    - uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - run: rm -rf node_modules .next out
+    - run: npm install
+    - run: npm run build
+    timeout-minutes: 10

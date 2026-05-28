@@ -1,0 +1,32 @@
+# Ensures public/robots.txt stays present for crawlers (User-agent + Sitemap lines).
+
+name: public/robots.txt smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '41 7 * * 5' # Fridays 07:41 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-public-robots-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  robots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: robots.txt exists with User-agent and Sitemap
+        run: |
+          set -euo pipefail
+          test -f public/robots.txt
+          test -s public/robots.txt
+          grep -qiE '^User-agent:' public/robots.txt
+          grep -qiE '^Sitemap:' public/robots.txt
+          echo 'ok: public/robots.txt'

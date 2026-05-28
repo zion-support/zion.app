@@ -1,0 +1,8 @@
+# Autonomous CTO Loop (2026-03-22)
+
+- Owner has granted standing permission for autonomous implementation/deployment loops in this workspace.
+- Prefer additive automation creation over destructive edits; new factories/orchestrators should be separate files/workflows.
+- Keep `main` healthy: run quick syntax checks and targeted validations before commit.
+- For cloud autonomy, favor scheduled GitHub Actions and stateless scripts with bounded file-backed state in `automation/reports/`.
+- When incidents repeat, use deduped fingerprints (`gh-issue-dedupe-or-create.cjs`) and auto-close on recovery.
+- Track mandate continuity in `SOUL.md`, `HEARTBEAT.md`, `MEMORY.md`, and daily `memory/` entries.

@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "thread_id": "dr-4",
+      "sender": "Angry Client <legal@client.com>",
+      "extracted_at": "2026-05-20T23:36:46.403544+00:00",
+      "action": "sue you This is unacceptable. Contact my lawyer immediately.",
+      "dates": [],
+      "deadline": null,
+      "type": "todo",
+      "status": "open",
+      "source_subject": "I will sue you"
+    },
+    {
+      "thread_id": "dr-4",
+      "sender": "Angry Client <legal@client.com>",
+      "extracted_at": "2026-05-20T23:44:41.159303+00:00",
+      "action": "sue you This is unacceptable. Contact my lawyer immediately.",
+      "dates": [],
+      "deadline": null,
+      "type": "todo",
+      "status": "open",
+      "source_subject": "I will sue you"
+    },
+    {
+      "thread_id": "dr-4",
+      "sender": "Angry Client <legal@client.com>",
+      "extracted_at": "2026-05-20T23:46:54.640698+00:00",
+      "action": "sue you This is unacceptable. Contact my lawyer immediately.",
+      "dates": [],
+      "deadline": null,
+      "type": "todo",
+      "status": "open",
+      "source_subject": "I will sue you"
+    },
+    {
+      "thread_id": "dr-4",
+      "sender": "Angry Client <legal@client.com>",
+      "extracted_at": "2026-05-20T23:49:36.754552+00:00",
+      "action": "sue you This is unacceptable. Contact my lawyer immediately.",
+      "dates": [],
+      "deadline": null,
+      "type": "todo",
+      "status": "open",
+      "source_subject": "I will sue you"
+    }
+  ],
+  "completed": []
+}

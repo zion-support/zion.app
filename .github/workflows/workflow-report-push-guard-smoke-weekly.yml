@@ -1,0 +1,30 @@
+# Ensures workflow-report-push-guard.yml keeps path triggers + --push grep subset (grep-only).
+name: workflow report push guard smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '26 9 * * 4' # Thursdays 09:26 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-report-push-guard-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  report-push-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-report-push-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-report-push-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow report push guard' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'branches: [main]' "$f"
+          grep -Fq '.github/workflows/**/*.yml' "$f"
+          grep -Fq 'run-workflow-grep-guards.sh --push' "$f"
+          echo "ok: $f"

@@ -1,0 +1,60 @@
+permissions:
+  contents: read
+name: Autonomous Meta Tags Quality Scanner
+true:
+  schedule:
+  - cron: 0 11 * * 3
+  workflow_dispatch: null
+jobs:
+  meta-tags-check:
+    name: Meta Tags Quality Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci --include=dev
+    - name: Ensure local site accessible
+      id: site-check
+      continue-on-error: true
+      run: "if curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000 | grep\
+        \ -q '^2'; then\n  echo \"site_up=true\" >> $GITHUB_OUTPUT\nelse\n  echo \"\
+        Site not up; attempting build+start...\"\n  npm run build || true\n  nohup\
+        \ npm start &>/tmp/next-start.log &\n  sleep 30\n  echo \"site_up=attempted\"\
+        \ >> $GITHUB_OUTPUT\nfi\n"
+    - name: Run Meta Tags Scanner
+      id: scanner
+      continue-on-error: true
+      run: 'node automation/meta-tags-scanner.cjs > /tmp/meta-tags-output.txt || true
+
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload scanner artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: meta-tags-scanner-state
+        path: '.hermes/memory/meta-tags-scanner/
+
+          /tmp/meta-tags-output.txt
+
+          '
+        retention-days: 30
+    - name: Notify Telegram on completion
+      if: success()
+      run: "node automation/notify-telegram.js \"\U0001F3F7\uFE0F Meta tags scan complete.\
+        \ Check artifacts for quality report.\"\n"
+    - name: Notify Telegram on errors
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Meta tags scan failed.\
+        \ Check workflow logs.\"\n"
+    timeout-minutes: 10

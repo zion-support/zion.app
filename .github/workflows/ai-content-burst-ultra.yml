@@ -1,0 +1,109 @@
+# AI Content Burst Ultra
+# Extra burst-only runs (no LLM) at 0, 5, 11, 17 UTC for maximum template content velocity.
+# Commit + push + deploy. Concurrency: content-commit.
+
+name: AI Content Burst Ultra
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+    inputs:
+      max_template_blog:
+        description: 'Template blog posts (default 3)'
+        required: false
+        default: '3'
+      max_template_case_studies:
+        description: 'Template case studies (default 3)'
+        required: false
+        default: '3'
+      max_industry_pages:
+        description: 'Industry pages (default 2)'
+        required: false
+        default: '2'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  burst-ultra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      NEXT_BUILD_WORKER_COUNT: 1
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Lint and type-check content changes
+        run: |
+          npm run lint:check
+          npm run type-check
+
+      - name: Content burst (template only)
+        env:
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '3' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '3' }}
+          MAX_INDUSTRY_PAGES: ${{ github.event.inputs.max_industry_pages || '2' }}
+          MAX_PRODUCT_PAGES: "4"
+          MAX_ADD: "5"
+        run: node automation/ai-content-burst-agent.cjs
+
+      - name: Homepage industry sync
+        run: node automation/ai-homepage-industry-sync-agent.cjs run --apply || true
+
+      - name: Front page core services sync
+        run: node automation/ai-front-page-core-services-sync-agent.cjs run || true
+
+      - name: Front page advanced AI sync
+        run: node automation/ai-front-page-advanced-ai-sync-agent.cjs run || true
+
+      - name: Front page services advertiser
+        env:
+          MAX_ADD: "8"
+        run: node automation/ai-front-page-services-advertiser-agent.cjs || true
+
+      - name: Validate build
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit, push, and deploy
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            bash scripts/automation/commit-and-push-main.sh "chore(content): burst ultra - template blog + case studies + industry"
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

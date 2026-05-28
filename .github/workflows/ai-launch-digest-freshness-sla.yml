@@ -1,0 +1,71 @@
+name: AI Launch Digest Freshness SLA
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '20 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  digest-freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Check latest digest run age
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_json=$(gh api repos/${{ github.repository }}/actions/workflows/ai-weekly-launch-digest.yml/runs --jq '.workflow_runs[] | select(.conclusion=="success") | {created_at,html_url} | @json' | head -n 1)
+          if [ -z "${run_json:-}" ]; then
+            age_days=999
+            run_url="n/a"
+          else
+            created_at=$(node -e "const r=JSON.parse(process.argv[1]);console.log(r.created_at)" "$run_json")
+            run_url=$(node -e "const r=JSON.parse(process.argv[1]);console.log(r.html_url)" "$run_json")
+            age_days=$(node -e "const d=new Date(process.argv[1]);const age=(Date.now()-d.getTime())/(1000*60*60*24);console.log(Math.floor(age));" "$created_at")
+          fi
+          echo "Digest age days: $age_days"
+          if [ "$age_days" -le 8 ]; then
+            echo "Digest freshness is within SLA."
+            export ISSUE_FINGERPRINT="launch-digest-freshness-sla"
+            export CLOSE_COMMENT="Auto-closing: weekly launch digest freshness is back within SLA."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          gh workflow run ai-weekly-launch-digest.yml || true
+          body_file="digest-freshness-sla.md"
+          {
+            echo "## AI launch digest freshness breach"
+            echo ""
+            echo "- **Dedupe key:** \`launch-digest-freshness-sla\`"
+            echo ""
+            echo "- Latest successful digest run age: ${age_days} days"
+            echo "- Latest run URL: ${run_url}"
+            echo "- SLA: <= 8 days"
+          } > "$body_file"
+          export ISSUE_TITLE="AI launch digest freshness SLA breached"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="launch-digest-freshness-sla"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+

@@ -1,0 +1,79 @@
+name: AI aggregate regression alert
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 */12 * * *'
+
+concurrency:
+  group: ai-aggregate-regression-alert
+  cancel-in-progress: false
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build aggregate dashboard
+        run: npm run reports:aggregate
+
+      - name: Compute aggregate regression snapshot
+        run: npm run aggregate:regression:check
+
+      - name: Upload regression artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: aggregate-regression-${{ github.run_id }}
+          path: automation/reports/aggregate-dashboard-regression-latest.json
+          if-no-files-found: ignore
+          retention-days: 21
+
+      - name: Escalate regression alerts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: aggregate-dashboard-regression
+        run: node automation/aggregate-regression-escalate.cjs
+
+      - name: Recovery gate
+        id: gate
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const p = 'automation/reports/aggregate-dashboard-regression-latest.json';
+          let ok = false;
+          try {
+            const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+            ok = Number(j.alertCount || 0) === 0;
+          } catch {
+            ok = false;
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `recovery_ok=${ok ? 'true' : 'false'}\n`);
+          NODE
+
+      - name: Close aggregate regression issue on recovery
+        if: steps.gate.outputs.recovery_ok == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: aggregate-dashboard-regression
+          CLOSE_COMMENT: "Auto-closing aggregate regression issue: dashboard signals recovered."
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true

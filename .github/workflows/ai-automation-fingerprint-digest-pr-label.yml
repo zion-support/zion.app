@@ -1,0 +1,35 @@
+name: AI Automation fingerprint digest PR label
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'automation/generate-automation-fingerprint-incident-digest.cjs'
+      - '.github/workflows/ai-automation-fingerprint-digest-weekly.yml'
+      - '.github/workflows/ai-automation-fingerprint-digest-preflight.yml'
+      - '.github/workflows/ai-automation-fingerprint-digest-freshness.yml'
+
+concurrency:
+  group: ai-automation-fingerprint-digest-pr-label-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Add fingerprint-digest touched label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          gh label create automation-digest-touched \
+            --color 1D76DB \
+            --description "PR touches automation fingerprint digest logic" \
+            2>/dev/null || true
+          gh pr edit "$PR_NUMBER" --add-label automation-digest-touched

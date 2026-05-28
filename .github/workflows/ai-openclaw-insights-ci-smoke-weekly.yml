@@ -1,0 +1,35 @@
+# Ensures ai-openclaw-insights-ci.yml keeps insights bundle anchors (grep-only).
+name: ai openclaw insights CI workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '52 11 * * 3' # Wednesdays 11:52 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-insights-ci-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-insights-ci-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-insights-ci.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-insights-ci.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Openclaw insights bundle' "$f"
+          grep -Fq 'group: ai-openclaw-insights-ci' "$f"
+          grep -Fq "cron: '0 17 * * 0'" "$f"
+          grep -Fq 'npm run openclaw:improver:history:merge' "$f"
+          grep -Fq 'npm run openclaw:prompt:score' "$f"
+          grep -Fq 'npm run openclaw:deploy:gate' "$f"
+          grep -Fq 'npm run openclaw:runner' "$f"
+          grep -Fq 'npm run reports:aggregate' "$f"
+          grep -Fq 'npm run reports:aggregate:guard:runner' "$f"
+          grep -Fq 'openclaw-improver-history-merged-latest.json' "$f"
+          echo "ok: $f"

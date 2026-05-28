@@ -1,0 +1,31 @@
+# Ensures bundle-size.yml keeps path-scoped PR trigger + build path (grep-only).
+name: bundle size workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '32 11 * * 4' # Thursdays 11:32 UTC
+  workflow_dispatch:
+concurrency:
+  group: bundle-size-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  bundle-size-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: bundle-size.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/bundle-size.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Bundle Size Tracker' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq "branches: [main]" "$f"
+          grep -Fq 'app/**' "$f"
+          grep -Fq 'npm ci --prefer-offline --no-audit --fund=false' "$f"
+          grep -Fq 'npm run build' "$f"
+          echo "ok: $f"

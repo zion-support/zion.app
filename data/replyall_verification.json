@@ -1,0 +1,1 @@
+{"verifications": [{"thread_id": "test-thread-123", "recipients": ["primary@example.com", "cc@example.com"], "delivered_to": [], "pending": ["primary@example.com", "cc@example.com"], "verified_at": "2026-05-19T11:29:46.488467+00:00", "response_sent": true}]}

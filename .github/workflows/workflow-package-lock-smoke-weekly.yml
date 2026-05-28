@@ -1,0 +1,35 @@
+# Ensures package-lock.json stays present (required for npm ci + setup-node cache keys in CI).
+
+name: package-lock.json smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '19 7 * * 2' # Tuesdays 07:19 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-package-lock-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: package-lock.json exists and is non-empty
+        run: |
+          set -euo pipefail
+          test -f package-lock.json
+          test -s package-lock.json
+          node -e "JSON.parse(require('fs').readFileSync('package-lock.json','utf8')); console.log('ok: package-lock.json parses as JSON')"

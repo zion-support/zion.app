@@ -1,0 +1,31 @@
+# Fast feedback when grep guard rules change (bash + grep only; no Node/npm).
+
+name: Workflow grep guards (script file)
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/automation/run-workflow-grep-guards.sh'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/automation/run-workflow-grep-guards.sh'
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-grep-guards-fast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Run workflow grep guards (full)
+        run: bash scripts/automation/run-workflow-grep-guards.sh

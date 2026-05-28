@@ -1,0 +1,30 @@
+# Ensures workflow-package-script-dedup-fast.yml keeps dedupe script path triggers (grep-only).
+name: package script dedup fast smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '8 10 * * 4' # Thursdays 10:08 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-package-script-dedup-fast-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  dedup-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-package-script-dedup-fast.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-package-script-dedup-fast.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Package script dedup check (script file)' "$f"
+          grep -Fq 'check-package-script-duplicates.cjs' "$f"
+          grep -Fq 'group: workflow-package-script-dedup-fast-' "$f"
+          grep -Fq 'github.ref' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          echo "ok: $f"

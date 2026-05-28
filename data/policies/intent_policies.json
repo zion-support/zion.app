@@ -1,0 +1,248 @@
+{
+  "version": "1.0",
+  "policy_id": "grp-policy-001",
+  "description": "Two-track policy: GRC routes (agency/ESP/DC, priority 1-5) + V26 intent vocab routes (priority 101+). Both groups coexist; intent rule priority is above GRC priority so per-intent vocab wins when caller is V26 and needs label lookup.",
+  "rules": [
+    {
+      "match": {
+        "sender_domain_in": [
+          "agency-a.com"
+        ],
+        "conditions": [
+          "is_agency"
+        ]
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com",
+          "agency-a@test.com"
+        ],
+        "route_to": "agency"
+      },
+      "priority": 1
+    },
+    {
+      "match": {
+        "non_commissionable": true
+      },
+      "then": {
+        "route_to": "default"
+      },
+      "priority": 2
+    },
+    {
+      "match": {
+        "dc_domain": true
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com"
+        ],
+        "route_to": "dc"
+      },
+      "priority": 4
+    },
+    {
+      "match": {
+        "sender_domain_in": [
+          "esp-verified.com"
+        ],
+        "conditions": [
+          "esp_verified"
+        ]
+      },
+      "then": {
+        "use_cc": [
+          "dc@test.com"
+        ],
+        "route_to": "esp"
+      },
+      "priority": 3
+    },
+    {
+      "match": {
+        "non_commissionable": false
+      },
+      "then": {
+        "route_to": "subjectivity"
+      },
+      "priority": 5
+    },
+    {
+      "match": {
+        "intent_label": "urgent"
+      },
+      "then": {
+        "grammar_threshold": 55,
+        "reply_all_default": true,
+        "reply_all_reason": "intent_urgent_default_cc",
+        "max_auto_depth": 30,
+        "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 101
+    },
+    {
+      "match": {
+        "intent_label": "sales_lead"
+      },
+      "then": {
+        "grammar_threshold": 70,
+        "reply_all_default": false,
+        "reply_all_reason": "sales_review_required",
+        "max_auto_depth": 15,
+        "min_confidence": 0.85,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 102
+    },
+    {
+      "match": {
+        "intent_label": "support_issue"
+      },
+      "then": {
+        "grammar_threshold": 65,
+        "reply_all_default": true,
+        "reply_all_reason": "support_default_cc",
+        "max_auto_depth": 20,
+        "min_confidence": 0.7,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 103
+    },
+    {
+      "match": {
+        "intent_label": "personal_one2one"
+      },
+      "then": {
+        "grammar_threshold": 75,
+        "reply_all_default": false,
+        "reply_all_reason": "personal_privacy",
+        "max_auto_depth": 10,
+        "min_confidence": 0.8,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": null
+      },
+      "priority": 104
+    },
+    {
+      "match": {
+        "intent_label": "financial"
+      },
+      "then": {
+        "grammar_threshold": 80,
+        "reply_all_default": false,
+        "reply_all_reason": "financial_confidential",
+        "max_auto_depth": 5,
+        "min_confidence": 0.9,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": null
+      },
+      "priority": 105
+    },
+    {
+      "match": {
+        "intent_label": "meeting"
+      },
+      "then": {
+        "grammar_threshold": 65,
+        "reply_all_default": true,
+        "reply_all_reason": "meeting_participants_cc_all",
+        "max_auto_depth": 15,
+        "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 106
+    },
+    {
+      "match": {
+        "intent_label": "partnership"
+      },
+      "then": {
+        "grammar_threshold": 80,
+        "reply_all_default": true,
+        "reply_all_reason": "partnership_intro_cc_executives",
+        "max_auto_depth": 10,
+        "min_confidence": 0.85,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 107
+    },
+    {
+      "match": {
+        "intent_label": "cancellation"
+      },
+      "then": {
+        "grammar_threshold": 75,
+        "reply_all_default": true,
+        "reply_all_reason": "cancellation_review_cc_manager",
+        "max_auto_depth": 5,
+        "min_confidence": 0.8,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 108
+    },
+    {
+      "match": {
+        "intent_label": "invoice"
+      },
+      "then": {
+        "grammar_threshold": 85,
+        "reply_all_default": false,
+        "reply_all_reason": "financial_invoice_confidential",
+        "max_auto_depth": 3,
+        "min_confidence": 0.9,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": null
+      },
+      "priority": 109
+    },
+    {
+      "match": {
+        "intent_label": "billing"
+      },
+      "then": {
+        "grammar_threshold": 85,
+        "reply_all_default": false,
+        "reply_all_reason": "financial_billing_confidential",
+        "max_auto_depth": 3,
+        "min_confidence": 0.9,
+        "send_on": "send",
+        "cc_on": "no_cc",
+        "fwd_on": null
+      },
+      "priority": 110
+    },
+    {
+      "match": {
+        "intent_label": "default"
+      },
+      "then": {
+        "grammar_threshold": 65,
+        "reply_all_default": false,
+        "reply_all_reason": "default_no_cc",
+        "max_auto_depth": 10,
+        "min_confidence": 0.75,
+        "send_on": "send",
+        "cc_on": "auto_ack",
+        "fwd_on": null
+      },
+      "priority": 111
+    }
+  ]
+}

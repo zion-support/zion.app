@@ -1,0 +1,32 @@
+# Ensures pin-actions-weekly.yml keeps weekly pin + push-helper + token checkout wiring (grep-only).
+name: pin actions weekly workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '44 9 * * 4' # Thursdays 09:44 UTC
+  workflow_dispatch:
+concurrency:
+  group: pin-actions-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  pin-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: pin-actions-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/pin-actions-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Pin Actions Weekly' "$f"
+          grep -Fq "cron: '0 2 * * 1'" "$f"
+          grep -Fq 'group: pin-actions-weekly' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq 'github.token' "$f"
+          grep -Fq 'npm run pin-actions' "$f"
+          grep -Fq 'commit-and-push-main.sh' "$f"
+          echo "ok: $f"

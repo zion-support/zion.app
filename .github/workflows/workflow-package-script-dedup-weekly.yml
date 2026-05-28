@@ -1,0 +1,38 @@
+# Scheduled check for duplicate keys in package.json "scripts" (complements path-filtered fast workflow).
+
+name: Package script dedup check (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '28 6 * * 2' # Tuesdays 06:28 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-package-script-dedup-weekly
+  cancel-in-progress: true
+
+jobs:
+  dedup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: No duplicate npm script keys in package.json
+        run: node scripts/automation/check-package-script-duplicates.cjs

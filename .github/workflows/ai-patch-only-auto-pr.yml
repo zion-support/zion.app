@@ -1,0 +1,53 @@
+name: AI patch-only auto PR
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Open draft PR even if PATCH_ONLY_AUTO_PR repo variable is unset'
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: '0 18 2 * *'
+
+concurrency:
+  group: ai-patch-only-auto-pr
+  cancel-in-progress: false
+
+jobs:
+  open:
+    if: github.event_name == 'workflow_dispatch' || vars.PATCH_ONLY_AUTO_PR == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Patch-only report
+        run: npm run deps:patch-only:report
+
+      - name: Gated patch-only draft PR
+        if: vars.PATCH_ONLY_AUTO_PR == '1' || (github.event_name == 'workflow_dispatch' && github.event.inputs.force == 'true')
+        env:
+          PATCH_ONLY_AUTO_PR: '1'
+          GH_TOKEN: ${{ github.token }}
+        run: node automation/npm-patch-only-auto-pr.cjs

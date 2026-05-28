@@ -1,0 +1,144 @@
+name: Production Health Monitor
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: production-health
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Site Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check production endpoints
+        id: health
+        run: |
+          SITE="https://ziontechgroup.com"
+          PAGES=("/" "/solutions/" "/services/" "/about/" "/contact/" "/blog/" "/pricing/" "/industries/" "/case-studies/" "/products/" "/ai-services/" "/consultation/" "/site-map")
+          FAILURES=0
+          REPORT=""
+
+          for PAGE in "${PAGES[@]}"; do
+            URL="${SITE}${PAGE}"
+            START=$(date +%s%N)
+            HTTP_CODE=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 15 "$URL" 2>/dev/null || echo "000")
+            END=$(date +%s%N)
+            DURATION=$(( (END - START) / 1000000 ))
+
+            if [ "$HTTP_CODE" = "200" ]; then
+              BADGE="🟢"
+            elif [ "$HTTP_CODE" = "301" ] || [ "$HTTP_CODE" = "302" ]; then
+              BADGE="🟡"
+            else
+              BADGE="🔴"
+              FAILURES=$((FAILURES + 1))
+            fi
+
+            REPORT="${REPORT}| ${BADGE} \`${PAGE}\` | ${HTTP_CODE} | ${DURATION}ms |\n"
+          done
+
+          echo "failures=$FAILURES" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Production Health Check"
+            echo ""
+            echo "**Site:** ${SITE}"
+            echo "**Time:** $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo ""
+            echo "| Page | Status | Response Time |"
+            echo "|------|--------|---------------|"
+            echo -e "$REPORT"
+            echo ""
+            if [ "$FAILURES" -eq 0 ]; then
+              echo "All endpoints healthy."
+            else
+              echo "**${FAILURES} endpoint(s) returned errors.**"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check SSL certificate
+        id: ssl
+        run: |
+          EXPIRY=$(echo | openssl s_client -servername ziontechgroup.com -connect ziontechgroup.com:443 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
+          if [ -n "$EXPIRY" ]; then
+            EXPIRY_EPOCH=$(date -d "$EXPIRY" +%s 2>/dev/null || date -j -f "%b %d %T %Y %Z" "$EXPIRY" +%s 2>/dev/null || echo "0")
+            NOW_EPOCH=$(date +%s)
+            DAYS_LEFT=$(( (EXPIRY_EPOCH - NOW_EPOCH) / 86400 ))
+            echo "days=$DAYS_LEFT" >> "$GITHUB_OUTPUT"
+            echo "expiry=$EXPIRY" >> "$GITHUB_OUTPUT"
+
+            {
+              echo ""
+              echo "### SSL Certificate"
+              if [ "$DAYS_LEFT" -lt 14 ]; then
+                echo "🔴 **Expires in ${DAYS_LEFT} days** ($EXPIRY)"
+              elif [ "$DAYS_LEFT" -lt 30 ]; then
+                echo "🟡 Expires in ${DAYS_LEFT} days ($EXPIRY)"
+              else
+                echo "🟢 Valid for ${DAYS_LEFT} days ($EXPIRY)"
+              fi
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "days=unknown" >> "$GITHUB_OUTPUT"
+            echo "::warning::Could not determine SSL certificate expiry"
+          fi
+
+      - name: Check response headers
+        run: |
+          HEADERS=$(curl -sS -I --max-time 10 "https://ziontechgroup.com" 2>/dev/null)
+
+          {
+            echo ""
+            echo "### Security Headers"
+            echo ""
+            echo "| Header | Present |"
+            echo "|--------|---------|"
+
+            for HEADER in "strict-transport-security" "x-content-type-options" "x-frame-options" "content-security-policy" "referrer-policy"; do
+              if echo "$HEADERS" | grep -qi "^${HEADER}:"; then
+                echo "| \`${HEADER}\` | ✅ |"
+              else
+                echo "| \`${HEADER}\` | ❌ |"
+              fi
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create issue on failure
+        if: steps.health.outputs.failures != '0'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        env:
+          FAILURES: ${{ steps.health.outputs.failures }}
+        with:
+          script: |
+            const failures = process.env.FAILURES || '0';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              labels: 'production-incident',
+              per_page: 5,
+            });
+
+            const existing = issues.find(i => i.title.includes('Production Health Check Failed'));
+            if (existing) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: existing.number,
+                body: `Health check failed again at ${new Date().toISOString()}. ${failures} endpoint(s) down.`,
+              });
+            } else {
+              await github.rest.issues.create({
+                ...context.repo,
+                title: `🔴 Production Health Check Failed - ${new Date().toISOString().split('T')[0]}`,
+                body: `## Production Health Alert\n\n${failures} endpoint(s) returned errors during the scheduled health check.\n\nCheck the [workflow run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.`,
+                labels: ['production-incident', 'bug'],
+              });
+            }

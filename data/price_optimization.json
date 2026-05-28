@@ -1,0 +1,35 @@
+{
+  "adjustments": [
+    {
+      "timestamp": "2026-05-18T21:12:57.239521+00:00",
+      "signals": {
+        "competitor_mentions": 0,
+        "price_inquiries": 1,
+        "budget_discussions": 0,
+        "urgency_signals": 0,
+        "positive_sentiment": 0
+      },
+      "adjustment": {
+        "adjustment_pct": 0.0,
+        "current_rates": {
+          "junior": 50,
+          "mid": 100,
+          "senior": 200,
+          "architect": 350
+        },
+        "recommended_rates": {
+          "junior": 50.0,
+          "mid": 100.0,
+          "senior": 200.0,
+          "architect": 350.0
+        },
+        "confidence": 0.0,
+        "reasons": []
+      },
+      "trends": {
+        "monthly_growth": 0,
+        "trending_up": true
+      }
+    }
+  ]
+}

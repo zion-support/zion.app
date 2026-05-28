@@ -1,0 +1,65 @@
+name: AI Openclaw Incident Escalator
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '55 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  incident-escalator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Refresh Openclaw report (best effort)
+        run: npm run openclaw:autonomous-once
+        continue-on-error: true
+
+      - name: Escalate sustained Openclaw unhealthy state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          export COOLDOWN_HOURS=$(node -p "try{const j=require('./automation/reports/incident-suppression-registry-latest.json');Number(j.openclawCooldownHours||j.recommendedCooldownHours||12)}catch(e){12}")
+          report="automation/reports/openclaw-autonomous-app-improver-latest.json"
+          [ -f "$report" ] || exit 0
+          unhealthy=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));const checks=[(r.contractFailures||0)>=1,(r.lowValueCycles||0)>=8,(r.parseFailures||0)>=8,(r.failures||0)>(r.successes||0)+8];console.log(checks.some(Boolean)?'1':'0')")
+          if [ "$unhealthy" = "0" ]; then
+            echo "Openclaw healthy enough, no escalation needed."
+            export ISSUE_FINGERPRINT="openclaw-incident-escalation"
+            export CLOSE_COMMENT="Auto-closing: Openclaw incident signals recovered in latest run."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="openclaw-incident.md"
+          {
+            echo "## Openclaw incident escalation"
+            echo ""
+            echo "- **Dedupe key:** \`openclaw-incident-escalation\`"
+            echo ""
+            echo "- Report: \`automation/reports/openclaw-autonomous-app-improver-latest.json\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo ""
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log('- successes: '+Number(r.successes||0));console.log('- failures: '+Number(r.failures||0));console.log('- contractFailures: '+Number(r.contractFailures||0));console.log('- parseFailures: '+Number(r.parseFailures||0));console.log('- lowValueCycles: '+Number(r.lowValueCycles||0));console.log('- actionsFound: '+Number(r.actionsFound||0));"
+            echo ""
+            echo "Please investigate Openclaw worker quality, auth contract stability, and runtime freshness."
+          } > "$body_file"
+          export ISSUE_TITLE="Openclaw incident: sustained unhealthy autonomous cycles"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="openclaw-incident-escalation"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

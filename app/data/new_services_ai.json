@@ -1,0 +1,134 @@
+[
+  {
+    "category": "ai",
+    "id": "ai-contract-lifecycle-intelligence",
+    "title": "Contract Lifecycle Intelligence",
+    "description": "AI contract lifecycle management: extract clauses/dates, auto-flag risk, renewal calendar, benchmark vs market terms, amendment tracker across 200+ contract types.",
+    "basic": "2499",
+    "pro": "6999",
+    "enterprise": "19999",
+    "popular": true,
+    "features": [
+      "Clause extraction with 200+ contract type templates",
+      "Auto renewal calendar + amendment tracker + approval chain",
+      "Benchmark pricing/T&Cs vs anonymised peer market medians",
+      "Obligation tracker with 90/30/7-day pre-renewal reminders"
+    ],
+    "benefits": [
+      "Cut contract review time by 75%",
+      "Never miss renewal windows \u2014 alerts start 90 days early",
+      "Negotiate using anonymised industry peer data",
+      "Full audit trail \u2014 every change, version, approval timestamped"
+    ]
+  },
+  {
+    "category": "ai",
+    "id": "ai-fintech-fraud-graph",
+    "title": "Fintech Fraud Graph",
+    "description": "Real-time fraud detection as a knowledge graph: entity resolution across accounts/IP/device/card/email fingerprints; ML scoring per transaction <15ms; SAR/CTR auto-draft; global rule engine for SWIFT/SEPA/instant-payments.",
+    "basic": "4999",
+    "pro": "14999",
+    "enterprise": "49999",
+    "popular": true,
+    "features": [
+      "Entity resolution graph across accounts/IP/devices/cards/emails",
+      "Real-time ML scoring per transaction in under 15ms",
+      "SAR/CTR auto-draft \u2014 zero manual compliance data entry",
+      "Global rule engine per jurisdiction and instant-payment scheme"
+    ],
+    "benefits": [
+      "Detect synthetic-identity fraud 30-60 days earlier",
+      "Reduce false positives 40%+ with graph relationship analysis",
+      "Auto-generated SAR reduces compliance processing time by 80%",
+      "Edge scoring <15ms means no user-facing checkout delay"
+    ]
+  },
+  {
+    "category": "ai",
+    "id": "ai-cross-lingual-meeting-bridge",
+    "title": "Cross-Lingual Meeting Bridge",
+    "description": "Multi-language meeting support: real-time simultaneous interpretation for 40+ languages/dialects, live bilingual captions, cultural-adaptation annotations, silent-watch spectator mode, executive summary auto-generation.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": false,
+    "features": [
+      "Simultaneous interpretation across 40+ languages and dialects per meeting",
+      "Live bilingual captions with timestamped per-speaker transcript",
+      "Cultural-adaptation annotations \u2014 politeness norms and idiom equivalents",
+      "Silent-watch spectator mode + auto-generated executive summary"
+    ],
+    "benefits": [
+      "Run one meeting that serves every team worldwide",
+      "Full mixed-language participation without manual switching",
+      "Cultural nuance layer reduces post-meeting misalignment",
+      "Transcripts indexed in knowledge base \u2014 searchable forever"
+    ]
+  },
+  {
+    "category": "ai",
+    "id": "ai-sustainable-supply-chain-radar",
+    "title": "Sustainable Supply Chain Radar",
+    "description": "Supply-chain ESG platform: per-tier carbon intensity, green-alternative sourcing score, Scope 3 quantification, regulatory dashboard (CSRD CBAM, EU Deforestation Reg), penalty simulator per scenario.",
+    "basic": "3999",
+    "pro": "12999",
+    "enterprise": "39999",
+    "popular": true,
+    "features": [
+      "Supplier-scope carbon database from tier-1 to tier-n with Scope 3 quantification",
+      "Green-alternative sourcing score vs. cost-impact tradeoff analysis",
+      "CSRD/CBAM/EU Deforestation Reg compliant auto-reports",
+      "Regulatory penalty simulator \u2014 cost-of-non-compliance per scenario"
+    ],
+    "benefits": [
+      "Scope 3 live dashboard instead of spreadsheets",
+      "Find greener alternatives with tradeoff analysis in 1 click",
+      "80% reduction on regulatory report prep hours",
+      "Show C-suite cost-of-inaction before sign-off"
+    ]
+  },
+  {
+    "category": "ai",
+    "id": "ai-predictive-maintenance-advisor",
+    "title": "Predictive Maintenance Advisor",
+    "description": "Asset RUL prediction: sensor-fusion across vibration/thermal/acoustic/power, plain-English root-cause analysis, part/vendor recommendation, HSE safety-risk layer. Maintenance managers use it in plain language.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": false,
+    "features": [
+      "Multimodal sensor fusion \u2014 vibration, thermal, acoustic, and current",
+      "Remaining-Useful-Life (RUL) distribution with 3-severity flag per asset",
+      "Plain-English root cause + part + vendor recommendation",
+      "HSE safety-risk layer assessed before scheduling maintenance"
+    ],
+    "benefits": [
+      "Predict failures 14-90 days ahead with 85%+ accuracy",
+      "No more surprise downtime dispatches",
+      "Root-cause narrative for maintenance crews without data science degree",
+      "HSE layer prevents safety incidents from maintenance decisions"
+    ]
+  },
+  {
+    "category": "ai",
+    "id": "ai-knowledge-graph-search-engine",
+    "title": "Knowledge Graph Search Engine",
+    "description": "Semantic graph search from siloed docs/DBs/APIs: entity extraction/disambiguation, NL query rewriter, cited ranked answers. Search across 50+ connected tools with primary-source footnotes.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": false,
+    "features": [
+      "Multi-source entity/relation extractor \u2014 PDF/Notion/Slack/DB/API",
+      "Entity disambiguation + canonical identity store",
+      "NL query rewriter \u2014 'who reported this bug?' \u2192 graph query",
+      "Answer + primary-source footnote + timestamp per result"
+    ],
+    "benefits": [
+      "Find answers in under 5 seconds vs. 6 hours searching",
+      "Single answer surface across all silos",
+      "Graph context prevents hallucinations \u2014 every claim is source-cited",
+      "Auto-crawl keeps knowledge base fresh without manual curation"
+    ]
+  }
+]

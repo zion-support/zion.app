@@ -1,0 +1,22 @@
+{
+  "reports": [
+    {
+      "timestamp": "2026-05-18T21:47:39.637382+00:00",
+      "file": "/root/.openclaw/workspace/reports/daily_report_20260518.md",
+      "metrics": {
+        "timestamp": "2026-05-18T21:47:38.248433+00:00",
+        "email_metrics": {
+          "unread_count": 10,
+          "trends": "stable"
+        },
+        "deal_metrics": {
+          "proposals_out": 0,
+          "contracts_pending": 2
+        },
+        "system_metrics": {
+          "drive_files_accessed": 20
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+# AI Content Ideas to Deploy - 3x daily (9, 14, 19 UTC)
+# Audits live site, ideation, front page expansion (LLM), template burst, commit + deploy.
+# Fills gaps between ultra-fast and content burst for maximum content velocity.
+
+name: AI Content Ideas to Deploy
+
+concurrency:
+  group: autonomous-main-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_ideation:
+        description: 'Skip ideation step'
+        required: false
+        default: false
+        type: boolean
+      skip_front_page:
+        description: 'Skip front page expansion (LLM)'
+        required: false
+        default: false
+        type: boolean
+      skip_burst:
+        description: 'Skip content burst'
+        required: false
+        default: false
+        type: boolean
+      max_template_blog:
+        description: 'Template blog posts (default 6)'
+        required: false
+        default: '6'
+      max_template_case_studies:
+        description: 'Template case studies (default 6)'
+        required: false
+        default: '6'
+      max_industry_pages:
+        description: 'Industry solution pages (default 4)'
+        required: false
+        default: '4'
+      max_add:
+        description: 'Apps to promote to front page (default 5)'
+        required: false
+        default: '5'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  ideas-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Restore content runtime cache
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: |
+            automation/reports/.runtime
+          key: content-runtime-${{ runner.os }}-${{ hashFiles('automation/openrouter-content-generator.cjs') }}
+          restore-keys: |
+            content-runtime-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Writer queue guard (wait)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QUEUE_GUARD_BRANCH: main
+          QUEUE_GUARD_WAIT_MAX_MINUTES: "18"
+          QUEUE_GUARD_WAIT_POLL_SECONDS: "30"
+        run: node scripts/automation/autonomous-writer-queue-guard.cjs --strict --wait
+
+      - name: Run content ideas to deploy pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          SKIP_IDEATION: ${{ github.event.inputs.skip_ideation == 'true' && '1' || '' }}
+          SKIP_FRONT_PAGE: ${{ github.event.inputs.skip_front_page == 'true' && '1' || '' }}
+          SKIP_BURST: ${{ github.event.inputs.skip_burst == 'true' && '1' || '' }}
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '6' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '6' }}
+          MAX_INDUSTRY_PAGES: ${{ github.event.inputs.max_industry_pages || '4' }}
+          MAX_ADD: ${{ github.event.inputs.max_add || '5' }}
+        run: node automation/ai-content-ideas-to-deploy-pipeline.cjs
+
+      - name: Validate build (catch content errors before push)
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit, push, and deploy
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            bash scripts/automation/commit-and-push-main.sh "chore(content): ideas to deploy - ideation + front page + template burst"
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

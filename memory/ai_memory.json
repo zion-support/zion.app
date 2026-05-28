@@ -1,0 +1,47 @@
+{
+  "conversations": {
+    "Airbnb": [
+      {
+        "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 8\u2009\u2013\u200912 de mai.",
+        "timestamp": "2026-05-17T12:17:55.546306",
+        "reply_sent": "Resumo:  \n18/05 \u2013 Reservada  \n19/05 \u2013 Reservada  \n20/05 \u2013 Reservada  \n\nConfirme as datas para a confirma\u00e7\u00e3o do cancelamento.",
+        "response_time_minutes": 5
+      },
+      {
+        "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 16\u2009\u2013\u200917 de mai.",
+        "timestamp": "2026-05-17T12:18:06.074049",
+        "reply_sent": "Resumo: A disponibilidade das reservas est\u00e1 confirmada para as datas: 18/05, 19/05 e 20/05.",
+        "response_time_minutes": 5
+      },
+      {
+        "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 8\u2009\u2013\u200912 de mai.",
+        "timestamp": "2026-05-17T12:22:53.052287",
+        "reply_sent": "Reserva para Mans\u00e3o espa\u00e7o:  \n18/05, 19/05, 20/05.",
+        "response_time_minutes": 5
+      },
+      {
+        "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 16\u2009\u2013\u200917 de mai.",
+        "timestamp": "2026-05-17T12:23:13.435761",
+        "reply_sent": "Resumo:  \n**18/05 \u2013 Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera.**  \n**19/05 \u2013 Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera.**  \n**20/05 \u2013 Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera.**",
+        "response_time_minutes": 5
+      }
+    ],
+    "\"Cadu (Airbnb)\"": [
+      {
+        "subject": "Consulta sobre Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera. para set. 23 - 27, 2026",
+        "timestamp": "2026-05-17T12:22:37.000253",
+        "reply_sent": "**18/05 - 19/05**  \nConsulte a Mans\u00e3o Espacial e \u00fanica de 3 andares na Riviera do Setembro de 2026.",
+        "response_time_minutes": 5
+      }
+    ]
+  },
+  "response_times": {
+    "Airbnb": [
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  "preferences": {}
+}

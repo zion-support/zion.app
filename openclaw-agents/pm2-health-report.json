@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-04-07T05:17:15.168Z",
+  "processes": [],
+  "automations": [
+    {
+      "name": "automation",
+      "status": "missing",
+      "severity": "high"
+    },
+    {
+      "name": "heartbeat",
+      "status": "missing",
+      "severity": "high"
+    },
+    {
+      "name": "monitor",
+      "status": "missing",
+      "severity": "high"
+    },
+    {
+      "name": "deploy",
+      "status": "missing",
+      "severity": "high"
+    },
+    {
+      "name": "sync",
+      "status": "missing",
+      "severity": "high"
+    }
+  ],
+  "health": "healthy",
+  "restarts": []
+}

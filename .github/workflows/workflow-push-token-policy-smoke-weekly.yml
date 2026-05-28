@@ -1,0 +1,26 @@
+# Ruby-free weekly smoke: push helpers must reference github.token (subset of run-workflow-grep-guards).
+
+name: Workflow push-token policy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '30 6 * * 6' # Saturdays 06:30 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-push-token-policy-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  push-token:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Push-token guards (commit-and-push / push-main-with-retry + github.token)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --push-token

@@ -1,0 +1,103 @@
+# AI App Improvement Evolution
+# Visits ziontechgroup.com, audits, implements safe fixes, generates evolution ideas,
+# optionally runs content burst + services advertiser, commits and deploys.
+# Runs: Tue + Fri 6 AM UTC, workflow_dispatch
+
+name: AI App Improvement Evolution
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 6 * * 2'
+    - cron: '0 6 * * 3'
+    - cron: '0 6 * * 5'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes to main'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: false
+        type: boolean
+      skip_content:
+        description: 'Skip content burst and services advertiser'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: autonomous-main-writer
+  cancel-in-progress: false
+
+jobs:
+  app-improvement-evolution:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run app improvement evolution pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false') && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ (github.event_name == 'schedule' || github.event.inputs.trigger_deploy == 'true') && '1' || '' }}
+          SKIP_CONTENT: ${{ github.event.inputs.skip_content && '1' || '' }}
+          TRIGGER_FIXES: '1'
+          SKIP_LIGHTHOUSE: '1'
+          SKIP_PERF_REGRESSION: '1'
+          SKIP_LIVE_A11Y: '1'
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: node automation/ai-app-improvement-evolution-pipeline.cjs
+
+      - name: Refresh aggregate regression and observability digest
+        if: always()
+        continue-on-error: true
+        env:
+          SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+          SMOKE_USE_ROTATION: '1'
+          SMOKE_SAMPLE_ROUTES: '5'
+          SMOKE_FAIL_ON_ERROR: '0'
+        run: |
+          npm run reports:aggregate || true
+          npm run aggregate:regression:check || true
+          npm run smoke:production:sample || true
+          npm run gha:audit:npm-cache || true
+          npm run routes:drift:sitemap || true
+          npm run observability:digest || true
+          npm run autonomy:intelligence:plan || true
+
+      - name: Upload evolution observability artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: app-improvement-evolution-observability-${{ github.run_id }}
+          path: |
+            automation/reports/aggregate-dashboard-regression-latest.json
+            automation/reports/observability-digest-latest.json
+            automation/reports/autonomy-intelligence-plan-latest.json
+            automation/reports/scheduled-production-smoke-latest.json
+            automation/reports/gha-npm-cache-audit-latest.json
+            automation/reports/app-route-sitemap-drift-latest.json
+          if-no-files-found: ignore
+          retention-days: 21

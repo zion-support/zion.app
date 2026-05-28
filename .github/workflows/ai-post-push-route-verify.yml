@@ -1,0 +1,77 @@
+name: AI Post Push Route Verify
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Verify promoted routes
+        id: verify
+        run: |
+          set -euo pipefail
+          failed=0
+          failures_file="route-failures.txt"
+          : > "$failures_file"
+
+          while IFS= read -r path; do
+            if [ -z "$path" ] || [[ "$path" == \#* ]]; then
+              continue
+            fi
+            code=$(curl --silent --show-error --max-time 12 -o /dev/null -w "%{http_code}" "https://ziontechgroup.com$path" || echo "000")
+            if [ "$code" = "200" ]; then
+              echo "OK $path ($code)"
+            else
+              echo "FAIL $path ($code)"
+              echo "- $path => $code" >> "$failures_file"
+              failed=1
+            fi
+          done < config/smoke-routes.txt
+
+          if [ $failed -eq 1 ]; then
+            echo "has_failures=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_failures=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update route failure issue
+        if: steps.verify.outputs.has_failures == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          body_file="issue-body.md"
+          {
+            echo "## Route verification failed"
+            echo ""
+            echo "- **Dedupe key:** \`post-push-route-verify\`"
+            echo ""
+            echo "Branch: \`${GITHUB_REF}\`"
+            echo "Commit: \`${GITHUB_SHA}\`"
+            echo "Workflow: \`${GITHUB_WORKFLOW}\`"
+            echo ""
+            echo "### Failing routes"
+            cat route-failures.txt
+          } > "$body_file"
+          export ISSUE_TITLE="AI route verification failures on production"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="post-push-route-verify"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+

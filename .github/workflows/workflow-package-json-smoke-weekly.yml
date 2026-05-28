@@ -1,0 +1,62 @@
+# Ensures package.json stays valid JSON with minimal project shape (scripts + engines) and critical npm script keys for CI/workflows.
+
+name: package.json smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '21 7 * * 3' # Wednesdays 07:21 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-package-json-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: package.json exists, parses, has name, scripts, engines, and critical CI keys
+        run: |
+          set -euo pipefail
+          test -f package.json
+          test -s package.json
+          node -e "
+            const fs = require('fs');
+            const j = JSON.parse(fs.readFileSync('package.json','utf8'));
+            if (j === null || typeof j !== 'object' || Array.isArray(j)) process.exit(1);
+            if (typeof j.name !== 'string' || !j.name.trim()) process.exit(1);
+            if (j.scripts == null || typeof j.scripts !== 'object' || Array.isArray(j.scripts)) process.exit(1);
+            const eng = j.engines;
+            if (eng == null || typeof eng !== 'object' || Array.isArray(eng)) process.exit(1);
+            if (typeof eng.node !== 'string' || !eng.node.trim()) process.exit(1);
+            if (typeof eng.npm !== 'string' || !eng.npm.trim()) process.exit(1);
+            const requiredScripts = [
+              'workflows:validate:light',
+              'workflows:yaml-parse',
+              'workflows:grep-guards',
+              'lint:check',
+              'type-check',
+              'test:ci',
+              'build',
+            ];
+            for (const k of requiredScripts) {
+              const v = j.scripts[k];
+              if (typeof v !== 'string' || !v.trim()) {
+                console.error('missing or empty scripts[' + JSON.stringify(k) + ']');
+                process.exit(1);
+              }
+            }
+            console.log('ok: package.json shape + engines + critical scripts');
+          "

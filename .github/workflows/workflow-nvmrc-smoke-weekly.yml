@@ -1,0 +1,84 @@
+# Ensures .nvmrc stays present and parseable (repo policy: setup-node uses node-version-file),
+# and that the pinned Node major satisfies package.json engines.node (common >= / ^ patterns).
+
+name: Node .nvmrc smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '8 7 * * 3' # Wednesdays 07:08 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-nvmrc-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  nvmrc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: .nvmrc is present and looks like a Node version
+        run: |
+          set -euo pipefail
+          test -f .nvmrc
+          test -s .nvmrc
+          v=$(head -n1 .nvmrc | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+          echo "nvmrc_first_line=$v"
+          echo "$v" | grep -qE '^v?[0-9]+(\.[0-9]+){0,2}(-[a-zA-Z0-9.-]+)?$'
+
+      - name: .nvmrc major satisfies package.json engines.node
+        run: |
+          set -euo pipefail
+          test -f package.json
+          node <<'NODE'
+          const fs = require('fs');
+          const line = fs.readFileSync('.nvmrc', 'utf8').split(/\r?\n/)[0].trim().replace(/^v/i, '');
+          const major = parseInt(String(line).split('.')[0], 10);
+          if (!Number.isFinite(major) || major < 1) {
+            console.error('bad .nvmrc major');
+            process.exit(1);
+          }
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const eng = pkg.engines && pkg.engines.node;
+          if (typeof eng !== 'string' || !eng.trim()) {
+            console.error('package.json missing engines.node');
+            process.exit(1);
+          }
+          const s = eng.trim();
+          const ge = s.match(/>=\s*(\d+)/);
+          if (ge) {
+            const min = parseInt(ge[1], 10);
+            if (major < min) {
+              console.error(`.nvmrc major ${major} is below engines.node minimum ${min}`);
+              process.exit(1);
+            }
+          }
+          const lt = s.match(/<\s*(\d+)/);
+          if (lt) {
+            const cap = parseInt(lt[1], 10);
+            if (major >= cap) {
+              console.error(`.nvmrc major ${major} must be < engines.node upper bound ${cap}`);
+              process.exit(1);
+            }
+          }
+          const caret = s.match(/^\^\s*(\d+)/);
+          if (caret) {
+            const c = parseInt(caret[1], 10);
+            if (major !== c) {
+              console.error(`.nvmrc major ${major} must equal engines.node caret major ${c}`);
+              process.exit(1);
+            }
+          }
+          console.log('ok: .nvmrc vs engines.node');
+          NODE

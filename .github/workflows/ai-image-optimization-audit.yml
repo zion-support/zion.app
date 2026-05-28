@@ -1,0 +1,298 @@
+name: AI Image Optimization Audit
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: image-audit-${{ github.event_name }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: '0 6 * * 4'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'public/**'
+      - 'app/**/*.tsx'
+      - 'app/**/*.ts'
+  workflow_dispatch:
+
+jobs:
+  image-audit:
+    name: Image Optimization Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Scan images in public directory
+        id: scan
+        run: |
+          mkdir -p image-reports
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const glob = require('glob');
+
+          const imageExts = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.avif', '.ico', '.bmp'];
+          const allFiles = glob.sync('public/**/*', { nodir: true });
+          const images = allFiles.filter(f => imageExts.includes(path.extname(f).toLowerCase()));
+
+          const report = {
+            totalImages: images.length,
+            totalSizeBytes: 0,
+            oversizedImages: [],
+            formatBreakdown: {},
+            modernFormatCount: 0,
+            legacyFormatCount: 0,
+            details: [],
+          };
+
+          for (const img of images) {
+            const stat = fs.statSync(img);
+            const ext = path.extname(img).toLowerCase();
+            const sizeKB = Math.round(stat.size / 1024);
+
+            report.totalSizeBytes += stat.size;
+            report.formatBreakdown[ext] = (report.formatBreakdown[ext] || 0) + 1;
+
+            if (['.webp', '.avif'].includes(ext)) {
+              report.modernFormatCount++;
+            } else if (['.png', '.jpg', '.jpeg', '.gif', '.bmp'].includes(ext)) {
+              report.legacyFormatCount++;
+            }
+
+            const detail = {
+              file: img,
+              sizeKB: sizeKB,
+              format: ext,
+              isOversized: sizeKB > 200,
+              isLegacyFormat: ['.png', '.jpg', '.jpeg', '.bmp'].includes(ext) && sizeKB > 50,
+            };
+
+            report.details.push(detail);
+
+            if (sizeKB > 200) {
+              report.oversizedImages.push({ file: img, sizeKB: sizeKB });
+            }
+          }
+
+          report.totalSizeMB = (report.totalSizeBytes / (1024 * 1024)).toFixed(2);
+          report.oversizedImages.sort((a, b) => b.sizeKB - a.sizeKB);
+
+          fs.writeFileSync('image-reports/image-audit.json', JSON.stringify(report, null, 2));
+          console.log('Total images: ' + report.totalImages);
+          console.log('Total size: ' + report.totalSizeMB + ' MB');
+          console.log('Oversized (>200KB): ' + report.oversizedImages.length);
+          console.log('Legacy format: ' + report.legacyFormatCount);
+          console.log('Modern format: ' + report.modernFormatCount);
+          "
+
+          echo "scanned=true" >> "$GITHUB_OUTPUT"
+
+      - name: Audit alt text in components
+        id: alttext
+        run: |
+          node -e "
+          const fs = require('fs');
+          const glob = require('glob');
+
+          const tsxFiles = glob.sync('app/**/*.tsx', { ignore: ['node_modules/**'] });
+          const issues = [];
+
+          for (const file of tsxFiles) {
+            const content = fs.readFileSync(file, 'utf-8');
+
+            const imgTags = content.match(/<img[^>]*\/?\s*>/gi) || [];
+            for (const tag of imgTags) {
+              if (!/alt\s*=/.test(tag)) {
+                issues.push({ file, type: 'missing-alt', tag: tag.substring(0, 80) });
+              } else if (/alt\s*=\s*[\"']\s*[\"']/.test(tag)) {
+                issues.push({ file, type: 'empty-alt', tag: tag.substring(0, 80) });
+              }
+            }
+
+            const nextImages = content.match(/<Image[^>]*\/?\s*>/gi) || [];
+            for (const tag of nextImages) {
+              if (!/alt\s*=/.test(tag)) {
+                issues.push({ file, type: 'missing-alt-next-image', tag: tag.substring(0, 80) });
+              }
+            }
+          }
+
+          fs.writeFileSync('image-reports/alt-text-audit.json', JSON.stringify(issues, null, 2));
+          console.log('Alt text issues found: ' + issues.length);
+          "
+
+      - name: AI Image Optimization Recommendations
+        if: steps.scan.outputs.scanned == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — skipping AI analysis"
+
+            python3 -c "
+          import json
+          with open('image-reports/image-audit.json') as f:
+            r = json.load(f)
+          print(f'## Image Audit Summary')
+          print(f'')
+          print(f'| Metric | Value |')
+          print(f'|--------|-------|')
+          print(f'| Total images | {r[\"totalImages\"]} |')
+          print(f'| Total size | {r[\"totalSizeMB\"]} MB |')
+          print(f'| Oversized (>200KB) | {len(r[\"oversizedImages\"])} |')
+          print(f'| Legacy format | {r[\"legacyFormatCount\"]} |')
+          print(f'| Modern format | {r[\"modernFormatCount\"]} |')
+          " >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          AUDIT=$(python3 -c "
+          import json
+          with open('image-reports/image-audit.json') as f:
+            data = json.load(f)
+          compact = {
+            'totalImages': data['totalImages'],
+            'totalSizeMB': data['totalSizeMB'],
+            'oversizedCount': len(data['oversizedImages']),
+            'formatBreakdown': data['formatBreakdown'],
+            'modernFormatCount': data['modernFormatCount'],
+            'legacyFormatCount': data['legacyFormatCount'],
+            'top10Oversized': data['oversizedImages'][:10],
+          }
+          alt_issues = []
+          try:
+            with open('image-reports/alt-text-audit.json') as f:
+              alt_issues = json.load(f)
+          except: pass
+          compact['altTextIssues'] = len(alt_issues)
+          compact['altTextSamples'] = alt_issues[:5]
+          print(json.dumps(compact))
+          ")
+
+          PAYLOAD=$(python3 -c "
+          import json
+          audit = json.loads('''$(echo "$AUDIT" | sed "s/'/\\\\'/g")''')
+
+          prompt = '''Analyze this image optimization audit for ziontechgroup.com (Next.js static site):
+
+          ''' + json.dumps(audit, indent=2) + '''
+
+          Provide:
+          1. **Performance Impact Assessment** — Estimated load time savings from optimization
+          2. **Quick Wins** — Top 5 images to optimize first (with specific file names)
+          3. **Format Migration Plan** — Which images to convert to WebP/AVIF
+          4. **Alt Text Fixes** — Fix suggestions for accessibility issues found
+          5. **Next.js Image Component** — Recommendations for using next/image properly with static export
+          6. **Automation Script** — A brief shell command or script to bulk-convert legacy images to WebP
+
+          Be specific with file names and expected size reductions.'''
+
+          payload = {
+            'model': 'openrouter/auto',
+            'max_tokens': 2500,
+            'messages': [
+              {'role': 'system', 'content': 'You are a web performance specialist focusing on image optimization for Next.js static sites. Provide specific, actionable recommendations with expected performance gains.'},
+              {'role': 'user', 'content': prompt}
+            ]
+          }
+          print(json.dumps(payload))
+          ")
+
+          RESPONSE=$(curl -sS --max-time 90 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-ImageAudit" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          ANALYSIS=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'No analysis returned.')
+          except Exception as e:
+              print(f'AI analysis error: {e}')
+          ")
+
+          echo "$ANALYSIS" > image-reports/ai-image-recommendations.md
+
+          {
+            echo "## AI Image Optimization Audit"
+            echo ""
+            echo "$ANALYSIS"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '### Image Optimization Audit\n\n';
+            try {
+              const report = JSON.parse(fs.readFileSync('image-reports/image-audit.json', 'utf-8'));
+              body += `| Metric | Value |\n|--------|-------|\n`;
+              body += `| Total images | ${report.totalImages} |\n`;
+              body += `| Total size | ${report.totalSizeMB} MB |\n`;
+              body += `| Oversized (>200KB) | ${report.oversizedImages.length} |\n`;
+              body += `| Legacy formats | ${report.legacyFormatCount} |\n`;
+
+              const altIssues = JSON.parse(fs.readFileSync('image-reports/alt-text-audit.json', 'utf-8'));
+              body += `| Alt text issues | ${altIssues.length} |\n`;
+
+              if (report.oversizedImages.length > 0) {
+                body += '\n**Largest images:**\n';
+                for (const img of report.oversizedImages.slice(0, 5)) {
+                  body += `- \`${img.file}\` — ${img.sizeKB} KB\n`;
+                }
+              }
+            } catch (e) {
+              body += 'Image audit completed. Check workflow artifacts for full report.';
+            }
+
+            body += '\n\n---\n> Automated image audit | Run #' + context.runNumber;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              ...context.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('### Image Optimization Audit')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({ ...context.repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ ...context.repo, issue_number: context.issue.number, body });
+            }
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: image-audit-${{ github.run_id }}
+          path: image-reports/
+          if-no-files-found: ignore
+          retention-days: 30

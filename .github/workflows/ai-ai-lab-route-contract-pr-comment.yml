@@ -1,0 +1,51 @@
+name: AI AI Lab route contract PR comment
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-ai-lab-route-contract-pr-comment-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - 'app/ai-lab/ai-lab-tools.ts'
+      - 'automation/data/pages-to-visit.json'
+      - 'config/smoke-routes.txt'
+      - 'scripts/automation/generate-smoke-routes.cjs'
+      - 'automation/validate-ai-lab-route-contract.cjs'
+      - '.github/workflows/ai-ai-lab-route-contract-pr-comment.yml'
+
+jobs:
+  contract-comment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Validate route contract
+        id: contract
+        continue-on-error: true
+        run: npm run validate:ai-lab-route-contract
+
+      - name: Upsert PR route-contract comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          CONTRACT_OK: ${{ steps.contract.outcome == 'success' }}
+          CONTRACT_GREEN_STREAK_DELETE: '3'
+        run: node scripts/automation/upsert-pr-ai-lab-contract-comment.cjs

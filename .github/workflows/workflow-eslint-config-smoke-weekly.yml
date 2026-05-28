@@ -1,0 +1,41 @@
+# Ensures eslint.config.mjs exists and loads as ESM (lint pipeline depends on it).
+
+name: eslint.config.mjs smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 7 * * 5' # Fridays 07:25 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-eslint-config-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  eslint-config:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: eslint.config.mjs exists and ESM-imports
+        run: |
+          set -euo pipefail
+          test -f eslint.config.mjs
+          test -s eslint.config.mjs
+          node --input-type=module -e "
+            const m = await import('./eslint.config.mjs');
+            const d = m.default;
+            if (d == null) process.exit(1);
+            if (typeof d !== 'object' && typeof d !== 'function') process.exit(1);
+            console.log('ok: eslint.config.mjs default export');
+          "

@@ -1,0 +1,47 @@
+name: Dependency Update Bot
+true:
+  schedule:
+  - cron: 0 6 * * *
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Run in dry-run mode (no PR created)
+        required: false
+        default: 'true'
+        type: boolean
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+jobs:
+  dependency-update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Setup Node
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run Dependency Update Bot
+      env:
+        DEPENDENCY_BOT_DRY_RUN: ${{ inputs.dry-run || 'false' }}
+        DEPENDENCY_BOT_ALLOW_MAJOR: ${{ secrets.DEPENDENCY_BOT_ALLOW_MAJOR || 'false'
+          }}
+        DEPENDENCY_BOT_IGNORE: ${{ secrets.DEPENDENCY_BOT_IGNORE || '' }}
+        DEPENDENCY_BOT_MAX_BATCH: ${{ secrets.DEPENDENCY_BOT_MAX_BATCH || '20' }}
+        DEPENDENCY_BOT_MANUAL_REVIEW: ${{ secrets.DEPENDENCY_BOT_MANUAL_REVIEW ||
+          'true' }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: node automation/dependency-update-bot.cjs
+    - name: Notify Telegram (on failure)
+      if: failure()
+      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Dependency Update Bot\
+        \ failed on ${{ github.repository }}. Check workflow run: ${{ github.server_url\
+        \ }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"\n"
+    timeout-minutes: 10

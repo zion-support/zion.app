@@ -1,0 +1,35 @@
+# Ensures ai-workflow-trust-regression-guard.yml keeps schedule and trust-guard anchors (grep-only).
+name: ai workflow trust regression guard workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '41 11 * * 3' # Wednesdays 11:41 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-workflow-trust-regression-guard-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  workflow-trust-guard-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-workflow-trust-regression-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-workflow-trust-regression-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI workflow trust regression guard' "$f"
+          grep -Fq "cron: '*/30 * * * *'" "$f"
+          grep -Fq 'group: ai-workflow-trust-regression-guard' "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'github-workflow-integrity-auditor.cjs --no-fail' "$f"
+          grep -Fq 'workflow-trust-score.cjs' "$f"
+          grep -Fq 'append-workflow-trust-history.cjs' "$f"
+          grep -Fq 'workflow-trust-regression-guard.cjs' "$f"
+          grep -Fq 'workflow-trust-regression-latest.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

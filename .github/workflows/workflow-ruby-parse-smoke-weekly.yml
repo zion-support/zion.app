@@ -1,0 +1,39 @@
+# Ruby-only workflow contract check (no Node/npm). Grep-checks the parser script, then runs it. Catches YAML/struct issues even if package scripts break.
+
+name: Workflow Ruby parse smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '22 8 * * 1' # Mondays 08:22 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-ruby-parse-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Workflow YAML parser script anchors
+        run: |
+          set -euo pipefail
+          f=scripts/automation/parse-github-workflows-yaml.rb
+          test -f "$f"
+          test -s "$f"
+          grep -Fq '#!/usr/bin/env ruby' "$f"
+          grep -Fq "require 'yaml'" "$f"
+          grep -Fq "Dir.glob('.github/workflows/**/*.{yml,yaml}')" "$f"
+          grep -Fq 'timeout-minutes' "$f"
+          grep -Fq 'permissions:' "$f"
+          echo "ok: $f"
+
+      - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
+        run: ruby scripts/automation/parse-github-workflows-yaml.rb

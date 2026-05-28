@@ -1,0 +1,81 @@
+# AI Front Page Services & Content
+# Runs services and content automation to advertise more services and content on the main front page:
+# - Live site audit (ziontechgroup.com) for UX/SEO ideas
+# - Promotes under-featured Zion AI apps to featuredApps
+# - Syncs Core Services from /services to homepage (14 categories)
+# - App collections, product pages, template blog/case studies, industry discovery
+# Schedule: Tue 07 UTC, Fri 07 UTC. Also workflow_dispatch.
+# Uses content-commit concurrency.
+
+name: AI Front Page Services & Content
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 7 * * 2'
+    - cron: '0 7 * * 5'
+  workflow_dispatch:
+    inputs:
+      max_add:
+        description: 'Max apps to promote to front page (default 10)'
+        required: false
+        default: '10'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  front-page-services-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run front page services and content
+        env:
+          AUTO_COMMIT: "1"
+          SKIP_IDEATION: "1"
+          SKIP_BLOG: "1"
+          SKIP_FRONT_PAGE: "0"
+          SKIP_LIVE_SITE_AUDIT: "0"
+          MAX_ADD: ${{ github.event.inputs.max_add || '12' }}
+          MAX_PRODUCT_PAGES: "4"
+          MAX_TEMPLATE_BLOG: "3"
+          MAX_TEMPLATE_CASE_STUDIES: "3"
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-services-and-content-automation.cjs
+          git add -A
+          if ! git diff --staged --quiet; then
+            npm run rsc:guard
+            npm run build
+            git commit -m "chore(content): front page services and content - promote apps, sync core services"
+            git push
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

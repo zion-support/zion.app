@@ -1,0 +1,33 @@
+# Ensures tailwind.config.ts stays present with minimal shape (content + theme; grep-only, no npm ci).
+
+name: tailwind.config.ts smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '47 7 * * 4' # Thursdays 07:47 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-tailwind-config-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  tailwind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: tailwind.config.ts shape
+        run: |
+          set -euo pipefail
+          test -f tailwind.config.ts
+          test -s tailwind.config.ts
+          grep -q 'content:' tailwind.config.ts
+          grep -q 'theme:' tailwind.config.ts
+          grep -q 'export default' tailwind.config.ts
+          echo 'ok: tailwind.config.ts'

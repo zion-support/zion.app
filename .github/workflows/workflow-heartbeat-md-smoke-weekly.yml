@@ -1,0 +1,36 @@
+# Ensures HEARTBEAT.md keeps operating mandate + continuity cross-links (grep-only).
+
+name: HEARTBEAT.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '11 8 * * 5' # Fridays 08:11 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-heartbeat-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: HEARTBEAT.md mandate anchors
+        run: |
+          set -euo pipefail
+          test -f HEARTBEAT.md
+          test -s HEARTBEAT.md
+          grep -Fq '# HEARTBEAT.md' HEARTBEAT.md
+          grep -Fq '### Operating Mandate' HEARTBEAT.md
+          grep -Fq 'USER.md' HEARTBEAT.md
+          grep -Fq 'AGENTS' HEARTBEAT.md
+          grep -Fq 'SOUL' HEARTBEAT.md
+          grep -Fq 'Never commit secrets' HEARTBEAT.md
+          echo 'ok: HEARTBEAT.md'

@@ -1,0 +1,34 @@
+# Ensures TOOLS.md stays present for local agent notes (grep-only).
+
+name: TOOLS.md smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 9 * * 0' # Sundays 09:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-tools-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  tools-md:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: TOOLS.md anchors
+        run: |
+          set -euo pipefail
+          test -f TOOLS.md
+          test -s TOOLS.md
+          grep -Fq '# TOOLS.md - Local Notes' TOOLS.md
+          grep -Fq 'TELEGRAM_BOT_TOKEN' TOOLS.md
+          grep -Fq 'Heartbeat' TOOLS.md
+          grep -Fq 'Telegram' TOOLS.md
+          echo 'ok: TOOLS.md'

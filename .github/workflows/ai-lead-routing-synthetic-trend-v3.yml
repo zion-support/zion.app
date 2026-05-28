@@ -1,0 +1,78 @@
+name: AI lead routing synthetic trend v3
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '50 */4 * * *'
+
+concurrency:
+  group: ai-lead-routing-synthetic-trend-v3
+  cancel-in-progress: true
+
+jobs:
+  lead_routing_trend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run lead routing synthetic v2
+        run: node automation/lead-routing-synthetic-intelligence-v2.cjs
+
+      - name: Run trend guard v3
+        id: trend
+        run: node automation/lead-routing-synthetic-trend-guard-v3.cjs
+
+      - name: Raise sustained degradation incident
+        if: steps.trend.outputs.lead_routing_trend_escalate == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Lead routing synthetic trend v3 sustained degradation"
+          ISSUE_BODY_FILE: automation/reports/lead-routing-synthetic-trend-v3-latest.md
+          ISSUE_LABELS: "automation,lead-gen,routing,warning"
+          ISSUE_FINGERPRINT: lead-routing-synthetic-trend-v3-sustained
+          COOLDOWN_HOURS: "12"
+        run: |
+          export ISSUE_FINGERPRINT="lead-routing-synthetic-trend-v3-sustained"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs
+
+      - name: Close sustained degradation issue on recovery
+        if: steps.trend.outputs.lead_routing_trend_close == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Lead routing synthetic trend v3 sustained degradation"
+          ISSUE_FINGERPRINT: lead-routing-synthetic-trend-v3-sustained
+          ISSUE_CLOSE_COMMENT_FILE: automation/reports/lead-routing-synthetic-trend-v3-latest.md
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs
+
+      - name: Upload trend artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: lead-routing-synthetic-trend-v3-${{ github.run_id }}
+          path: |
+            automation/reports/lead-routing-synthetic-intelligence-v2-latest.json
+            automation/reports/lead-routing-synthetic-intelligence-v2-latest.md
+            automation/reports/lead-routing-synthetic-trend-v3-latest.json
+            automation/reports/lead-routing-synthetic-trend-v3-latest.md
+            automation/reports/lead-routing-synthetic-trend-v3-history.json
+            automation/reports/lead-routing-synthetic-trend-v3-state.json
+          if-no-files-found: ignore
+          retention-days: 14

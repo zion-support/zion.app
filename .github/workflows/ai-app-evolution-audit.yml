@@ -1,0 +1,74 @@
+# AI App Evolution Audit
+# Unified pipeline: visit ziontechgroup.com → audit → implement → deploy.
+# Requires: OPENROUTER_API_KEY (Netlify build hook removed → GitHub Pages)
+
+name: AI App Evolution Audit
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 14 * * 6'
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push changes'
+        required: false
+        default: true
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+      skip_ux_audit:
+        description: 'Skip live site UX audit'
+        required: false
+        default: false
+        type: boolean
+      skip_layout_design:
+        description: 'Skip layout design audit and implementation'
+        required: false
+        default: false
+        type: boolean
+      skip_evolution_apply:
+        description: 'Skip evolution backlog apply (AUTO_APPLY)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  evolution-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run app evolution audit pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+          AUTO_COMMIT: ${{ github.event_name == 'schedule' && '1' || (github.event.inputs.auto_commit != 'false' && '1' || '') }}
+          TRIGGER_DEPLOY: ${{ github.event_name == 'schedule' && '1' || (github.event.inputs.trigger_deploy != 'false' && '1' || '') }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          SKIP_UX_AUDIT: ${{ github.event.inputs.skip_ux_audit == 'true' && '1' || '' }}
+          SKIP_LAYOUT_DESIGN: ${{ github.event.inputs.skip_layout_design == 'true' && '1' || '' }}
+          SKIP_EVOLUTION_APPLY: ${{ github.event.inputs.skip_evolution_apply == 'true' && '1' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          node automation/ai-app-evolution-audit-pipeline.cjs

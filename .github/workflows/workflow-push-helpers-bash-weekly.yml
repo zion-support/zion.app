@@ -1,0 +1,26 @@
+# Scheduled bash -n on push-to-main helpers (complements path-scoped workflow-push-helpers-bash-fast.yml).
+
+name: Workflow push helpers bash syntax (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '3 7 * * 5' # Fridays 07:03 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-push-helpers-bash-weekly
+  cancel-in-progress: true
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Bash syntax (push helper scripts)
+        run: bash -n scripts/automation/commit-and-push-main.sh && bash -n scripts/automation/push-main-with-retry.sh

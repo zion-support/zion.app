@@ -1,0 +1,32 @@
+# Ensures workflow-contracts-weekly.yml keeps reusable contracts wiring + cron report anchors (grep-only).
+name: workflow contracts weekly smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '58 8 * * 4' # Thursdays 08:58 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-contracts-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  contracts-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-contracts-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-contracts-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow contracts weekly' "$f"
+          grep -Fq "cron: '25 10 * * 1'" "$f"
+          grep -Fq 'group: workflow-contracts-weekly' "$f"
+          grep -Fq 'reusable-workflow-ci.yml' "$f"
+          grep -Fq 'run_contracts: true' "$f"
+          grep -Fq 'automation/ai-cron-collision-tuner.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' "$f"
+          echo "ok: $f"

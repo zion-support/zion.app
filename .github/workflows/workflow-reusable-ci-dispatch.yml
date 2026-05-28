@@ -1,0 +1,24 @@
+name: Reusable workflow CI (manual)
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_contracts:
+        description: 'Run npm run workflows:contracts:node after validate light (dedupe, integrity, pin strict)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: workflow-reusable-ci-dispatch
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    uses: ./.github/workflows/reusable-workflow-ci.yml
+    with:
+      run_contracts: ${{ inputs.run_contracts }}
+    timeout-minutes: 15

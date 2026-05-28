@@ -1,0 +1,41 @@
+# Ensures ai-advanced-ai-content.yml keeps schedule/pipeline anchors (grep-only).
+name: ai advanced-ai content workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '5 12 * * 3' # Wednesdays 12:05 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-advanced-ai-content-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  advanced-ai-content-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-advanced-ai-content.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-advanced-ai-content.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Advanced-AI Content' "$f"
+          grep -Fq "cron: '0 3 * * *'" "$f"
+          grep -Fq "cron: '0 11 * * *'" "$f"
+          grep -Fq "cron: '0 19 * * *'" "$f"
+          grep -Fq 'token: ${{ github.token }}' "$f"
+          grep -Fq 'OPENROUTER_API_KEY' "$f"
+          grep -Fq 'GitHub Pages' "$f"
+          grep -Fq 'SKIP_ADVANCED_AI' "$f"
+          grep -Fq 'AUTO_COMMIT' "$f"
+          grep -Fq 'TRIGGER_DEPLOY' "$f"
+          grep -Fq 'ai-content-maximum-pipeline.cjs' "$f"
+          echo "ok: $f"

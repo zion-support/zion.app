@@ -1,0 +1,67 @@
+name: AI MTTR fingerprint arbitration digest (daily)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-mttr-fingerprint-arbitration-digest-daily
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '25 11 * * *'
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Build MTTR fingerprint arbitration digest
+        run: node automation/mttr-fingerprint-arbitration-digest.cjs
+
+      - name: Upload MTTR fingerprint arbitration artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: mttr-fingerprint-arbitration-digest-${{ github.run_id }}
+          path: |
+            automation/reports/mttr-fingerprint-suppression-explainability-latest.json
+            automation/reports/mttr-fingerprint-regression-latest.json
+            automation/reports/mttr-fingerprint-arbitration-digest-latest.json
+            automation/reports/mttr-fingerprint-arbitration-digest-latest.md
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Commit MTTR fingerprint arbitration digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/mttr-fingerprint-arbitration-digest-latest.json
+          git add -f automation/reports/mttr-fingerprint-arbitration-digest-latest.md
+          if git diff --staged --quiet; then
+            echo "No MTTR fingerprint arbitration digest changes."
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(reports): refresh MTTR fingerprint arbitration digest"

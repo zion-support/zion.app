@@ -1,0 +1,40 @@
+# Ensures ai-seo-content-optimizer.yml keeps schedule/SEO artifact anchors (grep-only).
+name: ai seo content optimizer workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '15 12 * * 2' # Tuesdays 12:15 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-seo-content-optimizer-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  seo-optimizer-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-seo-content-optimizer.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-seo-content-optimizer.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI SEO & Content Optimizer' "$f"
+          grep -Fq 'group: ai-seo-optimizer' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 9 * * 3'" "$f"
+          grep -Fq 'seo-reports/metadata-audit.json' "$f"
+          grep -Fq 'seo-reports/ai-seo-analysis.md' "$f"
+          grep -Fq 'openrouter/auto' "$f"
+          grep -Fq 'Upload SEO report' "$f"
+          grep -Fq 'seo-report-' "$f"
+          grep -Fq 'seo-reports/' "$f"
+          echo "ok: $f"

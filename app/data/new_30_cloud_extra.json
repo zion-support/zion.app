@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cloud-edge-ai-deployment-platform",
+    "title": "Edge AI Deployment Platform",
+    "description": "One-click edge AI model deployment to 50k+ global edge points-of-presence: ONNX/TensorRT/GGUF model package, auto-scaling inference, A/B model rollout, cold-warm-cache tiering, and robust offline-first sync for disconnected sites.",
+    "icon": "🌍",
+    "features": ["One-click deploy ONNX/TensorRT/GGUF model to global edge PoPs", "Cold-warm model cache tiers reduce first-inference latency by 80%+", "A/B model rollout: blue-green promotion of new model versions with traffic splitting", "Offline-first sync buffer: 24 h message queue for disconnected branch-store sites", "Hardware-accelerated inference: works on Jetson, Coral TPU, RK3588 edge hardware"],
+    "benefits": ["Inference latency <50ms for retail and industrial edge use cases vs. 300+ ms round-trip to cloud", "Model version rollover in 30 s vs. hours of cloud-deployment pipeline wrangle", "Offline-first operation means edge store shelf-price updates stay synced even with 2 d of fibre cut"],
+    "pricing": {"basic": "249", "pro": "899", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-edge-ai-deployment-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-edge-ai-deployment-platform",
+    "category": "cloud",
+    "popular": true,
+    "nav_name": "Edge AI Deployment Platform",
+    "is_featured": false
+  }
+]

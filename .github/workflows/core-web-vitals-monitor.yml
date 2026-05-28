@@ -1,0 +1,309 @@
+name: Core Web Vitals Monitor
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: core-web-vitals
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Comma-separated list of pages to test'
+        required: false
+        default: '/,/solutions/,/services/,/pricing/,/contact/,/about/'
+        type: string
+
+jobs:
+  measure:
+    name: Measure Core Web Vitals
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse chrome-launcher
+
+      - name: Measure CWV for key pages
+        id: cwv
+        run: |
+          SITE="https://ziontechgroup.com"
+          PAGES="${{ inputs.pages || '/,/solutions/,/services/,/pricing/,/contact/,/about/' }}"
+          mkdir -p cwv-reports
+
+          IFS=',' read -ra PAGE_LIST <<< "$PAGES"
+
+          RESULTS="[]"
+
+          for PAGE in "${PAGE_LIST[@]}"; do
+            PAGE=$(echo "$PAGE" | xargs)
+            URL="${SITE}${PAGE}"
+            echo "Testing: $URL"
+
+            REPORT_FILE="cwv-reports/lighthouse-$(echo "$PAGE" | tr '/' '-' | tr -d ' ').json"
+
+            lighthouse "$URL" \
+              --output=json \
+              --output-path="$REPORT_FILE" \
+              --chrome-flags="--headless --no-sandbox --disable-gpu" \
+              --only-categories=performance \
+              --throttling-method=simulate \
+              --quiet \
+              2>/dev/null || {
+                echo "::warning::Lighthouse failed for $URL"
+                continue
+              }
+
+            if [ -f "$REPORT_FILE" ]; then
+              METRICS=$(python3 -c "
+          import json, sys
+          try:
+              with open('$REPORT_FILE') as f:
+                  data = json.load(f)
+              audits = data.get('audits', {})
+              perf = data.get('categories', {}).get('performance', {}).get('score', 0)
+
+              result = {
+                  'page': '$PAGE',
+                  'performanceScore': round((perf or 0) * 100),
+                  'LCP': audits.get('largest-contentful-paint', {}).get('numericValue', 0),
+                  'FID': audits.get('max-potential-fid', {}).get('numericValue', 0),
+                  'CLS': audits.get('cumulative-layout-shift', {}).get('numericValue', 0),
+                  'FCP': audits.get('first-contentful-paint', {}).get('numericValue', 0),
+                  'TTFB': audits.get('server-response-time', {}).get('numericValue', 0),
+                  'TBT': audits.get('total-blocking-time', {}).get('numericValue', 0),
+                  'SI': audits.get('speed-index', {}).get('numericValue', 0),
+              }
+              print(json.dumps(result))
+          except Exception as e:
+              print(json.dumps({'page': '$PAGE', 'error': str(e)}))
+          ")
+
+              RESULTS=$(echo "$RESULTS" | python3 -c "
+          import sys, json
+          arr = json.load(sys.stdin)
+          arr.append(json.loads('$METRICS'))
+          print(json.dumps(arr))
+          ")
+            fi
+          done
+
+          echo "$RESULTS" | python3 -m json.tool > cwv-reports/cwv-summary.json
+          echo "measured=true" >> "$GITHUB_OUTPUT"
+
+      - name: Generate CWV report
+        if: steps.cwv.outputs.measured == 'true'
+        id: report
+        run: |
+          python3 -c "
+          import json
+
+          with open('cwv-reports/cwv-summary.json') as f:
+              results = json.load(f)
+
+          thresholds = {
+              'LCP': {'good': 2500, 'poor': 4000, 'unit': 'ms'},
+              'FID': {'good': 100, 'poor': 300, 'unit': 'ms'},
+              'CLS': {'good': 0.1, 'poor': 0.25, 'unit': ''},
+              'FCP': {'good': 1800, 'poor': 3000, 'unit': 'ms'},
+              'TBT': {'good': 200, 'poor': 600, 'unit': 'ms'},
+              'TTFB': {'good': 800, 'poor': 1800, 'unit': 'ms'},
+          }
+
+          def rating(metric, value):
+              t = thresholds.get(metric, {})
+              if not t or value == 0:
+                  return 'N/A'
+              if value <= t['good']:
+                  return 'GOOD'
+              elif value <= t['poor']:
+                  return 'NEEDS_IMPROVEMENT'
+              return 'POOR'
+
+          def emoji(r):
+              return {'GOOD': '🟢', 'NEEDS_IMPROVEMENT': '🟡', 'POOR': '🔴'}.get(r, '⚪')
+
+          lines = []
+          lines.append('## Core Web Vitals Report')
+          lines.append('')
+          lines.append(f'**Date:** $(date -u \"+%Y-%m-%d %H:%M UTC\")')
+          lines.append(f'**Pages tested:** {len(results)}')
+          lines.append('')
+          lines.append('| Page | Perf | LCP | FID | CLS | FCP | TBT | TTFB |')
+          lines.append('|------|------|-----|-----|-----|-----|-----|------|')
+
+          alerts = []
+          for r in results:
+              if 'error' in r:
+                  lines.append(f'| \`{r[\"page\"]}\` | ❌ | Error | - | - | - | - | - |')
+                  continue
+
+              lcp_r = rating('LCP', r['LCP'])
+              fid_r = rating('FID', r['FID'])
+              cls_r = rating('CLS', r['CLS'])
+              fcp_r = rating('FCP', r['FCP'])
+              tbt_r = rating('TBT', r['TBT'])
+              ttfb_r = rating('TTFB', r['TTFB'])
+
+              lcp_ms = round(r['LCP'])
+              fid_ms = round(r['FID'])
+              cls_val = round(r['CLS'], 3)
+              fcp_ms = round(r['FCP'])
+              tbt_ms = round(r['TBT'])
+              ttfb_ms = round(r['TTFB'])
+
+              score_emoji = '🟢' if r['performanceScore'] >= 90 else '🟡' if r['performanceScore'] >= 50 else '🔴'
+
+              lines.append(f'| \`{r[\"page\"]}\` | {score_emoji} {r[\"performanceScore\"]} | {emoji(lcp_r)} {lcp_ms}ms | {emoji(fid_r)} {fid_ms}ms | {emoji(cls_r)} {cls_val} | {emoji(fcp_r)} {fcp_ms}ms | {emoji(tbt_r)} {tbt_ms}ms | {emoji(ttfb_r)} {ttfb_ms}ms |')
+
+              for metric, val, rt in [('LCP', lcp_ms, lcp_r), ('CLS', cls_val, cls_r), ('TBT', tbt_ms, tbt_r)]:
+                  if rt == 'POOR':
+                      alerts.append(f'🔴 **{r[\"page\"]}** has poor {metric}: {val}{\"ms\" if metric != \"CLS\" else \"\"}')
+
+          if alerts:
+              lines.append('')
+              lines.append('### Alerts')
+              lines.append('')
+              for a in alerts:
+                  lines.append(f'- {a}')
+
+          avg_perf = sum(r.get('performanceScore', 0) for r in results if 'error' not in r) / max(len([r for r in results if 'error' not in r]), 1)
+          lines.append('')
+          lines.append(f'**Average Performance Score:** {round(avg_perf)}/100')
+
+          report = '\n'.join(lines)
+          print(report)
+
+          with open('cwv-reports/cwv-report.md', 'w') as f:
+              f.write(report)
+          " >> "$GITHUB_STEP_SUMMARY"
+
+          POOR_COUNT=$(python3 -c "
+          import json
+          with open('cwv-reports/cwv-summary.json') as f:
+              results = json.load(f)
+          poor = sum(1 for r in results if r.get('performanceScore', 100) < 50)
+          print(poor)
+          ")
+
+          echo "poor_count=$POOR_COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Create issue on poor CWV
+        if: steps.report.outputs.poor_count != '0' && steps.report.outputs.poor_count != ''
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('cwv-reports/cwv-report.md', 'utf-8');
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              ...context.repo,
+              state: 'open',
+              labels: 'performance',
+              per_page: 5,
+            });
+
+            const existing = issues.find(i => i.title.includes('Core Web Vitals'));
+
+            if (existing) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: existing.number,
+                body: `## CWV Update — ${new Date().toISOString().split('T')[0]}\n\n${report.substring(0, 3000)}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                ...context.repo,
+                title: `🔴 Core Web Vitals Below Threshold — ${new Date().toISOString().split('T')[0]}`,
+                body: report.substring(0, 4000),
+                labels: ['performance', 'needs-investigation'],
+              });
+            }
+
+      - name: AI Performance Insights
+        if: steps.cwv.outputs.measured == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::OPENROUTER_API_KEY not set — skipping AI insights"
+            exit 0
+          fi
+
+          CWV_DATA=$(python3 -c "
+          import json
+          with open('cwv-reports/cwv-summary.json') as f:
+            print(json.dumps(json.load(f)))
+          ")
+
+          PAYLOAD=$(python3 -c "
+          import json
+          data = json.loads('''$(echo "$CWV_DATA" | sed "s/'/\\\\'/g")''')
+
+          prompt = '''Analyze these Core Web Vitals measurements for ziontechgroup.com:
+
+          ''' + json.dumps(data, indent=2) + '''
+
+          Provide brief, actionable insights:
+          1. Which pages need immediate attention and why
+          2. Top 3 specific optimizations to improve the worst metrics
+          3. Expected impact of each optimization
+
+          Keep it concise — this is for a CI report.'''
+
+          payload = {
+            'model': 'openrouter/auto',
+            'max_tokens': 1500,
+            'messages': [
+              {'role': 'system', 'content': 'You are a web performance expert. Provide brief, specific, actionable insights from Core Web Vitals data. Focus on the biggest impact optimizations.'},
+              {'role': 'user', 'content': prompt}
+            ]
+          }
+          print(json.dumps(payload))
+          ")
+
+          RESPONSE=$(curl -sS --max-time 60 \
+            -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "HTTP-Referer: https://github.com/${{ github.repository }}" \
+            -H "X-Title: ZionTechGroup-CWV" \
+            -d "$PAYLOAD" \
+            https://openrouter.ai/api/v1/chat/completions)
+
+          INSIGHTS=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              msg = data.get('choices', [{}])[0].get('message', {}).get('content', '')
+              print(msg if msg else 'No insights returned.')
+          except Exception as e:
+              print(f'AI analysis error: {e}')
+          ")
+
+          {
+            echo ""
+            echo "### AI Performance Insights"
+            echo ""
+            echo "$INSIGHTS"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: cwv-report-${{ github.run_id }}
+          path: cwv-reports/
+          if-no-files-found: ignore
+          retention-days: 90

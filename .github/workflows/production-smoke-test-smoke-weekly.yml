@@ -1,0 +1,32 @@
+# Ensures production-smoke-test.yml keeps workflow_run after deploy + route checks (grep-only).
+name: production smoke test workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '20 11 * * 4' # Thursdays 11:20 UTC
+  workflow_dispatch:
+concurrency:
+  group: production-smoke-test-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  production-smoke-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: production-smoke-test.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/production-smoke-test.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Production Smoke Test' "$f"
+          grep -Fq 'workflow_run:' "$f"
+          grep -Fq 'Deploy on Push' "$f"
+          grep -Fq 'group: production-smoke-test' "$f"
+          grep -Fq 'npm run routes:promotions:check' "$f"
+          grep -Fq 'config/smoke-routes.txt' "$f"
+          grep -Fq 'https://ziontechgroup.com' "$f"
+          echo "ok: $f"

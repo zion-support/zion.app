@@ -1,0 +1,33 @@
+# Ensures ai-accessibility-audit.yml keeps schedule, build/axe anchors, and PR comment hook (grep-only).
+name: ai accessibility audit workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '2 12 * * 3' # Wednesdays 12:02 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-accessibility-audit-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  a11y-audit-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-accessibility-audit.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-accessibility-audit.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Accessibility Audit' "$f"
+          grep -Fq 'group: ai-a11y-audit-' "$f"
+          grep -Fq 'cancel-in-progress: true' "$f"
+          grep -Fq "cron: '0 8 * * 2'" "$f"
+          grep -Fq 'npm run build' "$f"
+          grep -Fq 'npx @axe-core/cli' "$f"
+          grep -Fq 'actions/github-script@' "$f"
+          grep -Fq '### ' "$f"
+          echo "ok: $f"

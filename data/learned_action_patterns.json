@@ -1,0 +1,14 @@
+{
+  "repeatclient.com::support": {
+    "domain": "repeatclient.com",
+    "intent": "support",
+    "confidence": 1.0,
+    "sample_count": 3,
+    "wins": 3,
+    "last_used": "2026-05-20T14:07:00.867761+00:00",
+    "template_key": "general",
+    "body_opening": "The token renewal failed",
+    "last_outcome": "positive",
+    "updated": "2026-05-20T14:07:00.868082+00:00"
+  }
+}

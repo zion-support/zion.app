@@ -1,0 +1,101 @@
+permissions:
+  contents: read
+name: OpenAPI Contract Drift Detector
+true:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  schedule:
+  - cron: 0 12 * * *
+  workflow_dispatch: null
+jobs:
+  openapi-drift:
+    name: Detect OpenAPI Drift
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Setup Node.js
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+        cache: npm
+    - name: Install dependencies
+      run: npm ci
+    - name: Run OpenAPI Drift Detector
+      id: drift
+      env:
+        OPENAPI_SPEC_PATH: ${{ runner.temp }}/openapi-spec.json
+        OPENAPI_HISTORY_PATH: ${{ runner.temp }}/openapi-history.json
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: 'node automation/openapi-drift-detector.cjs
+
+        echo "drift_status=$?" >> $GITHUB_OUTPUT
+
+        '
+    - name: Upload violations artifact
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: openapi-violations
+        path: .hermes/memory/openapi-drift/violations.json
+        retention-days: 7
+    - name: Comment on PR if drift detected
+      if: github.event_name == 'pull_request' && failure()
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst violationsPath = '.hermes/memory/openapi-drift/violations.json';\n\
+          let msg = '\U0001F6A8 **OpenAPI Contract Drift Detected**\\n\\n';\ntry {\n\
+          \  const v = JSON.parse(fs.readFileSync(violationsPath, 'utf8'));\n  msg\
+          \ += '**Breaking changes:**\\n';\n  v.breaking.forEach((b: string) => msg\
+          \ += `- ${b}\\n`);\n  if (v.additions?.length) {\n    msg += '\\n**Non-breaking\
+          \ additions:**\\n';\n    v.additions.forEach((a: string) => msg += `- ${a}\\\
+          n`);\n  }\n  if (v.removals?.length) {\n    msg += '\\n**Deprecations/removals:**\\\
+          n';\n  v.removals.forEach((r: string) => msg += `- ${r}\\n`);\n  }\n  msg\
+          \ += '\\nPlease review the API contract changes before merging. The baseline\
+          \ spec has been updated in this run for reference.';\n} catch (e) {\n  msg\
+          \ += 'Drift detected but could not read detailed violations file. Check\
+          \ workflow logs.';\n}\ngithub.rest.issues.createComment({\n  owner: context.repo.owner,\n\
+          \  repo: context.repo.repo,\n  issue_number: context.issue.number,\n  body:\
+          \ msg\n});\n"
+    - name: Open GitHub issue on main branch drift
+      if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
+      uses: actions/github-script@v7
+      with:
+        script: "const fs = require('fs');\nconst title = '\U0001F6A8 API Contract\
+          \ Drift Detected on Main';\nconst violationsPath = '.hermes/memory/openapi-drift/violations.json';\n\
+          let body = '**Breaking API contract changes detected on `main`.**\\n\\n';\n\
+          try {\n  const v = JSON.parse(fs.readFileSync(violationsPath, 'utf8'));\n\
+          \  body += '**Breaking changes:**\\n';\n  v.breaking.forEach((b: string)\
+          \ => body += `- ${b}\\n`);\n  if (v.additions?.length) {\n    body += '\\\
+          n**Additions:**\\n';\n    v.additions.forEach((a: string) => body += `-\
+          \ ${a}\\n`);\n  }\n} catch (e) {\n  body += 'Could not parse violations;\
+          \ see workflow logs.';\n }\nbody += `\\n*Committed by: ${context.payload.committer?.name\
+          \ || 'unknown'}*\\n`;\nbody += `*Commit: ${context.payload.headCommit?.id?.slice(0,\
+          \ 7) || 'N/A'}*\\n`;\nconst existing = await github.rest.issues.listForRepo({\n\
+          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  labels: ['openapi-drift',\
+          \ 'automation'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
+          \ any) => i.title === title);\nif (!already) {\n  await github.rest.issues.create({\n\
+          \    owner: context.repo.owner,\n    repo: context.repo.repo,\n    title,\n\
+          \    body,\n    labels: ['openapi-drift', 'autonomous', 'breaking-change',\
+          \ 'api']\n  });\n}\n"
+    - name: Notify Telegram on failure
+      if: failure()
+      run: "node automation/notify-telegram.js \"\U0001F6A8 OpenAPI Drift Detector\
+        \ failed \u2014 breaking contract change detected. Check GitHub issues or\
+        \ workflow logs.\"\n"
+    - name: Notify Telegram on success (non-breaking updates)
+      if: success() && steps.drift.outputs.stdout != ''
+      run: "node automation/notify-telegram.js \"\u2705 OpenAPI Drift Detector passed\
+        \ \u2014 no breaking changes. Contract baseline updated.\"\n"
+    timeout-minutes: 10

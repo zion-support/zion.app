@@ -1,0 +1,42 @@
+# Ensures autonomous-release-guardian.yml keeps schedule/incident/artifact anchors (grep-only).
+name: autonomous release guardian workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '55 12 * * 2' # Tuesdays 12:55 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: autonomous-release-guardian-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  release-guardian-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: autonomous-release-guardian.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/autonomous-release-guardian.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Autonomous Release Guardian' "$f"
+          grep -Fq 'group: autonomous-release-guardian' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '*/30 * * * *'" "$f"
+          grep -Fq 'npm run autonomy:release-guardian' "$f"
+          grep -Fq 'autonomous-release-guardian-' "$f"
+          grep -Fq 'autonomous-release-guardian-latest.json' "$f"
+          grep -Fq 'autonomous-release-guardian-latest.md' "$f"
+          grep -Fq 'Escalate release health incident' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

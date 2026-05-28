@@ -1,0 +1,43 @@
+# Ensures ai-mttr-fingerprint-regression-daily.yml keeps schedule/guard artifact anchors (grep-only).
+name: ai mttr fingerprint regression daily workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '15 12 * * 2' # Tuesdays 12:15 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-mttr-fingerprint-regression-daily-smoke-weekly
+  cancel-in-progress: false
+
+jobs:
+  mttr-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-mttr-fingerprint-regression-daily.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-mttr-fingerprint-regression-daily.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI MTTR fingerprint regression guard (daily)' "$f"
+          grep -Fq 'group: ai-mttr-fingerprint-regression-daily' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '15 11 * * *'" "$f"
+          grep -Fq 'generate-automation-issue-index.cjs' "$f"
+          grep -Fq 'ai-mttr-fingerprint-regression-guard.cjs' "$f"
+          grep -Fq 'mttr-fingerprint-regression-guard-' "$f"
+          grep -Fq 'automation-open-issues-index-latest.json' "$f"
+          grep -Fq 'automation-issue-mttr-history.json' "$f"
+          grep -Fq 'mttr-fingerprint-regression-latest.json' "$f"
+          grep -Fq 'mttr-fingerprint-regression-state.json' "$f"
+          grep -Fq 'GH_TOKEN:' "$f"
+          grep -Fq 'github.token' "$f"
+          echo "ok: $f"

@@ -1,0 +1,38 @@
+# Ensures workflow-change-guard.yml keeps protected-path triggers + reusable CI contract anchors (grep-only).
+
+name: workflow change guard smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '5 8 * * 3' # Wednesdays 08:05 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-change-guard-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  change-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: workflow-change-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-change-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow Change Guard' "$f"
+          grep -Fq "'.github/workflows/**'" "$f"
+          grep -Fq "'.github/dependabot.yml'" "$f"
+          grep -Fq "'.github/CODEOWNERS'" "$f"
+          grep -Fq 'reusable-workflow-ci.yml' "$f"
+          grep -Fq 'run_contracts: true' "$f"
+          grep -Fq 'npm run automation:preflight' "$f"
+          echo "ok: $f"

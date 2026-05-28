@@ -1,0 +1,34 @@
+# Ensures app/robots.ts keeps static robots export + sitemap URL (pairs with public/robots.txt smoke).
+
+name: app/robots.ts smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '55 7 * * 4' # Thursdays 07:55 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-app-robots-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  robots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: robots.ts static export shape
+        run: |
+          set -euo pipefail
+          test -f app/robots.ts
+          test -s app/robots.ts
+          grep -Fq "export const dynamic = 'force-static'" app/robots.ts
+          grep -Fq 'export default function robots' app/robots.ts
+          grep -Fq 'MetadataRoute.Robots' app/robots.ts
+          grep -Fq "sitemap: 'https://ziontechgroup.com/sitemap.xml'" app/robots.ts
+          echo 'ok: app/robots.ts'

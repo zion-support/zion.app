@@ -1,0 +1,30 @@
+# Ensures workflow-parse-ruby-fast.yml keeps parser-file path triggers + Ruby parse step (grep-only).
+name: workflow parse ruby fast smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '32 9 * * 4' # Thursdays 09:32 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-parse-ruby-fast-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  parse-ruby-fast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-parse-ruby-fast.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-parse-ruby-fast.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow Ruby parse (parser file)' "$f"
+          grep -Fq 'parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'group: workflow-parse-ruby-fast-' "$f"
+          grep -Fq 'github.ref' "$f"
+          grep -Fq 'ruby scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          echo "ok: $f"

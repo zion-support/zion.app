@@ -1,0 +1,31 @@
+# Ensures stale.yml keeps schedule + actions/stale pin + policy anchors (grep-only).
+name: stale workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '26 11 * * 4' # Thursdays 11:26 UTC
+  workflow_dispatch:
+concurrency:
+  group: stale-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  stale-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: stale.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/stale.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Stale Issues & PRs' "$f"
+          grep -Fq "cron: '0 3 * * *'" "$f"
+          grep -Fq 'group: stale' "$f"
+          grep -Fq 'actions/stale@b5d41d4e1d5dceea10e7104786b73624c18a190f' "$f"
+          grep -Fq 'days-before-stale: 30' "$f"
+          grep -Fq 'exempt-issue-labels: pinned,security,bug' "$f"
+          echo "ok: $f"

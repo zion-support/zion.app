@@ -1,0 +1,18 @@
+name: Workflow validate light (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 11 * * 3' # Wednesdays 11:35 UTC — npm run workflows:validate:light (full chain)
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-validate-light-weekly
+  cancel-in-progress: true
+
+jobs:
+  validate-light:
+    uses: ./.github/workflows/reusable-workflow-ci.yml
+    timeout-minutes: 16

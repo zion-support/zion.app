@@ -1,0 +1,97 @@
+name: AI Report Size Budget Guard
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-report-size-budget-guard
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '15 16 * * 1'
+  workflow_dispatch:
+
+jobs:
+  report-size-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      REPORT_SIZE_MAX_FILE_KB: "1536"
+      REPORT_SIZE_MAX_TOTAL_MB: "8"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run report size budget guard
+        id: size_guard
+        continue-on-error: true
+        run: npm run reports:size:guard
+
+      - name: Upload report-size artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: report-size-budget-${{ github.run_id }}
+          path: |
+            automation/reports/report-size-budget-guard-latest.json
+            automation/reports/report-size-budget-guard-latest.md
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Open issue on budget breach (deduped)
+        if: steps.size_guard.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: Report size budget breached
+          COOLDOWN_HOURS: '12'
+        run: |
+          set -euo pipefail
+          report="automation/reports/report-size-budget-guard-latest.json"
+          [ -f "$report" ] || exit 0
+          oversized=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(Number(r.oversizedCount||0))")
+          total_exceeded=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.totalExceeded ? 'yes' : 'no')")
+          body_file="report-size-budget-breach.md"
+          {
+            echo "## Report size budget breach"
+            echo ""
+            echo "- **Dedupe key:** \`report-size-budget\`"
+            echo ""
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Oversized file count: ${oversized}"
+            echo "- Total size budget exceeded: ${total_exceeded}"
+            echo ""
+            echo "### Top largest report files"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const f of (r.topLargest||[]).slice(0,10)){console.log('- '+f.path+' ('+f.sizeKb+' KB)')}"
+          } > "$body_file"
+          export ISSUE_TITLE="Report size budget breached"
+          export ISSUE_FINGERPRINT="report-size-budget"
+          export ISSUE_LABELS="bug"
+          export ISSUE_BODY_FILE="$body_file"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+
+      - name: Close report size fingerprint issue on recovery
+        if: steps.size_guard.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: report-size-budget
+          CLOSE_COMMENT: "Auto-closing: report size budget guard passed."
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true
+
+      - name: Fail on budget breach
+        if: steps.size_guard.outcome != 'success'
+        run: |
+          echo "::error::Report size budget guard failed."
+          exit 1

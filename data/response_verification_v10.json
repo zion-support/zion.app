@@ -1,0 +1,15 @@
+{
+  "tracked": {
+    "e2848d187c2c": {
+      "thread_id": "19e3be9bc87075ab",
+      "email_id": "19e3be9f6de476ca",
+      "response_preview": "Prezado(a) CONTÁBIL,\n\nRecebi sua solicitação de reserva para . Verificarei disponibilidade e retorno",
+      "recipients": "\"CONTÁBIL VIEIRA\" <mail@nibo.com.br>",
+      "confidence": 0.8,
+      "intent": "booking",
+      "sent_at": "2026-05-19T02:13:33.603078+00:00",
+      "delivered": true,
+      "verified_at": "2026-05-19T02:17:45.370676+00:00"
+    }
+  }
+}

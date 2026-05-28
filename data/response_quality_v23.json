@@ -1,0 +1,242 @@
+{
+  "checked": [
+    {
+      "timestamp": "2026-05-20T13:10:54.323525+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:10:54.324525+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T13:10:54.325318+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-20T13:11:41.103009+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:11:41.108080+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T13:11:41.113499+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-20T13:34:20.958785+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:34:20.959899+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T13:34:20.960909+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-20T13:52:58.796298+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:52:58.799796+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T13:52:58.801264+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-20T13:54:25.972791+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:54:25.974791+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T13:54:25.975746+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-20T13:55:07.733765+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T13:55:07.736138+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T14:01:45.111191+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-20T14:01:45.112698+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-20T14:01:45.113950+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    },
+    {
+      "timestamp": "2026-05-21T05:15:29.161217+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
+    },
+    {
+      "timestamp": "2026-05-21T05:15:49.096295+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:35:50.406084+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:35:50.409756+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your interest. Can you share more about your needs?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:25.861237+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thank you! I can help schedule this. What date/time works best?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:25.863257+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your interest. Can you share more about your needs?"
+    },
+    {
+      "timestamp": "2026-05-21T05:47:33.040850+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Obrigado pela mensagem. Retorno em breve."
+    },
+    {
+      "timestamp": "2026-05-21T05:47:39.450385+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Obrigado pela mensagem. Retorno em breve."
+    },
+    {
+      "timestamp": "2026-05-21T05:53:46.981918+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
+    },
+    {
+      "timestamp": "2026-05-21T05:53:46.983644+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "I understand. What can we do better?"
+    },
+    {
+      "timestamp": "2026-05-21T05:53:53.874284+00:00",
+      "intent": "general",
+      "score": 0.778,
+      "issues_count": 2,
+      "response_preview": "Thanks for your message. I'll get back to you shortly."
+    },
+    {
+      "timestamp": "2026-05-21T12:04:15.862479+00:00",
+      "intent": "urgent",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Alice,\n\n\u26a0\ufe0f  Prioridade identificada \u2014 estou tratando com a m\u00e1xima aten\u00e7\u00e3o.\nRecebi sua sol"
+    },
+    {
+      "timestamp": "2026-05-21T12:04:15.864581+00:00",
+      "intent": "sales",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Ol\u00e1 Bob,\n\nRecebi sua solicita\u00e7\u00e3o sobre sales.\nVamos tocando. Qualquer novidade, aviso.\n\n\u2014 Kleber\n\nHi"
+    },
+    {
+      "timestamp": "2026-05-21T12:04:15.866536+00:00",
+      "intent": "support",
+      "score": 0.889,
+      "issues_count": 1,
+      "response_preview": "Prezado(a) Carla,\n\n\ud83e\udd1d  Compreendo sua preocupa\u00e7\u00e3o e vou acompanhar pessoalmente.\nRecebi sua solicita\u00e7"
+    }
+  ]
+}

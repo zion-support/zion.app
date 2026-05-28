@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cloud-kubernetes-gitops-platform",
+    "title": "Kubernetes GitOps Platform",
+    "description": "GitOps-driven Kubernetes operations: declarative manifests stored in Git, automated drift detection and reconciliation, environment promotion workflows, progressive delivery (canary/blue-green), and built-in secrets management with external vault sync.",
+    "icon": "☸️",
+    "features": ["Declarative manifests in Git — single source of truth for every cluster", "Drift detection + auto-reconciliation every 60 seconds", "Environment promotion: dev → staging → prod with approval gates", "Progressive delivery: canary, blue-green, feature flags, canary analysis", "Secrets: Vault, AWS Secrets Manager, Azure Key Vault with auto-rotation"],
+    "benefits": ["Reduce change-failure rate 50-80% via declarative GitOps + audit trail", "Deploy environments 5-10× faster with automated promotion pipelines", "Eliminate it works on my machine via environment-per-branch workflows"],
+    "pricing": {"basic": "199", "pro": "749", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-kubernetes-gitops-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-kubernetes-gitops-platform",
+    "category": "cloud",
+     "popular": false,
+    "nav_name": "Kubernetes GitOps Platform",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-hybrid-multi-cloud-orchestrator",
+    "title": "Hybrid Multi-Cloud Orchestrator",
+    "description": "Single-pane hybrid-multi-cloud management: deploy, monitor, and govern workloads across AWS, Azure, GCP, and on-prem from a unified control plane with standardised cost, security, and compliance dashboards.",
+    "icon": "☁️",
+    "features": ["Unified control plane deploys to any cloud or on-prem with a single API", "Standardised cost dashboard: per-workload spend across all clouds, anomaly alerts", "Unified security posture: CSPM findings pitched against unified CIS/PCI benchmark", "Federated identity: SSO/SAML/OIDC across all clouds", "Policy engine OPA — policy-as-code to guard all infrastructure agnostic of provider"],
+    "benefits": ["Avoid cloud-provider lock-in: move any workload between clouds in hours not months", "Unify cloud spend: typically 15-25% savings from enterprise-wide negotiated discounts", "One security dashboard vs. juggling separate AWS/Azure/GCP security consoles"],
+    "pricing": {"basic": "299", "pro": "999", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-hybrid-multi-cloud-orchestrator", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-hybrid-multi-cloud-orchestrator",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Hybrid Multi-Cloud Orchestrator",
+     "is_featured": false
+  },
+  {
+    "id": "cloud-serverless-api-platform",
+    "title": "Serverless API Platform",
+    "description": "Zero-infrastructure serverless REST + GraphQL API layer: auto-scales to millions of RPS, pay-per-invocation billing, built-in authentication, rate-limiting, caching, and observability. Includes free tier and CI/CD auto-deploy from Git.",
+    "icon": "⚡",
+    "features": ["Auto-scaling — handles 10 to 10 000 000 RPS without configuration change", "Serverless HTTP workers Node.js, Python, Go, Rust with edge deployment", "Built-in REST + GraphQL API, schema validation, auto-generated OpenAPI spec", "Auto-deploy CI/CD pipelines per-branch with staging environments", "Auth: OAuth2, API keys, mTLS — all configurable via dashboard"],
+    "benefits": ["Pay-per-invocation model: 70-90% infra cost reduction vs. always-on servers", "Deploy REST or GraphQL APIs in minutes without DevOps involvement", "Zero-tuning auto-scaling removes over-provisioning and heads-of-department cost savings"],
+    "pricing": {"basic": "79", "pro": "349", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-serverless-api-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-serverless-api-platform",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Serverless API Platform",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-data-lakehouse-platform",
+    "title": "Data Lakehouse Platform",
+    "description": "Unified data lakehouse built on open table format (Iceberg/Delta Lake): supports batch, streaming, and ML workloads simultaneously. ACID transactions, time-travel, schema evolution, and zero-ETL federation across cloud object stores.",
+    "icon": "🏔️",
+    "features": ["Open table format: Apache Iceberg or Delta Lake for vendor-neutral storage", "Unified SQL engine for batch, streaming, and ML together", "ACID transactions, time-travel queries, schema evolution without table rebuild", "Zero-ETL federation: query S3, ADLS, GCS, Kafka streams together", "Built-in catalog + lineage with OpenLineage integration"],
+    "benefits": ["Eliminate data-silo fragmentation: query raw, curated, and ML features in one place", "Reduce data engineering time 60% vs. maintaining separate lake + warehouse pipelines", "Time-travel enables built-in reproducible data science without manual snapshot management"],
+    "pricing": {"basic": "199", "pro": "749", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/cloud-data-lakehouse-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/cloud-data-lakehouse-platform",
+    "category": "cloud",
+    "popular": true,
+    "nav_name": "Data Lakehouse Platform",
+    "is_featured": false
+  }
+]

@@ -1,0 +1,108 @@
+# AI Live Content Ideas - Daily
+# Daily run: ideation + content audit ideas (both use live site) → content burst → commit + deploy.
+# Complements ai-live-content-ideas (Mon/Wed/Fri) with an extra live-informed run every day at 6 UTC.
+
+name: AI Live Content Ideas Daily
+
+concurrency:
+  group: content-commit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      max_template_blog:
+        description: 'Template blog posts (default 4)'
+        required: false
+        default: '4'
+      max_template_case_studies:
+        description: 'Template case studies (default 4)'
+        required: false
+        default: '4'
+      max_industry_pages:
+        description: 'Industry pages (default 3)'
+        required: false
+        default: '3'
+      trigger_deploy:
+        description: 'Trigger deploy after commit (GitHub Pages)'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  live-daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Restore content runtime cache
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: |
+            automation/reports/.runtime
+          key: content-runtime-${{ runner.os }}-${{ hashFiles('automation/openrouter-content-generator.cjs') }}
+          restore-keys: |
+            content-runtime-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Ideation (live site)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+        run: node automation/ai-content-ideation-agent.cjs
+
+      - name: Content audit ideas (live site)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+        run: node automation/ai-content-audit-ideas-agent.cjs
+
+      - name: Content burst (template blog + case studies + industry)
+        env:
+          MAX_TEMPLATE_BLOG: ${{ github.event.inputs.max_template_blog || '4' }}
+          MAX_TEMPLATE_CASE_STUDIES: ${{ github.event.inputs.max_template_case_studies || '4' }}
+          MAX_INDUSTRY_PAGES: ${{ github.event.inputs.max_industry_pages || '3' }}
+          MAX_ADD: "3"
+        run: node automation/ai-content-burst-agent.cjs
+
+      - name: Homepage industry sync
+        run: node automation/ai-homepage-industry-sync-agent.cjs run --apply
+
+      - name: Validate build
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit, push, and deploy
+        env:
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy != 'false' && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            bash scripts/automation/commit-and-push-main.sh "chore(content): live content ideas daily - ideation + audit ideas + burst"
+            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+              echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
+            fi
+          fi

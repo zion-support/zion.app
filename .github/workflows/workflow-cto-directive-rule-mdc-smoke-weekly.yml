@@ -1,0 +1,36 @@
+# Ensures .cursor/rules/cto-operating-directive.mdc keeps CTO + contact-routing anchors (grep-only).
+
+name: cursor/CTO directive rule smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '20 6 * * 1' # Mondays 06:20 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-cto-directive-rule-mdc-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  cto-directive-mdc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: CTO operating directive rule anchors
+        run: |
+          set -euo pipefail
+          test -f .cursor/rules/cto-operating-directive.mdc
+          test -s .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'CTO operating directive (Zion)' .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'CTO-OPERATING-PHILOSOPHY.md' .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'USER.md' .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'seoConstants.ts' .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'CONTACT_INFO.email' .cursor/rules/cto-operating-directive.mdc
+          grep -Fq 'never commit secrets' .cursor/rules/cto-operating-directive.mdc
+          echo 'ok: .cursor/rules/cto-operating-directive.mdc'

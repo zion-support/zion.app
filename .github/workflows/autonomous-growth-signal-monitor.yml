@@ -1,0 +1,87 @@
+name: Autonomous Growth Signal Monitor
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: autonomous-growth-signal-monitor
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '15 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  growth-signal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      GROWTH_SIGNAL_BASE_URL: https://ziontechgroup.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run growth signal monitor
+        run: npm run autonomy:growth-signal
+
+      - name: Upload growth signal artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-growth-signal-${{ github.run_id }}
+          path: |
+            automation/reports/autonomous-growth-signal-latest.json
+            automation/reports/autonomous-growth-signal-latest.md
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Escalate growth incident
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/autonomous-growth-signal-latest.json"
+          [ -f "$report" ] || exit 0
+          severity=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.severity||'ok')")
+          if [ "$severity" = "ok" ]; then
+            echo "No growth signal incident to escalate."
+            export ISSUE_FINGERPRINT="autonomous-growth-signal"
+            export CLOSE_COMMENT="Auto-closing: growth signal monitor reports healthy."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          unhealthy=$(node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));console.log(r.liveUnhealthyCount||0)")
+          body_file="autonomous-growth-signal-incident.md"
+          {
+            echo "## Growth signal alert"
+            echo ""
+            echo "- **Dedupe key:** \`autonomous-growth-signal\`"
+            echo ""
+            echo "- Repository: \`${{ github.repository }}\`"
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Severity: \`$severity\`"
+            echo "- Live unhealthy promoted routes: \`$unhealthy\`"
+            echo ""
+            echo "### Live route failures"
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('$report','utf8'));for(const item of (r.liveUnhealthyRoutes||[])){console.log('- '+item.route+' ('+item.status+')')}"
+          } > "$body_file"
+          export ISSUE_TITLE="Autonomous Growth Signal alert"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="bug"
+          export ISSUE_FINGERPRINT="autonomous-growth-signal"
+          export COOLDOWN_HOURS="12"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

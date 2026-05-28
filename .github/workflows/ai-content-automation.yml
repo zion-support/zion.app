@@ -1,0 +1,96 @@
+# AI Content Automation
+# Generates blog posts and front-page content via OpenRouter (openrouter/free).
+# Runs: Daily 4 AM UTC for maximum content velocity, or workflow_dispatch
+# Requires: OPENROUTER_API_KEY in repo secrets
+
+name: AI Content Automation
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      pipeline:
+        description: 'Pipeline (fast=2, turbo=4, maximum=6+ideas+deploy, ideas=ultra 2x/day, services=industries+blog)'
+        required: false
+        default: 'maximum'
+        type: choice
+        options:
+          - fast
+          - turbo
+          - maximum
+          - ideas
+          - services
+      max_blog_posts:
+        description: 'Max blog posts (default: maximum=6, turbo=4, fast=2)'
+        required: false
+        default: ''
+      skip_front_page:
+        description: 'Skip front page expansion'
+        required: false
+        default: false
+        type: boolean
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after commit (maximum pipeline)'
+        required: false
+        default: true
+        type: boolean
+      skip_services_advertise:
+        description: 'Skip services advertiser (promote apps to front page)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run content pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+          MAX_BLOG_POSTS: ${{ github.event.inputs.max_blog_posts }}
+          SKIP_FRONT_PAGE: ${{ github.event.inputs.skip_front_page && '1' || '' }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy && '1' || '' }}
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          SKIP_SERVICES_ADVERTISE: ${{ github.event.inputs.skip_services_advertise && '1' || '' }}
+        run: |
+          PIPELINE="${{ github.event.inputs.pipeline || 'maximum' }}"
+          MAX="${{ github.event.inputs.max_blog_posts }}"
+          [ -z "$MAX" ] && MAX=$( [ "$PIPELINE" = "maximum" ] && echo 6 || [ "$PIPELINE" = "turbo" ] && echo 4 || echo 2 )
+          export MAX_BLOG_POSTS="$MAX"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ "$PIPELINE" = "fast" ]; then
+            node automation/ai-content-fast-pipeline.cjs
+          elif [ "$PIPELINE" = "services" ]; then
+            node automation/ai-services-and-content-automation.cjs
+          elif [ "$PIPELINE" = "ideas" ]; then
+            AUTO_COMMIT=1 TRIGGER_DEPLOY=${{ github.event.inputs.trigger_deploy && '1' || '' }} node automation/ai-ideas-to-implementation-pipeline.cjs
+          elif [ "$PIPELINE" = "maximum" ]; then
+            AUTO_COMMIT=1 TRIGGER_DEPLOY=${{ github.event.inputs.trigger_deploy && '1' || '' }} node automation/ai-content-maximum-pipeline.cjs
+          else
+            node automation/ai-content-turbo-pipeline.cjs
+          fi
+          git add -A
+          git diff --staged --quiet || git commit -m "chore(content): AI-generated content via OpenRouter pipeline"
+          git push

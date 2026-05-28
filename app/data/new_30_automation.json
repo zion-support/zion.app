@@ -1,0 +1,32 @@
+[
+  {
+    "id": "automation-commercial-leasing-tour-scheduler",
+    "title": "Commercial Leasing & Property Tour Scheduler",
+    "description": "End-to-end commercial-property tour scheduling and lead qualification: booking agent handoff, CRM opportunity creation, automated reminders, post-tour follow-up nurturing, and leasing-commission attribution dashboard.",
+    "icon": "🏢",
+    "features": ["Self-service booking agent for commercial property showings", "Automated CRM opportunity creation and lead scoring per inquiry source", "Multi-channel tour reminders: SMS, email, WhatsApp, push notification", "Post-tour nurturing sequence: re-engagement at 48 h, 1w, 2w, 4w with incremental incentives", "Leasing-commission attribution: tie closed deals back to originating touchpoints"],
+    "benefits": ["Reduce no-show tour rate 40% via automated multi-channel reminders", "Capture 80%+ of inbound inquiries automatically — no human scheduler needed", "Attributing commission to marketing channel closes unstructured lead-gen reporting gap"],
+    "pricing": {"basic": "99", "pro": "349", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/automation-commercial-leasing-tour-scheduler", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/automation-commercial-leasing-tour-scheduler",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Commercial Leasing & Property Tour Scheduler",
+    "is_featured": false
+  },
+  {
+    "id": "automation-education-student-lifecycle-manager",
+    "title": "Education Student Lifecycle Manager",
+    "description": "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imported at-risk alerts.",
+    "icon": "🎓",
+    "features": ["Inquiry funnel: form → enriched CRM record → personalised nurture sequence per channel", "Academic-risk detection via LMS grade-imported pattern scoring", "Parent engagement portal with auto-summarised academic progress reports", "Alumni lifecycle: graduation anniversary give, re-enrolment incentive, charitable giving prompts", "FERPA-compliant data handling with role-based student record access"],
+    "benefits": ["Increase student enrolment yield 15-25% via personalised nurture sequences that react to actual engagement behaviour", "Reduce dropout rate 30% via early academic-risk alerts reaching academic advisors automatically", "Cut admissions office administrative time by 60% via automated funnel management"],
+    "pricing": {"basic": "79", "pro": "299", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/automation-education-student-lifecycle-manager", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/automation-education-student-lifecycle-manager",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Education Student Lifecycle Manager",
+    "is_featured": false
+  }
+]

@@ -1,0 +1,61 @@
+# AI Live Site UX Audit
+# Runs heuristic UX/SEO audit against live ziontechgroup.com; uploads report.
+# No LLM required. Schedule: Tuesday 7 UTC. workflow_dispatch.
+# Report feeds layout/evolution pipelines when present.
+
+name: AI Live Site UX Audit
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-live-ux-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 7 * * 2'
+  workflow_dispatch:
+
+jobs:
+  live-ux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Run live site UX audit
+        run: npm run app:ux-audit
+
+      - name: Summary to job output
+        if: always()
+        run: |
+          if [ -f automation/reports/live-site-ux-audit-latest.json ]; then
+            node -e "
+              const r = require('./automation/reports/live-site-ux-audit-latest.json');
+              const score = r.score ?? 'N/A';
+              const ok = (r.checks || []).filter(c => c.ok).length;
+              const total = (r.checks || []).length;
+              console.log('UX score:', score);
+              console.log('Checks passed:', ok + '/' + total);
+            "
+          fi
+
+      - name: Upload UX report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: live-ux-audit-${{ github.run_id }}
+          path: automation/reports/live-site-ux-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 30

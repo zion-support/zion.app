@@ -1,0 +1,30 @@
+# Ensures production-health-monitor.yml keeps 6h schedule + site health anchors (grep-only).
+name: production health monitor smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '38 11 * * 4' # Thursdays 11:38 UTC
+  workflow_dispatch:
+concurrency:
+  group: production-health-monitor-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  health-monitor-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: production-health-monitor.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/production-health-monitor.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Production Health Monitor' "$f"
+          grep -Fq "cron: '0 */6 * * *'" "$f"
+          grep -Fq 'group: production-health' "$f"
+          grep -Fq 'issues: write' "$f"
+          grep -Fq 'https://ziontechgroup.com' "$f"
+          echo "ok: $f"

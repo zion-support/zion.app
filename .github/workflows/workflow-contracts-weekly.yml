@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Workflow contracts weekly
+
+# Same checks as: npm run workflows:contracts:weekly (plus cron collision report below).
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 10 * * 1' # Mondays 10:25 UTC — lightweight contract pass without a full npm install
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-contracts-weekly
+  cancel-in-progress: true
+
+jobs:
+  contracts:
+    uses: ./.github/workflows/reusable-workflow-ci.yml
+    with:
+      run_contracts: true
+    timeout-minutes: 14
+
+  cron-report:
+    needs: contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Cron schedule collision report
+        run: node automation/ai-cron-collision-tuner.cjs
+
+      - name: Upload cron collision report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: cron-collision-weekly-${{ github.run_id }}
+          path: |
+            automation/reports/cron-collision-latest.json
+            automation/reports/cron-collision-latest.md
+          if-no-files-found: ignore
+          retention-days: 14

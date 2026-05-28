@@ -1,0 +1,40 @@
+# Ensures ai-autonomous-improvements.yml keeps schedule/push/artifact anchors (grep-only).
+name: ai autonomous improvements workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '10 12 * * 3' # Wednesdays 12:10 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-autonomous-improvements-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  autonomous-improvements-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-autonomous-improvements.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-autonomous-improvements.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Autonomous Improvements' "$f"
+          grep -Fq 'group: ai-autonomous-improvements' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 11 * * 1'" "$f"
+          grep -Fq 'Commit and push automation updates' "$f"
+          grep -Fq 'git add automation/' "$f"
+          grep -Fq 'ai-daily-automation-pipeline.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'autonomous-improvements-' "$f"
+          grep -Fq 'token:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

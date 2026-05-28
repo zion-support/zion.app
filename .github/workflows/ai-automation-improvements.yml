@@ -1,0 +1,77 @@
+# AI Automation Improvements Pipeline
+# Runs: automation audit + site link audit + report aggregator
+# Weekly Wednesday 10 UTC, or workflow_dispatch
+
+name: AI Automation Improvements
+
+permissions:
+  contents: write  # needed when trigger_fixes commits changes
+
+concurrency:
+  group: ai-automation-improvements
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 10 * * 3'
+  workflow_dispatch:
+    inputs:
+      create_pages:
+        description: 'Create missing pages when site link audit finds broken links'
+        required: false
+        default: false
+        type: boolean
+      trigger_fixes:
+        description: 'Run UX auto-fix when app intelligence detects score < 85'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  improve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Automation preflight
+        run: npm run automation:preflight
+      - name: Run automation improvements pipeline
+        env:
+          CREATE_PAGES: ${{ github.event.inputs.create_pages == 'true' && '1' || '' }}
+          TRIGGER_FIXES: ${{ (github.event.inputs.trigger_fixes == 'true' || github.event_name == 'schedule') && '1' || '' }}
+        run: node automation/ai-automation-improvements-pipeline.cjs
+      - name: Commit and push fixes
+        if: (github.event.inputs.trigger_fixes == 'true' || github.event_name == 'schedule') && success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            exit 0
+          fi
+          git add -A
+          bash scripts/automation/commit-and-push-main.sh "chore(app): automation improvements with UX and system intelligence auto-fixes"
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: automation-improvements-report
+          path: |
+            automation/reports/automation-improvements-pipeline-latest.json
+            automation/reports/aggregate-dashboard.json
+            automation/reports/aggregate-dashboard.html
+          retention-days: 14
+          if-no-files-found: ignore

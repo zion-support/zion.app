@@ -1,0 +1,200 @@
+# Zion Tech Group Automation Cron Jobs (Revised)  
+# Revised 2026-02-24  
+
+# Hourly: Dynamic Pricing Engine  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && /usr/bin/python3 commands/zion_pricing_agent.py --run >> logs/cron.log 2>&1  
+
+# Hourly: Content Publishing Agent  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && /usr/bin/python3 commands/publish_content_agent.py >> logs/cron.log 2>&1  
+
+# Hourly: Selenium Screenshot (browser health)  
+0 * * * * /usr/bin/python3 /Users/kleberalcatrao/.openclaw/workspace/selenium_zion_agent.py --action screenshot --url https://ziontechgroup.com >> logs/cron.log 2>&1  
+
+# Hourly: Lead Capture Agent  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && /usr/bin/python3 commands/zion_lead_capture_agent.py --run >> logs/cron.log 2>&1  
+
+# Daily at 9 AM: SendGrid Email Campaign  
+0 9 * * * cd /Users/kleberalcatrao/.openclaw/workspace && /usr/bin/python3 commands/zion_sendgrid_campaign.py >> logs/cron.log 2>&1  
+
+# Daily at 8 AM: Content Repurposing (LinkedIn draft)  
+0 8 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_content_agent.py --platform linkedin > /dev/null 2>&1  
+
+# Daily at 10 AM: Content Repurposing (Twitter draft)  
+0 10 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_content_agent.py --platform twitter > /dev/null 2>&1  
+
+# Daily at 11 AM: Content Repurposing (Instagram draft)  
+0 11 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_content_agent.py --platform instagram > /dev/null 2>&1  
+
+# Every 10 minutes: Voice Agent Health Check  
+*/10 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/voice_health_check.py >> logs/cron.log 2>&1  
+
+# Every 5 minutes: Content Publishing Check  
+*/5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/publish_content_agent.py >> logs/cron.log 2>&1  
+
+# Hourly: UI/UX Test Bench (Selenium+Playwright)  
+0 * * * * /usr/bin/python3 /Users/kleberalcatrao/.openclaw/workspace/selenium_zion_agent.py --action test --url https://ziontechgroup.com >> logs/cron.log 2>&1  
+
+# Weekly on Monday at 0 AM: Marketing Dashboard  
+0 0 * * 1 cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_weekly_dashboard_agent.py >> logs/cron.log 2>&1  
+
+# Daily at 6 AM: Market Trend Monitoring  
+0 6 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_market_trend_agent.py >> logs/cron.log 2>&1  
+
+# Weekly on Sunday at 2 AM: SEO Performance Tracker  
+0 2 * * 0 cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_seo_tracker_agent.py >> logs/cron.log 2>&1  
+
+# Daily at 8 AM: Customer Feedback Collector  
+0 8 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_feedback_agent.py >> logs/cron.log 2>&1  
+
+# Hourly: Customer Onboarding Automation  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_onboarding_agent.py >> logs/cron.log 2>&1  
+
+# Daily at 9 AM: Churn Prevention Engine  
+0 9 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_churn_agent.py >> logs/cron.log 2>&1  
+
+# Daily at 2 AM: Security Patch Automation  
+0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_security_agent.py >> logs/cron.log 2>&1  
+
+# New: UI Builder Agent (automates React component generation & GitHub PR)  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_ui_builder.py >> logs/cron.log 2>&1  
+
+# New: GitHub Auto-Merge Agent (auto‑merge PRs with label "auto-merge" or approval)  
+*/5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_github_auto_merge.py >> logs/cron.log 2>&1  
+
+# New: Predictive Pricing Agent (daily price optimization)  
+0 3 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_predictive_pricing_agent.py >> logs/cron.log 2>&1  
+
+# New: Predictive Churn Modeling Agent (daily churn scoring)  
+0 4 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_churn_prediction_agent.py >> logs/cron.log 2>&1  
+
+# New: Grafana Deployment Agent (weekly dashboard deployment)  
+0 0 * * 1 cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_grafana_deploy_agent.py >> logs/cron.log 2>&1  
+
+# New: Real-Time Grafana Alerts Agent  
+*/5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_grafana_alerts_agent.py >> logs/cron.log 2>&1  
+
+# New: Revenue Blockchain Audit (mint NFT for closed deals)  
+0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_revenue_blockchain_agent.py >> logs/cron.log 2>&1  
+
+# New: AI‑Generated Design System Agent  
+0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_design_system_agent.py >> logs/cron.log 2>&1  
+
+# New: Zero‑Touch CI/CD Agent (auto‑deploy on commit)  
+*/5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_cicd_agent.py >> logs/cron.log 2>&1  
+
+# New: Voice Ops Agent (voice‑first control)  
+*/15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_voice_ops_agent.py >> logs/cron.log 2>&1  
+
+# New: Sales Playbooks Agent (auto‑generate playbooks from won deals)  
+0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: Security Hardening Agent (auto‑patch, firewall, SSH, fail2ban)  
+0 3 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_security_hardening_agent.py >> logs/cron.log 2>&1  
+
+# New: Lead Discovery Agent (search & enrich leads)  
+*/10 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_lead_discovery_agent.py --limit 50 >> logs/cron.log 2>&1  
+
+# New: Email Outreach Agent (personalized emails via Google Workspace)  
+*/15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_email_outreach_agent.py --limit 200 >> logs/cron.log 2>&1  
+
+# New: (Future) Micro‑SaaS Builder Agent (manual/CI)  
+# 0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_micro_saas_builder.py >> logs/cron.log 2>&1  
+
+# New: (Future) A/B Testing Agent (manual trigger)  
+# 0 6 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_ab_testing_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Customer Success Chatbot Agent (real‑time API)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_chatbot_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) AI‑Generated Sales Playbooks Agent (daily)  
+# 0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Predictive Churn Modeling Agent (daily)  
+# 0 4 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_churn_prediction_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Real-Time Grafana Alerts Agent (every 5 min)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_grafana_alerts_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Revenue Blockchain Audit (mint NFT for closed deals)  
+# 0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_revenue_blockchain_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) AI‑Generated Design System Agent (hourly)  
+# 0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_design_system_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Zero‑Touch CI/CD Agent (auto‑deploy on commit)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_cicd_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Voice Ops Agent (voice‑first control)  
+# */15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_voice_ops_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Sales Playbooks Agent (auto‑generate playbooks from won deals)  
+# 0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Security Hardening Agent (auto‑patch, firewall, SSH, fail2ban)  
+# 0 3 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_security_hardening_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Lead Discovery Agent (search & enrich leads)  
+# */10 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_lead_discovery_agent.py --limit 50 >> logs/cron.log 2>&1  
+
+# New: (Future) Email Outreach Agent (personalized emails via Google Workspace)  
+# */15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_email_outreach_agent.py --limit 200 >> logs/cron.log 2>&1  
+
+# New: (Future) Micro‑SaaS Builder Agent (manual/CI)  
+# 0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_micro_saas_builder.py >> logs/cron.log 2>&1  
+
+# New: (Future) A/B Testing Agent (manual trigger)  
+# 0 6 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_ab_testing_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Customer Success Chatbot Agent (real‑time API)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_chatbot_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) AI‑Generated Sales Playbooks Agent (daily)  
+# 0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Predictive Churn Modeling Agent (daily)  
+# 0 4 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_churn_prediction_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Real-Time Grafana Alerts Agent (every 5 min)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_grafana_alerts_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Revenue Blockchain Audit (mint NFT for closed deals)  
+# 0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_revenue_blockchain_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) AI‑Generated Design System Agent (hourly)  
+# 0 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_design_system_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Zero‑Touch CI/CD Agent (auto‑deploy on commit)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_cicd_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Voice Ops Agent (voice‑first control)  
+# */15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_voice_ops_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Sales Playbooks Agent (auto‑generate playbooks from won deals)  
+# 0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Security Hardening Agent (auto‑patch, firewall, SSH, fail2ban)  
+# 0 3 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_security_hardening_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Lead Discovery Agent (search & enrich leads)  
+# */10 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_lead_discovery_agent.py --limit 50 >> logs/cron.log 2>&1  
+
+# New: (Future) Email Outreach Agent (personalized emails via Google Workspace)  
+# */15 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_email_outreach_agent.py --limit 200 >> logs/cron.log 2>&1  
+
+# New: (Future) Micro‑SaaS Builder Agent (manual/CI)  
+# 0 5 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_micro_saas_builder.py >> logs/cron.log 2>&1  
+
+# New: (Future) A/B Testing Agent (manual trigger)  
+# 0 6 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_ab_testing_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Customer Success Chatbot Agent (real‑time API)  
+# */5 * * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_chatbot_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) AI‑Generated Sales Playbooks Agent (daily)  
+# 0 2 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_sales_playbooks_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Predictive Churn Modeling Agent (daily)  
+# 0 4 * * * cd /Users/kleberalcatrao/.openclaw/workspace && python3 commands/zion_churn_prediction_agent.py >> logs/cron.log 2>&1  
+
+# New: (Future) Real-Time Grafana Alerts Agent (every 5 min)  
+# */5 * * * * cd /

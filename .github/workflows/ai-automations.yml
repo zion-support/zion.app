@@ -1,0 +1,92 @@
+name: AI Automations (Weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Mondays at 8:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automations
+  cancel-in-progress: false
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Run SEO Content Optimizer
+        run: node automation/ai-seo-content-optimizer.cjs
+      - name: Upload SEO report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: seo-report
+          path: automation/reports/seo-content-optimizer-latest.json
+          retention-days: 30
+
+  changelog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 100
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Generate Changelog
+        run: node automation/ai-changelog-generator.cjs
+      - name: Upload Changelog
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: changelog
+          path: CHANGELOG_LATEST.md
+          retention-days: 30
+
+  performance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci --prefer-offline --no-audit --fund=false
+      - name: Build site
+        run: |
+          set -euo pipefail
+          npm run rsc:guard
+          npm run build
+      - name: Run Performance Advisor
+        run: node automation/ai-site-performance-advisor.cjs
+      - name: Upload Performance report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: performance-report
+          path: automation/reports/performance-advisor-latest.json
+          retention-days: 30

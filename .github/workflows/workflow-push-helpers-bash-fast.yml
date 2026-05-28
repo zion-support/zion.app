@@ -1,0 +1,33 @@
+# Fast feedback when push-to-main helper scripts change (bash -n only; no Node/npm).
+
+name: Workflow push helpers bash syntax (script files)
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/automation/commit-and-push-main.sh'
+      - 'scripts/automation/push-main-with-retry.sh'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/automation/commit-and-push-main.sh'
+      - 'scripts/automation/push-main-with-retry.sh'
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-push-helpers-bash-fast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Bash syntax (push helper scripts)
+        run: bash -n scripts/automation/commit-and-push-main.sh && bash -n scripts/automation/push-main-with-retry.sh

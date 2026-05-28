@@ -1,0 +1,62 @@
+[
+  {
+    "id": "security-ai-threat-hunter",
+    "title": "AI Threat Hunter",
+    "description": "Autonomous AI-powered threat hunting: continuous behavioural anomaly detection, novel attack chain reconstruction, MITRE ATT&CK mapping, custom hunt queries, natural-language investigation interface, and auto-generated incident reports.",
+    "icon": "🎯",
+    "features": ["Continuous behavioural anomaly detection across endpoint, network, and cloud telemetry", "Autonomous attack chain reconstruction with MITRE ATT&CK matrix alignment", "Natural-language hunt query builder for analysts without scripting skills", "Auto-generated incident reports with timeline, evidence, and recommended mitigations", "Low-false-positive ML scoring tuned to each environment via supervised feedback"],
+    "benefits": ["Detect novel and eye-watering APT attacks missed by signature-based SIEMs", "Threat-hunt coverage that takes hours manually executes autonomously in 2 minutes", "Reduce mean-time-to-respond 60% via auto-generated context-rich incident report"],
+    "pricing": {"basic": "299", "pro": "999", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/security-ai-threat-hunter", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/security-ai-threat-hunter",
+    "category": "security",
+    "popular": false,
+    "nav_name": "AI Threat Hunter",
+    "is_featured": false
+  },
+  {
+    "id": "security-api-security-gateway",
+    "title": "API Security Gateway",
+    "description": "Purpose-built API security layer: schema drift detection, injection prevention, broken-authentication block, rate-limit abuse detection, sensitive-data masking in responses, and API-threat fingerprinting across REST, GraphQL, and gRPC.",
+    "icon": "🛡️",
+    "features": ["Schema drift detection with auto-updated OpenAPI contract registry", "Injection prevention: command, path, header, JSON body — all blocked before reaching API", "Broken-auth/oAuth-tampering detection and block per-request with anomaly scoring", "Rate-limit abuse detection via behavioural fingerprint + IP geolocation clustering", "Sensitive data masking in API responses: PII, PAN, PHI before API response is sent"],
+    "benefits": ["Block 99% of OWASP API Security Top-10 exploits before API backend processes request", "Detect shadow APIs that dev teams spun up bypassing API governance", "Prevent data exfiltration via stolen API keys with behavioural anomaly detection"],
+    "pricing": {"basic": "149", "pro": "599", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/security-api-security-gateway", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/security-api-security-gateway",
+    "category": "security",
+    "popular": false,
+    "nav_name": "API Security Gateway",
+    "is_featured": false
+  },
+  {
+    "id": "security-privacy-enhancing-technologies",
+    "title": "Privacy-Enhancing Technologies (PET) Platform",
+    "description": "Enterprise PET suite: differential privacy, homomorphic encryption preview, zero-knowledge access proofs, federated learning coordination layer, and automated PII discovery + right-to-erasure compliance — reducing PII exposure while keeping data utility.",
+    "icon": "🔐",
+    "features": ["Differential privacy: bounded query output noise, adjustable privacy budget", "Federated learning: model training without leaving raw data at the source", "Zero-knowledge access proofs: verify authorisation without revealing identity or data", "Auto PII discovery + classification: regex, NER, and semantic classifiers across databases + files", "Right to erasure: verified deletion across all data stores including backups"],
+    "benefits": ["Run ML and analytics on sensitive data without violating GDPR/CCPA / HIPAA", "Achieve privacy-by-design compliance: prepare for upcoming EU AI Act Article 10 requirements", "Reduce PII exposure within organisation's data estate by 85-95%"],
+    "pricing": {"basic": "249", "pro": "849", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/security-privacy-enhancing-technologies", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/security-privacy-enhancing-technologies",
+    "category": "security",
+    "popular": false,
+    "nav_name": "Privacy-Enhancing Technologies Platform",
+    "is_featured": false
+  },
+  {
+    "id": "security-supply-chain-sbom",
+    "title": "Supply Chain SBOM & Vulnerability Intelligence",
+    "description": "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification — closing the software supply-chain attack window at build time.",
+    "icon": "📦",
+    "features": ["Automated SBOM generation per-commit, per-PR, and per-release — CycloneDX + SPDX both supported", "SSVC scoring maps CVE severity against exploitability + patch availability in real-time", "Automated security PRs: patch suggestion AI opens PR per vulnerable dependency", "SLSA provenance: build time + identity verification signed and traceable per artefact", "Bill of Materials attestation built into container image and artifact metadata"],
+    "benefits": ["Reduce supply-chain attack surface 80%+ through automated SBOM and patch PR automation", "Shrink mean-time-to-patch critical CVEs from weeks to hours via automated PR suggestions", "Achieve SLSA Level 3+ build provenance sufficient for regulated industry compliance"],
+    "pricing": {"basic": "99", "pro": "349", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/security-supply-chain-sbom", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/security-supply-chain-sbom",
+    "category": "security",
+    "popular": false,
+    "nav_name": "Supply Chain SBOM & Vulnerability Intelligence",
+    "is_featured": false
+  }
+]

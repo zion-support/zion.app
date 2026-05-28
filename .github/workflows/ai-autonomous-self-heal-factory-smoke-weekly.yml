@@ -1,0 +1,40 @@
+# Ensures ai-autonomous-self-heal-factory.yml keeps schedule/issue/artifact anchors (grep-only).
+name: ai autonomous self-heal factory workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '15 12 * * 3' # Wednesdays 12:15 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-autonomous-self-heal-factory-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  self-heal-factory-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-autonomous-self-heal-factory.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-autonomous-self-heal-factory.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI autonomous self-heal factory' "$f"
+          grep -Fq 'group: ai-autonomous-self-heal-factory' "$f"
+          grep -Fq 'cancel-in-progress: true' "$f"
+          grep -Fq "cron: '*/10 * * * *'" "$f"
+          grep -Fq 'autonomous-self-heal-factory.cjs' "$f"
+          grep -Fq 'autonomous-fix-agent-factory.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'autonomous-self-heal-factory-' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

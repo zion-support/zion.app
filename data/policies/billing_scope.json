@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "allowed_scopes": [
+    "domestic",
+    "international",
+    "tier:110k hitl + gating",
+    "civil_contracts",
+    "lock"
+  ]
+}

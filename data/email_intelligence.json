@@ -1,0 +1,16 @@
+{
+  "sender_profiles": {},
+  "response_history": [
+    {
+      "thread_id": "19e3d593e5a5874f",
+      "response": "Prezado(a) Widiman,\n\nRecebi sua solicita\u00e7\u00e3o de reserva e estou analisando disponibilidade.\nRetornare",
+      "timestamp": "2026-05-18T23:36:50.640628+00:00"
+    },
+    {
+      "thread_id": "19e3d71d6a027340",
+      "response": "Prezado(a) Caixa,\n\nAgrade\u00e7o pela mensagem. Retornarei com detalhes em breve.\n\nAtenciosamente,\nKleber",
+      "timestamp": "2026-05-18T23:36:52.069166+00:00"
+    }
+  ],
+  "intent_stats": {}
+}

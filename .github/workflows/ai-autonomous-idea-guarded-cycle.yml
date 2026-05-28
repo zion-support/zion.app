@@ -1,0 +1,69 @@
+name: AI Autonomous Idea Guarded Cycle
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      auto_commit:
+        description: 'Commit and push generated guarded-cycle report'
+        required: false
+        default: true
+        type: boolean
+  schedule:
+    - cron: '35 */6 * * *'
+
+concurrency:
+  group: ai-autonomous-idea-guarded-cycle
+  cancel-in-progress: false
+
+jobs:
+  run-guarded-cycle:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Generate guarded idea report
+        run: node automation/ai-autonomous-idea-guarded-cycle.cjs
+
+      - name: Dedup and quality gates
+        run: |
+          set -euo pipefail
+          node automation/validate-autonomous-content-dedup.cjs
+          npm run lint:check
+          npm run type-check
+          npm run test:ci
+          npm run rsc:guard
+          npm run build
+
+      - name: Commit and push guarded-cycle updates
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.auto_commit != 'false' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/autonomous-idea-guarded-cycle-latest.json
+          if git diff --staged --quiet; then
+            echo "No guarded-cycle changes to commit."
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(automation): update guarded autonomous idea report"

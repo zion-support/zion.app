@@ -1,0 +1,31 @@
+# Ensures workflow-ruby-bash-validate-dispatch.yml keeps Ruby parse + bash grep + push-helper syntax (grep-only).
+name: workflow ruby bash validate dispatch smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '20 9 * * 4' # Thursdays 09:20 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-ruby-bash-validate-dispatch-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  ruby-bash-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-ruby-bash-validate-dispatch.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-ruby-bash-validate-dispatch.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow Ruby parse + bash grep (manual, no npm)' "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'group: workflow-ruby-bash-validate-dispatch' "$f"
+          grep -Fq 'parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'bash scripts/automation/run-workflow-grep-guards.sh' "$f"
+          grep -Fq 'bash -n scripts/automation/commit-and-push-main.sh' "$f"
+          echo "ok: $f"

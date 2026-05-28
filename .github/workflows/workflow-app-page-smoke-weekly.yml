@@ -1,0 +1,34 @@
+# Ensures app/page.tsx keeps the homepage entry (Home export + key imports; grep-only).
+
+name: app/page.tsx smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '57 7 * * 5' # Fridays 07:57 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-app-page-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  home-page:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: page.tsx homepage shell
+        run: |
+          set -euo pipefail
+          test -f app/page.tsx
+          test -s app/page.tsx
+          grep -Fq "import Banner from './components/Banner';" app/page.tsx
+          grep -Fq "import Link from 'next/link';" app/page.tsx
+          grep -Fq 'export default function Home()' app/page.tsx
+          grep -Fq 'aria-label="Automation health"' app/page.tsx
+          echo 'ok: app/page.tsx'

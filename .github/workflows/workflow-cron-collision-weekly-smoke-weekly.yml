@@ -1,0 +1,33 @@
+# Ensures workflow-cron-collision-weekly.yml keeps Monday schedule + tuner + artifact (grep-only).
+name: workflow cron collision weekly smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '20 10 * * 4' # Thursdays 10:20 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-cron-collision-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  cron-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-cron-collision-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-cron-collision-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow cron collision report (weekly)' "$f"
+          grep -Fq "cron: '18 7 * * 1'" "$f"
+          grep -Fq 'group: workflow-cron-collision-weekly' "$f"
+          grep -Fq 'ai-cron-collision-tuner.cjs' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          grep -Fq 'cron-collision-weekly-' "$f"
+          grep -Fq 'github.run_id' "$f"
+          grep -Fq 'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f' "$f"
+          echo "ok: $f"

@@ -1,0 +1,74 @@
+name: AI Autonomous Improvements
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ai-autonomous-improvements
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 11 * * 1'
+  workflow_dispatch:
+
+jobs:
+  autonomous-improvements:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      SKIP_TELEGRAM: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run Daily Automation Pipeline
+        env:
+          TRIGGER_DEPLOY: "1"
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+        run: node automation/ai-daily-automation-pipeline.cjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet automation/ .github/ 2>/dev/null; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+          git diff --stat automation/ .github/ 2>/dev/null || true
+
+      - name: Commit and push automation updates
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/ automation/cron/ .github/
+          if git diff --staged --quiet; then
+            exit 0
+          fi
+          bash scripts/automation/commit-and-push-main.sh "chore(automation): apply ecosystem suggestions and run daily pipeline"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: autonomous-improvements-${{ github.run_id }}
+          path: |
+            automation/reports/
+            automation/data/ecosystem-suggestions.json
+          if-no-files-found: ignore
+          retention-days: 14

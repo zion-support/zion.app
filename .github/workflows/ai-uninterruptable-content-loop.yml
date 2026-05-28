@@ -1,0 +1,125 @@
+# AI Uninterruptable Content Loop
+# Resumable + lock-protected content creation runner.
+# Uses a git-tracked checkpoint so interruptions resume next run.
+
+name: AI Uninterruptable Content Loop
+
+concurrency:
+  group: autonomous-main-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+on:
+  schedule:
+    - cron: '15 * * * *' # hourly, staggered
+  workflow_dispatch:
+    inputs:
+      max_minutes:
+        description: 'Time budget in minutes (default 12)'
+        required: false
+        default: '12'
+      max_cycles:
+        description: 'Max step executions (default 4)'
+        required: false
+        default: '4'
+      step_cooldown_minutes:
+        description: 'Per-step success cooldown minutes (default 15)'
+        required: false
+        default: '15'
+      require_queue_guard_ok:
+        description: 'Skip if writer queue is busy'
+        required: false
+        default: false
+        type: boolean
+      queue_guard_wait:
+        description: 'Wait for queue to clear instead of fast-exit'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      QUEUE_GUARD_BRANCH: main
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore content runtime cache (checkpoint + cooldowns)
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: |
+            automation/reports/.runtime
+          key: content-runtime-${{ runner.os }}-${{ hashFiles('automation/openrouter-content-generator.cjs', 'automation/ai-uninterruptable-content-loop.cjs') }}
+          restore-keys: |
+            content-runtime-${{ runner.os }}-
+
+      - name: Queue guard self-heal (cancel stale + wait)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          QUEUE_GUARD_BRANCH: main
+          QUEUE_GUARD_WAIT_MAX_MINUTES: '15'
+          QUEUE_GUARD_WAIT_POLL_SECONDS: '20'
+          QUEUE_GUARD_STALE_RUN_MINUTES: '90'
+        run: node scripts/automation/autonomous-writer-queue-guard.cjs --strict --wait --cancel-stale
+
+      - name: Run uninterruptable content loop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: openrouter/free
+          LOOP_MAX_MINUTES: ${{ github.event.inputs.max_minutes || '12' }}
+          LOOP_MAX_CYCLES: ${{ github.event.inputs.max_cycles || '4' }}
+          LOOP_STEP_COOLDOWN_MINUTES: ${{ github.event.inputs.step_cooldown_minutes || '15' }}
+          LOOP_REQUIRE_QUEUE_GUARD_OK: ${{ github.event.inputs.require_queue_guard_ok && '1' || '' }}
+          LOOP_QUEUE_GUARD_WAIT: ${{ github.event.inputs.queue_guard_wait && '1' || '' }}
+          LOOP_QUEUE_GUARD_WAIT_MAX_MINUTES: '35'
+          LOOP_QUEUE_GUARD_WAIT_POLL_SECONDS: '30'
+        run: node automation/ai-uninterruptable-content-loop.cjs
+
+      - name: Build gate (only when changes exist)
+        run: |
+          if git status --porcelain | grep -q .; then
+            npm run build
+          else
+            echo "No changes; skipping build."
+          fi
+
+      - name: Commit and push (only when changes exist)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(content): uninterruptable content loop tick"
+            git push origin HEAD:main
+          fi
+
+      - name: Upload loop report artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: uninterruptable-content-loop
+          path: |
+            automation/reports/.runtime/uninterruptable-content-loop-latest.json
+            automation/reports/.runtime/uninterruptable-content-loop-heartbeat.json
+            automation/reports/uninterruptable-content-loop-state.json

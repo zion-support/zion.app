@@ -1,0 +1,8 @@
+{"run_id": "20260520T111208", "phase": "start", "ts": "2026-05-20T11:12:08.834409+00:00", "dry_run": true, "limit": 3, "gmail": true}
+{"run_id": "20260520T111225", "phase": "start", "ts": "2026-05-20T11:12:25.943075+00:00", "dry_run": true, "limit": 3, "gmail": true}
+{"run_id": "20260520T111258", "phase": "start", "ts": "2026-05-20T11:12:58.407294+00:00", "dry_run": true, "limit": 3, "gmail": true}
+{"run_id": "20260520T111310", "phase": "start", "ts": "2026-05-20T11:13:10.837937+00:00", "dry_run": true, "limit": 3, "gmail": true}
+{"run_id": "20260520T111559", "phase": "start", "ts": "2026-05-20T11:15:59.527407+00:00", "dry_run": true, "limit": 3, "gmail": true}
+{"run_id": "20260520T111559", "phase": "pipeline_done", "thread_id": "19e4511f0f7e71ca", "action": "archive", "category": "notification", "elapsed_ms": 0.5}
+{"run_id": "20260520T111559", "phase": "pipeline_done", "thread_id": "19e45111973435f0", "action": "archive", "category": "notification", "elapsed_ms": 0.1}
+{"run_id": "20260520T111559", "phase": "pipeline_done", "thread_id": "19e4510925498c92", "action": "archive", "category": "notification", "elapsed_ms": 0.1}

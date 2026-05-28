@@ -1,0 +1,74 @@
+name: AI Openclaw Skill Cadence Audit
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-openclaw-skill-cadence-audit
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '40 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run Openclaw skill cadence audit
+        run: npm run openclaw:skills:audit
+
+      - name: Upload audit artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: openclaw-skill-cadence-audit-${{ github.run_id }}
+          path: automation/reports/openclaw-skill-cadence-audit-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Escalate unhealthy audit
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/openclaw-skill-cadence-audit-latest.json"
+          [ -f "$report" ] || exit 0
+          status=$(node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));console.log(j.status||'unknown')")
+          if [ "$status" = "ok" ]; then
+            export ISSUE_FINGERPRINT="openclaw-skill-cadence-audit"
+            export CLOSE_COMMENT="Auto-closing: Openclaw skill cadence audit recovered."
+            node scripts/automation/gh-issue-close-on-recovery.cjs || true
+            exit 0
+          fi
+          body_file="openclaw-skill-cadence-audit.md"
+          {
+            echo "## Openclaw skill cadence audit warning"
+            echo ""
+            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo "- Report: \`automation/reports/openclaw-skill-cadence-audit-latest.json\`"
+            echo ""
+            node -e "const fs=require('fs');const j=JSON.parse(fs.readFileSync('$report','utf8'));console.log('### Failing checks');for(const c of (j.failingChecks||[])){console.log('- '+c)}"
+          } > "$body_file"
+          export ISSUE_TITLE="Openclaw skill cadence audit warning"
+          export ISSUE_BODY_FILE="$body_file"
+          export ISSUE_LABELS="automation,openclaw,monitoring"
+          export ISSUE_FINGERPRINT="openclaw-skill-cadence-audit"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true

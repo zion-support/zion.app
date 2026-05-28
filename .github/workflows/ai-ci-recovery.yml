@@ -1,0 +1,51 @@
+name: AI CI Recovery
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-ci-recovery
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    types:
+      - completed
+    branches: [main]
+
+jobs:
+  recovery:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run CI Recovery Agent
+        run: node automation/ai-ci-failure-recovery-agent.cjs run
+        env:
+          SKIP_BUILD: "1"
+
+      - name: Upload recovery report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: ci-recovery-${{ github.run_id }}
+          path: automation/reports/ci-recovery-latest.json
+          if-no-files-found: ignore
+          retention-days: 7

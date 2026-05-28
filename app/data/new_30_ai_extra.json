@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ai-multimodal-video-understanding",
+    "title": "Multimodal Video Understanding Engine",
+    "description": "End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-stamped topic indexing, and natural-language search across full video library.",
+    "icon": "🎥",
+    "features": ["Frame-level CLIP embeddings + action-recognition time-series across entire video", "Scene-change detection + automatic key-frame extraction per 30-second segment", "Auto-generated transcript + OCR with chapter marker overlay", "Natural-language question answering across video with time-stamped answer snippets", "Batch ingest: 1000+ video files automatically processed and indexed within hours"],
+    "benefits": ["Search 10 000+ hours of video content in seconds — find any mention of any product or event instantly", "Auto-generated video chapter index reduces manual editing time from hours per video to zero", "Compliance review: find potentially sensitive visuals or language across all video content automatically"],
+    "pricing": {"basic": "199", "pro": "749", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-multimodal-video-understanding", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-multimodal-video-understanding",
+    "category": "ai",
+    "popular": false,
+    "nav_name": "Multimodal Video Understanding Engine",
+    "is_featured": false
+  },
+  {
+    "id": "ai-voice-first-crm",
+    "title": "Voice-First CRM & Sales Assistant",
+    "description": "Voice-first CRM for field sales and inside sales teams: automatic call transcription, real-time deal coaching via live prompt injection, pipeline update via voice command, contact enrichment, and post-call auto-summary + next-step action items.",
+    "icon": "📞",
+    "features": ["Real-time call transcription with speaker separation across phone, Zoom, Teams", "Live deal coaching: sales rep hears contextual prompts mid-call via earpiece or screen pop-up", "Voice command CRM update: update stage, log notes, create task — all hands-free", "Auto-contact enrichment via Clearbit, ZoomInfo, LinkedIn — contact record complete in 3 seconds", "Post-call: auto-summary, action items, next-step suggestions delivered to Slack/CRM within 30 seconds"],
+    "benefits": ["Sales reps spend 70% less time on CRM data entry — voice commands do it automatically", "Live coaching during calls closes 15-25% more deals according to Gong and Chorus benchmark data", "Get full-deal visibility in real time: pipeline dashboard updated by voice, not by end-of-week data entry"],
+    "pricing": {"basic": "49", "pro": "149", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/ai-voice-first-crm", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/ai-voice-first-crm",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "Voice-First CRM & Sales Assistant",
+    "is_featured": false
+  }
+]

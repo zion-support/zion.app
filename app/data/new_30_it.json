@@ -1,0 +1,62 @@
+[
+  {
+    "id": "it-api-gateway-management",
+    "title": "API Gateway Management",
+    "description": "Enterprise API gateway: rate limiting, API key management, OAuth2 + mTLS, usage analytics, developer portal, request/response transforms, and dead-letter queue handling across cloud and on-prem APIs.",
+    "icon": "🌐",
+    "features": ["Centralised rate limiting, throttling, protocol transforms", "OAuth2, mTLS, API-key auth with role-based scopes", "Developer self-service portal + SDK generation", "Built-in developer portal: docs, try-it console, usage analytics", "Dead-letter queue + retry logic with configurable backoff"],
+    "benefits": ["Protect backends from traffic spikes without cloud-proxy lock-in", "API onboarding time for partners drops from weeks to hours", "Usage insights + quota controls save 20-35% on API gateway spend"],
+    "pricing": {"basic": "149", "pro": "549", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/it-api-gateway-management", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/it-api-gateway-management",
+    "category": "it",
+    "popular": false,
+    "nav_name": "API Gateway Management",
+    "is_featured": false
+  },
+  {
+    "id": "it-backup-disaster-recovery-solution",
+    "title": "Backup & Disaster Recovery Solution",
+    "description": "Immutable, air-gap backup and automated disaster recovery orchestration: continuous block-level snapshots, point-in-time restore (RPO<RTO<1h), cross-region failover testing, and compliance-ready chain-of-custody logs.",
+    "icon": "🛡️",
+    "features": ["Continuous block-level snapshots every 60 seconds", "Automated orchestrated failover across regions or on-prem", "Point-in-time restore RPO < 1 h, RTO < 1 h guaranteed", "Immutable WORM storage 30+ year retention, air-gapped", "SOC 2 / ISO 27001 chain-of-custody audit logs"],
+    "benefits": ["Guarantee 99.99%+ data availability post-recovery event", "Cut DR drill time from 4+ hours to 15 min with automated test scripts", "Pass SOC 2 / HIPAA audits effortlessly: chain-of-custody logs provisioned automatically"],
+    "pricing": {"basic": "199", "pro": "799", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/it-backup-disaster-recovery-solution", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/it-backup-disaster-recovery-solution",
+    "category": "it",
+    "popular": false,
+    "nav_name": "Backup & Disaster Recovery Solution",
+    "is_featured": false
+  },
+  {
+    "id": "it-code-quality-governance",
+    "title": "Code Quality & Governance Platform",
+    "description": "Automated code-quality scanning: static analysis, lint coverage gates, dependency vulnerability CVE detection, code smell auditor, branch-protection + quality-gate CI/CD enforcement, and actionable fix suggestions.",
+    "icon": "⚙️",
+    "features": ["Multi-lang static analysis 20+ languages, custom rulesets", "CVE/GHSA dependency scanning with severity-graded alerts", "Code-smell auditor + complexity hot-spot mapper", "Quality-gate CI/CD blocks merge on quality score threshold", "IDE plugin: VS Code + JetBrains — inline issue highlight + auto-fix"],
+    "benefits": ["Cut production bugs by 40-70% via automated pre-merge quality gates", "Save 8-12 engineering hours per sprint on manual peer review of style issues", "Automatically stay CVE-clean with zero-day patch alerts CISA KEV + Exploit-DB matched"],
+    "pricing": {"basic": "49", "pro": "199", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/it-code-quality-governance", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/it-code-quality-governance",
+    "category": "it",
+    "popular": false,
+    "nav_name": "Code Quality & Governance Platform",
+    "is_featured": false
+  },
+  {
+    "id": "it-endpoint-security-compliance",
+    "title": "Endpoint Security & Compliance Monitor",
+    "description": "Endpoint protection with continuous compliance scoring: EDR/XDR behavioural analytics, NIST/HIPAA/PCI-DSS attestation, posture-drift alerts, zero-trust device posture attestation, and hardware inventory + lifecycle tracking.",
+    "icon": "🖥️",
+    "features": ["Behavioural EDR/XDR with ML anomaly detection across 50+ attack vectors", "Continuous compliance scoring vs. NIST CSF, HIPAA, PCI-DSS, CIS Controls", "Zero-trust posture checks: device health, patch level, AV status before every auth", "Inventory: asset tag, location, owner, patch level, remaining hardware support", "Alert / ticket routing to IT, Security, or Compliance by severity and domain"],
+    "benefits": ["Proactive endpoint threat detection with 4× faster MTTR than endpoint scanning alone", "Stay audit-ready 24/7 — compliance reports generated on demand in one click", "Reduce rogue devices on the corporate network by 80% via mandatory posture checks"],
+    "pricing": {"basic": "79", "pro": "249", "enterprise": "Custom"},
+    "contactInfo": {"website": "/services/it-endpoint-security-compliance", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "href": "/services/it-endpoint-security-compliance",
+    "category": "it",
+    "popular": false,
+    "nav_name": "Endpoint Security & Compliance Monitor",
+    "is_featured": false
+  }
+]

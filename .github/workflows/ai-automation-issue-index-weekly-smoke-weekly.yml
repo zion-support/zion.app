@@ -1,0 +1,40 @@
+# Ensures ai-automation-issue-index-weekly.yml keeps schedule/push/report anchors (grep-only).
+name: ai automation issue index workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '40 12 * * 3' # Wednesdays 12:40 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automation-issue-index-weekly-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  issue-index-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-automation-issue-index-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automation-issue-index-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Automation Issue Index (weekly)' "$f"
+          grep -Fq 'group: ai-automation-issue-index-weekly' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '42 9 * * 1'" "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          grep -Fq 'generate-automation-issue-index.cjs' "$f"
+          grep -Fq 'Commit index snapshot' "$f"
+          grep -Fq 'automation-open-issues-index-latest.json' "$f"
+          grep -Fq 'automation-issue-mttr-history.json' "$f"
+          grep -Fq 'token:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

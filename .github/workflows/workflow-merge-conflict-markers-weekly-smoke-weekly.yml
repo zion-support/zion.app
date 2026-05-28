@@ -1,0 +1,30 @@
+# Ensures workflow-merge-conflict-markers-weekly.yml keeps Sunday schedule + merge scan (grep-only).
+name: merge conflict markers weekly smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '26 10 * * 4' # Thursdays 10:26 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-merge-conflict-markers-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  merge-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-merge-conflict-markers-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-merge-conflict-markers-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Merge conflict markers (weekly)' "$f"
+          grep -Fq "cron: '42 6 * * 0'" "$f"
+          grep -Fq 'group: workflow-merge-conflict-markers-weekly' "$f"
+          grep -Fq 'check-merge-conflict-markers.cjs' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          echo "ok: $f"

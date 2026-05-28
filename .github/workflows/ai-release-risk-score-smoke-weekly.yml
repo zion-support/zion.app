@@ -1,0 +1,44 @@
+# Ensures ai-release-risk-score.yml keeps schedule/issue/artifact anchors (grep-only).
+name: ai release risk score workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '55 12 * * 3' # Wednesdays 12:55 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-release-risk-score-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  release-risk-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-release-risk-score.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-release-risk-score.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI release risk score' "$f"
+          grep -Fq 'group: ai-release-risk-score' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '25 6 * * *'" "$f"
+          grep -Fq 'release-risk-score.cjs' "$f"
+          grep -Fq 'append-release-risk-history.cjs' "$f"
+          grep -Fq 'release-risk-webhook-notify.cjs' "$f"
+          grep -Fq 'release-risk-escalate.cjs' "$f"
+          grep -Fq 'release-risk-acceleration-guard.cjs' "$f"
+          grep -Fq 'release-risk-score-' "$f"
+          grep -Fq 'release-risk-score-latest.json' "$f"
+          grep -Fq 'release-risk-history.json' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'GH_TOKEN:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

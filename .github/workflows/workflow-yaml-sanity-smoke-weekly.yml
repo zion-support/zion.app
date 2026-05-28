@@ -1,0 +1,37 @@
+# Ensures workflow-yaml-sanity.yml keeps core reusable-CI and path-contract anchors (grep-only).
+
+name: workflow YAML sanity smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '45 7 * * 2' # Tuesdays 07:45 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-yaml-sanity-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  yaml-sanity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: workflow-yaml-sanity.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-yaml-sanity.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow YAML sanity' "$f"
+          grep -Fq 'reusable-workflow-ci.yml' "$f"
+          grep -Fq 'scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'scripts/automation/run-workflow-grep-guards.sh' "$f"
+          grep -Fq 'automation/audit-push-helper-adoption.cjs' "$f"
+          grep -Fq 'package.json' "$f"
+          echo "ok: $f"

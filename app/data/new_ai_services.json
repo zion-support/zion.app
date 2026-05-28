@@ -1,0 +1,356 @@
+[
+{
+  "category": "ai",
+  "services": [
+    {
+      "id": "ai-contract-lifecycle-intelligence",
+      "title": "Contract Lifecycle Intelligence",
+      "description": "AI contract lifecycle management: extract key clauses & dates, auto-flag risk, calculate renewal windows, benchmark against market terms, and track amendments across 200+ variants.",
+      "icon": "§",
+      "features": [
+        "Clause extraction / risk flagging against 200+ contract type templates",
+        "Auto renewal calendar + amendment tracker + approval chain per contract",
+        "Benchmark pricing / T&Cs against market medians in your industry",
+        "Obligation tracker — reminders 90 / 30 / 7 days pre-renewal"
+      ],
+      "benefits": [
+        "Cut contract review time 75% — key dates & obligations surface in seconds",
+        "Never miss a renewal window — proactive calendar alerts 3 months ahead",
+        "Negotiation leverage — benchmark against anonymised peer data",
+        "Audit trail — every change, version, and approval timestamped immutably"
+      ],
+      "pricing": {"basic": "2499", "pro": "6999", "enterprise": "19999"},
+      "popular": true
+    },
+    {
+      "id": "ai-fintech-fraud-graph",
+      "title": "Fintech Fraud Graph",
+      "description": "Real-time fraud detection as a knowledge graph: entity resolution across accounts/IP/device/card fingerprints; ML scoring per transaction in <15ms; SAR report auto-drafting.",
+      "icon": "§",
+      "features": [
+        "Entity resolution graph (accounts, IPs, devices, cards, emails)",
+        "Real-time ML scoring per transaction <15ms — ops_team alert threshold auto-tuned",
+        "SAR / CTR auto-draft for regulators with supporting evidence chain",
+        "Global rule engine — jurisdictions, card schemes, instant-payment schemes"
+      ],
+      "benefits": [
+        "Detect synthetic-identity fraud 30–60 days earlier than rule-only systems",
+        "Reduce false positives 40%+ with graph-based entity relationships",
+        "Auto-generated SAR reports cut compliance team review time 80%",
+        "Edge scoring <15ms means no user-facing checkout delay"
+      ],
+      "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"},
+      "popular": true
+    },
+    {
+      "id": "ai-cross-lingual-meeting-bridge",
+      "title": "Cross-Lingual Meeting Bridge",
+      "description": "Multi-language meeting platform with real-time speech translation + live captions + bilingual transcript + cultural nuance annotations — 40+ languages including dialects and regional variants.",
+      "icon": "§",
+      "features": [
+        "Real-time in-meeting simultaneous interpretation 40+ languages/dialects",
+        "Live captions + word-level timestamped bilingual transcript",
+        "Cultural-adaptation annotations — politeness norms, idiom equivalents",
+        "Silent-watch mode for spectator attendees & executive summary auto-gen"
+      ],
+      "benefits": [
+        "Run one meeting, serve every team — no interpreter booking delays",
+        "Full mixed-language participation without manual switching",
+        "Cultural nuance layer reduces post-meeting misalignment",
+        "Transcripts indexed in knowledge base — searchable forever"
+      ],
+      "pricing": {"basic": "1999", "pro": "5999", "enterprise": "17999"},
+      "popular": false
+    },
+    {
+      "id": "ai-sustainable-supply-chain-radar",
+      "title": "Sustainable Supply Chain Radar",
+      "description": "Supply-chain ESG tracking: carbon intensity per supplier tier, green-alternative sourcing suggestions, Scope 3 emissions quantification, regulatory compliance dashboard (CSRD, CBAM).",
+      "icon": "§",
+      "features": [
+        "Supplier-scope carbon database — tier-1 to tier-n scope 3 quantification",
+        "Green-alternative sourcing score — compares local, recycled, certified alternatives",
+        "CSRD / CBAM / EU Deforestation Regulation compliance report pre-baked",
+        "Regulatory penalty simulator — project cost of non-compliance by scenario"
+      ],
+      "benefits": [
+        "Turn Scope 3 from a spreadsheet nightmare into a live dashboard",
+        "Find greener options with cost-impact trade-off analysis in one click",
+        "Regulatory reports auto-populated from data — 80% reduction in manual hours",
+        "Penalty simulator shows C-suite the 'cost of doing nothing' before filing"
+      ],
+      "pricing": {"basic": "3999", "pro": "12999", "enterprise": "39999"},
+      "popular": true
+    },
+    {
+      "id": "ai-predictive-maintenance-advisor",
+      "title": "Predictive Maintenance Advisor",
+      "description": "Asset failure prediction via sensor fusion + LLM explainability: when to replace, cost model, vendor recommendation, HSE risk assessment — all in plain language for maintenance managers.",
+      "icon": "§",
+      "features": [
+        "Multimodal sensor fusion (vibration, thermal, acoustic, current)",
+        "Remaining-Useful-Life (RUL) distribution + 3-level severity flag per asset",
+        "Plain-English root-cause narration with specific part + vendor suggestion",
+        "HSE risk layer — safety impact assessed before maintenance is scheduled"
+      ],
+      "benefits": [
+        "Predict failures 14–90 days out with 85%+ accuracy",
+        "No more premature or surprise downtime interruptions",
+        "Root-cause narrative translates ML output for maintenance crews",
+        "HSE layer ensures maintenance decisions don't create safety incidents"
+      ],
+      "pricing": {"basic": "2999", "pro": "8999", "enterprise": "29999"},
+      "popular": false
+    },
+    {
+      "id": "ai-knowledge-graph-search-engine",
+      "title": "Knowledge Graph Search Engine",
+      "description": "Turn siloed docs, databases, and APIs into one semantic knowledge graph: entity/relation extraction, entity disambiguation, natural language query rewriting, ranked results with source citations.",
+      "icon": "§",
+      "features": [
+        "Multi-source entity/relation extractor (PDF, Notion, Slack, DB schemas, API specs)",
+        "Entity disambiguation graph + canonical identity store",
+        "NL query rewriter — translates 'who reported this bug?' into graph query",
+        "Cited results — every answer has primary-source footnote + timestamp"
+      ],
+      "benefits": [
+        "Team finds answers in <5 seconds instead of 6 hours of searching",
+        "Single answer surface across 50+ disconnected tools and silos",
+        "Graph context prevents hallucinations — every claim is source-cited",
+        "Automated crawl keeps knowledge base current without manual curation"
+      ],
+      "pricing": {"basic": "1999", "pro": "5999", "enterprise": "17999"},
+      "popular": false
+    }
+  ]
+},
+{
+  "category": "it",
+  "services": [
+    {
+      "id": "it-api-management-lpe-gateway",
+      "title": "API Management & API Gateway",
+      "description": "Full API lifecycle management: gateway (auth, rate-limit, circuit-breaker), developer portal, analytics, and monetisation. Supports REST, GraphQL, and gRPC with OpenAPI spec auto-discovery and runtime validation.",
+      "icon": "§",
+      "features": [
+        "Unified gateway: REST, GraphQL, and gRPC with schema registry per protocol",
+        "Developer portal: auto-generated OpenAPI documentation, try-it console, SDK",
+        "Rate-limits, circuit-breaker, and auto-rediscovery for %02D second latency",
+        "Usage analytics: per-tenant/method status-code breakdown + monetisation rules"
+      ],
+      "benefits": [
+        "One gateway for all your APIs — REST, GraphQL, and gRPC unified",
+        "Developer portal cuts onboarding time from 2 weeks to 30 minutes",
+        "Monetise APIs without writing a single billing rule",
+        "Built-in security: OAuth2/OIDC, mTLS, JWT claims context injection"
+      ],
+      "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"},
+      "popular": true
+    },
+    {
+      "id": "it-code-quality-assurance-platform",
+      "title": "Code Quality & Pre-merge Automation",
+      "description": "Pre-merge quality gate: static analysis (SAST), dependency vulnerability checks, trunk-based branching, automated PR reviewer, quality-score per PR, and merge-blocking on regressions.",
+      "icon": "§",
+      "features": [
+        "SAST + secret-scan + dependency-audit at every PR — merges blocked on fail",
+        "Multi-language: TypeScript, Python, Go, Rust, Java — 25+ ecosystems",
+        "Automated PR reviewer: 1st-pass inline comments before human review",
+        "Quality score: maintainability index + cognitive complexity trend"
+      ],
+      "benefits": [
+        "Catch security vulns pre-merge — no post-release CVEs",
+        "Automated comment reduces human review burden 40–60%",
+        "Quality score surface shows team health trend at a glance",
+        "Branch protection rules enforced — never merge to main without green gate"
+      ],
+      "pricing": {"basic": "999", "pro": "3499", "enterprise": "9999"},
+      "popular": false
+    },
+    {
+      "id": "it-cloud-cost-management-platform",
+      "title": "Cloud Cost Management Platform",
+      "description": "Multi-cloud cost intelligence: bill-ingestion for AWS/GCP/Azure/OCI, resource-to-cost mapping, budget alerts, rightsize recommendations, and chargeback/group-by cost allocation.",
+      "icon": "§",
+      "features": [
+        "Universal billing ingest — AWS CUR / GCP / Azure Cost Mgmt / Oracle OCI",
+        "Resource cost attribution, tag-based and resource-level granularity",
+        "Idle resource detector, right-sizing recommendations, prepaid commitment tracker",
+        "Budget alerts + chargeback dashboard — tenancy and team-level drill-down"
+      ],
+      "benefits": [
+        "Average 15–25% cloud cost reduction in first 30 days",
+        "Complete cost visibility — no more billing silos per provider",
+        "Chargeback/recharge passes financial audit without a spreadsheet debate",
+        "ROP + reserved-instance tracker finds orphaned commitment coverage"
+      ],
+      "pricing": {"basic": "1499", "pro": "4999", "enterprise": "15999"},
+      "popular": true
+    },
+    {
+      "id": "it-zero-trust-network-access",
+      "title": "Zero Trust Network Access (ZTNA)",
+      "description": "Identity-first ZTNA platform: mTLS connections, device posture checks before access, micro-perimeters per app with geo/IP context, session hijack detection, and audit log per grant.",
+      "icon": "§",
+      "features": [
+        "Device health checks (OS patched, disk encrypted, EDR active) before app access",
+        "Geo + context-based dynamic policies per app/environment",
+        "Session-hijack detection in real-time with instant token revocation",
+        "Immutable audit log per grant decision for SOC/GRC/reporting"
+      ],
+      "benefits": [
+        "Never expose a service to the internet — only by authenticated identity",
+        "SOC-ready audit log: every access grant/rejection timestamped and indexed",
+        "Data exfiltration risk drops 90%+ with micro-perimeters vs VPN broadcast",
+        "Session-hijack fingerprinting catches stolen tokens in real-time"
+      ],
+      "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"},
+      "popular": false
+    },
+    {
+      "id": "it-edge-gateway-industrial-iot",
+      "title": "Industrial IoT Edge Gateway",
+      "description": "OT/IT edge gateway for manufacturing, energy, and logistics: Modbus/OPC-UA/SCADA protocol decode, TLS, local edge inference, air-gapped monitoring, edge-file backup — no cloud required for operation.",
+      "icon": "§",
+      "features": [
+        "Industrial protocol adapters: Modbus TCP/RTU, OPC-UA, PROFINET, SCADA historians",
+        "TLS + VPN mesh — communication encrypted end-to-end with no cloud relay",
+        "Local edge inference — computer-vision/sensor models run on-device",
+        "Air-gapped monitor + edge file backup to local NAS or tape store"
+      ],
+      "benefits": [
+        "OT/IT convergence without putting unsafe PLC protocols on the internet",
+        "Full protocol compatibility — no custom SCADA rewrite required",
+        "Edge inference sub-30ms means no cloud round-trip latency for control loop",
+        "Auditable standalone operation for air-gapped security zones"
+      ],
+      "pricing": {"basic": "3999", "pro": "12999", "enterprise": "39999"},
+      "popular": false
+    }
+  ]
+},
+{
+  "category": "cloud",
+  "services": [
+    {
+      "id": "cloud-aiops-incident-intelligence-platform",
+      "title": "AIOps Incident Intelligence Platform",
+      "description": "Unified observability & AIOps: metric/log/trace correlation, anomaly detection, root-cause inference, and auto-remediation playbook execution across Kubernetes, VMs, serverless, and databases.",
+      "icon": "§",
+      "features": [
+        "Log / metric / trace / event correlation with open standards (OpenTelemetry)",
+        "AI anomaly detection — no rule-writing required; adapts to your baseline",
+        "Root-cause inference ranked by evidence — suggests fix + playbook per incident",
+        "Auto-remediation playbook execution — safe, bounded, reversible actions"
+      ],
+      "benefits": [
+        "MTTR drops 60–80% — incidents triaged and remediated in minutes not hours",
+        "No rule-maintenance burden — anomaly detection self-calibrates per service",
+        "Auto-remediation handles 50–85% of incidents before paging a human",
+        "Single observability surface — no more jumping between 7 dashboards"
+      ],
+      "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"},
+      "popular": true
+    },
+    {
+      "id": "cloud-kubernetes-gitops-continuous-deployment",
+      "title": "Kubernetes GitOps Continuous Deployment",
+      "description": "Kubernetes GitOps with ArgoCD/Flux: declarative manifests, per-environment state diffs, drift detection, promotion pipelines, image policy (admission webhook), and OIDC-native RBAC.",
+      "icon": "§",
+      "features": [
+        "GitOps reconcile loop — every k8s resource in the repo, diff vs live state shown",
+        "Per-environment manifest overlays: dev, staging, prod without duplicate configs",
+        "Drift detector — alert + auto-reconcile within 60 seconds when config diverges",
+        "Image policy admission webhook + OIDC-native RBAC per env and namespace"
+      ],
+      "benefits": [
+        "Declarative k8s configs = no more 'it works on my cluster' incidents",
+        "Drift detector actively repairs — no manual kubectl diff required k8s",
+        "Promotion pipeline = one-button dev-to-prod with audit history",
+        "Image policy webhook blocks unapproved images at admission time"
+      ],
+      "pricing": {"basic": "1999", "pro": "5999", "enterprise": "17999"},
+      "popular": true
+    },
+    {
+      "id": "cloud-serverless-api-platform",
+      "title": "Serverless API Platform",
+      "description": "Deploy serverless API endpoints in one Git push: auto-scaling functions, multi-region deploy, Lambda@Edge, managed auth, observability, and pay-per-request pricing with built-in rate limiting.",
+      "icon": "§",
+      "features": [
+        "Auto-scaling to 0 and burst to millions of req/s per endpoint",
+        "Multi-region deploy from a single config — active-active failover per endpoint",
+        "Managed auth + rate limiting + request signing per route without boilerplate",
+        "OpenAPI + observability dashboards per function — total cost per request visible"
+      ],
+      "benefits": [
+        "No servers to provision or patch — zero ops for stateless workloads",
+        "Scale to millions of requests per second without capacity planning",
+        "Built-in auth and rate-limiting replaces 200 lines of middleware code",
+        "Real cost tracking per request helps set SMART pricing for SaaS"
+      ],
+      "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"},
+      "popular": false
+    },
+    {
+      "id": "cloud-data-lakehouse",
+      "title": "Data Lakehouse Platform",
+      "description": "Unified data lakehouse: ingest CSV/JSON/Parquet/Stream, implement ACID semantics with Delta-Native engine, SQL query with mesh cardinality optimiser, BI tool connectors, and schema enforcement.",
+      "icon": "§",
+      "features": [
+        "Open-table format ACID engine (Delta Lake / Iceberg / Hudi)",
+        "SQL front-end plus mesh cardinality optimizer — join lightning-fast",
+        "Schema enforcement at write path — no orphan columns in production tables",
+        "BI connectors: Looker, Grafana, Metabase, Tableau ODBC — no ETL layer"
+      ],
+      "benefits": [
+        "One lake, one engine — replace data warehouse + lake silos with one system",
+        "SQL on raw data — no schema brittle upfront when every-case is unknown",
+        "Schema enforcement prevents schema-drift breaking production dashboards",
+        "Join optimizer means 200-table joins run in seconds, not hours"
+      ],
+      "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"},
+      "popular": true
+    },
+    {
+      "id": "cloud-hybrid-multi-cloud-networking",
+      "title": "Hybrid & Multi-Cloud Networking",
+      "description": "Multi-cloud network fabric: hub-and-spoke VPC peering, VPN-less private link, transcontinental BGP route optimisation, WAF+IDS inline, cost-based egress routing, centralised network observability across clouds.",
+      "icon": "§",
+      "features": [
+        "Private-link overlay across AWS/GCP/Azure/OCI with zero encryption at rest",
+        "BGP route optimisation — transcontinental failover with 30-second cutover",
+        "Centralised firewall/IDS/WAF as inline service without east-west hop cost",
+        "Egress cost routing — cheap-copy data over least-cost soft-link per cloud"
+      ],
+      "benefits": [
+        "Single network fabric — manage AWS, GCP, Azure as one logical network",
+        "Private link = no internet transit between clouds — revenue-speed latency",
+        "Cost routing reduces cross-cloud egress bill up to 60%",
+        "Zero-day failover per region tested daily in staging before game-day"
+      ],
+      "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"},
+      "popular": false
+    },
+    {
+      "id": "cloud-disaster-recovery-orchestration",
+      "title": "Disaster Recovery Orchestration",
+      "description": "Zero-downtime DR orchestration across regions: continuous async replication, warm-standby spin-up automation, failover runbook execution, DR test automation, and RPO/RTO dashboard with grade SLA.",
+      "icon": "§",
+      "features": [
+        "Async cross-region replication — zero-downtime writes at primary region",
+        "Warm-standby spin-up from snapshot in 30 s — no manual scripts needed",
+        "Failover runbook executor: 47-step runbook, per step human halt available",
+        "DR test runner: schedules quarterly DR drills, auto-reports pass/fail"
+      ],
+      "benefits": [
+        "RPO 5 seconds, RTO 30 seconds for most workloads — no code changes",
+        "DR tested quarterly — no more paper-based DR plans in binders",
+        "One-click failover — no incident commander typing disaster.command",
+        "RTO/RPO dashboard with grade SLA — know your posture 24/7"
+      ],
+      "pricing": {"basic": "1999", "pro": "5999", "enterprise": "17999"},
+      "popular": false
+    }
+<TRUNCATED>
+};

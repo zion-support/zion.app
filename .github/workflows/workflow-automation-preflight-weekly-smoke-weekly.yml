@@ -1,0 +1,30 @@
+# Ensures workflow-automation-preflight-weekly.yml keeps Thursday schedule + automation:preflight (grep-only).
+name: automation preflight weekly smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '44 10 * * 4' # Thursdays 10:44 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-automation-preflight-weekly-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  preflight-weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-automation-preflight-weekly.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-automation-preflight-weekly.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Automation preflight (weekly)' "$f"
+          grep -Fq "cron: '44 6 * * 4'" "$f"
+          grep -Fq 'group: workflow-automation-preflight-weekly' "$f"
+          grep -Fq "node-version-file: '.nvmrc'" "$f"
+          grep -Fq 'npm run automation:preflight' "$f"
+          echo "ok: $f"

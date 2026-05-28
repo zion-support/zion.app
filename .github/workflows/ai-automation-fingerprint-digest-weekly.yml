@@ -1,0 +1,111 @@
+name: AI Automation fingerprint incident digest
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  repository-projects: write
+
+on:
+  schedule:
+    - cron: '35 14 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automation-fingerprint-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Restore fingerprint digest cross-run state
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: |
+            automation/reports/automation-fingerprint-incidents-digest-last.json
+            automation/reports/automation-fingerprint-incidents-hotness-state.json
+            automation/reports/automation-fingerprint-incidents-escalation-state.json
+            automation/reports/automation-fingerprint-incidents-trend.json
+            automation/reports/automation-fingerprint-incidents-rollup-critical-delta-last.json
+          key: fp-digest-cross-run-v2-${{ github.repository }}
+
+      - name: Generate fingerprint incident digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DIGEST_ROLLUP_ISSUE: '1'
+          DIGEST_ROLLUP_AUTO_CLOSE: ${{ vars.AUTOMATION_FP_DIGEST_ROLLUP_AUTO_CLOSE }}
+          DIGEST_ROLLUP_ASSIGNEE: ${{ vars.AUTOMATION_FP_DIGEST_ROLLUP_ASSIGNEE }}
+          DIGEST_NOTIFY_TELEGRAM: ${{ vars.AUTOMATION_FP_DIGEST_TELEGRAM }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AUTOMATION_DIGEST_SLACK_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_SLACK_WEBHOOK }}
+          AUTOMATION_DIGEST_DISCORD_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_DISCORD_WEBHOOK }}
+          DIGEST_ESCALATION_MIN_COUNT: ${{ vars.AUTOMATION_FP_DIGEST_ESCALATION_MIN_COUNT }}
+          DIGEST_ESCALATION_STALE_DAYS: ${{ vars.AUTOMATION_FP_DIGEST_ESCALATION_STALE_DAYS }}
+          DIGEST_ESCALATION_COOLDOWN_HOURS: ${{ vars.AUTOMATION_FP_DIGEST_ESCALATION_COOLDOWN_HOURS }}
+          DIGEST_ESCALATION_CRITICAL_MIN_COUNT: ${{ vars.AUTOMATION_FP_DIGEST_ESCALATION_CRITICAL_MIN_COUNT }}
+          DIGEST_ESCALATION_CRITICAL_STALE_DAYS: ${{ vars.AUTOMATION_FP_DIGEST_ESCALATION_CRITICAL_STALE_DAYS }}
+          DIGEST_ESCALATION_GENERIC_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_ESCALATION_WEBHOOK }}
+          DIGEST_ESCALATION_PAGERDUTY_ROUTING_KEY: ${{ secrets.AUTOMATION_DIGEST_ESCALATION_PAGERDUTY_KEY }}
+          DIGEST_ESCALATION_CRITICAL_GENERIC_WEBHOOK: ${{ secrets.AUTOMATION_DIGEST_ESCALATION_CRITICAL_WEBHOOK }}
+          DIGEST_ESCALATION_CRITICAL_PAGERDUTY_ROUTING_KEY: ${{ secrets.AUTOMATION_DIGEST_ESCALATION_CRITICAL_PAGERDUTY_KEY }}
+          DIGEST_DELTA_NOTIFY_ONLY: ${{ vars.AUTOMATION_FP_DIGEST_DELTA_NOTIFY_ONLY }}
+          DIGEST_AUTO_ASSIGN_SUGGESTED: ${{ vars.AUTOMATION_FP_DIGEST_AUTO_ASSIGN_SUGGESTED }}
+          DIGEST_ROLLUP_CRITICAL_COMMENT: ${{ vars.AUTOMATION_FP_DIGEST_ROLLUP_CRITICAL_COMMENT }}
+          DIGEST_SLACK_USE_BLOCKS: ${{ vars.AUTOMATION_FP_DIGEST_SLACK_USE_BLOCKS }}
+          DIGEST_DISCORD_USE_EMBEDS: ${{ vars.AUTOMATION_FP_DIGEST_DISCORD_USE_EMBEDS }}
+          DIGEST_PROJECT_OWNER: ${{ vars.AUTOMATION_FP_DIGEST_PROJECT_OWNER }}
+          DIGEST_PROJECT_NUMBER: ${{ vars.AUTOMATION_FP_DIGEST_PROJECT_NUMBER }}
+          DIGEST_PROJECT_V2_NODE_ID: ${{ vars.AUTOMATION_FP_DIGEST_PROJECT_V2_NODE_ID }}
+          DIGEST_USE_CODEOWNERS: ${{ vars.AUTOMATION_FP_DIGEST_USE_CODEOWNERS }}
+          DIGEST_CODEOWNERS_LOGICAL_PATH: ${{ vars.AUTOMATION_FP_DIGEST_CODEOWNERS_LOGICAL_PATH }}
+          DIGEST_CRITICAL_PR_COMMENT: ${{ vars.AUTOMATION_FP_DIGEST_CRITICAL_PR_COMMENT }}
+          DIGEST_SLACK_INCLUDE_TREND: ${{ vars.AUTOMATION_FP_DIGEST_SLACK_INCLUDE_TREND }}
+          DIGEST_APPLY_DELTA_LABEL: ${{ vars.AUTOMATION_FP_DIGEST_APPLY_DELTA_LABEL }}
+          DIGEST_DELTA_LABEL_NAME: ${{ vars.AUTOMATION_FP_DIGEST_DELTA_LABEL_NAME }}
+          DIGEST_EMA_SIBLING_COMMENT: ${{ vars.AUTOMATION_FP_DIGEST_EMA_SIBLING_COMMENT }}
+          DIGEST_EMA_SIBLING_THRESHOLD: ${{ vars.AUTOMATION_FP_DIGEST_EMA_SIBLING_THRESHOLD }}
+          DIGEST_DRY_RUN: ${{ vars.AUTOMATION_FP_DIGEST_DRY_RUN }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: node automation/generate-automation-fingerprint-incident-digest.cjs
+
+      - name: Export fingerprint metrics (Prometheus text)
+        run: node automation/export-fingerprint-trend-prom.cjs
+
+      - name: Merge observability digest (includes fingerprint when present)
+        run: node automation/observability-digest.cjs
+
+      - name: Upload digest artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: automation-fingerprint-digest-${{ github.run_id }}
+          path: |
+            automation/reports/automation-fingerprint-incidents-latest.json
+            automation/reports/automation-fingerprint-incidents-latest.md
+            automation/reports/automation-fingerprint-incidents-escalation-state.json
+            automation/reports/automation-fingerprint-incidents-digest-last.json
+            automation/reports/automation-fingerprint-incidents-hotness-state.json
+            automation/reports/automation-fingerprint-incidents-trend.json
+            automation/reports/automation-fingerprint-incidents-rollup-critical-delta-last.json
+            automation/reports/automation-fingerprint-incidents-metrics.prom
+            automation/reports/observability-digest-latest.json
+          if-no-files-found: warn
+          retention-days: 30

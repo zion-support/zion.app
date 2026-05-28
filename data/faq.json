@@ -1,0 +1,89 @@
+[
+  {
+    "category": "pricing",
+    "patterns": [
+      "how much",
+      "pricing",
+      "cost",
+      "price",
+      "quote",
+      "rates",
+      "monthly",
+      "budget",
+      "expensive",
+      "cheap"
+    ],
+    "question": "What are your pricing plans?",
+    "answer_en": "We offer flexible plans starting from consulting engagements to managed monthly services. For a detailed quote, please share the scope you’re looking at and we’ll respond within 24 hours.",
+    "answer_pt": "Oferecemos planos flexíveis, desde consultorias pontuais até serviços gerenciados mensais. Para um orçamento detalhado, compartilhe o escopo que tem em mente e responderemos em até 24 horas.",
+    "priority": 10
+  },
+  {
+    "category": "services",
+    "patterns": [
+      "services",
+      "what do you do",
+      "offer",
+      "capabilities",
+      "expertise",
+      "solutions",
+      "what can you"
+    ],
+    "question": "What services do you provide?",
+    "answer_en": "Zion Tech Group provides end-to-end software development, system integration, and managed operations. From MVP to enterprise scale — covering web apps, backend infrastructure, AI integrations, and DevSecOps.",
+    "answer_pt": "A Zion Tech Group oferece desenvolvimento de software, integração de sistemas e operações gerenciadas de ponta a ponta. Do MVP à escala empresarial — cobrindo web apps, infraestrutura backend, integrações de IA e DevSecOps.",
+    "priority": 10
+  },
+  {
+    "category": "timeline",
+    "patterns": [
+      "timeline",
+      "how long",
+      "when can",
+      "delivery",
+      "turnaround",
+      "deadline",
+      "how many days",
+      "how many weeks"
+    ],
+    "question": "What is the typical project timeline?",
+    "answer_en": "A typical MVP takes 4–8 weeks, depending on scope. Full enterprise integrations vary. We’ll provide a timeline estimate after our first discovery call.",
+    "answer_pt": "Um MVP típico leva de 4 a 8 semanas, dependendo do escopo. Integrações empresariais completas variam mais. Forneceremos uma estimativa de prazo após a nossa primeira chamada de descoberta.",
+    "priority": 9
+  },
+  {
+    "category": "integration",
+    "patterns": [
+      "api",
+      "integration",
+      "connect",
+      "third party",
+      "zapier",
+      "webhook",
+      "oauth",
+      "rest"
+    ],
+    "question": "Do you integrate with third-party tools?",
+    "answer_en": "Yes — we routinely integrate APIs across CRM, ERP, payment processors, and AI platforms. Tell us what you’re using and we’ll confirm compatibility.",
+    "answer_pt": "Sim — integramos APIs de CRM, ERP, processadores de pagamento e plataformas de IA rotineiramente. Diga-nos o que está a usar e confirmamos a compatibilidade.",
+    "priority": 9
+  },
+  {
+    "category": "support",
+    "patterns": [
+      "support",
+      "help",
+      "issue",
+      "bug",
+      "broken",
+      "not working",
+      "error",
+      "problem",
+      "trouble"
+    ],
+    "question": "How do I get support?",
+    "answer_en": "Reply directly to this thread with a brief description of the issue and any error details. Our team typically responds within 24 hours on weekdays.",
+    "answer_pt": "Responda diretamente a este thread com uma descrição breve do problema e detalhes do erro. A nossa equipa responde geralmente em 24 horas em dias úteis.",
+    "priority": 9
+  }
+]

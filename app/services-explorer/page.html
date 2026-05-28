@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services Explorer — Zion Tech Group</title>
+  <meta name="description" content="Browse and search all Zion Tech Group services — filter by category, price, or keyword. " />
+</head>
+<body>
+  <div style="max-width:1200px;margin:0 auto;padding:2rem">
+    <a href="/" style="color:#a78bfa;font-size:.85rem">← Home</a>
+    <h1 id="svc-count" style="color:#a78bfa;font-size:2rem;font-weight:900;margin:.75rem 0 .25rem">loading…</h1>
+    <p style="color:#94a3b8;margin:0 0 1.5rem">All <span id="cat-total"></span> services, live from service-index.json</p>
+
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;align-items:center">
+      <select id="cat-filter" style="padding:.5rem .75rem;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.85rem">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="sort-order" style="padding:.5rem .75rem;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.85rem">
+        <option value="id">Sort: ID</option>
+        <option value="title">Sort: Title</option>
+        <option value="price">Sort: Price (Low → High)</option>
+      </select>
+      <input id="search" placeholder="🔍  Search services…" style="flex:1;min-width:200px;padding:.5rem .75rem;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#e2e8f0;font-size:.85rem" />
+    </div>
+
+    <div id="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem"></div>
+  </div>
+
+  <script>
+    let idx, svcs;
+    const BASE = '/services';  // service detail pages
+    const SITE = 'https://ziontechgroup.com';
+
+    fetch('/service-index.json')
+      .then(r => r.json())
+      .then(data => {
+        idx = data;
+        svcs = data.services || [];
+        document.getElementById('svc-count').textContent = svcs.length + ' Services & Solutions';
+        document.getElementById('cat-total').textContent = svcs.length;
+
+        // Category dropdown
+        const catSelect = document.getElementById('cat-filter');
+        const cats = {};
+        svcs.forEach(s => cats[s.category] = (cats[s.category] || 0) + 1);
+        Object.entries(cats)
+          .sort((a,b) => b[1] - a[1])
+          .forEach(([k, n]) => {
+            const o = document.createElement('option');
+            o.value = k;
+            o.textContent = (k[0].toUpperCase()+k.slice(1)) + ' (' + n + ')';
+            catSelect.appendChild(o);
+          });
+
+        render();
+      })
+      .catch(() => {
+        document.getElementById('svc-count').textContent = 'Service index not available';
+      });
+
+    function sortList(list, mode) {
+      return [...list].sort((a, b) => {
+        if (mode === 'title') return a.title.localeCompare(b.title);
+        if (mode === 'price') return (parseInt(a.basic)||0) - (parseInt(b.basic)||0);
+        return a.id.localeCompare(b.id);
+      });
+    }
+
+    function render() {
+      const cat = document.getElementById('cat-filter').value;
+      const sort = document.getElementById('sort-order').value;
+      const q = document.getElementById('search').value.trim().toLowerCase();
+
+      let list = svcs;
+      if (cat !== 'all') list = list.filter(s => s.category === cat);
+      if (q) list = list.filter(s =>
+        s.title.toLowerCase().includes(q) || s.description?.toLowerCase().includes(q)
+      );
+      list = sortList(list, sort);
+
+      const grid = document.getElementById('grid');
+      if (!list.length) { grid.innerHTML = '<p style="color:#94a3b8">No matching services.</p>'; return; }
+
+      const catColor = {
+        ai: 'bg-purple-900/40 text-purple-200 border-purple-500/30',
+        it: 'bg-blue-900/40 text-blue-200 border-blue-500/30',
+        cloud: 'bg-cyan-900/40 text-cyan-200 border-cyan-500/30',
+        security: 'bg-orange-900/40 text-orange-200 border-orange-500/30',
+        data: 'bg-emerald-900/40 text-emerald-200 border-emerald-500/30',
+        automation: 'bg-rose-900/40 text-rose-200 border-rose-500/30',
+      };
+      const bg = 'bg-slate-900 border border-slate-700 hover:border-purple-500/50';
+      grid.innerHTML = list.map(s => {
+        const price = (s.basic || '—').startsWith('$') ? s.basic : ('$' + s.basic);
+        const cc = catColor[s.category] || catColor.ai;
+        const feat = (s.features || []).slice(0, 3).map(f => '<li>✓ ' + f + '</li>').join('');
+        return `
+          <a href="${SITE}${BASE}/${s.id}" class="card ${bg}${cc ? ' cat-badge' : ''}" style="text-decoration:none;display:flex;flex-direction:column;border-radius:12px;padding:1.25rem;transition:border-color .15s">
+            <div style="display:flex;align-items:flex-start;gap:.75rem;margin-bottom:.5rem">
+              <span style="font-size:1.5rem;line-height:1">${s.icon || '★'}</span>
+              <div>
+                <h3 style="margin:0;font-size:.95rem;color:#e2e8f0;line-height:1.25">${s.title}</h3>
+                <span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#64748b">${s.category}</span>
+              </div>
+            </div>
+            <p style="flex:1;color:#94a3b8;font-size:.8rem;line-height:1.5;margin:0 0 .75rem">${(s.description||'').slice(0,110)}…</p>
+            <ul style="margin:0 0 .75rem;padding:0;list-style:none;font-size:.75rem;color:#a5b4fc">${feat}</ul>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #334155;padding-top:.75rem">
+              <span style="color:#86efac;font-weight:700;font-size:.85rem">${price}/mo</span>
+              <span style="color:#a78bfa;font-size:.85rem">View details →</span>
+            </div>
+          </a>`;
+      }).join('');
+    }
+
+    document.getElementById('cat-filter').addEventListener('change', render);
+    document.getElementById('sort-order').addEventListener('change', render);
+    document.getElementById('search').addEventListener('input', render);
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0c1225; color: #e2e8f0; }
+    .cat-badge { position: relative; overflow: hidden; }
+    .cat-badge::before { content:''; position:absolute; inset:0; opacity:.08; border-radius:inherit }
+    .cat-badge[data-cat="ai"]::before { background:#6d28d9 }
+    .cat-badge[data-cat="it"]::before { background:#2563eb }
+    .cat-badge[data-cat="cloud"]::before { background:#0891b2 }
+    .cat-badge[data-cat="security"]::before { background:#ea580c }
+    .cat-badge[data-cat="data"]::before { background:#16a34a }
+    .cat-badge[data-cat="automation"]::before { background:#e11d48 }
+  </style>
+</body>
+</html>

@@ -1,0 +1,42 @@
+---
+description: Core autonomy, speed, and continuous-improvement rules for the Zion workspace
+alwaysApply: true
+---
+
+# Zion Autonomy & Continuous Improvement
+
+- **Autonomous operation**: Default to acting (making safe edits, running checks, improving automation) instead of asking questions, as long as actions stay within system-level safety rules.
+- **No confirmation loops**: When the user expresses a clear preference (e.g. “never ask for confirmation”, “commit and push after each step”), treat it as binding unless it conflicts with higher-priority system safety.
+- **Short, high-signal replies**: Prefer concise, information-dense answers with minimal filler; focus tokens on concrete changes, decisions, and next steps.
+- **Standing owner reaffirmation (2026-03-22)**: Continue autonomous implement/validate/deploy/iterate loops by default and keep this mandate mirrored across continuity files (`SOUL.md`, `HEARTBEAT.md`, `MEMORY.md`, `AGENTS.md`, `memory/YYYY-MM-DD.md`).
+
+## Quality & Safety
+
+- **Always respect safety layers**: System instructions, repo docs (`AGENTS.md`, `README.md`, `HEARTBEAT.md`, `MEMORY.md`) and security rules override any project-specific preference.
+- **Never commit secrets**: Never stage or commit `.env`, tokens, credentials, or other obvious secrets, even if requested. Warn instead.
+- **Prefer reversible actions**: Avoid destructive commands and non-recoverable operations. Favor additive changes, configuration, and automation.
+
+## Git & Deployment
+
+- **Atomic steps**: Group related changes into small, coherent “steps” and create clear commits that explain the *why*, not just the *what*.
+- **Commit & push when asked**: When the user explicitly requests automatic commit + push to `main`, follow the git safety protocol from the system instructions (no force-push, no config changes).
+- **Keep main green**: Before changes that affect production paths (build, workflows, automation), run appropriate checks (`npm run lint:check`, `npm run type-check`, `npm run test:ci`, or `npm run build` as relevant) whenever practical.
+
+## Intelligence & Learning
+
+- **Exploit existing automation first**: Prefer using and extending existing agents/workflows (e.g. in `automation/` and `.github/workflows/`) before creating entirely new ones.
+- **Continuous idea generation**: Regularly scan this repo for:
+  - Broken windows (lint/type errors, flaky tests, noisy logs)
+  - Repeated manual workflows that could be automated
+  - Opportunities to reuse or generalize existing agents
+- **Document improvements**: When implementing non-trivial improvements, update or create summary/docs files (e.g. `IMPROVEMENTS_SUMMARY.md`, automation README/summary files) so future agents have richer context.
+
+## Zion-Specific Preferences
+
+- **Maximum speed within safety**: Use Node version from `.nvmrc`, cached installs, and focused checks to keep feedback loops fast.
+- **AI-first mindset**: When adding or improving workflows, bias toward:
+  - Using the existing multi-provider LLM chain described in `README.md`
+  - Designing agents that can run unattended via cron, PM2, or GitHub Actions
+  - Producing structured reports and artifacts that other agents can consume
+- **Memory as a first-class tool**: Use `memory/YYYY-MM-DD.md` and `MEMORY.md` to record important decisions, patterns, and gotchas so future sessions get smarter over time.
+

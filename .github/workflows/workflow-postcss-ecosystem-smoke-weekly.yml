@@ -1,0 +1,50 @@
+# Ensures PostCSS config loads (Tailwind pipeline) and PM2 ecosystem file stays syntactically valid.
+
+name: postcss.config.mjs + ecosystem.config.cjs smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '31 7 * * 0' # Sundays 07:31 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-postcss-ecosystem-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  configs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: postcss.config.mjs loads with plugins
+        run: |
+          set -euo pipefail
+          test -f postcss.config.mjs
+          test -s postcss.config.mjs
+          node --input-type=module -e "
+            const m = await import('./postcss.config.mjs');
+            const d = m.default;
+            if (d == null || typeof d !== 'object') process.exit(1);
+            const p = d.plugins;
+            if (p == null || typeof p !== 'object' || Array.isArray(p)) process.exit(1);
+            console.log('ok: postcss.config.mjs plugins');
+          "
+
+      - name: ecosystem.config.cjs syntax check
+        run: |
+          set -euo pipefail
+          test -f ecosystem.config.cjs
+          test -s ecosystem.config.cjs
+          node --check ecosystem.config.cjs
+          echo 'ok: ecosystem.config.cjs syntax'

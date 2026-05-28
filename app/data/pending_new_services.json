@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "ai-multimodal-video-understanding",
+    "title": "Multimodal Video Understanding Engine",
+    "description": "End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-stamped topic indexing, and natural-language search across full video library.",
+    "icon": "\ud83c\udfa5",
+    "features": [
+      "Frame-level CLIP embeddings + action-recognition time-series across entire video",
+      "Scene-change detection + automatic key-frame extraction per 30-second segment",
+      "Auto-generated transcript + OCR with chapter marker overlay",
+      "Natural-language question answering across video with time-stamped answer snippets",
+      "Batch ingest: 1000+ video files automatically processed and indexed within hours"
+    ],
+    "benefits": [
+      "Search 10 000+ hours of video content in seconds \u2014 find any mention of any product or event instantly",
+      "Auto-generated video chapter index reduces manual editing time from hours per video to zero",
+      "Compliance review: find potentially sensitive visuals or language across all video content automatically"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "749",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-multimodal-video-understanding",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-multimodal-video-understanding",
+    "category": "ai",
+    "popular": false,
+    "nav_name": "Multimodal Video Understanding Engine",
+    "is_featured": false
+  },
+  {
+    "id": "ai-voice-first-crm",
+    "title": "Voice-First CRM & Sales Assistant",
+    "description": "Voice-first CRM for field sales and inside sales teams: automatic call transcription, real-time deal coaching via live prompt injection, pipeline update via voice command, contact enrichment, and post-call auto-summary + next-step action items.",
+    "icon": "\ud83d\udcde",
+    "features": [
+      "Real-time call transcription with speaker separation across phone, Zoom, Teams",
+      "Live deal coaching: sales rep hears contextual prompts mid-call via earpiece or screen pop-up",
+      "Voice command CRM update: update stage, log notes, create task \u2014 all hands-free",
+      "Auto-contact enrichment via Clearbit, ZoomInfo, LinkedIn \u2014 contact record complete in 3 seconds",
+      "Post-call: auto-summary, action items, next-step suggestions delivered to Slack/CRM within 30 seconds"
+    ],
+    "benefits": [
+      "Sales reps spend 70% less time on CRM data entry \u2014 voice commands do it automatically",
+      "Live coaching during calls closes 15-25% more deals according to Gong and Chorus benchmark data",
+      "Get full-deal visibility in real time: pipeline dashboard updated by voice, not by end-of-week data entry"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-voice-first-crm",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-voice-first-crm",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "Voice-First CRM & Sales Assistant",
+    "is_featured": false
+  },
+  {
+    "id": "ai-cross-lingual-bridge",
+    "title": "AI Cross-Lingual Bridge",
+    "description": "Enterprise-grade cross-language content and support platform: semantic translation, accent-normalised speech, multilingual chatbot/knowledge base build, automatic locale detection, and compliance-checked glossary management across 80+ language pairs.",
+    "icon": "\ud83c\udf10",
+    "features": [
+      "Semantic translation engine (80+ language pairs, trains on in-domain corpus)",
+      "Accent-normalised speech-to-text and TTS per locale",
+      "Auto language/region detection with confidence scoring",
+      "Webhook-ready multilingual chatbot builder",
+      "CSV/XLIFF glossary import + compliance glossary lock"
+    ],
+    "benefits": [
+      "Launch multi-market support 3\u00d7 faster vs. hiring per-market translators",
+      "Reduce mistranslation incidents by 80% in regulated industries",
+      "Customer support CSAT score rises 25% post-localisation"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "749",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-cross-lingual-bridge",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-cross-lingual-bridge",
+    "category": "ai",
+    "popular": false,
+    "nav_name": "AI Cross-Lingual Bridge",
+    "is_featured": false
+  },
+  {
+    "id": "ai-carbon-optimizer",
+    "title": "AI Carbon Footprint Optimizer",
+    "description": "Automated Scope 1-3 carbon accounting: ingests utility bills, cloud usage, travel itineraries, supplier invoices, and calculates real-time carbon intensity scores with prioritised reduction actions and ESG report-ready outputs.",
+    "icon": "\ud83c\udf3f",
+    "features": [
+      "Scope 1-3 automatic accounting from bills, APIs, and invoices",
+      "Machine learning intensity factors per city, data-centre, and carrier",
+      "Priority-ranked action plan generated weekly",
+      "ESG/CSRD-ready report PDF and CSV exports",
+      "Alerts: budget exceeded, deviation from reduction trajectory"
+    ],
+    "benefits": [
+      "Cut ESG reporting cost ~80% by automating data collection and calculation",
+      "Finish CSRD-ready ESG report in 3 days vs. 3 weeks manually",
+      "Reduce carbon intensity 15-30% in 12 months with AI action plans"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "499",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-carbon-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-carbon-optimizer",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "AI Carbon Footprint Optimizer",
+    "is_featured": true
+  },
+  {
+    "id": "ai-knowledge-graph-search-deep",
+    "title": "AI Knowledge Graph Search Engine",
+    "description": "Deep semantic search across structured + unstructured corporate knowledge: auto-builds a navigable knowledge graph from Confluence, Slack, Drive, Jira, and CRM; facet navigation, path-finding between related entities, and answer synthesis with cited sources.",
+    "icon": "\ud83d\udd0d",
+    "features": [
+      "Auto-ingest: Confluence, Slack, Drive, Jira, Notion, SharePoint",
+      "Auto-built navigable knowledge graph with entity recognition",
+      "Faceted navigation + path finder (A\u2192B shortest path through relations)",
+      "Answer synthesis with inline citations + source confidence scores",
+      "On-prem AIR-gapped deployment option for public-sector / PHI"
+    ],
+    "benefits": [
+      "Answer how-do-I type queries in seconds that previously took hours of searching",
+      "Eliminate 40-70% of repeated support tickets by surfacing canonical answers",
+      "Build a living knowledge graph without manual taxonomy work"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "849",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-knowledge-graph-search-deep",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-knowledge-graph-search-deep",
+    "category": "ai",
+    "popular": true,
+    "nav_name": "AI Knowledge Graph Search Engine",
+    "is_featured": true
+  },
+  {
+    "id": "security-ai-threat-hunter",
+    "title": "AI Threat Hunter",
+    "description": "Autonomous AI-powered threat hunting: continuous behavioural anomaly detection, novel attack chain reconstruction, MITRE ATT&CK mapping, custom hunt queries, natural-language investigation interface, and auto-generated incident reports.",
+    "icon": "\ud83c\udfaf",
+    "features": [
+      "Continuous behavioural anomaly detection across endpoint, network, and cloud telemetry",
+      "Autonomous attack chain reconstruction with MITRE ATT&CK matrix alignment",
+      "Natural-language hunt query builder for analysts without scripting skills",
+      "Auto-generated incident reports with timeline, evidence, and recommended mitigations",
+      "Low-false-positive ML scoring tuned to each environment via supervised feedback"
+    ],
+    "benefits": [
+      "Detect novel and eye-watering APT attacks missed by signature-based SIEMs",
+      "Threat-hunt coverage that takes hours manually executes autonomously in 2 minutes",
+      "Reduce mean-time-to-respond 60% via auto-generated context-rich incident report"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "999",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/security-ai-threat-hunter",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-ai-threat-hunter",
+    "category": "security",
+    "popular": false,
+    "nav_name": "AI Threat Hunter",
+    "is_featured": false
+  },
+  {
+    "id": "security-supply-chain-sbom",
+    "title": "Supply Chain SBOM & Vulnerability Intelligence",
+    "description": "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification \u2014 closing the software supply-chain attack window at build time.",
+    "icon": "\ud83d\udce6",
+    "features": [
+      "Automated SBOM generation per-commit, per-PR, and per-release \u2014 CycloneDX + SPDX both supported",
+      "SSVC scoring maps CVE severity against exploitability + patch availability in real-time",
+      "Automated security PRs: patch suggestion AI opens PR per vulnerable dependency",
+      "SLSA provenance: build time + identity verification signed and traceable per artefact",
+      "Bill of Materials attestation built into container image and artifact metadata"
+    ],
+    "benefits": [
+      "Reduce supply-chain attack surface 80%+ through automated SBOM and patch PR automation",
+      "Shrink mean-time-to-patch critical CVEs from weeks to hours via automated PR suggestions",
+      "Achieve SLSA Level 3+ build provenance sufficient for regulated industry compliance"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "349",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/security-supply-chain-sbom",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-supply-chain-sbom",
+    "category": "security",
+    "popular": false,
+    "nav_name": "Supply Chain SBOM & Vulnerability Intelligence",
+    "is_featured": false
+  },
+  {
+    "id": "automation-commercial-leasing-tour-scheduler",
+    "title": "Commercial Leasing & Property Tour Scheduler",
+    "description": "End-to-end commercial-property tour scheduling and lead qualification: booking agent handoff, CRM opportunity creation, automated reminders, post-tour follow-up nurturing, and leasing-commission attribution dashboard.",
+    "icon": "\ud83c\udfe2",
+    "features": [
+      "Self-service booking agent for commercial property showings",
+      "Automated CRM opportunity creation and lead scoring per inquiry source",
+      "Multi-channel tour reminders: SMS, email, WhatsApp, push notification",
+      "Post-tour nurturing sequence: re-engagement at 48 h, 1w, 2w, 4w with incremental incentives",
+      "Leasing-commission attribution: tie closed deals back to originating touchpoints"
+    ],
+    "benefits": [
+      "Reduce no-show tour rate 40% via automated multi-channel reminders",
+      "Capture 80%+ of inbound inquiries automatically \u2014 no human scheduler needed",
+      "Attributing commission to marketing channel closes unstructured lead-gen reporting gap"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "349",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-commercial-leasing-tour-scheduler",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-commercial-leasing-tour-scheduler",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Commercial Leasing & Property Tour Scheduler",
+    "is_featured": false
+  },
+  {
+    "id": "automation-education-student-lifecycle-manager",
+    "title": "Education Student Lifecycle Manager",
+    "description": "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imported at-risk alerts.",
+    "icon": "\ud83c\udf93",
+    "features": [
+      "Inquiry funnel: form \u2192 enriched CRM record \u2192 personalised nurture sequence per channel",
+      "Academic-risk detection via LMS grade-imported pattern scoring",
+      "Parent engagement portal with auto-summarised academic progress reports",
+      "Alumni lifecycle: graduation anniversary give, re-enrolment incentive, charitable giving prompts",
+      "FERPA-compliant data handling with role-based student record access"
+    ],
+    "benefits": [
+      "Increase student enrolment yield 15-25% via personalised nurture sequences that react to actual engagement behaviour",
+      "Reduce dropout rate 30% via early academic-risk alerts reaching academic advisors automatically",
+      "Cut admissions office administrative time by 60% via automated funnel management"
+    ],
+    "pricing": {
+      "basic": "79",
+      "pro": "299",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-education-student-lifecycle-manager",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-education-student-lifecycle-manager",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Education Student Lifecycle Manager",
+    "is_featured": false
+  },
+  {
+    "id": "it-unified-endpoint-management",
+    "title": "Unified Endpoint & Device Management",
+    "description": "Unified endpoint management across Windows, macOS, iOS, Android, ChromeOS, and IoT: OS patch deployment, remote wipe, app catalog + distribution, inventory management, and compliance policy enforcement from a single console.",
+    "icon": "\ud83d\udcf1",
+    "features": [
+      "Multi-platform: Windows, macOS, iOS, Android, ChromeOS, RaspberryPi ESP32 IoT",
+      "OS patch deployment with maintenance-window scheduling and rollback protection",
+      "Remote actions: wipe, lock, locate, reboot, reset password, revoke certs",
+      "Self-service app catalog: users install approved apps without IT ticket",
+      "Compliance policies: BitLocker, FileVault, firewall rules, USB restriction, AV enforcement"
+    ],
+    "benefits": [
+      "Manage 10 000+ endpoints from one console \u2014 cut IT admin time per device 70%",
+      "Self-service app store cuts internal IT helpdesk tickets 50-65%",
+      "Patch compliance rate rises from 55% to 99% with automated maintenance windows"
+    ],
+    "pricing": {
+      "basic": "5",
+      "pro": "19",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-unified-endpoint-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-unified-endpoint-management",
+    "category": "it",
+    "popular": false,
+    "nav_name": "Unified Endpoint & Device Management",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-kubernetes-gitops-platform",
+    "title": "Kubernetes GitOps Platform",
+    "description": "GitOps-driven Kubernetes operations: declarative manifests stored in Git, automated drift detection and reconciliation, environment promotion workflows, progressive delivery (canary/blue-green), and built-in secrets management with external vault sync.",
+    "icon": "\u2638\ufe0f",
+    "features": [
+      "Declarative manifests in Git \u2014 single source of truth for every cluster",
+      "Drift detection + auto-reconciliation every 60 seconds",
+      "Environment promotion: dev \u2192 staging \u2192 prod with approval gates",
+      "Progressive delivery: canary, blue-green, feature flags, canary analysis",
+      "Secrets: Vault, AWS Secrets Manager, Azure Key Vault with auto-rotation"
+    ],
+    "benefits": [
+      "Reduce change-failure rate 50-80% via declarative GitOps + audit trail",
+      "Deploy environments 5-10\u00d7 faster with automated promotion pipelines",
+      "Eliminate it works on my machine via environment-per-branch workflows"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "749",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-kubernetes-gitops-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-kubernetes-gitops-platform",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Kubernetes GitOps Platform",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-hybrid-multi-cloud-orchestrator",
+    "title": "Hybrid Multi-Cloud Orchestrator",
+    "description": "Single-pane hybrid-multi-cloud management: deploy, monitor, and govern workloads across AWS, Azure, GCP, and on-prem from a unified control plane with standardised cost, security, and compliance dashboards.",
+    "icon": "\u2601\ufe0f",
+    "features": [
+      "Unified control plane deploys to any cloud or on-prem with a single API",
+      "Standardised cost dashboard: per-workload spend across all clouds, anomaly alerts",
+      "Unified security posture: CSPM findings pitched against unified CIS/PCI benchmark",
+      "Federated identity: SSO/SAML/OIDC across all clouds",
+      "Policy engine OPA \u2014 policy-as-code to guard all infrastructure agnostic of provider"
+    ],
+    "benefits": [
+      "Avoid cloud-provider lock-in: move any workload between clouds in hours not months",
+      "Unify cloud spend: typically 15-25% savings from enterprise-wide negotiated discounts",
+      "One security dashboard vs. juggling separate AWS/Azure/GCP security consoles"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "999",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-hybrid-multi-cloud-orchestrator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-hybrid-multi-cloud-orchestrator",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Hybrid Multi-Cloud Orchestrator",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-serverless-api-platform",
+    "title": "Serverless API Platform",
+    "description": "Zero-infrastructure serverless REST + GraphQL API layer: auto-scales to millions of RPS, pay-per-invocation billing, built-in authentication, rate-limiting, caching, and observability. Includes free tier and CI/CD auto-deploy from Git.",
+    "icon": "\u26a1",
+    "features": [
+      "Auto-scaling \u2014 handles 10 to 10 000 000 RPS without configuration change",
+      "Serverless HTTP workers Node.js, Python, Go, Rust with edge deployment",
+      "Built-in REST + GraphQL API, schema validation, auto-generated OpenAPI spec",
+      "Auto-deploy CI/CD pipelines per-branch with staging environments",
+      "Auth: OAuth2, API keys, mTLS \u2014 all configurable via dashboard"
+    ],
+    "benefits": [
+      "Pay-per-invocation model: 70-90% infra cost reduction vs. always-on servers",
+      "Deploy REST or GraphQL APIs in minutes without DevOps involvement",
+      "Zero-tuning auto-scaling removes over-provisioning and heads-of-department cost savings"
+    ],
+    "pricing": {
+      "basic": "79",
+      "pro": "349",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-serverless-api-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-serverless-api-platform",
+    "category": "cloud",
+    "popular": false,
+    "nav_name": "Serverless API Platform",
+    "is_featured": false
+  },
+  {
+    "id": "it-api-gateway-management",
+    "title": "API Gateway Management",
+    "description": "Enterprise API gateway: rate limiting, API key management, OAuth2 + mTLS, usage analytics, developer portal, request/response transforms, and dead-letter queue handling across cloud and on-prem APIs.",
+    "icon": "\ud83c\udf10",
+    "features": [
+      "Centralised rate limiting, throttling, protocol transforms",
+      "OAuth2, mTLS, API-key auth with role-based scopes",
+      "Developer self-service portal + SDK generation",
+      "Built-in developer portal: docs, try-it console, usage analytics",
+      "Dead-letter queue + retry logic with configurable backoff"
+    ],
+    "benefits": [
+      "Protect backends from traffic spikes without cloud-proxy lock-in",
+      "API onboarding time for partners drops from weeks to hours",
+      "Usage insights + quota controls save 20-35% on API gateway spend"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "549",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-api-gateway-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-api-gateway-management",
+    "category": "it",
+    "popular": false,
+    "nav_name": "API Gateway Management",
+    "is_featured": false
+  },
+  {
+    "id": "it-code-quality-governance",
+    "title": "Code Quality & Governance Platform",
+    "description": "Automated code-quality scanning: static analysis, lint coverage gates, dependency vulnerability CVE detection, code smell auditor, branch-protection + quality-gate CI/CD enforcement, and actionable fix suggestions.",
+    "icon": "\u2699\ufe0f",
+    "features": [
+      "Multi-lang static analysis 20+ languages, custom rulesets",
+      "CVE/GHSA dependency scanning with severity-graded alerts",
+      "Code-smell auditor + complexity hot-spot mapper",
+      "Quality-gate CI/CD blocks merge on quality score threshold",
+      "IDE plugin: VS Code + JetBrains \u2014 inline issue highlight + auto-fix"
+    ],
+    "benefits": [
+      "Cut production bugs by 40-70% via automated pre-merge quality gates",
+      "Save 8-12 engineering hours per sprint on manual peer review of style issues",
+      "Automatically stay CVE-clean with zero-day patch alerts CISA KEV + Exploit-DB matched"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "199",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-code-quality-governance",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-code-quality-governance",
+    "category": "it",
+    "popular": false,
+    "nav_name": "Code Quality & Governance Platform",
+    "is_featured": false
+  },
+  {
+    "id": "data-graph-analytics-engine",
+    "title": "Graph Analytics & Network Intelligence Engine",
+    "description": "Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-path analysis, centrality scoring, and interactive visual exploration with Cypher-like query language.",
+    "icon": "\ud83d\udd78\ufe0f",
+    "features": [
+      "Auto-build relationship graphs from any tabular data via auto-linking columns",
+      "Community detection + clustering: Louvain, label propagation, clique percolation",
+      "Shortest-path, betweenness, PageRank \u2014 20+ standard graph algorithms",
+      "Cypher-like graph query language with visual query builder",
+      "Interactive graph visualisation with zoom, filter, highlight, force-layout options"
+    ],
+    "benefits": [
+      "Surface hidden fraud rings and risk clusters invisible in tabular reports",
+      "Reduce analyst investigation time 50% vs. manual relationship tracing in spreadsheets",
+      "Build recommendation engines faster \u2014 no custom graph DB admin required"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "599",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-graph-analytics-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-graph-analytics-engine",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Graph Analytics & Network Intelligence Engine",
+    "is_featured": false
+  },
+  {
+    "id": "data-image-video-search",
+    "title": "Image & Video Semantic Search",
+    "description": "CLIP + multi-modal embedding semantic search across image and video libraries: object/scene/action detection, temporal segmentation, thumbnail clustering, natural-language query support, and vector-powered similarity matching at scale.",
+    "icon": "\ud83c\udfac",
+    "features": [
+      "Multi-modal CLIP embeddings for image and video frame similarity",
+      "Object, scene, action detection, OCR text extraction from frames and video",
+      "Temporal segmentation: shot boundary, scene change, key-frame extraction per video clip",
+      "Natural language query: 3 words to find all videos mentioning X brand or Y activity",
+      "Vector index: Milvus or Pinecone; scales to 100M+ clips with sub-10ms query"
+    ],
+    "benefits": [
+      "Search video archives by description: find the clip of X product in Y city in 5 seconds vs. manual review",
+      "Build visual product search for e-commerce: zero nuisance from differing angle, lighting, crop",
+      "Auto-curate branded content: find all brand mentions in video without human review"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "749",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-image-video-search",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-image-video-search",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Image & Video Semantic Search",
+    "is_featured": false
+  },
+  {
+    "id": "data-realtime-time-series-analytics",
+    "title": "Real-Time Time-Series Analytics Platform",
+    "description": "High-throughput real-time analytics for IoT, monitoring, and business metrics: stores, aggregates, and queries billions of events per day at <200ms p99 latency. Includes alert rules, anomaly detection, SQL + Python query engine, dashboards, and Grafana/PostgreSQL-compatible endpoints.",
+    "icon": "\ud83d\udcc8",
+    "features": [
+      "Ingestion: 1 million+ events/second per cluster with exactly-once guarantees",
+      "Down-sampling + retention policy: raw for 7 d, 1-minute roll-ups for 90 d, hourly for 3 y",
+      "SQL query engine + Python SDK for time-series queries in one familiar language",
+      "Alert rules: threshold, rate-of-change, compound condition \u2014 Slack, PagerDuty, Email, Webhook",
+      "Grafana + PostgreSQL wire-protocol: connect existing dashboards in 2 minutes"
+    ],
+    "benefits": [
+      "Query 10 billion time-series events in under 2 seconds \u2014 no pre-aggregation required",
+      "P99 query latency <200 ms means SLA dashboards feel instantaneous to ops teams",
+      "Alert fatigue drops 60% vs dumb-threshold alerts because anomaly-detection rules adapt to seasonality"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "599",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-realtime-time-series-analytics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-realtime-time-series-analytics",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Real-Time Time-Series Analytics Platform",
+    "is_featured": false
+  },
+  {
+    "id": "automation-invoice-purchase-order-processing",
+    "title": "Invoice & Purchase Order Processing",
+    "description": "AI-powered invoice + PO processing pipeline: scans, OCR, vendor matching via payment history, line-item validation vs. PO, three-way match against GRN, GL-code auto-suggestion, ERP posting stub, and exception-routing for unmatched documents.",
+    "icon": "\ud83d\udcc4",
+    "features": [
+      "Multi-format OCR: scanned PDF, email attachment, vendor portal, API, paper mail with routing",
+      "Three-way match: invoice vs. PO vs. goods-received note auto-compared per line item",
+      "GL-code suggestion: vendor + line-item category ML classification with override audit trail",
+      "Exception routing: unmatched \u2192 human worker queue with one-click approve/reject/edit",
+      "ERP posting API stub: NetSuite, QuickBooks, Sage, Xero, Workday all pre-wired"
+    ],
+    "benefits": [
+      "Auto-process up to 90% of invoices end-to-end without human touch \u2014 AP team only handles exceptions",
+      "Cut invoice-processing cost from $12-20 per doc to $1-2 per doc",
+      "Eliminate duplicate payment risk with automated PO match \u2014 avoid painful subsequent vendor refunds"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "549",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-invoice-purchase-order-processing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-invoice-purchase-order-processing",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Invoice & Purchase Order Processing",
+    "is_featured": false
+  },
+  {
+    "id": "data-synthetic-data-generator",
+    "title": "Synthetic Data Generator & Privacy Shield",
+    "description": "Generative synthetic data platform for ML training, software testing, and GDPR/CCPA privacy compliance: maintains statistical distributions of real data while producing 100% synthetic records that pass all real-world QA and validation tests without human PII.",
+    "icon": "\ud83c\udfad",
+    "features": [
+      "Generative tabular model: preserves statistical distributions and edge-cases from real data",
+      "PII-free guarantee: no real person IDs, SSNs, phone numbers, addresses, or credit card numbers in output",
+      "Edge-case preservation: rare events, outliers, null patterns and multi-filed relationship preserved statistically",
+      "Schema evolution: same generator continues generating data from updated schema as schema evolves",
+      "SDV + CTGAN engine: zero-code, point-and-click configuration or full Python API"
+    ],
+    "benefits": [
+      "Ship ML models trained on higher-fidelity training data while staying GDPR/CCPA compliant \u2014 no PII exposure",
+      "Accelerate software testing: generate unlimited realistic test data matching production schema in one API call",
+      "CI/CD data pipeline: generate reproducible test data from production spec for integration and acceptance test suites"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "399",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-synthetic-data-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-synthetic-data-generator",
+    "category": "data",
+    "popular": false,
+    "nav_name": "Synthetic Data Generator & Privacy Shield",
+    "is_featured": false
+  },
+  {
+    "id": "automation-social-media-content-hub",
+    "title": "Social Media Content Hub & Publisher",
+    "description": "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, Instagram, Facebook, TikTok, YouTube), real-time engagement monitoring, and weekly performance reporting.",
+    "icon": "\ud83d\udce2",
+    "features": [
+      "AI content drafting: platform-optimised posts per network with tone + brand voice pre-trained",
+      "Content calendar kanban: quarterly calendar with drag-drop scheduling per platform",
+      "Bulk publishing: schedule 50+ posts across 6 platforms in one session with platform-native format",
+      "Real-time engagement: mentions, DMs, comments all in one inbox with AI-suggested replies",
+      "Weekly performance report: top-performing content type, audience growth trend, best posting time slot"
+    ],
+    "benefits": [
+      "Social media managers publish 5\u00d7 more content per week \u2014 AI drafts + bulk publish removes the bottleneck",
+      "Maintain consistent brand voice across all networks \u2014 tone-guided AI prevents rogue tone on LinkedIn vs TikTok",
+      "Cut time spent per week on content ideation and scheduling by 70-80%"
+    ],
+    "pricing": {
+      "basic": "79",
+      "pro": "299",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/automation-social-media-content-hub",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-social-media-content-hub",
+    "category": "automation",
+    "popular": false,
+    "nav_name": "Social Media Content Hub & Publisher",
+    "is_featured": false
+  },
+  {
+    "id": "cloud-edge-ai-deployment-platform",
+    "title": "Edge AI Deployment Platform",
+    "description": "One-click edge AI model deployment to 50k+ global edge points-of-presence: ONNX/TensorRT/GGUF model package, auto-scaling inference, A/B model rollout, cold-warm-cache tiering, and robust offline-first sync for disconnected sites.",
+    "icon": "\ud83c\udf0d",
+    "features": [
+      "One-click deploy ONNX/TensorRT/GGUF model to global edge PoPs",
+      "Cold-warm model cache tiers reduce first-inference latency by 80%+",
+      "A/B model rollout: blue-green promotion of new model versions with traffic splitting",
+      "Offline-first sync buffer: 24 h message queue for disconnected branch-store sites",
+      "Hardware-accelerated inference: works on Jetson, Coral TPU, RK3588 edge hardware"
+    ],
+    "benefits": [
+      "Inference latency <50ms for retail and industrial edge use cases vs. 300+ ms round-trip to cloud",
+      "Model version rollover in 30 s vs. hours of cloud-deployment pipeline wrangle",
+      "Offline-first operation means edge store shelf-price updates stay synced even with 2 d of fibre cut"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "899",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-edge-ai-deployment-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-edge-ai-deployment-platform",
+    "category": "cloud",
+    "popular": true,
+    "nav_name": "Edge AI Deployment Platform",
+    "is_featured": false
+  },
+  {
+    "category": "data",
+    "id": "data-realtime-trending-aggregator",
+    "title": "Real-time Event & Trending Aggregator",
+    "description": "Streaming data platform: Flink/Redpanda backbone, windowed aggregation at sub-second latency, trend-detection anomaly alerts, opentelemetry distributed-tracing per event, dashboarding per team with live drill-through.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": true,
+    "features": [
+      "Flink + Redpanda backbone with sub-second windowed aggregation",
+      "Trend-detection + anomaly-alert engine with statistical significance scoring",
+      "Opentelemetry per event \u2014 correlate any aggregate back to source event in one click",
+      "Live dashboard with drill-through per team with RBAC on views and rows"
+    ],
+    "benefits": [
+      "Know what your product or your API are doing as they're happening, not the next morning",
+      "Trend-detection alerting on spikes in errors or latency catches outages before customers call",
+      "Per-event tracing means no more 'event-lost' midnight firefight",
+      "Time-limited dashboard views are the right way to share live data with stakeholders"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-hybrid-multicloud-networking",
+    "title": "Hybrid + Multi-Cloud Networking",
+    "description": "Zero-trust networking across on-prem/edge/cloud: cloud-router fabric connects VPCs across AWS/GCP/Azure, on-prem data-centre via WireGuard or IPSec, global anycast front-door with WAF.",
+    "basic": "5999",
+    "pro": "17999",
+    "enterprise": "59999",
+    "popular": true,
+    "features": [
+      "Cloud-router fabric \u2014 single control-plane connects up to 40 VPCs/accounts",
+      "Site-to-cloud connectivity via WireGuard tunnel or IPSec with automated failover",
+      "Global anycast front-door with WAF + geo-ip routing per user",
+      "Zero-trust per-connection IAM authorization beyond the network boundary"
+    ],
+    "benefits": [
+      "Cost-optimised networking saves $50K/yr on cross-region bandwidth vs. raw cloud provider costs",
+      "DR to a lower-cost region in under 60 minutes",
+      "Apply security policy once at the edge and enforce everywhere",
+      "Team can use the same VPC-IDs across dev/staging/prod in any cloud or region"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-cloud-zero-trust-access",
+    "title": "Cloud Zero Trust Access (ZTNA)",
+    "description": "Zero trust network access for cloud and on-prem resources: per-application least-privilege policy, device posture context, 1-click revoke per identity, 75% faster access time for legitimate users, full session recording.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "19999",
+    "popular": false,
+    "features": [
+      "Per-application least-privilege access policy from identity to cookie",
+      "Device posture context \u2014 certificate validity, OS, browser assessment before granting",
+      "1-click kill/revoke per user identity across all resources",
+      "Full session recording with playable video replay per access session"
+    ],
+    "benefits": [
+      "Users blessedly fast SSH and HTTPS access without tear-down VPN",
+      "1-click revocation keeps compromised identity blast-radius strictly bounded",
+      "Privileged access introduced with per-session fine-grained token and audit trail",
+      "Access offboarded exactly when employee leaves \u2014 zero lingering shadow-permissions"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-browser-isolation-platform",
+    "title": "Browser Isolation Platform",
+    "description": "Remote browser isolation: inspect every uncertified or risky site in cloud sandbox, drive-by download protection, credential-forwarding safe mock environment, phishing-engine sandbox analysis, bandwidth savings 30+.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": false,
+    "features": [
+      "Remote browser isolation \u2014 all rendering occurs off-device in a cloud sandbox",
+      "Drive-by download protection \u2014 adware aphishing payloads isolated from endpoint",
+      "Credential-forwarding sandbox \u2014 test credentials safely no overposting to real accounts",
+      "Phishing engine sandbox analysis \u2014 30-day credential-reuse window check in isolated browser"
+    ],
+    "benefits": [
+      "Zero malware reaches endpoint from the unclassified internet",
+      "Phishing credential reuse checks take 5 minutes not 5 days",
+      "Bandwidth savings of over 30% vs. full browser VDI",
+      "IT picks up no new virus protection costs on client OS"
+    ]
+  },
+  {
+    "category": "security",
+    "id": "security-sbom-supply-chain",
+    "title": "SBOM & Supply Chain Security",
+    "description": "Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.",
+    "basic": "2499",
+    "pro": "7999",
+    "enterprise": "27999",
+    "popular": true,
+    "features": [
+      "SBOM + VEX generated per build with CycloneDX + SPDX dual-format",
+      "CVE + SLSA provenance score every build \u2014 compare across time and distributors",
+      "Dependency-graph diff per PR \u2014 highlight transitive dependency changes before merge",
+      "SSL SA L3 attestation with reproducible-build verification per environment"
+    ],
+    "benefits": [
+      "Meet US Executive Order 14028 requirements with zero manual SBOM work",
+      "PR-level dependency-diff halted before merge for transitive dependency changes",
+      "Provenance scoring means you know what source you trust and what to question",
+      "Regulatory audit readiness \u2014 attestation and SBOM already on-demand"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-integrated-commerce-flows",
+    "title": "Integrated Commerce Flow Orchestrator",
+    "description": "Commerce workflow automation: cart-to-delivery orchestrator connecting Shopify/BigCommerce/WooCommerce with payment and shipping providers, automated RMA/return-handling, subscription-billing orchestrator, revenue reconciliation engine.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": true,
+    "features": [
+      "Omnichannel cart-to-delivery orchestration across Shopify, BigCommerce, and WooCommerce",
+      "Automated RMA and return handling end-to-end \u2014 refund, restock, denomination dispatch",
+      "Subscription billing orchestrator \u2014 proration, cohort billing, proration",
+      "Revenue reconciliation engine against payment providers with always-reconciled ledger"
+    ],
+    "benefits": [
+      "Cart-to-cash end-to-end down from 15 MAN-days to 2 hours",
+      "No more manually matching payment-provider tables to order inboxes",
+      "Subscription proration calculated correctly for thousands of cohorts without manual process",
+      "Reconciliation engine runs grid-matching at 0400 and alerts you before staff arrive"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-document-intelligence-pipeline",
+    "title": "Legal Document Intelligence Pipeline",
+    "description": "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause extraction, anomaly flag, e-signature ready, approval routing.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": true,
+    "features": [
+      "OCR + NLP pipeline orchestrating multiple document types in one session",
+      "Auto-classification \u2014 any document placed in input folder routed to correct intake path",
+      "Clause extraction, anomaly flag, and summarisation in same pipeline step",
+      "Approval routing with journalised highlight \u2014 every step durably signed and trusting"
+    ],
+    "benefits": [
+      "Digitise 10,000 pages of paper documents in under 48 hours with 97% accuracy",
+      "Doc throughput of 1,000 pages/hr goes to right business flow automatically without manual triage",
+      "Anomaly flag on invoices or contracts reduces processing teams' manual review time 90%",
+      "Digital signature path removes the engraving bottleneck of physical signature"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-multi-channel-campaign-manager",
+    "title": "Multi-Channel Campaign Manager",
+    "description": "Orchestrate campaigns across email, SMS, social, push, and ads from one campaign studio: audience-segmentation engine, content-Calendar view, A/B-n testing, real-time ROI dashboard, attribution across 10 channels.",
+    "basic": "2499",
+    "pro": "7499",
+    "enterprise": "22999",
+    "popular": true,
+    "features": [
+      "Multi-channel campaign builder works across email, SMS, social, push, and ads",
+      "Audience segmentation engine \u2014 behavioural and demographic criteria enriched per user",
+      "Content calendaring view visualises live campaigns across every channel",
+      "Real-time ROI dashboard with cross-channel attribution across up to 10 touchpoints"
+    ],
+    "benefits": [
+      "One studio replaces 5 tools, per-channel billing at unified rate",
+      "A/B testing \u2014 test visual, copy, and send-time combinations and compare across channels",
+      "Cross-channel attribution means you know which channel drove each dollar of conversion",
+      "Campaign studio saves marketing teams 10+ hours per week on campaign coordination"
+    ]
+  },
+  {
+    "category": "automation",
+    "id": "automation-process-mining-intelligence",
+    "title": "Process Mining Intelligence",
+    "description": "Event-log based process discovery: take event-logs from ERP, CRM, BPM systems, discover actual vs. intended process maps, identify bottleneck and deviation, quantify handoff wait time, change-impact simulation.",
+    "basic": "3999",
+    "pro": "11999",
+    "enterprise": "39999",
+    "popular": false,
+    "features": [
+      "Event-log ingestion from ERP, CRM, and BPM \u2014 10+ standard connectors",
+      "Process discovery \u2014 actual vs. intended step map with frequency breakdown",
+      "Bottleneck identification \u2014 highlight choke points on process with deviation rate",
+      "Change-impact simulation \u2014 predict how a new step or rule change affects total cost and lead time"
+    ],
+    "benefits": [
+      "Find the 20% of process steps that consume 80% of cycle time",
+      "Run change simulation before deploying to production \u2014 score change risk before approval",
+      "Compliance audit trail \u2014 every generation and run timestamped schema-ready",
+      "Process mining means DRI returns to business unit with insights they trust without translator"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-api-gateway-openapi",
+    "title": "API Gateway + OpenAPI Management",
+    "description": "Enterprise API gateway: OpenAPI 3.1 lifecycle, rate-limit/quota per key, threat-protection WAF rules, schema registry, live API analytics, developer portal with interactive docs and sandbox.",
+    "basic": "1499",
+    "pro": "4999",
+    "enterprise": "14999",
+    "popular": true,
+    "features": [
+      "OpenAPI 3.1 spec lifecycle \u2014 versioning, deprecation, staging",
+      "Rate-limit + quota per consumer key with brotten alerting",
+      "Managed threat-protection WAF rule set for API endpoints",
+      "Schema registry + mocking + developer portal with embedded sandbox"
+    ],
+    "benefits": [
+      "Govern 1000+ endpoints from one control plane",
+      "Publish API docs that developers actually use",
+      "Threat protection without touching your WAF",
+      "Analytics surface shows which endpoints under-utilised and which overloaded"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-backup-dr-bc-as-a-service",
+    "title": "Backup / DR/BCaaS",
+    "description": "Managed backup and disaster recovery: 3-2-1-1-airgap policy, every-30s WORM snapshots, point-in-time restore to 90 days, failover tests every 30 min, 4-hour RTO, 15-min RPO SLA.",
+    "basic": "1999",
+    "pro": "6999",
+    "enterprise": "24999",
+    "popular": true,
+    "features": [
+      "3-2-1-1-airgap backup policy enforced automatically",
+      "WORM snapshots every 30 seconds, point-in-time restore to 90 days",
+      "Automatic failover testing every 30 minutes with pass/fail report",
+      "4-hour RTO and 15-minute RPO SLA with financial credit clause"
+    ],
+    "benefits": [
+      "Sleep through outages knowing data is immutably air-gapped",
+      "Show board-level DR readiness on demand with pass/fail reports",
+      "RTO of 4 hours means only half a day of downtime in worst case",
+      "RPO of 15 minutes means zero more than 15 minutes of data lost"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-cicd-security-gate-as-service",
+    "title": "CI/CD Security Gate-as-a-Service",
+    "description": "Shift-left CI/CD security: SAST/DAST/SCA/containers per PR/push branch gate with auto-fix PRs for vulnerabilities, SBOM generation, false-positive suppression.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "17999",
+    "popular": false,
+    "features": [
+      "SAST/DAST/SCA/container scanning per PR with 5-minute deadline",
+      "Vulnerability classification: CWE+CVSS+remotely-exploitable/reachable",
+      "Auto-fix PR against approved fix forms \u2014 merge approved change",
+      "Verified SBOM generated per build with SPDX+cyclonedx exports"
+    ],
+    "benefits": [
+      "Halt every vulnerability before it reaches staging",
+      "No more opening a vulnerability ticket and forgetting",
+      "Open-source dependency risks eliminated before deployment",
+      "SBOM-fed SLA means regulatory customers can verify your software BOM on demand"
+    ]
+  },
+  {
+    "category": "it",
+    "id": "it-endpoint-security-compliance-monitor",
+    "title": "Endpoint Security & Compliance Monitor",
+    "description": "Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PCI/SOX/ISO27001 with automated audit evidence export.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": false,
+    "features": [
+      "EDR engine with behavioural analytics, endpoint firewall, exploit prevention",
+      "Patch catalog covering CVE/third-party blobs \u2014 auto-deploy fix per deployment group",
+      "Compliance posture dashboard for HIPAA/PCI/SOX/ISO27001/GDPR",
+      "Automated audit evidence export package per framework on demand"
+    ],
+    "benefits": [
+      "Know every endpoint's compliance posture without sending a device offsite",
+      "Zip-based export package means one-click audit response per framework",
+      "Patch CVE not by its disclosure date but by its patch-readiness score",
+      "Endpoint firewall stops lateral movement as EDR detects and alarms"
+    ]
+  }
+]

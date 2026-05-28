@@ -1,0 +1,35 @@
+# Ensures docs/CTO-OPERATING-PHILOSOPHY.md keeps CTO mandate anchors (grep-only).
+
+name: docs/CTO philosophy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '15 8 * * 0' # Sundays 08:15 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-cto-philosophy-md-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  cto-doc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: CTO operating philosophy anchors
+        run: |
+          set -euo pipefail
+          test -f docs/CTO-OPERATING-PHILOSOPHY.md
+          test -s docs/CTO-OPERATING-PHILOSOPHY.md
+          grep -Fq '# CTO operating philosophy (Zion Tech Group)' docs/CTO-OPERATING-PHILOSOPHY.md
+          grep -Fq 'AGENTS.md' docs/CTO-OPERATING-PHILOSOPHY.md
+          grep -Fq 'single integration branch' docs/CTO-OPERATING-PHILOSOPHY.md
+          grep -Fq 'commercial@ziontechgroup.com' docs/CTO-OPERATING-PHILOSOPHY.md
+          grep -Fq 'secrets in git' docs/CTO-OPERATING-PHILOSOPHY.md
+          echo 'ok: docs/CTO-OPERATING-PHILOSOPHY.md'

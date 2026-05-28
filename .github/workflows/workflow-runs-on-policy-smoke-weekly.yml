@@ -1,0 +1,26 @@
+# Ruby-free weekly smoke: runs-on label policy only (very fast).
+
+name: Workflow runs-on policy smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '45 6 * * 3' # Wednesdays 06:45 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-runs-on-policy-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  runs-on-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: runs-on policy guards (subset)
+        run: bash scripts/automation/run-workflow-grep-guards.sh --runs-on-policy

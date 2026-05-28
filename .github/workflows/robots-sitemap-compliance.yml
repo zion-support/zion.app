@@ -1,0 +1,25 @@
+name: robots-sitemap-compliance
+true:
+  schedule:
+  - cron: 0 3 * * 1
+  workflow_dispatch: null
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6.0.2
+    - name: Setup Node
+      uses: actions/setup-node@v6.3.0
+      with:
+        node-version: '20'
+    - name: Install deps
+      run: npm ci
+    - name: Run robots/sitemap compliance check
+      run: node automation/robots-sitemap-check.cjs
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 10

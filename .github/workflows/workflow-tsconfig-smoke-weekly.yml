@@ -1,0 +1,41 @@
+# Ensures tsconfig.json stays valid JSON with compilerOptions (required for type-check / postinstall).
+
+name: tsconfig.json smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '23 7 * * 4' # Thursdays 07:23 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: workflow-tsconfig-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  tsconfig:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: tsconfig.json exists, parses, has compilerOptions
+        run: |
+          set -euo pipefail
+          test -f tsconfig.json
+          test -s tsconfig.json
+          node -e "
+            const fs = require('fs');
+            const j = JSON.parse(fs.readFileSync('tsconfig.json','utf8'));
+            if (j === null || typeof j !== 'object' || Array.isArray(j)) process.exit(1);
+            if (j.compilerOptions == null || typeof j.compilerOptions !== 'object' || Array.isArray(j.compilerOptions)) process.exit(1);
+            console.log('ok: tsconfig.json shape');
+          "

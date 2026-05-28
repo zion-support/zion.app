@@ -1,0 +1,31 @@
+# Ensures workflow-reusable-ci-dispatch.yml keeps manual reusable-CI wiring (grep-only).
+name: workflow reusable CI dispatch smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '2 9 * * 4' # Thursdays 09:02 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-reusable-ci-dispatch-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  reusable-ci-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-reusable-ci-dispatch.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-reusable-ci-dispatch.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Reusable workflow CI (manual)' "$f"
+          grep -Fq 'workflow_dispatch:' "$f"
+          grep -Fq 'run_contracts:' "$f"
+          grep -Fq 'group: workflow-reusable-ci-dispatch' "$f"
+          grep -Fq 'reusable-workflow-ci.yml' "$f"
+          grep -Fq 'inputs.run_contracts' "$f"
+          echo "ok: $f"

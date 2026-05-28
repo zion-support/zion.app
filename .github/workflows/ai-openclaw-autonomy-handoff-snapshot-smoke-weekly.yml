@@ -1,0 +1,32 @@
+# Ensures ai-openclaw-autonomy-handoff-snapshot.yml keeps handoff snapshot anchors (grep-only).
+name: ai openclaw autonomy handoff snapshot workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '49 11 * * 3' # Wednesdays 11:49 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-autonomy-handoff-snapshot-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-autonomy-handoff-snapshot-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-autonomy-handoff-snapshot.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-autonomy-handoff-snapshot.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: OpenClaw autonomy handoff snapshot' "$f"
+          grep -Fq 'group: openclaw-handoff-snapshot' "$f"
+          grep -Fq 'cancel-in-progress: true' "$f"
+          grep -Fq "cron: '23 * * * *'" "$f"
+          grep -Fq 'openclaw-autonomy-handoff.cjs' "$f"
+          grep -Fq 'openclaw-handoff-validate.cjs' "$f"
+          grep -Fq 'openclaw-autonomy-handoff-latest.json' "$f"
+          echo "ok: $f"

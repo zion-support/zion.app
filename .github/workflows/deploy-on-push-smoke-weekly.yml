@@ -1,0 +1,34 @@
+# Ensures deploy-on-push.yml keeps workflow_run wiring + Netlify + push-helper (grep-only).
+name: deploy on push smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '2 11 * * 4' # Thursdays 11:02 UTC
+  workflow_dispatch:
+concurrency:
+  group: deploy-on-push-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  deploy-on-push-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: deploy-on-push.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/deploy-on-push.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Deploy on Push' "$f"
+          grep -Fq 'workflow_run:' "$f"
+          grep -Fq 'CI/CD Pipeline' "$f"
+          grep -Fq 'group: deploy-on-push-main' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq 'github.token' "$f"
+          grep -Fq 'GitHub Pages' "$f"
+          grep -Fq 'deploy:status:generate' "$f"
+          grep -Fq 'commit-and-push-main.sh' "$f"
+          echo "ok: $f"

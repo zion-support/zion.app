@@ -1,0 +1,69 @@
+name: AI App Autonomy Guarded Cycle
+
+on:
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: 'Which autonomy cycle to run'
+        required: true
+        default: 'quick'
+        type: choice
+        options:
+          - quick
+          - full
+          - both
+      trigger_deploy:
+        description: 'Trigger Netlify deploy when cycles succeed'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-app-autonomy-guarded
+  cancel-in-progress: false
+
+jobs:
+  autonomy-guarded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run guarded quick autonomy cycle
+        if: github.event.inputs.cycle == 'quick' || github.event.inputs.cycle == 'both'
+        env:
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy == 'true' && '1' || '' }}
+        run: npm run app:autonomy-quick-cycle
+
+      - name: Run guarded full autonomy cycle
+        if: github.event.inputs.cycle == 'full' || github.event.inputs.cycle == 'both'
+        env:
+#           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TRIGGER_DEPLOY: ${{ github.event.inputs.trigger_deploy == 'true' && '1' || '' }}
+        run: npm run app:autonomy-full-cycle
+

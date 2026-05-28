@@ -1,0 +1,29 @@
+# Ensures workflow-action-pin-guard.yml keeps path triggers + --pin grep subset (grep-only).
+name: workflow action pin guard smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '38 9 * * 4' # Thursdays 09:38 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-action-pin-guard-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  action-pin-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-action-pin-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-action-pin-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow action pin guard' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'branches: [main]' "$f"
+          grep -Fq 'run-workflow-grep-guards.sh --pin' "$f"
+          echo "ok: $f"

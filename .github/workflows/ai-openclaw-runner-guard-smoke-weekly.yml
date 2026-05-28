@@ -1,0 +1,35 @@
+# Ensures ai-openclaw-runner-guard.yml keeps runner guard anchors (grep-only).
+name: ai openclaw runner guard workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '55 11 * * 3' # Wednesdays 11:55 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-runner-guard-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-runner-guard-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-runner-guard.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-runner-guard.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: OpenClaw runner guard' "$f"
+          grep -Fq 'group: openclaw-runner-guard' "$f"
+          grep -Fq "cron: '35 */6 * * *'" "$f"
+          grep -Fq 'openclaw-runner-anomaly-latest.json' "$f"
+          grep -Fq 'openclaw-runner-guard-state.json' "$f"
+          grep -Fq 'npm run openclaw:actions:queue' "$f"
+          grep -Fq 'npm run openclaw:actions:policy' "$f"
+          grep -Fq 'npm run openclaw:runner' "$f"
+          grep -Fq 'openclaw-runner-anomaly|critical|v1' "$f"
+          grep -Fq 'openclaw-runner-guard|dry-run-fail|v2' "$f"
+          echo "ok: $f"

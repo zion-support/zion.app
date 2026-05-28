@@ -1,0 +1,56 @@
+name: AI Promotion Anomaly Remediation Seed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 */12 * * *'
+
+jobs:
+  remediation-seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Detect anomaly and seed remediation PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          report="automation/reports/promotion-confidence-history.json"
+          [ -f "$report" ] || exit 0
+          divergence=$(node -e "const fs=require('fs');const h=JSON.parse(fs.readFileSync('$report','utf8'));const s=a=>a.length?a.reduce((x,y)=>x+Number(y.avgScore||0),0)/a.length:100;const d=Math.round(s(h.slice(-30))-s(h.slice(-7)));console.log(d)")
+          if [ "$divergence" -lt 12 ]; then
+            echo "No anomaly requiring remediation seed."
+            exit 0
+          fi
+          branch="promotion-anomaly-remediation-${{ github.run_id }}"
+          git checkout -b "$branch"
+          mkdir -p automation/reports
+          cat > automation/reports/promotion-anomaly-remediation-seed.md <<'EOF'
+          # Promotion Anomaly Remediation Seed
+
+          This auto-generated seed suggests safe actions when confidence anomaly divergence is high:
+          - temporarily raise anomaly threshold by +2 until stability returns
+          - reduce low-confidence card prominence
+          - run stale-promotion guard + confidence report twice per cycle
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f automation/reports/promotion-anomaly-remediation-seed.md
+          git commit -m "chore(promotion): seed anomaly remediation plan"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "chore(promotion): seed anomaly remediation plan" --body "Auto-generated remediation seed for elevated promotion confidence anomaly divergence."
+

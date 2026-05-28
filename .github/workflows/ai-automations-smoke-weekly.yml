@@ -1,0 +1,43 @@
+# Ensures ai-automations.yml keeps schedule/job/artifact anchors (grep-only).
+name: ai automations workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '25 12 * * 3' # Wednesdays 12:25 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automations-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  ai-automations-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-automations.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automations.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Automations (Weekly)' "$f"
+          grep -Fq 'group: ai-automations' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 8 * * 1'" "$f"
+          grep -Fq 'seo-audit:' "$f"
+          grep -Fq 'changelog:' "$f"
+          grep -Fq 'performance:' "$f"
+          grep -Fq 'ai-seo-content-optimizer.cjs' "$f"
+          grep -Fq 'ai-changelog-generator.cjs' "$f"
+          grep -Fq 'ai-site-performance-advisor.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'seo-report' "$f"
+          grep -Fq 'performance-report' "$f"
+          echo "ok: $f"

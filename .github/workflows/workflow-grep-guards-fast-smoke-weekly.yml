@@ -1,0 +1,31 @@
+# Ensures workflow-grep-guards-fast.yml keeps path-scoped PR/push triggers + full grep run (grep-only).
+name: workflow grep guards fast smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '42 8 * * 4' # Thursdays 08:42 UTC
+  workflow_dispatch:
+concurrency:
+  group: workflow-grep-guards-fast-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  fast-guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: workflow-grep-guards-fast.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/workflow-grep-guards-fast.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: Workflow grep guards (script file)' "$f"
+          grep -Fq 'workflow-grep-guards-fast-${{ github.ref }}' "$f"
+          grep -Fq 'pull_request:' "$f"
+          grep -Fq 'branches: [main]' "$f"
+          grep -Fq 'run-workflow-grep-guards.sh' "$f"
+          grep -Fq 'bash scripts/automation/run-workflow-grep-guards.sh' "$f"
+          echo "ok: $f"

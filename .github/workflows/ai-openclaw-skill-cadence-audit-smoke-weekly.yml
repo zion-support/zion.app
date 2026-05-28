@@ -1,0 +1,33 @@
+# Ensures ai-openclaw-skill-cadence-audit.yml keeps cadence/escalation anchors (grep-only).
+name: ai openclaw skill cadence audit workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '44 11 * * 3' # Wednesdays 11:44 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-skill-cadence-audit-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  openclaw-skill-cadence-audit-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-skill-cadence-audit.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-skill-cadence-audit.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Openclaw Skill Cadence Audit' "$f"
+          grep -Fq 'group: ai-openclaw-skill-cadence-audit' "$f"
+          grep -Fq "cron: '40 */8 * * *'" "$f"
+          grep -Fq 'npm run openclaw:skills:audit' "$f"
+          grep -Fq 'openclaw-skill-cadence-audit-latest.json' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

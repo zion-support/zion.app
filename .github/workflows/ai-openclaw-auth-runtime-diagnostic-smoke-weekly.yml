@@ -1,0 +1,33 @@
+# Ensures ai-openclaw-auth-runtime-diagnostic.yml keeps diagnostic + issue hook anchors (grep-only).
+name: ai openclaw auth runtime diagnostic workflow smoke (weekly)
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '46 11 * * 3' # Wednesdays 11:46 UTC
+  workflow_dispatch:
+concurrency:
+  group: ai-openclaw-auth-runtime-diagnostic-smoke-weekly
+  cancel-in-progress: true
+jobs:
+  auth-runtime-diagnostic-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: ai-openclaw-auth-runtime-diagnostic.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-openclaw-auth-runtime-diagnostic.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Openclaw Auth Runtime Diagnostic' "$f"
+          grep -Fq 'group: ai-openclaw-auth-runtime-diagnostic' "$f"
+          grep -Fq "cron: '25 */6 * * *'" "$f"
+          grep -Fq 'npm run openclaw:auth:diagnose' "$f"
+          grep -Fq 'openclaw-auth-runtime-diagnostic-latest.json' "$f"
+          grep -Fq 'gh-issue-close-on-recovery.cjs' "$f"
+          grep -Fq 'gh-issue-dedupe-or-create.cjs' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          echo "ok: $f"

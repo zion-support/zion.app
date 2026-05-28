@@ -1,0 +1,43 @@
+# Ensures ai-automation-improvements.yml keeps schedule/inputs/pipeline anchors (grep-only).
+name: ai automation improvements workflow smoke (weekly)
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '35 12 * * 3' # Wednesdays 12:35 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ai-automation-improvements-smoke-weekly
+  cancel-in-progress: true
+
+jobs:
+  automation-improvements-anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: ai-automation-improvements.yml anchors
+        run: |
+          set -euo pipefail
+          f=.github/workflows/ai-automation-improvements.yml
+          test -f "$f"
+          test -s "$f"
+          grep -Fq 'name: AI Automation Improvements' "$f"
+          grep -Fq 'group: ai-automation-improvements' "$f"
+          grep -Fq 'cancel-in-progress: false' "$f"
+          grep -Fq "cron: '0 10 * * 3'" "$f"
+          grep -Fq 'create_pages:' "$f"
+          grep -Fq 'trigger_fixes:' "$f"
+          grep -Fq 'automation:preflight' "$f"
+          grep -Fq 'ai-automation-improvements-pipeline.cjs' "$f"
+          grep -Fq 'Commit and push fixes' "$f"
+          grep -Fq 'git add -A' "$f"
+          grep -Fq 'actions/upload-artifact@' "$f"
+          grep -Fq 'automation-improvements-report' "$f"
+          grep -Fq 'token:' "$f" && grep -Fq 'github.token' "$f"
+          echo "ok: $f"

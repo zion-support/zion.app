@@ -1,0 +1,66 @@
+name: AI Openclaw Autonomous Cycle
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-openclaw-autonomous-cycle
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '10 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  openclaw-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js (repo baseline)
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Setup Node.js for Openclaw runtime
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: '22'
+
+      - name: Verify Openclaw runtime handoff
+        run: |
+          set -euo pipefail
+          node -e "const major=Number(process.versions.node.split('.')[0]); if(major<22){throw new Error('Openclaw requires Node 22+ runtime.')} console.log('Openclaw runtime OK:', process.version)"
+
+      - name: Run Openclaw auth/runtime diagnostic (best effort)
+        run: npm run openclaw:auth:diagnose
+        continue-on-error: true
+
+      - name: Run Openclaw autonomous cycle (once)
+        run: npm run openclaw:autonomous-once
+        continue-on-error: true
+
+      - name: Run Openclaw guardian check (once)
+        run: npm run openclaw:autonomous-guardian-once
+
+      - name: Upload Openclaw artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: openclaw-cycle-${{ github.run_id }}
+          path: |
+            automation/reports/openclaw-autonomous-app-improver-latest.json
+            automation/reports/openclaw-auth-runtime-diagnostic-latest.json
+            automation/logs/openclaw-autonomous-app-improver.log
+          if-no-files-found: ignore
+          retention-days: 30

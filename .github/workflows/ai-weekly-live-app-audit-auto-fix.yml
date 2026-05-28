@@ -1,0 +1,151 @@
+# Weekly Live App Audit + Auto-Fix + Deploy
+# Runs live UX audit + site link audit, then broken-link fixer + UX auto-fix,
+# commits and pushes to main, triggers Netlify deploy.
+# Schedule: Saturday 9 UTC. Complements ai-app-visit-audit-implement-deploy (Wed/Sat)
+# and ai-live-app-audit (Fri, manual apply_fix/auto_commit).
+
+name: AI Weekly Live App Audit Auto-Fix
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-weekly-live-app-audit-auto-fix
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: '0 9 * * 6'
+  workflow_dispatch:
+    inputs:
+      trigger_deploy:
+        description: 'Trigger Netlify deploy after push'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  audit-and-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Live Site UX Audit
+        run: node automation/ai-live-site-ux-audit-agent.cjs
+
+      - name: Merge live UX ideas into evolution backlog
+        run: node automation/merge-live-app-ideas-to-backlog.cjs || true
+
+      - name: Automation ideas from live audit
+        run: node automation/ai-automation-ideas-from-live-audit.cjs || true
+
+      - name: Evolution ideas from audits
+        run: npm run app:evolution-ideas-from-audits || true
+
+      - name: Live Navigation Audit
+        run: npm run nav:live-audit || true
+
+      - name: Site Link Audit
+        run: node automation/ai-site-link-audit-automation.cjs audit
+
+      - name: Parse site link audit report
+        id: link_audit
+        run: |
+          REPORT="automation/reports/site-link-audit-latest.json"
+          if [ ! -f "$REPORT" ]; then
+            echo "broken=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          BROKEN=$(node -e "
+            try {
+              const d = require('./automation/reports/site-link-audit-latest.json');
+              console.log(d.broken ?? d.brokenLinks?.length ?? 0);
+            } catch (e) { console.log(0); }
+          ")
+          echo "broken=$BROKEN" >> $GITHUB_OUTPUT
+
+      - name: Broken Link Fixer
+        run: node automation/ai-broken-link-fixer.cjs run || true
+
+      - name: Create missing pages (live site)
+        if: steps.link_audit.outputs.broken != '0'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "OPENROUTER_API_KEY not set; skipping live-site page creation"
+            exit 0
+          fi
+          node automation/ai-site-link-audit-automation.cjs run --create-pages || true
+
+      - name: Create missing pages (codebase)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "OPENROUTER_API_KEY not set; skipping codebase page creation"
+            exit 0
+          fi
+          node automation/ai-broken-link-page-automation.cjs run || true
+
+      - name: Live Site UX Auto-Fix
+        run: node automation/ai-live-site-ux-auto-fix-agent.cjs || true
+
+      - name: Layout Design Audit
+        run: npm run layout:audit || true
+
+      - name: Layout Design Apply
+        run: npm run layout:audit-apply || true
+
+      - name: SEO meta audit (quick)
+        run: node automation/ai-seo-meta-auditor.cjs audit 2>/dev/null || true
+
+      - name: Configure git, commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          STATUS=$(git status --porcelain)
+          if [ -z "$STATUS" ]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add -A
+          bash scripts/automation/commit-and-push-main.sh "chore(app): weekly live app audit - UX and link fixes"
+
+      - name: Deploy (GitHub Pages auto-deploy after push)
+        if: success()
+        run: |
+          echo "Deploy handled by GitHub Pages (output: export, basePath: /zion.app)"
+
+      - name: Upload audit reports
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: weekly-live-app-audit-${{ github.run_id }}
+          path: |
+            automation/reports/live-site-ux-audit-latest.json
+            automation/reports/live-navigation-audit-latest.json
+            automation/reports/site-link-audit-latest.json
+            automation/reports/broken-link-fixer-latest-report.json
+            automation/reports/layout-design-audit-latest.json
+            automation/reports/layout-design-implementation-latest.json
+            automation/reports/seo-meta-report.json
+          if-no-files-found: ignore
+          retention-days: 30

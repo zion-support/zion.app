@@ -1,0 +1,135 @@
+name: AI Netlify preview smoke
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-deploy-smoke-scheduled
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 */2 * * *'
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Ensure smoke / SLO labels exist
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create automation-slo-warning --color FBCA04 --description "Automation SLO warning" 2>/dev/null || true
+          gh label create automation-slo-critical --color B60205 --description "Automation SLO critical" 2>/dev/null || true
+          gh label create automation-smoke-transport --color C5DEF5 --description "Smoke transport/DNS" 2>/dev/null || true
+          gh label create automation-smoke-http --color F9D0C4 --description "Smoke HTTP errors" 2>/dev/null || true
+
+      - name: Resolve deploy URL context
+        run: |
+          set -euo pipefail
+          if [ -f automation/reports/deploy-status-latest.json ]; then
+            netlify_url=$(node -e "const fs=require('fs');const p='automation/reports/deploy-status-latest.json';try{const j=JSON.parse(fs.readFileSync(p,'utf8'));process.stdout.write((j.netlifyDeployUrl||'').trim())}catch{process.stdout.write('')}")
+            if [ -n "$netlify_url" ]; then
+              echo "NETLIFY_DEPLOY_URL=$netlify_url" >> "$GITHUB_ENV"
+            fi
+          fi
+
+      - name: Netlify preview smoke retired (migrated to GitHub Pages)
+        if: false
+        id: netlify_preview
+        continue-on-error: true
+        env:
+          NETLIFY_DEPLOY_URL: ""
+          SMOKE_NETLIFY_MAX_ROUTES: '6'
+        run: echo "Netlify preview retired"
+
+      - name: Append smoke health snapshot
+        if: always()
+        run: node scripts/automation/append-smoke-health-snapshot.cjs
+
+      - name: Upload deploy smoke artifact
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: deploy-smoke-${{ github.run_id }}
+          path: automation/reports/deploy-smoke-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Route drift diagnostics for HTTP-class preview failures
+        if: steps.netlify_preview.outcome != 'success'
+        continue-on-error: true
+        env:
+          SITEMAP_URL: https://ziontechgroup.com/sitemap.xml
+        run: |
+          set -euo pipefail
+          report="automation/reports/deploy-smoke-latest.json"
+          [ -f "$report" ] || exit 0
+          fc=$(node -e "const fs=require('fs');try{const r=JSON.parse(fs.readFileSync('$report','utf8'));process.stdout.write(String(r.failureClass||''))}catch{process.stdout.write('')}")
+          case "$fc" in
+            http|mixed)
+              node automation/app-route-sitemap-drift.cjs || true
+              ;;
+            *)
+              echo "Skipping route drift diagnostics for failure class: ${fc:-unknown}"
+              ;;
+          esac
+
+      - name: Preview smoke failure escalation retired (migrated to GitHub Pages)
+        if: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: echo "Preview smoke escalation retired"
+
+      - name: Escalate repeated preview failures (streak) retired
+        if: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NETLIFY_PREVIEW_SMOKE_STREAK_AUTHORITY: '1'
+        run: echo "Preview smoke streak escalation retired"
+
+      - name: Upload route drift diagnostics
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: netlify-preview-route-drift-${{ github.run_id }}
+          path: automation/reports/app-route-sitemap-drift-latest.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Close Netlify issues retired (GitHub Pages)
+        if: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: netlify-preview-smoke
+          CLOSE_COMMENT: "Auto-closing: Netlify preview smoke passed."
+        run: |
+          set -euo pipefail
+          echo "Closed retired"
+
+      - name: Close repeated-preview issue retired (GitHub Pages)
+        if: false
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: deploy-smoke-repeated
+          CLOSE_COMMENT: "Auto-closing: Netlify preview smoke streak cleared."
+        run: echo "Retired"

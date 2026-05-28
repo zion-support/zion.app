@@ -1,0 +1,134 @@
+[
+  {
+    "category": "cloud",
+    "id": "cloud-kubernetes-gitops-platform",
+    "title": "Kubernetes GitOps Platform",
+    "description": "Full GitOps for Kubernetes: declarative env definition stored in git, auto-sync every 30s, rollback on drift, per-environment policy gates (Prod blocks WIP branches), secrets encrypted via sops+age.",
+    "basic": "4999",
+    "pro": "14999",
+    "enterprise": "49999",
+    "popular": true,
+    "features": [
+      "Declarative env spec stored in git \u2014 single source of truth",
+      "FluxCD auto-sync every 30 seconds with drift detection",
+      "Per-environment branch policy \u2014 Prod merges only from release/*",
+      "Secrets encrypted via sops+age \u2014 no plaintext secrets in repo"
+    ],
+    "benefits": [
+      "Drift between git and cluster is detected and fixed in under 90 seconds",
+      "One git PR deploys to every environment with the same review process",
+      "A field engineer can promote a release in <5 minutes",
+      "Audit trail per environment change is the git commit itself"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-hybrid-multicloud-networking",
+    "title": "Hybrid + Multi-Cloud Networking",
+    "description": "Zero-trust networking across on-prem/edge/cloud: cloud-router fabric connects VPCs across AWS/GCP/Azure, on-prem data-centre via WireGuard or IPSec, global anycast front-door with WAF.",
+    "basic": "5999",
+    "pro": "17999",
+    "enterprise": "59999",
+    "popular": true,
+    "features": [
+      "Cloud-router fabric \u2014 single control-plane connects up to 40 VPCs/accounts",
+      "Site-to-cloud connectivity via WireGuard tunnel or IPSec with automated failover",
+      "Global anycast front-door with WAF + geo-ip routing per user",
+      "Zero-trust per-connection IAM authorization beyond the network boundary"
+    ],
+    "benefits": [
+      "Cost-optimised networking saves $50K/yr on cross-region bandwidth vs. raw cloud provider costs",
+      "DR to a lower-cost region in under 60 minutes",
+      "Apply security policy once at the edge and enforce everywhere",
+      "Team can use the same VPC-IDs across dev/staging/prod in any cloud or region"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-serverless-api-platform",
+    "title": "Serverless API Platform",
+    "description": "Deploy any REST/GraphQL/WebSocket API in a single command: framework-agnostic cold-start elimination, per-request billing with 99.999% SLA, auto-edge-cache, built-in auth (Clerk/Auth0) and observability.",
+    "basic": "1999",
+    "pro": "5999",
+    "enterprise": "19999",
+    "popular": true,
+    "features": [
+      "Framework-agnostic deploy \u2014 Node, Python, Go, Rust runtimes supported",
+      "Cold-start killer: pre-warmed containers eliminate cold starts",
+      "Per-request billing; 99.999% uptime SLA with financial credit guarantee",
+      "Auto-edge-cache with Redis-compatible semantics, built-in auth path and per-request logs"
+    ],
+    "benefits": [
+      "Deploy in one command \u2014 from code-test to production in under 10 minutes",
+      "Bill per 1ms instead of per hour \u2014 can save 90%+ on idle capacity costs",
+      "Edge-cache hits are auto-invalidated on data change",
+      "Built-in observability means you don't instrument on top \u2014 it's included"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-data-lakehouse-platform",
+    "title": "Data Lakehouse Platform",
+    "description": "Open-source S3-compatible lakehouse with ACID transactions, SQL query engine (Presto/Trino), Open-Delta format, built-in catalog, automatic table partitioning, ML-ready with feature-store and model registry.",
+    "basic": "3999",
+    "pro": "11999",
+    "enterprise": "39999",
+    "popular": true,
+    "features": [
+      "S3-compatible storage with ACID commit-log and Open-Delta table format",
+      "Unified SQL engine (Presto/Trino) across lake and warehouse tables",
+      "Built-in catalog + automatic partition discovery and data masking",
+      "Feature-store and model registry for ML pipelines on same platform"
+    ],
+    "benefits": [
+      "Stop paying two bills \u2014 data lake + warehouse in one platform",
+      "ACID means no partial-commit corruption even during failover",
+      "SQL analytics and ML model serving on the same co-located tables",
+      "Self-serve access through federated query engines without raw-S3 credentials"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-chaos-engineering-platform",
+    "title": "Chaos Engineering Platform",
+    "description": "Chaos engineering at enterprise scale: experiment library (network-lat/pod-kill/disk-full), automated game-day runner, blast-radius limiter, post-mortem storage per experiment and evidence for compliance.",
+    "basic": "3499",
+    "pro": "9999",
+    "enterprise": "34999",
+    "popular": false,
+    "features": [
+      "Curated experiment library \u2014 network latency, pod kill, disk full, DNS poisoning",
+      "Automated game-day runner with blast-radius limiter per experiment",
+      "Evidence storage \u2014 every run recorded, rendered, searchable with screenshot + metric traces",
+      "CI/CD gate capability \u2014 fail build if resilience threshold not achieved"
+    ],
+    "benefits": [
+      "Know your system's breaking-point before an incident finds it in production",
+      "CI/CD feedback means you catch resilience regressions in the same PR that causes them",
+      "Automated game-day means no more manual 'chaos afternoons'",
+      "Evidence stored cadence gives you one-click compliance report per audit"
+    ]
+  },
+  {
+    "category": "cloud",
+    "id": "cloud-kubernetes-cost-optimizer",
+    "title": "Kubernetes Cost Optimizer",
+    "description": "K8s cost visibility and action: per-namespace per-pod autoscaling, unused node/claim reclaim, idle-developer-environment auto-stop, spot-instance placement, monthly budget vs actual drift alerting across clusters.",
+    "basic": "2999",
+    "pro": "8999",
+    "enterprise": "29999",
+    "popular": true,
+    "features": [
+      "Per-namespace per-pod right-sizing recommendation with 85%+ adoption",
+      "Unused node and persistent-volume claim reclaim with zero-work approval",
+      "Idle developer environment auto-stop \u2014 clusters spin down after configurable idle period",
+      "Spot-instance placement engine for stateless workloads across 3 K8s clusters"
+    ],
+    "benefits": [
+      "Typically reduce cloud spend 35-45% within 90 days",
+      "Reclaim unused resources without stopping services or losing data",
+      "Developers get dev namespaces that stop at 6 PM without manual process",
+      "Spot instance auto-placement makes stateless pods cost half on average"
+    ]
+  }
+]
