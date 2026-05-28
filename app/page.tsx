@@ -763,7 +763,7 @@ let list = services;
         </div>
       </section>
 
-      {/* ── AI Email Intelligence Suite — V42-V46 email responder modules ── */}
+      {/* ── AI Email Intelligence Suite — V42–V68 email responder modules ── */}
       <section className="py-16 bg-gradient-to-b from-purple-950/30 to-slate-950 border-y border-purple-500/20">
         <div className="container-page">
           <div className="text-center mb-10">
@@ -772,7 +772,7 @@ let list = services;
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">🤖 AI-Powered Email Intelligence Suite</h2>
             <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-              Six intelligent email modules that analyze every message case-by-case, choose the right tone, route to the best response strategy, and learn continuously from every interaction.
+              27 intelligent email modules (V42–V68) that analyze every message case-by-case, choose the right tone, route to the best response strategy, and learn continuously from every interaction.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -852,6 +852,15 @@ let list = services;
               { key: 'V65', name: 'Tone Engine', emoji: '🎭', color: 'from-indigo-500/20 to-blue-500/10 border-indigo-500/30',
                 desc: 'Dynamically adjusts email tone — if sender is frustrated, shifts to empathetic/de-escalating. If transactional, shifts to crisp professional. If urgent, shifts to assertive. Learns tone preferences over thread lifetime.',
                 tech: '6-tone categories · Phrase-level adjustments · Opening/closing line auto-selectors · Thread arc awareness' },
+              { key: 'V66', name: 'Escalation Predictor', emoji: '🔮', color: 'from-red-500/20 to-rose-500/10 border-red-500/30',
+                desc: 'Predicts BEFORE a thread escalates into crisis. Detects linguistic patterns that precede churn, formal complaints, and executive escalations — and suggests pre-emptive de-escalation actions before the damage is done.',
+                tech: '7-stage classifier · Crisis probability score · CAPS/urgency detection · Pre-emptive action recommendations · Trigger phrase library' },
+              { key: 'V67', name: 'Cross-Language Reply', emoji: '🌍', color: 'from-cyan-500/20 to-teal-500/10 border-cyan-500/30',
+                desc: 'Detects the sender\'s language and generates a professional reply IN THEIR OWN LANGUAGE — matching their cultural context, formality register, and tone. Supports 20+ languages including Japanese keigo and Arabic RTL.',
+                tech: '42-language detection · Native-language reply generation · Cultural formality registers · RTL support · Domain-based language inference' },
+              { key: 'V68', name: 'Contextual Templates', emoji: '📝', color: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30',
+                desc: 'Generates dynamic, different-every-time reply templates using intent + sender profiles + thread memory + reply stage + tone. 144 seeded templates across 8 reply stages and 6 tones. Never sends the same email twice.',
+                tech: '12-context variable system · Thread repetition guard · 8 reply stage classifiers · 20+ languages · Locale-aware greetings and salutations' },
             ].map(mod => (
               <div key={mod.key} className={`rounded-xl border bg-gradient-to-br ${mod.color} p-5 hover:scale-[1.02] transition-all`}>
                 <div className="flex items-center gap-3 mb-3">

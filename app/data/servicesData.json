@@ -20305,5 +20305,406 @@
     "stage": "published",
     "category": "ai",
     "industry": "HR"
+  },
+  {
+    "id": "saas-377",
+    "title": "Email Emotional Escalation Prediction Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 79,
+      "setup": 299
+    },
+    "shortDescription": "AI predicts customer crises before they happen — 7-stage escalation classifier prevents churn and formal complaints.",
+    "description": "Uses 50+ linguistic trigger patterns, CAPS-ratio analysis, exclamation density, and thread history to predict which conversations are heading toward crisis. Scores escalation probability 0–100 and recommends pre-emptive de-escalation actions before damage occurs.",
+    "features": [
+      "7-stage escalation classifier",
+      "Crisis probability scoring (0-100)",
+      "50+ trigger phrase detection",
+      "CAPS + punctuation analysis",
+      "Pre-emptive action recommendations",
+      "72h time-decay model",
+      "Thread repetition guard"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-378",
+    "title": "Cross-Language Email Reply Generation Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 89,
+      "setup": 349
+    },
+    "shortDescription": "Reply to any email IN THE SENDER'S OWN LANGUAGE — 20+ languages supported including Japanese keigo and Arabic RTL.",
+    "description": "Detects the sender's native language via script, word-frequency, and domain analysis. Generates professional reply templates in the sender's own language, with culturally-appropriate greeting, formality register, and closing. Supports RTL Arabic, Hebrew, and Urdu.",
+    "features": [
+      "20+ languages (full list)",
+      "Native-language reply generation",
+      "20+ cultural formality registers",
+      "RTL support (Arabic/Hebrew/Urdu)",
+      "Domain-based language inference fallback",
+      "Subject line adaptation per locale"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-379",
+    "title": "Smart Contextual Email Template Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 69,
+      "setup": 249
+    },
+    "shortDescription": "Generate unique, context-aware reply templates — never send the same email twice.",
+    "description": "Combines email intent, sender profile, thread memory, reply stage, and tone preference to generate seeded dynamic templates. 144 distinct base templates across 8 reply stages and 6 tones. Thread repetition guard prevents sending the same phrases twice in a thread.",
+    "features": [
+      "12-context variable system",
+      "8 reply stage classifiers",
+      "6-tone pool per context",
+      "Thread repetition guard",
+      "Locale-aware greetings",
+      "Multi-language support"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-380",
+    "title": "Micro-SaaS Analytics & Revenue Intelligence",
+    "category": "saas",
+    "pricing": {
+      "monthly": 49,
+      "setup": 199
+    },
+    "shortDescription": "Real-time business intelligence for micro-SaaS: MRR tracking, churn prediction, cohort analysis, and LTV forecasting.",
+    "description": "Tracks MRR, ARR, churn rate, customer acquisition cost, LTV, and cohort retention curves. Auto-generates weekly executive dashboards and alerts on churn spikes. Connects to Stripe, PayPal, and payment gateways.",
+    "features": [
+      "MRR/ARR/LTV tracking",
+      "Churn prediction alerts",
+      "Cohort retention analysis",
+      "Stripe/PayPal integration",
+      "Weekly exec dashboard",
+      "CAC + LTV comparison"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "saas-381",
+    "title": "Micro-SaaS Onboarding Automation Suite",
+    "category": "saas",
+    "pricing": {
+      "monthly": 59,
+      "setup": 249
+    },
+    "shortDescription": "Automate entire onboarding funnel: welcome emails, feature tours, checklist reminders, and activation pacing.",
+    "description": "Visual funnel builder with branching logic, A/B variant testing, and in-app messaging sequences. Auto-adjusts pacing based on user activation milestones. Integrates with Intercom, HubSpot, and Zapier.",
+    "features": [
+      "Visual funnel builder",
+      "A/B onboarding variants",
+      "Activation milestone tracking",
+      "In-app messaging sequences",
+      "Intercom/HubSpot integration",
+      "Day-N follow-up automation"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "saas-382",
+    "title": "Micro-SaaS Customer Health Score Engine",
+    "category": "saas",
+    "pricing": {
+      "monthly": 39,
+      "setup": 149
+    },
+    "shortDescription": "Score every customer account monthly: product usage x support tickets x payment history x engagement signals.",
+    "description": "Automated monthly scoring across 20+ signals. Health tiers (Healthy/Warning/At-Risk/Critical) trigger automated playbooks: at-risk gets escalation flow, critical triggers executive review and 30-day save playbook.",
+    "features": [
+      "20+ health signals",
+      "4-tier health classification",
+      "Automated save playbooks",
+      "Executive review triggers",
+      "Monthly scoring report",
+      "Slack/email alerts"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "saas-383",
+    "title": "Startup Cap Table & Equity Tracker",
+    "category": "saas",
+    "pricing": {
+      "monthly": 29,
+      "setup": 99
+    },
+    "shortDescription": "Real-time cap table management for early-stage startups. Track employee pools, investor rights, and dilution.",
+    "description": "Supports SAFE, convertible notes, and priced rounds. Auto-calculates fully diluted capitalization, option pool math, and pro-rata rights. Exports 409A-ready reports. Cap table shareholding audit trail.",
+    "features": [
+      "SAFE + convertible note support",
+      "Priced round cap tables",
+      "Fully diluted calculation",
+      "409A export-ready reports",
+      "Pro-rata rights tracking",
+      "Employee pool management"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "saas-384",
+    "title": "Freelancer Instant Proposal Generator",
+    "category": "saas",
+    "pricing": {
+      "monthly": 19,
+      "setup": 79
+    },
+    "shortDescription": "Generate professional project proposals in 3 minutes — auto-populated with client history and industry benchmarks.",
+    "description": "Drag-and-drop proposal builder with auto-fill from client CRM data, industry-standard hourly rates, and project timeline templates. Includes e-sign capture, version control, and acceptance analytics.",
+    "features": [
+      "3-minute proposal generation",
+      "Client CRM auto-fill",
+      "Industry rate benchmarks",
+      "E-sign capture",
+      "Version control",
+      "Acceptance analytics"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "saas-385",
+    "title": "Contract Intelligence Review Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 99,
+      "setup": 399
+    },
+    "shortDescription": "AI reviews any SaaS, vendor, or employment contract — flags risky clauses, missing SLAs, and unfair terms before you sign.",
+    "description": "Ingests PDF/DOCX contracts, detects 30+ risk categories: indemnity traps, auto-renewal clauses, IP assignment, unlimited liability, and data termination rights. Outputs a risk summary + severity score + redlined improvements.",
+    "features": [
+      "30+ risk category detection",
+      "Redline clause improvements",
+      "Risk severity scoring",
+      "SLA gap analysis",
+      "PDF/DOCX ingestion",
+      "Risk summary report"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-386",
+    "title": "Lead Intent Signal Radar",
+    "category": "ai",
+    "pricing": {
+      "monthly": 59,
+      "setup": 199
+    },
+    "shortDescription": "Detect buying intent in real-time: tracks competitor mentions, product review scans, pricing page heatmaps, and social engagement spikes.",
+    "description": "Monitors 10,000+ technology signals per lead: CRM activity spikes, job postings indicating growth, LinkedIn technology stack changes, and G2/TrustRadius review activity. Alerts sales within 15 minutes of intent signal firing.",
+    "features": [
+      "10,000+ intent signals per lead",
+      "15-min intent alert latency",
+      "Competitor mention tracking",
+      "CRM activity spike detection",
+      "LinkedIn tech stack changes",
+      "G2/TrustRadius review monitoring"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-387",
+    "title": "AI Meeting Intelligence & Auto-Capture",
+    "category": "ai",
+    "pricing": {
+      "monthly": 79,
+      "setup": 299
+    },
+    "shortDescription": "Join any video call via API and automatically capture summaries, action items, decisions, and follow-up tasks — no human note-taker needed.",
+    "description": "Connects to Google Meet, Zoom, Teams. Outputs structured JSON: summary, TL;DR, action items (name + owner + due), decisions made, sentiment arc per participant, and follow-up email draft. Integrates with Jira, Asana, and Linear.",
+    "features": [
+      "Zoom/Meet/Teams API integration",
+      "Multi-speaker transcript",
+      "Action item extraction",
+      "Decision tracking",
+      "Sentiment arc per participant",
+      "Jira/Asana/Linear sync"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-388",
+    "title": "AI Proposal Intelligence & Win-Rate Optimizer",
+    "category": "ai",
+    "pricing": {
+      "monthly": 89,
+      "setup": 349
+    },
+    "shortDescription": "Analyze RFPs in 5 minutes — score your win probability, identify gaps to address, and auto-generate compliance matrices.",
+    "description": "Ingests RFP/PDF documents, cross-references your past wins and losses, scores your fit (100-point scale), identifies compliance gaps, and auto-drafts responses to unanswered questions using your approved content library.",
+    "features": [
+      "RFP ingestion + PDF parsing",
+      "Win/loss cross-reference analysis",
+      "100-point fit score",
+      "Compliance matrix auto-generation",
+      "Gap identification",
+      "Response draft from content library"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-389",
+    "title": "AI Sales Rep Coaching & Call Scoring Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 69,
+      "setup": 249
+    },
+    "shortDescription": "Score every sales call automatically: talking ratio, objection handling, competitor drops, price anchoring, and next-step commitment.",
+    "description": "Auto-transcribes Zoom/Teams/Google Meet calls. Scores 15 sales competencies per call, compares rep performance to top performers, generates personalized coaching plans, and flags at-risk deals in real-time.",
+    "features": [
+      "Auto-transcription",
+      "15 sales competency scores",
+      "Talking ratio analysis",
+      "Competitor mention tracking",
+      "Personalized coaching plans",
+      "At-risk deal flagging"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-390",
+    "title": "Invoice Intelligence & OCR Processing Engine",
+    "category": "ai",
+    "pricing": {
+      "monthly": 49,
+      "setup": 179
+    },
+    "shortDescription": "Extract invoice fields automatically: vendor, amount, due date, line items, PO number — from any PDF or scanned document.",
+    "description": "99.2% extraction accuracy. Auto-routes invoices to approval workflows, detects duplicates, flags miss-matched POs, and posts to QuickBooks/Xero. Supports international multi-currency invoices.",
+    "features": [
+      "99.2% field extraction accuracy",
+      "Duplicate detection",
+      "PO mismatch flagging",
+      "QuickBooks/Xero auto-post",
+      "Multi-currency support",
+      "Approval workflow routing"
+    ],
+    "featured": "AI Services"
+  },
+  {
+    "id": "saas-391",
+    "title": "AI Cuisine & Menu Intelligence Platform",
+    "category": "saas",
+    "pricing": {
+      "monthly": 39,
+      "setup": 149
+    },
+    "shortDescription": "Menu optimization engine for restaurants: ingredient cost modeling, profitability per dish, allergen mapping, and seasonal trending.",
+    "description": "Import any menu (PDF/image/spreadsheet). Auto-extracts dishes, ingredients, and prices. Calculates food cost %, profitability rank, and allergen profile per dish. Recommends seasonal additions based on ingredient cost trending.",
+    "features": [
+      "Menu PDF/image ingestion",
+      "Food cost % calculation",
+      "Profitability ranking dashboard",
+      "Allergen profiling",
+      "Seasonal ingredient trends",
+      "Menu engineering reports"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "it-392",
+    "title": "DevSecOps Automation & Shift-Left Security Suite",
+    "category": "it",
+    "pricing": {
+      "monthly": 89,
+      "setup": 399
+    },
+    "shortDescription": "Embed security into every CI/CD pipeline: SAST, DAST, SCA, secrets detection, and compliance policy enforcement — automated.",
+    "description": "Git-native security gates fire on every PR. Scans for 2,000+ CVE patterns, hardcoded secrets, supply chain risks, and compliance violations. Blocks builds that fail security policy. Integrates with GitHub Actions, GitLab CI, and Jenkins.",
+    "features": [
+      "SAST + DAST scanning",
+      "2,000+ CVE pattern library",
+      "Secrets detection",
+      "Supply chain security",
+      "Git-native policy gates",
+      "GitHub/GitLab/Jenkins integration"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "it-393",
+    "title": "Zero-Trust Network Access (ZTNA) Implementation",
+    "category": "it",
+    "pricing": {
+      "monthly": 129,
+      "setup": 599
+    },
+    "shortDescription": "Replace VPN with identity-first micro-segmentation: every access request verified, logged, and policy-enforced per user, device, and app.",
+    "description": "Full zero-trust architecture design + implementation. Implements continuous verification, least-privilege access, micro-segmentation, and encrypted tunnel. Includes policy-as-code with audit trail.",
+    "features": [
+      "Identity-first access model",
+      "Continuous verification",
+      "Micro-segmentation",
+      "Policy-as-code deployment",
+      "Audit logging",
+      "Encrypted tunnel setup"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "it-394",
+    "title": "Observability Operations Platform Implementation",
+    "category": "it",
+    "pricing": {
+      "monthly": 79,
+      "setup": 349
+    },
+    "shortDescription": "Full-stack observability: distributed tracing, metrics, log aggregation, SLO management, and alerting — built on OpenTelemetry.",
+    "description": "Implements OpenTelemetry instrumentation, aggregates traces via Jaeger/Prometheus/Grafana, sets SLO-based alerting, and builds runbook automation. Covers web apps, APIs, microservices, and Kubernetes environments.",
+    "features": [
+      "OpenTelemetry instrumentation",
+      "Distributed tracing (Jaeger)",
+      "Metrics aggregation (Prometheus)",
+      "SLO management + alerting",
+      "Log aggregation (Loki)",
+      "Kubernetes observability"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "it-395",
+    "title": "Financial Services IT Operations & Compliance Suite",
+    "category": "it",
+    "pricing": {
+      "monthly": 149,
+      "setup": 799
+    },
+    "shortDescription": "IT operations platform built for financial services: SOC2 controls, PCI-DSS hardening, GFIP A/B/C compliance, and real-time audit trail.",
+    "description": "Pre-built control library for SOC2 Type I/II, PCI-DSS Level 1, GFIP A/B/C. Automated evidence collection, audit trail generation, and continuous compliance monitoring. Includes annual audit readiness assessments.",
+    "features": [
+      "SOC2 Type I/II controls",
+      "PCI-DSS Level 1 hardening",
+      "GFIP A/B/C compliance",
+      "Automated evidence collection",
+      "Continuous compliance monitoring",
+      "Annual audit readiness"
+    ],
+    "featured": "IT Services"
+  },
+  {
+    "id": "ai-396",
+    "title": "Email Intelligence Suite — Enterprise API License",
+    "category": "ai",
+    "pricing": {
+      "monthly": 299,
+      "setup": 999
+    },
+    "shortDescription": "Enterprise API license for all 27 Email Intelligence modules (V42–V68): categorized routing, tone adaptation, cross-language replies, escalation prediction, and contextual templates.",
+    "description": "Full programmatic API access to every Zion Email Intelligence module. REST + webhooks. Scales to 100K emails/month. Includes SLA guarantees, dedicated support, and monthly strategy reviews. Available as standalone modules or full suite.",
+    "features": [
+      "27 email module APIs (V42-V68)",
+      "REST + webhook access",
+      "100K emails/month throughput",
+      "99.9% uptime SLA",
+      "Dedicated support channel",
+      "Monthly strategy reviews"
+    ],
+    "featured": "AI Services"
   }
 ]
