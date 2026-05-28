@@ -21006,5 +21006,481 @@
       "Dedicated support channel",
       "Monthly strategy reviews"
     ]
+  },
+  {
+    "id": "saas-webhook-debugger",
+    "title": "Webhook Debugger & Inspector",
+    "description": "Inspect, replay, and debug webhooks in real-time. Captures payloads, logs delivery attempts, verifies signatures, and lets you replay failed events to test integrations without touching production.",
+    "features": [
+      "Real-time payload capture",
+      "Signature verification (HMAC/SHA)",
+      "Replay failed webhooks",
+      "Delivery attempt logging",
+      "Headers + body inspection",
+      "Integration status dashboard"
+    ],
+    "benefits": [
+      "Debug webhook failures in seconds",
+      "Never lose a webhook event",
+      "Verify integrations before going live"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "5000"
+    },
+    "contactInfo": {
+      "website": "/services/saas-webhook-debugger/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🪝",
+    "href": "/services/saas-webhook-debugger/",
+    "popular": false,
+    "stage": "published",
+    "category": "automation",
+    "industry": "Development"
+  },
+  {
+    "id": "saas-json-schema-validator",
+    "title": "JSON Schema Validator & Mock Server",
+    "description": "Validate JSON payloads against JSON Schema in real-time, generate mock API responses, auto-create realistic test data, and share schema documentation with your team instantly.",
+    "features": [
+      "Live JSON Schema validation",
+      "Mock server with custom responses",
+      "Auto-generated test data",
+      "Schema documentation generator",
+      "Multi-format support (JSON Schema draft 4-2020)",
+      "Team workspace sharing"
+    ],
+    "benefits": [
+      "Catch payload errors before production",
+      "Speed up API development 3x",
+      "Eliminate manual test data creation"
+    ],
+    "pricing": {
+      "basic": "29",
+      "pro": "89",
+      "enterprise": "3000"
+    },
+    "contactInfo": {
+      "website": "/services/saas-json-schema-validator/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📋",
+    "href": "/services/saas-json-schema-validator/",
+    "popular": false,
+    "stage": "published",
+    "category": "automation",
+    "industry": "Development"
+  },
+  {
+    "id": "saas-emoji-picker-api",
+    "title": "Emoji Picker API & Asset Library",
+    "description": "Embed a fully-featured emoji picker into any web or mobile app. Search by keyword, browse categories, get肤色 modifier support, and pull optimized SVG/PNG assets directly from the API.",
+    "features": [
+      "Keyword emoji search",
+      "Category browser",
+      "Skin tone modifiers",
+      "SVG + PNG asset delivery",
+      "Unicode version support",
+      "GDPR-compliant asset hosting"
+    ],
+    "benefits": [
+      "Add emoji input in 1 line of code",
+      "Consistent emoji across all platforms",
+      "Free up design team time"
+    ],
+    "pricing": {
+      "basic": "19",
+      "pro": "59",
+      "enterprise": "2000"
+    },
+    "contactInfo": {
+      "website": "/services/saas-emoji-picker-api/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "😀",
+    "href": "/services/saas-emoji-picker-api/",
+    "popular": false,
+    "stage": "published",
+    "category": "automation",
+    "industry": "Development"
+  },
+  {
+    "id": "saas-cron-job-monitor",
+    "title": "Cron Job Monitor & Alerting Platform",
+    "description": "Monitor all your cron jobs, scheduled tasks, and background workers from one dashboard. Get instant alerts when jobs miss schedules, run too long, or fail repeatedly. Tracks execution history and calculates uptime percentages.",
+    "features": [
+      "Multi-cron job monitoring",
+      "Missed schedule alerts",
+      "Execution time tracking",
+      "Failure alerting (email/Slack/PagerDuty)",
+      "Uptime percentage dashboard",
+      "Heartbeat ping endpoint"
+    ],
+    "benefits": [
+      "Stop wondering if your nightly job ran",
+      "Cut incident response time by 80%",
+      "Get SLA-backed uptime reports"
+    ],
+    "pricing": {
+      "basic": "39",
+      "pro": "119",
+      "enterprise": "4000"
+    },
+    "contactInfo": {
+      "website": "/services/saas-cron-job-monitor/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⏰",
+    "href": "/services/saas-cron-job-monitor/",
+    "popular": false,
+    "stage": "published",
+    "category": "it",
+    "industry": "Operations"
+  },
+  {
+    "id": "saas-dependency-update-tracker",
+    "title": "Dependency Update Tracker",
+    "description": "Track outdated npm, PyPI, Maven, Gem, and Go dependencies across all repositories. Shows security severity, breaking changes, and auto-generates PRs for safe non-breaking updates. Sends weekly digest emails.",
+    "features": [
+      "Multi-ecosystem support (npm/PyPI/Maven/Gem/Go)",
+      "Security severity scoring",
+      "Breaking change detection",
+      "Auto-PR for safe updates",
+      "Weekly digest email",
+      "GitHub/GitLab/Bitbucket integration"
+    ],
+    "benefits": [
+      "Eliminate dependency tech debt",
+      "Patch security vulnerabilities in hours not weeks",
+      "Reduce PR review load with auto-updates"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "5000"
+    },
+    "contactInfo": {
+      "website": "/services/saas-dependency-update-tracker/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔗",
+    "href": "/services/saas-dependency-update-tracker/",
+    "popular": false,
+    "stage": "published",
+    "category": "automation",
+    "industry": "Development"
+  },
+  {
+    "id": "it-service-catalog-portal",
+    "title": "IT Service Catalog & Self-Service Portal",
+    "description": "Build a branded self-service IT portal where employees request access, software, hardware, and services through guided workflows. Integrates with Jira, ServiceNow, and Slack. Tracks request status end-to-end.",
+    "features": [
+      "Drag-and-drop form builder",
+      "Multi-tier approval workflows",
+      "Software/hardware request catalog",
+      "SLA tracking + auto-escalation",
+      "Slack + Teams integration",
+      "ServiceNow/Jira sync"
+    ],
+    "benefits": [
+      "Reduce IT ticket volume by 40%",
+      "Employees get what they need faster",
+      "Full audit trail for compliance"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "25000"
+    },
+    "contactInfo": {
+      "website": "/services/it-service-catalog-portal/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📒",
+    "href": "/services/it-service-catalog-portal/",
+    "popular": false,
+    "stage": "published",
+    "category": "it",
+    "industry": "IT"
+  },
+  {
+    "id": "it-infrastructure-cost-anomaly",
+    "title": "Infrastructure Cost Anomaly Detection Platform",
+    "description": "AI-powered monitoring that detects billing spikes, unexpected resource consumption, and cost anomalies across AWS, Azure, GCP, and Kubernetes clusters. Alerts in real-time before budgets are blown.",
+    "features": [
+      "Multi-cloud cost aggregation",
+      "Real-time anomaly detection",
+      "Budget threshold alerts",
+      "Resource utilization correlation",
+      "Cost attribution by team/project",
+      "Forecast spending projections"
+    ],
+    "benefits": [
+      "Catch billing spikes before they cost thousands",
+      "Reduce cloud waste by 20-35%",
+      "Allocate costs to the right teams"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "15000"
+    },
+    "contactInfo": {
+      "website": "/services/it-infrastructure-cost-anomaly/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💰",
+    "href": "/services/it-infrastructure-cost-anomaly/",
+    "popular": false,
+    "stage": "published",
+    "category": "cloud",
+    "industry": "Finance"
+  },
+  {
+    "id": "it-privileged-session-manager",
+    "title": "Privileged Session Manager & Access Broker",
+    "description": "Centralized broker for managing privileged access to servers, databases, and cloud consoles. Records all sessions for audit, requires MFA for privileged actions, and rotates credentials automatically after each session.",
+    "features": [
+      "Privileged access broker",
+      "Session recording + playback",
+      "MFA for privileged commands",
+      "Credential rotation post-session",
+      "Just-in-time access provisioning",
+      "PCI/DSS/SOX compliance reporting"
+    ],
+    "benefits": [
+      "Full audit trail for privileged access",
+      "Prevent credential theft attacks",
+      "Meet compliance requirements effortlessly"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "35000"
+    },
+    "contactInfo": {
+      "website": "/services/it-privileged-session-manager/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔐",
+    "href": "/services/it-privileged-session-manager/",
+    "popular": false,
+    "stage": "published",
+    "category": "security",
+    "industry": "Security"
+  },
+  {
+    "id": "it-serverless-container-hybrid",
+    "title": "Hybrid Serverless & Container Orchestration Platform",
+    "description": "Run your workloads on the right execution model — serverless functions for event-driven tasks, containers for long-running services — with unified deployment, scaling, and monitoring across both models.",
+    "features": [
+      "Unified deployment API",
+      "Auto-select execution model",
+      "Knative-based serverless",
+      "Kubernetes container orchestration",
+      "Cross-platform scaling",
+      "Cost-per-invocation tracking"
+    ],
+    "benefits": [
+      "Match the right compute to every workload",
+      "Reduce infrastructure costs by 30%",
+      "One platform instead of two"
+    ],
+    "pricing": {
+      "basic": "349",
+      "pro": "1049",
+      "enterprise": "30000"
+    },
+    "contactInfo": {
+      "website": "/services/it-serverless-container-hybrid/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧩",
+    "href": "/services/it-serverless-container-hybrid/",
+    "popular": false,
+    "stage": "published",
+    "category": "cloud",
+    "industry": "IT"
+  },
+  {
+    "id": "ai-federated-learning-platform",
+    "title": "Federated Learning & Privacy-Preserving ML Platform",
+    "description": "Train ML models across distributed datasets without centralizing sensitive data. Supports horizontal and vertical federated learning, differential privacy guarantees, and secure aggregation protocols for healthcare, finance, and regulated industries.",
+    "features": [
+      "Horizontal + vertical federated learning",
+      "Differential privacy implementation",
+      "Secure aggregation protocols",
+      "Model versioning + reproducibility",
+      "Compliance mapping (GDPR/HIPAA/CCPA)",
+      "FL benchmark framework"
+    ],
+    "benefits": [
+      "Train on sensitive data without moving it",
+      "Meet data residency requirements",
+      "Unlock cross-org ML collaborations"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "85000"
+    },
+    "contactInfo": {
+      "website": "/services/ai-federated-learning-platform/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔒",
+    "href": "/services/ai-federated-learning-platform/",
+    "popular": false,
+    "stage": "published",
+    "category": "ai",
+    "industry": "AI"
+  },
+  {
+    "id": "ai-llm-finetuning-pipeline",
+    "title": "LLM Fine-Tuning & Alignment Pipeline Platform",
+    "description": "End-to-end platform for fine-tuning large language models on custom datasets. Handles data preparation, RLHF, DPO, LoRA/QLoRA training, evaluation, and deployment. Supports Llama, Mistral, GPT, and Claude-family models.",
+    "features": [
+      "Multi-model fine-tuning (Llama/Mistral/GPT/Claude)",
+      "RLHF + DPO training support",
+      "LoRA/QLoRA efficient fine-tuning",
+      "Automated hyperparameter search",
+      "Evaluation benchmark suite",
+      "One-click deployment to endpoints"
+    ],
+    "benefits": [
+      "Custom LLM in days not months",
+      "Reduce training costs by 70% with LoRA",
+      "Domain-specific models that actually perform"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "75000"
+    },
+    "contactInfo": {
+      "website": "/services/ai-llm-finetuning-pipeline/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚙️",
+    "href": "/services/ai-llm-finetuning-pipeline/",
+    "popular": false,
+    "stage": "published",
+    "category": "ai",
+    "industry": "AI"
+  },
+  {
+    "id": "ai-multimodal-document-understanding",
+    "title": "Multimodal Document Understanding Engine",
+    "description": "Extract structured data from complex documents — invoices, contracts, forms, receipts, IDs, and handwritten notes — combining vision, OCR, and language understanding. Handles 50+ document types with >95% accuracy.",
+    "features": [
+      "50+ document type support",
+      "Handwriting recognition",
+      "Table + layout understanding",
+      "Signature + seal detection",
+      "Cross-document entity linking",
+      "Confidence scoring per field"
+    ],
+    "benefits": [
+      "Automate document processing at scale",
+      "Replace manual data entry entirely",
+      "Handle complex multi-page documents"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "40000"
+    },
+    "contactInfo": {
+      "website": "/services/ai-multimodal-document-understanding/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📄",
+    "href": "/services/ai-multimodal-document-understanding/",
+    "popular": false,
+    "stage": "published",
+    "category": "ai",
+    "industry": "Operations"
+  },
+  {
+    "id": "ai-synthetic-training-data",
+    "title": "Synthetic Training Data Generation Platform",
+    "description": "Generate privacy-safe synthetic datasets that preserve statistical properties of real data. Supports tabular, time-series, image, and text data. Ideal for testing ML pipelines, sharing data with vendors, and augmenting small datasets.",
+    "features": [
+      "Tabular + time-series + image + text generation",
+      "Differential privacy options",
+      "Statistical fidelity validation",
+      "GDPR/CCPA safe data generation",
+      "Data augmentation for ML",
+      "Team collaboration workspaces"
+    ],
+    "benefits": [
+      "Share data without sharing real records",
+      "Augment small datasets for better ML",
+      "Test in production-like environments safely"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "35000"
+    },
+    "contactInfo": {
+      "website": "/services/ai-synthetic-training-data/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧬",
+    "href": "/services/ai-synthetic-training-data/",
+    "popular": false,
+    "stage": "published",
+    "category": "data",
+    "industry": "Data Science"
+  },
+  {
+    "id": "ai-enterprise-search-intelligence",
+    "title": "Enterprise Semantic Search & Knowledge Intelligence",
+    "description": "Replaces keyword-based enterprise search with semantic understanding. Indexes across Confluence, SharePoint, Notion, Slack, Drive, and 50+ sources. Understands intent, context, and relationships. Delivers cited, trustworthy answers.",
+    "features": [
+      "50+ native source connectors",
+      "Semantic + keyword hybrid search",
+      "Intent classification",
+      "Answer synthesis with citations",
+      "Search analytics dashboard",
+      "Auto-learning from user feedback"
+    ],
+    "benefits": [
+      "Employees find answers 10x faster",
+      "Reduce expert interruption by 50%",
+      "Measure and improve knowledge base quality"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "55000"
+    },
+    "contactInfo": {
+      "website": "/services/ai-enterprise-search-intelligence/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔍",
+    "href": "/services/ai-enterprise-search-intelligence/",
+    "popular": false,
+    "stage": "published",
+    "category": "ai",
+    "industry": "Operations"
   }
 ]

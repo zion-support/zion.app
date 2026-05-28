@@ -4,16 +4,11 @@
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ES2022"
+      "ES2020"
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-<<<<<<< HEAD
-    "noImplicitAny": false,
-=======
-    "noImplicitAny": true,
->>>>>>> origin/main
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -31,7 +26,11 @@
       "@/*": [
         "./app/*"
       ]
-    }
+    },
+    "types": [
+      "node"
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "**/*.ts",

@@ -1,9 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-<<<<<<< HEAD
-=======
-import { BLOG_POSTS } from '@/data/blogPosts';
->>>>>>> origin/main
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -12,7 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/' },
 };
 
-<<<<<<< HEAD
 export default function BlogIndexPage() {
   const POSTS = [
     { slug: '5-proven-ai-automation-strategies-for-enterprise-workflow-optimization', title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization' },
@@ -71,99 +66,8 @@ export default function BlogIndexPage() {
     { slug: 'ai-voice-agents-and-conversational-automation', title: 'AI Voice Agents and Conversational Automation' },
   ];
 
-=======
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr + 'T12:00:00Z');
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
-}
-
-export default function BlogIndexPage() {
->>>>>>> origin/main
   return (
     <div className="relative min-h-screen bg-slate-950">
-      {/* JSON-LD: Blog + BreadcrumbList */}
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-<<<<<<< HEAD
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            name: "Zion Tech Group Blog",
-            description:
-              "Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.",
-            url: "https://ziontechgroup.com/blog",
-            publisher: {
-              "@type": "Organization",
-              name: "Zion Tech Group",
-              url: "https://ziontechgroup.com",
-            },
-            blogPosts: POSTS.slice(0, 10).map((p: { title: string; slug: string }) => ({
-              "@type": "BlogPosting",
-=======
-            '@context': 'https://schema.org',
-            '@type': 'Blog',
-            name: 'Zion Tech Group Blog',
-            description:
-              'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
-            url: 'https://ziontechgroup.com/blog',
-            publisher: {
-              '@type': 'Organization',
-              name: 'Zion Tech Group',
-              url: 'https://ziontechgroup.com',
-            },
-            blogPosts: BLOG_POSTS.slice(0, 10).map((p) => ({
-              '@type': 'BlogPosting',
->>>>>>> origin/main
-              headline: p.title,
-              url: `https://ziontechgroup.com/blog/${p.slug}`,
-            })),
-            breadcrumb: {
-<<<<<<< HEAD
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://ziontechgroup.com" },
-                { "@type": "ListItem", position: 2, name: "Blog", item: "https://ziontechgroup.com/blog" },
-=======
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com' },
-                { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://ziontechgroup.com/blog' },
->>>>>>> origin/main
-              ],
-            },
-          }),
-        }}
-      />
-<<<<<<< HEAD
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context": "https://schema.org", "@type": "Blog", "name": "Zion Tech Group Blog", "description": "Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.", "url": "https://ziontechgroup.com/blog", "publisher": {"@type": "Organization", "name": "Zion Tech Group", "logo": {"@type": "ImageObject", "url": "https://ziontechgroup.com/logo.png"}}, "inLanguage": "en-US"}) }} />
-=======
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Blog',
-            name: 'Zion Tech Group Blog',
-            description:
-              'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
-            url: 'https://ziontechgroup.com/blog',
-            publisher: {
-              '@type': 'Organization',
-              name: 'Zion Tech Group',
-              logo: { '@type': 'ImageObject', url: 'https://ziontechgroup.com/logo.png' },
-            },
-            inLanguage: 'en-US',
-          }),
-        }}
-      />
->>>>>>> origin/main
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-24 left-[-10rem] h-[32rem] w-[32rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute right-[-12rem] top-32 h-[30rem] w-[30rem] rounded-full bg-fuchsia-500/10 blur-3xl" />
@@ -178,16 +82,11 @@ export default function BlogIndexPage() {
             Zion Tech Group Blog
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-<<<<<<< HEAD
             {POSTS.length} articles on AI, enterprise automation, IT infrastructure,
-=======
-            {BLOG_POSTS.length} articles on AI, enterprise automation, IT infrastructure,
->>>>>>> origin/main
             cloud architecture and digital transformation from the experts at Zion Tech Group.
           </p>
         </header>
 
-<<<<<<< HEAD
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {POSTS.map(({ slug, title }) => (
             <Link
@@ -201,30 +100,6 @@ export default function BlogIndexPage() {
               <h2 className="mt-2 text-base font-semibold text-white leading-snug group-hover:text-purple-200 transition-colors">
                 {title.replace(' | Zion Tech Group Blog', '')}
               </h2>
-=======
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map(({ slug, title, excerpt, category, date }) => (
-            <Link
-              key={slug}
-              href={`/blog/${slug}`}
-              className="group rounded-2xl border border-slate-800 bg-slate-900/50 p-6 hover:border-purple-500/40 hover:bg-slate-800/60 transition-all duration-200 flex flex-col"
-            >
-              <div className="flex items-center gap-2 mb-3 flex-wrap">
-                <span className="rounded-full border border-purple-400/40 bg-purple-500/15 px-2.5 py-0.5 text-[11px] font-medium text-purple-200">
-                  {category}
-                </span>
-                <time className="text-[11px] text-slate-500">{formatDate(date)}</time>
-              </div>
-              <h2 className="text-base font-semibold text-white leading-snug group-hover:text-purple-200 transition-colors mb-2">
-                {title}
-              </h2>
-              <p className="text-sm text-slate-400 leading-relaxed line-clamp-3 mb-3 flex-1">
-                {excerpt}
-              </p>
-              <span className="text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-colors">
-                Read more →
-              </span>
->>>>>>> origin/main
             </Link>
           ))}
         </div>

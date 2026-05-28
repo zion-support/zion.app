@@ -28,23 +28,7 @@ const styles = StyleSheet.create({
   cta: { marginTop: 20, backgroundColor: '#004080', padding: 15, color: 'white' }
 });
 
-<<<<<<< HEAD
 export default function ProposalPDF({ data }: { data: any }) {
-=======
-interface ProposalData {
-  companyName: string;
-  contactEmail: string;
-  contactPhone?: string;
-  budget: string;
-  needs: string[];
-  selectedServices: Service[];
-  timeline: string;
-  proposalId: string;
-  generatedAt: string;
-}
-
-export default function ProposalPDF({ data }: { data: ProposalData }) {
->>>>>>> origin/main
   const { companyName, contactEmail, contactPhone, budget, needs, selectedServices, timeline, proposalId, generatedAt } = data;
 
   return (

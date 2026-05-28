@@ -1104,10 +1104,133 @@ let list = services;
                 </Link>
               );
             })}
-          </div>
-        </div>
-      </section>
-    <FloatingActionDock />
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* ── Industry Showcase — Top 5 industries, 2 services each (useMemo groupBy) ── */}
+                  {(() => {
+                    const topIndustries = useMemo(() => {
+                      const countMap: Record<string, number> = {};
+                      services.forEach((s: any) => {
+                        const ind = s.industry || 'unknown';
+                        countMap[ind] = (countMap[ind] || 0) + 1;
+                      });
+                      return Object.entries(countMap)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 5)
+                        .map(([ind]) => ind);
+                    }, [services]);
+
+                    const servicesByIndustry = useMemo(() => {
+                      const map: Record<string, Service[]> = {};
+                      services.forEach((s: any) => {
+                        const ind = s.industry || 'unknown';
+                        if (!map[ind]) map[ind] = [];
+                        map[ind].push(s);
+                      });
+                      return map;
+                    }, [services]);
+
+                    return (
+                      <section className="py-16 border-t border-slate-800">
+                        <div className="container-page">
+                          <div className="text-center mb-10">
+                            <h2 className="text-2xl font-bold text-white">Industry Showcase</h2>
+                            <p className="text-slate-400 text-sm mt-2">Top 5 industries by service count — 2 featured services each</p>
+                          </div>
+                          <div className="space-y-8">
+                            {topIndustries.map((ind: string) => {
+                              const indMeta = INDUSTRIES.find(i => i.key === ind);
+                              const color = indMeta?.color || 'from-purple-500 to-pink-500';
+                              const label = indMeta?.label || ind;
+                              const emoji = indMeta?.emoji || '🏢';
+                              const samples = servicesByIndustry[ind]?.slice(0, 2) || [];
+                              return (
+                                <div key={ind} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+                                  <div className="flex items-center gap-3 mb-5">
+                                    <span className="text-2xl">{emoji}</span>
+                                    <div>
+                                      <h3 className="text-lg font-semibold text-white">{label}</h3>
+                                      <span className="text-xs text-slate-500">{servicesByIndustry[ind]?.length || 0} services available</span>
+                                    </div>
+                                  </div>
+                                  <div className="grid sm:grid-cols-2 gap-4">
+                                    {samples.map((svc: any) => (
+                                      <div key={svc.id} className="rounded-xl border border-slate-700/50 bg-slate-900/60 p-4 hover:border-purple-500/30 transition-colors">
+                                        <h4 className="text-sm font-semibold text-white mb-1">{svc.title}</h4>
+                                        <p className="text-xs text-slate-400 line-clamp-2">{svc.description}</p>
+                                        <div className="mt-2 flex flex-wrap gap-1">
+                                          {svc.features?.slice(0, 2).map((f: string) => (
+                                            <span key={f} className="text-[10px] text-slate-400 bg-slate-800/60 border border-slate-700/60 px-1.5 py-0.5 rounded">{f}</span>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </section>
+                    );
+                  })()}
+
+                  {/* ── Zion vs Typical Agencies — Comparison Table ── */}
+                  <section className="py-16 border-t border-slate-800">
+                    <div className="container-page">
+                      <h2 className="text-2xl font-bold text-white text-center mb-2">Zion vs Typical Agencies</h2>
+                      <p className="text-slate-400 text-center text-sm mb-10">Why businesses choose Zion over traditional IT service providers</p>
+                      <div className="max-w-3xl mx-auto rounded-2xl border border-slate-800 overflow-hidden">
+                        <div className="grid grid-cols-3 gap-4 p-5 bg-slate-900/80 border-b border-slate-800">
+                          <div className="text-sm font-semibold text-slate-400">Dimension</div>
+                          <div className="text-sm font-semibold text-white text-center">Zion</div>
+                          <div className="text-sm font-semibold text-slate-400 text-right">Typical Agency</div>
+                        </div>
+                        {[
+                          { dim: 'Pricing Model', zion: 'Transparent, volume-based', agency: 'Hidden fees & markups' },
+                          { dim: 'Response Time', zion: 'SLA-backed 2–4 hour response', agency: '24–72 hour delays' },
+                          { dim: 'Service Scope', zion: '50+ categories, 400+ services', agency: '1–3 focused areas' },
+                          { dim: 'Accountability', zion: 'Dedicated team, ROI tracking', agency: 'Rotating Point of Contact' },
+                        ].map((row, i) => (
+                          <div key={i} className="grid grid-cols-3 gap-4 p-5 border-b border-slate-800 last:border-0 hover:bg-slate-900/40 transition-colors">
+                            <div className="text-sm text-slate-300">{row.dim}</div>
+                            <div className="text-sm text-center text-green-400 font-medium">{row.zion}</div>
+                            <div className="text-sm text-right text-slate-500">{row.agency}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* ── Client Types — 8 Industry Cards ── */}
+                  <section className="py-16 border-t border-slate-800">
+                    <div className="container-page">
+                      <h2 className="text-2xl font-bold text-white text-center mb-2">Who We Work With</h2>
+                      <p className="text-slate-400 text-center text-sm mb-10">Industries and organization types we serve</p>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                          { emoji: '🏥', label: 'Healthcare & Life Sciences', desc: 'HIPAA-compliant AI & IT solutions' },
+                          { emoji: '💳', label: 'Financial Services & FinTech', desc: 'Secure, scalable platforms' },
+                          { emoji: '🛒', label: 'Retail & E-Commerce', desc: 'AI-powered CX & automation' },
+                          { emoji: '🏭', label: 'Manufacturing & Industrial', desc: 'Computer vision & IoT platforms' },
+                          { emoji: '⚡', label: 'Energy & Utilities', desc: 'Grid optimization & analytics' },
+                          { emoji: '🚚', label: 'Logistics & Supply Chain', desc: 'End-to-end visibility & automation' },
+                          { emoji: '⚖️', label: 'Legal & Compliance', desc: 'Contract intelligence & automation' },
+                          { emoji: '🎓', label: 'Education & Research', desc: 'Adaptive learning & knowledge systems' },
+                        ].map((c) => (
+                          <div key={c.label} className="rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/60 hover:border-purple-500/30 p-4 transition-all duration-300 text-center group">
+                            <span className="text-3xl mb-3 block">{c.emoji}</span>
+                            <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">{c.label}</h3>
+                            <p className="text-xs text-slate-500 mt-1">{c.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                <FloatingActionDock />
     </main>
   );
 }

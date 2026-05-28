@@ -6,18 +6,9 @@ import AccessibilityEnhancer from '@/components/AccessibilityEnhancer';
 import type { Metadata } from 'next';
 import { SITE_URL, STRUCTURED_DATA } from './utils/seoConstants';
 
-<<<<<<< HEAD
-=======
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#7c3aed',
-};
-
->>>>>>> origin/main
 export const metadata: Metadata = {
   title: { default: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', template: '%s | Zion Tech Group' },
-  description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms. Machine learning, cybersecurity, cloud infrastructure, automation, and more.',
+  description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms. Machine learning, cybersecurity, cloud infrastructure, automation, and more. Based in',
   keywords: 'AI services, IT consulting, machine learning, cybersecurity, cloud migration, Micro SAAS, automation, NLP, computer vision, recommendation engine',
   authors: [{ name: 'Kleber Garcia Alcatrão', url: 'https://ziontechgroup.com' }],
   creator: 'Zion Tech Group', publisher: 'Zion Tech Group',
@@ -43,17 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="dark">
       <head>
-<<<<<<< HEAD
         <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-=======
-        <link rel="manifest" href="/manifest.json" />
-        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        <script suppressHydrationWarning dangerouslySetInnerHTML={{
-          __html: `if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(e){console.error('SW registration failed:',e)});});}`
-        }} />
->>>>>>> origin/main
 </head>
       <body className="min-h-screen bg-slate-950 text-white antialiased">
         <AccessibilityEnhancer>
