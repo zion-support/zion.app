@@ -17,6 +17,7 @@ import ServiceDiscoveryQuiz from '@/components/ServiceDiscoveryQuiz';
 import ServiceComparisonTool from '@/components/ServiceComparisonTool';
 import ServiceConfigurator from '@/components/ServiceConfigurator';
 import BusinessHealthCheck from '@/components/BusinessHealthCheck';
+import DeploymentCalculator from '@/components/DeploymentCalculator';
 import ROICalculator from '@/components/ROICalculator';
 import PricingEstimator from '@/components/PricingEstimator';
 import ServiceCompare from '@/components/ServiceCompare';
@@ -511,6 +512,24 @@ let list = services;
             </p>
           </div>
           <BusinessHealthCheck />
+        </div>
+      </section>
+
+      {/* ── Deployment Calculator ── */}
+      <section className="py-20 bg-gradient-to-b from-indigo-950 to-purple-950">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-blue-600/30 text-blue-300 rounded-full text-sm font-semibold mb-4">
+              🚀 NEW: Deployment Planning Tool
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Service Deployment Calculator
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Plan your implementation with confidence. Get instant estimates for deployment timelines, team requirements, prerequisites, and costs for any service.
+            </p>
+          </div>
+          <DeploymentCalculator />
         </div>
       </section>
 
