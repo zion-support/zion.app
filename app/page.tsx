@@ -23,6 +23,7 @@ import CustomerSuccessPlatform from '@/components/CustomerSuccessPlatform';
 import ROICalculator from '@/components/ROICalculator';
 import PricingEstimator from '@/components/PricingEstimator';
 import AIServiceMatcher from '@/components/AIServiceMatcher';
+import ServiceStatusDashboard from '@/components/ServiceStatusDashboard';
 import ServiceCompare from '@/components/ServiceCompare';
 
 
@@ -773,6 +774,9 @@ let list = services;
 
       {/* ── AI Service Matcher ── */}
       <AIServiceMatcher />
+
+      {/* ── Live Service Status Dashboard ── */}
+      <ServiceStatusDashboard />
 
         {/* ── Popular Services ── */}
 
