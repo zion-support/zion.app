@@ -3,311 +3,22 @@ import Layout from './components/Layout';
 import Link from 'next/link';
 import { whatsNewItems } from './features/featuredItems';
 import ProductRecommenderSection from './components/ai/ProductRecommenderSection';
-import DependencyBadge from './components/DependencyBadge';
-import AITaskOptimizer from './components/ai-agents/task-optimizer';
-import AIHealthMonitor from './components/ai-agents/health-monitor';
-import AIFinancialAdvisor from './components/ai-agents/financial-advisor';
-import AIPatternRecognizer from './components/ai-agents/pattern-recognizer';
-import AIComponent from './components/ai-components';
 import { AIComponents } from './components/ai-components';
 import { getHomepageAICatalogItems, getHomepageHeroCtas, getHomepageLiveNowItems } from './config/aiCatalog';
 import { allServices } from '@/app/data/servicesData';
-import ServiceComparisonTable from '@/app/components/ServiceComparisonTable';
-type DeploymentReadinessReport = {
-  timestamp?: string;
-  ready?: boolean;
-};
-
-type DeployStatusReport = {
-  generatedAt?: string;
-  status?: string;
-  sha?: string;
-  netlifyDeployId?: string | null;
-  netlifyDeployUrl?: string | null;
-};
-
-type SuppressionRegistryReport = {
-  generatedAt?: string;
-  noise?: { emaOpenIncidents?: number };
-  totalOpenIncidents?: number;
-  tuning?: { noiseLevel?: string; reason?: string };
-};
-
-type NetlifyPreviewSmokeReport = {
-  generatedAt?: string;
-  skipped?: boolean;
-  unhealthyCount?: number;
-  baseUrl?: string;
-};
-
-type PromotionConfidenceReport = {
-  generatedAt?: string;
-  gatedThreshold?: number;
-  routeScores?: Array<{ route: string; score: number }>;
-};
-
-type LaunchDigestReport = {
-  generatedAt?: string;
-  totalLaunchCommits?: number;
-  weeklyHighlights?: string[];
-};
-type AutomationHealthReport = {
-  generatedAt?: string;
-  severity?: 'nominal' | 'warning' | 'critical' | string;
-  emaOpenIncidents?: number;
-  previewUnhealthyCount?: number;
-  openFingerprintIssues?: number;
-  deployStatus?: string;
-  sloScore?: number;
-  sloDeltaFromPrevious?: number | null;
-  registryGeneratedAt?: string | null;
-  telemetryFreshness?: {
-    suppressionRegistryAt?: string | null;
-    deployStatusAt?: string | null;
-    previewSmokeAt?: string | null;
-    issueIndexAt?: string | null;
-    observabilityEmaFpHistoryAt?: string | null;
-    automationHealthHistoryAt?: string | null;
-  };
-};
-
-type AutomationHealthHistoryFile = {
-  points?: Array<{ sloScore?: number }>;
-};
-
-function getDeploymentReadiness(): DeploymentReadinessReport | null {
-  try {
-    const reportPath = path.join(
-      process.cwd(),
-      'automation',
-      'reports',
-      'deployment-readiness-latest.json',
-    );
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as DeploymentReadinessReport;
-  } catch {
-    return null;
-  }
-}
-
-function getDeployStatus(): DeployStatusReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'deploy-status-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as DeployStatusReport;
-  } catch {
-    return null;
-  }
-}
-
-function getPromotionConfidence(): PromotionConfidenceReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'promotion-confidence-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as PromotionConfidenceReport;
-  } catch {
-    return null;
-  }
-}
-
-function getLaunchDigest(): LaunchDigestReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'ai-launch-digest-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as LaunchDigestReport;
-  } catch {
-    return null;
-  }
-}
-
-function getSuppressionRegistry(): SuppressionRegistryReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'incident-suppression-registry-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as SuppressionRegistryReport;
-  } catch {
-    return null;
-  }
-}
-
-function getNetlifyPreviewSmoke(): NetlifyPreviewSmokeReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'netlify-preview-smoke-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as NetlifyPreviewSmokeReport;
-  } catch {
-    return null;
-  }
-}
-
-function getAutomationHealth(): AutomationHealthReport | null {
-  try {
-    const reportPath = path.join(process.cwd(), 'automation', 'reports', 'automation-health-latest.json');
-    if (!fs.existsSync(reportPath)) return null;
-    return JSON.parse(fs.readFileSync(reportPath, 'utf8')) as AutomationHealthReport;
-  } catch {
-    return null;
-  }
-}
-
-function getAutomationHealthHistory(): number[] {
-  try {
-    const p = path.join(process.cwd(), 'automation', 'reports', 'automation-health-history.json');
-    if (!fs.existsSync(p)) return [];
-    const j = JSON.parse(fs.readFileSync(p, 'utf8')) as AutomationHealthHistoryFile;
-    const pts = Array.isArray(j.points) ? j.points : [];
-    return pts.slice(-18).map((x) => Number(x.sloScore ?? 0));
-  } catch {
-    return [];
-  }
-}
-
-function sloTinySpark(scores: number[]): string {
-  if (scores.length === 0) return '';
-  const last = scores.slice(-18);
-  const max = Math.max(...last, 1);
-  return last
-    .map((v) => {
-      const r = v / max;
-      if (r < 0.25) return '.';
-      if (r < 0.5) return ':';
-      if (r < 0.75) return '*';
-      return '#';
-    })
-    .join('');
-}
-
-function normalizeRouteFromHref(href: string): string {
-  if (!href.startsWith('/')) return href;
-  return href.split('#')[0]?.split('?')[0] ?? href;
-}
-
-function applyConfidenceGate<T extends { href: string }>(
-  items: T[],
-  confidence: PromotionConfidenceReport | null,
-): T[] {
-  const threshold = confidence?.gatedThreshold ?? 60;
-  const scoreByRoute = new Map((confidence?.routeScores ?? []).map((item) => [item.route, item.score]));
-  return items.filter((item) => {
-    const route = normalizeRouteFromHref(item.href);
-    const score = scoreByRoute.get(route);
-    if (typeof score !== 'number') return true;
-    return score >= threshold;
-  });
-}
+import LiveActivityFeed from './components/marketing/LiveActivityFeed';
+import ClientTestimonials from './components/marketing/ClientTestimonials';
 
 export default function Home() {
   const confidence = getPromotionConfidence();
   const aiCatalogHighlights = applyConfidenceGate(getHomepageAICatalogItems(), confidence);
   const liveNowItems = applyConfidenceGate(getHomepageLiveNowItems(), confidence);
   const heroCtas = applyConfidenceGate(getHomepageHeroCtas(), confidence);
-  const readiness = getDeploymentReadiness();
-  const deployStatus = getDeployStatus();
-  const digest = getLaunchDigest();
-  const suppression = getSuppressionRegistry();
-  const netlifySmoke = getNetlifyPreviewSmoke();
-  const autoHealth = getAutomationHealth();
-  const sloHistory = getAutomationHealthHistory();
-  const sloSpark = sloTinySpark(sloHistory);
-  const readinessDetail = getDeploymentReadiness();
-  const deployDetail = getAutomationHealth();
-
-  const overallHealth = getOverallHealth();
-  const getOverallHealth = () => {
-    const critical = measures.filter(m => m.status === 'critical').length;
-    const warning = measures.filter(m => m.status === 'warning').length;
-    const optimal = measures.filter(m => m.status === 'optimal').length;
-    if (critical > 0) return { level: 'critical', color: 'text-red-600', text: 'Critical Issues' };
-    if (warning > 2) return { level: 'warning', color: 'text-yellow-600', text: 'Warning' };
-    if (optimal >= measures.length * 0.7) return { level: 'optimal', color: 'text-green-600', text: 'Optimal' };
-    return { level: 'review', color: 'text-blue-600', text: 'Review Needed' };
-  };
 
   return (
     <Layout>
       {/* Banner */}
       <Banner items={whatsNewItems} />
-
-      {/* Autopilot Health */}
-      <section
-        aria-label="Automation health"
-        className="border-b border-slate-200 bg-slate-900 text-slate-100"
-      >
-        <div className="container mx-auto flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 text-xs sm:text-sm">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span className="font-semibold text-white">Automation health</span>
-            {typeof ema !== 'number' ? (
-              <span className="text-sm text-gray-400">Registry snapshot not in repo build</span>
-            ) : null}
-            {deployDetail ? (
-              <span className="text-sm text-white">
-                Deploy:{' '}
-                <span className="font-mono uppercase text-slate-100">{deployDetail.sha ?? 'unknown'}</span>
-                {deployDetail.status ? ` · ${deployDetail.status}` : ''}
-              </span>
-            ) : null}
-            {deployNetlify ? (
-              <a
-                href={deployNetlify}
-                className="text-white underline decoration-cyan-500/60 underline-offset-2 hover:text-cyan-200"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Netlify preview
-              </a>
-            ) : null}
-            {netlifySmoke && !netlifySmoke.skipped && typeof netlifySmoke.unhealthyCount === 'number' ? (
-              <span className={netlifySmoke.unhealthyCount > 0 ? 'text-amber-300' : 'text-emerald-300'}>
-                Preview smoke: {netlifySmoke.unhealthyCount === 0 ? 'OK' : `${netlifySmoke.unhealthyCount} route(s)`}
-              </span>
-            ) : null}
-            {autoHealth ? (
-              <span className="text-sm text-white">
-                FP issues: <span className="font-mono text-gray-200">{autoHealth.openFingerprintIssues ?? 'n/a'}</span>
-              </span>
-            ) : null}
-            {typeof autoHealth?.sloScore === 'number' ? (
-              <span className="text-sm text-white">
-                SLO:{' '}
-                <span className="font-mono text-gray-200">{autoHealth.sloScore}</span>
-                {autoHealth.sloDeltaFromPrevious != null && (
-                  <span
-                    className={autoHealth.sloDeltaFromPrevious > 0 ? 'text-emerald-300' : autoHealth.sloDeltaFromPrevious < 0 ? 'text-rose-300' : 'text-slate-400'}
-                  >
-                    {' '}
-                    ({autoHealth.sloDeltaFromPrevious > 0 ? '+' : ''}
-                    {autoHealth.sloDeltaFromPrevious})
-                  </span>
-                ) : null}
-                {sloSpark ? (
-                  <span className="ml-1 font-mono text-[10px] text-gray-400" title="SLO history spark (recent)">
-                    {sloSpark}
-                  </span>
-                ) : null}
-              </span>
-            ) : null}
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span
-              className={`rounded-full px-2 py-0.5 text-xs font-semibold ${overallHealth.color}`}>
-              {overallHealth.text}
-            </span>
-            <Link
-              href="/ai-lab/deploy-drift-dashboard"
-              className="rounded-md border border-slate-600 bg-slate-800 px-2 py-1 text-white font-semibold text-slate-100 hover:bg-slate-700"
-            >
-              Drift dashboard
-            </Link>
-            <Link
-              href="/automation"
-              className="rounded-md border border-slate-600 bg-slate-800 px-2 py-1 text-white font-semibold text-slate-100 hover:bg-slate-700"
-            >
-              Automation
-            </Link>
-            <DependencyBadge />
-          </div>
-        </div>
-      </section>
 
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-8">
@@ -360,6 +71,9 @@ export default function Home() {
               View all AI products & experiences
             </Link>
           </div>
+
+          {/* Live Activity Feed */}
+          <LiveActivityFeed />
 
           <section className="mt-8 grid gap-4 md:grid-cols-3">
             <Link
@@ -542,6 +256,9 @@ export default function Home() {
               </Link>
             </div>
           </section>
+
+          {/* Client Testimonials */}
+          <ClientTestimonials />
 
           <ProductRecommenderSection sectionId="ai-product-recommender" />
 
