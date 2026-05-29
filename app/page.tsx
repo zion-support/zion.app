@@ -18,6 +18,7 @@ import ServiceComparisonTool from '@/components/ServiceComparisonTool';
 import ServiceConfigurator from '@/components/ServiceConfigurator';
 import BusinessHealthCheck from '@/components/BusinessHealthCheck';
 import DeploymentCalculator from '@/components/DeploymentCalculator';
+import CustomerSuccessPlatform from '@/components/CustomerSuccessPlatform';
 import ROICalculator from '@/components/ROICalculator';
 import PricingEstimator from '@/components/PricingEstimator';
 import ServiceCompare from '@/components/ServiceCompare';
@@ -542,6 +543,24 @@ let list = services;
               Request Demo
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ── AI Customer Success Platform ── */}
+      <section className="py-20 bg-gradient-to-b from-purple-950 to-indigo-950">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-yellow-600/30 text-yellow-300 rounded-full text-sm font-semibold mb-4">
+              🌟 NEW: Customer Retention AI
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              AI Customer Success Platform
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Predict churn before it happens, optimize customer engagement, and maximize lifetime value with AI-powered health scoring and proactive interventions.
+            </p>
+          </div>
+          <CustomerSuccessPlatform />
         </div>
       </section>
 
