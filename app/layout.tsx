@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AccessibilityEnhancer from '@/components/AccessibilityEnhancer';
 import type { Metadata } from 'next';
+import AIServiceAdvisor from '@/components/AIServiceAdvisor';
 import { SITE_URL, STRUCTURED_DATA } from './utils/seoConstants';
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navigation />
           <div id="main-content">{children}</div>
           <Footer />
+          <AIServiceAdvisor />
         </AccessibilityEnhancer>
       </body>
     </html>
