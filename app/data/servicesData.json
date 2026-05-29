@@ -10305,6 +10305,996 @@
     "industry": "Legal & Compliance"
   },
   {
+    "id": "ai-ransomware-detection-system",
+    "title": "AI Ransomware Detection & Response Platform",
+    "description": "Real-time ransomware detection across endpoints, network, and cloud. AI identifies encryption behavior patterns, auto-isolates infected systems, and triggers incident response playbooks. Stops ransomware in under 30 seconds.",
+    "features": [
+      "Behavioral encryption detection",
+      "Auto-isolation of infected endpoints",
+      "Ransom note analysis & decryption keys",
+      "Forensic timeline reconstruction",
+      "Integration with SIEM/SOAR",
+      "24/7 SOC monitoring included"
+    ],
+    "benefits": [
+      "Detect ransomware in 30 seconds",
+      "Auto-isolate before spread",
+      "Reduce breach cost by 80%"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ransomware-detection-system",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔒",
+    "href": "/services/ai-ransomware-detection-system",
+    "popular": true,
+    "category": "security",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-clinical-trial-design-optimizer",
+    "title": "AI Clinical Trial Design & Protocol Optimizer",
+    "description": "Optimize clinical trial protocols: patient recruitment prediction, site selection, endpoint analysis, and regulatory submission preparation. Reduces trial timelines by 40% and costs by 30%.",
+    "features": [
+      "Optimal protocol design AI",
+      "Patient recruitment prediction",
+      "Site performance scoring",
+      "Endpoint analysis & recommendations",
+      "FDA/EMA submission prep",
+      "Adaptive trial simulation"
+    ],
+    "benefits": [
+      "Reduce trial timelines by 40%",
+      "Cut costs by 30%",
+      "Improve approval rates"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-clinical-trial-design-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💊",
+    "href": "/services/ai-clinical-trial-design-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-judicial-analytics-platform",
+    "title": "AI Judicial Analytics & Case Prediction",
+    "description": "Analyze case law, predict litigation outcomes, and optimize legal strategy. NLP across 50M+ cases, judge behavior analysis, and settlement range prediction. Used by 100+ law firms.",
+    "features": [
+      "Case outcome prediction (85% accuracy)",
+      "Judge behavior analysis",
+      "Settlement range estimation",
+      "Precedent citation mining",
+      "Brief quality scoring",
+      "Opposition weakness identification"
+    ],
+    "benefits": [
+      "85% litigation outcome accuracy",
+      "Negotiate better settlements",
+      "Win more cases"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-judicial-analytics-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚖️",
+    "href": "/services/ai-judicial-analytics-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "Legal & Compliance"
+  },
+  {
+    "id": "ai-disaster-response-coordinator",
+    "title": "AI Disaster Response & Coordination Platform",
+    "description": "Coordinate emergency response across agencies: resource allocation optimization, evacuation routing, damage assessment from satellite/drone, and real-time situational awareness.",
+    "features": [
+      "Multi-agency coordination dashboard",
+      "Resource allocation optimization",
+      "Satellite/drone damage assessment",
+      "Evacuation route planning",
+      "Real-time resource tracking",
+      "Post-disaster damage reporting"
+    ],
+    "benefits": [
+      "Coordinate 10x faster",
+      "Optimize resource deployment",
+      "Save more lives"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-disaster-response-coordinator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🆘",
+    "href": "/services/ai-disaster-response-coordinator",
+    "popular": false,
+    "category": "ai",
+    "industry": "Government"
+  },
+  {
+    "id": "ai-genomics-pipeline",
+    "title": "AI Genomics Analysis & Precision Medicine Platform",
+    "description": "Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, and treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.",
+    "features": [
+      "Whole genome sequencing analysis",
+      "Pharmacogenomics scoring",
+      "Polygenic disease risk scoring",
+      "Treatment response prediction",
+      "HIPAA-compliant cloud pipeline",
+      "Clinical reporting automation"
+    ],
+    "benefits": [
+      "Process genomes in hours",
+      "Personalize treatment plans",
+      "Identify disease risk early"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-genomics-pipeline",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧬",
+    "href": "/services/ai-genomics-pipeline",
+    "popular": true,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-mining-safety-optimizer",
+    "title": "AI Mining Safety & Operations Optimizer",
+    "description": "Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, and ore grade prediction. Reduces accidents by 50%.",
+    "features": [
+      "Equipment health prediction",
+      "Ventilation air quality optimization",
+      "Worker PPE compliance detection",
+      "Ore grade prediction from images",
+      "Slope stability analysis",
+      "Autonomous vehicle coordination"
+    ],
+    "benefits": [
+      "Reduce accidents by 50%",
+      "Optimize ore extraction",
+      "Ensure safety compliance"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-mining-safety-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⛏️",
+    "href": "/services/ai-mining-safety-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Manufacturing"
+  },
+  {
+    "id": "ai-supply-chain-financing",
+    "title": "AI Supply Chain Financing & Risk Platform",
+    "description": "Automated supply chain finance: invoice verification, buyer risk scoring, dynamic discounting, and fraud detection. Processes $1B+ in receivables with 99.5% accuracy.",
+    "features": [
+      "Automated invoice verification",
+      "Buyer credit risk scoring",
+      "Dynamic discounting engine",
+      "Fraud detection (99.5% accuracy)",
+      "Multi-bank integration",
+      "Real-time funding decisions"
+    ],
+    "benefits": [
+      "Process $1B+ in receivables",
+      "Reduce fraud by 95%",
+      "Instant funding decisions"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-supply-chain-financing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💳",
+    "href": "/services/ai-supply-chain-financing",
+    "popular": false,
+    "category": "ai",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-wind-farm-optimizer",
+    "title": "AI Wind Farm Performance Optimizer",
+    "description": "Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, and predictive maintenance. Increases energy output by 12% and reduces maintenance by 40%.",
+    "features": [
+      "Yaw & pitch AI optimization",
+      "Wake effect modeling & mitigation",
+      "Predictive maintenance scheduling",
+      "Power curve anomaly detection",
+      "Grid integration optimization",
+      "Wind forecasting (hourly to weekly)"
+    ],
+    "benefits": [
+      "Increase output by 12%",
+      "Reduce maintenance by 40%",
+      "Maximize ROI per turbine"
+    ],
+    "pricing": {
+      "basic": "499/turbine",
+      "pro": "999/turbine",
+      "enterprise": "2499/turbine"
+    },
+    "contactInfo": {
+      "website": "/services/ai-wind-farm-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💨",
+    "href": "/services/ai-wind-farm-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Energy & Utilities"
+  },
+  {
+    "id": "ai-journalism-fact-checker",
+    "title": "AI Real-Time Fact-Checking for Journalism",
+    "description": "Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, and citation suggestions. Used by 50+ newsrooms.",
+    "features": [
+      "Real-time claim verification",
+      "Source credibility scoring",
+      "Bias & framing detection",
+      "Citation suggestion engine",
+      "Deepfake detection",
+      "Multi-language verification"
+    ],
+    "benefits": [
+      "Verify in seconds not hours",
+      "Never miss a false claim",
+      "Maintain editorial integrity"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "249",
+      "enterprise": "799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-journalism-fact-checker",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📰",
+    "href": "/services/ai-journalism-fact-checker",
+    "popular": false,
+    "category": "ai",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "id": "ai-bank-fraud-investigator",
+    "title": "AI Bank Fraud Investigation Platform",
+    "description": "Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, and regulatory reporting. Reduces investigation time by 75%.",
+    "features": [
+      "Transaction link analysis",
+      "Entity resolution across systems",
+      "SAR filing automation",
+      "Regulatory compliance reporting",
+      "Case management dashboard",
+      "Suspicious pattern detection"
+    ],
+    "benefits": [
+      "Reduce investigation time by 75%",
+      "Automate SAR filings",
+      "Find fraud networks"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-bank-fraud-investigator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏦",
+    "href": "/services/ai-bank-fraud-investigator",
+    "popular": true,
+    "category": "security",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-cold-chain-monitor",
+    "title": "AI Cold Chain Monitoring for Pharmaceuticals",
+    "description": "IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, compliance reporting (GDP/FDA), and automated corrective actions. Prevents $35B in annual spoilage.",
+    "features": [
+      "Real-time temperature/humidity monitoring",
+      "Excursion prediction (30-min advance)",
+      "Automated corrective actions",
+      "FDA 21 CFR Part 11 compliance",
+      "GDP documentation auto-generation",
+      "Recall batch identification"
+    ],
+    "benefits": [
+      "Prevent spoilage 30 min early",
+      "Full FDA/GDP compliance",
+      "Save millions in recalled products"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-cold-chain-monitor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌡️",
+    "href": "/services/ai-cold-chain-monitor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-port-congestion-predictor",
+    "title": "AI Port Congestion & Shipping Delay Predictor",
+    "description": "Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, and optimal routing recommendations. Used by 200+ shipping companies.",
+    "features": [
+      "14-day port congestion prediction",
+      "Vessel tracking (AIS + satellite)",
+      "Berth availability forecasting",
+      "Customs delay prediction",
+      "Optimal port routing",
+      "Carbon-efficient slow-steaming recs"
+    ],
+    "benefits": [
+      "14-day advance warning",
+      "Reduce demurrage costs by 40%",
+      "Optimize routing decisions"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-port-congestion-predictor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🚢",
+    "href": "/services/ai-port-congestion-predictor",
+    "popular": false,
+    "category": "data",
+    "industry": "Logistics & Supply Chain"
+  },
+  {
+    "id": "ai-hurricane-damage-assessor",
+    "title": "AI Hurricane & Storm Damage Assessment",
+    "description": "Post-storm damage assessment from satellite/droone imagery: roof damage detection, flood extent mapping, insurance claim validation, and repair cost estimation. Processes 10,000+ properties per hour.",
+    "features": [
+      "AI roof damage detection",
+      "Flood extent mapping",
+      "Insurance claim validation",
+      "Repair cost estimation",
+      "Before/after comparison",
+      "FEMA report generation"
+    ],
+    "benefits": [
+      "Assess 10K properties/hour",
+      "Accelerate insurance claims",
+      "Prioritize emergency response"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-hurricane-damage-assessor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌀",
+    "href": "/services/ai-hurricane-damage-assessor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Insurance"
+  },
+  {
+    "id": "ai-code-compliance-auditor",
+    "title": "AI Code Compliance & License Auditor",
+    "description": "Scan codebases for license compliance, security vulnerabilities, and quality issues. Supports 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.",
+    "features": [
+      "Multi-language code analysis (50+)",
+      "License compliance scanning (200+ licenses)",
+      "Security vulnerability detection",
+      "Code quality scoring",
+      "CI/CD pipeline integration",
+      "SBOM generation"
+    ],
+    "benefits": [
+      "Avoid license lawsuits",
+      "Find vulnerabilities early",
+      "Automate compliance"
+    ],
+    "pricing": {
+      "basic": "49/repo",
+      "pro": "149/repo",
+      "enterprise": "499/repo"
+    },
+    "contactInfo": {
+      "website": "/services/ai-code-compliance-auditor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📋",
+    "href": "/services/ai-code-compliance-auditor",
+    "popular": false,
+    "category": "security",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-esg-reporting-platform",
+    "title": "AI ESG Reporting & Sustainability Platform",
+    "description": "Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, and GRI/SASB/TCFD compliant reports.",
+    "features": [
+      "Automated GHG emissions tracking",
+      "Social impact measurement",
+      "ESG governance scoring",
+      "GRI/SASB/TCFD report generation",
+      "Supply chain ESG monitoring",
+      "Benchmarking against peers"
+    ],
+    "benefits": [
+      "Automate ESG reporting",
+      "Reduce audit costs by 60%",
+      "Benchmark against 10K+ companies"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-esg-reporting-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌱",
+    "href": "/services/ai-esg-reporting-platform",
+    "popular": true,
+    "category": "data",
+    "industry": "Finance"
+  },
+  {
+    "id": "ai-ransomware-detection-system",
+    "title": "AI Ransomware Detection & Response Platform",
+    "description": "Real-time ransomware detection across endpoints and network. AI identifies encryption behavior, auto-isolates infected systems, triggers incident response playbooks. Stops ransomware in under 30 seconds.",
+    "features": [
+      "Behavioral encryption detection",
+      "Auto-isolation of infected endpoints",
+      "Ransom note analysis & decryption keys",
+      "Forensic timeline reconstruction",
+      "SIEM/SOAR integration",
+      "24/7 SOC monitoring included"
+    ],
+    "benefits": [
+      "Detect ransomware in 30 seconds",
+      "Auto-isolate before spread",
+      "Reduce breach cost by 80%"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ransomware-detection-system",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔒",
+    "href": "/services/ai-ransomware-detection-system",
+    "popular": true,
+    "category": "security",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-clinical-trial-design-optimizer",
+    "title": "AI Clinical Trial Design & Protocol Optimizer",
+    "description": "Optimize clinical trial protocols: patient recruitment prediction, site selection, endpoint analysis, regulatory submission prep. Reduces trial timelines by 40%.",
+    "features": [
+      "Optimal protocol design AI",
+      "Patient recruitment prediction",
+      "Site performance scoring",
+      "Endpoint analysis & recommendations",
+      "FDA/EMA submission prep",
+      "Adaptive trial simulation"
+    ],
+    "benefits": [
+      "Reduce trial timelines by 40%",
+      "Cut costs by 30%",
+      "Improve approval rates"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-clinical-trial-design-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💊",
+    "href": "/services/ai-clinical-trial-design-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-judicial-analytics-platform",
+    "title": "AI Judicial Analytics & Case Prediction",
+    "description": "Analyze case law, predict litigation outcomes, optimize legal strategy. NLP across 50M+ cases, judge behavior analysis, settlement range prediction. Used by 100+ law firms.",
+    "features": [
+      "Case outcome prediction (85% accuracy)",
+      "Judge behavior analysis",
+      "Settlement range estimation",
+      "Precedent citation mining",
+      "Brief quality scoring",
+      "Opposition weakness identification"
+    ],
+    "benefits": [
+      "85% litigation outcome accuracy",
+      "Negotiate better settlements",
+      "Win more cases"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-judicial-analytics-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚖️",
+    "href": "/services/ai-judicial-analytics-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "Legal & Compliance"
+  },
+  {
+    "id": "ai-disaster-response-coordinator",
+    "title": "AI Disaster Response & Coordination Platform",
+    "description": "Coordinate emergency response across agencies: resource allocation optimization, evacuation routing, satellite/drone damage assessment, real-time situational awareness.",
+    "features": [
+      "Multi-agency coordination dashboard",
+      "Resource allocation optimization",
+      "Satellite/drone damage assessment",
+      "Evacuation route planning",
+      "Real-time resource tracking",
+      "Post-disaster damage reporting"
+    ],
+    "benefits": [
+      "Coordinate 10x faster",
+      "Optimize resource deployment",
+      "Save more lives"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-disaster-response-coordinator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🆘",
+    "href": "/services/ai-disaster-response-coordinator",
+    "popular": false,
+    "category": "ai",
+    "industry": "Government"
+  },
+  {
+    "id": "ai-genomics-pipeline",
+    "title": "AI Genomics Analysis & Precision Medicine Platform",
+    "description": "Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.",
+    "features": [
+      "Whole genome sequencing analysis",
+      "Pharmacogenomics scoring",
+      "Polygenic disease risk scoring",
+      "Treatment response prediction",
+      "HIPAA-compliant cloud pipeline",
+      "Clinical reporting automation"
+    ],
+    "benefits": [
+      "Process genomes in hours",
+      "Personalize treatment plans",
+      "Identify disease risk early"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-genomics-pipeline",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🧬",
+    "href": "/services/ai-genomics-pipeline",
+    "popular": true,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-mining-safety-optimizer",
+    "title": "AI Mining Safety & Operations Optimizer",
+    "description": "Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, ore grade prediction. Reduces accidents by 50%.",
+    "features": [
+      "Equipment health prediction",
+      "Ventilation air quality optimization",
+      "Worker PPE compliance detection",
+      "Ore grade prediction from images",
+      "Slope stability analysis",
+      "Autonomous vehicle coordination"
+    ],
+    "benefits": [
+      "Reduce accidents by 50%",
+      "Optimize ore extraction",
+      "Ensure safety compliance"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-mining-safety-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⛏️",
+    "href": "/services/ai-mining-safety-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Manufacturing"
+  },
+  {
+    "id": "ai-supply-chain-financing",
+    "title": "AI Supply Chain Financing & Risk Platform",
+    "description": "Automated supply chain finance: invoice verification, buyer risk scoring, dynamic discounting, fraud detection. Processes $1B+ in receivables with 99.5% accuracy.",
+    "features": [
+      "Automated invoice verification",
+      "Buyer credit risk scoring",
+      "Dynamic discounting engine",
+      "Fraud detection (99.5% accuracy)",
+      "Multi-bank integration",
+      "Real-time funding decisions"
+    ],
+    "benefits": [
+      "Process $1B+ in receivables",
+      "Reduce fraud by 95%",
+      "Instant funding decisions"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-supply-chain-financing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💳",
+    "href": "/services/ai-supply-chain-financing",
+    "popular": false,
+    "category": "ai",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-wind-farm-optimizer",
+    "title": "AI Wind Farm Performance Optimizer",
+    "description": "Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, predictive maintenance. Increases energy output by 12%.",
+    "features": [
+      "Yaw & pitch AI optimization",
+      "Wake effect modeling & mitigation",
+      "Predictive maintenance scheduling",
+      "Power curve anomaly detection",
+      "Grid integration optimization",
+      "Wind forecasting (hourly to weekly)"
+    ],
+    "benefits": [
+      "Increase output by 12%",
+      "Reduce maintenance by 40%",
+      "Maximize ROI per turbine"
+    ],
+    "pricing": {
+      "basic": "499/turbine",
+      "pro": "999/turbine",
+      "enterprise": "2499/turbine"
+    },
+    "contactInfo": {
+      "website": "/services/ai-wind-farm-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💨",
+    "href": "/services/ai-wind-farm-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Energy & Utilities"
+  },
+  {
+    "id": "ai-journalism-fact-checker",
+    "title": "AI Real-Time Fact-Checking for Journalism",
+    "description": "Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, citation suggestions. Used by 50+ newsrooms.",
+    "features": [
+      "Real-time claim verification",
+      "Source credibility scoring",
+      "Bias & framing detection",
+      "Citation suggestion engine",
+      "Deepfake detection",
+      "Multi-language verification"
+    ],
+    "benefits": [
+      "Verify in seconds not hours",
+      "Never miss a false claim",
+      "Maintain editorial integrity"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "249",
+      "enterprise": "799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-journalism-fact-checker",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📰",
+    "href": "/services/ai-journalism-fact-checker",
+    "popular": false,
+    "category": "ai",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "id": "ai-bank-fraud-investigator",
+    "title": "AI Bank Fraud Investigation Platform",
+    "description": "Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, regulatory reporting. Reduces investigation time by 75%.",
+    "features": [
+      "Transaction link analysis",
+      "Entity resolution across systems",
+      "SAR filing automation",
+      "Regulatory compliance reporting",
+      "Case management dashboard",
+      "Suspicious pattern detection"
+    ],
+    "benefits": [
+      "Reduce investigation time by 75%",
+      "Automate SAR filings",
+      "Find fraud networks"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-bank-fraud-investigator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏦",
+    "href": "/services/ai-bank-fraud-investigator",
+    "popular": true,
+    "category": "security",
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-cold-chain-monitor",
+    "title": "AI Cold Chain Monitoring for Pharmaceuticals",
+    "description": "IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, FDA/GDP compliance reporting, automated corrective actions.",
+    "features": [
+      "Real-time temperature/humidity monitoring",
+      "Excursion prediction (30-min advance)",
+      "Automated corrective actions",
+      "FDA 21 CFR Part 11 compliance",
+      "GDP documentation auto-generation",
+      "Recall batch identification"
+    ],
+    "benefits": [
+      "Prevent spoilage 30 min early",
+      "Full FDA/GDP compliance",
+      "Save millions in recalled products"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-cold-chain-monitor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌡️",
+    "href": "/services/ai-cold-chain-monitor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-port-congestion-predictor",
+    "title": "AI Port Congestion & Shipping Delay Predictor",
+    "description": "Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, optimal routing. Used by 200+ shipping companies.",
+    "features": [
+      "14-day port congestion prediction",
+      "Vessel tracking (AIS + satellite)",
+      "Berth availability forecasting",
+      "Customs delay prediction",
+      "Optimal port routing",
+      "Carbon-efficient slow-steaming recs"
+    ],
+    "benefits": [
+      "14-day advance warning",
+      "Reduce demurrage costs by 40%",
+      "Optimize routing decisions"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-port-congestion-predictor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🚢",
+    "href": "/services/ai-port-congestion-predictor",
+    "popular": false,
+    "category": "data",
+    "industry": "Logistics & Supply Chain"
+  },
+  {
+    "id": "ai-hurricane-damage-assessor",
+    "title": "AI Hurricane & Storm Damage Assessment",
+    "description": "Post-storm damage assessment from satellite/drone imagery: roof damage detection, flood extent mapping, insurance claim validation, repair cost estimation. 10,000+ properties/hour.",
+    "features": [
+      "AI roof damage detection",
+      "Flood extent mapping",
+      "Insurance claim validation",
+      "Repair cost estimation",
+      "Before/after comparison",
+      "FEMA report generation"
+    ],
+    "benefits": [
+      "Assess 10K properties/hour",
+      "Accelerate insurance claims",
+      "Prioritize emergency response"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-hurricane-damage-assessor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌀",
+    "href": "/services/ai-hurricane-damage-assessor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Insurance"
+  },
+  {
+    "id": "ai-code-compliance-auditor",
+    "title": "AI Code Compliance & License Auditor",
+    "description": "Scan codebases for license compliance, security vulnerabilities, quality issues. 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.",
+    "features": [
+      "Multi-language code analysis (50+)",
+      "License compliance scanning (200+ licenses)",
+      "Security vulnerability detection",
+      "Code quality scoring",
+      "CI/CD pipeline integration",
+      "SBOM generation"
+    ],
+    "benefits": [
+      "Avoid license lawsuits",
+      "Find vulnerabilities early",
+      "Automate compliance"
+    ],
+    "pricing": {
+      "basic": "49/repo",
+      "pro": "149/repo",
+      "enterprise": "499/repo"
+    },
+    "contactInfo": {
+      "website": "/services/ai-code-compliance-auditor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📋",
+    "href": "/services/ai-code-compliance-auditor",
+    "popular": false,
+    "category": "security",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-esg-reporting-platform",
+    "title": "AI ESG Reporting & Sustainability Platform",
+    "description": "Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, GRI/SASB/TCFD compliant reports.",
+    "features": [
+      "Automated GHG emissions tracking",
+      "Social impact measurement",
+      "ESG governance scoring",
+      "GRI/SASB/TCFD report generation",
+      "Supply chain ESG monitoring",
+      "Benchmarking against peers"
+    ],
+    "benefits": [
+      "Automate ESG reporting",
+      "Reduce audit costs by 60%",
+      "Benchmark against 10K+ companies"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-esg-reporting-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌱",
+    "href": "/services/ai-esg-reporting-platform",
+    "popular": true,
+    "category": "data",
+    "industry": "Finance"
+  },
+  {
     "id": "accessibility-compliance",
     "title": "Accessibility & WCAG Compliance",
     "description": "Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility compliance monitoring.",
