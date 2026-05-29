@@ -92,10 +92,15 @@ def detect_reply_all(email_data: Dict) -> Dict:
         if field:
             all_recipients.extend([r.strip() for r in field.split(",") if r.strip()])
     
-    is_mailing_list = any(kw in to.lower() for kw in ["@", "list@", "team@", "all@", "group@"])
-    body_indicators = ["team", "everyone", "all", "cc", "copying", "including", "for everyone"]
+    is_mailing_list = any(kw in to.lower() for kw in ["list@", "team@", "all@", "group@", "-list@", "-all@"])
+    # Only count strong body indicators (explicit "reply all" or "everyone" or "cc'ing")
+    body_indicators = ["please reply all", "reply to all", "everyone should", "team please",
+                       "cc'ing", "cc'ing all", "copying the team", "including the entire"]
     body_suggests = any(kw in body.lower() for kw in body_indicators)
-    should_reply = len(all_recipients) > 1 or is_mailing_list or body_suggests
+    # CC field presence is a strong signal
+    has_cc = bool(cc and len([r.strip() for r in cc.split(",") if r.strip()]) > 0)
+    # Only reply-all if: multiple actual recipients, mailing list, explicit body request, or CC present
+    should_reply = (len(all_recipients) > 2) or is_mailing_list or body_suggests or has_cc
     
     return {
         "reply_all": should_reply,

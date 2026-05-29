@@ -22,6 +22,7 @@ import VoiceVideoShowcase from '@/components/VoiceVideoShowcase';
 import IntegrationHubShowcase from '@/components/IntegrationHubShowcase';
 import EmailCoachingShowcase from '@/components/EmailCoachingShowcase';
 import EmailIntelligenceShowcase from '@/components/EmailIntelligenceShowcase';
+import ServiceStatsWidget from '@/components/ServiceStatsWidget';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -386,6 +387,11 @@ let list = services;
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── Service Statistics Dashboard ── */}
+      <section className="py-16 bg-slate-950">
+        <ServiceStatsWidget />
       </section>
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
