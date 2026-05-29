@@ -13,6 +13,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
+import EmailCommandCenter from '@/components/EmailCommandCenter';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import BusinessTransformationRoadmap from '@/components/BusinessTransformationRoadmap';
 import ServiceHealthMonitor from '@/components/ServiceHealthMonitor';
@@ -385,9 +386,12 @@ let list = services;
       </section>
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
-      <ServiceMatchQuiz />
+            <ServiceMatchQuiz />
 
-      {/* ── How It Works ── */}
+            {/* ── Email Command Center ── */}
+            <EmailCommandCenter />
+
+            {/* ── How It Works ── */}
       <section className="py-20">
         <div className="container-page">
           <h2 className="section-heading text-center">How It Works</h2>
