@@ -18,6 +18,7 @@ import BusinessTransformationRoadmap from '@/components/BusinessTransformationRo
 import ServiceHealthMonitor from '@/components/ServiceHealthMonitor';
 import AIBusinessIntelligenceDashboard from '@/components/AIBusinessIntelligenceDashboard';
 import SecurityComplianceShowcase from '@/components/SecurityComplianceShowcase';
+import IntegrationHubShowcase from '@/components/IntegrationHubShowcase';
 import EmailCoachingShowcase from '@/components/EmailCoachingShowcase';
 
 
@@ -1068,6 +1069,9 @@ let list = services;
 
       {/* ── AI Email Security & Compliance Guardian ── */}
       <SecurityComplianceShowcase />
+
+      {/* ── AI Email Integration Hub ── */}
+      <IntegrationHubShowcase />
 
       {/* ── AI Email Coaching & Training Platform ── */}
       <EmailCoachingShowcase />
