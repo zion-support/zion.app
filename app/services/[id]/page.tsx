@@ -12,17 +12,17 @@ const CAT_LABELS: Record<string,string> = {
 
 interface PageProps { params: Promise<{ id: string }>; }
 
-export const dynamicParams = true;
+// Note: All pages are statically generated at build time (output: export)
+// Only the top 20 services are included to keep build time reasonable
 
 export async function generateStaticParams() {
-  // Only statically generate the top 50 most important/popular services
-  // The rest are dynamically generated on first request (then cached)
+  // Only statically generate the top 20 most important/popular services
   const sorted = [...allServices].sort((a, b) => {
     const scoreA = (a.features?.length || 0) * 3 + (a.benefits?.length || 0) * 2 + (a.popular ? 50 : 0);
     const scoreB = (b.features?.length || 0) * 3 + (b.benefits?.length || 0) * 2 + (b.popular ? 50 : 0);
     return scoreB - scoreA;
   });
-  const top = sorted.slice(0, 50);
+  const top = sorted.slice(0, 20);
   const params: { id: string }[] = [];
   for (const service of top) {
     params.push({ id: service.id });
