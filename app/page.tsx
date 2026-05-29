@@ -15,6 +15,7 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import ServiceDiscoveryQuiz from '@/components/ServiceDiscoveryQuiz';
 import ServiceComparisonTool from '@/components/ServiceComparisonTool';
+import ServiceConfigurator from '@/components/ServiceConfigurator';
 import ROICalculator from '@/components/ROICalculator';
 import PricingEstimator from '@/components/PricingEstimator';
 import ServiceCompare from '@/components/ServiceCompare';
@@ -473,6 +474,24 @@ let list = services;
             </p>
           </div>
           <ServiceComparisonTool />
+        </div>
+      </section>
+
+      {/* ── Interactive Service Configurator ── */}
+      <section className="py-20 bg-gradient-to-b from-indigo-950 to-slate-950">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-green-600/30 text-green-300 rounded-full text-sm font-semibold mb-4">
+              🎨 NEW: Build Your Custom Solution
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Interactive Service Configurator
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Build your perfect solution by selecting services. Get bundle discounts and see real-time pricing as you configure.
+            </p>
+          </div>
+          <ServiceConfigurator />
         </div>
       </section>
 
