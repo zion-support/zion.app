@@ -9843,6 +9843,468 @@
     "industry": "Financial Services"
   },
   {
+    "id": "ai-ocean-health-monitor",
+    "title": "AI Ocean Health & Marine Ecosystem Monitor",
+    "description": "Satellite + sensor analysis for ocean health: algae bloom prediction, microplastic tracking, coral reef bleaching early warning, and illegal fishing detection.",
+    "features": [
+      "Satellite ocean color analysis",
+      "Algae bloom prediction (7-day)",
+      "Microplastic density mapping",
+      "Coral bleaching early warning",
+      "illegal fishing vessel detection",
+      "Marine biodiversity tracking"
+    ],
+    "benefits": [
+      "Predict algae blooms 7 days ahead",
+      "Track marine pollution in real-time",
+      "Protect coral reef ecosystems"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "3499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ocean-health-monitor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🌊",
+    "href": "/services/ai-ocean-health-monitor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Environmental"
+  },
+  {
+    "id": "ai-music-composition-studio",
+    "title": "AI Music Composition & Production Studio",
+    "description": "AI-powered music creation: generate original compositions in any style, remix stems, auto-master tracks, and sync to video. Royalty-free output with commercial licensing.",
+    "features": [
+      "Genre-aware composition generation",
+      "AI stem separation & remixing",
+      "Auto-mastering (streaming-optimized)",
+      "Video-to-music synchronization",
+      "Royalty-free commercial license",
+      "MIDI + DAW integration"
+    ],
+    "benefits": [
+      "Create music in minutes",
+      "100% royalty-free",
+      "Any genre, any mood"
+    ],
+    "pricing": {
+      "basic": "29",
+      "pro": "79",
+      "enterprise": "299"
+    },
+    "contactInfo": {
+      "website": "/services/ai-music-composition-studio",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎵",
+    "href": "/services/ai-music-composition-studio",
+    "popular": true,
+    "category": "ai",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "id": "ai-sports-performance-tracker",
+    "title": "AI Sports Performance & Injury Prevention",
+    "description": "Computer vision sports analytics: biomechanics analysis, injury risk scoring, training load optimization, and opponent scouting reports. Works with any sport.",
+    "features": [
+      "Biomechanics analysis from video",
+      "Injury risk scoring per athlete",
+      "Training load optimization",
+      "Automated opponent scouting",
+      "Performance trend dashboards",
+      "Return-to-play recommendations"
+    ],
+    "benefits": [
+      "Reduce injuries by 40%",
+      "Optimize training loads",
+      "Gain competitive edge"
+    ],
+    "pricing": {
+      "basic": "49/athlete",
+      "pro": "99/athlete",
+      "enterprise": "249/athlete"
+    },
+    "contactInfo": {
+      "website": "/services/ai-sports-performance-tracker",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚽",
+    "href": "/services/ai-sports-performance-tracker",
+    "popular": false,
+    "category": "ai",
+    "industry": "Sports & Fitness"
+  },
+  {
+    "id": "ai-fashion-trend-forecaster",
+    "title": "AI Fashion Trend Forecasting Platform",
+    "description": "Predict fashion trends 12-18 months ahead: social media analysis, runway data, color palette prediction, and demand forecasting per SKU. Used by 200+ brands.",
+    "features": [
+      "Social media trend detection",
+      "Runway & street style analysis",
+      "Color palette prediction",
+      "SKU-level demand forecasting",
+      "Regional trend mapping",
+      "Sustainability scoring per trend"
+    ],
+    "benefits": [
+      "Predict trends 12 months ahead",
+      "Reduce unsold inventory by 35%",
+      "Stay ahead of competitors"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-fashion-trend-forecaster",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "👗",
+    "href": "/services/ai-fashion-trend-forecaster",
+    "popular": false,
+    "category": "ai",
+    "industry": "Fashion & Retail"
+  },
+  {
+    "id": "ai-gaming-npc-engine",
+    "title": "AI NPC & Game Character Engine",
+    "description": "Procedural NPC generation for games: AI-driven dialogue, personality modeling, emotion state machines, and dynamic quest generation. Unity + Unreal integration.",
+    "features": [
+      "AI personality & dialogue generation",
+      "Emotion state machines",
+      "Procedural quest generation",
+      "Multi-language voice synthesis",
+      "Unity & Unreal SDKs",
+      "Behavior tree editor"
+    ],
+    "benefits": [
+      "Create infinite unique NPCs",
+      "Players feel real connections",
+      "Cut character dev time by 80%"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-gaming-npc-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎮",
+    "href": "/services/ai-gaming-npc-engine",
+    "popular": false,
+    "category": "ai",
+    "industry": "Gaming & Entertainment"
+  },
+  {
+    "id": "ai-travel-itinerary-planner",
+    "title": "AI Travel Itinerary & Cost Optimizer",
+    "description": "Personalized travel planning: multi-city routing, real-time price tracking, visa requirements, cultural recommendations, and carbon footprint calculation. Integrates 50+ booking APIs.",
+    "features": [
+      "AI multi-city route optimization",
+      "Real-time flight/hotel price tracking",
+      "Visa & entry requirement checker",
+      "Cultural experience recommendations",
+      "Carbon footprint calculator",
+      "50+ booking API integrations"
+    ],
+    "benefits": [
+      "Find cheapest routes automatically",
+      "Never miss visa requirements",
+      "Travel greener with carbon tracking"
+    ],
+    "pricing": {
+      "basic": "0 (5 plans/mo)",
+      "pro": "9 (unlimited)",
+      "enterprise": "29 (API access)"
+    },
+    "contactInfo": {
+      "website": "/services/ai-travel-itinerary-planner",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "✈️",
+    "href": "/services/ai-travel-itinerary-planner",
+    "popular": true,
+    "category": "ai",
+    "industry": "Travel & Hospitality"
+  },
+  {
+    "id": "ai-noise-pollution-mapper",
+    "title": "AI Noise Pollution Detection & Mapping",
+    "description": "IoT + ML platform for noise monitoring: real-time noise mapping, regulatory compliance tracking, construction noise alerts, and urban planning noise modeling.",
+    "features": [
+      "Real-time noise level mapping",
+      "Regulatory compliance dashboards",
+      "Construction noise alerting",
+      "Urban noise modeling (3D)",
+      "Historical trend analysis",
+      "Source identification (traffic, construction, industrial)"
+    ],
+    "benefits": [
+      "Ensure noise compliance",
+      "Reduce citizen complaints",
+      "Data-driven urban planning"
+    ],
+    "pricing": {
+      "basic": "149/node",
+      "pro": "299/node",
+      "enterprise": "799/node"
+    },
+    "contactInfo": {
+      "website": "/services/ai-noise-pollution-mapper",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📢",
+    "href": "/services/ai-noise-pollution-mapper",
+    "popular": false,
+    "category": "ai",
+    "industry": "Government"
+  },
+  {
+    "id": "ai-predictive-customer-ltv",
+    "title": "AI Predictive Customer Lifetime Value",
+    "description": "Predict customer LTV from day one: behavioral scoring, churn prediction, upsell timing optimization, and cohort analysis. Integrates with Shopify, Stripe, HubSpot.",
+    "features": [
+      "Day-one LTV prediction",
+      "Behavioral scoring models",
+      "Churn prediction (90-day window)",
+      "Upsell timing optimization",
+      "Cohort value comparison",
+      "20+ CRM/payment integrations"
+    ],
+    "benefits": [
+      "Know LTV before first purchase",
+      "Reduce churn by 30%",
+      "Perfect upsell timing"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-predictive-customer-ltv",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "💎",
+    "href": "/services/ai-predictive-customer-ltv",
+    "popular": true,
+    "category": "data",
+    "industry": "SaaS"
+  },
+  {
+    "id": "ai-voice-cloner",
+    "title": "AI Voice Cloning & Localization Platform",
+    "description": "Clone any voice from 30 seconds of audio. Generate localized voiceovers in 40+ languages with preserved accent and emotion. TTS for audiobooks, ads, and IVR systems.",
+    "features": [
+      "30-second voice cloning",
+      "40+ language localization",
+      "Emotion & accent preservation",
+      "Audiobook production pipeline",
+      "Advertising voice generation",
+      "IVR voice system import"
+    ],
+    "benefits": [
+      "Clone any voice instantly",
+      "Localize content in 40+ languages",
+      "Preserve speaker emotion perfectly"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-voice-cloner",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🎤",
+    "href": "/services/ai-voice-cloner",
+    "popular": false,
+    "category": "ai",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "id": "ai-wildfire-risk-predictor",
+    "title": "AI Wildfire Risk Prediction & Prevention",
+    "description": "Predict wildfire risk 72 hours ahead: satellite thermal imaging, weather pattern analysis, vegetation dryness indexing, and evacuation route optimization. Used by 30+ fire departments.",
+    "features": [
+      "72-hour fire risk prediction",
+      "Satellite thermal hotspot detection",
+      "Vegetation dryness indexing",
+      "Evacuation route optimization",
+      "Real-time firefighter dispatch",
+      "Post-fire damage assessment"
+    ],
+    "benefits": [
+      "72-hour advance warning",
+      "Reduce response time by 50%",
+      "Save lives with smart evacuation"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-wildfire-risk-predictor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🔥",
+    "href": "/services/ai-wildfire-risk-predictor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Government"
+  },
+  {
+    "id": "ai-pet-health-monitor",
+    "title": "AI Pet Health & Behavior Monitor",
+    "description": "Computer vision + wearable data for pet health: activity tracking, anomaly detection, breed-specific health risk scoring, and vet telemedicine integration. iOS + Android apps.",
+    "features": [
+      "Activity & sleep tracking",
+      "Behavior anomaly detection",
+      "Breed-specific health risk scoring",
+      "Vet telemedicine integration",
+      "Diet & nutrition recommendations",
+      "Pet social network matching"
+    ],
+    "benefits": [
+      "Detect illness 3 days early",
+      "Personalized pet nutrition",
+      "Connect with vets instantly"
+    ],
+    "pricing": {
+      "basic": "4.99/pet",
+      "pro": "9.99/pet",
+      "enterprise": "19.99/pet"
+    },
+    "contactInfo": {
+      "website": "/services/ai-pet-health-monitor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🐾",
+    "href": "/services/ai-pet-health-monitor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Consumer"
+  },
+  {
+    "id": "ai-language-immersion-tutor",
+    "title": "AI Language Immersion & Conversation Tutor",
+    "description": "Personalized language learning: AI conversation partner with speech recognition, cultural context lessons, pronunciation scoring, and spaced repetition. 30+ languages.",
+    "features": [
+      "AI native-speaker conversation partner",
+      "Real-time pronunciation scoring",
+      "Cultural context lessons",
+      "Spaced repetition system",
+      "Speech recognition (30 languages)",
+      "CEFR level certification prep"
+    ],
+    "benefits": [
+      "Learn 3x faster than apps",
+      "Speak from day one",
+      "Any language, any level"
+    ],
+    "pricing": {
+      "basic": "15",
+      "pro": "29",
+      "enterprise": "59"
+    },
+    "contactInfo": {
+      "website": "/services/ai-language-immersion-tutor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🗣️",
+    "href": "/services/ai-language-immersion-tutor",
+    "popular": false,
+    "category": "ai",
+    "industry": "Education & Research"
+  },
+  {
+    "id": "cloud-serverless-migration-service",
+    "title": "Cloud Serverless Migration & Optimization",
+    "description": "Migrate from VMs/serverful to serverless (AWS Lambda, Cloud Functions, Azure Functions). Auto-assess refactoring needs, rewrite code, and optimize cold starts. Zero downtime migration.",
+    "features": [
+      "Auto-assessment of serverless fit",
+      "Code rewriting for serverless",
+      "Cold start optimization",
+      "Cost migration analysis (before/after)",
+      "Zero-downtime cutover",
+      "Ongoing performance tuning"
+    ],
+    "benefits": [
+      "Cut cloud costs by 60%",
+      "Zero operational overhead",
+      "Auto-scale from 0 to millions"
+    ],
+    "pricing": {
+      "basic": "2499/project",
+      "pro": "4999/project",
+      "enterprise": "14999/project"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-serverless-migration-service",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "⚡",
+    "href": "/services/cloud-serverless-migration-service",
+    "popular": false,
+    "category": "cloud",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-contract-risk-scorer",
+    "title": "AI Contract Risk Scoring & Redlining",
+    "description": "Upload any contract and get an instant risk score: clause-by-clause analysis, missing protections benchmarked against market standards, auto-redline suggestions, and approval workflow.",
+    "features": [
+      "Instant contract risk scoring",
+      "Clause benchmarking vs market standards",
+      "Auto-redline suggestions",
+      "Missing protection detection",
+      "Multi-language contract support",
+      "Approval workflow integration"
+    ],
+    "benefits": [
+      "Score contracts in seconds",
+      "Benchmark against market standards",
+      "Never miss hidden risks"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "149",
+      "enterprise": "499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-contract-risk-scorer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "📝",
+    "href": "/services/ai-contract-risk-scorer",
+    "popular": false,
+    "category": "ai",
+    "industry": "Legal & Compliance"
+  },
+  {
     "id": "accessibility-compliance",
     "title": "Accessibility & WCAG Compliance",
     "description": "Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility compliance monitoring.",

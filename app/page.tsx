@@ -13,6 +13,7 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import PricingEstimator from '@/components/PricingEstimator';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -101,10 +102,36 @@ export default function HomePage() {
   // Dynamic stats — auto-update when catalog changes
   const stats = [
     { value: `${serviceCount}+`, label: STAT_SERVICES },
-    { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS' },
+    { value: `${CATEGORIES.length} Categories`, label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS' },
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
-    ];
+  ];
+
+  // Category pricing for estimator widget
+  const categoryCounts = useMemo(() => {
+    const m: Record<string, number> = {};
+    for (const s of services) { m[s.category] = (m[s.category] || 0) + 1; }
+    return m;
+  }, [services]);
+
+  const categoryPricing = useMemo(() => {
+    const m: Record<string, { min: number; avg: number; max: number }> = {};
+    const byCat: Record<string, number[]> = {};
+    for (const s of services) {
+      const n = Number(s.pricing?.basic || s.pricing?.enterprise || 0);
+      if (n > 0) {
+        if (!byCat[s.category]) byCat[s.category] = [];
+        byCat[s.category].push(n);
+      }
+    }
+    for (const [cat, prices] of Object.entries(byCat)) {
+      if (prices.length > 0) {
+        const sorted = prices.sort((a: number, b: number) => a - b);
+        m[cat] = { min: sorted[0], avg: Math.round(sorted.reduce((a: number, b: number) => a + b, 0) / sorted.length), max: sorted[sorted.length - 1] };
+      }
+    }
+    return m;
+  }, [services]);
 
   // Fetch release-signal dataset on mount
   useEffect(() => {
@@ -429,6 +456,13 @@ let list = services;
           </div>
         </div>
       </section>
+
+      {/* ── Pricing Estimator Widget ── */}
+      <PricingEstimator
+        categories={CATEGORIES}
+        categoryCounts={categoryCounts}
+        categoryPricing={categoryPricing}
+      />
 
         {/* ── Popular Services ── */}
 
