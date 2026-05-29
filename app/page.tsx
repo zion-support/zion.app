@@ -361,6 +361,26 @@ let list = services;
               </span>
             </div>
 
+            {/* ── Academy Banner ── */}
+            <Link href="/academy/" className="block mt-8 mb-6 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 border border-purple-500/30 rounded-2xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="text-4xl">🎓</div>
+                  <div className="text-left">
+                    <div className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                      NEW: AI Training Academy & Certification Programs
+                    </div>
+                    <div className="text-sm text-slate-300 mt-1">
+                      89 courses • 50K+ students • Industry certifications • Corporate training
+                    </div>
+                  </div>
+                </div>
+                <div className="text-purple-300 group-hover:text-purple-200 text-2xl transition-colors">
+                  →
+                </div>
+              </div>
+            </Link>
+
             {/* ── Service Pipeline — live stage counts ── */}
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               {[
