@@ -619,6 +619,53 @@ let list = services;
         </div>
       </section>
 
+      {/* ── AI Proposal Generator ── */}
+      <section className="py-16 bg-gradient-to-br from-green-600/20 via-emerald-600/10 to-teal-600/20">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-semibold mb-4">
+              🚀 NEW: AI-Powered Proposal Generator
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Generate Custom Proposals in Minutes
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Our AI-powered proposal generator creates personalized, professional proposals tailored to your business needs. Select services, get instant pricing, and receive a comprehensive proposal ready to present to stakeholders.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="glass-card p-8 text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-4xl mb-3">📋</div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Step-by-Step Wizard</h3>
+                  <p className="text-slate-400 text-sm">4 simple steps to create your custom proposal</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">💰</div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Instant Pricing</h3>
+                  <p className="text-slate-400 text-sm">Real-time cost calculation as you select services</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">📄</div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Professional Output</h3>
+                  <p className="text-slate-400 text-sm">Ready-to-present proposal with executive summary</p>
+                </div>
+              </div>
+              <Link
+                href="/proposal-generator"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                🤖 Create Your Proposal Now →
+              </Link>
+              <p className="text-slate-400 text-sm mt-4">
+                Free to use • No signup required • Takes 5 minutes
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Services by Category ── */}
       <section className="py-16">
         <div className="container-page">
