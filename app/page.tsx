@@ -13,6 +13,7 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import ServiceDiscoveryQuiz from '@/components/ServiceDiscoveryQuiz';
 import ROICalculator from '@/components/ROICalculator';
 import PricingEstimator from '@/components/PricingEstimator';
 
@@ -434,6 +435,24 @@ let list = services;
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Service Discovery Quiz — NEW Interactive Feature ── */}
+      <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <div className="container-page">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-purple-600/30 text-purple-300 rounded-full text-sm font-semibold mb-4">
+              🎯 NEW: Personalized Recommendations
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Find Your Perfect Solution in 2 Minutes
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Answer 5 quick questions and get AI-powered service recommendations with instant ROI calculations
+            </p>
+          </div>
+          <ServiceDiscoveryQuiz />
         </div>
       </section>
 
