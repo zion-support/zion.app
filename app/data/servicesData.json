@@ -20156,5 +20156,437 @@
     "popular": false,
     "category": "automation",
     "industry": "General"
+  },
+  {
+    "id": "virtual-event-platform",
+    "title": "Virtual Event & Webinar Platform",
+    "description": "Host engaging virtual events, webinars, and hybrid conferences with interactive features. Includes registration management, live polling, Q&A, breakout rooms, analytics dashboard, and post-event recording distribution. Supports up to 10,000 attendees.",
+    "features": [
+      "Unlimited webinar hosting",
+      "Interactive Q&A and polls",
+      "Breakout rooms",
+      "Registration management",
+      "Analytics dashboard",
+      "Recording & playback",
+      "Custom branding",
+      "Email reminders"
+    ],
+    "benefits": [
+      "90% cost reduction vs physical events",
+      "10x audience reach",
+      "Automated lead capture"
+    ],
+    "pricing": {
+      "starter": "49",
+      "professional": "149",
+      "enterprise": "499"
+    },
+    "icon": "🎪",
+    "href": "/services/virtual-event-platform/",
+    "category": "micro-saas",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/virtual-event-platform/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "subscription-billing-engine",
+    "title": "Subscription Billing & Revenue Management",
+    "description": "Complete subscription billing solution with automated invoicing, dunning management, revenue recognition, and financial reporting. Supports tiered pricing, usage-based billing, coupons, and multi-currency. Integrates with Stripe, PayPal, and major accounting platforms.",
+    "features": [
+      "Recurring billing automation",
+      "Dunning management",
+      "Revenue recognition",
+      "Usage-based billing",
+      "Multi-currency support",
+      "Tax automation",
+      "Financial reporting",
+      "Churn analytics"
+    ],
+    "benefits": [
+      "99.9% invoice delivery rate",
+      "40% reduction in involuntary churn",
+      "SOC 2 compliant"
+    ],
+    "pricing": {
+      "starter": "29",
+      "professional": "99",
+      "enterprise": "349"
+    },
+    "icon": "💳",
+    "href": "/services/subscription-billing-engine/",
+    "category": "micro-saas",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/subscription-billing-engine/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "knowledge-base-platform",
+    "title": "AI-Powered Knowledge Base Platform",
+    "description": "Create and manage a self-service knowledge base with AI-powered search, content suggestions, and analytics. Reduce support tickets by 60% with instant answers. Includes widgets for websites, in-app help, and Slack/Teams integration.",
+    "features": [
+      "AI-powered search",
+      "Content analytics",
+      "Website widget",
+      "In-app help center",
+      "Slack/Teams integration",
+      "Multi-language support",
+      "Custom branding",
+      "Feedback collection"
+    ],
+    "benefits": [
+      "60% reduction in support tickets",
+      "24/7 self-service for customers",
+      "AI-suggested content improvements"
+    ],
+    "pricing": {
+      "starter": "19",
+      "professional": "59",
+      "enterprise": "199"
+    },
+    "icon": "📚",
+    "href": "/services/knowledge-base-platform/",
+    "category": "micro-saas",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/knowledge-base-platform/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "appointment-scheduling-suite",
+    "title": "Appointment Scheduling & Booking Suite",
+    "description": "Professional scheduling solution for service businesses. Online booking, calendar sync (Google, Outlook), automated reminders, payment collection, and waitlist management. Reduces no-shows by 80% with SMS and email reminders.",
+    "features": [
+      "Online booking page",
+      "Calendar sync",
+      "Automated reminders",
+      "Payment collection",
+      "Waitlist management",
+      "Team scheduling",
+      "Custom booking forms",
+      "Analytics"
+    ],
+    "benefits": [
+      "80% reduction in no-shows",
+      "50% less admin time",
+      "Increased bookings by 35%"
+    ],
+    "pricing": {
+      "starter": "12",
+      "professional": "39",
+      "enterprise": "129"
+    },
+    "icon": "📅",
+    "href": "/services/appointment-scheduling-suite/",
+    "category": "micro-saas",
+    "popular": false,
+    "contactInfo": {
+      "website": "/services/appointment-scheduling-suite/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "customer-portal-builder",
+    "title": "Customer Self-Service Portal Builder",
+    "description": "Build branded customer portals where clients can manage accounts, view invoices, submit tickets, track orders, and access documentation. No-code builder with drag-and-drop widgets, SSO integration, and mobile-responsive design.",
+    "features": [
+      "Drag-and-drop builder",
+      "Account management",
+      "Ticket submission",
+      "Invoice viewing",
+      "Order tracking",
+      "Documentation access",
+      "SSO integration",
+      "Mobile responsive"
+    ],
+    "benefits": [
+      "70% reduction in support calls",
+      "Improved customer satisfaction",
+      "Branded professional experience"
+    ],
+    "pricing": {
+      "starter": "39",
+      "professional": "99",
+      "enterprise": "299"
+    },
+    "icon": "🏢",
+    "href": "/services/customer-portal-builder/",
+    "category": "micro-saas",
+    "popular": false,
+    "contactInfo": {
+      "website": "/services/customer-portal-builder/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "review-management-platform",
+    "title": "Review & Reputation Management Platform",
+    "description": "Monitor, collect, and manage online reviews across Google, Yelp, TripAdvisor, and industry-specific sites. AI-powered sentiment analysis, automated review requests, response templates, and competitive benchmarking.",
+    "features": [
+      "Multi-platform monitoring",
+      "Automated review requests",
+      "AI sentiment analysis",
+      "Response templates",
+      "Competitive benchmarking",
+      "Review widgets for website",
+      "Alert notifications",
+      "Analytics dashboard"
+    ],
+    "benefits": [
+      "3x more positive reviews",
+      "Early warning for negative feedback",
+      "Improved local SEO rankings"
+    ],
+    "pricing": {
+      "starter": "29",
+      "professional": "79",
+      "enterprise": "249"
+    },
+    "icon": "⭐",
+    "href": "/services/review-management-platform/",
+    "category": "micro-saas",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/review-management-platform/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-meeting-assistant",
+    "title": "AI Meeting Assistant & Summarizer",
+    "description": "Automatically join, transcribe, and summarize meetings from Zoom, Teams, and Google Meet. Generates action items, decisions, and follow-up tasks. Share searchable meeting notes with attendees instantly.",
+    "features": [
+      "Automatic transcription",
+      "Meeting summarization",
+      "Action item extraction",
+      "Decision tracking",
+      "Searchable archive",
+      "Multi-language support",
+      "Zoom/Teams/Meet integration",
+      "Custom templates"
+    ],
+    "benefits": [
+      "95% accurate transcripts",
+      "Save 3 hours/week on meeting notes",
+      "Never miss an action item"
+    ],
+    "pricing": {
+      "starter": "15",
+      "professional": "39",
+      "enterprise": "149"
+    },
+    "icon": "🤝",
+    "href": "/services/ai-meeting-assistant/",
+    "category": "ai",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/ai-meeting-assistant/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-customer-support-routing",
+    "title": "AI Smart Support Ticket Routing",
+    "description": "Intelligently route support tickets to the right agent based on content analysis, agent skills, workload, and priority. Reduces resolution time by 40% with automatic categorization, sentiment-based prioritization, and smart assignment.",
+    "features": [
+      "Content-based routing",
+      "Skill matching",
+      "Sentiment prioritization",
+      "Workload balancing",
+      "Auto-categorization",
+      "SLA tracking",
+      "Escalation rules",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "40% faster resolution",
+      "95% routing accuracy",
+      "Improved agent satisfaction"
+    ],
+    "pricing": {
+      "starter": "79",
+      "professional": "249",
+      "enterprise": "899"
+    },
+    "icon": "🎯",
+    "href": "/services/ai-customer-support-routing/",
+    "category": "ai",
+    "popular": false,
+    "contactInfo": {
+      "website": "/services/ai-customer-support-routing/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-legal-document-review",
+    "title": "AI Legal Document Review Assistant",
+    "description": "Accelerate legal document review with AI-powered contract analysis, clause extraction, risk identification, and compliance checking. Reduces review time by 80% while improving accuracy. Supports NDAs, MSAs, and complex commercial agreements.",
+    "features": [
+      "Contract clause extraction",
+      "Risk identification",
+      "Compliance checking",
+      "Redline suggestions",
+      "Version comparison",
+      "Obligation extraction",
+      "Deadline tracking",
+      "Template library"
+    ],
+    "benefits": [
+      "80% faster document review",
+      "99% clause detection accuracy",
+      "Reduced legal costs"
+    ],
+    "pricing": {
+      "starter": "199",
+      "professional": "599",
+      "enterprise": "2499"
+    },
+    "icon": "⚖️",
+    "href": "/services/ai-legal-document-review/",
+    "category": "ai",
+    "popular": false,
+    "contactInfo": {
+      "website": "/services/ai-legal-document-review/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-inventory-management",
+    "title": "AI Inventory Management & Demand Planning",
+    "description": "Optimize inventory levels with AI-driven demand forecasting, automated reorder points, and supplier management. Reduces carrying costs by 30% and stockouts by 90% with machine learning models trained on your sales data.",
+    "features": [
+      "Demand forecasting",
+      "Automated reorder points",
+      "Supplier management",
+      "Multi-location support",
+      "Seasonal adjustment",
+      "Dead stock alerts",
+      "Purchase order automation",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "30% reduction in carrying costs",
+      "90% fewer stockouts",
+      "Optimized cash flow"
+    ],
+    "pricing": {
+      "starter": "99",
+      "professional": "299",
+      "enterprise": "999"
+    },
+    "icon": "📦",
+    "href": "/services/ai-inventory-management/",
+    "category": "ai",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/ai-inventory-management/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "endpoint-detection-response",
+    "title": "Endpoint Detection & Response (EDR)",
+    "description": "Advanced endpoint protection with real-time threat detection, automated response, and forensic investigation. Monitors all endpoints (laptops, servers, mobile) for malware, ransomware, and advanced persistent threats 24/7.",
+    "features": [
+      "Real-time threat detection",
+      "Automated response",
+      "Forensic investigation",
+      "Behavioral analysis",
+      "Threat hunting",
+      "Incident reporting",
+      "Compliance dashboards",
+      "24/7 monitoring"
+    ],
+    "benefits": [
+      "99.9% threat detection rate",
+      "60% faster incident response",
+      "Compliance-ready reporting"
+    ],
+    "pricing": {
+      "starter": "8",
+      "professional": "18",
+      "enterprise": "35"
+    },
+    "icon": "🔒",
+    "href": "/services/endpoint-detection-response/",
+    "category": "it",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/endpoint-detection-response/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
+  },
+  {
+    "id": "email-security-gateway",
+    "title": "Email Security & Anti-Phishing Gateway",
+    "description": "Advanced email security gateway that blocks phishing, BEC attacks, malware, and spam with AI-powered analysis. Includes email archiving, encryption, DLP, and continuity features. Protects against zero-day threats.",
+    "features": [
+      "AI anti-phishing",
+      "BEC protection",
+      "Malware sandboxing",
+      "Email encryption",
+      "Data loss prevention",
+      "Email archiving",
+      "Continuity service",
+      "Admin dashboard"
+    ],
+    "benefits": [
+      "99.9% phishing detection",
+      "Zero-day threat protection",
+      "100% email continuity"
+    ],
+    "pricing": {
+      "starter": "3",
+      "professional": "6",
+      "enterprise": "12"
+    },
+    "icon": "📧",
+    "href": "/services/email-security-gateway/",
+    "category": "it",
+    "popular": true,
+    "contactInfo": {
+      "website": "/services/email-security-gateway/",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "stage": "live",
+    "industry": "Enterprise"
   }
 ]
