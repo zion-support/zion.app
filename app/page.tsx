@@ -21,6 +21,7 @@ import SecurityComplianceShowcase from '@/components/SecurityComplianceShowcase'
 import VoiceVideoShowcase from '@/components/VoiceVideoShowcase';
 import IntegrationHubShowcase from '@/components/IntegrationHubShowcase';
 import EmailCoachingShowcase from '@/components/EmailCoachingShowcase';
+import EmailIntelligenceShowcase from '@/components/EmailIntelligenceShowcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -1079,6 +1080,9 @@ let list = services;
 
       {/* ── AI Email Coaching & Training Platform ── */}
       <EmailCoachingShowcase />
+
+      {/* ── Next-Gen Email Intelligence V89-V91 ── */}
+      <EmailIntelligenceShowcase />
 
     <FloatingActionDock />
     </main>
