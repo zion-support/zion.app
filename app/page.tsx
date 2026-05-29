@@ -1015,6 +1015,64 @@ let list = services;
           </div>
         </div>
       </section>
+    {/* Bundles Banner */}
+    <section className="py-16 bg-gradient-to-r from-purple-950 via-indigo-950 to-purple-950 border-t border-slate-800">
+      <div className="container-page text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-800/40 border border-purple-500/30 text-purple-300 text-sm mb-4">
+          <span>🎁</span> NEW: Smart Service Bundles
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Save 20-25% with Pre-Built Service Bundles
+        </h2>
+        <p className="text-slate-400 max-w-2xl mx-auto mb-8">
+          Curated packages for startups, enterprise security, manufacturing AI, e-commerce, digital workplace, and data intelligence.
+          Single contract, unified support, dedicated account manager.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto mb-8">
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-green-500/40 transition-all">
+            <span className="text-2xl">🚀</span>
+            <p className="text-xs font-semibold text-white mt-1">Startup Growth</p>
+            <p className="text-xs text-green-400">$2,999/mo</p>
+          </div>
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-red-500/40 transition-all">
+            <span className="text-2xl">🛡️</span>
+            <p className="text-xs font-semibold text-white mt-1">Enterprise Security</p>
+            <p className="text-xs text-green-400">$14,999/mo</p>
+          </div>
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-blue-500/40 transition-all">
+            <span className="text-2xl">🏭</span>
+            <p className="text-xs font-semibold text-white mt-1">Manufacturing AI</p>
+            <p className="text-xs text-green-400">$9,999/mo</p>
+          </div>
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-purple-500/40 transition-all">
+            <span className="text-2xl">🛒</span>
+            <p className="text-xs font-semibold text-white mt-1">E-commerce</p>
+            <p className="text-xs text-green-400">$4,999/mo</p>
+          </div>
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-indigo-500/40 transition-all">
+            <span className="text-2xl">💼</span>
+            <p className="text-xs font-semibold text-white mt-1">Digital Workplace</p>
+            <p className="text-xs text-green-400">$3,999/mo</p>
+          </div>
+          <div className="bg-slate-900/60 rounded-xl border border-slate-700 p-3 hover:border-teal-500/40 transition-all">
+            <span className="text-2xl">📊</span>
+            <p className="text-xs font-semibold text-white mt-1">Data Intelligence</p>
+            <p className="text-xs text-green-400">$7,999/mo</p>
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/bundles" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:opacity-90 transition-all">
+            🎁 View All Bundles
+          </Link>
+          <Link href="/contact" className="px-8 py-3 bg-slate-800 border border-slate-700 text-white font-semibold rounded-full hover:bg-slate-700 transition-all">
+            📧 Get Custom Bundle
+          </Link>
+        </div>
+        <p className="text-xs text-slate-500 mt-4">
+          Or call <a href="tel:+130****0950" className="text-purple-400 hover:underline">+1 302 464 0950</a> • <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:underline">kleber@ziontechgroup.com</a>
+        </p>
+      </div>
+    </section>
     <ROICalculator />
     <ServiceComparisonTool />
     <FloatingActionDock />

@@ -22,6 +22,7 @@ const NAV_ITEMS: MegaNavItem[] = [
     ]
   },
   { label: 'Industries', href: '/industries' },
+  { label: 'Bundles', href: '/bundles' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Resources', href: '/resources' },
   { label: 'Company', href: '/about' }

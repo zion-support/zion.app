@@ -20411,5 +20411,656 @@
     "href": "/services/automation-marketing-operations",
     "category": "automation",
     "popular": true
+  },
+  {
+    "id": "ai-contract-lifecycle-mgmt",
+    "title": "AI Contract Lifecycle Management",
+    "description": "Full CLM platform: automated contract drafting, negotiation tracking, obligation monitoring, renewal alerts, and compliance verification powered by NLP.",
+    "icon": "★",
+    "features": [
+      "AI contract drafting from templates",
+      "Obligation tracking and alerts",
+      "Renewal/expiry notifications",
+      "Compliance clause verification"
+    ],
+    "benefits": [
+      "Reduce contract cycle time 60%",
+      "Never miss a renewal",
+      "Automated compliance checks",
+      "Centralized contract repository"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "9999",
+      "enterprise": "27999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-contract-lifecycle-mgmt",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-contract-lifecycle-mgmt",
+    "category": "ai",
+    "popular": false
+  },
+  {
+    "id": "ai-voice-analytics-platform",
+    "title": "AI Voice Analytics Platform",
+    "description": "Analyze customer calls at scale: sentiment detection, keyword extraction, compliance monitoring, and agent performance scoring from recorded and live calls.",
+    "icon": "★",
+    "features": [
+      "Real-time call transcription",
+      "Sentiment and emotion detection",
+      "Keyword/topic extraction",
+      "Agent performance scoring"
+    ],
+    "benefits": [
+      "100% call coverage (vs 2% manual QA)",
+      "Detect compliance violations",
+      "Improve agent coaching",
+      "Identify customer pain points"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "9999",
+      "enterprise": "27999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-voice-analytics-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-voice-analytics-platform",
+    "category": "ai",
+    "popular": true
+  },
+  {
+    "id": "ai-fraud-detection-engine",
+    "title": "AI Fraud Detection Engine",
+    "description": "Real-time transaction fraud detection using ensemble ML models: anomaly detection, behavioral biometrics, device fingerprinting, and network analysis.",
+    "icon": "★",
+    "features": [
+      "Real-time transaction scoring",
+      "Behavioral biometrics analysis",
+      "Device fingerprinting",
+      "Network/graph-based fraud detection"
+    ],
+    "benefits": [
+      "Detect fraud in <100ms",
+      "Reduce false positives 70%",
+      "Adapt to new fraud patterns",
+      "Regulatory compliance built-in"
+    ],
+    "pricing": {
+      "basic": "7999",
+      "pro": "19999",
+      "enterprise": "54999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-fraud-detection-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-fraud-detection-engine",
+    "category": "ai",
+    "popular": true
+  },
+  {
+    "id": "ai-visual-search-engine",
+    "title": "AI Visual Search Engine",
+    "description": "Image-based product search: customers upload a photo and find matching products instantly. Powers visual commerce for fashion, furniture, and retail.",
+    "icon": "★",
+    "features": [
+      "Image upload and matching",
+      "Visual similarity search",
+      "Multi-category product tagging",
+      "Real-time inventory integration"
+    ],
+    "benefits": [
+      "Increase conversion 20%",
+      "Reduce search abandonment",
+      "Enable visual discovery",
+      "Support 1M+ product catalogs"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "7999",
+      "enterprise": "21999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-visual-search-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-visual-search-engine",
+    "category": "ai",
+    "popular": false
+  },
+  {
+    "id": "ai-workforce-planning",
+    "title": "AI Workforce Planning Platform",
+    "description": "Predict staffing needs with ML: demand forecasting, skill gap analysis, scheduling optimization, and turnover prediction for HR and operations.",
+    "icon": "★",
+    "features": [
+      "Staffing demand forecasting",
+      "Skill gap analysis",
+      "Schedule optimization",
+      "Turnover risk prediction"
+    ],
+    "benefits": [
+      "Optimize labor costs 15%",
+      "Reduce understaffing incidents",
+      "Improve employee scheduling",
+      "Proactive retention strategies"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "9999",
+      "enterprise": "27999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-workforce-planning",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-workforce-planning",
+    "category": "ai",
+    "popular": false
+  },
+  {
+    "id": "ai-competitive-intelligence",
+    "title": "AI Competitive Intelligence Platform",
+    "description": "Automated competitor monitoring: track pricing changes, product launches, job postings, patent filings, and news mentions with AI-powered analysis.",
+    "icon": "★",
+    "features": [
+      "Automated competitor tracking",
+      "Pricing change alerts",
+      "Product launch monitoring",
+      "Patent and news analysis"
+    ],
+    "benefits": [
+      "Never miss competitor moves",
+      "Data-driven strategy decisions",
+      "Early warning system",
+      "Save 20hrs/week on research"
+    ],
+    "pricing": {
+      "basic": "2499",
+      "pro": "6999",
+      "enterprise": "18999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-competitive-intelligence",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-competitive-intelligence",
+    "category": "ai",
+    "popular": true
+  },
+  {
+    "id": "it-digital-experience-monitoring",
+    "title": "Digital Experience Monitoring (DEM)",
+    "description": "Monitor end-user experience across all digital touchpoints: real user monitoring, synthetic testing, session replay, and performance baselining.",
+    "icon": "★",
+    "features": [
+      "Real user monitoring (RUM)",
+      "Synthetic transaction testing",
+      "Session replay and heatmaps",
+      "Performance baselining"
+    ],
+    "benefits": [
+      "Detect UX issues before users report",
+      "Quantify business impact",
+      "Improve conversion rates",
+      "Proactive performance management"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "9999",
+      "enterprise": "27999"
+    },
+    "contactInfo": {
+      "website": "/services/it-digital-experience-monitoring",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-digital-experience-monitoring",
+    "category": "it",
+    "popular": false
+  },
+  {
+    "id": "it-low-code-platform",
+    "title": "Low-Code Application Platform",
+    "description": "Build enterprise apps 10x faster: visual development, pre-built connectors, workflow automation, and citizen developer governance.",
+    "icon": "★",
+    "features": [
+      "Visual drag-and-drop builder",
+      "200+ pre-built connectors",
+      "Workflow automation engine",
+      "Citizen developer governance"
+    ],
+    "benefits": [
+      "Build apps 10x faster",
+      "Reduce IT backlog 60%",
+      "Enable business users",
+      "Maintain enterprise governance"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "34999"
+    },
+    "contactInfo": {
+      "website": "/services/it-low-code-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-low-code-platform",
+    "category": "it",
+    "popular": true
+  },
+  {
+    "id": "it-sap-consulting",
+    "title": "SAP Consulting & Implementation",
+    "description": "Full SAP lifecycle services: S/4HANA migration, module implementation (FI/CO/MM/SD/PP), custom development, and managed support.",
+    "icon": "★",
+    "features": [
+      "S/4HANA migration expertise",
+      "Module implementation (FI/CO/MM/SD)",
+      "Custom ABAP development",
+      "Managed support and optimization"
+    ],
+    "benefits": [
+      "Accelerate SAP ROI",
+      "Reduce implementation risk",
+      "Optimize business processes",
+      "24/7 production support"
+    ],
+    "pricing": {
+      "basic": "29999",
+      "pro": "79999",
+      "enterprise": "199999"
+    },
+    "contactInfo": {
+      "website": "/services/it-sap-consulting",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-sap-consulting",
+    "category": "it",
+    "popular": false
+  },
+  {
+    "id": "cloud-disaster-recovery-service",
+    "title": "Managed Disaster Recovery (DRaaS)",
+    "description": "Automated failover and recovery: cross-region replication, RPO/RTO guarantees, automated DR testing, and compliance-ready documentation.",
+    "icon": "★",
+    "features": [
+      "Cross-region replication",
+      "Guaranteed RPO (<15min) and RTO (<1hr)",
+      "Automated DR testing",
+      "Compliance documentation"
+    ],
+    "benefits": [
+      "Business continuity guaranteed",
+      "Meet regulatory requirements",
+      "Automated failover (no manual steps)",
+      "Quarterly DR drills included"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "34999"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-disaster-recovery-service",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-disaster-recovery-service",
+    "category": "cloud",
+    "popular": true
+  },
+  {
+    "id": "cloud-green-computing",
+    "title": "Green Cloud Optimization",
+    "description": "Reduce cloud carbon footprint: workload scheduling for renewable energy periods, carbon-aware computing, sustainability reporting, and cost optimization.",
+    "icon": "★",
+    "features": [
+      "Carbon-aware workload scheduling",
+      "Renewable energy optimization",
+      "Sustainability reporting (ESG)",
+      "Cost-carbon tradeoff analysis"
+    ],
+    "benefits": [
+      "Reduce carbon footprint 40%",
+      "Lower cloud costs simultaneously",
+      "ESG reporting automation",
+      "Meet sustainability targets"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "7999",
+      "enterprise": "21999"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-green-computing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-green-computing",
+    "category": "cloud",
+    "popular": false
+  },
+  {
+    "id": "cloud-fintech-platform",
+    "title": "Cloud FinTech Platform",
+    "description": "Cloud infrastructure designed for financial services: PCI DSS compliance, low-latency trading, secure payment processing, and regulatory reporting.",
+    "icon": "★",
+    "features": [
+      "PCI DSS Level 1 infrastructure",
+      "Low-latency network (<1ms)",
+      "Secure payment processing",
+      "Regulatory reporting automation"
+    ],
+    "benefits": [
+      "Launch fintech products faster",
+      "Meet financial regulations",
+      "Process payments securely",
+      "Scale to millions of transactions"
+    ],
+    "pricing": {
+      "basic": "9999",
+      "pro": "24999",
+      "enterprise": "69999"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-fintech-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-fintech-platform",
+    "category": "cloud",
+    "popular": false
+  },
+  {
+    "id": "cloud-ai-training-infrastructure",
+    "title": "AI Training Infrastructure",
+    "description": "GPU cluster management for ML training: auto-scaling GPU instances, distributed training orchestration, experiment tracking, and cost optimization.",
+    "icon": "★",
+    "features": [
+      "Auto-scaling GPU clusters (A100/H100)",
+      "Distributed training (PyTorch/TF)",
+      "Experiment tracking (MLflow)",
+      "GPU cost optimization"
+    ],
+    "benefits": [
+      "Train models 5x faster",
+      "Optimize GPU spend 40%",
+      "Reproducible experiments",
+      "Multi-team GPU sharing"
+    ],
+    "pricing": {
+      "basic": "7999",
+      "pro": "19999",
+      "enterprise": "54999"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-ai-training-infrastructure",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-ai-training-infrastructure",
+    "category": "cloud",
+    "popular": true
+  },
+  {
+    "id": "security-ai-red-team",
+    "title": "AI Red Team Service",
+    "description": "Adversarial AI testing: prompt injection, model jailbreaking, data poisoning detection, and AI system penetration testing for LLMs and ML pipelines.",
+    "icon": "★",
+    "features": [
+      "LLM prompt injection testing",
+      "Model jailbreaking assessment",
+      "Data poisoning detection",
+      "AI pipeline pen testing"
+    ],
+    "benefits": [
+      "Secure AI deployments",
+      "Prevent model manipulation",
+      "Meet AI governance requirements",
+      "Build trustworthy AI systems"
+    ],
+    "pricing": {
+      "basic": "9999",
+      "pro": "24999",
+      "enterprise": "69999"
+    },
+    "contactInfo": {
+      "website": "/services/security-ai-red-team",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-ai-red-team",
+    "category": "security",
+    "popular": true
+  },
+  {
+    "id": "security-privacy-engineering",
+    "title": "Privacy Engineering Platform",
+    "description": "Automate privacy compliance: data mapping, DPIA automation, consent management, data subject requests, and privacy-by-design assessments.",
+    "icon": "★",
+    "features": [
+      "Automated data mapping",
+      "DPIA workflow automation",
+      "Consent management platform",
+      "Data subject request handling"
+    ],
+    "benefits": [
+      "GDPR/CCPA compliance",
+      "Reduce privacy risk",
+      "Automate DSAR processing",
+      "Privacy-by-design enforcement"
+    ],
+    "pricing": {
+      "basic": "5999",
+      "pro": "14999",
+      "enterprise": "39999"
+    },
+    "contactInfo": {
+      "website": "/services/security-privacy-engineering",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-privacy-engineering",
+    "category": "security",
+    "popular": false
+  },
+  {
+    "id": "security-blockchain-audit",
+    "title": "Smart Contract Security Audit",
+    "description": "Comprehensive blockchain security: smart contract auditing, DeFi protocol review, gas optimization, and formal verification for Solidity/Rust chains.",
+    "icon": "★",
+    "features": [
+      "Smart contract code review",
+      "DeFi protocol security audit",
+      "Gas optimization analysis",
+      "Formal verification"
+    ],
+    "benefits": [
+      "Prevent exploits before launch",
+      "Build investor confidence",
+      "Optimize gas costs",
+      "Meet audit requirements for listings"
+    ],
+    "pricing": {
+      "basic": "14999",
+      "pro": "34999",
+      "enterprise": "89999"
+    },
+    "contactInfo": {
+      "website": "/services/security-blockchain-audit",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-blockchain-audit",
+    "category": "security",
+    "popular": false
+  },
+  {
+    "id": "data-customer-360-platform",
+    "title": "Customer 360 Data Platform",
+    "description": "Unified customer data platform: identity resolution, behavioral tracking, audience segmentation, and activation across marketing, sales, and support channels.",
+    "icon": "★",
+    "features": [
+      "Cross-device identity resolution",
+      "Real-time behavioral tracking",
+      "AI audience segmentation",
+      "Multi-channel activation"
+    ],
+    "benefits": [
+      "Single customer view",
+      "Personalize every interaction",
+      "Improve marketing ROI 35%",
+      "Reduce data fragmentation"
+    ],
+    "pricing": {
+      "basic": "5999",
+      "pro": "14999",
+      "enterprise": "39999"
+    },
+    "contactInfo": {
+      "website": "/services/data-customer-360-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-customer-360-platform",
+    "category": "data",
+    "popular": true
+  },
+  {
+    "id": "data-feature-store",
+    "title": "ML Feature Store Platform",
+    "description": "Centralized feature management for ML: feature computation, online/offline serving, feature sharing across teams, and point-in-time correctness.",
+    "icon": "★",
+    "features": [
+      "Feature computation pipelines",
+      "Online and offline serving",
+      "Cross-team feature sharing",
+      "Point-in-time feature retrieval"
+    ],
+    "benefits": [
+      "Reuse features across models",
+      "Reduce feature engineering time 70%",
+      "Ensure training-serving consistency",
+      "Accelerate ML development"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "34999"
+    },
+    "contactInfo": {
+      "website": "/services/data-feature-store",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-feature-store",
+    "category": "data",
+    "popular": false
+  },
+  {
+    "id": "automation-rpa-enterprise",
+    "title": "Enterprise RPA Platform",
+    "description": "Robotic process automation at scale: attended and unattended bots, AI-enhanced workflows, exception handling, and enterprise governance.",
+    "icon": "★",
+    "features": [
+      "Attended and unattended bots",
+      "AI-enhanced document processing",
+      "Exception handling and retry logic",
+      "Enterprise bot governance"
+    ],
+    "benefits": [
+      "Automate 500+ processes",
+      "Reduce operational costs 40%",
+      "24/7 bot operation",
+      "Scale from 10 to 1000+ bots"
+    ],
+    "pricing": {
+      "basic": "5999",
+      "pro": "14999",
+      "enterprise": "39999"
+    },
+    "contactInfo": {
+      "website": "/services/automation-rpa-enterprise",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-rpa-enterprise",
+    "category": "automation",
+    "popular": true
+  },
+  {
+    "id": "automation-compliance-workflows",
+    "title": "Compliance Workflow Automation",
+    "description": "Automate regulatory compliance: policy management, audit trail generation, risk assessment, control testing, and regulatory change management.",
+    "icon": "★",
+    "features": [
+      "Policy lifecycle management",
+      "Automated audit trail generation",
+      "Risk assessment workflows",
+      "Regulatory change tracking"
+    ],
+    "benefits": [
+      "Reduce compliance costs 50%",
+      "Always audit-ready",
+      "Automate control testing",
+      "Track regulatory changes"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "34999"
+    },
+    "contactInfo": {
+      "website": "/services/automation-compliance-workflows",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-compliance-workflows",
+    "category": "automation",
+    "popular": false
+  },
+  {
+    "id": "automation-legal-operations",
+    "title": "Legal Operations Automation",
+    "description": "Streamline legal department workflows: matter management, e-billing, contract lifecycle, legal hold automation, and spend analytics.",
+    "icon": "★",
+    "features": [
+      "Matter management system",
+      "Legal e-billing and invoice review",
+      "Contract lifecycle management",
+      "Legal hold automation"
+    ],
+    "benefits": [
+      "Reduce legal spend 25%",
+      "Automate routine legal tasks",
+      "Improve matter visibility",
+      "Streamline outside counsel management"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "9999",
+      "enterprise": "27999"
+    },
+    "contactInfo": {
+      "website": "/services/automation-legal-operations",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-legal-operations",
+    "category": "automation",
+    "popular": false
   }
 ]
