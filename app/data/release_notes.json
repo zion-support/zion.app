@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ai-feedback-analyzer",
+    "released_at": "2026-05-29T00:00:00Z",
+    "featured": true,
+    "tags": ["ai"],
+    "changelog": "Introducing AI Feedback Analyzer: Transform customer feedback into actionable business intelligence with AI-powered sentiment analysis, trend detection, and automated insights.",
+    "changelog_summary": "AI Feedback Analyzer launched"
+  }
+]

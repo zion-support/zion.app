@@ -182,6 +182,7 @@ except Exception as _ex:
     format_availability      = None
 
 
+from response_uniqueness_checker import check_uniqueness
 # ─── V30: CaseRouter + ResponseImprover ─────────────────────
 try:
     from case_router          import CaseRouter
@@ -1371,6 +1372,30 @@ class V26Responder:
 
         # ③ Trim grammar check
         g_score, g_issues = _fast_grammar_check(body)
+
+        # --- Response Uniqueness Check ---
+        uniqueness_score = check_uniqueness(tid, body)
+        if uniqueness_score < 0.2:
+            result = add_to_result(email, {
+                "thread_intent": thread_intent_label,
+                "action": "review",
+                "reason": f"low_response_uniqueness_{uniqueness_score:.2f}",
+                "tone": tone_data,
+                "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)
+            })
+            return result
+
+        # --- Response Uniqueness Check ---
+        uniqueness_score = check_uniqueness(tid, body)
+        if uniqueness_score < 0.2:
+            result = add_to_result(email, {
+                "thread_intent": thread_intent_label,
+                "action": "review",
+                "reason": f"low_response_uniqueness_{uniqueness_score:.2f}",
+                "tone": tone_data,
+                "elapsed_ms": round((time.monotonic() - fast_ms_start) * 1000, 1)
+            })
+            return result
 
         # V30: CaseRouter gates after grammar check (before detector + escalation)
         if V30_ROUTER_ENABLED and self.case_router:

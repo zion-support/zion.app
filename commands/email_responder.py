@@ -1,35 +1,31 @@
 #!/usr/bin/env python3
 """
-Email Responder — Zion Tech Group
-
-Analyzes high-priority unread emails and generates 3 draft reply options via LLM.
+Email Responder — Zion Tech Group (V29)
+Analyzes high-priority unread emails with case analysis and generates 3 draft reply options via LLM.
 Sends Telegram message with clickable draft links (opens Gmail).
-
-Strategy:
-  1. Fetch Priority-4/5 unread emails (limit default 10)
-  2. For each, construct context: sender, subject, snippet/body
-  3. Ask LLM: "Write 3 short, professional reply options in Kleber's voice"
-  4. Save each as Gmail draft; collect draft URLs
-  5. Send Telegram summary with subject + 3 option previews + draft links
-
-Schedule: On-demand triggered by high-priority email arrival (via email_prioritizer)
-
-Usage: python3 email_responder.py [--execute] [--limit N]
+Includes case analysis (sentiment, urgency, intent) and reply-all suggestion.
 """
 
-import sys, os, re, json, datetime, argparse
+import sys, os, re, json, datetime, argparse, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
-sys.path.insert(0, str(WORKSPACE / 'zion.app' / 'commands'))
-sys.path.insert(0, str(WORKSPACE / 'zion.app' / 'lib'))
+# Set up paths relative to this file's location
+BASE_DIR = Path(__file__).resolve().parent.parent.parent  # /Users/klebergarciaalcatrao/.openclaw/workspace
+ZION_APP = BASE_DIR / 'zion.app'
+sys.path.insert(0, str(ZION_APP / 'commands'))
+sys.path.insert(0, str(ZION_APP / 'lib'))
 
-from google_workspace import gmail_search, gmail_create_draft_new, telegram_send
+# Import google_workspace and adjust its paths to use BASE_DIR (since we are on macOS, not in the sandbox)
+import google_workspace
+google_workspace.WORKSPACE = BASE_DIR
+google_workspace.TOKENS_FILE = google_workspace.WORKSPACE / 'gog_tokens.json'
+
+from google_workspace import gmail_search, gmail_get, gmail_create_draft_new, telegram_send
 from llm_client import chat
+from case_analyzer import analyze_email  # Our new case analyzer
 
-DB_FILE = WORKSPACE / 'zion.app' / 'data' / 'email_responder.json'
-PROMPT = """
-You are Kleber Garcia Alcatrão, CEO of Zion Tech Group.
+DB_FILE = ZION_APP / 'data' / 'email_responder.json'
+PROMPT = """You are Kleber Garcia Alcatrão, CEO of Zion Tech Group.
 Write 3 short, professional, friendly reply options for this email.
 Keep each under 60 words. Tone: direct, helpful, slightly informal.
 Include appropriate greeting/closing.
@@ -39,7 +35,14 @@ Email details:
   Subject: {subject}
   Body snippet: {snippet}
 
-Return as JSON array: [{{"option": 1, "text": "..."}}, ...]
+Analysis:
+  Sentiment: {sentiment}
+  Urgency: {urgency}
+  Intent: {intent}
+
+{reply_all_note}
+
+Return as JSON array: [{"option": 1, "text": "..."}, ...]
 """
 
 def load_db():
@@ -51,8 +54,9 @@ def save_db(db):
     DB_FILE.parent.mkdir(parents=True, exist_ok=True)
     DB_FILE.write_text(json.dumps(db, indent=2))
 
-def generate_reply_options(sender: str, subject: str, snippet: str) -> list:
-    prompt = PROMPT.format(sender=sender, subject=subject, snippet=snippet[:300])
+def generate_reply_options(sender: str, subject: str, snippet: str, sentiment: str, urgency: str, intent: str, reply_all_suggested: bool) -> list:
+    reply_all_note = "Consider replying-all to the original recipients." if reply_all_suggested else ""
+    prompt = PROMPT.format(sender=sender, subject=subject, snippet=snippet[:300], sentiment=sentiment, urgency=urgency, intent=intent, reply_all_note=reply_all_note)
     try:
         resp = chat([{"role":"user","content":prompt}], provider="auto", temperature=0.8)
         content = resp.get('content','')
@@ -64,10 +68,10 @@ def generate_reply_options(sender: str, subject: str, snippet: str) -> list:
                 return [opt.get('text','') for opt in options[:3]]
         except Exception:
             pass
-        # Fallback: split bynumbered lines
-        lines = [l.strip() for l in content.split('\n') if l.strip().startswith(('1.','2.','3.','Option'))]
+        # Fallback: split by numbered lines
+        lines = [l.strip() for l in content.split('\\n') if l.strip().startswith(('1.','2.','3.','Option'))]
         if len(lines) >= 3:
-            return [re.sub(r'^(1[.)]|2[.)]|3[.)]|Option \d:?)\s*', '', l) for l in lines[:3]]
+            return [re.sub(r'^(1[.)]|2[.)]|3[.)]|Option \\d:?)\\s*', '', l) for l in lines[:3]]
     except Exception as e:
         print(f"   ⚠️  LLM failed: {e}")
     # Hardcoded fallbacks
@@ -78,10 +82,16 @@ def generate_reply_options(sender: str, subject: str, snippet: str) -> list:
     ]
 
 def cmd_run(dry_run=True, limit=10):
+    # Check if token file exists; if not, we can only do dry_run (or we could try to create a dummy token for testing?)
+    # For safety, if token file doesn't exist, we force dry_run and warn.
+    if not google_workspace.TOKENS_FILE.exists():
+        print(f"⚠️  Token file not found at {google_workspace.TOKENS_FILE}. Forcing dry-run mode.")
+        dry_run = True
+
     db = load_db()
     query = 'is:unread (label:Priority-4 OR label:Priority-5)'
-    msgs = gmail_search(query, limit=limit)
-    if not msgs:
+    msgs = gmail_search(query, limit=limit) if not dry_run else []
+    if not dry_run and not msgs:
         print("✅ No high-priority emails to respond to.")
         return
 
@@ -91,13 +101,53 @@ def cmd_run(dry_run=True, limit=10):
         if msg_id in db.get('suggested', []):
             continue
 
-        headers = msg.get('payload', {}).get('headers', [])
+        # Get full email to extract headers (To, CC) and better body if possible
+        full_email = None
+        try:
+            full_email = gmail_get(msg_id)
+        except Exception as e:
+            print(f"   ⚠️  Could not fetch full email for {msg_id}: {e}")
+            full_email = {}
+
+        headers = full_email.get('payload', {}).get('headers', []) if full_email else []
         subject = next((h['value'] for h in headers if h['name']=='Subject'), '(no subject)')[:80]
         sender = next((h['value'] for h in headers if h['name']=='From'), 'unknown')
-        snippet = msg.get('snippet', '')[:200]
+        # Try to get a better body than snippet; fallback to snippet
+        body = ''
+        if full_email:
+            # Attempt to extract body from payload (simplified)
+            payload = full_email.get('payload', {})
+            if 'body' in payload and 'data' in payload['body']:
+                body = base64.urlsafe_b64decode(payload['body']['data']).decode('utf-8', errors='ignore')
+            elif 'parts' in payload:
+                # Multipart: look for text/plain
+                for part in payload['parts']:
+                    if part.get('mimeType') == 'text/plain':
+                        data = part.get('body', {}).get('data')
+                        if data:
+                            body = base64.urlsafe_b64decode(data).decode('utf-8', errors='ignore')
+                            break
+        if not body:
+            body = full_email.get('snippet', '') if full_email else ''
+        snippet = body[:200]  # Use body for snippet if available, else fallback to original snippet
+
+        # Extract To and CC headers for display
+        to_header = next((h['value'] for h in headers if h['name']=='To'), '')
+        cc_header = next((h['value'] for h in headers if h['name']=='CC'), '')
 
         print(f"   💡 Generating replies for: {subject[:50]}")
-        options = generate_reply_options(sender, subject, snippet)
+        # Analyze the email
+        email_dict = {
+            'subject': subject,
+            'body': body,  # Use full body if available, else snippet
+        }
+        analysis = analyze_email(email_dict)
+        sentiment = analysis['sentiment']
+        urgency = analysis['urgency']
+        intent = analysis['intent']
+        reply_all_suggested = analysis['reply_all_suggested']
+
+        options = generate_reply_options(sender, subject, snippet, sentiment, urgency, intent, reply_all_suggested)
 
         if dry_run:
             print(f"      [DRY-RUN] Would create 3 drafts for {sender}")
@@ -114,8 +164,8 @@ def cmd_run(dry_run=True, limit=10):
             try:
                 draft_id = gmail_create_draft_new(
                     subject=draft_subject,
-                    body=reply_text + "\n\n— Kleber Garcia Alcatrão\nCEO, Zion Tech Group",
-                    to_addr=sender
+                    body=reply_text + "\\n\\n— Kleber Garcia Alcatrão\\nCEO, Zion Tech Group",
+                    to_addr=sender  # We still only reply to the sender; the user can adjust recipients in the draft
                 )
                 # Gmail draft URL pattern
                 draft_url = f"https://mail.google.com/mail/u/0/#drafts?compose={draft_id}"
@@ -126,12 +176,18 @@ def cmd_run(dry_run=True, limit=10):
         # Send Telegram summary
         lines = [f"📬 Reply suggestions for: {subject}"]
         lines.append(f"From: {sender}")
+        lines.append(f"Original To: {to_header}")
+        lines.append(f"Original CC: {cc_header}")
+        lines.append("")
+        lines.append(f"Analysis: Sentiment={sentiment}, Urgency={urgency}, Intent={intent}")
+        if reply_all_suggested:
+            lines.append("💡 Suggested: Reply-all (see original To/CC above)")
         lines.append("")
         for i, url, preview in draft_links:
             lines.append(f"{i}. {preview}…")
             lines.append(f"   {url}")
         try:
-            telegram_send("\n".join(lines))
+            telegram_send("\\n".join(lines))
             print(f"   ✅ Sent {len(draft_links)} options to Telegram")
         except Exception as e:
             print(f"   ❌ Telegram failed: {e}")
@@ -145,10 +201,10 @@ def cmd_run(dry_run=True, limit=10):
 
     print(f"\n✅ Generated reply suggestions for {suggestions} emails.")
     if dry_run:
-        print("💡 Add --execute to create drafts and send Telegram summary.")
+        print("💡 Add --execute to create drafts and send Telegram summary (if token file exists).")
 
 def main():
-    p = argparse.ArgumentParser(description='Email Responder — LLM reply suggestions')
+    p = argparse.ArgumentParser(description='Email Responder — LLM reply suggestions with case analysis')
     p.add_argument('--execute', action='store_true')
     p.add_argument('--limit', type=int, default=10)
     args = p.parse_args()
