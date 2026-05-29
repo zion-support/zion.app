@@ -16,6 +16,7 @@ import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceRecommenderChatbot from '@/components/ServiceRecommenderChatbot';
 import ServiceComparisonTool from '@/components/ServiceComparisonTool';
+import ROICalculator from '@/components/ROICalculator';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -1014,6 +1015,7 @@ let list = services;
           </div>
         </div>
       </section>
+    <ROICalculator />
     <ServiceComparisonTool />
     <FloatingActionDock />
     <ServiceRecommenderChatbot />
