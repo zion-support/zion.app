@@ -12,6 +12,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
+import ServiceFinderChat from '@/components/ServiceFinderChat';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import ServiceDiscoveryQuiz from '@/components/ServiceDiscoveryQuiz';
 import ServiceComparisonTool from '@/components/ServiceComparisonTool';
@@ -1377,6 +1378,7 @@ let list = services;
         </div>
       </section>
     <FloatingActionDock />
+    <ServiceFinderChat />
     </main>
   );
 }
