@@ -101,7 +101,7 @@ export default function HomePage() {
   // Dynamic stats — auto-update when catalog changes
   const stats = [
     { value: `${serviceCount}+`, label: STAT_SERVICES },
-    { value: '6 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS' },
+    { value: '10 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS · DevOps · Blockchain · IoT' },
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
     ];
@@ -270,15 +270,15 @@ let list = services;
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, automation, data, and micro-SaaS services — from machine learning to cybersecurity, CRM to blockchain.
-            Get a free, custom proposal in minutes.
+            <ServiceCounter /> real-world services across 10 categories — AI, IT, Cloud, Security, Data Analytics, Automation, Micro-SaaS, DevOps, Blockchain & IoT. 
+            From machine learning to cybersecurity, invoicing to Kubernetes. Get a free, custom proposal today.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
-                {`🛠️ Explore All ${serviceCount}+ Services`}
+                🛠️ Explore All {serviceCount}+ Services
               </Link>
               <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
                 ☎ +1 302 464 0950
@@ -998,6 +998,81 @@ let list = services;
           <div className="mt-10 text-center">
             <Link href="/tools/ai-service-router/" className="btn-primary text-base px-8 py-3">🚀 Find Your Perfect Service</Link>
             <p className="text-slate-500 text-xs mt-3">All tools are 100% free — no sign-up required. Your data never leaves your browser.</p>
+          </div>
+        </div>
+      </section>
+      {/* ── Complete Services Catalog — All 10 Categories ── */}
+      <section className="py-20 border-t border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950">
+        <div className="container-page">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">Complete Services Catalog</h2>
+          <p className="text-slate-400 text-center mb-4 max-w-3xl mx-auto">
+            <strong className="text-white">{serviceCount}+ professional services</strong> across 10 categories. 
+            AI-powered solutions, enterprise IT, cloud infrastructure, cybersecurity, automation, micro-SaaS products, DevOps, blockchain, and IoT.
+          </p>
+          <p className="text-slate-500 text-center mb-12 text-sm">
+            📞 <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300">+1 302 464 0950</a>
+            {' · '}
+            <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a>
+            {' · '}364 E Main St STE 1008, Middletown, DE 19709
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            {CATEGORIES.map(cat => {
+              const catServices = byCategory[cat.key] || [];
+              const popularInCat = catServices.filter((s: any) => s.popular).slice(0, 3);
+              const samplePricing = catServices.slice(0, 5).map((s: any) => {
+                const match = s.pricing?.basic?.match(/\$(\d+)/);
+                return match ? parseInt(match[1]) : null;
+              }).filter(Boolean);
+              const minPrice = samplePricing.length ? Math.min(...samplePricing) : null;
+              return (
+                <div key={cat.key} className="rounded-xl border border-slate-800 bg-slate-900/80 hover:border-purple-500/30 p-6 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">{cat.emoji}</span>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{cat.label}</h3>
+                      <span className="text-xs text-slate-500">{catServices.length} services</span>
+                    </div>
+                  </div>
+                  {minPrice && (
+                    <p className="text-sm text-green-400 mb-3">From ${minPrice}/mo</p>
+                  )}
+                  <ul className="space-y-1.5 mb-4">
+                    {popularInCat.length > 0 ? popularInCat.map((s: any) => (
+                      <li key={s.id} className="text-xs text-slate-400 truncate">
+                        <a href={s.href} className="hover:text-purple-300 transition-colors">• {s.title}</a>
+                      </li>
+                    )) : catServices.slice(0, 3).map((s: any) => (
+                      <li key={s.id} className="text-xs text-slate-400 truncate">
+                        <a href={s.href} className="hover:text-purple-300 transition-colors">• {s.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`/services/?category=${cat.key}`} className="text-xs text-purple-400 hover:text-purple-300 font-medium">
+                    View all {catServices.length} →
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Contact CTA */}
+          <div className="mt-16 text-center rounded-2xl border border-purple-500/20 bg-gradient-to-r from-purple-900/20 via-slate-900/50 to-blue-900/20 p-10">
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+            <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+              Get a free, custom proposal for any of our {serviceCount}+ services. Our team responds within 24 hours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <a href="mailto:kleber@ziontechgroup.com" className="btn-primary text-lg px-8 py-3">
+                ✉ Request Proposal
+              </a>
+              <a href="tel:+13024640950" className="btn-secondary text-lg px-8 py-3">
+                📞 Call +1 302 464 0950
+              </a>
+            </div>
+            <p className="text-slate-500 text-sm">
+              📍 364 E Main St STE 1008, Middletown, DE 19709 · 🌐 <a href="https://ziontechgroup.com" className="text-purple-400">ziontechgroup.com</a>
+            </p>
           </div>
         </div>
       </section>
