@@ -43,6 +43,7 @@ const CATEGORIES = [
   { key: 'security',  label: 'Security Services',     emoji: '🔐', color: 'from-red-500 to-orange-500' },
   { key: 'data',      label: 'Data Analytics',        emoji: '📊', color: 'from-green-500 to-emerald-500' },
   { key: 'automation',label: 'Automation',            emoji: '🤖', color: 'from-pink-500 to-rose-500' },
+  { key: 'micro-saas',label: 'Micro-SaaS',            emoji: '⚡', color: 'from-amber-500 to-yellow-500' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
@@ -96,6 +97,14 @@ export default function HomePage() {
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
     ];
+
+  // New & Featured services — latest micro-SaaS and AI additions
+  const newServices = useMemo(() =>
+    services
+      .filter((s: any) => s.popular && s.stage === 'live')
+      .sort((a: any, b: any) => (b.features?.length || 0) - (a.features?.length || 0))
+      .slice(0, 8),
+    [services]);
 
   // Fetch release-signal dataset on mount
   useEffect(() => {
@@ -792,6 +801,32 @@ let list = services;
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── New & Featured Services ── */}
+      <section className="py-16">
+        <div className="container-page">
+          <h2 className="section-heading text-center">🚀 New & Featured Services</h2>
+          <p className="section-subheading text-center">Our latest micro-SaaS, AI, and IT solutions — ready to deploy</p>
+
+          <div className="grid md:grid-cols-4 gap-6 mt-10">
+            {newServices.map((svc: any) => (
+              <Link
+                key={svc.id}
+                href={svc.href}
+                className="group block rounded-xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-purple-500/30 p-5 transition-all duration-300"
+              >
+                <div className="text-3xl mb-3">{svc.icon}</div>
+                <h3 className="text-sm font-bold text-white group-hover:text-purple-300 transition-colors mb-2 line-clamp-2">{svc.title}</h3>
+                <p className="text-xs text-slate-400 line-clamp-2 mb-3">{svc.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold text-purple-400">From ${svc.pricing?.basic}/mo</span>
+                  <span className="text-xs text-slate-500 group-hover:text-purple-300 transition-colors">Learn more →</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
