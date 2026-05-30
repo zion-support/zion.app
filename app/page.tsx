@@ -14,6 +14,17 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import ROICalculator from '@/components/ROICalculator';
+import PricingEstimator from '@/components/PricingEstimator';
+import WorkflowPredictiveShowcase from '@/components/WorkflowPredictiveShowcase';
+import MultilangVoiceShowcase from '@/components/MultilangVoiceShowcase';
+import AdvancedIntelligenceShowcase from '@/components/AdvancedIntelligenceShowcase';
+import EmailIntelligenceV2Showcase from '@/components/EmailIntelligenceV2Showcase';
+import EmailCommandCenter from '@/components/EmailCommandCenter';
+import EmailIntelligenceV3Showcase from '@/components/EmailIntelligenceV3Showcase';
+import EmailIntelligenceV4Showcase from '@/components/EmailIntelligenceV4Showcase';
+import EmailIntelligenceV5Showcase from '@/components/EmailIntelligenceV5Showcase';
+import EmailIntelligenceV6Showcase from '@/components/EmailIntelligenceV6Showcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -271,7 +282,7 @@ let list = services;
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
+            <ServiceCounter /> real-world AI, IT, cloud, security, automation, data, and micro-SaaS services — from machine learning to cybersecurity, CRM to blockchain.
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -301,7 +312,7 @@ let list = services;
 
             {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-8 text-slate-400 text-sm mb-12">
-              {['US-Based Team','SLA Guaranteed','HIPAA Compliant','24/7 Support',`${serviceCount}+ Services`].map(t => (
+              {['US-Based Team','SLA Guaranteed','HIPAA Compliant','24/7 Support','617+ Services'].map(t => (
                 <div key={t} className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1051,6 +1062,34 @@ let list = services;
           </div>
         </div>
       </section>
+
+      {/* ── AI Workflow Automation & Predictive Analytics V92-V93 ── */}
+      <WorkflowPredictiveShowcase />
+
+      {/* ── AI Multi-Language & Voice Intelligence V94-V95 ── */}
+      <MultilangVoiceShowcase />
+
+      {/* ── Advanced Email Intelligence V96-V98 ── */}
+      <AdvancedIntelligenceShowcase />
+
+      {/* ── Email Intelligence V104-V108 ── */}
+      <EmailIntelligenceV2Showcase />
+
+      {/* ── Email Command Center V109-V113 ── */}
+      <EmailCommandCenter />
+
+      {/* ── Email Intelligence V114-V118 ── */}
+      <EmailIntelligenceV3Showcase />
+
+      {/* ── Email Intelligence V119-V123 ── */}
+      <EmailIntelligenceV4Showcase />
+
+      {/* ── Email Intelligence V124-V128 ── */}
+      <EmailIntelligenceV5Showcase />
+
+      {/* ── Email Intelligence V129-V133 ── */}
+      <EmailIntelligenceV6Showcase />
+
     <FloatingActionDock />
     </main>
   );
