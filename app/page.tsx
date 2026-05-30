@@ -4,6 +4,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
+import AnimatedCounter from '@/components/AnimatedCounter';
 import type { Service } from './data/servicesData';
 import ServiceBrowser from '@/components/ServiceBrowser';
 import ServiceSpotlight from '@/components/ServiceSpotlight';
@@ -13,11 +14,6 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
-import ROICalculator from '@/components/ROICalculator';
-import PricingEstimator from '@/components/PricingEstimator';
-import WorkflowPredictiveShowcase from '@/components/WorkflowPredictiveShowcase';
-import MultilangVoiceShowcase from '@/components/MultilangVoiceShowcase';
-import AdvancedIntelligenceShowcase from '@/components/AdvancedIntelligenceShowcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -105,37 +101,11 @@ export default function HomePage() {
 
   // Dynamic stats — auto-update when catalog changes
   const stats = [
-    { value: `${serviceCount}+`, label: STAT_SERVICES },
-    { value: `${CATEGORIES.length} Categories`, label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS' },
+    { value: <AnimatedCounter target={serviceCount} suffix="+" />, label: STAT_SERVICES },
+    { value: '10 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS · DevOps · Blockchain · IoT' },
     { value: '24/7', label: STAT_MONITOR },
     { value: '99.9%', label: STAT_SLA },
   ];
-
-  // Category pricing for estimator widget
-  const categoryCounts = useMemo(() => {
-    const m: Record<string, number> = {};
-    for (const s of services) { m[s.category] = (m[s.category] || 0) + 1; }
-    return m;
-  }, [services]);
-
-  const categoryPricing = useMemo(() => {
-    const m: Record<string, { min: number; avg: number; max: number }> = {};
-    const byCat: Record<string, number[]> = {};
-    for (const s of services) {
-      const n = Number(s.pricing?.basic || s.pricing?.enterprise || 0);
-      if (n > 0) {
-        if (!byCat[s.category]) byCat[s.category] = [];
-        byCat[s.category].push(n);
-      }
-    }
-    for (const [cat, prices] of Object.entries(byCat)) {
-      if (prices.length > 0) {
-        const sorted = prices.sort((a: number, b: number) => a - b);
-        m[cat] = { min: sorted[0], avg: Math.round(sorted.reduce((a: number, b: number) => a + b, 0) / sorted.length), max: sorted[sorted.length - 1] };
-      }
-    }
-    return m;
-  }, [services]);
 
   // Fetch release-signal dataset on mount
   useEffect(() => {
@@ -351,6 +321,23 @@ let list = services;
               ))}
             </div>
 
+            {/* Trust Badges */}
+            <div className="mt-14 flex flex-wrap justify-center gap-4">
+              {[
+                { icon: '🏆', text: 'Industry Leading' },
+                { icon: '🔒', text: 'SOC 2 Compliant' },
+                { icon: '⚡', text: '24/7 Support' },
+                { icon: '🇺🇸', text: 'US-Based Team' },
+                { icon: '🔐', text: 'HIPAA Ready' },
+                { icon: '✅', text: '99.9% SLA' },
+              ].map((badge, i) => (
+                <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/40 border border-slate-700/40 text-sm text-slate-300">
+                  <span className="text-base">{badge.icon}</span>
+                  <span>{badge.text}</span>
+                </div>
+              ))}
+            </div>
+
             {/* ── Contact Bar ── */}
             <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
               <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
@@ -460,16 +447,6 @@ let list = services;
           </div>
         </div>
       </section>
-
-      {/* ── Pricing Estimator Widget ── */}
-      <PricingEstimator
-        categories={CATEGORIES}
-        categoryCounts={categoryCounts}
-        categoryPricing={categoryPricing}
-      />
-
-      {/* ── ROI Calculator Widget ── */}
-      <ROICalculator />
 
         {/* ── Popular Services ── */}
 
@@ -1074,16 +1051,6 @@ let list = services;
           </div>
         </div>
       </section>
-
-      {/* ── AI Workflow Automation & Predictive Analytics V92-V93 ── */}
-      <WorkflowPredictiveShowcase />
-
-      {/* ── AI Multi-Language & Voice Intelligence V94-V95 ── */}
-      <MultilangVoiceShowcase />
-
-      {/* ── Advanced Email Intelligence V96-V98 ── */}
-      <AdvancedIntelligenceShowcase />
-
     <FloatingActionDock />
     </main>
   );
