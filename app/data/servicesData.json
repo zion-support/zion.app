@@ -54829,5 +54829,863 @@
     "category": "micro-saas",
     "popular": true,
     "industry": "Marketing & Sales"
+  },
+  {
+    "id": "ai-email-calendar-intelligence",
+    "title": "AI Email Calendar Intelligence",
+    "description": "Auto-detect meeting requests in emails, suggest optimal times, detect timezone conflicts, and auto-generate meeting agendas from email context.",
+    "icon": "📅",
+    "features": [
+      "Meeting intent detection",
+      "Optimal time suggestions",
+      "Timezone conflict detection",
+      "Auto-agenda generation",
+      "Calendar API sync"
+    ],
+    "benefits": [
+      "Eliminate scheduling back-and-forth",
+      "Reduce no-shows by 60%",
+      "Global timezone coordination",
+      "Save 5+ hours per week"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1899"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-calendar-intelligence",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-calendar-intelligence",
+    "category": "ai",
+    "popular": true,
+    "industry": "Cross-Industry"
+  },
+  {
+    "id": "ai-email-revenue-attribution",
+    "title": "AI Email Revenue Attribution Engine",
+    "description": "Track revenue impact of email conversations, attribute deals to email touchpoints, calculate ROI per thread, and predict deal closure probability.",
+    "icon": "💰",
+    "features": [
+      "Revenue signal detection",
+      "Deal stage classification",
+      "Closure probability prediction",
+      "Email ROI calculation",
+      "Attribution weighting"
+    ],
+    "benefits": [
+      "Quantify email impact on revenue",
+      "Predict deal outcomes",
+      "Optimize sales email strategy",
+      "Data-driven sales decisions"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1299",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-revenue-attribution",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-revenue-attribution",
+    "category": "ai",
+    "popular": true,
+    "industry": "Sales & Marketing"
+  },
+  {
+    "id": "ai-competitive-intelligence-scanner",
+    "title": "AI Competitive Intelligence Scanner",
+    "description": "Detect competitor mentions in emails, extract competitive pricing signals, flag threats, and generate competitive win-strategy briefings.",
+    "icon": "🏆",
+    "features": [
+      "Competitor mention detection",
+      "Pricing intelligence extraction",
+      "Threat level assessment",
+      "Win strategy generation",
+      "Urgency-based response timing"
+    ],
+    "benefits": [
+      "Stay ahead of competitors",
+      "Win 25% more competitive deals",
+      "Early threat detection",
+      "Strategic response planning"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-competitive-intelligence-scanner",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-competitive-intelligence-scanner",
+    "category": "ai",
+    "popular": true,
+    "industry": "Sales & Strategy"
+  },
+  {
+    "id": "ai-emotional-resonance-optimizer",
+    "title": "AI Emotional Resonance Optimizer",
+    "description": "Analyze emotional impact of email drafts before sending, suggest tone adjustments, detect emotional triggers, and optimize for relationship building.",
+    "icon": "❤️",
+    "features": [
+      "Draft emotional profiling",
+      "Incoming sentiment analysis",
+      "Tone issue detection",
+      "Relationship impact assessment",
+      "Quality scoring 1-10"
+    ],
+    "benefits": [
+      "Improve response quality by 50%",
+      "Strengthen client relationships",
+      "Prevent tone-deaf responses",
+      "Build trust and rapport"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "699",
+      "enterprise": "2199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-emotional-resonance-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-emotional-resonance-optimizer",
+    "category": "ai",
+    "popular": true,
+    "industry": "Customer Success"
+  },
+  {
+    "id": "ai-knowledge-distillation-engine",
+    "title": "AI Email Knowledge Distillation Engine",
+    "description": "Extract institutional knowledge from emails, build searchable FAQ, identify knowledge gaps, and generate training materials automatically.",
+    "icon": "🧬",
+    "features": [
+      "Knowledge extraction from emails",
+      "FAQ auto-generation",
+      "Knowledge gap identification",
+      "Training material generation",
+      "Expertise mapping"
+    ],
+    "benefits": [
+      "Capture institutional knowledge",
+      "Reduce onboarding time by 60%",
+      "Eliminate knowledge silos",
+      "Auto-build documentation"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "3499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-knowledge-distillation-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-knowledge-distillation-engine",
+    "category": "ai",
+    "popular": true,
+    "industry": "Knowledge Management"
+  },
+  {
+    "id": "micro-saas-invoice-automation",
+    "title": "AI Invoice Automation Platform",
+    "description": "Automatically generate, send, and track invoices. AI-powered data extraction from contracts, auto-reconciliation, and payment reminders.",
+    "icon": "🧾",
+    "features": [
+      "Auto invoice generation",
+      "Contract data extraction",
+      "Payment reconciliation",
+      "Smart reminders",
+      "Multi-currency support"
+    ],
+    "benefits": [
+      "Reduce billing errors by 95%",
+      "Get paid 3x faster",
+      "Zero manual data entry",
+      "Real-time cash flow visibility"
+    ],
+    "pricing": {
+      "basic": "39",
+      "pro": "129",
+      "enterprise": "399"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-invoice-automation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/micro-saas-invoice-automation",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Finance"
+  },
+  {
+    "id": "micro-saas-contract-analyzer",
+    "title": "AI Contract Analyzer",
+    "description": "AI-powered contract analysis for risk detection, clause comparison, obligation tracking, and compliance verification across legal documents.",
+    "icon": "📜",
+    "features": [
+      "Risk clause detection",
+      "Obligation tracking",
+      "Compliance verification",
+      "Template comparison",
+      "Renewal date alerts"
+    ],
+    "benefits": [
+      "Reduce legal review time by 70%",
+      "Catch risky clauses early",
+      "Never miss a renewal",
+      "Ensure regulatory compliance"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "349",
+      "enterprise": "999"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-contract-analyzer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/micro-saas-contract-analyzer",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Legal"
+  },
+  {
+    "id": "ai-customer-churn-predictor",
+    "title": "AI Customer Churn Predictor",
+    "description": "Predict customer churn from email communication patterns, sentiment trends, engagement metrics, and trigger proactive retention campaigns.",
+    "icon": "🔮",
+    "features": [
+      "Churn risk scoring",
+      "Engagement pattern analysis",
+      "Sentiment trend tracking",
+      "Proactive retention triggers",
+      "Retention campaign builder"
+    ],
+    "benefits": [
+      "Reduce churn by 40%",
+      "Identify at-risk customers early",
+      "Automate retention outreach",
+      "Increase customer lifetime value"
+    ],
+    "pricing": {
+      "basic": "349",
+      "pro": "899",
+      "enterprise": "2799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-customer-churn-predictor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-customer-churn-predictor",
+    "category": "ai",
+    "popular": true,
+    "industry": "Customer Success"
+  },
+  {
+    "id": "it-zero-trust-email-security",
+    "title": "Zero Trust Email Security Platform",
+    "description": "Enterprise zero-trust email security with identity verification, encrypted communication, access controls, and real-time threat detection.",
+    "icon": "🔐",
+    "features": [
+      "Identity-based access control",
+      "End-to-end encryption",
+      "Real-time threat detection",
+      "Zero-trust architecture",
+      "Compliance audit trails"
+    ],
+    "benefits": [
+      "Block 99.99% of threats",
+      "Meet zero-trust compliance",
+      "Protect sensitive communications",
+      "Reduce attack surface by 80%"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "1999",
+      "enterprise": "5999"
+    },
+    "contactInfo": {
+      "website": "/services/it-zero-trust-email-security",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-zero-trust-email-security",
+    "category": "security",
+    "popular": true,
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-email-decision-support",
+    "title": "AI Email Decision Support System",
+    "description": "Extract decisions from email threads, track decision status, flag pending decisions, and provide data-driven decision recommendations.",
+    "icon": "🎲",
+    "features": [
+      "Decision extraction",
+      "Status tracking",
+      "Pending decision alerts",
+      "Recommendation engine",
+      "Decision history timeline"
+    ],
+    "benefits": [
+      "Never lose track of decisions",
+      "Accelerate decision-making",
+      "Maintain decision audit trail",
+      "Reduce decision paralysis"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-decision-support",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-decision-support",
+    "category": "ai",
+    "popular": false,
+    "industry": "Management"
+  },
+  {
+    "id": "cloud-serverless-email-api",
+    "title": "Serverless Email API Platform",
+    "description": "Build custom email workflows with serverless functions. Webhooks, event-driven automation, and scalable email processing without infrastructure.",
+    "icon": "⚡",
+    "features": [
+      "Serverless function triggers",
+      "Webhook integrations",
+      "Event-driven automation",
+      "Auto-scaling processing",
+      "Custom workflow builder"
+    ],
+    "benefits": [
+      "Zero infrastructure management",
+      "Pay only for usage",
+      "Infinite scalability",
+      "Rapid custom development"
+    ],
+    "pricing": {
+      "basic": "49",
+      "pro": "199",
+      "enterprise": "699"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-serverless-email-api",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-serverless-email-api",
+    "category": "cloud",
+    "popular": false,
+    "industry": "Development"
+  },
+  {
+    "id": "ai-meeting-minutes-generator",
+    "title": "AI Meeting Minutes Generator",
+    "description": "Automatically generate structured meeting minutes from email discussions, extract action items, assign owners, and set deadlines.",
+    "icon": "📋",
+    "features": [
+      "Auto minute generation",
+      "Action item extraction",
+      "Owner assignment",
+      "Deadline tracking",
+      "Searchable meeting history"
+    ],
+    "benefits": [
+      "Save 2 hours per meeting",
+      "Never miss action items",
+      "Clear accountability",
+      "Searchable meeting archive"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "449",
+      "enterprise": "1399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-meeting-minutes-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-meeting-minutes-generator",
+    "category": "ai",
+    "popular": true,
+    "industry": "Cross-Industry"
+  },
+  {
+    "id": "micro-saas-proposal-generator",
+    "title": "AI Proposal Generator Pro",
+    "description": "Generate professional business proposals from email conversations. Auto-extract requirements, pricing, timelines, and create polished documents.",
+    "icon": "📄",
+    "features": [
+      "Auto requirement extraction",
+      "Dynamic pricing tables",
+      "Timeline generation",
+      "Professional templates",
+      "E-signature integration"
+    ],
+    "benefits": [
+      "Create proposals in minutes",
+      "Win 30% more deals",
+      "Professional presentation",
+      "Faster sales cycle"
+    ],
+    "pricing": {
+      "basic": "59",
+      "pro": "199",
+      "enterprise": "599"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-proposal-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/micro-saas-proposal-generator",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Sales"
+  },
+  {
+    "id": "ai-email-sla-enforcement",
+    "title": "AI Email SLA Enforcement Engine",
+    "description": "Monitor email response SLAs in real-time, auto-escalate breaches, generate SLA compliance reports, and predict potential breaches before they occur.",
+    "icon": "⏱️",
+    "features": [
+      "Real-time SLA monitoring",
+      "Auto-escalation on breach",
+      "Predictive breach alerts",
+      "SLA compliance reporting",
+      "Custom SLA rules engine"
+    ],
+    "benefits": [
+      "99.5% SLA compliance",
+      "Reduce response time by 50%",
+      "Automated escalations",
+      "Executive SLA dashboards"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-sla-enforcement",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-sla-enforcement",
+    "category": "ai",
+    "popular": true,
+    "industry": "Support & Operations"
+  },
+  {
+    "id": "it-managed-email-service",
+    "title": "Fully Managed Email Service",
+    "description": "End-to-end managed email infrastructure with 99.99% uptime SLA, 24/7 monitoring, security management, and dedicated support team.",
+    "icon": "🏢",
+    "features": [
+      "99.99% uptime SLA",
+      "24/7 monitoring & support",
+      "Security management",
+      "Dedicated account team",
+      "Monthly health reports"
+    ],
+    "benefits": [
+      "Zero email downtime",
+      "Focus on your business",
+      "Enterprise-grade security",
+      "Expert support on demand"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/it-managed-email-service",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-managed-email-service",
+    "category": "it",
+    "popular": false,
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-email-personalization-engine",
+    "title": "AI Email Personalization Engine",
+    "description": "Hyper-personalize every email using recipient profile data, past interactions, preferences, and behavioral signals for maximum engagement.",
+    "icon": "🎨",
+    "features": [
+      "Recipient profile building",
+      "Interaction history analysis",
+      "Preference learning",
+      "Dynamic content insertion",
+      "Personalization scoring"
+    ],
+    "benefits": [
+      "Increase engagement by 45%",
+      "Build stronger relationships",
+      "Higher response rates",
+      "Personalized at scale"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1899"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-personalization-engine",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-personalization-engine",
+    "category": "ai",
+    "popular": true,
+    "industry": "Marketing & Sales"
+  },
+  {
+    "id": "data-email-intelligence-platform",
+    "title": "Email Data Intelligence Platform",
+    "description": "Transform email data into actionable business intelligence. Communication pattern analysis, network mapping, and predictive analytics.",
+    "icon": "📊",
+    "features": [
+      "Communication pattern analysis",
+      "Network relationship mapping",
+      "Predictive analytics",
+      "Custom dashboards",
+      "Data export & API"
+    ],
+    "benefits": [
+      "Data-driven communication strategy",
+      "Identify key influencers",
+      "Optimize team structure",
+      "Predict business outcomes"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1299",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "website": "/services/data-email-intelligence-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/data-email-intelligence-platform",
+    "category": "data",
+    "popular": false,
+    "industry": "Business Intelligence"
+  },
+  {
+    "id": "automation-email-to-ticket",
+    "title": "Email-to-Ticket Automation",
+    "description": "Automatically convert support emails into tickets, classify priority, assign to agents, and track resolution with full email thread integration.",
+    "icon": "🎫",
+    "features": [
+      "Auto ticket creation",
+      "Priority classification",
+      "Agent assignment",
+      "Thread integration",
+      "SLA tracking"
+    ],
+    "benefits": [
+      "Instant ticket creation",
+      "Reduce support response time",
+      "Better agent workload balance",
+      "Complete ticket history"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "349",
+      "enterprise": "999"
+    },
+    "contactInfo": {
+      "website": "/services/automation-email-to-ticket",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/automation-email-to-ticket",
+    "category": "automation",
+    "popular": true,
+    "industry": "Customer Support"
+  },
+  {
+    "id": "micro-saas-email-a-b-testing",
+    "title": "Email A/B Testing Platform",
+    "description": "AI-powered A/B testing for email subject lines, content, send times, and CTAs with statistical significance and auto-winner selection.",
+    "icon": "🔬",
+    "features": [
+      "Subject line testing",
+      "Content variant testing",
+      "Send time optimization",
+      "Statistical significance calc",
+      "Auto-winner promotion"
+    ],
+    "benefits": [
+      "Increase open rates by 35%",
+      "Data-driven optimization",
+      "Continuous improvement",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "39",
+      "pro": "149",
+      "enterprise": "499"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-email-a-b-testing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/micro-saas-email-a-b-testing",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Marketing"
+  },
+  {
+    "id": "ai-email-risk-assessment",
+    "title": "AI Email Risk Assessment Engine",
+    "description": "Assess business risk from email communications. Detect compliance violations, legal exposure, reputation threats, and financial risks.",
+    "icon": "⚠️",
+    "features": [
+      "Compliance risk detection",
+      "Legal exposure assessment",
+      "Reputation threat alerts",
+      "Financial risk scoring",
+      "Risk mitigation suggestions"
+    ],
+    "benefits": [
+      "Prevent compliance violations",
+      "Reduce legal exposure",
+      "Protect brand reputation",
+      "Proactive risk management"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1299",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-risk-assessment",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-risk-assessment",
+    "category": "security",
+    "popular": false,
+    "industry": "Risk Management"
+  },
+  {
+    "id": "it-email-infrastructure-audit",
+    "title": "Email Infrastructure Audit Service",
+    "description": "Comprehensive audit of your email infrastructure including security, deliverability, performance, compliance, and optimization recommendations.",
+    "icon": "🔍",
+    "features": [
+      "Security assessment",
+      "Deliverability analysis",
+      "Performance benchmarking",
+      "Compliance review",
+      "Optimization roadmap"
+    ],
+    "benefits": [
+      "Identify security gaps",
+      "Improve deliverability",
+      "Optimize performance",
+      "Ensure compliance"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "contactInfo": {
+      "website": "/services/it-email-infrastructure-audit",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-email-infrastructure-audit",
+    "category": "it",
+    "popular": false,
+    "industry": "Enterprise"
+  },
+  {
+    "id": "ai-email-response-optimizer",
+    "title": "AI Email Response Time Optimizer",
+    "description": "Optimize email response times using AI. Predict optimal response windows, track team response metrics, and auto-prioritize urgent emails.",
+    "icon": "⚡",
+    "features": [
+      "Optimal response window prediction",
+      "Team response analytics",
+      "Urgent email prioritization",
+      "Response time benchmarking",
+      "Auto-escalation rules"
+    ],
+    "benefits": [
+      "Reduce average response time by 45%",
+      "Meet SLA targets consistently",
+      "Improve customer satisfaction",
+      "Data-driven response strategy"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1899"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-response-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-response-optimizer",
+    "category": "ai",
+    "popular": true,
+    "industry": "Customer Support"
+  },
+  {
+    "id": "cloud-email-data-lake",
+    "title": "Email Data Lake Platform",
+    "description": "Centralize all email data into a searchable data lake. Advanced querying, machine learning integration, and enterprise-grade security.",
+    "icon": "🌊",
+    "features": [
+      "Centralized email storage",
+      "Advanced search & query",
+      "ML model integration",
+      "Enterprise security",
+      "Data governance controls"
+    ],
+    "benefits": [
+      "Unified email data access",
+      "Powerful analytics capabilities",
+      "ML-ready data pipeline",
+      "Compliance-ready storage"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-email-data-lake",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/cloud-email-data-lake",
+    "category": "cloud",
+    "popular": false,
+    "industry": "Data & Analytics"
+  },
+  {
+    "id": "micro-saas-email-feedback-collector",
+    "title": "Email Feedback Collector",
+    "description": "Automatically collect and analyze customer feedback from emails. Sentiment analysis, trend tracking, and actionable insight generation.",
+    "icon": "💬",
+    "features": [
+      "Auto feedback detection",
+      "Sentiment analysis",
+      "Trend tracking",
+      "Insight generation",
+      "Integration with product teams"
+    ],
+    "benefits": [
+      "Capture all customer feedback",
+      "Identify improvement areas",
+      "Track satisfaction trends",
+      "Data-driven product decisions"
+    ],
+    "pricing": {
+      "basic": "29",
+      "pro": "99",
+      "enterprise": "299"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-email-feedback-collector",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/micro-saas-email-feedback-collector",
+    "category": "micro-saas",
+    "popular": false,
+    "industry": "Customer Success"
+  },
+  {
+    "id": "ai-email-workflow-orchestrator",
+    "title": "AI Email Workflow Orchestrator",
+    "description": "Orchestrate complex multi-step email workflows with conditional logic, parallel processing, error handling, and real-time monitoring.",
+    "icon": "🎭",
+    "features": [
+      "Multi-step workflow builder",
+      "Conditional branching",
+      "Parallel processing",
+      "Error handling & retry",
+      "Real-time monitoring"
+    ],
+    "benefits": [
+      "Automate complex processes",
+      "Reduce manual steps by 85%",
+      "Error-free execution",
+      "Full process visibility"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-email-workflow-orchestrator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-email-workflow-orchestrator",
+    "category": "automation",
+    "popular": true,
+    "industry": "Operations"
+  },
+  {
+    "id": "security-email-threat-hunting",
+    "title": "Email Threat Hunting Service",
+    "description": "Proactive email threat hunting with advanced IOC analysis, behavioral analytics, threat intelligence feeds, and incident response playbooks.",
+    "icon": "🎯",
+    "features": [
+      "Proactive threat hunting",
+      "IOC analysis",
+      "Behavioral analytics",
+      "Threat intel feeds",
+      "Incident response playbooks"
+    ],
+    "benefits": [
+      "Detect threats before damage",
+      "Reduce dwell time by 80%",
+      "Expert threat hunters",
+      "Rapid incident response"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/security-email-threat-hunting",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/security-email-threat-hunting",
+    "category": "security",
+    "popular": false,
+    "industry": "Cybersecurity"
   }
 ]

@@ -65,6 +65,7 @@
 <url><loc>https://ziontechgroup.com/services/ai-competitive-battle-cards/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-competitive-intel-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-competitive-intelligence-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-competitive-intelligence-scanner/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-competitive-price-tracker/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-competitive-war-room/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-competitor-intelligence/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -185,6 +186,7 @@
 <url><loc>https://ziontechgroup.com/services/ai-email-content-repurposer/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-context-preserver-v240/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-crm-sync-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-email-decision-support/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-disaster-recovery/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-disaster-recovery-v211/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-encryption-gateway/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -209,14 +211,17 @@
 <url><loc>https://ziontechgroup.com/services/ai-email-personalization-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-priority-escalation-v204/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-priority-scorer-v246/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-email-response-optimizer/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-response-quality-grader-v207/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-revenue-attribution/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-revenue-attribution-v210/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-email-risk-assessment/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-scheduler-timezone/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-security-sentinel/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-sentiment-evolution-tracker/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-signature-intelligence/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-signature-optimizer-v238/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-email-sla-enforcement/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-smart-notifications-v248/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-template-intelligence/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-template-intelligence-v250/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -233,7 +238,9 @@
 <url><loc>https://ziontechgroup.com/services/ai-email-voice-response-generator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-workflow-automation-v208/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-email-workflow-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-email-workflow-orchestrator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-emotional-intelligence-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-emotional-resonance-optimizer/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-employee-experience/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-employee-experience-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-employee-onboarding/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -292,6 +299,7 @@
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-base-agent/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-base-autobuilder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-base-rag/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-knowledge-distillation-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-graph/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-graph-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-knowledge-graph-builder-v227/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -329,6 +337,7 @@
 <url><loc>https://ziontechgroup.com/services/ai-meeting-intelligence-copilot/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-meeting-intelligence-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-meeting-minutes-action-tracker/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/ai-meeting-minutes-generator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-meeting-notes-summary/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-meeting-preread/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/ai-meeting-scheduler-intelligence/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -551,6 +560,7 @@
 <url><loc>https://ziontechgroup.com/services/automation-document-processing-automated/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/automation-education-student-lifecycle-manager/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/automation-email-automation-engine/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/automation-email-to-ticket/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/automation-email-workflow/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/automation-email-workflow-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/automation-etl-pipeline-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -650,6 +660,7 @@
 <url><loc>https://ziontechgroup.com/services/cloud-edge-ai-deployment-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-edge-computing-global/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-email-archive-compliance/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/cloud-email-data-lake/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-event-driven-microservices/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-finops-1/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-finops-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -672,6 +683,7 @@
 <url><loc>https://ziontechgroup.com/services/cloud-native-app-dev/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-observability-stack/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-serverless-api-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/cloud-serverless-email-api/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-serverless-framework-deploy/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-serverless-orchestrator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/cloud-serverless-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -725,6 +737,7 @@
 <url><loc>https://ziontechgroup.com/services/data-data-warehouse-modern/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/data-document-vector-search/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/data-email-analytics-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/data-email-intelligence-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/data-embedded-analytics/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/data-engineering/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/data-etl-pipeline-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1064,6 +1077,7 @@
 <url><loc>https://ziontechgroup.com/services/it-edge-computing-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-edge-computing-solutions/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-email-disaster-recovery-backup/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/it-email-infrastructure-audit/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-endpoint-detection-response/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-endpoint-management/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-endpoint-management-macos-windows/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1107,6 +1121,7 @@
 <url><loc>https://ziontechgroup.com/services/it-log-management-siem/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-low-code-platform-integration/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-mainframe-modernization/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/it-managed-email-service/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-managed-it-ops/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-managed-kubernetes-pro/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-managed-soc/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1173,6 +1188,7 @@
 <url><loc>https://ziontechgroup.com/services/it-zero-trust/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-zero-trust-1/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-zero-trust-architecture/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/it-zero-trust-email-security/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-zero-trust-microsegmentation/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-zero-trust-network-access/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-zero-trust-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1234,6 +1250,7 @@
 <url><loc>https://ziontechgroup.com/services/micro-saas-chat-support/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-chatbot-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-competitive-intelligence/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/micro-saas-contract-analyzer/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-contract-management/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-crm-lightweight/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-cron-jobs/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1245,7 +1262,9 @@
 <url><loc>https://ziontechgroup.com/services/micro-saas-doc-signing/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-document-signing/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-ecommerce-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/micro-saas-email-a-b-testing/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-email-campaign-builder/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/micro-saas-email-feedback-collector/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-email-marketing/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-email-scheduler-pro/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-email-signature-generator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1282,6 +1301,7 @@
 <url><loc>https://ziontechgroup.com/services/micro-saas-notification-center/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-password-manager/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-project-management/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/micro-saas-proposal-generator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-qr-code-generator/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-roadmap-voting/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-screenshot-api/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1457,6 +1477,7 @@
 <url><loc>https://ziontechgroup.com/services/security-compliance-automation-soc2/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/security-data-loss-prevention/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/security-email-security-gateway/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/security-email-threat-hunting/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/security-encryption-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/security-iam-platform/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/security-identity-access-management/</loc><lastmod>2026-05-30</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
