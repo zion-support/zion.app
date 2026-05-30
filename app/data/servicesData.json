@@ -24112,5 +24112,509 @@
     "category": "micro-saas",
     "popular": true,
     "industry": "Finance"
+  },
+  {
+    "id": "ai-medical-diagnostic-assistant",
+    "title": "AI Medical Diagnostic Assistant",
+    "description": "HIPAA-compliant AI diagnostic support system that analyzes patient symptoms, lab results, and medical imaging to assist healthcare professionals with differential diagnoses. Integrates with EHR systems (Epic, Cerner). Reduces diagnostic errors by 30%.",
+    "icon": "🩺",
+    "features": [
+      "Symptom analysis with NLP-powered patient intake",
+      "Medical imaging AI (X-ray, MRI, CT scan analysis)",
+      "Lab results interpretation with anomaly detection",
+      "Drug interaction checking + contraindication alerts",
+      "EHR integration (Epic, Cerner, Allscripts)",
+      "Clinical decision support with evidence citations",
+      "Patient risk scoring (readmission, sepsis, deterioration)",
+      "Automated clinical documentation (SOAP notes)"
+    ],
+    "benefits": [
+      "Reduce diagnostic errors by 30%",
+      "Cut charting time by 50% with auto-documentation",
+      "HIPAA compliant — BAA available",
+      "FDA-cleared AI models for radiology support"
+    ],
+    "pricing": {
+      "basic": "2,999",
+      "pro": "6,499",
+      "enterprise": "14,999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-medical-diagnostic-assistant",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-medical-diagnostic-assistant",
+    "category": "ai",
+    "popular": true,
+    "industry": "Healthcare"
+  },
+  {
+    "id": "ai-financial-fraud-detector",
+    "title": "AI Financial Fraud Detection Platform",
+    "description": "Real-time transaction monitoring using deep learning to detect fraud, money laundering, and suspicious patterns. Processes millions of transactions per second with <50ms latency. Used by banks, fintechs, and payment processors.",
+    "icon": "💳",
+    "features": [
+      "Real-time transaction scoring (<50ms latency)",
+      "Deep learning anomaly detection (autoencoders, GNN)",
+      "AML/KYC compliance monitoring",
+      "Suspicious Activity Report (SAR) auto-generation",
+      "Network analysis for money laundering rings",
+      "False positive reduction (90% reduction typical)",
+      "Core banking integration (FIS, Fiserv, Jack Henry)",
+      "Regulatory reporting (FinCEN, OFAC, EU AMLD)"
+    ],
+    "benefits": [
+      "Detect fraud in real-time with <50ms latency",
+      "Reduce false positives by 90%",
+      "Automate SAR filing — save 40+ hours/month",
+      "Stay compliant with evolving AML regulations"
+    ],
+    "pricing": {
+      "basic": "4,999",
+      "pro": "12,499",
+      "enterprise": "29,999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-financial-fraud-detector",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-financial-fraud-detector",
+    "category": "ai",
+    "popular": true,
+    "industry": "Financial Services"
+  },
+  {
+    "id": "ai-legal-research-assistant",
+    "title": "AI Legal Research & Contract Analysis Platform",
+    "description": "GPT-4 powered legal research engine that searches case law, statutes, and regulations across all US jurisdictions. Contract analysis extracts key terms, risks, and anomalies in seconds. Used by law firms and corporate legal departments.",
+    "icon": "⚖️",
+    "features": [
+      "Natural language case law search (all US jurisdictions)",
+      "Contract analysis: terms, risks, anomalies extraction",
+      "Brief and memo generation from templates",
+      "Regulatory change tracking and alerting",
+      "Deposition transcript summarization",
+      "Legal citation checking (Bluebook format)",
+      "Client-facing document automation",
+      "iManage, NetDocuments, Clio integration"
+    ],
+    "benefits": [
+      "Research time reduced by 70%",
+      "Extract contract terms in seconds, not hours",
+      "Never miss a regulatory change",
+      "Reduce outside counsel spend by 30%"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "1,999",
+      "enterprise": "4,999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-legal-research-assistant",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-legal-research-assistant",
+    "category": "ai",
+    "popular": true,
+    "industry": "Legal"
+  },
+  {
+    "id": "ai-smart-city-platform",
+    "title": "AI Smart City & Urban Analytics Platform",
+    "description": "IoT + AI platform for city governments: traffic optimization, energy management, public safety analytics, and citizen engagement. Integrates with existing municipal systems. GDPR/CCPA compliant data handling.",
+    "icon": "🏙️",
+    "features": [
+      "Real-time traffic flow optimization (adaptive signals)",
+      "Smart street lighting (40% energy reduction)",
+      "Public safety analytics (crime prediction, response routing)",
+      "Air quality monitoring + environmental alerts",
+      "Citizen service request routing (311 replacement)",
+      "Water leak detection + infrastructure monitoring",
+      "Open data portal for citizen transparency",
+      "NIST cybersecurity framework compliance"
+    ],
+    "benefits": [
+      "Reduce traffic congestion by 25%",
+      "Cut municipal energy costs by 40%",
+      "Improve emergency response times by 15%",
+      "Increase citizen engagement and satisfaction"
+    ],
+    "pricing": {
+      "basic": "9,999",
+      "pro": "24,999",
+      "enterprise": "59,999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-smart-city-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-smart-city-platform",
+    "category": "ai",
+    "popular": true,
+    "industry": "Government"
+  },
+  {
+    "id": "ai-talent-intelligence",
+    "title": "AI Talent Intelligence & Workforce Planning",
+    "description": "Predictive workforce analytics: attrition risk modeling, skills gap analysis, internal mobility optimization, and hiring volume forecasting. Integrates with Workday, SAP SuccessFactors, and LinkedIn Talent Hub.",
+    "icon": "👥",
+    "features": [
+      "Attrition risk scoring per employee (90% accuracy)",
+      "Skills ontology + gap analysis across org",
+      "Internal mobility recommendations",
+      "Hiring volume forecasting by department",
+      "Diversity analytics and bias detection",
+      "Compensation benchmarking (Radford, Mercer data)",
+      "Succession planning with readiness scores",
+      "Workday/SAP/LinkedIn integration"
+    ],
+    "benefits": [
+      "Reduce unwanted attrition by 25%",
+      "Fill roles 40% faster with internal mobility",
+      "Identify skills gaps before they impact projects",
+      "Data-driven compensation decisions"
+    ],
+    "pricing": {
+      "basic": "1,499",
+      "pro": "3,499",
+      "enterprise": "8,499"
+    },
+    "contactInfo": {
+      "website": "/services/ai-talent-intelligence",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/ai-talent-intelligence",
+    "category": "ai",
+    "popular": true,
+    "industry": "HR"
+  },
+  {
+    "id": "it-edge-computing",
+    "title": "Edge Computing & IoT Platform",
+    "description": "Design, deploy, and manage edge computing infrastructure for manufacturing, logistics, and retail. Low-latency data processing at the source with cloud sync. AWS IoT Greengrass, Azure IoT Edge, and Google Edge TPU certified.",
+    "icon": "📡",
+    "features": [
+      "Edge hardware selection and deployment",
+      "Local ML inference (TensorRT, OpenVINO, TFLite)",
+      "Device management at scale (10,000+ devices)",
+      "Edge-to-cloud data synchronization",
+      "OTA firmware updates with rollback",
+      "Security hardening (TPM, secure boot)",
+      "Real-time dashboards + alerting",
+      "AWS Greengrass / Azure IoT Edge certified"
+    ],
+    "benefits": [
+      "Reduce latency to <10ms for critical applications",
+      "Cut bandwidth costs by 80% with local processing",
+      "Continue operations during internet outages",
+      "Scale to 10,000+ edge devices from single console"
+    ],
+    "pricing": {
+      "basic": "2,999",
+      "pro": "7,499",
+      "enterprise": "18,999"
+    },
+    "contactInfo": {
+      "website": "/services/it-edge-computing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-edge-computing",
+    "category": "it",
+    "popular": true,
+    "industry": "Manufacturing"
+  },
+  {
+    "id": "it-api-gateway",
+    "title": "API Gateway & Management Platform",
+    "description": "Enterprise API management: design, publish, secure, monitor, and monetize APIs. Rate limiting, OAuth 2.0, developer portal, analytics. Kong, Apigee, and AWS API Gateway migration support.",
+    "icon": "🔌",
+    "features": [
+      "API design-first (OpenAPI/Swagger) workflow",
+      "Rate limiting + throttling per consumer",
+      "OAuth 2.0 / OIDC / JWT authentication",
+      "Developer portal with auto-generated docs",
+      "API analytics: usage, latency, error rates",
+      "Monetization: billing, plans, usage-based pricing",
+      "Legacy SOAP-to-REST migration tools",
+      "Kong, Apigee, AWS API Gateway migration"
+    ],
+    "benefits": [
+      "Launch APIs 10x faster with design-first workflow",
+      "Monetize APIs with built-in billing",
+      "99.99% uptime with auto-scaling",
+      "Migrate from legacy API gateways seamlessly"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2,499",
+      "enterprise": "5,999"
+    },
+    "contactInfo": {
+      "website": "/services/it-api-gateway",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-api-gateway",
+    "category": "it",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "it-siem-security-analytics",
+    "title": "SIEM & Security Analytics Platform",
+    "description": "24/7 security information and event management: log aggregation, threat detection, incident response orchestration, and compliance reporting. Splunk, Microsoft Sentinel, and Elastic SIEM certified.",
+    "icon": "📊",
+    "features": [
+      "Log aggregation from 500+ data sources",
+      "Real-time threat detection (correlation rules, ML)",
+      "SOAR playbooks for automated response",
+      "User and Entity Behavior Analytics (UEBA)",
+      "Threat intelligence feed integration",
+      "Compliance dashboards (SOC2, PCI, HIPAA, NIST)",
+      "Splunk, Sentinel, Elastic SIEM certified",
+      "Managed detection and response (MDR) option"
+    ],
+    "benefits": [
+      "Detect threats in real-time, not days later",
+      "Automate incident response with SOAR playbooks",
+      "Reduce alert fatigue by 90% with ML filtering",
+      "Compliance-ready dashboards for auditors"
+    ],
+    "pricing": {
+      "basic": "2,499",
+      "pro": "5,999",
+      "enterprise": "14,999"
+    },
+    "contactInfo": {
+      "website": "/services/it-siem-security-analytics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/it-siem-security-analytics",
+    "category": "security",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "saas-project-management",
+    "title": "AI Project Management & Resource Planning",
+    "description": "Smart project management with AI-powered resource allocation, timeline prediction, and risk detection. Gantt charts, Kanban, time tracking, and budget management. Jira, Asana, Monday.com migration support.",
+    "icon": "📋",
+    "features": [
+      "AI resource allocation (who's overloaded?)",
+      "Timeline prediction based on historical data",
+      "Risk detection (projects going off-track)",
+      "Gantt, Kanban, List, Calendar views",
+      "Time tracking + budget burn-down",
+      "Client portal with branded reports",
+      "Jira, Asana, Monday.com data import",
+      "Slack, Teams, email notifications"
+    ],
+    "benefits": [
+      "Deliver projects on time — AI predicts delays early",
+      "Optimize team utilization by 20%",
+      "One tool replaces Jira + Asana + Harvest",
+      "Client-facing portal reduces status meetings by 50%"
+    ],
+    "pricing": {
+      "basic": "29",
+      "pro": "69",
+      "enterprise": "149"
+    },
+    "contactInfo": {
+      "website": "/services/saas-project-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-project-management",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "saas-customer-support",
+    "title": "Omnichannel Customer Support Platform",
+    "description": "Unified customer support across email, chat, phone, social, and WhatsApp. AI-powered ticket routing, canned responses, and CSAT tracking. Zendesk, Freshdesk, and Intercom alternative at 1/3 the cost.",
+    "icon": "🎧",
+    "features": [
+      "Unified inbox (email, chat, phone, social, WhatsApp)",
+      "AI ticket routing and priority scoring",
+      "Canned responses + AI reply suggestions",
+      "CSAT/NPS surveys with analytics",
+      "Knowledge base with AI search",
+      "SLA management with escalation rules",
+      "Zendesk/Freshdesk data migration",
+      "Real-time agent performance dashboard"
+    ],
+    "benefits": [
+      "Resolve tickets 40% faster with AI routing",
+      "One platform replaces 5+ support tools",
+      "Increase CSAT by 20% with faster responses",
+      "1/3 the cost of Zendesk or Intercom"
+    ],
+    "pricing": {
+      "basic": "19",
+      "pro": "49",
+      "enterprise": "99"
+    },
+    "contactInfo": {
+      "website": "/services/saas-customer-support",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-customer-support",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "saas-invoice-factoring",
+    "title": "AI Invoice Factoring & Cash Flow Platform",
+    "description": "AI-powered invoice factoring: upload invoices, get instant advance rates, and receive payment within 24 hours. ML-based credit scoring for your clients. Integrates with QuickBooks, Xero, and FreshBooks.",
+    "icon": "💰",
+    "features": [
+      "Instant advance rate quotes (AI-determined)",
+      "Upload invoices via email, scan, or API",
+      "ML-based debtor credit scoring",
+      "Funds deposited within 24 hours",
+      "Automated collections and follow-ups",
+      "QuickBooks, Xero, FreshBooks sync",
+      "Real-time cash flow dashboard",
+      "No long-term contracts — pay per invoice"
+    ],
+    "benefits": [
+      "Get cash in 24 hours, not 30-90 days",
+      "AI determines best advance rates automatically",
+      "No personal guarantee required",
+      "Integrates with your existing accounting software"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "249",
+      "enterprise": "499"
+    },
+    "contactInfo": {
+      "website": "/services/saas-invoice-factoring",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-invoice-factoring",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Finance"
+  },
+  {
+    "id": "saas-review-management",
+    "title": "AI Review Management & Reputation Platform",
+    "description": "Monitor, analyze, and respond to online reviews across Google, Yelp, TripAdvisor, and industry-specific sites. AI-generated response suggestions, sentiment analysis, and competitive benchmarking.",
+    "icon": "⭐",
+    "features": [
+      "Monitor 50+ review sites from one dashboard",
+      "AI-generated response suggestions (brand voice)",
+      "Sentiment analysis + trend tracking",
+      "Competitor review benchmarking",
+      "Automated review request campaigns (email/SMS)",
+      "Review widget for your website",
+      "Alert on negative reviews (respond in <1 hour)",
+      "Monthly reputation score reports"
+    ],
+    "benefits": [
+      "Increase review volume by 3x with auto-requests",
+      "Respond to reviews 10x faster with AI drafts",
+      "Improve average rating by 0.5 stars in 6 months",
+      "Benchmark against competitors in your market"
+    ],
+    "pricing": {
+      "basic": "79",
+      "pro": "199",
+      "enterprise": "399"
+    },
+    "contactInfo": {
+      "website": "/services/saas-review-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-review-management",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "saas-event-management",
+    "title": "AI Event Management & Registration Platform",
+    "description": "End-to-end event management: registration, ticketing, agenda builder, networking AI matchmaking, live polling, and post-event analytics. Virtual, hybrid, and in-person events. Eventbrite alternative.",
+    "icon": "🎪",
+    "features": [
+      "Branded registration pages + ticketing",
+      "AI attendee matchmaking (networking suggestions)",
+      "Agenda builder with speaker management",
+      "Live polling, Q&A, and engagement tools",
+      "Virtual event streaming (Zoom/Teams integration)",
+      "Post-event analytics and ROI reporting",
+      "Sponsor/exhibitor management portal",
+      "Eventbrite data import"
+    ],
+    "benefits": [
+      "Increase event attendance by 30% with AI matchmaking",
+      "Manage virtual, hybrid, and in-person in one platform",
+      "Prove event ROI with detailed analytics",
+      "Reduce event planning time by 50%"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "399",
+      "enterprise": "899"
+    },
+    "contactInfo": {
+      "website": "/services/saas-event-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-event-management",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "All"
+  },
+  {
+    "id": "saas-subscription-billing",
+    "title": "Subscription Billing & Revenue Recognition",
+    "description": "Automated subscription billing: recurring invoicing, dunning management, revenue recognition (ASC 606), and tax calculation. Stripe, PayPal, and Braintree integration. Chargebee and Recurly alternative.",
+    "icon": "🔄",
+    "features": [
+      "Recurring billing with smart dunning",
+      "Revenue recognition automation (ASC 606)",
+      "Global tax calculation (VAT, GST, sales tax)",
+      "Self-service customer portal",
+      "Usage-based billing support",
+      "Stripe, PayPal, Braintree integration",
+      "Financial reporting + SaaS metrics (MRR, ARR, LTV)",
+      "Chargebee/Recurly data migration"
+    ],
+    "benefits": [
+      "Reduce involuntary churn by 40% with smart dunning",
+      "Automate revenue recognition — audit ready",
+      "Global tax compliance without the complexity",
+      "One platform replaces Chargebee + Avalara + spreadsheets"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1,199"
+    },
+    "contactInfo": {
+      "website": "/services/saas-subscription-billing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "href": "/services/saas-subscription-billing",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "SaaS"
   }
 ]
