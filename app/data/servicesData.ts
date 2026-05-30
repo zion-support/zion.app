@@ -26644,6 +26644,735 @@ export const allServices: Service[] = [
     popular: true,
     industry: "Cross-Industry"
   }
+,
+  {
+    id: "svc-371",
+    title: "AI Voice Cloning Platform",
+    description: "Transform text into natural-sounding speech with custom voice clones. Create personalized audio content in multiple languages with studio-quality output. Contact us at +1 302 464 0950 or kleber@ziontechgroup.com for enterprise solutions.",
+    icon: "🧠",
+    features: [
+      "Custom voice cloning from 30-second samples",
+      "Multi-language synthesis (40+ languages)",
+      "Real-time text-to-speech conversion",
+      "Emotion and tone control",
+      "API integration for automation"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$49/mo",
+      pro: "$149/mo",
+      enterprise: "$499/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-371",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-371",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-372",
+    title: "AI Document Intelligence",
+    description: "Extract, classify, and analyze data from any document format automatically. Streamline document workflows with intelligent parsing and validation. Visit 364 E Main St STE 1008 Middletown DE 19709 or call +1 302 464 0950.",
+    icon: "🧠",
+    features: [
+      "OCR with 99.5% accuracy",
+      "Automatic data extraction and validation",
+      "Document classification and routing",
+      "Multi-format support (PDF, images, scans)",
+      "Compliance and audit trail generation"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$79/mo",
+      pro: "$199/mo",
+      enterprise: "$599/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-372",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-372",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-373",
+    title: "AI Supply Chain Optimizer",
+    description: "Predict demand, optimize inventory, and streamline logistics with AI-powered forecasting. Reduce costs and improve delivery times across your entire supply network. Contact kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🧠",
+    features: [
+      "Demand forecasting with 95% accuracy",
+      "Inventory optimization algorithms",
+      "Route and logistics planning",
+      "Supplier performance analytics",
+      "Real-time disruption alerts"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$299/mo",
+      pro: "$799/mo",
+      enterprise: "$2499/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-373",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-373",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-374",
+    title: "AI Legal Research Assistant",
+    description: "Accelerate legal research with AI-powered case law analysis and document review. Get instant insights from millions of legal documents and precedents. Contact +1 302 464 0950 or visit our office at 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🧠",
+    features: [
+      "Case law search and summarization",
+      "Contract clause analysis",
+      "Legal precedent matching",
+      "Risk assessment and compliance checks",
+      "Citation generation and formatting"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$149/mo",
+      pro: "$399/mo",
+      enterprise: "$999/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-374",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-374",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-375",
+    title: "AI Customer Journey Mapper",
+    description: "Visualize and optimize every customer touchpoint with AI-driven analytics. Identify friction points and personalize experiences at scale. Email kleber@ziontechgroup.com or call +1 302 464 0950 for a demo.",
+    icon: "🧠",
+    features: [
+      "Real-time journey visualization",
+      "Predictive behavior modeling",
+      "Personalization engine",
+      "Conversion funnel optimization",
+      "Multi-channel attribution"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$99/mo",
+      pro: "$249/mo",
+      enterprise: "$699/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-375",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-375",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-376",
+    title: "AI Code Security Scanner",
+    description: "Detect vulnerabilities and security flaws in your codebase before deployment. Get actionable remediation recommendations powered by machine learning. Contact +1 302 464 0950 or kleber@ziontechgroup.com.",
+    icon: "🧠",
+    features: [
+      "Static and dynamic code analysis",
+      "Vulnerability detection (OWASP Top 10)",
+      "Dependency risk assessment",
+      "Automated remediation suggestions",
+      "CI/CD pipeline integration"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$89/mo",
+      pro: "$229/mo",
+      enterprise: "$599/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-376",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-376",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-377",
+    title: "AI Predictive Maintenance Engine",
+    description: "Predict equipment failures before they happen using IoT sensor data and machine learning. Reduce downtime and maintenance costs across your industrial operations. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🧠",
+    features: [
+      "Real-time sensor data analysis",
+      "Failure prediction with 90% accuracy",
+      "Maintenance scheduling optimization",
+      "Equipment health dashboards",
+      "Anomaly detection algorithms"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$199/mo",
+      pro: "$599/mo",
+      enterprise: "$1499/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-377",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-377",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-378",
+    title: "AI Content Moderation Hub",
+    description: "Automatically detect and filter inappropriate content across text, images, and videos. Protect your platform and users with AI-powered moderation at scale. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🧠",
+    features: [
+      "Multi-modal content analysis",
+      "Custom policy enforcement",
+      "Real-time moderation queue",
+      "Human review workflow integration",
+      "Compliance reporting"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$129/mo",
+      pro: "$349/mo",
+      enterprise: "$899/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-378",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-378",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-379",
+    title: "IT Network Forensics",
+    description: "Investigate network incidents and reconstruct attack timelines with deep packet analysis. Identify breach sources and gather forensic evidence for incident response. Contact +1 302 464 0950 or kleber@ziontechgroup.com.",
+    icon: "🖥️",
+    features: [
+      "Packet capture and analysis",
+      "Traffic flow visualization",
+      "Attack timeline reconstruction",
+      "Evidence preservation and export",
+      "Integration with SIEM systems"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$249/mo",
+      pro: "$649/mo",
+      enterprise: "$1699/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-379",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-379",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-380",
+    title: "IT Cloud Migration Toolkit",
+    description: "Simplify cloud migration with automated assessment, planning, and execution tools. Move workloads to any cloud provider with minimal downtime and risk. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🖥️",
+    features: [
+      "Application dependency mapping",
+      "Cost comparison across cloud providers",
+      "Automated workload migration",
+      "Performance baseline monitoring",
+      "Rollback and disaster recovery"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$399/mo",
+      pro: "$899/mo",
+      enterprise: "$2299/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-380",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-380",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-381",
+    title: "IT Endpoint Management Suite",
+    description: "Centralize device management, patching, and security policy enforcement across all endpoints. Ensure compliance and protect against threats on every device. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🖥️",
+    features: [
+      "Unified device inventory",
+      "Automated patch management",
+      "Remote device control",
+      "Policy enforcement and compliance",
+      "Threat detection and response"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$3/user/mo",
+      pro: "$6/user/mo",
+      enterprise: "$12/user/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-381",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-381",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-382",
+    title: "IT DevOps Pipeline Orchestrator",
+    description: "Build, test, and deploy applications with intelligent pipeline automation. Optimize CI/CD workflows and reduce deployment failures with AI-powered insights. Contact +1 302 464 0950 or kleber@ziontechgroup.com.",
+    icon: "🖥️",
+    features: [
+      "Visual pipeline builder",
+      "Parallel test execution",
+      "Deployment rollback automation",
+      "Performance regression detection",
+      "Multi-environment orchestration"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$149/mo",
+      pro: "$399/mo",
+      enterprise: "$999/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-382",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-382",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-383",
+    title: "Security API Gateway",
+    description: "Protect your APIs with advanced authentication, rate limiting, and threat detection. Secure every request with zero-trust architecture and real-time monitoring. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🔐",
+    features: [
+      "OAuth 2.0 and JWT authentication",
+      "Rate limiting and throttling",
+      "Request/response transformation",
+      "DDoS protection",
+      "API analytics and monitoring"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$199/mo",
+      pro: "$549/mo",
+      enterprise: "$1399/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-383",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-383",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-384",
+    title: "Security Identity Governance",
+    description: "Manage user access, enforce least privilege, and maintain compliance across your organization. Automate provisioning and detect access risks with AI-powered analytics. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🔐",
+    features: [
+      "Role-based access control",
+      "Automated provisioning/deprovisioning",
+      "Access certification workflows",
+      "Privileged access management",
+      "Compliance reporting (SOX, GDPR, HIPAA)"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$5/user/mo",
+      pro: "$10/user/mo",
+      enterprise: "$18/user/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-384",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-384",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-385",
+    title: "Security Threat Intelligence Platform",
+    description: "Aggregate, analyze, and act on threat intelligence from multiple sources. Proactively defend against emerging threats with real-time indicators and automated response. Contact +1 302 464 0950 or kleber@ziontechgroup.com.",
+    icon: "🔐",
+    features: [
+      "Multi-source threat feed aggregation",
+      "IOC correlation and enrichment",
+      "Automated threat hunting",
+      "Integration with security tools",
+      "Threat actor profiling"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$349/mo",
+      pro: "$899/mo",
+      enterprise: "$2499/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-385",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-385",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-386",
+    title: "Security Zero Trust Framework",
+    description: "Implement zero-trust security architecture with continuous verification and micro-segmentation. Protect your network from insider threats and lateral movement attacks. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🔐",
+    features: [
+      "Continuous identity verification",
+      "Network micro-segmentation",
+      "Device posture assessment",
+      "Policy-based access control",
+      "Real-time risk scoring"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$9/user/mo",
+      pro: "$16/user/mo",
+      enterprise: "$29/user/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-386",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-386",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-387",
+    title: "Micro-SaaS Subscription Billing",
+    description: "Handle recurring billing, invoicing, and revenue recognition for SaaS businesses. Automate dunning, proration, and tax compliance with minimal setup. Contact kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🚀",
+    features: [
+      "Recurring billing automation",
+      "Usage-based pricing support",
+      "Dunning management",
+      "Revenue recognition (ASC 606)",
+      "Multi-currency and tax compliance"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$29/mo",
+      pro: "$79/mo",
+      enterprise: "$199/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-387",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-387",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-388",
+    title: "Micro-SaaS User Onboarding",
+    description: "Create interactive product tours, checklists, and tooltips to guide new users. Increase activation rates and reduce time-to-value with personalized onboarding flows. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🚀",
+    features: [
+      "Interactive product tours",
+      "Progress tracking checklists",
+      "Contextual tooltips and modals",
+      "A/B testing for onboarding flows",
+      "User segmentation and targeting"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$39/mo",
+      pro: "$99/mo",
+      enterprise: "$249/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-388",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-388",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-389",
+    title: "Micro-SaaS Feedback Analytics",
+    description: "Collect, analyze, and prioritize user feedback from multiple channels automatically. Turn customer insights into actionable product roadmap decisions with AI-powered sentiment analysis. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "🚀",
+    features: [
+      "Multi-channel feedback aggregation",
+      "Sentiment analysis and categorization",
+      "Feature request prioritization",
+      "NPS and CSAT tracking",
+      "Product roadmap integration"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$49/mo",
+      pro: "$129/mo",
+      enterprise: "$299/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-389",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-389",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-390",
+    title: "Micro-SaaS Team Collaboration",
+    description: "Streamline team communication and project management for small development teams. Integrate with your existing tools and automate workflows to boost productivity. Contact kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "🚀",
+    features: [
+      "Real-time messaging and threads",
+      "Task and project management",
+      "File sharing and version control",
+      "Workflow automation",
+      "Third-party app integrations"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$6/user/mo",
+      pro: "$12/user/mo",
+      enterprise: "$24/user/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-390",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-390",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-391",
+    title: "Cloud Observability Suite",
+    description: "Monitor, trace, and analyze your cloud infrastructure and applications in real-time. Gain full visibility into performance, errors, and resource utilization across all services. Contact +1 302 464 0950 or kleber@ziontechgroup.com.",
+    icon: "☁️",
+    features: [
+      "Distributed tracing",
+      "Log aggregation and analysis",
+      "Metrics collection and dashboards",
+      "Alerting and incident management",
+      "Cost optimization recommendations"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$99/mo",
+      pro: "$299/mo",
+      enterprise: "$799/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-391",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-391",
+    category: "cloud",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-392",
+    title: "Cloud Cost Optimization Engine",
+    description: "Analyze cloud spending patterns and automatically recommend or implement cost-saving measures. Reduce your cloud bill by up to 40% without sacrificing performance. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "☁️",
+    features: [
+      "Multi-cloud cost analysis",
+      "Rightsizing recommendations",
+      "Reserved instance planning",
+      "Budget alerts and forecasting",
+      "Automated resource scheduling"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$149/mo",
+      pro: "$399/mo",
+      enterprise: "$999/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-392",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-392",
+    category: "cloud",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-393",
+    title: "Cloud Serverless Framework",
+    description: "Build and deploy serverless applications across multiple cloud providers with a unified framework. Simplify function development, testing, and deployment with built-in best practices. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "☁️",
+    features: [
+      "Multi-cloud function deployment",
+      "Local development environment",
+      "Automated testing and mocking",
+      "Infrastructure as code",
+      "Performance profiling and optimization"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$79/mo",
+      pro: "$199/mo",
+      enterprise: "$499/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-393",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-393",
+    category: "cloud",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-394",
+    title: "Data Stream Processing",
+    description: "Process and analyze real-time data streams at scale with low-latency analytics. Build event-driven architectures and derive insights from continuous data flows. Contact kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "📊",
+    features: [
+      "Real-time data ingestion",
+      "Stream transformation and enrichment",
+      "Complex event processing",
+      "Windowing and aggregation",
+      "Integration with data lakes and warehouses"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$199/mo",
+      pro: "$549/mo",
+      enterprise: "$1299/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-394",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-394",
+    category: "data",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-395",
+    title: "Automation RPA Platform",
+    description: "Automate repetitive business processes with intelligent robotic process automation. Reduce manual work and errors by deploying software robots that mimic human actions. Contact +1 302 464 0950 or visit 364 E Main St STE 1008 Middletown DE 19709.",
+    icon: "📊",
+    features: [
+      "Visual workflow builder",
+      "AI-powered process discovery",
+      "Unattended and attended automation",
+      "Exception handling and retry logic",
+      "Centralized bot management"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$299/mo",
+      pro: "$799/mo",
+      enterprise: "$1999/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-395",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-395",
+    category: "automation",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "svc-396",
+    title: "Data Warehouse Automation",
+    description: "Accelerate data warehouse development with automated modeling, ETL, and documentation. Reduce time-to-insight and maintain data quality with AI-assisted data engineering. Email kleber@ziontechgroup.com or call +1 302 464 0950.",
+    icon: "📊",
+    features: [
+      "Automated data modeling",
+      "ETL pipeline generation",
+      "Data quality validation",
+      "Lineage and documentation",
+      "Multi-cloud warehouse support"
+    ],
+    benefits: [],
+    pricing: {
+      basic: "$249/mo",
+      pro: "$649/mo",
+      enterprise: "$1599/mo"
+    },
+    contactInfo: {
+      website: "/services/svc-396",
+      email: "kleber@ziontechgroup.com",
+      phone: "+1 302 464 0950"
+    },
+    href: "/services/svc-396",
+    category: "data",
+    popular: true,
+    industry: "Cross-Industry"
+  }
 ];
 
 export const getServiceById = (id: string): Service | undefined => { return allServices.find(s => s.id === id); };
@@ -26992,3 +27721,31 @@ export const v388_cloud_edge_computing = allServices.find(s => s.id === "v388-cl
 export const v389_data_pipeline_builder = allServices.find(s => s.id === "v389-data-pipeline-builder");
 export const v390_automation_workflow_engine = allServices.find(s => s.id === "v390-automation-workflow-engine");
 export const v391_data_quality_monitor = allServices.find(s => s.id === "v391-data-quality-monitor");
+
+// V371-V375 Service Exports
+export const svc_371 = allServices.find(s => s.id === "svc-371");
+export const svc_372 = allServices.find(s => s.id === "svc-372");
+export const svc_373 = allServices.find(s => s.id === "svc-373");
+export const svc_374 = allServices.find(s => s.id === "svc-374");
+export const svc_375 = allServices.find(s => s.id === "svc-375");
+export const svc_376 = allServices.find(s => s.id === "svc-376");
+export const svc_377 = allServices.find(s => s.id === "svc-377");
+export const svc_378 = allServices.find(s => s.id === "svc-378");
+export const svc_379 = allServices.find(s => s.id === "svc-379");
+export const svc_380 = allServices.find(s => s.id === "svc-380");
+export const svc_381 = allServices.find(s => s.id === "svc-381");
+export const svc_382 = allServices.find(s => s.id === "svc-382");
+export const svc_383 = allServices.find(s => s.id === "svc-383");
+export const svc_384 = allServices.find(s => s.id === "svc-384");
+export const svc_385 = allServices.find(s => s.id === "svc-385");
+export const svc_386 = allServices.find(s => s.id === "svc-386");
+export const svc_387 = allServices.find(s => s.id === "svc-387");
+export const svc_388 = allServices.find(s => s.id === "svc-388");
+export const svc_389 = allServices.find(s => s.id === "svc-389");
+export const svc_390 = allServices.find(s => s.id === "svc-390");
+export const svc_391 = allServices.find(s => s.id === "svc-391");
+export const svc_392 = allServices.find(s => s.id === "svc-392");
+export const svc_393 = allServices.find(s => s.id === "svc-393");
+export const svc_394 = allServices.find(s => s.id === "svc-394");
+export const svc_395 = allServices.find(s => s.id === "svc-395");
+export const svc_396 = allServices.find(s => s.id === "svc-396");
