@@ -16,6 +16,7 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import V204V208Showcase from '@/components/V204V208Showcase';
 import V251V255Showcase from '@/components/V251V255Showcase';
+import V256V260Showcase from '@/components/V256V260Showcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -390,6 +391,7 @@ let list = services;
       {/* ── V204-V208 Email Intelligence Showcase ── */}
       <V204V208Showcase />
       <V251V255Showcase />
+      <V256V260Showcase />
 
       {/* ── How It Works ── */}
       <section className="py-20">
