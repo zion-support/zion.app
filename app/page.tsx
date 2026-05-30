@@ -14,6 +14,7 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import V204V208Showcase from '@/components/V204V208Showcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -384,6 +385,9 @@ let list = services;
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
+
+      {/* ── V204-V208 Email Intelligence Showcase ── */}
+      <V204V208Showcase />
 
       {/* ── How It Works ── */}
       <section className="py-20">
