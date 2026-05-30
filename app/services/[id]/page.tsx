@@ -16,18 +16,22 @@ interface PageProps { params: Promise<{ id: string }>; }
 // Top 50 services are included to keep build time reasonable
 
 export async function generateStaticParams() {
-  // Statically generate the top 50 most important/popular services
+  // Generate top 200 most important/popular services
   const sorted = [...allServices].sort((a, b) => {
     const scoreA = (a.features?.length || 0) * 3 + (a.benefits?.length || 0) * 2 + (a.popular ? 50 : 0);
     const scoreB = (b.features?.length || 0) * 3 + (b.benefits?.length || 0) * 2 + (b.popular ? 50 : 0);
     return scoreB - scoreA;
   });
-  const top = sorted.slice(0, 50);
+  const top = sorted.slice(0, 200);
   const params: { id: string }[] = [];
+  const seen = new Set<string>();
   for (const service of top) {
+    if (seen.has(service.id)) continue;
+    seen.add(service.id);
     params.push({ id: service.id });
     if (service.id.includes('_')) {
-      params.push({ id: service.id.replace(/_/g, '-') });
+      const alt = service.id.replace(/_/g, '-');
+      if (!seen.has(alt)) { seen.add(alt); params.push({ id: alt }); }
     }
   }
   return params;
