@@ -25108,6 +25108,813 @@ export const allServices: Service[] = [
     popular: true,
     industry: "Productivity"
   }
+,
+  {
+    id: "ai-email-sentiment-evolution-tracker",
+    title: "AI Email Sentiment Evolution Tracker",
+    description: "Track sentiment changes across email threads over time, detect relationship health trends, and predict churn risk from sentiment patterns.",
+    icon: "📈",
+    features: [
+      "Real-time sentiment tracking",
+      "Trend analysis",
+      "Churn risk prediction",
+      "Proactive alerts"
+    ],
+    benefits: [
+      "Prevent customer churn",
+      "Improve relationships",
+      "Data-driven retention"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "199"
+    },
+    contactInfo: {
+    website: "/services/ai-email-sentiment-evolution-tracker",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-sentiment-evolution-tracker",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-negotiation-intelligence",
+    title: "AI Negotiation Intelligence",
+    description: "Detect negotiation signals, track concession patterns, suggest optimal counter-offers, and identify decision-makers in email threads.",
+    icon: "🤝",
+    features: [
+      "Negotiation signal detection",
+      "Counter-offer suggestions",
+      "Decision maker identification",
+      "Strategy briefings"
+    ],
+    benefits: [
+      "Win more deals",
+      "Optimize pricing",
+      "Understand leverage"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "299"
+    },
+    contactInfo: {
+    website: "/services/ai-negotiation-intelligence",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-negotiation-intelligence",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-knowledge-graph-builder",
+    title: "AI Knowledge Graph Builder",
+    description: "Extract entities from emails, build relationship graphs, map organizational structures, and create searchable knowledge bases.",
+    icon: "🕸️",
+    features: [
+      "Entity extraction",
+      "Relationship graphs",
+      "Knowledge base",
+      "Connection discovery"
+    ],
+    benefits: [
+      "Discover hidden connections",
+      "Map organizations",
+      "Searchable knowledge"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "249"
+    },
+    contactInfo: {
+    website: "/services/ai-knowledge-graph-builder",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-knowledge-graph-builder",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-productivity-analytics",
+    title: "AI Email Productivity Analytics",
+    description: "Track time spent on email, identify productivity patterns, measure email-to-meeting conversion, and detect email overload.",
+    icon: "⚡",
+    features: [
+      "Time tracking",
+      "Pattern analysis",
+      "Meeting conversion",
+      "Overload detection"
+    ],
+    benefits: [
+      "Improve productivity",
+      "Reduce email time",
+      "Achieve inbox zero"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "129"
+    },
+    contactInfo: {
+    website: "/services/ai-productivity-analytics",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-productivity-analytics",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-security-threat-hunter",
+    title: "AI Email Security Threat Hunter",
+    description: "Proactive threat hunting, detect advanced persistent threats, identify compromised accounts, and generate threat intelligence reports.",
+    icon: "🎯",
+    features: [
+      "Threat hunting",
+      "APT detection",
+      "Behavior analysis",
+      "Threat reports"
+    ],
+    benefits: [
+      "Prevent breaches",
+      "Detect compromises",
+      "Proactive security"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "599"
+    },
+    contactInfo: {
+    website: "/services/ai-security-threat-hunter",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-security-threat-hunter",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-thread-summarizer-pro",
+    title: "AI Email Thread Summarizer Pro",
+    description: "Generate executive summaries from long email threads, extract key decisions, action items, and deadlines automatically.",
+    icon: "📋",
+    features: [
+      "Thread summarization",
+      "Decision extraction",
+      "Action items",
+      "Deadline detection"
+    ],
+    benefits: [
+      "Save reading time",
+      "Never miss decisions",
+      "Quick context"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "179"
+    },
+    contactInfo: {
+    website: "/services/ai-email-thread-summarizer-pro",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-thread-summarizer-pro",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-meeting-scheduler-intelligence",
+    title: "AI Meeting Scheduler Intelligence",
+    description: "Auto-detect meeting requests, suggest optimal times, detect timezone conflicts, and generate meeting agendas from email context.",
+    icon: "📅",
+    features: [
+      "Meeting detection",
+      "Time suggestions",
+      "Timezone conflict detection",
+      "Agenda generation"
+    ],
+    benefits: [
+      "Eliminate back-and-forth",
+      "Optimize scheduling",
+      "Global coordination"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "199"
+    },
+    contactInfo: {
+    website: "/services/ai-meeting-scheduler-intelligence",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-meeting-scheduler-intelligence",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-translation-localization",
+    title: "AI Email Translation & Localization",
+    description: "Real-time translation for 100+ languages with cultural context preservation and tone adaptation.",
+    icon: "🌍",
+    features: [
+      "100+ languages",
+      "Cultural context",
+      "Tone preservation",
+      "Formality adjustment"
+    ],
+    benefits: [
+      "Global communication",
+      "Cultural sensitivity",
+      "Professional tone"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "229"
+    },
+    contactInfo: {
+    website: "/services/ai-email-translation-localization",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-translation-localization",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-attachment-intelligence",
+    title: "AI Email Attachment Intelligence",
+    description: "Scan attachments for malware, extract text from documents, summarize content, and detect sensitive data.",
+    icon: "📎",
+    features: [
+      "Malware scanning",
+      "Text extraction",
+      "Content summarization",
+      "Sensitive data detection"
+    ],
+    benefits: [
+      "Security protection",
+      "Quick document review",
+      "Data loss prevention"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "249"
+    },
+    contactInfo: {
+    website: "/services/ai-attachment-intelligence",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-attachment-intelligence",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-follow-up-automator",
+    title: "AI Email Follow-up Automator",
+    description: "Detect emails requiring follow-up, schedule automatic reminders, generate follow-up drafts, and track response SLAs.",
+    icon: "⏰",
+    features: [
+      "Follow-up detection",
+      "Auto reminders",
+      "Draft generation",
+      "SLA tracking"
+    ],
+    benefits: [
+      "Never forget follow-ups",
+      "Improve response rates",
+      "Meet SLAs"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "169"
+    },
+    contactInfo: {
+    website: "/services/ai-follow-up-automator",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-follow-up-automator",
+    category: "automation",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "micro-saas-email-signature-generator",
+    title: "Professional Email Signature Generator",
+    description: "Create beautiful, professional email signatures with social links, banners, legal disclaimers, and team management.",
+    icon: "✍️",
+    features: [
+      "Drag-and-drop builder",
+      "Social links",
+      "Banner campaigns",
+      "Team management"
+    ],
+    benefits: [
+      "Professional image",
+      "Brand consistency",
+      "Marketing integration"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "79"
+    },
+    contactInfo: {
+    website: "/services/micro-saas-email-signature-generator",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/micro-saas-email-signature-generator",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "micro-saas-email-warmup-tool",
+    title: "Email Warmup & Deliverability Tool",
+    description: "Warm up new email domains, improve deliverability, monitor sender reputation, and prevent emails from going to spam.",
+    icon: "🔥",
+    features: [
+      "Automated warmup",
+      "Deliverability monitoring",
+      "Reputation tracking",
+      "Blacklist monitoring"
+    ],
+    benefits: [
+      "98% inbox placement",
+      "Build reputation",
+      "Avoid spam folder"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "129"
+    },
+    contactInfo: {
+    website: "/services/micro-saas-email-warmup-tool",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/micro-saas-email-warmup-tool",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "micro-saas-email-campaign-builder",
+    title: "AI Email Campaign Builder",
+    description: "Build, test, and optimize email campaigns with AI-powered subject lines, send time optimization, and performance analytics.",
+    icon: "📧",
+    features: [
+      "AI subject lines",
+      "Send time optimization",
+      "A/B testing",
+      "Analytics"
+    ],
+    benefits: [
+      "Higher open rates",
+      "Better engagement",
+      "Data-driven campaigns"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "199"
+    },
+    contactInfo: {
+    website: "/services/micro-saas-email-campaign-builder",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/micro-saas-email-campaign-builder",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "micro-saas-email-scheduler-pro",
+    title: "Email Scheduler Pro",
+    description: "Schedule emails to send at optimal times based on recipient timezone, engagement patterns, and AI-predicted best send times.",
+    icon: "⏱️",
+    features: [
+      "AI-optimized timing",
+      "Timezone awareness",
+      "Engagement learning",
+      "Bulk scheduling"
+    ],
+    benefits: [
+      "Increase open rates",
+      "Global reach",
+      "Automated scheduling"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "99"
+    },
+    contactInfo: {
+    website: "/services/micro-saas-email-scheduler-pro",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/micro-saas-email-scheduler-pro",
+    category: "micro-saas",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "it-email-migration-service",
+    title: "Enterprise Email Migration Service",
+    description: "Seamless email migration from any platform with zero downtime, data integrity verification, and post-migration support.",
+    icon: "🚚",
+    features: [
+      "Zero-downtime migration",
+      "Cross-platform support",
+      "Data verification",
+      "Post-migration support"
+    ],
+    benefits: [
+      "No disruption",
+      "Data integrity",
+      "Expert support"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "9999"
+    },
+    contactInfo: {
+    website: "/services/it-email-migration-service",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/it-email-migration-service",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "it-email-disaster-recovery",
+    title: "Email Disaster Recovery & Backup",
+    description: "Enterprise-grade email backup and disaster recovery with instant restoration, point-in-time recovery, and geo-redundant storage.",
+    icon: "💾",
+    features: [
+      "Automated backups",
+      "Instant restoration",
+      "Point-in-time recovery",
+      "Geo-redundancy"
+    ],
+    benefits: [
+      "Zero data loss",
+      "Business continuity",
+      "Ransomware protection"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "3499"
+    },
+    contactInfo: {
+    website: "/services/it-email-disaster-recovery",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/it-email-disaster-recovery",
+    category: "it",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "cloud-email-archive-compliance",
+    title: "Cloud Email Archive & Compliance",
+    description: "Secure cloud email archiving with advanced search, legal hold, compliance reporting, and unlimited retention.",
+    icon: "☁️",
+    features: [
+      "Unlimited storage",
+      "eDiscovery search",
+      "Legal hold",
+      "Compliance reporting"
+    ],
+    benefits: [
+      "Regulatory compliance",
+      "Fast eDiscovery",
+      "Litigation protection"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "29"
+    },
+    contactInfo: {
+    website: "/services/cloud-email-archive-compliance",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/cloud-email-archive-compliance",
+    category: "cloud",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "data-email-analytics-platform",
+    title: "Email Data Analytics Platform",
+    description: "Advanced email analytics with communication pattern analysis, response time benchmarking, and predictive insights.",
+    icon: "📊",
+    features: [
+      "Pattern analysis",
+      "Response benchmarking",
+      "Team tracking",
+      "Predictive analytics"
+    ],
+    benefits: [
+      "Data-driven optimization",
+      "Performance insights",
+      "Trend prediction"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "499"
+    },
+    contactInfo: {
+    website: "/services/data-email-analytics-platform",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/data-email-analytics-platform",
+    category: "data",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "automation-email-workflow-builder",
+    title: "Email Workflow Automation Builder",
+    description: "Visual drag-and-drop workflow builder for email automation with conditional logic, multi-step sequences, and trigger-based automation.",
+    icon: "🔄",
+    features: [
+      "Visual builder",
+      "Conditional logic",
+      "Multi-step sequences",
+      "100+ templates"
+    ],
+    benefits: [
+      "Automate tasks",
+      "Reduce manual work",
+      "Scale operations"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "249"
+    },
+    contactInfo: {
+    website: "/services/automation-email-workflow-builder",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/automation-email-workflow-builder",
+    category: "automation",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "automation-email-to-ticket",
+    title: "Email-to-Ticket Automation",
+    description: "Automatically convert support emails into tickets, classify priority, assign to agents, and track resolution.",
+    icon: "🎫",
+    features: [
+      "Auto ticket creation",
+      "Priority classification",
+      "Agent assignment",
+      "Thread integration"
+    ],
+    benefits: [
+      "Instant tickets",
+      "Faster response",
+      "Better workload balance"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "199"
+    },
+    contactInfo: {
+    website: "/services/automation-email-to-ticket",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/automation-email-to-ticket",
+    category: "automation",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "security-email-phishing-protection",
+    title: "AI Spam & Phishing Protection Pro",
+    description: "Advanced AI-powered spam and phishing detection with real-time threat intelligence, URL scanning, and sender reputation analysis.",
+    icon: "🛡️",
+    features: [
+      "Real-time detection",
+      "URL sandbox",
+      "Reputation scoring",
+      "Zero-day blocking"
+    ],
+    benefits: [
+      "99.97% spam blocking",
+      "Phishing prevention",
+      "Data protection"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "329"
+    },
+    contactInfo: {
+    website: "/services/security-email-phishing-protection",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/security-email-phishing-protection",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "security-email-compliance-guardian",
+    title: "AI Email Compliance Guardian",
+    description: "Continuous compliance monitoring for GDPR, HIPAA, SOX, PCI with real-time violation detection and auto-generated audit reports.",
+    icon: "⚖️",
+    features: [
+      "Multi-regulation monitoring",
+      "Violation detection",
+      "Audit reports",
+      "Retention enforcement"
+    ],
+    benefits: [
+      "100% compliance",
+      "Prevent violations",
+      "Audit-ready"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "599"
+    },
+    contactInfo: {
+    website: "/services/security-email-compliance-guardian",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/security-email-compliance-guardian",
+    category: "security",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-coaching-platform",
+    title: "AI Email Coaching Platform",
+    description: "Improve team email skills with AI coaching, real-time feedback, performance scoring, and personalized training programs.",
+    icon: "🎓",
+    features: [
+      "Real-time coaching",
+      "Performance scoring",
+      "Personalized training",
+      "Best practices"
+    ],
+    benefits: [
+      "Improve quality",
+      "Faster onboarding",
+      "Consistent standards"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "229"
+    },
+    contactInfo: {
+    website: "/services/ai-email-coaching-platform",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-coaching-platform",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-voice-response",
+    title: "AI Email Voice Response Generator",
+    description: "Convert email responses to natural-sounding voice messages with 8+ voices, multiple languages, and emotional tone adaptation.",
+    icon: "🎙️",
+    features: [
+      "8+ voices",
+      "Multi-language",
+      "Emotional tone",
+      "Voice cloning"
+    ],
+    benefits: [
+      "Personal touch",
+      "Accessibility",
+      "Faster responses"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "169"
+    },
+    contactInfo: {
+    website: "/services/ai-email-voice-response",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-voice-response",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-accessibility-suite",
+    title: "AI Email Accessibility Suite",
+    description: "Ensure emails are accessible to all users with screen reader optimization, alt text generation, color contrast checking, and WCAG compliance.",
+    icon: "♿",
+    features: [
+      "Screen reader optimization",
+      "Alt text generation",
+      "Color contrast",
+      "WCAG compliance"
+    ],
+    benefits: [
+      "Inclusive communication",
+      "Legal compliance",
+      "Better deliverability"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "129"
+    },
+    contactInfo: {
+    website: "/services/ai-email-accessibility-suite",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-accessibility-suite",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  },
+  {
+    id: "ai-email-a-b-testing",
+    title: "AI Email A/B Testing Platform",
+    description: "AI-powered A/B testing for email subject lines, content, send times, and CTAs with statistical significance and auto-winner selection.",
+    icon: "🔬",
+    features: [
+      "Subject line testing",
+      "Content variants",
+      "Statistical significance",
+      "Auto-winner"
+    ],
+    benefits: [
+      "Higher open rates",
+      "Data-driven optimization",
+      "Continuous improvement"
+    ],
+    pricing: {
+    basic: "undefined",
+    pro: "undefined",
+    enterprise: "199"
+    },
+    contactInfo: {
+    website: "/services/ai-email-a-b-testing",
+    email: "kleber@ziontechgroup.com",
+    phone: "+1 302 464 0950"
+    },
+    href: "/services/ai-email-a-b-testing",
+    category: "ai",
+    popular: true,
+    industry: "Cross-Industry"
+  }
 ];
 
 export const getServiceById = (id: string): Service | undefined => { return allServices.find(s => s.id === id); };
@@ -25400,3 +26207,31 @@ export const security_email_impersonation_guard = allServices.find(s => s.id ===
 export const cloud_email_migration_accelerator = allServices.find(s => s.id === "cloud-email-migration-accelerator");
 export const ai_email_network_analyzer = allServices.find(s => s.id === "ai-email-network-analyzer");
 export const micro_saas_email_snooze_scheduler = allServices.find(s => s.id === "micro-saas-email-snooze-scheduler");
+
+// V361-V365 Service Exports
+export const ai_email_sentiment_evolution_tracker = allServices.find(s => s.id === "ai-email-sentiment-evolution-tracker");
+export const ai_negotiation_intelligence = allServices.find(s => s.id === "ai-negotiation-intelligence");
+export const ai_knowledge_graph_builder = allServices.find(s => s.id === "ai-knowledge-graph-builder");
+export const ai_productivity_analytics = allServices.find(s => s.id === "ai-productivity-analytics");
+export const ai_security_threat_hunter = allServices.find(s => s.id === "ai-security-threat-hunter");
+export const ai_email_thread_summarizer_pro = allServices.find(s => s.id === "ai-email-thread-summarizer-pro");
+export const ai_meeting_scheduler_intelligence = allServices.find(s => s.id === "ai-meeting-scheduler-intelligence");
+export const ai_email_translation_localization = allServices.find(s => s.id === "ai-email-translation-localization");
+export const ai_attachment_intelligence = allServices.find(s => s.id === "ai-attachment-intelligence");
+export const ai_follow_up_automator = allServices.find(s => s.id === "ai-follow-up-automator");
+export const micro_saas_email_signature_generator = allServices.find(s => s.id === "micro-saas-email-signature-generator");
+export const micro_saas_email_warmup_tool = allServices.find(s => s.id === "micro-saas-email-warmup-tool");
+export const micro_saas_email_campaign_builder = allServices.find(s => s.id === "micro-saas-email-campaign-builder");
+export const micro_saas_email_scheduler_pro = allServices.find(s => s.id === "micro-saas-email-scheduler-pro");
+export const it_email_migration_service = allServices.find(s => s.id === "it-email-migration-service");
+export const it_email_disaster_recovery = allServices.find(s => s.id === "it-email-disaster-recovery");
+export const cloud_email_archive_compliance = allServices.find(s => s.id === "cloud-email-archive-compliance");
+export const data_email_analytics_platform = allServices.find(s => s.id === "data-email-analytics-platform");
+export const automation_email_workflow_builder = allServices.find(s => s.id === "automation-email-workflow-builder");
+export const automation_email_to_ticket = allServices.find(s => s.id === "automation-email-to-ticket");
+export const security_email_phishing_protection = allServices.find(s => s.id === "security-email-phishing-protection");
+export const security_email_compliance_guardian = allServices.find(s => s.id === "security-email-compliance-guardian");
+export const ai_email_coaching_platform = allServices.find(s => s.id === "ai-email-coaching-platform");
+export const ai_email_voice_response = allServices.find(s => s.id === "ai-email-voice-response");
+export const ai_email_accessibility_suite = allServices.find(s => s.id === "ai-email-accessibility-suite");
+export const ai_email_a_b_testing = allServices.find(s => s.id === "ai-email-a-b-testing");
