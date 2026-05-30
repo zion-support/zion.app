@@ -11665,6 +11665,501 @@ export const automationServices: Service[] = [
   { id: 'micro-saas-help-desk', title: 'AI Help Desk & Ticketing', description: 'AI-powered help desk with smart routing, knowledge base, SLA management, and CSAT tracking.', features: ['AI routing', 'Knowledge base', 'SLA management', 'CSAT tracking', 'Multi-channel', 'Automation rules', 'Reporting', 'Customer portal'], benefits: ['Route automatically', 'Resolve faster', 'Track SLAs', 'Improve CSAT'], pricing: { basic: '$29/mo', pro: '$79/mo', enterprise: '$199/mo' }, contactInfo: { website: '/services/micro-saas-help-desk', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🎫', href: '/services/micro-saas-help-desk', popular: true, category: 'micro-saas', industry: 'Customer Support' },
   { id: 'micro-saas-project-management', title: 'Lightweight Project Management', description: 'Simple PM for small teams with kanban, time tracking, file sharing, and client collaboration.', features: ['Kanban boards', 'Time tracking', 'File sharing', 'Client collaboration', 'Gantt charts', 'Team workload', 'Milestones', 'Mobile app'], benefits: ['Manage simply', 'Track time', 'Client collaboration', 'Visualize workload'], pricing: { basic: '$9/mo', pro: '$29/mo', enterprise: '$69/mo' }, contactInfo: { website: '/services/micro-saas-project-management', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '📋', href: '/services/micro-saas-project-management', popular: true, category: 'micro-saas', industry: 'Project Management' },
   { id: 'micro-saas-email-marketing', title: 'Email Marketing Automation', description: 'Create and automate email campaigns with drag-and-drop builder, A/B testing, and segmentation.', features: ['Drag-and-drop', 'A/B testing', 'Segmentation', 'Automation workflows', 'Deliverability', 'Analytics', 'Templates', 'GDPR compliant'], benefits: ['Increase opens', 'Automate campaigns', 'Segment audiences', 'Optimize delivery'], pricing: { basic: '$19/mo', pro: '$49/mo', enterprise: '$149/mo' }, contactInfo: { website: '/services/micro-saas-email-marketing', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '📧', href: '/services/micro-saas-email-marketing', popular: true, category: 'micro-saas', industry: 'Email Marketing' },
+,
+  {
+    id: 'email-localization-engine-v276',
+    name: 'Email Localization Engine V276',
+    description: 'Automatically translate emails to recipient preferred languages with cultural context adaptation and locale-specific formatting',
+    category: 'email-intelligence',
+    price: 199,
+    icon: '🌐',
+    features: [
+      'Multi-language translation',
+      'Cultural context adaptation',
+      'Locale-specific formatting',
+      'Reply-all enforcement'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'multilingual-translation-service',
+    name: 'Multilingual Translation Service',
+    description: 'Professional translation services for 100+ languages with AI-powered accuracy and human review',
+    category: 'ai',
+    price: 149,
+    icon: '🗣️',
+    features: [
+      '100+ languages',
+      'AI + human review',
+      'Industry-specific terminology',
+      'Fast turnaround'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'cultural-adaptation-platform',
+    name: 'Cultural Adaptation Platform',
+    description: 'Adapt content for different cultures with sensitivity analysis and cultural context optimization',
+    category: 'ai',
+    price: 179,
+    icon: '🎭',
+    features: [
+      'Cultural sensitivity analysis',
+      'Context optimization',
+      'Regional adaptation',
+      'Bias detection'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'locale-formatting-suite',
+    name: 'Locale Formatting Suite',
+    description: 'Automatically format dates, times, numbers, and currencies according to local conventions',
+    category: 'automation',
+    price: 89,
+    icon: '📅',
+    features: [
+      'Date/time formatting',
+      'Number formatting',
+      'Currency conversion',
+      '150+ locales'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'global-communication-hub',
+    name: 'Global Communication Hub',
+    description: 'Unified platform for managing multilingual communications across global teams',
+    category: 'micro-saas',
+    price: 249,
+    icon: '🌍',
+    features: [
+      'Team collaboration',
+      'Language preferences',
+      'Translation memory',
+      'Workflow automation'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-template-intelligence-v277',
+    name: 'Email Template Intelligence V277',
+    description: 'AI-powered template suggestions with dynamic content personalization and performance analytics',
+    category: 'email-intelligence',
+    price: 189,
+    icon: '📝',
+    features: [
+      'Smart template suggestions',
+      'Dynamic personalization',
+      'Performance tracking',
+      'Reply-all enforcement'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'dynamic-content-personalization',
+    name: 'Dynamic Content Personalization',
+    description: 'Automatically personalize email content based on recipient data and behavior',
+    category: 'ai',
+    price: 159,
+    icon: '🎯',
+    features: [
+      'Behavior-based personalization',
+      'Dynamic content blocks',
+      'A/B testing',
+      'Performance analytics'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'template-performance-analytics',
+    name: 'Template Performance Analytics',
+    description: 'Track and analyze template performance with detailed metrics and optimization insights',
+    category: 'data',
+    price: 129,
+    icon: '📊',
+    features: [
+      'Open rate tracking',
+      'Click-through analysis',
+      'Conversion metrics',
+      'Optimization recommendations'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'smart-template-builder',
+    name: 'Smart Template Builder',
+    description: 'Drag-and-drop template builder with AI suggestions and responsive design',
+    category: 'micro-saas',
+    price: 199,
+    icon: '🎨',
+    features: [
+      'Drag-and-drop editor',
+      'AI suggestions',
+      'Responsive design',
+      'Template library'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-automation-templates',
+    name: 'Email Automation Templates',
+    description: 'Pre-built automation workflows for common email scenarios',
+    category: 'automation',
+    price: 119,
+    icon: '⚙️',
+    features: [
+      'Pre-built workflows',
+      'Customizable triggers',
+      'Multi-step sequences',
+      'Integration support'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-automation-orchestrator-v278',
+    name: 'Email Automation Orchestrator V278',
+    description: 'Orchestrate complex email workflows with multi-step automation and conditional logic',
+    category: 'email-intelligence',
+    price: 299,
+    icon: '🔄',
+    features: [
+      'Multi-step workflows',
+      'Conditional logic',
+      'CRM integration',
+      'Reply-all enforcement'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'workflow-automation-platform',
+    name: 'Workflow Automation Platform',
+    description: 'Build and manage complex business workflows with visual designer',
+    category: 'automation',
+    price: 399,
+    icon: '🔧',
+    features: [
+      'Visual workflow designer',
+      'Conditional branching',
+      'API integrations',
+      'Real-time monitoring'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'conditional-logic-engine',
+    name: 'Conditional Logic Engine',
+    description: 'Advanced conditional logic for automated decision making',
+    category: 'ai',
+    price: 179,
+    icon: '🧠',
+    features: [
+      'Rule-based decisions',
+      'Multi-condition logic',
+      'Dynamic variables',
+      'Decision trees'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'crm-integration-hub',
+    name: 'CRM Integration Hub',
+    description: 'Connect email automation with popular CRM systems',
+    category: 'integration',
+    price: 149,
+    icon: '🔗',
+    features: [
+      'Salesforce integration',
+      'HubSpot integration',
+      'Custom API support',
+      'Data sync'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'multi-step-sequencer',
+    name: 'Multi-Step Sequencer',
+    description: 'Create complex multi-step email sequences with timing controls',
+    category: 'automation',
+    price: 229,
+    icon: '⏱️',
+    features: [
+      'Sequential steps',
+      'Time delays',
+      'Branching paths',
+      'Performance tracking'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-design-optimizer-v279',
+    name: 'Email Design Optimizer V279',
+    description: 'AI-powered design optimization for mobile responsiveness and accessibility compliance',
+    category: 'email-intelligence',
+    price: 219,
+    icon: '🎨',
+    features: [
+      'Mobile optimization',
+      'Accessibility compliance',
+      'Design recommendations',
+      'Reply-all enforcement'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'mobile-responsiveness-tester',
+    name: 'Mobile Responsiveness Tester',
+    description: 'Test and optimize email designs for all mobile devices',
+    category: 'testing',
+    price: 139,
+    icon: '📱',
+    features: [
+      'Device simulation',
+      'Responsive testing',
+      'Performance metrics',
+      'Optimization tips'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'accessibility-compliance-checker',
+    name: 'Accessibility Compliance Checker',
+    description: 'Ensure emails meet WCAG accessibility standards',
+    category: 'compliance',
+    price: 169,
+    icon: '♿',
+    features: [
+      'WCAG compliance',
+      'Screen reader testing',
+      'Color contrast analysis',
+      'Fix recommendations'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-design-analyzer',
+    name: 'Email Design Analyzer',
+    description: 'Analyze email designs for best practices and optimization opportunities',
+    category: 'ai',
+    price: 149,
+    icon: '🔍',
+    features: [
+      'Design analysis',
+      'Best practice checks',
+      'Optimization suggestions',
+      'Performance scoring'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'responsive-email-builder',
+    name: 'Responsive Email Builder',
+    description: 'Build responsive emails that look great on all devices',
+    category: 'micro-saas',
+    price: 189,
+    icon: '📧',
+    features: [
+      'Responsive templates',
+      'Drag-and-drop',
+      'Preview modes',
+      'Export options'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-predictive-analytics-v280',
+    name: 'Email Predictive Analytics V280',
+    description: 'Predict email outcomes with ML-powered analytics for open rates, response times, and churn risk',
+    category: 'email-intelligence',
+    price: 349,
+    icon: '📈',
+    features: [
+      'Outcome prediction',
+      'Churn risk detection',
+      'Revenue attribution',
+      'Reply-all enforcement'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'predictive-open-rate-analyzer',
+    name: 'Predictive Open Rate Analyzer',
+    description: 'Predict email open rates before sending with ML models',
+    category: 'ai',
+    price: 179,
+    icon: '📊',
+    features: [
+      'ML predictions',
+      'Feature analysis',
+      'Optimization tips',
+      'Historical comparison'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'customer-churn-predictor',
+    name: 'Customer Churn Predictor',
+    description: 'Detect at-risk customers from email patterns and behavior',
+    category: 'ai',
+    price: 299,
+    icon: '⚠️',
+    features: [
+      'Churn detection',
+      'Risk scoring',
+      'Early warning alerts',
+      'Retention recommendations'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'revenue-attribution-platform',
+    name: 'Revenue Attribution Platform',
+    description: 'Attribute revenue to email campaigns with multi-touch attribution models',
+    category: 'data',
+    price: 399,
+    icon: '💰',
+    features: [
+      'Multi-touch attribution',
+      'Revenue tracking',
+      'ROI analysis',
+      'Campaign performance'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'email-performance-forecaster',
+    name: 'Email Performance Forecaster',
+    description: 'Forecast email campaign performance with predictive models',
+    category: 'ai',
+    price: 249,
+    icon: '🔮',
+    features: [
+      'Performance forecasting',
+      'Scenario modeling',
+      'Trend analysis',
+      'Goal tracking'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  },
+  {
+    id: 'response-time-optimizer',
+    name: 'Response Time Optimizer',
+    description: 'Optimize email response times with predictive analytics',
+    category: 'automation',
+    price: 159,
+    icon: '⏰',
+    features: [
+      'Response prediction',
+      'Optimal timing',
+      'Priority routing',
+      'Performance tracking'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    }
+  }
 ];
 
 export const allServices: Service[] = [
