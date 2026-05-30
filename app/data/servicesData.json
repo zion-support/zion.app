@@ -31948,5 +31948,160 @@
     },
     "status": "active",
     "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "v194-emotional-intelligence-coach",
+    "title": "V194: AI Emotional Intelligence Coach",
+    "category": "ai",
+    "subcategory": "email-intelligence",
+    "description": "Detects emotional states in emails (stress, frustration, excitement, anxiety), provides emotional regulation techniques, suggests empathy-building phrases, and tracks emotional patterns to prevent burnout.",
+    "features": [
+      "Emotion detection (10+ emotions)",
+      "Emotional intensity scoring",
+      "Regulation techniques",
+      "Empathy phrase suggestions",
+      "Emotional pattern tracking",
+      "Burnout prevention alerts",
+      "Response timing recommendations",
+      "Reply-all emotional context"
+    ],
+    "benefits": [
+      "Respond professionally when triggered",
+      "Build stronger relationships",
+      "Prevent emotional burnout",
+      "Improve communication quality"
+    ],
+    "pricing": {
+      "basic": 249,
+      "professional": 499,
+      "enterprise": 1249
+    },
+    "status": "active",
+    "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "v195-decision-matrix-builder",
+    "title": "V195: AI Decision Matrix Builder",
+    "category": "ai",
+    "subcategory": "email-intelligence",
+    "description": "Analyzes emails requiring decisions, extracts key factors, builds weighted decision matrices, calculates expected value and risk, identifies decision fatigue, and tracks outcomes.",
+    "features": [
+      "Decision requirement detection",
+      "Option identification",
+      "Factor extraction & weighting",
+      "Weighted matrix building",
+      "Expected value calculation",
+      "Risk assessment",
+      "Decision fatigue tracking",
+      "Outcome tracking",
+      "Reply-all strategy"
+    ],
+    "benefits": [
+      "Make data-driven decisions",
+      "Reduce decision fatigue",
+      "Track decision outcomes",
+      "Improve decision quality by 40%"
+    ],
+    "pricing": {
+      "basic": 349,
+      "professional": 699,
+      "enterprise": 1749
+    },
+    "status": "active",
+    "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "v196-meeting-optimizer",
+    "title": "V196: AI Meeting Optimizer",
+    "category": "ai",
+    "subcategory": "email-intelligence",
+    "description": "Analyzes meeting requests, calculates meeting costs ($/hour × attendees × duration), suggests alternatives (email, async video), optimizes meeting length, and tracks meeting ROI.",
+    "features": [
+      "Meeting request detection",
+      "Cost calculation (role-based rates)",
+      "Necessity assessment",
+      "Alternative suggestions",
+      "Duration optimization",
+      "Attendee optimization",
+      "ROI tracking",
+      "Agenda extraction",
+      "Reply-all coordination"
+    ],
+    "benefits": [
+      "Reduce meeting costs by 50%",
+      "Eliminate unnecessary meetings",
+      "Optimize meeting duration",
+      "Track meeting ROI"
+    ],
+    "pricing": {
+      "basic": 299,
+      "professional": 599,
+      "enterprise": 1499
+    },
+    "status": "active",
+    "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "v197-knowledge-distiller",
+    "title": "V197: AI Knowledge Distiller",
+    "category": "ai",
+    "subcategory": "email-intelligence",
+    "description": "Extracts key knowledge from email threads (decisions, facts, commitments, action items), builds searchable knowledge base, identifies knowledge gaps, and creates executive summaries.",
+    "features": [
+      "Decision extraction",
+      "Fact extraction",
+      "Commitment tracking",
+      "Action item detection",
+      "Question tracking",
+      "Knowledge base building",
+      "Gap identification",
+      "Executive summaries",
+      "Related email linking",
+      "Search metadata generation"
+    ],
+    "benefits": [
+      "Never lose important decisions",
+      "Build searchable knowledge",
+      "Identify knowledge gaps",
+      "Create instant summaries"
+    ],
+    "pricing": {
+      "basic": 399,
+      "professional": 799,
+      "enterprise": 1999
+    },
+    "status": "active",
+    "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "v198-influence-persuasion-analyzer",
+    "title": "V198: AI Influence & Persuasion Analyzer",
+    "category": "ai",
+    "subcategory": "email-intelligence",
+    "description": "Analyzes persuasion techniques (reciprocity, scarcity, authority, social proof, etc.), detects manipulation, suggests counter-strategies, and helps craft ethical persuasive emails.",
+    "features": [
+      "8 persuasion technique detection",
+      "Cialdini's principles analysis",
+      "Manipulation detection",
+      "Influence scoring (0-100)",
+      "Ethical compliance assessment",
+      "Counter-persuasion strategies",
+      "Ethical improvement suggestions",
+      "Persuasion pattern tracking",
+      "Response strategy generation"
+    ],
+    "benefits": [
+      "Detect manipulation tactics",
+      "Make informed decisions",
+      "Craft ethical persuasive emails",
+      "Protect against high-pressure sales"
+    ],
+    "pricing": {
+      "basic": 299,
+      "professional": 599,
+      "enterprise": 1499
+    },
+    "status": "active",
+    "releaseDate": "2026-05-30"
   }
 ]
