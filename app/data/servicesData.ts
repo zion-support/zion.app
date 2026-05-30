@@ -14790,6 +14790,449 @@ export const allServices: Service[] = [
     features: ['Referral tracking', 'Leaderboards', 'Email campaigns', 'Analytics'],
     popular: false
   }
+,
+  {
+    id: 'ai-email-auto-categorizer-v236',
+    title: 'AI Email Auto-Categorizer (V236)',
+    description: 'Intelligently categorize emails into folders based on content, sender, and context analysis.',
+    icon: '📁',
+    category: 'ai',
+    features: ['8 smart categories', 'Content analysis', 'Sender recognition', 'Priority scoring', 'Reply-all enforcement', 'Confidence scoring', 'Custom rules', 'Auto-organization'],
+    benefits: ['Organize inbox automatically', 'Never miss urgent emails', 'Smart priority sorting', 'Save 2 hours daily'],
+    pricing: {
+      basic: '149',
+      pro: '349',
+      enterprise: '799'
+    },
+    href: '/services/ai-email-auto-categorizer-v236',
+    popular: true,
+    industry: 'Productivity'
+  },
+  {
+    id: 'ai-email-followup-reminder-v237',
+    title: 'AI Follow-up Reminder Engine (V237)',
+    description: 'Track pending responses, send intelligent reminders, and escalate overdue replies automatically.',
+    icon: '⏰',
+    category: 'ai',
+    features: ['Response tracking', 'Urgency detection', 'Smart reminders', 'Auto-escalation', 'Follow-up drafting', 'Multi-recipient tracking', 'SLA monitoring', 'Reply-all enforcement'],
+    benefits: ['Never forget to follow up', 'Auto-remind at right time', 'Escalate overdue replies', 'Increase response rates 40%'],
+    pricing: {
+      basic: '199',
+      pro: '449',
+      enterprise: '999'
+    },
+    href: '/services/ai-email-followup-reminder-v237',
+    popular: true,
+    industry: 'Sales Enablement'
+  },
+  {
+    id: 'ai-email-signature-optimizer-v238',
+    title: 'AI Signature Optimizer (V238)',
+    description: 'Dynamic email signatures that adapt based on recipient type, context, and business goals.',
+    icon: '✍️',
+    category: 'ai',
+    features: ['4 signature templates', 'Recipient detection', 'Dynamic CTAs', 'Brand consistency', 'Professional formatting', 'Contact auto-fill', 'Campaign tracking', 'Reply-all enforcement'],
+    benefits: ['Perfect signature every time', 'Increase CTR on CTAs', 'Maintain brand consistency', 'Adapt to recipient type'],
+    pricing: {
+      basic: '99',
+      pro: '249',
+      enterprise: '599'
+    },
+    href: '/services/ai-email-signature-optimizer-v238',
+    popular: true,
+    industry: 'Branding'
+  },
+  {
+    id: 'ai-email-attachment-summarizer-v239',
+    title: 'AI Attachment Summarizer (V239)',
+    description: 'Generate previews and risk assessments of email attachments without opening them.',
+    icon: '📎',
+    category: 'ai',
+    features: ['12 file type support', 'Risk assessment', 'Size optimization', 'Preview generation', 'Malware detection', 'Cloud alternatives', 'Smart recommendations', 'Reply-all enforcement'],
+    benefits: ['Preview before opening', 'Detect risky attachments', 'Reduce email size 60%', 'Prevent malware attacks'],
+    pricing: {
+      basic: '149',
+      pro: '349',
+      enterprise: '799'
+    },
+    href: '/services/ai-email-attachment-summarizer-v239',
+    popular: true,
+    industry: 'Security'
+  },
+  {
+    id: 'ai-email-context-preserver-v240',
+    title: 'AI Thread Context Preserver (V240)',
+    description: 'Maintain conversation context across long email chains with smart quoting and context windows.',
+    icon: '🔗',
+    category: 'ai',
+    features: ['Context window tracking', 'Smart quoting', 'Decision extraction', 'Action item tracking', 'Participant mapping', 'Thread summarization', 'Context preservation', 'Reply-all enforcement'],
+    benefits: ['Never lose thread context', 'Smart quote selection', 'Track decisions across chain', 'Include all participants'],
+    pricing: {
+      basic: '149',
+      pro: '349',
+      enterprise: '799'
+    },
+    href: '/services/ai-email-context-preserver-v240',
+    popular: true,
+    industry: 'Communication'
+  },
+  {
+    id: 'ai-email-mega-suite-v236-v240',
+    title: 'AI Email Intelligence Suite (V236-V240)',
+    description: 'All 5 new engines: Auto-Categorizer, Follow-up Reminder, Signature Optimizer, Attachment Summarizer, and Context Preserver.',
+    icon: '👑',
+    category: 'ai',
+    features: ['V236 Auto-Categorizer', 'V237 Follow-up Reminder', 'V238 Signature Optimizer', 'V239 Attachment Summarizer', 'V240 Context Preserver', 'Case-by-case analysis', 'Reply-all guaranteed', 'Enterprise compliance'],
+    benefits: ['Complete email management', 'Automate inbox organization', 'Never miss follow-ups', 'Professional signatures always'],
+    pricing: {
+      basic: '599',
+      pro: '1299',
+      enterprise: '3499'
+    },
+    href: '/services/ai-email-mega-suite-v236-v240',
+    popular: true,
+    industry: 'Enterprise AI'
+  },
+  {
+    id: 'ai-lead-scoring-platform',
+    title: 'AI Lead Scoring Platform',
+    description: 'Score and prioritize leads using ML with behavioral signals, firmographics, and intent data.',
+    icon: '🎯',
+    category: 'ai',
+    features: ['ML lead scoring', 'Behavioral signals', 'Firmographic analysis', 'Intent data', 'Pipeline scoring', 'Auto-qualification', 'CRM integration', 'Revenue prediction'],
+    benefits: ['Focus on hot leads', 'Increase conversion 35%', 'Auto-qualify leads', 'Predict revenue'],
+    pricing: {
+      basic: '399',
+      pro: '899',
+      enterprise: '2299'
+    },
+    href: '/services/ai-lead-scoring-platform',
+    popular: true,
+    industry: 'Sales Intelligence'
+  },
+  {
+    id: 'ai-social-media-manager',
+    title: 'AI Social Media Manager',
+    description: 'Manage social media with AI-powered scheduling, content generation, and engagement analytics.',
+    icon: '📱',
+    category: 'ai',
+    features: ['AI content generation', 'Smart scheduling', 'Engagement analytics', 'Sentiment tracking', 'Multi-platform', 'Hashtag optimization', 'Competitor tracking', 'Auto-responses'],
+    benefits: ['Save 10 hours weekly', 'Increase engagement 50%', 'Generate content instantly', 'Track all platforms'],
+    pricing: {
+      basic: '79',
+      pro: '199',
+      enterprise: '499'
+    },
+    href: '/services/ai-social-media-manager',
+    popular: true,
+    industry: 'Social Media'
+  },
+  {
+    id: 'ai-invoice-processing',
+    title: 'AI Invoice Processing',
+    description: 'Automate invoice extraction, validation, approval workflows, and accounting integration.',
+    icon: '🧾',
+    category: 'ai',
+    features: ['OCR extraction', 'Data validation', 'Approval workflows', 'Accounting sync', 'Duplicate detection', 'Tax calculation', 'Multi-currency', 'Batch processing'],
+    benefits: ['Process invoices 10x faster', 'Eliminate data entry', 'Auto-validate data', 'Reduce errors 90%'],
+    pricing: {
+      basic: '149',
+      pro: '349',
+      enterprise: '899'
+    },
+    href: '/services/ai-invoice-processing',
+    popular: true,
+    industry: 'Finance'
+  },
+  {
+    id: 'it-cloud-migration-platform',
+    title: 'Cloud Migration Platform',
+    description: 'Plan, execute, and monitor cloud migrations with automated assessment and zero-downtime cutover.',
+    icon: '☁️',
+    category: 'it',
+    features: ['Migration assessment', 'Automated planning', 'Zero-downtime cutover', 'Cost optimization', 'Risk analysis', 'Progress tracking', 'Multi-cloud support', 'Compliance mapping'],
+    benefits: ['Migrate with zero downtime', 'Reduce migration risk 80%', 'Optimize cloud costs', 'Automate assessment'],
+    pricing: {
+      basic: '599',
+      pro: '1299',
+      enterprise: '3499'
+    },
+    href: '/services/it-cloud-migration-platform',
+    popular: true,
+    industry: 'Cloud Migration'
+  },
+  {
+    id: 'it-log-management-platform',
+    title: 'Log Management & Analysis Platform',
+    description: 'Centralized log management with AI-powered anomaly detection, search, and compliance reporting.',
+    icon: '📜',
+    category: 'it',
+    features: ['Centralized logging', 'AI anomaly detection', 'Full-text search', 'Compliance reporting', 'Alert rules', 'Log correlation', 'Retention policies', 'Cost optimization'],
+    benefits: ['Find issues in seconds', 'Detect anomalies with AI', 'Meet compliance requirements', 'Reduce log costs 40%'],
+    pricing: {
+      basic: '299',
+      pro: '699',
+      enterprise: '1799'
+    },
+    href: '/services/it-log-management-platform',
+    popular: true,
+    industry: 'IT Operations'
+  },
+  {
+    id: 'it-dns-management-platform',
+    title: 'DNS Management & Security Platform',
+    description: 'Enterprise DNS management with DDoS protection, traffic routing, and global anycast network.',
+    icon: '🌐',
+    category: 'it',
+    features: ['DNS management', 'DDoS protection', 'Traffic routing', 'Global anycast', 'DNSSEC', 'Health checks', 'Geo-routing', 'API access'],
+    benefits: ['100% DNS uptime', 'DDoS protection built-in', 'Optimize traffic routing', 'Global performance'],
+    pricing: {
+      basic: '99',
+      pro: '249',
+      enterprise: '699'
+    },
+    href: '/services/it-dns-management-platform',
+    popular: true,
+    industry: 'Network Infrastructure'
+  },
+  {
+    id: 'security-siem-platform',
+    title: 'SIEM & Security Analytics',
+    description: 'Enterprise SIEM with real-time threat detection, incident response, and compliance reporting.',
+    icon: '🔒',
+    category: 'security',
+    features: ['Real-time detection', 'Incident response', 'Compliance reporting', 'Threat intelligence', 'Log correlation', 'User behavior analytics', 'SOAR integration', '24/7 monitoring'],
+    benefits: ['Detect threats instantly', 'Automate response', 'Meet compliance', 'Reduce MTTR 70%'],
+    pricing: {
+      basic: '799',
+      pro: '1699',
+      enterprise: '4499'
+    },
+    href: '/services/security-siem-platform',
+    popular: true,
+    industry: 'Security Operations'
+  },
+  {
+    id: 'security-secrets-management',
+    title: 'Secrets Management Platform',
+    description: 'Secure storage and rotation of API keys, passwords, and certificates with access control.',
+    icon: '🔑',
+    category: 'security',
+    features: ['Secret storage', 'Auto-rotation', 'Access control', 'Audit logging', 'Encryption at rest', 'Dynamic secrets', 'Multi-cloud', 'API access'],
+    benefits: ['Never expose secrets', 'Auto-rotate credentials', 'Audit all access', 'Multi-cloud support'],
+    pricing: {
+      basic: '199',
+      pro: '449',
+      enterprise: '1099'
+    },
+    href: '/services/security-secrets-management',
+    popular: true,
+    industry: 'Security'
+  },
+  {
+    id: 'data-etl-pipeline-platform',
+    title: 'ETL Pipeline Platform',
+    description: 'Build and manage data pipelines with visual builder, scheduling, monitoring, and error handling.',
+    icon: '🔄',
+    category: 'data',
+    features: ['Visual pipeline builder', '100+ connectors', 'Scheduling', 'Monitoring', 'Error handling', 'Data transformation', 'Schema evolution', 'Cost optimization'],
+    benefits: ['Build pipelines visually', 'Monitor in real-time', 'Handle errors gracefully', 'Scale automatically'],
+    pricing: {
+      basic: '299',
+      pro: '699',
+      enterprise: '1799'
+    },
+    href: '/services/data-etl-pipeline-platform',
+    popular: true,
+    industry: 'Data Engineering'
+  },
+  {
+    id: 'data-anomaly-detection',
+    title: 'Data Anomaly Detection Platform',
+    description: 'Detect data quality issues, outliers, and drift with ML-powered monitoring and alerting.',
+    icon: '🔍',
+    category: 'data',
+    features: ['ML anomaly detection', 'Data quality monitoring', 'Drift detection', 'Auto-alerting', 'Root cause analysis', 'Custom rules', 'Dashboard', 'API access'],
+    benefits: ['Detect issues before users', 'Automate quality checks', 'Root cause analysis', 'Custom monitoring rules'],
+    pricing: {
+      basic: '249',
+      pro: '599',
+      enterprise: '1499'
+    },
+    href: '/services/data-anomaly-detection',
+    popular: true,
+    industry: 'Data Quality'
+  },
+  {
+    id: 'micro-saas-booking-system',
+    title: 'Online Booking System',
+    description: 'Let customers book services online with calendar integration, payments, and automated reminders.',
+    icon: '📅',
+    category: 'micro-saas',
+    features: ['Online booking', 'Calendar sync', 'Payment processing', 'Auto reminders', 'Staff management', 'Service catalog', 'Custom branding', 'Mobile app'],
+    benefits: ['Accept bookings 24/7', 'Reduce no-shows 50%', 'Automate reminders', 'Process payments online'],
+    pricing: {
+      basic: '29',
+      pro: '79',
+      enterprise: '199'
+    },
+    href: '/services/micro-saas-booking-system',
+    popular: true,
+    industry: 'Booking & Scheduling'
+  },
+  {
+    id: 'micro-saas-feedback-widget',
+    title: 'Customer Feedback Widget',
+    description: 'Collect in-app feedback with NPS, ratings, and comments. Embeddable widget with analytics.',
+    icon: '💬',
+    category: 'micro-saas',
+    features: ['NPS surveys', 'Star ratings', 'Comment collection', 'Embeddable widget', 'Analytics dashboard', 'Segmentation', 'Auto-categorization', 'Slack integration'],
+    benefits: ['Collect feedback instantly', 'Track NPS over time', 'Categorize automatically', 'Embed in minutes'],
+    pricing: {
+      basic: '19',
+      pro: '49',
+      enterprise: '129'
+    },
+    href: '/services/micro-saas-feedback-widget',
+    popular: true,
+    industry: 'Customer Feedback'
+  },
+  {
+    id: 'micro-saas-password-manager',
+    title: 'Team Password Manager',
+    description: 'Secure team password management with sharing, auto-fill, and breach monitoring.',
+    icon: '🔐',
+    category: 'micro-saas',
+    features: ['Password vault', 'Team sharing', 'Auto-fill', 'Breach monitoring', '2FA support', 'Audit logs', 'Browser extension', 'Mobile app'],
+    benefits: ['Secure team passwords', 'Share safely', 'Auto-fill everywhere', 'Monitor breaches'],
+    pricing: {
+      basic: '9',
+      pro: '29',
+      enterprise: '79'
+    },
+    href: '/services/micro-saas-password-manager',
+    popular: true,
+    industry: 'Security'
+  },
+  {
+    id: 'micro-saas-file-sharing',
+    title: 'Secure File Sharing Platform',
+    description: 'Share large files securely with expiring links, password protection, and download tracking.',
+    icon: '📤',
+    category: 'micro-saas',
+    features: ['Secure sharing', 'Expiring links', 'Password protection', 'Download tracking', 'Custom branding', 'Large file support', 'Virus scanning', 'API access'],
+    benefits: ['Share files securely', 'Track downloads', 'Password protect', 'Expire automatically'],
+    pricing: {
+      basic: '9',
+      pro: '29',
+      enterprise: '79'
+    },
+    href: '/services/micro-saas-file-sharing',
+    popular: true,
+    industry: 'File Management'
+  },
+  {
+    id: 'micro-saas-chat-support',
+    title: 'Live Chat Support Widget',
+    description: 'Add live chat to your website with AI-powered responses, routing, and analytics.',
+    icon: '💬',
+    category: 'micro-saas',
+    features: ['Live chat widget', 'AI auto-responses', 'Agent routing', 'Chat analytics', 'Canned responses', 'File sharing', 'Mobile SDK', 'Offline forms'],
+    benefits: ['Respond instantly', 'AI handles 60%', 'Route to right agent', 'Track satisfaction'],
+    pricing: {
+      basic: '29',
+      pro: '79',
+      enterprise: '199'
+    },
+    href: '/services/micro-saas-chat-support',
+    popular: true,
+    industry: 'Customer Support'
+  },
+  {
+    id: 'micro-saas-invoice-generator',
+    title: 'Invoice Generator & Tracker',
+    description: 'Create professional invoices, track payments, send reminders, and manage expenses.',
+    icon: '🧾',
+    category: 'micro-saas',
+    features: ['Invoice creation', 'Payment tracking', 'Auto reminders', 'Expense tracking', 'Multi-currency', 'Tax calculation', 'Client portal', 'Reporting'],
+    benefits: ['Create invoices in seconds', 'Track payments easily', 'Auto-send reminders', 'Manage expenses'],
+    pricing: {
+      basic: '9',
+      pro: '29',
+      enterprise: '69'
+    },
+    href: '/services/micro-saas-invoice-generator',
+    popular: true,
+    industry: 'Finance'
+  },
+  {
+    id: 'micro-saas-qr-code-generator',
+    title: 'QR Code Generator Platform',
+    description: 'Create dynamic QR codes with analytics, custom designs, and campaign tracking.',
+    icon: '📱',
+    category: 'micro-saas',
+    features: ['Dynamic QR codes', 'Scan analytics', 'Custom designs', 'Campaign tracking', 'Bulk generation', 'API access', 'Team collaboration', 'White-label'],
+    benefits: ['Track every scan', 'Custom branded codes', 'Manage campaigns', 'Generate in bulk'],
+    pricing: {
+      basic: '9',
+      pro: '29',
+      enterprise: '79'
+    },
+    href: '/services/micro-saas-qr-code-generator',
+    popular: true,
+    industry: 'Marketing'
+  },
+  {
+    id: 'micro-saas-kanban-board',
+    title: 'Visual Kanban Board',
+    description: 'Simple visual project management with drag-and-drop, WIP limits, and team collaboration.',
+    icon: '📋',
+    category: 'micro-saas',
+    features: ['Drag-and-drop boards', 'WIP limits', 'Team collaboration', 'Labels & filters', 'Due dates', 'Attachments', 'Activity log', 'Integrations'],
+    benefits: ['Visualize workflow', 'Limit work in progress', 'Collaborate easily', 'Track progress'],
+    pricing: {
+      basic: '0',
+      pro: '19',
+      enterprise: '49'
+    },
+    href: '/services/micro-saas-kanban-board',
+    popular: true,
+    industry: 'Project Management'
+  },
+  {
+    id: 'micro-saas-url-monitoring',
+    title: 'URL & Website Monitoring',
+    description: 'Monitor website uptime, performance, and SSL certificates from 50+ global locations.',
+    icon: '🔍',
+    category: 'micro-saas',
+    features: ['Uptime monitoring', 'Performance tracking', 'SSL monitoring', '50+ locations', 'Instant alerts', 'Status pages', 'API monitoring', 'Transaction monitoring'],
+    benefits: ['Detect outages instantly', 'Track performance', 'Monitor SSL certs', 'Beautiful status pages'],
+    pricing: {
+      basic: '9',
+      pro: '29',
+      enterprise: '79'
+    },
+    href: '/services/micro-saas-url-monitoring',
+    popular: true,
+    industry: 'Monitoring'
+  },
+  {
+    id: 'micro-saas-doc-signing',
+    title: 'Electronic Document Signing',
+    description: 'Legally binding e-signatures with workflow automation, templates, and audit trails.',
+    icon: '✍️',
+    category: 'micro-saas',
+    features: ['E-signatures', 'Workflow automation', 'Templates', 'Audit trails', 'Bulk sending', 'API integration', 'Mobile signing', 'Compliance (ESIGN)'],
+    benefits: ['Sign documents 10x faster', 'Automate workflows', 'Full audit trail', 'Legally binding'],
+    pricing: {
+      basic: '19',
+      pro: '49',
+      enterprise: '129'
+    },
+    href: '/services/micro-saas-doc-signing',
+    popular: true,
+    industry: 'Document Management'
+  }
 ];
 
 export const getServiceById = (id: string): Service | undefined => { return allServices.find(s => s.id === id); };
