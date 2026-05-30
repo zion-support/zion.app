@@ -32103,5 +32103,370 @@
     },
     "status": "active",
     "releaseDate": "2026-05-30"
+  },
+  {
+    "id": "micro-saas-invoice-negotiator",
+    "title": "AI Invoice Negotiator",
+    "description": "Automatically negotiates better payment terms with vendors by analyzing invoice history, market rates, and payment patterns. Generates counter-offers and tracks negotiation outcomes.",
+    "features": [
+      "Invoice history analysis",
+      "Market rate comparison",
+      "Automated counter-offer generation",
+      "Payment term optimization",
+      "Vendor relationship tracking",
+      "Negotiation outcome analytics"
+    ],
+    "benefits": [
+      "Reduce costs by 15-25%",
+      "Improve payment terms automatically",
+      "Save 10+ hours per month",
+      "Maintain vendor relationships"
+    ],
+    "pricing": {
+      "basic": "$79/mo",
+      "professional": "$149/mo",
+      "enterprise": "$399/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "finance"
+  },
+  {
+    "id": "micro-saas-subscription-analyzer",
+    "title": "Subscription Analyzer & Optimizer",
+    "description": "Scans all company subscriptions (SaaS, cloud, tools), identifies unused or duplicate services, and recommends cancellations or consolidations with ROI calculations.",
+    "features": [
+      "Automatic subscription discovery",
+      "Usage pattern analysis",
+      "Duplicate detection",
+      "Cost optimization recommendations",
+      "ROI calculations",
+      "Renewal tracking"
+    ],
+    "benefits": [
+      "Cut subscription costs by 30-40%",
+      "Eliminate unused services",
+      "Prevent auto-renewal surprises",
+      "Consolidate redundant tools"
+    ],
+    "pricing": {
+      "basic": "$49/mo",
+      "professional": "$99/mo",
+      "enterprise": "$249/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "finance"
+  },
+  {
+    "id": "micro-saas-email-warmup-pro",
+    "title": "Email Warmup Pro",
+    "description": "Gradually increases email sending volume and engagement to build sender reputation. Monitors deliverability, spam scores, and provides real-time reputation insights.",
+    "features": [
+      "Gradual volume scaling",
+      "Engagement simulation",
+      "Spam score monitoring",
+      "Deliverability tracking",
+      "Reputation analytics",
+      "Blacklist monitoring"
+    ],
+    "benefits": [
+      "Achieve 98%+ inbox placement",
+      "Build sender reputation safely",
+      "Avoid spam filters",
+      "Monitor deliverability in real-time"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "professional": "$199/mo",
+      "enterprise": "$499/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "marketing"
+  },
+  {
+    "id": "micro-saas-meeting-to-tasks",
+    "title": "Meeting Notes to Action Items",
+    "description": "Converts meeting transcripts into structured action items with assignees, deadlines, and priority levels. Integrates with project management tools and sends reminders.",
+    "features": [
+      "Transcript parsing",
+      "Action item extraction",
+      "Assignee detection",
+      "Deadline extraction",
+      "Priority assignment",
+      "PM tool integration",
+      "Automated reminders"
+    ],
+    "benefits": [
+      "Never miss action items",
+      "Auto-assign tasks",
+      "Track deadlines automatically",
+      "Integrate with existing tools"
+    ],
+    "pricing": {
+      "basic": "$59/mo",
+      "professional": "$119/mo",
+      "enterprise": "$299/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "productivity"
+  },
+  {
+    "id": "micro-saas-slack-health-monitor",
+    "title": "Slack Channel Health Monitor",
+    "description": "Analyzes Slack workspace health by identifying dead channels, inactive users, message patterns, and suggests cleanup actions to improve communication efficiency.",
+    "features": [
+      "Channel activity analysis",
+      "Dead channel detection",
+      "User engagement metrics",
+      "Message pattern analysis",
+      "Cleanup recommendations",
+      "Archive suggestions"
+    ],
+    "benefits": [
+      "Reduce channel clutter by 40%",
+      "Improve communication efficiency",
+      "Identify inactive users",
+      "Optimize workspace organization"
+    ],
+    "pricing": {
+      "basic": "$69/mo",
+      "professional": "$139/mo",
+      "enterprise": "$349/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "productivity"
+  },
+  {
+    "id": "it-legacy-migration-assistant",
+    "title": "Legacy System Migration Assistant",
+    "description": "Automates migration from legacy systems (COBOL, Fortran, old Java) to modern stacks. Translates code, generates tests, and validates functionality with AI-powered analysis.",
+    "features": [
+      "Multi-language code translation",
+      "Automated test generation",
+      "Functionality validation",
+      "Dependency mapping",
+      "Migration progress tracking",
+      "Rollback planning"
+    ],
+    "benefits": [
+      "Reduce migration time by 70%",
+      "Minimize manual errors",
+      "Ensure functional equivalence",
+      "Generate comprehensive tests"
+    ],
+    "pricing": {
+      "basic": "$999/mo",
+      "professional": "$2,499/mo",
+      "enterprise": "$5,999/mo"
+    },
+    "category": "IT Services",
+    "subcategory": "modernization"
+  },
+  {
+    "id": "it-cloud-cost-anomaly-detector",
+    "title": "Cloud Cost Anomaly Detector",
+    "description": "Monitors cloud spending in real-time, detects unusual patterns, and alerts before bills spike. Uses ML to learn normal spending and identify waste.",
+    "features": [
+      "Real-time cost monitoring",
+      "Anomaly detection",
+      "Spike alerts",
+      "Waste identification",
+      "Budget forecasting",
+      "Cost attribution"
+    ],
+    "benefits": [
+      "Prevent billing surprises",
+      "Detect waste instantly",
+      "Save 20-30% on cloud costs",
+      "Forecast budgets accurately"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "professional": "$499/mo",
+      "enterprise": "$1,299/mo"
+    },
+    "category": "IT Services",
+    "subcategory": "cloud-optimization"
+  },
+  {
+    "id": "it-infrastructure-drift-detector",
+    "title": "Infrastructure Drift Detector",
+    "description": "Continuously compares actual infrastructure state with desired state (IaC), detects drift, and provides remediation steps to maintain consistency.",
+    "features": [
+      "Continuous state monitoring",
+      "Drift detection",
+      "Remediation suggestions",
+      "IaC validation",
+      "Change tracking",
+      "Compliance reporting"
+    ],
+    "benefits": [
+      "Prevent configuration drift",
+      "Maintain infrastructure consistency",
+      "Ensure compliance",
+      "Reduce manual audits"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "professional": "$399/mo",
+      "enterprise": "$999/mo"
+    },
+    "category": "IT Services",
+    "subcategory": "infrastructure"
+  },
+  {
+    "id": "it-security-patch-prioritizer",
+    "title": "Security Patch Prioritizer",
+    "description": "Analyzes security vulnerabilities, ranks patches by exploit risk and business impact, and creates prioritized patching schedules to maximize security with minimal disruption.",
+    "features": [
+      "Vulnerability analysis",
+      "Exploit risk scoring",
+      "Business impact assessment",
+      "Patch scheduling",
+      "Dependency tracking",
+      "Compliance reporting"
+    ],
+    "benefits": [
+      "Patch critical risks first",
+      "Minimize system downtime",
+      "Meet compliance requirements",
+      "Reduce security incidents"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "professional": "$699/mo",
+      "enterprise": "$1,799/mo"
+    },
+    "category": "IT Services",
+    "subcategory": "security"
+  },
+  {
+    "id": "ai-test-generator",
+    "title": "AI Test Generator",
+    "description": "Generates comprehensive unit tests, integration tests, and edge case scenarios from code analysis. Supports multiple languages and testing frameworks.",
+    "features": [
+      "Unit test generation",
+      "Integration test creation",
+      "Edge case detection",
+      "Multiple language support",
+      "Framework integration",
+      "Coverage analysis"
+    ],
+    "benefits": [
+      "Increase test coverage to 90%+",
+      "Generate tests in minutes",
+      "Catch edge cases",
+      "Reduce manual testing"
+    ],
+    "pricing": {
+      "basic": "$149/mo",
+      "professional": "$399/mo",
+      "enterprise": "$999/mo"
+    },
+    "category": "AI Services",
+    "subcategory": "development"
+  },
+  {
+    "id": "ai-documentation-writer",
+    "title": "AI Documentation Writer",
+    "description": "Generates comprehensive documentation from code including API docs, README files, architecture diagrams, and user guides. Keeps docs in sync with code changes.",
+    "features": [
+      "API documentation generation",
+      "README creation",
+      "Architecture diagrams",
+      "User guide generation",
+      "Code comment enhancement",
+      "Auto-sync with code changes"
+    ],
+    "benefits": [
+      "Always up-to-date documentation",
+      "Save 20+ hours per week",
+      "Improve developer onboarding",
+      "Reduce support tickets"
+    ],
+    "pricing": {
+      "basic": "$129/mo",
+      "professional": "$349/mo",
+      "enterprise": "$899/mo"
+    },
+    "category": "AI Services",
+    "subcategory": "development"
+  },
+  {
+    "id": "ai-bug-predictor",
+    "title": "AI Bug Predictor",
+    "description": "Predicts likely bugs before they happen by analyzing code patterns, commit history, and historical bug data. Provides proactive fixes and prevention strategies.",
+    "features": [
+      "Code pattern analysis",
+      "Historical bug learning",
+      "Predictive bug detection",
+      "Proactive fix suggestions",
+      "Risk scoring",
+      "Prevention strategies"
+    ],
+    "benefits": [
+      "Prevent bugs before they occur",
+      "Reduce production incidents by 60%",
+      "Improve code reliability",
+      "Save debugging time"
+    ],
+    "pricing": {
+      "basic": "$249/mo",
+      "professional": "$599/mo",
+      "enterprise": "$1,499/mo"
+    },
+    "category": "AI Services",
+    "subcategory": "development"
+  },
+  {
+    "id": "ai-performance-profiler",
+    "title": "AI Performance Profiler",
+    "description": "Automatically identifies performance bottlenecks in applications, suggests optimizations, and tracks performance improvements over time. Supports web, mobile, and backend.",
+    "features": [
+      "Bottleneck detection",
+      "Optimization suggestions",
+      "Performance tracking",
+      "Multi-platform support",
+      "Real-time monitoring",
+      "Historical trend analysis"
+    ],
+    "benefits": [
+      "Improve app speed by 50%+",
+      "Identify bottlenecks instantly",
+      "Track performance gains",
+      "Optimize resource usage"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "professional": "$499/mo",
+      "enterprise": "$1,299/mo"
+    },
+    "category": "AI Services",
+    "subcategory": "performance"
+  },
+  {
+    "id": "micro-saas-api-rate-optimizer",
+    "title": "API Rate Limit Optimizer",
+    "description": "Intelligently manages API rate limits by analyzing usage patterns, implementing smart queuing, and optimizing request timing to maximize throughput without hitting limits.",
+    "features": [
+      "Usage pattern analysis",
+      "Smart request queuing",
+      "Rate limit prediction",
+      "Automatic backoff",
+      "Throughput optimization",
+      "Multi-API coordination"
+    ],
+    "benefits": [
+      "Maximize API throughput",
+      "Avoid rate limit errors",
+      "Reduce API costs by 25%",
+      "Improve reliability"
+    ],
+    "pricing": {
+      "basic": "$89/mo",
+      "professional": "$179/mo",
+      "enterprise": "$449/mo"
+    },
+    "category": "Micro-SaaS",
+    "subcategory": "development"
   }
 ]
