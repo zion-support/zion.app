@@ -1,0 +1,55 @@
+{
+  "senders": {
+    "kleber@ziontechgroup.com": {
+      "name": "Kleber Garcia Alcatrao",
+      "role": "CTO",
+      "company": "Zion Tech Group",
+      "interaction_count": 42,
+      "last_interaction": "2026-05-29T10:30:00Z",
+      "preferred_tone": "professional",
+      "common_topics": [
+        "business strategy",
+        "technology investments",
+        "partnerships"
+      ],
+      "relationship_status": "key_stakeholder"
+    },
+    "partner@techfirm.com": {
+      "name": "Sarah Chen",
+      "role": "Partnerships Director",
+      "company": "TechFirm Solutions",
+      "interaction_count": 15,
+      "last_interaction": "2026-05-25T14:15:00Z",
+      "preferred_tone": "friendly",
+      "common_topics": [
+        "joint ventures",
+        "API integration",
+        "market expansion"
+      ],
+      "relationship_status": "partner"
+    },
+    "customer@enterprise.com": {
+      "name": "Michael Rodriguez",
+      "role": "IT Manager",
+      "company": "Enterprise Corp",
+      "interaction_count": 8,
+      "last_interaction": "2026-05-20T09:45:00Z",
+      "preferred_tone": "formal",
+      "common_topics": [
+        "service level agreements",
+        "technical support",
+        "upgrades"
+      ],
+      "relationship_status": "customer"
+    }
+  },
+  "interactions": [
+    {
+      "date": "2026-05-29T10:30:00Z",
+      "sender": "kleber@ziontechgroup.com",
+      "subject": "Q3 Strategy Meeting",
+      "type": "meeting_request",
+      "outcome": "scheduled"
+    }
+  ]
+}
