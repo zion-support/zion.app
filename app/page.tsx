@@ -14,6 +14,15 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+<<<<<<< HEAD
+=======
+import ROICalculator from '@/components/ROICalculator';
+import PricingEstimator from '@/components/PricingEstimator';
+import WorkflowPredictiveShowcase from '@/components/WorkflowPredictiveShowcase';
+import MultilangVoiceShowcase from '@/components/MultilangVoiceShowcase';
+import AdvancedIntelligenceShowcase from '@/components/AdvancedIntelligenceShowcase';
+import EmailIntelligenceV2Showcase from '@/components/EmailIntelligenceV2Showcase';
+>>>>>>> f64a6151 (Add V104-V108: Advanced Email Intelligence Suite)
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -1051,6 +1060,19 @@ let list = services;
           </div>
         </div>
       </section>
+
+      {/* ── AI Workflow Automation & Predictive Analytics V92-V93 ── */}
+      <WorkflowPredictiveShowcase />
+
+      {/* ── AI Multi-Language & Voice Intelligence V94-V95 ── */}
+      <MultilangVoiceShowcase />
+
+      {/* ── Advanced Email Intelligence V96-V98 ── */}
+      <AdvancedIntelligenceShowcase />
+
+      {/* ── Email Intelligence V104-V108 ── */}
+      <EmailIntelligenceV2Showcase />
+
     <FloatingActionDock />
     </main>
   );
