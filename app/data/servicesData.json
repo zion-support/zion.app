@@ -83994,5 +83994,405 @@
     "category": "micro-saas",
     "popular": false,
     "industry": "Customer Support"
+  },
+  {
+    "id": "saas-calendar-sync",
+    "title": "AI Calendar Sync Platform",
+    "description": "Automatically extract and sync meetings, events, and deadlines from emails to your calendar with intelligent scheduling.",
+    "icon": "📅",
+    "category": "micro-saas",
+    "features": [
+      "Email-to-calendar extraction",
+      "Smart scheduling",
+      "Timezone handling",
+      "Conflict detection",
+      "Multi-calendar sync"
+    ],
+    "pricing": "$299-$1,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "saas-unsubscribe-manager",
+    "title": "Smart Unsubscribe Manager",
+    "description": "Intelligent subscription management that recommends which newsletters to keep or unsubscribe based on your engagement patterns.",
+    "icon": "📧",
+    "category": "micro-saas",
+    "features": [
+      "Engagement analysis",
+      "Unsubscribe recommendations",
+      "Batch unsubscribe",
+      "Subscription scoring",
+      "Inbox cleanup"
+    ],
+    "pricing": "$199-$999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-warmup",
+    "title": "Email Warm-up Automation",
+    "description": "Automate email domain warm-up to improve deliverability and sender reputation with gradual volume scaling.",
+    "icon": "🔥",
+    "category": "ai",
+    "features": [
+      "Automated warm-up plans",
+      "Reputation monitoring",
+      "Deliverability tracking",
+      "ISP compliance",
+      "Progress analytics"
+    ],
+    "pricing": "$499-$2,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "saas-signature-testing",
+    "title": "Email Signature A/B Testing",
+    "description": "Test different email signatures to optimize engagement, response rates, and professional impact.",
+    "icon": "✍️",
+    "category": "micro-saas",
+    "features": [
+      "Signature variants",
+      "A/B testing",
+      "Engagement tracking",
+      "Performance analytics",
+      "Best practices"
+    ],
+    "pricing": "$149-$799/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-bounce-analyzer",
+    "title": "Bounce Rate Analyzer & Fixer",
+    "description": "Analyze email bounces, identify root causes, and automatically clean your email lists to improve deliverability.",
+    "icon": "🎯",
+    "category": "ai",
+    "features": [
+      "Bounce classification",
+      "Root cause analysis",
+      "List cleaning",
+      "Domain verification",
+      "Deliverability scoring"
+    ],
+    "pricing": "$399-$1,999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cloud-email-archive",
+    "title": "Cloud Email Archiving",
+    "description": "Secure cloud-based email archiving with advanced search, compliance retention, and instant retrieval.",
+    "icon": "☁️",
+    "category": "cloud",
+    "features": [
+      "Unlimited storage",
+      "Advanced search",
+      "Compliance retention",
+      "Legal hold",
+      "Instant retrieval"
+    ],
+    "pricing": "$599-$2,999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "security-email-encryption",
+    "title": "End-to-End Email Encryption",
+    "description": "Military-grade encryption for all email communications with automatic key management and zero-knowledge architecture.",
+    "icon": "🔐",
+    "category": "security",
+    "features": [
+      "AES-256 encryption",
+      "Auto key management",
+      "Zero-knowledge",
+      "Compliance ready",
+      "Secure file sharing"
+    ],
+    "pricing": "$699-$3,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-analytics",
+    "title": "Email Performance Analytics",
+    "description": "Comprehensive email analytics dashboard with engagement metrics, deliverability insights, and ROI tracking.",
+    "icon": "📊",
+    "category": "ai",
+    "features": [
+      "Engagement metrics",
+      "Deliverability tracking",
+      "ROI analysis",
+      "Custom reports",
+      "Real-time alerts"
+    ],
+    "pricing": "$449-$2,299/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "saas-email-templates",
+    "title": "Email Template Builder Pro",
+    "description": "Professional email template builder with drag-and-drop editor, responsive designs, and performance optimization.",
+    "icon": "🎨",
+    "category": "micro-saas",
+    "features": [
+      "Drag-and-drop editor",
+      "Responsive designs",
+      "A/B testing",
+      "Personalization",
+      "Template library"
+    ],
+    "pricing": "$249-$1,299/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-routing",
+    "title": "Smart Email Routing System",
+    "description": "AI-powered email routing that automatically directs emails to the right team member based on content and expertise.",
+    "icon": "🔀",
+    "category": "ai",
+    "features": [
+      "Content analysis",
+      "Expertise matching",
+      "Load balancing",
+      "Priority routing",
+      "Auto-escalation"
+    ],
+    "pricing": "$549-$2,799/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cloud-email-backup",
+    "title": "Automated Email Backup",
+    "description": "Continuous automated email backup with versioning, instant recovery, and cross-platform compatibility.",
+    "icon": "💾",
+    "category": "cloud",
+    "features": [
+      "Continuous backup",
+      "Version history",
+      "Instant recovery",
+      "Cross-platform",
+      "Encrypted storage"
+    ],
+    "pricing": "$299-$1,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "security-phishing-protection",
+    "title": "Advanced Phishing Protection",
+    "description": "AI-powered phishing detection and prevention with real-time threat analysis and user training.",
+    "icon": "🛡️",
+    "category": "security",
+    "features": [
+      "Real-time detection",
+      "Threat analysis",
+      "User training",
+      "Quarantine system",
+      "Incident reporting"
+    ],
+    "pricing": "$799-$3,999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-translation",
+    "title": "Real-Time Email Translation",
+    "description": "Instant translation of emails into 100+ languages while preserving context, tone, and formatting.",
+    "icon": "🌐",
+    "category": "ai",
+    "features": [
+      "100+ languages",
+      "Context preservation",
+      "Tone matching",
+      "Auto-detection",
+      "Cultural adaptation"
+    ],
+    "pricing": "$399-$1,999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "saas-email-scheduling",
+    "title": "Intelligent Email Scheduler",
+    "description": "Schedule emails to send at optimal times based on recipient timezone, engagement patterns, and deliverability.",
+    "icon": "⏰",
+    "category": "micro-saas",
+    "features": [
+      "Optimal timing",
+      "Timezone awareness",
+      "Engagement prediction",
+      "Batch scheduling",
+      "Recurring emails"
+    ],
+    "pricing": "$199-$999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cloud-email-migration",
+    "title": "Email Migration Service",
+    "description": "Seamless email migration between platforms with zero downtime, data integrity verification, and user training.",
+    "icon": "🔄",
+    "category": "cloud",
+    "features": [
+      "Zero downtime",
+      "Data verification",
+      "User training",
+      "Multi-platform",
+      "Rollback capability"
+    ],
+    "pricing": "$1,999-$9,999 (one-time)",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-summarizer",
+    "title": "Email Thread Summarizer",
+    "description": "AI-powered summarization of long email threads into concise, actionable briefs with key decisions and action items.",
+    "icon": "📝",
+    "category": "ai",
+    "features": [
+      "Thread summarization",
+      "Action item extraction",
+      "Decision tracking",
+      "Key points",
+      "Executive briefs"
+    ],
+    "pricing": "$349-$1,799/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "security-dlp-email",
+    "title": "Email Data Loss Prevention",
+    "description": "Prevent sensitive data leaks via email with content inspection, policy enforcement, and automatic encryption.",
+    "icon": "🔒",
+    "category": "security",
+    "features": [
+      "Content inspection",
+      "Policy enforcement",
+      "Auto-encryption",
+      "Sensitive data detection",
+      "Audit logs"
+    ],
+    "pricing": "$899-$4,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "saas-email-signatures",
+    "title": "Centralized Email Signature Manager",
+    "description": "Manage and deploy consistent email signatures across your organization with branding control and analytics.",
+    "icon": "✉️",
+    "category": "micro-saas",
+    "features": [
+      "Centralized management",
+      "Brand consistency",
+      "Analytics tracking",
+      "Banner campaigns",
+      "Template library"
+    ],
+    "pricing": "$149-$799/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ai-email-coaching",
+    "title": "AI Email Response Coach",
+    "description": "Real-time coaching on email responses with tone analysis, clarity suggestions, and professionalism scoring.",
+    "icon": "🎓",
+    "category": "ai",
+    "features": [
+      "Tone analysis",
+      "Clarity suggestions",
+      "Professionalism scoring",
+      "Real-time feedback",
+      "Improvement tracking"
+    ],
+    "pricing": "$299-$1,499/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cloud-email-gateway",
+    "title": "Secure Email Gateway",
+    "description": "Enterprise email gateway with advanced spam filtering, virus protection, and policy enforcement.",
+    "icon": "🚪",
+    "category": "cloud",
+    "features": [
+      "Spam filtering",
+      "Virus protection",
+      "Policy enforcement",
+      "Quarantine management",
+      "Reporting"
+    ],
+    "pricing": "$799-$3,999/mo",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
   }
 ]
