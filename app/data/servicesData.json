@@ -72500,5 +72500,365 @@
       "Better resource allocation"
     ],
     "target_audience": "Managers, Team Leaders, Executives"
+  },
+  {
+    "id": "v531-context-memory-basic",
+    "name": "Email Context Memory Basic",
+    "description": "Remember and recall context from previous email conversations to provide more relevant responses.",
+    "category": "Email Intelligence",
+    "price": "$19/month",
+    "features": [
+      "Conversation history tracking",
+      "Context recall",
+      "Relationship memory",
+      "Topic tracking",
+      "Basic personalization"
+    ]
+  },
+  {
+    "id": "v531-context-memory-pro",
+    "name": "Email Context Memory Pro",
+    "description": "Advanced context memory with commitment tracking, preference learning, and intelligent recall.",
+    "category": "Email Intelligence",
+    "price": "$39/month",
+    "features": [
+      "All Basic features",
+      "Commitment tracking",
+      "Preference learning",
+      "Intelligent recall",
+      "Relationship scoring",
+      "Cross-thread memory"
+    ]
+  },
+  {
+    "id": "v531-context-memory-enterprise",
+    "name": "Email Context Memory Enterprise",
+    "description": "Enterprise-grade context memory with team sharing, advanced analytics, and API access.",
+    "category": "Email Intelligence",
+    "price": "$79/month",
+    "features": [
+      "All Pro features",
+      "Team memory sharing",
+      "Advanced analytics",
+      "API access",
+      "Custom integrations",
+      "Priority support"
+    ]
+  },
+  {
+    "id": "v531-relationship-tracker",
+    "name": "Relationship History Tracker",
+    "description": "Track and visualize your relationship history with contacts through email interactions.",
+    "category": "Email Intelligence",
+    "price": "$29/month",
+    "features": [
+      "Relationship timeline",
+      "Interaction history",
+      "Engagement metrics",
+      "Relationship scoring",
+      "Historical analysis"
+    ]
+  },
+  {
+    "id": "v531-personalization-engine",
+    "name": "Personalization Engine",
+    "description": "Automatically personalize emails based on remembered preferences and past interactions.",
+    "category": "Email Intelligence",
+    "price": "$34/month",
+    "features": [
+      "Preference learning",
+      "Auto-personalization",
+      "Custom greetings",
+      "Interest tracking",
+      "Behavioral insights"
+    ]
+  },
+  {
+    "id": "v532-tone-adapter-basic",
+    "name": "Email Tone Adapter Basic",
+    "description": "Automatically adjust email tone based on recipient relationship and context.",
+    "category": "Email Intelligence",
+    "price": "$24/month",
+    "features": [
+      "6 tone styles",
+      "Relationship detection",
+      "Basic tone adjustment",
+      "Tone recommendations",
+      "Simple customization"
+    ]
+  },
+  {
+    "id": "v532-tone-adapter-pro",
+    "name": "Email Tone Adapter Pro",
+    "description": "Advanced tone adaptation with cultural awareness, emotional intelligence, and learning capabilities.",
+    "category": "Email Intelligence",
+    "price": "$44/month",
+    "features": [
+      "All Basic features",
+      "Cultural awareness",
+      "Emotional intelligence",
+      "Learning system",
+      "Advanced customization",
+      "Tone effectiveness tracking"
+    ]
+  },
+  {
+    "id": "v532-tone-adapter-enterprise",
+    "name": "Email Tone Adapter Enterprise",
+    "description": "Enterprise tone management with team guidelines, brand voice consistency, and advanced analytics.",
+    "category": "Email Intelligence",
+    "price": "$89/month",
+    "features": [
+      "All Pro features",
+      "Team guidelines",
+      "Brand voice consistency",
+      "Advanced analytics",
+      "Custom tone profiles",
+      "Enterprise support"
+    ]
+  },
+  {
+    "id": "v532-tone-analyzer",
+    "name": "Tone Analyzer",
+    "description": "Analyze the tone of incoming emails and suggest appropriate responses.",
+    "category": "Email Intelligence",
+    "price": "$29/month",
+    "features": [
+      "Tone detection",
+      "Sentiment analysis",
+      "Response suggestions",
+      "Tone matching",
+      "Emotional context"
+    ]
+  },
+  {
+    "id": "v532-communication-style-advisor",
+    "name": "Communication Style Advisor",
+    "description": "Get personalized advice on communication style based on recipient profile and context.",
+    "category": "Email Intelligence",
+    "price": "$34/month",
+    "features": [
+      "Style recommendations",
+      "Recipient profiling",
+      "Context awareness",
+      "Best practices",
+      "Improvement suggestions"
+    ]
+  },
+  {
+    "id": "v533-urgency-detector-basic",
+    "name": "Email Urgency Detector Basic",
+    "description": "Detect urgent emails and prioritize them for immediate attention.",
+    "category": "Email Intelligence",
+    "price": "$29/month",
+    "features": [
+      "Urgency detection",
+      "Priority scoring",
+      "Basic escalation",
+      "Signal analysis",
+      "Simple routing"
+    ]
+  },
+  {
+    "id": "v533-urgency-detector-pro",
+    "name": "Email Urgency Detector Pro",
+    "description": "Advanced urgency detection with SLA tracking, intelligent escalation, and team coordination.",
+    "category": "Email Intelligence",
+    "price": "$49/month",
+    "features": [
+      "All Basic features",
+      "SLA tracking",
+      "Intelligent escalation",
+      "Team coordination",
+      "Advanced routing",
+      "Response tracking"
+    ]
+  },
+  {
+    "id": "v533-urgency-detector-enterprise",
+    "name": "Email Urgency Detector Enterprise",
+    "description": "Enterprise urgency management with custom workflows, advanced analytics, and integration capabilities.",
+    "category": "Email Intelligence",
+    "price": "$99/month",
+    "features": [
+      "All Pro features",
+      "Custom workflows",
+      "Advanced analytics",
+      "Integration capabilities",
+      "Enterprise support",
+      "Custom SLAs"
+    ]
+  },
+  {
+    "id": "v533-sla-manager",
+    "name": "SLA Manager",
+    "description": "Track and manage Service Level Agreements for email responses.",
+    "category": "Email Intelligence",
+    "price": "$39/month",
+    "features": [
+      "SLA definition",
+      "Deadline tracking",
+      "Breach alerts",
+      "Performance metrics",
+      "Compliance reporting"
+    ]
+  },
+  {
+    "id": "v533-priority-router",
+    "name": "Priority Router",
+    "description": "Automatically route emails based on urgency and priority to the right team members.",
+    "category": "Email Intelligence",
+    "price": "$44/month",
+    "features": [
+      "Smart routing",
+      "Team assignment",
+      "Load balancing",
+      "Priority queues",
+      "Escalation paths"
+    ]
+  },
+  {
+    "id": "v534-followup-basic",
+    "name": "Follow-up Scheduler Basic",
+    "description": "Schedule automatic follow-up emails to improve response rates.",
+    "category": "Email Intelligence",
+    "price": "$24/month",
+    "features": [
+      "Basic scheduling",
+      "Simple templates",
+      "Manual triggers",
+      "Response tracking",
+      "Basic timing"
+    ]
+  },
+  {
+    "id": "v534-followup-pro",
+    "name": "Follow-up Scheduler Pro",
+    "description": "Intelligent follow-up scheduling with optimal timing, personalization, and sequence management.",
+    "category": "Email Intelligence",
+    "price": "$44/month",
+    "features": [
+      "All Basic features",
+      "Optimal timing",
+      "Personalization",
+      "Sequence management",
+      "A/B testing",
+      "Advanced analytics"
+    ]
+  },
+  {
+    "id": "v534-followup-enterprise",
+    "name": "Follow-up Scheduler Enterprise",
+    "description": "Enterprise follow-up management with team coordination, advanced workflows, and CRM integration.",
+    "category": "Email Intelligence",
+    "price": "$89/month",
+    "features": [
+      "All Pro features",
+      "Team coordination",
+      "Advanced workflows",
+      "CRM integration",
+      "Custom templates",
+      "Enterprise support"
+    ]
+  },
+  {
+    "id": "v534-reminder-system",
+    "name": "Smart Reminder System",
+    "description": "Intelligent reminder system that learns from response patterns.",
+    "category": "Email Intelligence",
+    "price": "$29/month",
+    "features": [
+      "Smart reminders",
+      "Pattern learning",
+      "Custom schedules",
+      "Notification management",
+      "Response prediction"
+    ]
+  },
+  {
+    "id": "v534-sequence-builder",
+    "name": "Follow-up Sequence Builder",
+    "description": "Build and manage multi-step follow-up sequences for campaigns.",
+    "category": "Email Intelligence",
+    "price": "$39/month",
+    "features": [
+      "Sequence builder",
+      "Multi-step workflows",
+      "Conditional logic",
+      "Template library",
+      "Performance tracking"
+    ]
+  },
+  {
+    "id": "v535-insight-extractor-basic",
+    "name": "Email Insight Extractor Basic",
+    "description": "Extract key insights, facts, and action items from emails.",
+    "category": "Email Intelligence",
+    "price": "$29/month",
+    "features": [
+      "Basic extraction",
+      "Fact detection",
+      "Action items",
+      "Simple search",
+      "Basic tagging"
+    ]
+  },
+  {
+    "id": "v535-insight-extractor-pro",
+    "name": "Email Insight Extractor Pro",
+    "description": "Advanced insight extraction with intelligent categorization, relationship mapping, and knowledge base building.",
+    "category": "Email Intelligence",
+    "price": "$54/month",
+    "features": [
+      "All Basic features",
+      "Intelligent categorization",
+      "Relationship mapping",
+      "Knowledge base",
+      "Advanced search",
+      "Export capabilities"
+    ]
+  },
+  {
+    "id": "v535-insight-extractor-enterprise",
+    "name": "Email Insight Extractor Enterprise",
+    "description": "Enterprise insight management with team knowledge base, advanced analytics, and integration capabilities.",
+    "category": "Email Intelligence",
+    "price": "$99/month",
+    "features": [
+      "All Pro features",
+      "Team knowledge base",
+      "Advanced analytics",
+      "Integration capabilities",
+      "Custom extraction rules",
+      "Enterprise support"
+    ]
+  },
+  {
+    "id": "v535-knowledge-base",
+    "name": "Email Knowledge Base",
+    "description": "Build a searchable knowledge base from email insights and conversations.",
+    "category": "Email Intelligence",
+    "price": "$44/month",
+    "features": [
+      "Knowledge indexing",
+      "Advanced search",
+      "Auto-categorization",
+      "Relationship linking",
+      "Export options"
+    ]
+  },
+  {
+    "id": "v535-action-tracker",
+    "name": "Action Item Tracker",
+    "description": "Automatically extract and track action items from emails with reminders and status updates.",
+    "category": "Email Intelligence",
+    "price": "$34/month",
+    "features": [
+      "Action extraction",
+      "Status tracking",
+      "Deadline management",
+      "Reminders",
+      "Progress reporting"
+    ]
   }
 ]
