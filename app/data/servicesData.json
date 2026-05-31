@@ -118376,5 +118376,530 @@
       "email": "kleber@ziontechgroup.com",
       "address": "364 E Main St STE 1008 Middletown DE 19709"
     }
+  },
+  {
+    "id": "ai-email-digital-twin",
+    "name": "AI Email Digital Twin",
+    "category": "AI Services",
+    "description": "Create an AI clone of your email persona that drafts responses in your exact style. Learns from your past emails to replicate your voice, tone, and communication patterns. Handle routine inquiries automatically while you focus on high-value work.",
+    "price": "$199/month",
+    "features": [
+      "Persona cloning",
+      "Style matching",
+      "Auto-drafting",
+      "Routine handling",
+      "Approval workflows"
+    ],
+    "link": "/services/ai-email-digital-twin",
+    "icon": "🤖",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-persona-builder",
+    "name": "Email Persona Builder",
+    "category": "AI Services",
+    "description": "AI analyzes your email history to build a comprehensive persona profile. Understand your communication style, formality level, common phrases, and response patterns.",
+    "price": "$79/month",
+    "features": [
+      "Style analysis",
+      "Persona profiling",
+      "Tone mapping",
+      "Vocabulary analysis",
+      "Pattern detection"
+    ],
+    "link": "/services/email-persona-builder",
+    "icon": "👤",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "auto-email-drafting",
+    "name": "Auto Email Drafting AI",
+    "category": "Micro SaaS",
+    "description": "AI-powered email drafting that matches your unique communication style. Generates contextually appropriate responses for questions, requests, meetings, and follow-ups.",
+    "price": "$59/month",
+    "features": [
+      "Context-aware drafts",
+      "Intent classification",
+      "Tone matching",
+      "Quick templates",
+      "One-click send"
+    ],
+    "link": "/services/auto-email-drafting",
+    "icon": "✍️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-style-transfer",
+    "name": "Email Style Transfer Engine",
+    "category": "AI Services",
+    "description": "Transfer email communication styles between team members. Ensure consistent brand voice across all outbound communications regardless of who sends them.",
+    "price": "$89/month",
+    "features": [
+      "Brand voice consistency",
+      "Style transfer",
+      "Team templates",
+      "Quality control",
+      "Multi-persona support"
+    ],
+    "link": "/services/email-style-transfer",
+    "icon": "🔄",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "executive-email-assistant",
+    "name": "Executive Email Assistant",
+    "category": "AI Services",
+    "description": "AI assistant for executives that drafts, prioritizes, and manages emails in the executive voice. Handles routine correspondence while flagging items requiring personal attention.",
+    "price": "$249/month",
+    "features": [
+      "Executive voice AI",
+      "Priority filtering",
+      "Briefing summaries",
+      "Delegation routing",
+      "Calendar sync"
+    ],
+    "link": "/services/executive-email-assistant",
+    "icon": "👑",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "meeting-action-converter",
+    "name": "Meeting-to-Action Converter",
+    "category": "AI Services",
+    "description": "Automatically converts meeting follow-up emails into structured project plans with tasks, deadlines, assigned owners, and milestones. Integrates with Jira, Asana, and Trello.",
+    "price": "$89/month",
+    "features": [
+      "Auto task extraction",
+      "Owner assignment",
+      "Deadline detection",
+      "PM tool integration",
+      "Milestone generation"
+    ],
+    "link": "/services/meeting-action-converter",
+    "icon": "📋",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "action-item-tracker-pro",
+    "name": "Action Item Tracker Pro",
+    "category": "Micro SaaS",
+    "description": "Professional action item tracking from emails and meetings. Automatic extraction, assignment, deadline setting, and follow-up reminders. Never lose track of commitments.",
+    "price": "$49/month",
+    "features": [
+      "Auto extraction",
+      "Smart assignment",
+      "Deadline tracking",
+      "Follow-up reminders",
+      "Progress reports"
+    ],
+    "link": "/services/action-item-tracker-pro",
+    "icon": "✅",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "project-plan-generator",
+    "name": "AI Project Plan Generator",
+    "category": "AI Services",
+    "description": "Generate complete project plans from meeting discussions. AI identifies tasks, estimates effort, assigns resources, creates timelines, and generates milestones automatically.",
+    "price": "$99/month",
+    "features": [
+      "Plan generation",
+      "Effort estimation",
+      "Resource allocation",
+      "Timeline creation",
+      "Risk assessment"
+    ],
+    "link": "/services/project-plan-generator",
+    "icon": "📈",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "meeting-followup-automator",
+    "name": "Meeting Follow-Up Automator",
+    "category": "Micro SaaS",
+    "description": "Automate post-meeting follow-ups. Send summary emails, create tasks, update project boards, and schedule check-ins based on meeting outcomes.",
+    "price": "$45/month",
+    "features": [
+      "Auto summaries",
+      "Task creation",
+      "Board updates",
+      "Check-in scheduling",
+      "Progress tracking"
+    ],
+    "link": "/services/meeting-followup-automator",
+    "icon": "🔔",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-eq-coach",
+    "name": "Email EQ Coach",
+    "category": "AI Services",
+    "description": "Real-time emotional intelligence coaching for email communications. Detects emotional triggers, assesses escalation risk, and suggests empathetic response strategies.",
+    "price": "$69/month",
+    "features": [
+      "Emotion detection",
+      "Trigger alerts",
+      "Escalation prevention",
+      "Empathy coaching",
+      "Response strategies"
+    ],
+    "link": "/services/email-eq-coach",
+    "icon": "🧠",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "conflict-resolution-ai",
+    "name": "Conflict Resolution AI",
+    "category": "AI Services",
+    "description": "AI-powered conflict resolution for heated email exchanges. De-escalates tense situations, suggests diplomatic responses, and helps find common ground.",
+    "price": "$89/month",
+    "features": [
+      "De-escalation",
+      "Diplomatic responses",
+      "Common ground finding",
+      "Mediation suggestions",
+      "Tone adjustment"
+    ],
+    "link": "/services/conflict-resolution-ai",
+    "icon": "🕊️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "empathy-email-engine",
+    "name": "Empathy Email Engine",
+    "category": "AI Services",
+    "description": "AI that generates genuinely empathetic email responses. Understands the sender emotional state and crafts responses that validate feelings while moving toward resolution.",
+    "price": "$59/month",
+    "features": [
+      "Empathy generation",
+      "Feeling validation",
+      "Resolution focus",
+      "Tone calibration",
+      "Cultural sensitivity"
+    ],
+    "link": "/services/empathy-email-engine",
+    "icon": "❤️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "stress-free-email-suite",
+    "name": "Stress-Free Email Suite",
+    "category": "Micro SaaS",
+    "description": "Reduce email-related stress with AI that identifies overwhelming inboxes, suggests batching strategies, and provides mindfulness prompts for high-pressure communications.",
+    "price": "$35/month",
+    "features": [
+      "Stress detection",
+      "Batching strategies",
+      "Mindfulness prompts",
+      "Pressure relief",
+      "Calm responses"
+    ],
+    "link": "/services/stress-free-email-suite",
+    "icon": "🧘",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "professional-tone-guard",
+    "name": "Professional Tone Guard",
+    "category": "AI Services",
+    "description": "Real-time tone monitoring that prevents unprofessional responses. Detects emotional reactions and suggests more measured, professional alternatives before you hit send.",
+    "price": "$45/month",
+    "features": [
+      "Tone monitoring",
+      "Reaction prevention",
+      "Professional alternatives",
+      "Send delay",
+      "Cool-down prompts"
+    ],
+    "link": "/services/professional-tone-guard",
+    "icon": "🛡️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-privacy-shield",
+    "name": "Email Privacy Shield",
+    "category": "Security Services",
+    "description": "Advanced email privacy scanning that detects trade secrets, insider trading risks, IP leaks, and confidential data before emails are sent. Blocks critical violations automatically.",
+    "price": "$99/month",
+    "features": [
+      "Trade secret detection",
+      "Insider trading alerts",
+      "IP leak prevention",
+      "Auto-blocking",
+      "Compliance scoring"
+    ],
+    "link": "/services/email-privacy-shield",
+    "icon": "🛡️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "data-leak-prevention-email",
+    "name": "Email DLP Engine",
+    "category": "Security Services",
+    "description": "Enterprise Data Loss Prevention for email. Scans for sensitive data, financial information, health records, and legal privileged content. Enforces data handling policies.",
+    "price": "$149/month",
+    "features": [
+      "DLP scanning",
+      "Policy enforcement",
+      "Auto-redaction",
+      "Audit logging",
+      "Compliance reporting"
+    ],
+    "link": "/services/data-leak-prevention-email",
+    "icon": "🔒",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "insider-trading-detector",
+    "name": "Insider Trading Detector",
+    "category": "Security Services",
+    "description": "Detect potential insider trading communications in emails. Identifies material non-public information sharing, stock trading discussions, and pre-announcement leaks.",
+    "price": "$199/month",
+    "features": [
+      "MNPI detection",
+      "Trading alerts",
+      "Pre-announcement scanning",
+      "SEC compliance",
+      "Legal hold support"
+    ],
+    "link": "/services/insider-trading-detector",
+    "icon": "⚖️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ip-protection-scanner",
+    "name": "IP Protection Scanner",
+    "category": "Security Services",
+    "description": "Protect intellectual property in email communications. Detects patent information, trade secrets, proprietary algorithms, and confidential research data.",
+    "price": "$119/month",
+    "features": [
+      "IP detection",
+      "Patent scanning",
+      "Algorithm protection",
+      "Research safeguarding",
+      "NDA enforcement"
+    ],
+    "link": "/services/ip-protection-scanner",
+    "icon": "💡",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "compliance-email-guardian",
+    "name": "Compliance Email Guardian",
+    "category": "Security Services",
+    "description": "Multi-framework compliance scanning for emails. Covers GDPR, HIPAA, SOX, PCI-DSS, and GLBA. Auto-blocks non-compliant communications and generates audit reports.",
+    "price": "$129/month",
+    "features": [
+      "Multi-framework",
+      "Auto-blocking",
+      "Audit reports",
+      "Policy management",
+      "Risk scoring"
+    ],
+    "link": "/services/compliance-email-guardian",
+    "icon": "📜",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "multichannel-email-hub",
+    "name": "Multichannel Communication Hub",
+    "category": "IT Services",
+    "description": "Unified communication hub across email, Slack, Teams, SMS, and WhatsApp. AI routes messages to optimal channels based on urgency, content type, and recipient preference.",
+    "price": "$109/month",
+    "features": [
+      "Cross-channel routing",
+      "Unified inbox",
+      "Urgency detection",
+      "Preference matching",
+      "Channel analytics"
+    ],
+    "link": "/services/multichannel-email-hub",
+    "icon": "🌐",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "smart-message-router",
+    "name": "Smart Message Router",
+    "category": "AI Services",
+    "description": "AI-powered message routing that automatically sends communications to the optimal channel. Critical alerts go to SMS, team chats to Slack, formal docs to email.",
+    "price": "$79/month",
+    "features": [
+      "Smart routing",
+      "Channel optimization",
+      "Priority handling",
+      "Preference learning",
+      "Fallback channels"
+    ],
+    "link": "/services/smart-message-router",
+    "icon": "🔀",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "unified-inbox-platform",
+    "name": "Unified Inbox Platform",
+    "category": "IT Services",
+    "description": "Single inbox for all communication channels. View and respond to email, Slack, Teams, SMS, and WhatsApp messages from one place with cross-channel context.",
+    "price": "$89/month",
+    "features": [
+      "Single inbox",
+      "Cross-channel view",
+      "Context preservation",
+      "Quick reply",
+      "Thread merging"
+    ],
+    "link": "/services/unified-inbox-platform",
+    "icon": "📥",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "omnichannel-workplace",
+    "name": "Omnichannel Workplace Platform",
+    "category": "IT Services",
+    "description": "Enterprise omnichannel platform connecting all business communication tools. Seamless handoffs between channels, unified search, and comprehensive analytics.",
+    "price": "$199/month",
+    "features": [
+      "Omnichannel integration",
+      "Seamless handoffs",
+      "Unified search",
+      "Analytics dashboard",
+      "Admin controls"
+    ],
+    "link": "/services/omnichannel-workplace",
+    "icon": "🏢",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "channel-optimization-engine",
+    "name": "Channel Optimization Engine",
+    "category": "AI Services",
+    "description": "AI analyzes communication patterns to optimize channel selection. Learns which channels get fastest responses, highest engagement, and best outcomes for each type of message.",
+    "price": "$69/month",
+    "features": [
+      "Pattern analysis",
+      "Channel scoring",
+      "Response time tracking",
+      "Engagement metrics",
+      "Auto-optimization"
+    ],
+    "link": "/services/channel-optimization-engine",
+    "icon": "📊",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-voice-assistant",
+    "name": "Email Voice Assistant",
+    "category": "AI Services",
+    "description": "Compose, read, and manage emails entirely by voice. AI transcribes voice messages, drafts responses, and summarizes threads hands-free. Perfect for mobile productivity.",
+    "price": "$49/month",
+    "features": [
+      "Voice composition",
+      "Audio playback",
+      "Hands-free management",
+      "Voice commands",
+      "Mobile optimized"
+    ],
+    "link": "/services/email-voice-assistant",
+    "icon": "🎙️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
   }
 ]
