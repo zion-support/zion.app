@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-V475 - AI Email Compliance Checker
-Real-time compliance validation for GDPR, HIPAA, PCI-DSS, SOX, and other regulations.
-Features: PII detection, compliance scoring, auto-redaction, audit trail generation.
+V475 - Email Compliance Checker
+Real-time email compliance validation for GDPR, HIPAA, PCI-DSS, SOX, and other regulations.
+Features: PII detection, compliance scoring, auto-redaction, audit trails, regulatory validation.
 CRITICAL: Always enforces reply-all for multi-recipient emails.
 """
 
@@ -15,248 +15,370 @@ from typing import Dict, List, Any
 class EmailComplianceChecker:
     """Real-time email compliance validation."""
     
-    COMPLIANCE_PATTERNS = {
+    COMPLIANCE_FRAMEWORKS = {
         'gdpr': {
-            'pii': [
-                r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b',  # Email
-                r'\b(?:\+?1[-.\s]?)?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}\b',  # Phone
-                r'\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b',  # Date of birth
-            ],
-            'sensitive': ['health', 'religion', 'political', 'ethnic', 'biometric', 'genetic']
+            'name': 'GDPR',
+            'full_name': 'General Data Protection Regulation',
+            'region': 'EU',
+            'pii_types': ['email', 'phone', 'address', 'name', 'ip_address']
         },
         'hipaa': {
-            'phi': [
-                r'\b\d{3}-\d{2}-\d{4}\b',  # SSN
-                r'\b\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}\b',  # Credit card
-            ],
-            'medical': ['diagnosis', 'treatment', 'prescription', 'medical record', 'patient', 'health condition']
+            'name': 'HIPAA',
+            'full_name': 'Health Insurance Portability and Accountability Act',
+            'region': 'USA',
+            'pii_types': ['medical_record', 'ssn', 'health_info', 'patient_id']
         },
         'pci_dss': {
-            'card_data': [
-                r'\b(?:\d{4}[-\s]?){3}\d{4}\b',  # Credit card number
-                r'\b(?:cvv|cvc|security code)[:\s]*\d{3,4}\b',  # CVV
-                r'\b(?:exp|expiry|expiration)[:\s]*\d{2}/\d{2}\b'  # Expiry
-            ]
+            'name': 'PCI-DSS',
+            'full_name': 'Payment Card Industry Data Security Standard',
+            'region': 'Global',
+            'pii_types': ['credit_card', 'cvv', 'bank_account']
         },
         'sox': {
-            'financial': ['revenue', 'profit', 'loss', 'audit', 'financial statement', 'quarterly report', 'earnings']
+            'name': 'SOX',
+            'full_name': 'Sarbanes-Oxley Act',
+            'region': 'USA',
+            'pii_types': ['financial_data', 'audit_info', 'executive_communication']
+        },
+        'ccpa': {
+            'name': 'CCPA',
+            'full_name': 'California Consumer Privacy Act',
+            'region': 'California',
+            'pii_types': ['email', 'phone', 'address', 'ssn', 'driver_license']
         }
     }
     
+    PII_PATTERNS = {
+        'ssn': r'\b\d{3}-\d{2}-\d{4}\b',
+        'credit_card': r'\b(?:\d{4}[-\s]?){3}\d{4}\b',
+        'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b',
+        'phone': r'\b(?:\+?1[-.\s]?)?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}\b',
+        'ip_address': r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b',
+        'medical_record': r'\bMRN[:\s]?\d{6,10}\b',
+        'driver_license': r'\b[A-Z]\d{7}\b',
+        'bank_account': r'\b\d{10,17}\b',
+        'cvv': r'\b\d{3,4}\b'
+    }
+    
     def analyze_email(self, email: Dict[str, Any]) -> Dict[str, Any]:
-        """Analyze email for compliance issues."""
+        """Analyze email for compliance violations."""
         body = email.get('body', '')
         subject = email.get('subject', '')
+        sender = email.get('from', '')
         recipients = email.get('to', []) + email.get('cc', [])
         attachments = email.get('attachments', [])
         
-        text = body + ' ' + subject
+        # Scan for PII
+        pii_findings = self._scan_pii(body + ' ' + subject)
         
-        # Run compliance checks
-        gdpr_check = self._check_gdpr(text)
-        hipaa_check = self._check_hipaa(text)
-        pci_check = self._check_pci(text)
-        sox_check = self._check_sox(text)
+        # Determine applicable compliance frameworks
+        applicable_frameworks = self._determine_frameworks(pii_findings, email)
         
-        # Calculate overall compliance score
-        compliance_score = self._calculate_compliance_score(gdpr_check, hipaa_check, pci_check, sox_check)
+        # Calculate compliance score
+        compliance_score = self._calculate_compliance_score(pii_findings, applicable_frameworks)
         
-        # Generate redaction suggestions
-        redactions = self._generate_redactions(text)
+        # Generate redaction recommendations
+        redaction_recommendations = self._generate_redaction_recommendations(pii_findings)
         
-        # Determine if external recipients
-        has_external = self._has_external_recipients(recipients)
+        # Check for external recipients
+        external_recipients = self._check_external_recipients(recipients, sender)
+        
+        # Generate compliance report
+        compliance_report = self._generate_compliance_report(
+            pii_findings, applicable_frameworks, compliance_score, external_recipients
+        )
+        
+        # Create audit trail
+        audit_trail = self._create_audit_trail(email, compliance_report)
         
         reply_all_required = len(recipients) > 1
         
         return {
             'engine': 'V475_EmailComplianceChecker',
             'compliance_score': compliance_score,
-            'gdpr_check': gdpr_check,
-            'hipaa_check': hipaa_check,
-            'pci_check': pci_check,
-            'sox_check': sox_check,
-            'redactions_suggested': redactions,
-            'external_recipients': has_external,
-            'compliance_warnings': self._generate_warnings(gdpr_check, hipaa_check, pci_check, sox_check, has_external),
-            'audit_trail': self._generate_audit_trail(email),
+            'pii_findings': pii_findings,
+            'applicable_frameworks': applicable_frameworks,
+            'redaction_recommendations': redaction_recommendations,
+            'external_recipients': external_recipients,
+            'compliance_report': compliance_report,
+            'audit_trail': audit_trail,
+            'safe_to_send': compliance_score['overall_score'] >= 70,
             'reply_all_required': reply_all_required,
             'reply_all_enforced': reply_all_required,
             'recipients': recipients,
             'timestamp': datetime.now().isoformat()
         }
     
-    def _check_gdpr(self, text: str) -> Dict:
-        """Check GDPR compliance."""
-        pii_found = []
-        sensitive_found = []
+    def _scan_pii(self, text: str) -> List[Dict]:
+        """Scan text for PII patterns."""
+        findings = []
         
-        for pattern in self.COMPLIANCE_PATTERNS['gdpr']['pii']:
-            matches = re.findall(pattern, text)
-            if matches:
-                pii_found.extend(matches)
-        
-        for keyword in self.COMPLIANCE_PATTERNS['gdpr']['sensitive']:
-            if keyword in text.lower():
-                sensitive_found.append(keyword)
-        
-        compliant = len(pii_found) == 0 and len(sensitive_found) == 0
-        
-        return {
-            'compliant': compliant,
-            'pii_found': len(pii_found),
-            'sensitive_data_found': len(sensitive_found),
-            'risk_level': 'high' if not compliant else 'low',
-            'details': {'pii': pii_found[:5], 'sensitive': sensitive_found[:5]}
-        }
-    
-    def _check_hipaa(self, text: str) -> Dict:
-        """Check HIPAA compliance."""
-        phi_found = []
-        medical_terms = []
-        
-        for pattern in self.COMPLIANCE_PATTERNS['hipaa']['phi']:
-            matches = re.findall(pattern, text)
-            if matches:
-                phi_found.extend(matches)
-        
-        for keyword in self.COMPLIANCE_PATTERNS['hipaa']['medical']:
-            if keyword in text.lower():
-                medical_terms.append(keyword)
-        
-        compliant = len(phi_found) == 0
-        
-        return {
-            'compliant': compliant,
-            'phi_found': len(phi_found),
-            'medical_terms': len(medical_terms),
-            'risk_level': 'high' if phi_found else 'low',
-            'details': {'phi': phi_found[:5], 'medical': medical_terms[:5]}
-        }
-    
-    def _check_pci(self, text: str) -> Dict:
-        """Check PCI-DSS compliance."""
-        card_data = []
-        
-        for pattern in self.COMPLIANCE_PATTERNS['pci_dss']['card_data']:
+        for pii_type, pattern in self.PII_PATTERNS.items():
             matches = re.findall(pattern, text, re.IGNORECASE)
             if matches:
-                card_data.extend(matches)
+                findings.append({
+                    'type': pii_type,
+                    'count': len(matches),
+                    'severity': self._get_pii_severity(pii_type),
+                    'examples': matches[:2]  # Show first 2 examples
+                })
         
-        compliant = len(card_data) == 0
-        
-        return {
-            'compliant': compliant,
-            'card_data_found': len(card_data),
-            'risk_level': 'critical' if card_data else 'low',
-            'details': card_data[:3]
-        }
+        return findings
     
-    def _check_sox(self, text: str) -> Dict:
-        """Check SOX compliance."""
-        financial_terms = []
+    def _get_pii_severity(self, pii_type: str) -> str:
+        """Get severity level for PII type."""
+        high_severity = ['ssn', 'credit_card', 'medical_record', 'bank_account', 'cvv']
+        medium_severity = ['email', 'phone', 'driver_license']
         
-        for keyword in self.COMPLIANCE_PATTERNS['sox']['financial']:
-            if keyword in text.lower():
-                financial_terms.append(keyword)
-        
-        return {
-            'compliant': True,  # SOX is about retention, not content
-            'financial_terms': len(financial_terms),
-            'retention_required': len(financial_terms) > 0,
-            'retention_period': '7 years' if financial_terms else '1 year',
-            'details': financial_terms[:5]
-        }
-    
-    def _calculate_compliance_score(self, gdpr: Dict, hipaa: Dict, pci: Dict, sox: Dict) -> Dict:
-        """Calculate overall compliance score."""
-        checks = [gdpr, hipaa, pci, sox]
-        compliant_count = sum(1 for c in checks if c.get('compliant', True))
-        score = int((compliant_count / len(checks)) * 100)
-        
-        if score >= 90:
-            status = 'excellent'
-        elif score >= 70:
-            status = 'good'
-        elif score >= 50:
-            status = 'needs_review'
+        if pii_type in high_severity:
+            return 'high'
+        elif pii_type in medium_severity:
+            return 'medium'
         else:
-            status = 'critical'
+            return 'low'
+    
+    def _determine_frameworks(self, pii_findings: List[Dict], email: Dict) -> List[Dict]:
+        """Determine which compliance frameworks apply."""
+        applicable = []
+        pii_types = [f['type'] for f in pii_findings]
+        
+        for framework_id, framework in self.COMPLIANCE_FRAMEWORKS.items():
+            # Check if any PII types match this framework
+            matching_pii = [pii for pii in pii_types if pii in framework['pii_types']]
+            
+            if matching_pii:
+                applicable.append({
+                    'framework': framework['name'],
+                    'full_name': framework['full_name'],
+                    'region': framework['region'],
+                    'applicable_pii': matching_pii,
+                    'requirements': self._get_framework_requirements(framework_id)
+                })
+        
+        # Always include GDPR if email has any PII and external recipients
+        if pii_findings and not any(f['framework'] == 'GDPR' for f in applicable):
+            applicable.append({
+                'framework': 'GDPR',
+                'full_name': 'General Data Protection Regulation',
+                'region': 'EU',
+                'applicable_pii': pii_types,
+                'requirements': self._get_framework_requirements('gdpr')
+            })
+        
+        return applicable
+    
+    def _get_framework_requirements(self, framework_id: str) -> List[str]:
+        """Get requirements for a compliance framework."""
+        requirements = {
+            'gdpr': [
+                'Obtain explicit consent before sharing PII',
+                'Provide data subject rights information',
+                'Ensure data minimization',
+                'Implement appropriate security measures',
+                'Maintain data processing records'
+            ],
+            'hipaa': [
+                'Encrypt PHI in transit and at rest',
+                'Implement access controls',
+                'Maintain audit logs',
+                'Obtain patient authorization',
+                'Implement minimum necessary standard'
+            ],
+            'pci_dss': [
+                'Never store CVV codes',
+                'Encrypt cardholder data',
+                'Implement strong access controls',
+                'Regular security testing',
+                'Maintain security policies'
+            ],
+            'sox': [
+                'Maintain accurate financial records',
+                'Implement internal controls',
+                'Ensure executive accountability',
+                'Regular audits and assessments',
+                'Document all financial communications'
+            ],
+            'ccpa': [
+                'Provide privacy notice',
+                'Honor opt-out requests',
+                'Allow data deletion requests',
+                'Disclose data collection practices',
+                'Implement reasonable security'
+            ]
+        }
+        
+        return requirements.get(framework_id, [])
+    
+    def _calculate_compliance_score(self, pii_findings: List[Dict], frameworks: List[Dict]) -> Dict:
+        """Calculate overall compliance score."""
+        if not pii_findings:
+            return {
+                'overall_score': 100,
+                'grade': 'A+',
+                'status': 'compliant',
+                'risk_level': 'none'
+            }
+        
+        # Start with 100 and deduct for violations
+        score = 100
+        
+        # Deduct for high severity PII
+        high_severity_count = sum(1 for f in pii_findings if f['severity'] == 'high')
+        score -= high_severity_count * 20
+        
+        # Deduct for medium severity PII
+        medium_severity_count = sum(1 for f in pii_findings if f['severity'] == 'medium')
+        score -= medium_severity_count * 10
+        
+        # Deduct for multiple frameworks
+        score -= len(frameworks) * 5
+        
+        # Ensure score doesn't go below 0
+        score = max(0, score)
+        
+        # Determine grade
+        if score >= 90:
+            grade = 'A+'
+            status = 'compliant'
+            risk_level = 'low'
+        elif score >= 80:
+            grade = 'A'
+            status = 'mostly_compliant'
+            risk_level = 'low'
+        elif score >= 70:
+            grade = 'B'
+            status = 'needs_review'
+            risk_level = 'medium'
+        elif score >= 60:
+            grade = 'C'
+            status = 'at_risk'
+            risk_level = 'high'
+        else:
+            grade = 'F'
+            status = 'non_compliant'
+            risk_level = 'critical'
         
         return {
-            'score': score,
+            'overall_score': score,
+            'grade': grade,
             'status': status,
-            'checks_passed': compliant_count,
-            'checks_total': len(checks)
+            'risk_level': risk_level,
+            'pii_violations': len(pii_findings),
+            'frameworks_applicable': len(frameworks)
         }
     
-    def _generate_redactions(self, text: str) -> List[Dict]:
-        """Generate redaction suggestions."""
-        redactions = []
+    def _generate_redaction_recommendations(self, pii_findings: List[Dict]) -> List[Dict]:
+        """Generate PII redaction recommendations."""
+        recommendations = []
         
-        # SSN
-        ssn_matches = re.findall(r'\b\d{3}-\d{2}-\d{4}\b', text)
-        for match in ssn_matches:
-            redactions.append({
-                'original': match,
-                'redacted': '***-**-****',
-                'type': 'ssn'
-            })
+        for finding in pii_findings:
+            redaction = {
+                'pii_type': finding['type'],
+                'severity': finding['severity'],
+                'count': finding['count'],
+                'recommendation': self._get_redaction_method(finding['type']),
+                'auto_redact': finding['severity'] == 'high'
+            }
+            recommendations.append(redaction)
         
-        # Credit card
-        cc_matches = re.findall(r'\b(?:\d{4}[-\s]?){3}\d{4}\b', text)
-        for match in cc_matches:
-            redacted = match[:4] + ' **** **** ' + match[-4:]
-            redactions.append({
-                'original': match,
-                'redacted': redacted,
-                'type': 'credit_card'
-            })
-        
-        return redactions
+        return recommendations
     
-    def _has_external_recipients(self, recipients: List[str]) -> bool:
+    def _get_redaction_method(self, pii_type: str) -> str:
+        """Get recommended redaction method for PII type."""
+        methods = {
+            'ssn': 'Replace with ***-**-****',
+            'credit_card': 'Replace with ****-****-****-XXXX (last 4 digits)',
+            'email': 'Replace with [EMAIL REDACTED]',
+            'phone': 'Replace with [PHONE REDACTED]',
+            'ip_address': 'Replace with [IP REDACTED]',
+            'medical_record': 'Replace with [MEDICAL ID REDACTED]',
+            'driver_license': 'Replace with [LICENSE REDACTED]',
+            'bank_account': 'Replace with ****XXXX (last 4 digits)',
+            'cvv': 'Remove entirely (never store)'
+        }
+        
+        return methods.get(pii_type, 'Redact completely')
+    
+    def _check_external_recipients(self, recipients: List[str], sender: str) -> Dict:
         """Check if email has external recipients."""
-        internal_domains = ['ziontechgroup.com', 'zion.com']
+        # Extract domain from sender
+        sender_domain = sender.split('@')[-1].lower() if '@' in sender else ''
+        
+        external = []
+        internal = []
+        
         for recipient in recipients:
             if '@' in recipient:
-                domain = recipient.split('@')[-1].lower()
-                if domain not in internal_domains:
-                    return True
-        return False
-    
-    def _generate_warnings(self, gdpr: Dict, hipaa: Dict, pci: Dict, sox: Dict, has_external: bool) -> List[str]:
-        """Generate compliance warnings."""
-        warnings = []
+                recipient_domain = recipient.split('@')[-1].lower()
+                if recipient_domain != sender_domain:
+                    external.append(recipient)
+                else:
+                    internal.append(recipient)
         
-        if not gdpr['compliant'] and has_external:
-            warnings.append('⚠️ GDPR: PII detected with external recipients. Review before sending.')
-        
-        if not hipaa['compliant']:
-            warnings.append('⚠️ HIPAA: PHI detected. Ensure encrypted transmission.')
-        
-        if not pci['compliant']:
-            warnings.append('🚨 PCI-DSS: Card data detected! Remove or encrypt before sending.')
-        
-        if sox['retention_required']:
-            warnings.append('📋 SOX: Financial data detected. 7-year retention applies.')
-        
-        if not warnings:
-            warnings.append('✅ All compliance checks passed.')
-        
-        warnings.append('Always use reply-all for multi-recipient emails.')
-        
-        return warnings
-    
-    def _generate_audit_trail(self, email: Dict) -> Dict:
-        """Generate audit trail for compliance."""
         return {
-            'checked_at': datetime.now().isoformat(),
-            'sender': email.get('from', ''),
-            'recipients_count': len(email.get('to', []) + email.get('cc', [])),
-            'has_attachments': bool(email.get('attachments')),
-            'engine_version': 'V475',
-            'compliance_frameworks': ['GDPR', 'HIPAA', 'PCI-DSS', 'SOX']
+            'has_external': len(external) > 0,
+            'external_count': len(external),
+            'internal_count': len(internal),
+            'external_recipients': external,
+            'risk_level': 'high' if len(external) > 0 else 'low'
+        }
+    
+    def _generate_compliance_report(self, pii_findings: List[Dict], frameworks: List[Dict], 
+                                    score: Dict, external: Dict) -> Dict:
+        """Generate comprehensive compliance report."""
+        return {
+            'summary': {
+                'compliance_score': score['overall_score'],
+                'grade': score['grade'],
+                'status': score['status'],
+                'risk_level': score['risk_level']
+            },
+            'pii_detected': {
+                'total_findings': len(pii_findings),
+                'high_severity': sum(1 for f in pii_findings if f['severity'] == 'high'),
+                'medium_severity': sum(1 for f in pii_findings if f['severity'] == 'medium'),
+                'low_severity': sum(1 for f in pii_findings if f['severity'] == 'low')
+            },
+            'compliance_frameworks': [f['framework'] for f in frameworks],
+            'external_sharing': external['has_external'],
+            'recommendations': self._generate_recommendations(score, pii_findings, external),
+            'generated_at': datetime.now().isoformat()
+        }
+    
+    def _generate_recommendations(self, score: Dict, pii_findings: List[Dict], external: Dict) -> List[str]:
+        """Generate compliance recommendations."""
+        recommendations = []
+        
+        if score['overall_score'] < 70:
+            recommendations.append("⚠️ HIGH RISK: Review and redact PII before sending")
+        
+        if any(f['severity'] == 'high' for f in pii_findings):
+            recommendations.append("🔒 Redact high-severity PII (SSN, credit cards, medical records)")
+        
+        if external['has_external'] and pii_findings:
+            recommendations.append("🌐 External recipients detected - ensure proper authorization for PII sharing")
+        
+        if score['overall_score'] >= 90:
+            recommendations.append("✅ Email appears compliant - safe to send")
+        
+        recommendations.append("📋 Maintain audit trail for compliance documentation")
+        recommendations.append("Always use reply-all for multi-recipient emails")
+        
+        return recommendations
+    
+    def _create_audit_trail(self, email: Dict, compliance_report: Dict) -> Dict:
+        """Create audit trail for compliance."""
+        return {
+            'audit_id': f"AUDIT-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+            'email_subject': email.get('subject', ''),
+            'email_from': email.get('from', ''),
+            'email_to': email.get('to', []),
+            'compliance_score': compliance_report['summary']['compliance_score'],
+            'pii_detected': compliance_report['pii_detected']['total_findings'],
+            'frameworks_checked': compliance_report['compliance_frameworks'],
+            'timestamp': datetime.now().isoformat(),
+            'retention_period': '7 years',
+            'storage_location': 'compliance_audit_logs'
         }
 
 
@@ -264,21 +386,43 @@ def main():
     """Test V475 engine."""
     engine = EmailComplianceChecker()
     
-    test_email = {
-        'from': 'employee@ziontechgroup.com',
-        'to': ['client@external.com', 'partner@another.com'],
-        'cc': ['legal@ziontechgroup.com'],
-        'subject': 'Employee Health Records and Payment Info',
-        'body': 'Please find the employee SSN: 123-45-6789 and credit card: 4111-1111-1111-1111 with CVV 123. The patient diagnosis is confidential. Financial statement shows Q4 revenue of $5M.'
-    }
+    test_emails = [
+        {
+            'from': 'hr@ziontechgroup.com',
+            'to': ['manager@external.com', 'kleber@ziontechgroup.com'],
+            'subject': 'Employee Information',
+            'body': 'Please find the employee details: SSN: 123-45-6789, Email: employee@example.com, Phone: (302) 555-0123'
+        },
+        {
+            'from': 'finance@ziontechgroup.com',
+            'to': ['accounting@partner.com', 'kleber@ziontechgroup.com'],
+            'subject': 'Payment Information',
+            'body': 'Please process payment to credit card: 4111-1111-1111-1111, CVV: 123, Bank account: 1234567890'
+        },
+        {
+            'from': 'sales@ziontechgroup.com',
+            'to': ['client@company.com', 'kleber@ziontechgroup.com'],
+            'subject': 'Project Update',
+            'body': 'The project is progressing well. We will complete the deliverables by Friday.'
+        }
+    ]
     
-    result = engine.analyze_email(test_email)
-    print(json.dumps(result, indent=2))
-    print(f"\n✅ Compliance score: {result['compliance_score']['score']}/100 ({result['compliance_score']['status']})")
-    print(f"✅ Warnings: {len(result['compliance_warnings'])}")
-    print(f"✅ Redactions: {len(result['redactions_suggested'])}")
-    print(f"✅ External recipients: {result['external_recipients']}")
-    print(f"✅ Reply-all enforced: {result['reply_all_enforced']}")
+    print("=== Email Compliance Checker ===\n")
+    
+    for i, email in enumerate(test_emails, 1):
+        result = engine.analyze_email(email)
+        print(f"\n📧 Email {i}: {email['subject']}")
+        print(f"   Compliance Score: {result['compliance_score']['overall_score']}/100 (Grade: {result['compliance_score']['grade']})")
+        print(f"   Status: {result['compliance_score']['status']}")
+        print(f"   Risk Level: {result['compliance_score']['risk_level']}")
+        print(f"   PII Findings: {len(result['pii_findings'])}")
+        print(f"   Frameworks: {', '.join(f['framework'] for f in result['applicable_frameworks'])}")
+        print(f"   External Recipients: {result['external_recipients']['has_external']}")
+        print(f"   Safe to Send: {result['safe_to_send']}")
+        print(f"   Reply-all enforced: {result['reply_all_enforced']}")
+        
+        if result['pii_findings']:
+            print(f"   PII Types: {', '.join(f['type'] for f in result['pii_findings'])}")
 
 
 if __name__ == '__main__':
