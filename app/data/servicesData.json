@@ -122737,5 +122737,788 @@
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
     },
     "link": "/services/v970-thread-consolidator"
+  },
+  {
+    "id": "v971-signature-intelligence",
+    "name": "AI Email Signature Intelligence V971",
+    "category": "AI Email Intelligence",
+    "icon": "🌐",
+    "price": "From $299/month",
+    "description": "Parses email signatures to extract structured contact info, role, company, social links, certifications, and auto-enriches CRM records.",
+    "features": [
+      "Signature Parsing",
+      "Role Detection",
+      "Company Extraction",
+      "Contact Enrichment",
+      "CRM Integration",
+      "Seniority Assessment"
+    ],
+    "benefits": [
+      "Auto-CRM enrichment",
+      "Complete contact profiles",
+      "Executive identification"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-signature-intelligence"
+  },
+  {
+    "id": "v971-crm-auto-enrichment",
+    "name": "CRM Auto-Enrichment Engine",
+    "category": "AI Email Intelligence",
+    "icon": "📇",
+    "price": "From $199/month",
+    "description": "Automatically enriches CRM records from email signatures — extracts names, titles, companies, phone numbers, and social profiles.",
+    "features": [
+      "Auto-Populate Fields",
+      "Social Profile Linking",
+      "Company Matching",
+      "Duplicate Prevention",
+      "Real-Time Updates"
+    ],
+    "benefits": [
+      "Zero manual data entry",
+      "Always up-to-date CRM",
+      "Complete contact records"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-crm-auto-enrichment"
+  },
+  {
+    "id": "v971-executive-detection",
+    "name": "Executive Sender Detection",
+    "category": "AI Email Intelligence",
+    "icon": "⭐",
+    "price": "From $149/month",
+    "description": "Identifies C-suite executives, VPs, directors, and senior leadership from email signatures for priority handling.",
+    "features": [
+      "C-Suite Detection",
+      "Seniority Scoring",
+      "Priority Flagging",
+      "VIP Routing",
+      "Relationship Tracking"
+    ],
+    "benefits": [
+      "Never miss executive emails",
+      "Priority handling",
+      "Relationship intelligence"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-executive-detection"
+  },
+  {
+    "id": "v971-social-link-extractor",
+    "name": "Social Link Extractor",
+    "category": "AI Email Intelligence",
+    "icon": "🔗",
+    "price": "From $79/month",
+    "description": "Extracts LinkedIn, Twitter, GitHub, and website URLs from email signatures for relationship building.",
+    "features": [
+      "LinkedIn Detection",
+      "Twitter/X Links",
+      "GitHub Profiles",
+      "Website URLs",
+      "Profile Verification"
+    ],
+    "benefits": [
+      "Build relationships",
+      "Social selling",
+      "Network intelligence"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-social-link-extractor"
+  },
+  {
+    "id": "v971-certification-tracker",
+    "name": "Certification & Credential Tracker",
+    "category": "AI Email Intelligence",
+    "icon": "🎓",
+    "price": "From $99/month",
+    "description": "Detects professional certifications (MBA, PMP, CISSP, AWS, etc.) from email signatures for expertise matching.",
+    "features": [
+      "50+ Cert Types",
+      "Expertise Matching",
+      "Credential Verification",
+      "Skill Profiling",
+      "Team Matching"
+    ],
+    "benefits": [
+      "Know your contacts' expertise",
+      "Better routing",
+      "Trust building"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-certification-tracker"
+  },
+  {
+    "id": "v971-contact-database-builder",
+    "name": "Contact Database Builder",
+    "category": "AI Email Intelligence",
+    "icon": "🗃️",
+    "price": "From $179/month",
+    "description": "Builds a comprehensive contact database from all email signatures with full profiles, role history, and interaction tracking.",
+    "features": [
+      "Profile Building",
+      "History Tracking",
+      "Role Changes",
+      "Company Changes",
+      "Search & Filter"
+    ],
+    "benefits": [
+      "Complete contact directory",
+      "Relationship history",
+      "Network insights"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v971-contact-database-builder"
+  },
+  {
+    "id": "v972-emoji-tone-intelligence",
+    "name": "AI Emoji & Tone Intelligence V972",
+    "category": "AI Email Intelligence",
+    "icon": "💬",
+    "price": "From $249/month",
+    "description": "Analyzes emoji usage, emotional tone, cultural context, and generates tone-appropriate response recommendations for global communication.",
+    "features": [
+      "Emoji Classification",
+      "Tone Detection",
+      "Cultural Guidelines",
+      "Response Matching",
+      "Appropriateness Scoring"
+    ],
+    "benefits": [
+      "Cultural sensitivity",
+      "Tone-perfect responses",
+      "Global communication"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-emoji-tone-intelligence"
+  },
+  {
+    "id": "v972-cultural-communication-advisor",
+    "name": "Cultural Communication Advisor",
+    "category": "AI Email Intelligence",
+    "icon": "🌍",
+    "price": "From $179/month",
+    "description": "Provides cultural communication guidance based on recipient's region — emoji tolerance, formality expectations, and tone preferences.",
+    "features": [
+      "Regional Guidelines",
+      "Formality Matching",
+      "Emoji Tolerance",
+      "Tone Adaptation",
+      "Risk Assessment"
+    ],
+    "benefits": [
+      "Culturally appropriate",
+      "Build global relationships",
+      "Avoid faux pas"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-cultural-communication-advisor"
+  },
+  {
+    "id": "v972-emotional-tone-detector",
+    "name": "Emotional Tone Detector Pro",
+    "category": "AI Email Intelligence",
+    "icon": "🎭",
+    "price": "From $149/month",
+    "description": "Detects 6+ emotional tones — enthusiastic, frustrated, grateful, urgent, hesitant, confident — with confidence scoring.",
+    "features": [
+      "6+ Tone Categories",
+      "Confidence Scoring",
+      "Sentiment Tracking",
+      "Tone History",
+      "Response Guidance"
+    ],
+    "benefits": [
+      "Read between lines",
+      "Appropriate responses",
+      "Relationship building"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-emotional-tone-detector"
+  },
+  {
+    "id": "v972-formality-assessor",
+    "name": "Email Formality Assessor",
+    "category": "AI Email Intelligence",
+    "icon": "👔",
+    "price": "From $99/month",
+    "description": "Assesses email formality level (FORMAL, SEMI_FORMAL, CASUAL) and recommends matching response formality.",
+    "features": [
+      "Formality Scoring",
+      "Language Analysis",
+      "Context Awareness",
+      "Mirror Recommendations",
+      "Style Guides"
+    ],
+    "benefits": [
+      "Match their tone",
+      "Professional consistency",
+      "Better rapport"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-formality-assessor"
+  },
+  {
+    "id": "v972-emoji-appropriateness-checker",
+    "name": "Emoji Appropriateness Checker",
+    "category": "AI Email Intelligence",
+    "icon": "✅",
+    "price": "From $69/month",
+    "description": "Scores emoji appropriateness in business emails based on count, category, formality context, and cultural factors.",
+    "features": [
+      "Appropriateness Scoring",
+      "Context Analysis",
+      "Category Checking",
+      "Overuse Detection",
+      "Guidelines"
+    ],
+    "benefits": [
+      "Professional image",
+      "Cultural sensitivity",
+      "Appropriate tone"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-emoji-appropriateness-checker"
+  },
+  {
+    "id": "v972-tone-matching-engine",
+    "name": "Response Tone Matching Engine",
+    "category": "AI Email Intelligence",
+    "icon": "🎯",
+    "price": "From $129/month",
+    "description": "Recommends optimal response tone based on sender's emotional state, formality level, and emoji usage patterns.",
+    "features": [
+      "Tone Mirroring",
+      "Professional Guard",
+      "Emoji Suggestions",
+      "Opener Templates",
+      "Deescalation"
+    ],
+    "benefits": [
+      "Perfect tone every time",
+      "Build rapport",
+      "Deescalate conflicts"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v972-tone-matching-engine"
+  },
+  {
+    "id": "v973-template-intelligence",
+    "name": "AI Template Intelligence V973",
+    "category": "AI Email Intelligence",
+    "icon": "📧",
+    "price": "From $349/month",
+    "description": "Auto-generates context-aware response templates based on email analysis, intent, tone, and historical patterns. 5x faster response drafting.",
+    "features": [
+      "8 Template Categories",
+      "Context-Aware Generation",
+      "Formality Matching",
+      "Personalization",
+      "Quality Scoring",
+      "Alternatives"
+    ],
+    "benefits": [
+      "5x faster responses",
+      "Consistent quality",
+      "Personalized at scale"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-template-intelligence"
+  },
+  {
+    "id": "v973-smart-response-generator",
+    "name": "Smart Response Generator",
+    "category": "AI Email Intelligence",
+    "icon": "✍️",
+    "price": "From $199/month",
+    "description": "Generates complete, ready-to-send email responses based on the incoming email's content, intent, and tone.",
+    "features": [
+      "Auto-Generation",
+      "Intent Matching",
+      "Placeholder Filling",
+      "Multi-Version",
+      "One-Click Send"
+    ],
+    "benefits": [
+      "Instant responses",
+      "Zero writer's block",
+      "Professional quality"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-smart-response-generator"
+  },
+  {
+    "id": "v973-template-personalizer",
+    "name": "Template Personalizer",
+    "category": "AI Email Intelligence",
+    "icon": "🎨",
+    "price": "From $149/month",
+    "description": "Personalizes response templates with sender-specific details — name, company, previous interactions, and referenced topics.",
+    "features": [
+      "Name Insertion",
+      "Company References",
+      "History Integration",
+      "Topic Mentioning",
+      "Relationship Context"
+    ],
+    "benefits": [
+      "Personal touch at scale",
+      "Better relationships",
+      "Higher engagement"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-template-personalizer"
+  },
+  {
+    "id": "v973-response-quality-scorer",
+    "name": "Response Quality Scorer",
+    "category": "AI Email Intelligence",
+    "icon": "📊",
+    "price": "From $99/month",
+    "description": "Scores generated templates on completeness, structure, personalization, and actionability before sending.",
+    "features": [
+      "Quality Scoring",
+      "Structure Check",
+      "Completeness Review",
+      "Customization Points",
+      "Improvement Tips"
+    ],
+    "benefits": [
+      "Quality assurance",
+      "Better responses",
+      "Continuous improvement"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-response-quality-scorer"
+  },
+  {
+    "id": "v973-support-response-templates",
+    "name": "Support Response Template Library",
+    "category": "AI Email Intelligence",
+    "icon": "🛟",
+    "price": "From $179/month",
+    "description": "Pre-built template library for support scenarios — bug reports, feature requests, billing questions, and escalation responses.",
+    "features": [
+      "Support Categories",
+      "Empathy Templates",
+      "Technical Formats",
+      "Escalation Paths",
+      "Follow-Up Sequences"
+    ],
+    "benefits": [
+      "Faster support",
+      "Consistent quality",
+      "Better CSAT scores"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-support-response-templates"
+  },
+  {
+    "id": "v973-sales-response-templates",
+    "name": "Sales Response Template Library",
+    "category": "AI Email Intelligence",
+    "icon": "💼",
+    "price": "From $199/month",
+    "description": "Sales-optimized templates for inquiries, demos, proposals, objections, follow-ups, and closing communications.",
+    "features": [
+      "Sales Funnel Templates",
+      "Objection Handling",
+      "Follow-Up Sequences",
+      "CTA Optimization",
+      "A/B Variants"
+    ],
+    "benefits": [
+      "Faster pipeline",
+      "Better conversions",
+      "Consistent messaging"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v973-sales-response-templates"
+  },
+  {
+    "id": "v974-folder-label-optimizer",
+    "name": "AI Folder & Label Optimizer V974",
+    "category": "AI Email Intelligence",
+    "icon": "🗂️",
+    "price": "From $249/month",
+    "description": "Intelligent auto-filing based on content analysis, sender patterns, topic classification, and historical filing behavior.",
+    "features": [
+      "10+ Folder Categories",
+      "Auto-Labeling",
+      "Star Recommendations",
+      "Archive Detection",
+      "Learning Patterns"
+    ],
+    "benefits": [
+      "Organized inbox",
+      "Instant retrieval",
+      "Zero manual filing"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-folder-label-optimizer"
+  },
+  {
+    "id": "v974-smart-inbox-filing",
+    "name": "Smart Inbox Filing System",
+    "category": "AI Email Intelligence",
+    "icon": "📁",
+    "price": "From $149/month",
+    "description": "Automatically files emails into the right folders based on content, sender, and topic analysis.",
+    "features": [
+      "Auto-Filing",
+      "Folder Learning",
+      "Sender Mapping",
+      "Topic Matching",
+      "Confidence Scoring"
+    ],
+    "benefits": [
+      "Clean inbox",
+      "Find emails instantly",
+      "Save hours weekly"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-smart-inbox-filing"
+  },
+  {
+    "id": "v974-auto-labeling-engine",
+    "name": "Auto-Labeling Engine",
+    "category": "AI Email Intelligence",
+    "icon": "🏷️",
+    "price": "From $129/month",
+    "description": "Automatically applies relevant labels — priority, status, type, and team — based on email content analysis.",
+    "features": [
+      "Priority Labels",
+      "Status Labels",
+      "Type Labels",
+      "Team Labels",
+      "Custom Rules"
+    ],
+    "benefits": [
+      "Instant categorization",
+      "Smart filtering",
+      "Better organization"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-auto-labeling-engine"
+  },
+  {
+    "id": "v974-archive-optimizer",
+    "name": "Email Archive Optimizer",
+    "category": "AI Email Intelligence",
+    "icon": "📦",
+    "price": "From $99/month",
+    "description": "Identifies emails safe to auto-archive — newsletters, notifications, FYI emails — keeping your inbox focused.",
+    "features": [
+      "Archive Detection",
+      "Safe-to-Archive Scoring",
+      "Batch Processing",
+      "Custom Rules",
+      "Recovery Access"
+    ],
+    "benefits": [
+      "Focused inbox",
+      "Less clutter",
+      "Easy retrieval"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-archive-optimizer"
+  },
+  {
+    "id": "v974-star-priority-engine",
+    "name": "Star & Priority Flag Engine",
+    "category": "AI Email Intelligence",
+    "icon": "⭐",
+    "price": "From $79/month",
+    "description": "Automatically stars important emails based on sender VIP status, urgency, and direct requests.",
+    "features": [
+      "VIP Star",
+      "Urgency Flagging",
+      "Request Detection",
+      "Custom Rules",
+      "Priority Scoring"
+    ],
+    "benefits": [
+      "Never miss important emails",
+      "Visual priority",
+      "Focus on what matters"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-star-priority-engine"
+  },
+  {
+    "id": "v974-filing-pattern-learner",
+    "name": "Filing Pattern Learner",
+    "category": "AI Email Intelligence",
+    "icon": "🧠",
+    "price": "From $179/month",
+    "description": "Learns your filing patterns over time — remembers how you file emails from specific senders and improves recommendations.",
+    "features": [
+      "Pattern Learning",
+      "Sender History",
+      "Improving Accuracy",
+      "Custom Preferences",
+      "Feedback Loop"
+    ],
+    "benefits": [
+      "Smarter over time",
+      "Personalized filing",
+      "99% accuracy"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v974-filing-pattern-learner"
+  },
+  {
+    "id": "v975-smart-notification-engine",
+    "name": "AI Smart Notification Engine V975",
+    "category": "AI Email Intelligence",
+    "icon": "🔔",
+    "price": "From $349/month",
+    "description": "Multi-channel alert routing based on email priority, content analysis, recipient preferences, and time-aware delivery optimization.",
+    "features": [
+      "6+ Channels",
+      "Priority Routing",
+      "Quiet Hours",
+      "Escalation Paths",
+      "Batch Delivery",
+      "Snooze Options"
+    ],
+    "benefits": [
+      "Right alert, right time",
+      "No alert fatigue",
+      "Never miss critical emails"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-smart-notification-engine"
+  },
+  {
+    "id": "v975-quiet-hours-manager",
+    "name": "Quiet Hours Manager",
+    "category": "AI Email Intelligence",
+    "icon": "🌙",
+    "price": "From $99/month",
+    "description": "Manages notification quiet hours — suppresses non-critical alerts during sleep/weekend hours while ensuring critical emails break through.",
+    "features": [
+      "Quiet Hours Config",
+      "Critical Override",
+      "Weekend Mode",
+      "Timezone Support",
+      "Smart Batching"
+    ],
+    "benefits": [
+      "Better sleep",
+      "Work-life balance",
+      "Critical emails only"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-quiet-hours-manager"
+  },
+  {
+    "id": "v975-multi-channel-router",
+    "name": "Multi-Channel Notification Router",
+    "category": "AI Email Intelligence",
+    "icon": "📡",
+    "price": "From $199/month",
+    "description": "Routes notifications across push, SMS, Slack, Teams, desktop, and email digest based on priority and context.",
+    "features": [
+      "Push Notifications",
+      "SMS Alerts",
+      "Slack/Teams Integration",
+      "Desktop Alerts",
+      "Email Digest"
+    ],
+    "benefits": [
+      "Right channel, right time",
+      "No missed alerts",
+      "Channel preferences"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-multi-channel-router"
+  },
+  {
+    "id": "v975-escalation-automator",
+    "name": "Notification Escalation Automator",
+    "category": "AI Email Intelligence",
+    "icon": "📈",
+    "price": "From $229/month",
+    "description": "Automatically escalates unanswered critical notifications — reminder pushes, SMS escalation, and manager alerts.",
+    "features": [
+      "Timed Escalation",
+      "Multi-Step Paths",
+      "Manager Alerts",
+      "SMS Fallback",
+      "Audit Trail"
+    ],
+    "benefits": [
+      "Never miss critical items",
+      "Automatic follow-up",
+      "Accountability"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-escalation-automator"
+  },
+  {
+    "id": "v975-notification-digest-builder",
+    "name": "Notification Digest Builder",
+    "category": "AI Email Intelligence",
+    "icon": "📰",
+    "price": "From $129/month",
+    "description": "Builds smart notification digests — hourly, daily, or weekly summaries of non-critical emails for batch processing.",
+    "features": [
+      "Hourly Digest",
+      "Daily Summary",
+      "Weekly Report",
+      "Priority Sorting",
+      "Quick Actions"
+    ],
+    "benefits": [
+      "Batch processing",
+      "Less interruption",
+      "Efficient review"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-notification-digest-builder"
+  },
+  {
+    "id": "v975-snooze-scheduler",
+    "name": "Smart Snooze Scheduler",
+    "category": "AI Email Intelligence",
+    "icon": "💤",
+    "price": "From $79/month",
+    "description": "Intelligent snooze options based on email priority — critical emails can't be snoozed, normal emails snooze for hours/days.",
+    "features": [
+      "Priority-Based Snooze",
+      "Custom Durations",
+      "Smart Resurface",
+      "Deadline Awareness",
+      "Batch Snooze"
+    ],
+    "benefits": [
+      "Focus on now",
+      "Don't forget later",
+      "Smart timing"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v975-snooze-scheduler"
   }
 ]
