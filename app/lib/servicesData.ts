@@ -1,6 +1,6 @@
 // Auto-generated services data - DO NOT EDIT MANUALLY
-// Total services: 2421
-// Generated: 2026-05-31T06:23:31.689Z
+// Total services: 2446
+// Generated: 2026-05-31T06:31:19.062Z
 
 export interface Service {
   id: string;
@@ -72872,6 +72872,381 @@ export const allServices: Service[] = [
       "Deadline management",
       "Reminders",
       "Progress reporting"
+    ]
+  },
+  {
+    "id": "v536-intent-classifier",
+    "name": "Email Intent Classifier",
+    "description": "Automatically detect sender intent from emails to provide targeted, relevant responses based on 12 intent categories.",
+    "category": "email-intelligence",
+    "price": "$120/month",
+    "features": [
+      "12 intent categories",
+      "Confidence scoring",
+      "Urgency detection",
+      "Action recommendations",
+      "Emotional tone analysis",
+      "Response requirement detection"
+    ]
+  },
+  {
+    "id": "v536-intent-analytics",
+    "name": "Intent Analytics Dashboard",
+    "description": "Visualize intent patterns across your email communications with detailed analytics and trend analysis.",
+    "category": "email-intelligence",
+    "price": "$180/month",
+    "features": [
+      "Intent distribution charts",
+      "Trend analysis",
+      "Team performance metrics",
+      "Custom reports",
+      "Export capabilities",
+      "Real-time updates"
+    ]
+  },
+  {
+    "id": "v536-intent-routing",
+    "name": "Intent-Based Email Routing",
+    "description": "Automatically route emails to the right team members based on detected intent and expertise matching.",
+    "category": "email-intelligence",
+    "price": "$220/month",
+    "features": [
+      "Smart routing rules",
+      "Expertise matching",
+      "Load balancing",
+      "Escalation workflows",
+      "Team assignment",
+      "Performance tracking"
+    ]
+  },
+  {
+    "id": "v536-intent-training",
+    "name": "Custom Intent Training",
+    "description": "Train the intent classifier on your specific business context with custom intent categories and industry-specific patterns.",
+    "category": "email-intelligence",
+    "price": "$350/month",
+    "features": [
+      "Custom intent categories",
+      "Industry-specific training",
+      "Feedback learning",
+      "Accuracy improvement",
+      "Dedicated support",
+      "Custom integration"
+    ]
+  },
+  {
+    "id": "v536-intent-api",
+    "name": "Intent Classification API",
+    "description": "Access intent classification capabilities via REST API for integration with your existing systems and workflows.",
+    "category": "email-intelligence",
+    "price": "$280/month",
+    "features": [
+      "RESTful API",
+      "Batch processing",
+      "Webhook support",
+      "SDK libraries",
+      "Rate limiting",
+      "99.9% uptime SLA"
+    ]
+  },
+  {
+    "id": "v537-response-generator",
+    "name": "Smart Response Generator",
+    "description": "Automatically generate contextually appropriate draft responses based on email intent, context, and relationship history.",
+    "category": "email-intelligence",
+    "price": "$150/month",
+    "features": [
+      "Context-aware responses",
+      "Multiple style options",
+      "Personalization",
+      "Template suggestions",
+      "Tone matching",
+      "Quick edits"
+    ]
+  },
+  {
+    "id": "v537-response-templates",
+    "name": "Response Template Library",
+    "description": "Access a comprehensive library of professional response templates for common email scenarios and industries.",
+    "category": "email-intelligence",
+    "price": "$90/month",
+    "features": [
+      "500+ templates",
+      "Industry-specific",
+      "Customizable",
+      "Multi-language",
+      "Regular updates",
+      "Template analytics"
+    ]
+  },
+  {
+    "id": "v537-response-optimizer",
+    "name": "Response Optimizer",
+    "description": "Optimize your email responses for better engagement, clarity, and effectiveness using AI-powered suggestions.",
+    "category": "email-intelligence",
+    "price": "$200/month",
+    "features": [
+      "Engagement scoring",
+      "Clarity improvements",
+      "Tone optimization",
+      "Length recommendations",
+      "A/B testing",
+      "Performance tracking"
+    ]
+  },
+  {
+    "id": "v537-response-coach",
+    "name": "Response Coaching",
+    "description": "Get real-time coaching and suggestions to improve your email communication skills and response quality.",
+    "category": "email-intelligence",
+    "price": "$250/month",
+    "features": [
+      "Real-time feedback",
+      "Skill assessments",
+      "Personalized tips",
+      "Progress tracking",
+      "Best practices",
+      "Expert guidance"
+    ]
+  },
+  {
+    "id": "v537-response-automation",
+    "name": "Response Automation Suite",
+    "description": "Automate repetitive email responses with intelligent rules and conditional logic for maximum efficiency.",
+    "category": "email-intelligence",
+    "price": "$320/month",
+    "features": [
+      "Conditional responses",
+      "Rule builder",
+      "Auto-replies",
+      "Workflow integration",
+      "Exception handling",
+      "Audit logs"
+    ]
+  },
+  {
+    "id": "v538-thread-summarizer",
+    "name": "Email Thread Summarizer",
+    "description": "Automatically summarize long email threads into concise summaries with key points, decisions, and action items.",
+    "category": "email-intelligence",
+    "price": "$130/month",
+    "features": [
+      "Thread summaries",
+      "Key point extraction",
+      "Decision tracking",
+      "Action item identification",
+      "Participant analysis",
+      "Timeline view"
+    ]
+  },
+  {
+    "id": "v538-conversation-analytics",
+    "name": "Conversation Analytics",
+    "description": "Analyze email conversations for insights, trends, and patterns to improve communication effectiveness.",
+    "category": "email-intelligence",
+    "price": "$190/month",
+    "features": [
+      "Conversation metrics",
+      "Response time analysis",
+      "Engagement tracking",
+      "Sentiment trends",
+      "Custom reports",
+      "Export data"
+    ]
+  },
+  {
+    "id": "v538-thread-organizer",
+    "name": "Thread Organizer",
+    "description": "Automatically organize and categorize email threads for better management and easier retrieval.",
+    "category": "email-intelligence",
+    "price": "$110/month",
+    "features": [
+      "Auto-categorization",
+      "Smart tagging",
+      "Thread merging",
+      "Duplicate detection",
+      "Archive management",
+      "Search optimization"
+    ]
+  },
+  {
+    "id": "v538-thread-collaboration",
+    "name": "Thread Collaboration Tools",
+    "description": "Enhance team collaboration on email threads with shared notes, assignments, and real-time updates.",
+    "category": "email-intelligence",
+    "price": "$240/month",
+    "features": [
+      "Shared notes",
+      "Task assignment",
+      "Real-time updates",
+      "@mentions",
+      "File sharing",
+      "Activity feed"
+    ]
+  },
+  {
+    "id": "v538-thread-insights",
+    "name": "Thread Insights Engine",
+    "description": "Extract deep insights from email threads including sentiment, urgency, and relationship dynamics.",
+    "category": "email-intelligence",
+    "price": "$280/month",
+    "features": [
+      "Sentiment analysis",
+      "Urgency detection",
+      "Relationship scoring",
+      "Topic extraction",
+      "Trend identification",
+      "Predictive insights"
+    ]
+  },
+  {
+    "id": "v539-attachment-analyzer",
+    "name": "Email Attachment Analyzer",
+    "description": "Analyze email attachments to extract key information, summarize content, and identify important data points.",
+    "category": "email-intelligence",
+    "price": "$140/month",
+    "features": [
+      "Multi-format support",
+      "Content extraction",
+      "Key data identification",
+      "Summarization",
+      "Metadata analysis",
+      "Security scanning"
+    ]
+  },
+  {
+    "id": "v539-document-ocr",
+    "name": "Document OCR Engine",
+    "description": "Extract text from images and scanned documents in email attachments using advanced OCR technology.",
+    "category": "email-intelligence",
+    "price": "$170/month",
+    "features": [
+      "Image OCR",
+      "Multi-language support",
+      "Handwriting recognition",
+      "Table extraction",
+      "Batch processing",
+      "High accuracy"
+    ]
+  },
+  {
+    "id": "v539-attachment-organizer",
+    "name": "Attachment Organizer",
+    "description": "Automatically organize and categorize email attachments for easy retrieval and management.",
+    "category": "email-intelligence",
+    "price": "$100/month",
+    "features": [
+      "Auto-categorization",
+      "Smart tagging",
+      "Duplicate detection",
+      "Version control",
+      "Cloud sync",
+      "Search indexing"
+    ]
+  },
+  {
+    "id": "v539-attachment-security",
+    "name": "Attachment Security Scanner",
+    "description": "Scan email attachments for malware, viruses, and security threats to protect your organization.",
+    "category": "email-intelligence",
+    "price": "$260/month",
+    "features": [
+      "Malware detection",
+      "Virus scanning",
+      "Phishing protection",
+      "Sandbox analysis",
+      "Real-time updates",
+      "Quarantine management"
+    ]
+  },
+  {
+    "id": "v539-attachment-converter",
+    "name": "Attachment Format Converter",
+    "description": "Convert email attachments between different formats for better compatibility and accessibility.",
+    "category": "email-intelligence",
+    "price": "$120/month",
+    "features": [
+      "50+ formats",
+      "Batch conversion",
+      "Quality preservation",
+      "Compression options",
+      "Custom settings",
+      "API access"
+    ]
+  },
+  {
+    "id": "v540-meeting-scheduler",
+    "name": "Email Meeting Scheduler",
+    "description": "Detect meeting requests in emails and automatically schedule meetings with optimal time slots based on participant availability.",
+    "category": "email-intelligence",
+    "price": "$160/month",
+    "features": [
+      "Meeting detection",
+      "Smart scheduling",
+      "Calendar integration",
+      "Time zone support",
+      "Availability checking",
+      "Auto-invitations"
+    ]
+  },
+  {
+    "id": "v540-calendar-optimizer",
+    "name": "Calendar Optimizer",
+    "description": "Optimize your calendar for maximum productivity with intelligent meeting scheduling and time management.",
+    "category": "email-intelligence",
+    "price": "$210/month",
+    "features": [
+      "Smart scheduling",
+      "Focus time protection",
+      "Meeting consolidation",
+      "Buffer management",
+      "Productivity analytics",
+      "Custom rules"
+    ]
+  },
+  {
+    "id": "v540-meeting-assistant",
+    "name": "Meeting Assistant",
+    "description": "Complete meeting management assistant that handles scheduling, agenda creation, and follow-up tasks.",
+    "category": "email-intelligence",
+    "price": "$290/month",
+    "features": [
+      "Agenda creation",
+      "Note taking",
+      "Action items",
+      "Follow-up emails",
+      "Meeting analytics",
+      "Integration support"
+    ]
+  },
+  {
+    "id": "v540-availability-manager",
+    "name": "Availability Manager",
+    "description": "Manage and share your availability across teams and organizations for efficient meeting coordination.",
+    "category": "email-intelligence",
+    "price": "$130/month",
+    "features": [
+      "Availability sharing",
+      "Booking pages",
+      "Time zone conversion",
+      "Custom hours",
+      "Team calendars",
+      "Integration support"
+    ]
+  },
+  {
+    "id": "v540-meeting-analytics",
+    "name": "Meeting Analytics Platform",
+    "description": "Analyze meeting patterns, duration, and effectiveness to optimize your organization's meeting culture.",
+    "category": "email-intelligence",
+    "price": "$230/month",
+    "features": [
+      "Meeting metrics",
+      "Duration analysis",
+      "Attendance tracking",
+      "Cost calculation",
+      "Trend reports",
+      "Optimization suggestions"
     ]
   }
 ];
