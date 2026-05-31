@@ -117830,5 +117830,551 @@
       "email": "kleber@ziontechgroup.com",
       "address": "364 E Main St STE 1008 Middletown DE 19709"
     }
+  },
+  {
+    "id": "email-carbon-calculator",
+    "name": "Email Carbon Calculator",
+    "category": "Micro SaaS",
+    "description": "Calculate the environmental impact of every email. Track CO2 emissions, generate ESG reports, and optimize your digital carbon footprint. Reduce email emissions by up to 40%.",
+    "price": "$29/month",
+    "features": [
+      "Carbon tracking",
+      "ESG reporting",
+      "Attachment optimization",
+      "Equivalency metrics",
+      "Reduction suggestions"
+    ],
+    "link": "/services/email-carbon-calculator",
+    "icon": "🌱",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "green-email-platform",
+    "name": "Green Email Platform",
+    "category": "AI Services",
+    "description": "AI-powered platform that minimizes the carbon footprint of your email communications. Optimizes attachments, suggests cloud links, and tracks environmental impact.",
+    "price": "$49/month",
+    "features": [
+      "Auto-optimization",
+      "Cloud storage integration",
+      "Carbon dashboards",
+      "Team benchmarks",
+      "Annual projections"
+    ],
+    "link": "/services/green-email-platform",
+    "icon": "🍃",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "esg-email-reporting",
+    "name": "ESG Email Reporting",
+    "category": "Micro SaaS",
+    "description": "Generate comprehensive ESG reports from email carbon data. Compliant with GRI, SASB, and TCFD frameworks. Perfect for corporate sustainability reporting.",
+    "price": "$79/month",
+    "features": [
+      "GRI compliance",
+      "SASB alignment",
+      "TCFD framework",
+      "Audit trail",
+      "Stakeholder reports"
+    ],
+    "link": "/services/esg-email-reporting",
+    "icon": "📊",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "carbon-neutral-email",
+    "name": "Carbon Neutral Email Service",
+    "category": "IT Services",
+    "description": "Offset your email carbon footprint with verified carbon credits. Automatic calculation, offsetting, and certification for every email sent and stored.",
+    "price": "$39/month",
+    "features": [
+      "Auto-offsetting",
+      "Verified credits",
+      "Carbon certificates",
+      "Monthly reports",
+      "Green badge"
+    ],
+    "link": "/services/carbon-neutral-email",
+    "icon": "♻️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "digital-footprint-analyzer",
+    "name": "Digital Footprint Analyzer",
+    "category": "AI Services",
+    "description": "Comprehensive analysis of your digital environmental impact across email, storage, and cloud usage. Actionable recommendations for sustainable IT operations.",
+    "price": "$59/month",
+    "features": [
+      "Full digital audit",
+      "Storage optimization",
+      "Cloud efficiency",
+      "Action plans",
+      "Progress tracking"
+    ],
+    "link": "/services/digital-footprint-analyzer",
+    "icon": "👣",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-accessibility-suite",
+    "name": "Email Accessibility Suite",
+    "category": "AI Services",
+    "description": "WCAG 2.1 compliant email auditing. Detect color contrast issues, missing alt text, screen reader problems, and generate accessible email templates automatically.",
+    "price": "$39/month",
+    "features": [
+      "WCAG 2.1 audit",
+      "Auto-fix suggestions",
+      "Screen reader testing",
+      "Template library",
+      "Compliance scoring"
+    ],
+    "link": "/services/email-accessibility-suite",
+    "icon": "♿",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "inclusive-email-platform",
+    "name": "Inclusive Email Platform",
+    "category": "IT Services",
+    "description": "Ensure every email is accessible to all recipients. AI-powered checks for readability, color blindness, screen readers, and cognitive accessibility.",
+    "price": "$59/month",
+    "features": [
+      "Readability scoring",
+      "Color-blind friendly",
+      "Cognitive accessibility",
+      "Multi-language",
+      "Font optimization"
+    ],
+    "link": "/services/inclusive-email-platform",
+    "icon": "🤝",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "ada-compliance-email",
+    "name": "ADA Compliance Email Tool",
+    "category": "Micro SaaS",
+    "description": "Ensure email communications comply with ADA requirements. Automated accessibility testing, remediation guidance, and compliance documentation.",
+    "price": "$49/month",
+    "features": [
+      "ADA compliance",
+      "Auto-remediation",
+      "Legal documentation",
+      "Risk scoring",
+      "Audit protection"
+    ],
+    "link": "/services/ada-compliance-email",
+    "icon": "⚖️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "screen-reader-email-tester",
+    "name": "Screen Reader Email Tester",
+    "category": "AI Services",
+    "description": "Test how emails render in popular screen readers. Identify accessibility barriers and ensure content is properly structured for assistive technologies.",
+    "price": "$35/month",
+    "features": [
+      "JAWS testing",
+      "NVDA compatibility",
+      "VoiceOver checks",
+      "Structure validation",
+      "Fix recommendations"
+    ],
+    "link": "/services/screen-reader-email-tester",
+    "icon": "👁️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "accessible-template-builder",
+    "name": "Accessible Template Builder",
+    "category": "Micro SaaS",
+    "description": "Build beautiful email templates that are accessible by default. Drag-and-drop editor with built-in WCAG compliance and automatic alt text generation.",
+    "price": "$45/month",
+    "features": [
+      "Drag-and-drop editor",
+      "WCAG templates",
+      "Auto alt text",
+      "Color contrast",
+      "Live preview"
+    ],
+    "link": "/services/accessible-template-builder",
+    "icon": "🎨",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cultural-email-assistant",
+    "name": "Cultural Email Assistant",
+    "category": "AI Services",
+    "description": "AI-powered cultural intelligence for international email communications. Detects cultural sensitivities, adapts tone for 40+ cultures, and prevents cross-cultural misunderstandings.",
+    "price": "$59/month",
+    "features": [
+      "40+ cultural profiles",
+      "Sensitivity detection",
+      "Tone adaptation",
+      "Idiom translation",
+      "Localization insights"
+    ],
+    "link": "/services/cultural-email-assistant",
+    "icon": "🌍",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "global-communication-suite",
+    "name": "Global Communication Suite",
+    "category": "AI Services",
+    "description": "Comprehensive platform for cross-cultural business communications. Adapts formality, greetings, date formats, and cultural norms for international recipients.",
+    "price": "$89/month",
+    "features": [
+      "Formality matching",
+      "Greeting adaptation",
+      "Date/time localization",
+      "Cultural norms",
+      "Business etiquette"
+    ],
+    "link": "/services/global-communication-suite",
+    "icon": "🌐",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "cross-cultural-coach",
+    "name": "Cross-Cultural Email Coach",
+    "category": "Micro SaaS",
+    "description": "Personal coach for cross-cultural email communications. Real-time feedback on cultural appropriateness with learning resources and improvement tracking.",
+    "price": "$45/month",
+    "features": [
+      "Real-time coaching",
+      "Learning resources",
+      "Culture cards",
+      "Improvement tracking",
+      "Expert tips"
+    ],
+    "link": "/services/cross-cultural-coach",
+    "icon": "🎓",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "localization-email-engine",
+    "name": "Localization Email Engine",
+    "category": "IT Services",
+    "description": "Automatically localize email content for different regions. Adapts currency, measurements, date formats, and cultural references for each recipient.",
+    "price": "$69/month",
+    "features": [
+      "Auto-localization",
+      "Currency conversion",
+      "Unit adaptation",
+      "Regional references",
+      "Multi-region support"
+    ],
+    "link": "/services/localization-email-engine",
+    "icon": "🗺️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "diplomatic-email-toolkit",
+    "name": "Diplomatic Email Toolkit",
+    "category": "AI Services",
+    "description": "Specialized toolkit for diplomatic and sensitive international communications. Ensures protocol compliance, cultural respect, and appropriate formality levels.",
+    "price": "$99/month",
+    "features": [
+      "Protocol compliance",
+      "Honorific management",
+      "Sensitivity scanning",
+      "Diplomatic phrasing",
+      "Embassy-grade security"
+    ],
+    "link": "/services/diplomatic-email-toolkit",
+    "icon": "🏛️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-productivity-game",
+    "name": "Email Productivity Game",
+    "category": "AI Services",
+    "description": "Turn email management into a team game. Compete on inbox zero, response times, and communication quality. AI-driven challenges and rewards.",
+    "price": "$45/month",
+    "features": [
+      "Team competitions",
+      "AI challenges",
+      "Quality scoring",
+      "Reward system",
+      "Monthly prizes"
+    ],
+    "link": "/services/email-productivity-game",
+    "icon": "🏆",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "engagement-email-rewards",
+    "name": "Email Engagement Rewards",
+    "category": "Micro SaaS",
+    "description": "Reward employees for excellent email practices. Points redeemable for real rewards, recognition, and career development opportunities.",
+    "price": "$29/month",
+    "features": [
+      "Point rewards",
+      "Redemption catalog",
+      "Recognition boards",
+      "Career badges",
+      "Manager insights"
+    ],
+    "link": "/services/engagement-email-rewards",
+    "icon": "🎁",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "team-email-challenges",
+    "name": "Team Email Challenges",
+    "category": "AI Services",
+    "description": "Weekly team challenges focused on email productivity goals. Inbox zero marathons, response time sprints, and collaborative email cleanup events.",
+    "price": "$25/month",
+    "features": [
+      "Weekly challenges",
+      "Team goals",
+      "Sprint modes",
+      "Collaboration events",
+      "Progress tracking"
+    ],
+    "link": "/services/team-email-challenges",
+    "icon": "⚔️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-achievement-system",
+    "name": "Email Achievement System",
+    "category": "Micro SaaS",
+    "description": "Comprehensive achievement system for email mastery. 100+ achievements covering response quality, timeliness, accessibility, and cultural intelligence.",
+    "price": "$39/month",
+    "features": [
+      "100+ achievements",
+      "Skill trees",
+      "Mastery paths",
+      "Progress maps",
+      "Certification"
+    ],
+    "link": "/services/email-achievement-system",
+    "icon": "🏅",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-volume-predictor",
+    "name": "Email Volume Predictor",
+    "category": "AI Services",
+    "description": "AI-powered prediction of email volumes for the next 7-30 days. Plan staffing, manage workloads, and prevent bottlenecks with accurate forecasts.",
+    "price": "$79/month",
+    "features": [
+      "7-30 day forecasts",
+      "Seasonal adjustments",
+      "Confidence scoring",
+      "Staff planning",
+      "Alert system"
+    ],
+    "link": "/services/email-volume-predictor",
+    "icon": "📈",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-capacity-planner",
+    "name": "Email Capacity Planner",
+    "category": "AI Services",
+    "description": "AI-driven capacity planning for email teams. Match staffing to predicted volumes, identify overload risks, and optimize team utilization.",
+    "price": "$99/month",
+    "features": [
+      "Capacity modeling",
+      "Staff optimization",
+      "Overload alerts",
+      "Utilization reports",
+      "What-if scenarios"
+    ],
+    "link": "/services/email-capacity-planner",
+    "icon": "📋",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-bottleneck-detector",
+    "name": "Email Bottleneck Detector",
+    "category": "IT Services",
+    "description": "Identify and resolve email processing bottlenecks. Detect slow hours, overloaded team members, and workflow inefficiencies before they impact SLAs.",
+    "price": "$69/month",
+    "features": [
+      "Bottleneck detection",
+      "SLA monitoring",
+      "Workflow analysis",
+      "Resolution suggestions",
+      "Performance alerts"
+    ],
+    "link": "/services/email-bottleneck-detector",
+    "icon": "🔍",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-workload-balancer",
+    "name": "Email Workload Balancer",
+    "category": "AI Services",
+    "description": "Intelligent workload distribution for email teams. AI balances assignments based on capacity, expertise, and current load to prevent burnout.",
+    "price": "$89/month",
+    "features": [
+      "Smart distribution",
+      "Expertise matching",
+      "Burnout prevention",
+      "Load balancing",
+      "Fair assignment"
+    ],
+    "link": "/services/email-workload-balancer",
+    "icon": "⚖️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "sla-prediction-engine",
+    "name": "SLA Prediction Engine",
+    "category": "Micro SaaS",
+    "description": "Predict SLA breaches before they happen. AI forecasts response times and alerts teams when SLA compliance is at risk, enabling proactive intervention.",
+    "price": "$59/month",
+    "features": [
+      "SLA forecasting",
+      "Breach alerts",
+      "Proactive intervention",
+      "Compliance reports",
+      "Trend analysis"
+    ],
+    "link": "/services/sla-prediction-engine",
+    "icon": "⏱️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-trend-analyzer",
+    "name": "Email Trend Analyzer",
+    "category": "AI Services",
+    "description": "Analyze long-term email trends across your organization. Track volume changes, topic evolution, and communication pattern shifts with AI insights.",
+    "price": "$49/month",
+    "features": [
+      "Trend detection",
+      "Topic evolution",
+      "Pattern analysis",
+      "Anomaly alerts",
+      "Forecast models"
+    ],
+    "link": "/services/email-trend-analyzer",
+    "icon": "📉",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "smart-email-scheduler",
+    "name": "Smart Email Scheduler",
+    "category": "Micro SaaS",
+    "description": "AI schedules emails for optimal delivery times based on recipient behavior patterns, time zones, and engagement data. Increase open rates by 35%.",
+    "price": "$35/month",
+    "features": [
+      "Optimal timing",
+      "Timezone awareness",
+      "Engagement data",
+      "A/B testing",
+      "Performance tracking"
+    ],
+    "link": "/services/smart-email-scheduler",
+    "icon": "🕐",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
   }
 ]
