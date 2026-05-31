@@ -116717,5 +116717,572 @@
       "email": "kleber@ziontechgroup.com",
       "address": "364 E Main St STE 1008 Middletown DE 19709"
     }
+  },
+  {
+    "id": "gdpr-compliance-engine",
+    "name": "GDPR Compliance Engine",
+    "category": "AI Services",
+    "description": "Automated GDPR compliance monitoring for email communications. Detects PII, enforces data subject rights, generates compliance reports, and prevents non-compliant emails from being sent. Reduces GDPR violation risk by 95%.",
+    "price": "$79/month",
+    "features": [
+      "PII auto-detection",
+      "Data subject rights",
+      "Compliance scoring",
+      "Auto-redaction",
+      "Audit trail"
+    ],
+    "link": "/services/gdpr-compliance-engine",
+    "icon": "🇪🇺",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "pci-dss-email-monitor",
+    "name": "PCI-DSS Email Monitor",
+    "category": "Security Services",
+    "description": "Prevents credit card data from being shared via email. Auto-detects PAN numbers, enforces PCI-DSS compliance, and provides secure alternative payment workflows.",
+    "price": "$89/month",
+    "features": [
+      "PAN detection",
+      "Card number redaction",
+      "Secure alternatives",
+      "Compliance alerts",
+      "Monthly reports"
+    ],
+    "link": "/services/pci-dss-email-monitor",
+    "icon": "💳",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "sox-compliance-tracker",
+    "name": "SOX Compliance Tracker",
+    "category": "Micro SaaS",
+    "description": "Sarbanes-Oxley compliance for financial communications. Tracks material disclosures, internal control discussions, and audit-related emails with immutable records.",
+    "price": "$119/month",
+    "features": [
+      "Material disclosure tracking",
+      "Internal controls",
+      "Audit trail",
+      "Executive sign-off",
+      "Regulatory reporting"
+    ],
+    "link": "/services/sox-compliance-tracker",
+    "icon": "📜",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "data-residency-enforcer",
+    "name": "Data Residency Enforcer",
+    "category": "IT Services",
+    "description": "Ensures email data stays within required geographic boundaries. Detects cross-border data transfers and enforces data sovereignty regulations automatically.",
+    "price": "$69/month",
+    "features": [
+      "Geo-fencing",
+      "Data sovereignty",
+      "Transfer detection",
+      "Regional compliance",
+      "Multi-jurisdiction support"
+    ],
+    "link": "/services/data-residency-enforcer",
+    "icon": "🌍",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-revenue-tracker",
+    "name": "Email Revenue Tracker",
+    "category": "Micro SaaS",
+    "description": "Track revenue generated from every email conversation. AI attributes deals to email threads, calculates ROI per conversation, and identifies high-value communication patterns.",
+    "price": "$59/month",
+    "features": [
+      "Revenue attribution",
+      "Deal tracking",
+      "ROI calculation",
+      "Pipeline sync",
+      "Revenue dashboards"
+    ],
+    "link": "/services/email-revenue-tracker",
+    "icon": "💰",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "deal-pipeline-intelligence",
+    "name": "Deal Pipeline Intelligence",
+    "category": "AI Services",
+    "description": "AI-powered deal pipeline management that detects deal stages from email content, predicts close probability, and recommends next actions to accelerate revenue.",
+    "price": "$89/month",
+    "features": [
+      "Stage detection",
+      "Close prediction",
+      "Action recommendations",
+      "Pipeline analytics",
+      "Forecast accuracy"
+    ],
+    "link": "/services/deal-pipeline-intelligence",
+    "icon": "📊",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "customer-lifetime-value-engine",
+    "name": "Customer Lifetime Value Engine",
+    "category": "Micro SaaS",
+    "description": "Calculate CLV from email interactions. Identifies high-value customers, predicts churn risk, and recommends retention strategies based on communication patterns.",
+    "price": "$69/month",
+    "features": [
+      "CLV calculation",
+      "Churn prediction",
+      "Retention strategies",
+      "Segment analysis",
+      "Revenue forecasting"
+    ],
+    "link": "/services/customer-lifetime-value-engine",
+    "icon": "💎",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "quote-to-cash-automation",
+    "name": "Quote-to-Cash Automation",
+    "category": "IT Services",
+    "description": "End-to-end automation from email quote requests to payment collection. Extracts pricing requirements, generates quotes, tracks approvals, and automates invoicing.",
+    "price": "$129/month",
+    "features": [
+      "Quote generation",
+      "Approval workflows",
+      "Invoice automation",
+      "Payment tracking",
+      "Revenue reconciliation"
+    ],
+    "link": "/services/quote-to-cash-automation",
+    "icon": "💵",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "pr-crisis-monitor",
+    "name": "PR Crisis Monitor",
+    "category": "AI Services",
+    "description": "Real-time detection of PR crises in email communications. Identifies media threats, social media escalation risks, and generates crisis response templates instantly.",
+    "price": "$99/month",
+    "features": [
+      "Media threat detection",
+      "Escalation alerts",
+      "Response templates",
+      "Sentiment tracking",
+      "Stakeholder notifications"
+    ],
+    "link": "/services/pr-crisis-monitor",
+    "icon": "📰",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "incident-response-orchestrator",
+    "name": "Incident Response Orchestrator",
+    "category": "IT Services",
+    "description": "Automated incident response coordination via email. Detects security incidents, assembles response teams, tracks resolution progress, and generates post-incident reports.",
+    "price": "$149/month",
+    "features": [
+      "Auto team assembly",
+      "Resolution tracking",
+      "Post-incident reports",
+      "SLA monitoring",
+      "Escalation chains"
+    ],
+    "link": "/services/incident-response-orchestrator",
+    "icon": "🚨",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "customer-escalation-engine",
+    "name": "Customer Escalation Engine",
+    "category": "Micro SaaS",
+    "description": "Intelligent customer complaint escalation. Detects angry customers, routes to appropriate teams, tracks resolution time, and ensures SLA compliance for every case.",
+    "price": "$59/month",
+    "features": [
+      "Anger detection",
+      "Smart routing",
+      "SLA tracking",
+      "Resolution analytics",
+      "Executive alerts"
+    ],
+    "link": "/services/customer-escalation-engine",
+    "icon": "⚠️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "legal-threat-detector",
+    "name": "Legal Threat Detector",
+    "category": "AI Services",
+    "description": "AI that detects legal threats, lawsuits, and regulatory risks in incoming emails. Auto-routes to legal team, preserves evidence, and generates risk assessments.",
+    "price": "$119/month",
+    "features": [
+      "Threat detection",
+      "Auto legal routing",
+      "Evidence preservation",
+      "Risk assessment",
+      "Compliance logging"
+    ],
+    "link": "/services/legal-threat-detector",
+    "icon": "⚖️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "business-continuity-email-system",
+    "name": "Business Continuity Email System",
+    "category": "IT Services",
+    "description": "Ensures email communications continue during disasters. Auto-failover, emergency broadcast capabilities, and crisis communication templates for business continuity.",
+    "price": "$199/month",
+    "features": [
+      "Auto-failover",
+      "Emergency broadcasts",
+      "Crisis templates",
+      "Disaster recovery",
+      "Multi-channel backup"
+    ],
+    "link": "/services/business-continuity-email-system",
+    "icon": "🏗️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "deal-negotiation-assistant",
+    "name": "Deal Negotiation Assistant",
+    "category": "AI Services",
+    "description": "AI negotiation coach for email-based deals. Analyzes counterparty tactics, recommends counter-offers, tracks concessions, and predicts deal outcomes with 85% accuracy.",
+    "price": "$79/month",
+    "features": [
+      "Tactic analysis",
+      "Counter-offer suggestions",
+      "Concession tracking",
+      "Outcome prediction",
+      "BATNA calculation"
+    ],
+    "link": "/services/deal-negotiation-assistant",
+    "icon": "🤝",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "contract-term-analyzer",
+    "name": "Contract Term Analyzer",
+    "category": "Micro SaaS",
+    "description": "Analyzes contract negotiation emails to extract key terms, identify risk clauses, track changes, and generate redline summaries for legal review.",
+    "price": "$69/month",
+    "features": [
+      "Term extraction",
+      "Risk clause detection",
+      "Change tracking",
+      "Redline summaries",
+      "Legal review prep"
+    ],
+    "link": "/services/contract-term-analyzer",
+    "icon": "📝",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "pricing-strategy-engine",
+    "name": "Pricing Strategy Engine",
+    "category": "AI Services",
+    "description": "AI-powered pricing optimization for email negotiations. Analyzes market data, competitor pricing, and customer value to recommend optimal pricing strategies.",
+    "price": "$89/month",
+    "features": [
+      "Market analysis",
+      "Competitor benchmarking",
+      "Value-based pricing",
+      "Discount optimization",
+      "Margin protection"
+    ],
+    "link": "/services/pricing-strategy-engine",
+    "icon": "💲",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "vendor-management-platform",
+    "name": "Vendor Management Platform",
+    "category": "Micro SaaS",
+    "description": "Centralized platform for managing vendor negotiations via email. Tracks vendor performance, compares pricing, and optimizes procurement decisions.",
+    "price": "$99/month",
+    "features": [
+      "Vendor tracking",
+      "Performance scoring",
+      "Price comparison",
+      "Contract management",
+      "Savings analytics"
+    ],
+    "link": "/services/vendor-management-platform",
+    "icon": "🏭",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "partnership-negotiation-toolkit",
+    "name": "Partnership Negotiation Toolkit",
+    "category": "AI Services",
+    "description": "Specialized toolkit for strategic partnership negotiations. Analyzes mutual benefits, tracks commitments, and ensures balanced agreements that create long-term value.",
+    "price": "$109/month",
+    "features": [
+      "Mutual benefit analysis",
+      "Commitment tracking",
+      "Value assessment",
+      "Agreement balancing",
+      "Long-term planning"
+    ],
+    "link": "/services/partnership-negotiation-toolkit",
+    "icon": "🤜",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "auto-faq-generator",
+    "name": "Auto FAQ Generator",
+    "category": "Micro SaaS",
+    "description": "Generates FAQ documents from email Q&A threads automatically. Identifies common questions, extracts best answers, and maintains an up-to-date knowledge base.",
+    "price": "$39/month",
+    "features": [
+      "Question detection",
+      "Answer extraction",
+      "Auto-categorization",
+      "Freshness scoring",
+      "Multi-format export"
+    ],
+    "link": "/services/auto-faq-generator",
+    "icon": "❓",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "process-documentation-engine",
+    "name": "Process Documentation Engine",
+    "category": "IT Services",
+    "description": "Extracts business processes from email threads and generates step-by-step documentation automatically. Creates SOPs, workflows, and training materials from communications.",
+    "price": "$79/month",
+    "features": [
+      "Process extraction",
+      "SOP generation",
+      "Workflow documentation",
+      "Training material creation",
+      "Version control"
+    ],
+    "link": "/services/process-documentation-engine",
+    "icon": "📖",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "institutional-memory-system",
+    "name": "Institutional Memory System",
+    "category": "AI Services",
+    "description": "Preserves organizational knowledge from email communications. Prevents knowledge loss when employees leave by capturing decisions, processes, and relationships automatically.",
+    "price": "$99/month",
+    "features": [
+      "Knowledge preservation",
+      "Employee offboarding",
+      "Decision archives",
+      "Relationship mapping",
+      "Searchable history"
+    ],
+    "link": "/services/institutional-memory-system",
+    "icon": "🏛️",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "meeting-knowledge-capture",
+    "name": "Meeting Knowledge Capture",
+    "category": "Micro SaaS",
+    "description": "Captures and organizes knowledge from meeting follow-up emails. Extracts action items, decisions, and key discussions into a searchable knowledge repository.",
+    "price": "$49/month",
+    "features": [
+      "Action item capture",
+      "Decision logging",
+      "Discussion summaries",
+      "Knowledge tagging",
+      "Follow-up tracking"
+    ],
+    "link": "/services/meeting-knowledge-capture",
+    "icon": "📋",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-api-marketplace",
+    "name": "Email Intelligence API Marketplace",
+    "category": "IT Services",
+    "description": "Access all our email intelligence engines via REST APIs. Build custom integrations, extend functionality, and create powerful email automation workflows with our API platform.",
+    "price": "$149/month",
+    "features": [
+      "RESTful APIs",
+      "Webhook support",
+      "SDK libraries",
+      "Rate limiting",
+      "Usage analytics"
+    ],
+    "link": "/services/email-api-marketplace",
+    "icon": "🔌",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-digital-twin",
+    "name": "Email Digital Twin",
+    "category": "AI Services",
+    "description": "Create a digital twin of your email persona that can draft responses, handle routine inquiries, and maintain your communication style while you focus on high-value work.",
+    "price": "$199/month",
+    "features": [
+      "Persona cloning",
+      "Auto-drafting",
+      "Style matching",
+      "Routine handling",
+      "Approval workflows"
+    ],
+    "link": "/services/email-digital-twin",
+    "icon": "🤖",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "quantum-email-encryption",
+    "name": "Quantum-Ready Email Encryption",
+    "category": "Security Services",
+    "description": "Future-proof email encryption using post-quantum cryptography algorithms. Protects against both current and future quantum computing threats to email security.",
+    "price": "$249/month",
+    "features": [
+      "Post-quantum crypto",
+      "Key management",
+      "Zero-knowledge proofs",
+      "Forward secrecy",
+      "Compliance ready"
+    ],
+    "link": "/services/quantum-email-encryption",
+    "icon": "🔐",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-gamification-platform",
+    "name": "Email Productivity Gamification",
+    "category": "Micro SaaS",
+    "description": "Gamify email productivity with points, badges, leaderboards, and team challenges. Motivates teams to respond faster, maintain quality, and achieve email excellence.",
+    "price": "$35/month",
+    "features": [
+      "Points system",
+      "Badges & achievements",
+      "Leaderboards",
+      "Team challenges",
+      "Performance rewards"
+    ],
+    "link": "/services/email-gamification-platform",
+    "icon": "🎮",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
+  },
+  {
+    "id": "email-carbon-tracker",
+    "name": "Email Carbon Footprint Tracker",
+    "category": "Micro SaaS",
+    "description": "Calculate and reduce the carbon footprint of your email communications. Tracks energy usage per email, suggests optimizations, and generates ESG sustainability reports.",
+    "price": "$29/month",
+    "features": [
+      "Carbon calculation",
+      "Energy optimization",
+      "ESG reporting",
+      "Reduction suggestions",
+      "Green email tips"
+    ],
+    "link": "/services/email-carbon-tracker",
+    "icon": "🌳",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    }
   }
 ]
