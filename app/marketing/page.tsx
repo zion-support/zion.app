@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import DefaultSEO from '@/components/DefaultSEO';
+import DefaultSEO from '../components/DefaultSEO';
 import { Metadata } from 'next';
 
 interface SEOCheckResult {

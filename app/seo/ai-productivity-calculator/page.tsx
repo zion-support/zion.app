@@ -1,6 +1,6 @@
 'use client';
 
-import DefaultSEO from '@/components/DefaultSEO';
+import DefaultSEO from '../../components/DefaultSEO';
 import { Metadata } from 'next';
 
 export default function SEOAIPProductivityCalculator() {

@@ -5,7 +5,7 @@ import { useState, useMemo, Suspense } from 'react';
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import SmartSearchBar from '@/components/SmartSearchBar';
+import SmartSearchBar from '../components/SmartSearchBar';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 import { Metadata } from 'next';
