@@ -1,4 +1,4 @@
-// Auto-generated - Total: 2296
+// Auto-generated - Total: 2321
 
 export const ai_agent_tool_builder = {"id":"ai-agent-tool-builder","title":"AI Agent Tool Builder","description":"Visual no-code tool builder for LLM agents: define function-calling tools, MCP server scaffolding, OpenAPI wrapper, and sandbox test harness.","icon":"★","features":["Drag-drop tool schema builder","MCP server scaffold + OpenAPI wrapper","Sandbox execution harness per tool","Multi-model compatibility (OpenAI/Anthropic/Google)"],"benefits":["Build tools for agents in hours, not weeks","MCP first = compatible with Claude/Copilot/GPTs","Sandbox test = no production risk","Function-calling = deterministic tool invoke"],"pricing":{"basic":"1999","pro":"4999","enterprise":"14999"},"contactInfo":{"website":"/services/ai-agent-tool-builder","email":"kleber@ziontechgroup.com","phone":"+1 302 464 0950"},"href":"/services/ai-agent-tool-builder","category":"ai","popular":false,"industry":"Technology"};
 
@@ -4592,6 +4592,56 @@ export const v510_reading_level_assessor = {"id":"v510-reading-level-assessor","
 
 export const v510_inclusive_terminology_enforcer = {"id":"v510-inclusive-terminology-enforcer","name":"AI Inclusive Terminology Enforcer","category":"AI Services","description":"Enforces inclusive terminology standards across all email communications with auto-correction and team-wide policy enforcement.","features":["Terminology database","Auto-correction","Policy enforcement","Team-wide standards"],"price":"$49/month","benefits":["Consistent inclusion","Auto-correction","Team standards"],"contactInfo":{"phone":"+1 302 464 0950","email":"kleber@ziontechgroup.com","address":"364 E Main St STE 1008, Middletown DE 19709"}};
 
+export const crisis_communication_basic = {"id":"crisis-communication-basic","name":"Crisis Communication Basic","description":"Detect crisis signals from emails and classify severity levels (Watch to Emergency). Includes basic stakeholder identification and escalation chain setup.","category":"email-intelligence","price":"$99/mo","features":["Crisis signal detection","5 severity levels","Stakeholder identification","Basic escalation chains","Crisis type classification"]};
+
+export const crisis_communication_pro = {"id":"crisis-communication-pro","name":"Crisis Communication Pro","description":"Advanced crisis management with automated response templates for 8 stakeholder groups, real-time severity tracking, and post-crisis analysis.","category":"email-intelligence","price":"$249/mo","features":["All Basic features","8 stakeholder templates","Real-time tracking","Post-crisis analysis","Multi-channel coordination"]};
+
+export const crisis_communication_enterprise = {"id":"crisis-communication-enterprise","name":"Crisis Communication Enterprise","description":"Enterprise-grade crisis management with AI-powered response generation, automated media monitoring, and executive dashboard.","category":"email-intelligence","price":"$499/mo","features":["All Pro features","AI response generation","Media monitoring","Executive dashboard","24/7 support"]};
+
+export const crisis_response_templates = {"id":"crisis-response-templates","name":"Crisis Response Templates","description":"Pre-built crisis response templates for customers, employees, investors, media, regulators, partners, board, and legal teams.","category":"email-intelligence","price":"$49/mo","features":["8 stakeholder templates","Customizable responses","Industry-specific templates","Template library"]};
+
+export const crisis_escalation_automation = {"id":"crisis-escalation-automation","name":"Crisis Escalation Automation","description":"Automated escalation chains with SLA tracking, multi-level approvals, and notification routing across email, SMS, and Slack.","category":"email-intelligence","price":"$149/mo","features":["5-level escalation","SLA tracking","Multi-channel notifications","Approval workflows","Escalation analytics"]};
+
+export const sales_funnel_tracker = {"id":"sales-funnel-tracker","name":"Sales Funnel Tracker","description":"Track email conversations through 8 sales stages (Awareness to Closed). Identify stuck deals and measure pipeline velocity.","category":"email-intelligence","price":"$129/mo","features":["8-stage tracking","Deal health scoring","Stuck signal detection","Pipeline velocity metrics","Stage progression analytics"]};
+
+export const sales_funnel_nurturing = {"id":"sales-funnel-nurturing","name":"Sales Funnel Nurturing","description":"Generate personalized nurturing sequences for each funnel stage with automated follow-up scheduling and engagement tracking.","category":"email-intelligence","price":"$199/mo","features":["Stage-specific nurturing","Personalized sequences","Auto-scheduling","Engagement tracking","Conversion optimization"]};
+
+export const sales_funnel_velocity = {"id":"sales-funnel-velocity","name":"Sales Funnel Velocity","description":"Advanced pipeline velocity analysis with predictive close dates, conversion probability scoring, and revenue forecasting.","category":"email-intelligence","price":"$299/mo","features":["Velocity calculations","Predictive close dates","Conversion probability","Revenue forecasting","Pipeline optimization"]};
+
+export const deal_health_monitor = {"id":"deal-health-monitor","name":"Deal Health Monitor","description":"Monitor deal health with 4-tier status (Healthy, At-Risk, Stalled, Critical). Get root cause analysis for stuck deals.","category":"email-intelligence","price":"$79/mo","features":["4-tier health status","Root cause analysis","Stuck reason identification","Health trend tracking","Alert notifications"]};
+
+export const nurturing_sequence_generator = {"id":"nurturing-sequence-generator","name":"Nurturing Sequence Generator","description":"Generate 5-step nurturing sequences with channel recommendations, personalization suggestions, and timing optimization.","category":"email-intelligence","price":"$99/mo","features":["5-step sequences","Channel recommendations","Personalization tips","Timing optimization","Sequence templates"]};
+
+export const knowledge_graph_basic = {"id":"knowledge-graph-basic","name":"Knowledge Graph Basic","description":"Build knowledge graphs from emails with entity extraction (people, projects, technologies) and relationship mapping.","category":"email-intelligence","price":"$149/mo","features":["Entity extraction","8 entity types","Relationship mapping","Basic visualization","Simple search"]};
+
+export const knowledge_graph_semantic = {"id":"knowledge-graph-semantic","name":"Knowledge Graph Semantic Search","description":"Advanced semantic search across knowledge graphs with path finding, expertise identification, and knowledge gap detection.","category":"email-intelligence","price":"$249/mo","features":["Semantic search","Path finding","Expertise identification","Knowledge gap detection","Advanced queries"]};
+
+export const knowledge_graph_visualization = {"id":"knowledge-graph-visualization","name":"Knowledge Graph Visualization","description":"Interactive knowledge graph visualization with temporal evolution tracking, cross-thread linking, and export capabilities.","category":"email-intelligence","price":"$349/mo","features":["Interactive visualization","Temporal evolution","Cross-thread linking","Export to PNG/SVG","Zoom and filter"]};
+
+export const entity_extraction_engine = {"id":"entity-extraction-engine","name":"Entity Extraction Engine","description":"Extract 8 entity types from emails: people, organizations, projects, technologies, decisions, topics, documents, and skills.","category":"email-intelligence","price":"$99/mo","features":["8 entity types","Context-aware extraction","Entity disambiguation","Confidence scoring","Batch processing"]};
+
+export const relationship_mapper = {"id":"relationship-mapper","name":"Relationship Mapper","description":"Map 10 relationship types between entities with strength scoring, temporal tracking, and relationship evolution analysis.","category":"email-intelligence","price":"$129/mo","features":["10 relationship types","Strength scoring","Temporal tracking","Evolution analysis","Relationship queries"]};
+
+export const customer_health_tracker = {"id":"customer-health-tracker","name":"Customer Health Tracker","description":"Track customer health with 5-tier status (Excellent to Critical). Analyze satisfaction, engagement, support, expansion, and churn signals.","category":"email-intelligence","price":"$179/mo","features":["5-tier health status","6 signal types","Health score calculation","Trend analysis","Alert notifications"]};
+
+export const customer_health_churn_prediction = {"id":"customer-health-churn-prediction","name":"Customer Health Churn Prediction","description":"Predict churn risk with early warning signals, retention action recommendations, and churn probability scoring.","category":"email-intelligence","price":"$299/mo","features":["Churn risk prediction","Early warning signals","Retention recommendations","Probability scoring","Churn prevention workflows"]};
+
+export const customer_health_nps_prediction = {"id":"customer-health-nps-prediction","name":"Customer Health NPS Prediction","description":"Predict NPS scores from email sentiment with satisfaction trend analysis and advocacy opportunity identification.","category":"email-intelligence","price":"$199/mo","features":["NPS prediction","Satisfaction trends","Advocacy identification","Sentiment analysis","NPS improvement suggestions"]};
+
+export const customer_lifecycle_tracker = {"id":"customer-lifecycle-tracker","name":"Customer Lifecycle Tracker","description":"Track customer lifecycle stages (Onboarding to Churn) with stage transition detection and lifecycle optimization.","category":"email-intelligence","price":"$149/mo","features":["6 lifecycle stages","Stage transition detection","Lifecycle optimization","Stage-specific actions","Lifecycle analytics"]};
+
+export const expansion_opportunity_detector = {"id":"expansion-opportunity-detector","name":"Expansion Opportunity Detector","description":"Detect expansion opportunities from email signals with upsell recommendations and revenue potential estimation.","category":"email-intelligence","price":"$249/mo","features":["Expansion signal detection","Upsell recommendations","Revenue estimation","Opportunity scoring","Expansion workflows"]};
+
+export const regulatory_compliance_scanner = {"id":"regulatory-compliance-scanner","name":"Regulatory Compliance Scanner","description":"Scan emails for 8 regulatory frameworks (GDPR, HIPAA, SOX, FINRA, CCPA, PCI-DSS, FERPA, GLBA) with industry-specific rules.","category":"email-intelligence","price":"$399/mo","features":["8 frameworks","Industry detection","Rule-based scanning","Risk scoring","Compliance reporting"]};
+
+export const regulatory_compliance_audit = {"id":"regulatory-compliance-audit","name":"Regulatory Compliance Audit Trail","description":"Generate comprehensive audit trails with compliance certificates, remediation tracking, and auditor-ready reports.","category":"email-intelligence","price":"$499/mo","features":["Audit trail generation","Compliance certificates","Remediation tracking","Auditor reports","Historical compliance"]};
+
+export const regulatory_compliance_remediation = {"id":"regulatory-compliance-remediation","name":"Regulatory Compliance Remediation","description":"Automated remediation suggestions with priority ranking, implementation guidance, and compliance verification.","category":"email-intelligence","price":"$299/mo","features":["Remediation suggestions","Priority ranking","Implementation guidance","Compliance verification","Remediation tracking"]};
+
+export const industry_compliance_rules = {"id":"industry-compliance-rules","name":"Industry Compliance Rules","description":"Industry-specific compliance rules for financial services, healthcare, education, e-commerce, legal, and government sectors.","category":"email-intelligence","price":"$199/mo","features":["6 industry profiles","Custom rule sets","Industry best practices","Regulatory updates","Compliance benchmarks"]};
+
+export const compliance_risk_assessment = {"id":"compliance-risk-assessment","name":"Compliance Risk Assessment","description":"Comprehensive risk assessment with fine potential calculations, violation severity scoring, and risk mitigation strategies.","category":"email-intelligence","price":"$349/mo","features":["Risk assessment","Fine calculations","Severity scoring","Mitigation strategies","Risk dashboards"]};
+
 export const allServices = [
   ai_agent_tool_builder,
   ai_vision_quality_inspection,
@@ -6888,5 +6938,30 @@ export const allServices = [
   v510_wcag_compliance_checker,
   v510_bias_free_language_checker,
   v510_reading_level_assessor,
-  v510_inclusive_terminology_enforcer
+  v510_inclusive_terminology_enforcer,
+  crisis_communication_basic,
+  crisis_communication_pro,
+  crisis_communication_enterprise,
+  crisis_response_templates,
+  crisis_escalation_automation,
+  sales_funnel_tracker,
+  sales_funnel_nurturing,
+  sales_funnel_velocity,
+  deal_health_monitor,
+  nurturing_sequence_generator,
+  knowledge_graph_basic,
+  knowledge_graph_semantic,
+  knowledge_graph_visualization,
+  entity_extraction_engine,
+  relationship_mapper,
+  customer_health_tracker,
+  customer_health_churn_prediction,
+  customer_health_nps_prediction,
+  customer_lifecycle_tracker,
+  expansion_opportunity_detector,
+  regulatory_compliance_scanner,
+  regulatory_compliance_audit,
+  regulatory_compliance_remediation,
+  industry_compliance_rules,
+  compliance_risk_assessment
 ];
