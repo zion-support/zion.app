@@ -14,6 +14,112 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import V204V208Showcase from '@/components/V204V208Showcase';
+import V251V255Showcase from '@/components/V251V255Showcase';
+import V256V260Showcase from '@/components/V256V260Showcase';
+import V261V265Showcase from '@/components/V261V265Showcase';
+import V266V270Showcase from '@/components/V266V270Showcase';
+import V271V275Showcase from '@/components/V271V275Showcase';
+import V276V280Showcase from '@/components/V276V280Showcase';
+import V281V285Showcase from '@/components/V281V285Showcase';
+import V286V290Showcase from '@/components/V286V290Showcase';
+import V291V295Showcase from '@/components/V291V295Showcase';
+import V296V300Showcase from '@/components/V296V300Showcase';
+import V301V305Showcase from '@/components/V301V305Showcase';
+import V306V310Showcase from '@/components/V306V310Showcase';
+import V311V315Showcase from '@/components/V311V315Showcase';
+import V316V320Showcase from '@/components/V316V320Showcase';
+import V321V325Showcase from '@/components/V321V325Showcase';
+import V326V330Showcase from '@/components/V326V330Showcase';
+import V331V335Showcase from '@/components/V331V335Showcase';
+import V336V340Showcase from '@/components/V336V340Showcase';
+import V341V345Showcase from '@/components/V341V345Showcase';
+import V346V350Showcase from '@/components/V346V350Showcase';
+import V351V355Showcase from '@/components/V351V355Showcase';
+import V356V360Showcase from '@/components/V356V360Showcase';
+import V361V365Showcase from '@/components/V361V365Showcase';
+import V366V370Showcase from '@/components/V366V370Showcase';
+import V371V375Showcase from '@/components/V371V375Showcase';
+import V376V380Showcase from '@/components/V376V380Showcase';
+import V381V385Showcase from '@/components/V381V385Showcase';
+import V386V390Showcase from '@/components/V386V390Showcase';
+import V391V395Showcase from '@/components/V391V395Showcase';
+import V396V400Showcase from '@/components/V396V400Showcase';
+import V401V405Showcase from '@/components/V401V405Showcase';
+import V491V495Showcase from '@/components/V491V495Showcase';
+import V496V500Showcase from '@/components/V496V500Showcase';
+import V501V505Showcase from '@/components/V501V505Showcase';
+import V506V510Showcase from '@/components/V506V510Showcase';
+import V511V515Showcase from '@/components/V511V515Showcase';
+import V516V520Showcase from '@/components/V516V520Showcase';
+import V521V525Showcase from '@/components/V521V525Showcase';
+import V526V530Showcase from '@/components/V526V530Showcase';
+import V531V535Showcase from '@/components/V531V535Showcase';
+import V536V540Showcase from '@/components/V536V540Showcase';
+import V541V545Showcase from '@/components/V541V545Showcase';
+import V546V550Showcase from '@/components/V546V550Showcase';
+import V551V555Showcase from '@/components/V551V555Showcase';
+import V556V560Showcase from '@/components/V556V560Showcase';
+import V561V565Showcase from '@/components/V561V565Showcase';
+import V566V570Showcase from '@/components/V566V570Showcase';
+import V571V575Showcase from '@/components/V571V575Showcase';
+import V576V580Showcase from '@/components/V576V580Showcase';
+import V581V585Showcase from '@/components/V581V585Showcase';
+import V586V590Showcase from '@/components/V586V590Showcase';
+import V591V595Showcase from '@/components/V591V595Showcase';
+import V596V600Showcase from '@/components/V596V600Showcase';
+import V601V605Showcase from '@/components/V601V605Showcase';
+import V606V610Showcase from '@/components/V606V610Showcase';
+import V611V615Showcase from '@/components/V611V615Showcase';
+import V616V620Showcase from '@/components/V616V620Showcase';
+import V621V625Showcase from '@/components/V621V625Showcase';
+import V626V630Showcase from '@/components/V626V630Showcase';
+import V631V635Showcase from '@/components/V631V635Showcase';
+import V636V640Showcase from '@/components/V636V640Showcase';
+import V641V645Showcase from '@/components/V641V645Showcase';
+import V646V650Showcase from '@/components/V646V650Showcase';
+import V651V655Showcase from '@/components/V651V655Showcase';
+import V656V660Showcase from '@/components/V656V660Showcase';
+import V661V665Showcase from '@/components/V661V665Showcase';
+import V666V670Showcase from '@/components/V666V670Showcase';
+import V671V675Showcase from '@/components/V671V675Showcase';
+import V676V680Showcase from '@/components/V676V680Showcase';
+import V681V685Showcase from '@/components/V681V685Showcase';
+import V686V690Showcase from '@/components/V686V690Showcase';
+import V691V695Showcase from '@/components/V691V695Showcase';
+import V696V700Showcase from '@/components/V696V700Showcase';
+import V701V705Showcase from '@/components/V701V705Showcase';
+import V706V710Showcase from '@/components/V706V710Showcase';
+import V711V715Showcase from '@/components/V711V715Showcase';
+import V716ApiKeyDashboard from '@/components/V716ApiKeyDashboard';
+import V717V720Showcase from '@/components/V717V720Showcase';
+import V721V725Showcase from '@/components/V721V725Showcase';
+import V726V730Showcase from '@/components/V726V730Showcase';
+import V731V735Showcase from '@/components/V731V735Showcase';
+import V736V740Showcase from '@/components/V736V740Showcase';
+import V741V745Showcase from '@/components/V741V745Showcase';
+import V746V750Showcase from '@/components/V746V750Showcase';
+import V751V755Showcase from '@/components/V751V755Showcase';
+import V756V760Showcase from '@/components/V756V760Showcase';
+import V761V765Showcase from '@/components/V761V765Showcase';
+import V766V770Showcase from '@/components/V766V770Showcase';
+import V771V775Showcase from '@/components/V771V775Showcase';
+import V776V780Showcase from '@/components/V776V780Showcase';
+import V781V785Showcase from '@/components/V781V785Showcase';
+import V786V790Showcase from '@/components/V786V790Showcase';
+import V791V795Showcase from '@/components/V791V795Showcase';
+import V796V800Showcase from '@/components/V796V800Showcase';
+import V801V805Showcase from '@/components/V801V805Showcase';
+import V806V810Showcase from '@/components/V806V810Showcase';
+import V811V815Showcase from '@/components/V811V815Showcase';
+import V816V820Showcase from '@/components/V816V820Showcase';
+import V821V825Showcase from '@/components/V821V825Showcase';
+import V826V830Showcase from '@/components/V826V830Showcase';
+import V831V835Showcase from '@/components/V831V835Showcase';
+import V836V840Showcase from '@/components/V836V840Showcase';
+import V841V845Showcase from '@/components/V841V845Showcase';
+import V846V850Showcase from '@/components/V846V850Showcase';
+import V851V855Showcase from '@/components/V851V855Showcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -29,6 +135,7 @@ const catAccent: Record<string, string> = {
   devops:    '#22d3ee',
   blockchain: '#fbbf24',
   iot:       '#2dd4bf',
+  'email-intelligence': '#a78bfa',
 };
 
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
@@ -42,16 +149,17 @@ const STAT_SLA      = 'SLA Uptime Guarantee';
 // Dynamic featured: popular services + first per category (auto-updates with catalog changes)
 
 const CATEGORIES = [
-  { key: 'ai',        label: 'AI Services',        emoji: '🧠', color: 'from-purple-500 to-indigo-500' },
-  { key: 'it',        label: 'IT Services',         emoji: '🖥️', color: 'from-blue-500 to-cyan-500' },
-  { key: 'cloud',     label: 'Cloud Services',       emoji: '☁️', color: 'from-sky-400 to-blue-600' },
-  { key: 'security',  label: 'Security Services',     emoji: '🔐', color: 'from-red-500 to-orange-500' },
-  { key: 'data',      label: 'Data Analytics',        emoji: '📊', color: 'from-green-500 to-emerald-500' },
-  { key: 'automation',label: 'Automation',            emoji: '🤖', color: 'from-pink-500 to-rose-500' },
-  { key: 'micro-saas',label: 'Micro-SaaS Products',   emoji: '🚀', color: 'from-amber-500 to-orange-500' },
-  { key: 'devops',    label: 'DevOps and Platform',   emoji: '⚙️', color: 'from-cyan-500 to-blue-500' },
-  { key: 'blockchain',label: 'Blockchain and Web3',   emoji: '⛓️', color: 'from-yellow-500 to-amber-600' },
-  { key: 'iot',       label: 'IoT and Edge',          emoji: '📡', color: 'from-teal-500 to-green-500' },
+  { key: 'ai',        label: 'AI Services',          emoji: '🧠', color: 'from-purple-500 to-indigo-500' },
+  { key: 'it',        label: 'IT Services',            emoji: '🖥️', color: 'from-blue-500 to-cyan-500' },
+  { key: 'cloud',     label: 'Cloud Services',          emoji: '☁️', color: 'from-sky-400 to-blue-600' },
+  { key: 'security',  label: 'Security Services',       emoji: '🔐', color: 'from-red-500 to-orange-500' },
+  { key: 'data',      label: 'Data Analytics',          emoji: '📊', color: 'from-green-500 to-emerald-500' },
+  { key: 'automation',label: 'Automation',              emoji: '🤖', color: 'from-pink-500 to-rose-500' },
+  { key: 'micro-saas',label: 'Micro-SaaS Products',     emoji: '🚀', color: 'from-amber-500 to-orange-500' },
+  { key: 'devops',    label: 'DevOps and Platform',     emoji: '⚙️', color: 'from-cyan-500 to-blue-500' },
+  { key: 'blockchain',label: 'Blockchain and Web3',     emoji: '⛓️', color: 'from-yellow-500 to-amber-600' },
+  { key: 'iot',       label: 'IoT and Edge',            emoji: '📡', color: 'from-teal-500 to-green-500' },
+  { key: 'email-intelligence', label: 'Email Intelligence', emoji: '📧', color: 'from-violet-500 to-purple-600' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
@@ -271,7 +379,7 @@ let list = services;
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, automation, data, and micro-SaaS services — from machine learning to cybersecurity, CRM to blockchain.
+            <ServiceCounter /> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -301,7 +409,7 @@ let list = services;
 
             {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-8 text-slate-400 text-sm mb-12">
-              {['US-Based Team','SLA Guaranteed','HIPAA Compliant','24/7 Support','617+ Services'].map(t => (
+              {['US-Based Team','SLA Guaranteed','HIPAA Compliant','24/7 Support',`${serviceCount}+ Services`].map(t => (
                 <div key={t} className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -382,6 +490,114 @@ let list = services;
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
+
+      {/* ── V204-V208 Email Intelligence Showcase ── */}
+      <V204V208Showcase />
+      <V251V255Showcase />
+      <V256V260Showcase />
+      <V261V265Showcase />
+      <V266V270Showcase />
+      <V271V275Showcase />
+      <V276V280Showcase />
+      <V281V285Showcase />
+      <V286V290Showcase />
+      <V291V295Showcase />
+      <V296V300Showcase />
+      <V301V305Showcase />
+      <V306V310Showcase />
+      <V311V315Showcase />
+      <V316V320Showcase />
+      <V321V325Showcase />
+      <V326V330Showcase />
+      <V331V335Showcase />
+      <V336V340Showcase />
+      <V341V345Showcase />
+      <V346V350Showcase />
+      <V351V355Showcase />
+      <V356V360Showcase />
+      <V361V365Showcase />
+      <V366V370Showcase />
+      <V371V375Showcase />
+      <V376V380Showcase />
+      <V381V385Showcase />
+      <V386V390Showcase />
+      <V391V395Showcase />
+      <V396V400Showcase />
+      <V401V405Showcase />
+      <V491V495Showcase />
+      <V496V500Showcase />
+      <V501V505Showcase />
+      <V506V510Showcase />
+      <V511V515Showcase />
+      <V516V520Showcase />
+      <V521V525Showcase />
+      <V526V530Showcase />
+      <V531V535Showcase />
+      <V536V540Showcase />
+      <V541V545Showcase />
+      <V546V550Showcase />
+      <V551V555Showcase />
+      <V556V560Showcase />
+      <V561V565Showcase />
+      <V566V570Showcase />
+      <V571V575Showcase />
+      <V576V580Showcase />
+      <V581V585Showcase />
+      <V586V590Showcase />
+      <V591V595Showcase />
+      <V596V600Showcase />
+      <V601V605Showcase />
+      <V606V610Showcase />
+      <V611V615Showcase />
+      <V616V620Showcase />
+      <V621V625Showcase />
+      <V626V630Showcase />
+      <V631V635Showcase />
+      <V636V640Showcase />
+      <V641V645Showcase />
+      <V646V650Showcase />
+      <V651V655Showcase />
+      <V656V660Showcase />
+      <V661V665Showcase />
+      <V666V670Showcase />
+      <V671V675Showcase />
+      <V676V680Showcase />
+      <V681V685Showcase />
+      <V686V690Showcase />
+      <V691V695Showcase />
+      <V696V700Showcase />
+      <V701V705Showcase />
+      <V706V710Showcase />
+      <V711V715Showcase />
+      <V716ApiKeyDashboard />
+      <V717V720Showcase />
+      <V721V725Showcase />
+      <V726V730Showcase />
+      <V731V735Showcase />
+      <V736V740Showcase />
+      <V741V745Showcase />
+      <V746V750Showcase />
+      <V751V755Showcase />
+      <V756V760Showcase />
+      <V761V765Showcase />
+      <V766V770Showcase />
+      <V771V775Showcase />
+      <V776V780Showcase />
+      <V781V785Showcase />
+      <V786V790Showcase />
+      <V791V795Showcase />
+      <V796V800Showcase />
+      <V801V805Showcase />
+      <V806V810Showcase />
+      <V811V815Showcase />
+      <V816V820Showcase />
+      <V821V825Showcase />
+      <V826V830Showcase />
+      <V831V835Showcase />
+      <V836V840Showcase />
+      <V841V845Showcase />
+      <V846V850Showcase />
+      <V851V855Showcase />
 
       {/* ── How It Works ── */}
       <section className="py-20">
@@ -1019,6 +1235,35 @@ let list = services;
           </div>
         </div>
       </section>
+      {/* ── Trust Badges ── */}
+      <section className="py-12 border-t border-slate-800 bg-slate-900/30">
+        <div className="container-page">
+          <h2 className="text-xl font-bold text-white text-center mb-2">Trusted by Industry Leaders</h2>
+          <p className="text-slate-500 text-center text-sm mb-8">Enterprise-grade security, compliance, and reliability</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {[
+              { label:"SOC 2 Type II", icon:"🔒", desc:"Certified" },
+              { label:"GDPR Compliant", icon:"🇪🇺", desc:"Data Protection" },
+              { label:"HIPAA Ready", icon:"🏥", desc:"Healthcare" },
+              { label:"ISO 27001", icon:"🛡️", desc:"Security" },
+              { label:"99.99% Uptime", icon:"⚡", desc:"SLA Guaranteed" },
+              { label:"24/7 Support", icon:"🌐", desc:"Global Coverage" },
+            ].map(b => (
+              <div key={b.label} className="text-center p-4 rounded-lg border border-slate-800 bg-slate-900/50">
+                <div className="text-2xl mb-1">{b.icon}</div>
+                <div className="text-xs font-semibold text-white">{b.label}</div>
+                <div className="text-[10px] text-slate-500">{b.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-6 text-slate-500 text-xs">
+            <span>✓ 3,457+ Micro-SaaS Solutions</span>
+            <span>✓ 33 Email Intelligence Engines</span>
+            <span>✓ 43 Integrated APIs</span>
+            <span>✓ 70+ Industry Categories</span>
+          </div>
+        </div>
+      </section>
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
@@ -1055,4 +1300,4 @@ let list = services;
     </main>
   );
 }
-
+
