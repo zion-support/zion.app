@@ -81834,5 +81834,464 @@
     "category": "micro-saas",
     "popular": true,
     "industry": "Document Management"
+  },
+  {
+    "id": "ai-semantic-search-engine",
+    "title": "AI Semantic Search Engine",
+    "description": "Enterprise semantic search using vector embeddings for finding relevant documents, code, and knowledge across your organization.",
+    "icon": "🔍",
+    "features": [
+      "Vector embeddings",
+      "Natural language queries",
+      "Cross-format search",
+      "Relevance ranking",
+      "Knowledge graph"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1499",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/ai-semantic-search-engine",
+    "category": "ai",
+    "popular": true,
+    "industry": "Search"
+  },
+  {
+    "id": "ai-prompt-engineering-suite",
+    "title": "AI Prompt Engineering Suite",
+    "description": "Professional prompt engineering tools for optimizing LLM interactions with template management, A/B testing, and performance analytics.",
+    "icon": "⚡",
+    "features": [
+      "Template library",
+      "A/B testing",
+      "Performance analytics",
+      "Version control",
+      "Multi-model support"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/ai-prompt-engineering-suite",
+    "category": "ai",
+    "popular": false,
+    "industry": "Developer Tools"
+  },
+  {
+    "id": "security-soc-platform",
+    "title": "Security Operations Center Platform",
+    "description": "24/7 managed SOC with SIEM, SOAR, threat hunting, and incident response for comprehensive security monitoring.",
+    "icon": "🏢",
+    "features": [
+      "24/7 monitoring",
+      "SIEM integration",
+      "SOAR automation",
+      "Threat hunting",
+      "Incident response"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "7999",
+      "enterprise": "19999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/security-soc-platform",
+    "category": "security",
+    "popular": true,
+    "industry": "Security Operations"
+  },
+  {
+    "id": "security-red-team-service",
+    "title": "Red Team as a Service",
+    "description": "Continuous adversary simulation with realistic attack scenarios, social engineering, and detailed reporting.",
+    "icon": "🎯",
+    "features": [
+      "Attack simulation",
+      "Social engineering",
+      "Physical security",
+      "Detailed reporting",
+      "Remediation guidance"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "29999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/security-red-team-service",
+    "category": "security",
+    "popular": true,
+    "industry": "Offensive Security"
+  },
+  {
+    "id": "security-data-classification",
+    "title": "Automated Data Classification",
+    "description": "AI-powered data classification with automatic tagging, sensitivity labeling, and policy enforcement across all data stores.",
+    "icon": "📋",
+    "features": [
+      "Auto-classification",
+      "Sensitivity labels",
+      "Policy enforcement",
+      "Multi-source scanning",
+      "Compliance mapping"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1499",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/security-data-classification",
+    "category": "security",
+    "popular": false,
+    "industry": "Data Governance"
+  },
+  {
+    "id": "cloud-hybrid-platform",
+    "title": "Hybrid Cloud Management",
+    "description": "Unified management for hybrid environments spanning on-premises, private cloud, and multiple public clouds.",
+    "icon": "🌩️",
+    "features": [
+      "Multi-environment",
+      "Unified dashboard",
+      "Workload portability",
+      "Cost optimization",
+      "Security policies"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2499",
+      "enterprise": "6999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-hybrid-platform",
+    "category": "cloud",
+    "popular": true,
+    "industry": "Cloud Management"
+  },
+  {
+    "id": "cloud-ai-inference",
+    "title": "AI Model Inference Platform",
+    "description": "Deploy and serve ML models at scale with auto-scaling, A/B testing, monitoring, and cost optimization.",
+    "icon": "🧠",
+    "features": [
+      "Auto-scaling",
+      "A/B testing",
+      "Model monitoring",
+      "Cost optimization",
+      "Multi-framework"
+    ],
+    "pricing": {
+      "basic": "699",
+      "pro": "1799",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-ai-inference",
+    "category": "cloud",
+    "popular": true,
+    "industry": "ML Infrastructure"
+  },
+  {
+    "id": "cloud-network-security",
+    "title": "Cloud Network Security",
+    "description": "Secure cloud networking with micro-segmentation, encrypted transit, and zero-trust network access.",
+    "icon": "🔒",
+    "features": [
+      "Micro-segmentation",
+      "Encrypted transit",
+      "Zero-trust access",
+      "DDoS protection",
+      "Network analytics"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "1999",
+      "enterprise": "5499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-network-security",
+    "category": "cloud",
+    "popular": false,
+    "industry": "Network Security"
+  },
+  {
+    "id": "cloud-serverless-computing",
+    "title": "Serverless Computing Platform",
+    "description": "Event-driven serverless computing with automatic scaling, pay-per-execution, and multi-language support.",
+    "icon": "⚡",
+    "features": [
+      "Event-driven",
+      "Auto-scaling",
+      "Pay-per-execution",
+      "Multi-language",
+      "Cold start optimization"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-serverless-computing",
+    "category": "cloud",
+    "popular": true,
+    "industry": "Serverless"
+  },
+  {
+    "id": "cloud-storage-optimization",
+    "title": "Cloud Storage Optimizer",
+    "description": "Intelligent storage tiering, deduplication, and lifecycle management to reduce cloud storage costs by up to 70%.",
+    "icon": "💾",
+    "features": [
+      "Auto-tiering",
+      "Deduplication",
+      "Lifecycle management",
+      "Cost analytics",
+      "Cross-cloud sync"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-storage-optimization",
+    "category": "cloud",
+    "popular": false,
+    "industry": "Storage"
+  },
+  {
+    "id": "data-quality-platform",
+    "title": "Data Quality Platform",
+    "description": "Automated data quality monitoring with anomaly detection, profiling, validation rules, and remediation workflows.",
+    "icon": "✅",
+    "features": [
+      "Anomaly detection",
+      "Data profiling",
+      "Validation rules",
+      "Remediation workflows",
+      "Quality scoring"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1499",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/data-quality-platform",
+    "category": "data",
+    "popular": false,
+    "industry": "Data Quality"
+  },
+  {
+    "id": "data-privacy-automation",
+    "title": "Privacy Automation Platform",
+    "description": "Automate privacy operations with consent management, data mapping, DSAR fulfillment, and regulatory reporting.",
+    "icon": "🔐",
+    "features": [
+      "Consent management",
+      "Data mapping",
+      "DSAR automation",
+      "Regulatory reporting",
+      "Privacy impact assessment"
+    ],
+    "pricing": {
+      "basic": "699",
+      "pro": "1799",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/data-privacy-automation",
+    "category": "data",
+    "popular": false,
+    "industry": "Privacy"
+  },
+  {
+    "id": "saas-client-portal",
+    "title": "White-Label Client Portal",
+    "description": "Customizable client portal with project tracking, document sharing, invoicing, and branded experience.",
+    "icon": "🏠",
+    "features": [
+      "Project tracking",
+      "Document sharing",
+      "Invoicing",
+      "Custom branding",
+      "Client messaging"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1299"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-client-portal",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Client Management"
+  },
+  {
+    "id": "saas-form-builder",
+    "title": "Advanced Form Builder",
+    "description": "Drag-and-drop form builder with conditional logic, payments, e-signatures, and workflow automation.",
+    "icon": "📝",
+    "features": [
+      "Drag-and-drop",
+      "Conditional logic",
+      "Payments",
+      "E-signatures",
+      "Workflow automation"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "799"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-form-builder",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Productivity"
+  },
+  {
+    "id": "saas-booking-system",
+    "title": "Resource Booking System",
+    "description": "Book rooms, equipment, vehicles, and personnel with availability tracking, approvals, and calendar integration.",
+    "icon": "📅",
+    "features": [
+      "Multi-resource",
+      "Availability tracking",
+      "Approval workflows",
+      "Calendar sync",
+      "Conflict resolution"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "399",
+      "enterprise": "999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-booking-system",
+    "category": "micro-saas",
+    "popular": false,
+    "industry": "Scheduling"
+  },
+  {
+    "id": "saas-community-platform",
+    "title": "Community Platform Pro",
+    "description": "Build engaged communities with forums, events, member directories, gamification, and analytics.",
+    "icon": "👥",
+    "features": [
+      "Forums",
+      "Events",
+      "Member directory",
+      "Gamification",
+      "Analytics"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-community-platform",
+    "category": "micro-saas",
+    "popular": false,
+    "industry": "Community"
+  },
+  {
+    "id": "saas-ticketing-system",
+    "title": "Help Desk Ticketing System",
+    "description": "Comprehensive ticketing with AI-powered routing, SLA management, knowledge base, and customer satisfaction tracking.",
+    "icon": "🎫",
+    "features": [
+      "AI routing",
+      "SLA management",
+      "Knowledge base",
+      "CSAT tracking",
+      "Multi-channel"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-ticketing-system",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Customer Support"
   }
 ]
