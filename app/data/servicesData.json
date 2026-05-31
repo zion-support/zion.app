@@ -70258,5 +70258,605 @@
       "email": "kleber@ziontechgroup.com",
       "address": "364 E Main St STE 1008, Middletown DE 19709"
     }
+  },
+  {
+    "id": "v506-email-ab-testing-platform",
+    "name": "AI Email A/B Testing Platform",
+    "category": "AI Services",
+    "description": "Automatically splits email campaigns, tracks open/click rates, and optimizes subject lines and content with statistical significance testing.",
+    "features": [
+      "Subject line A/B variants",
+      "Statistical significance (chi-squared)",
+      "Winner auto-promotion",
+      "Multi-variant testing",
+      "Historical learning",
+      "Send-time optimization",
+      "Personalization impact",
+      "Revenue attribution"
+    ],
+    "price": "$109/month",
+    "benefits": [
+      "Increase open rates by 45%",
+      "Data-driven subject lines",
+      "Auto-optimize campaigns",
+      "Statistical confidence"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v506-subject-line-optimizer",
+    "name": "AI Subject Line Optimizer",
+    "category": "Micro SaaS",
+    "description": "Generates and tests multiple subject line variants using proven psychological triggers and A/B testing methodology.",
+    "features": [
+      "5 subject line styles",
+      "Auto-variant generation",
+      "Performance tracking",
+      "Winner detection"
+    ],
+    "price": "$59/month",
+    "benefits": [
+      "Higher open rates",
+      "Proven templates",
+      "Automatic optimization"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v506-campaign-significance-tester",
+    "name": "AI Campaign Significance Tester",
+    "category": "AI Services",
+    "description": "Uses chi-squared statistical tests to determine if email campaign differences are statistically significant or just random noise.",
+    "features": [
+      "Chi-squared testing",
+      "Confidence intervals",
+      "Sample size calculation",
+      "Auto-conclusion"
+    ],
+    "price": "$49/month",
+    "benefits": [
+      "Statistical rigor",
+      "No false conclusions",
+      "Data-driven decisions"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v506-send-time-optimizer",
+    "name": "AI Send Time Optimizer",
+    "category": "Micro SaaS",
+    "description": "Analyzes recipient engagement patterns to determine the optimal send time for maximum open and click rates.",
+    "features": [
+      "Timezone analysis",
+      "Engagement patterns",
+      "Industry benchmarks",
+      "Personal optimization"
+    ],
+    "price": "$39/month",
+    "benefits": [
+      "Send at perfect time",
+      "Higher engagement",
+      "Timezone-aware"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v506-multi-variant-tester",
+    "name": "AI Multi-Variant Email Tester",
+    "category": "AI Services",
+    "description": "Tests up to 6 email variants simultaneously with automatic winner selection and traffic allocation optimization.",
+    "features": [
+      "Up to 6 variants",
+      "Traffic allocation",
+      "Multi-metric scoring",
+      "Auto-winner selection"
+    ],
+    "price": "$79/month",
+    "benefits": [
+      "Test more ideas faster",
+      "Multi-metric optimization",
+      "Statistical rigor"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v507-email-data-visualization",
+    "name": "AI Email Data Visualization Generator",
+    "category": "AI Services",
+    "description": "Transforms email thread data into executive-ready charts, timelines, and visual reports for business intelligence presentations.",
+    "features": [
+      "Thread timeline visualization",
+      "Response time charts",
+      "Sentiment graphs",
+      "Volume trends",
+      "Category pie charts",
+      "Revenue funnels",
+      "Team heatmaps",
+      "SVG export"
+    ],
+    "price": "$99/month",
+    "benefits": [
+      "Executive-ready reports",
+      "Visual email intelligence",
+      "Instant chart generation",
+      "Data-driven insights"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v507-email-timeline-generator",
+    "name": "AI Email Timeline Generator",
+    "category": "Micro SaaS",
+    "description": "Creates interactive timeline visualizations of email threads showing message flow, response gaps, and key events.",
+    "features": [
+      "Thread visualization",
+      "Response gap analysis",
+      "Key event markers",
+      "Export to SVG"
+    ],
+    "price": "$49/month",
+    "benefits": [
+      "Visualize email flow",
+      "Identify bottlenecks",
+      "Presentation-ready"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v507-response-heatmap",
+    "name": "AI Response Time Heatmap",
+    "category": "Micro SaaS",
+    "description": "Generates heatmaps showing response time patterns by hour, day, and team member for workload optimization.",
+    "features": [
+      "Hourly patterns",
+      "Day-of-week analysis",
+      "Team comparisons",
+      "Anomaly highlighting"
+    ],
+    "price": "$59/month",
+    "benefits": [
+      "Optimize response times",
+      "Identify peak hours",
+      "Team performance insights"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v507-email-funnel-visualizer",
+    "name": "AI Email Funnel Visualizer",
+    "category": "AI Services",
+    "description": "Creates conversion funnel visualizations from email campaigns showing open→click→reply→conversion progression.",
+    "features": [
+      "Funnel stages",
+      "Drop-off analysis",
+      "Conversion rates",
+      "Revenue attribution"
+    ],
+    "price": "$69/month",
+    "benefits": [
+      "Visual conversion tracking",
+      "Identify drop-off points",
+      "Optimize funnels"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v507-executive-dashboard-builder",
+    "name": "AI Executive Dashboard Builder",
+    "category": "AI Services",
+    "description": "Auto-generates executive dashboard reports from email analytics with KPI tracking, trend charts, and one-click sharing.",
+    "features": [
+      "KPI tracking",
+      "Auto-chart generation",
+      "Trend analysis",
+      "One-click sharing"
+    ],
+    "price": "$89/month",
+    "benefits": [
+      "Board-ready reports",
+      "Automated dashboards",
+      "Real-time KPIs"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v508-email-voice-to-action",
+    "name": "AI Email Voice-to-Action Engine",
+    "category": "AI Services",
+    "description": "Converts voice memos and spoken instructions into structured email actions, tasks, and follow-ups with NLP transcription processing.",
+    "features": [
+      "Voice transcription",
+      "Action item extraction",
+      "Task creation with deadlines",
+      "Follow-up scheduling",
+      "Meeting note generation",
+      "Sentiment detection",
+      "Multi-language support",
+      "Speaker identification"
+    ],
+    "price": "$119/month",
+    "benefits": [
+      "Turn voice into action",
+      "Never miss verbal instructions",
+      "Auto-task creation",
+      "Structured follow-ups"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v508-meeting-note-extractor",
+    "name": "AI Meeting Note Extractor",
+    "category": "Micro SaaS",
+    "description": "Extracts structured meeting notes, action items, and decisions from voice transcripts and email discussions.",
+    "features": [
+      "Note extraction",
+      "Decision logging",
+      "Action item tracking",
+      "Attendee tagging"
+    ],
+    "price": "$59/month",
+    "benefits": [
+      "Structured meeting notes",
+      "Auto action items",
+      "Searchable history"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v508-voice-sentiment-analyzer",
+    "name": "AI Voice Sentiment Analyzer",
+    "category": "AI Services",
+    "description": "Analyzes emotional tone and sentiment in voice transcripts to detect urgency, frustration, enthusiasm, and concern.",
+    "features": [
+      "Tone detection",
+      "Urgency scoring",
+      "Emotion mapping",
+      "Trend tracking"
+    ],
+    "price": "$69/month",
+    "benefits": [
+      "Detect emotional cues",
+      "Prioritize by sentiment",
+      "Prevent escalations"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v508-auto-task-creator",
+    "name": "AI Auto-Task Creator from Voice",
+    "category": "Micro SaaS",
+    "description": "Automatically creates structured tasks with assignees, deadlines, and priorities from spoken instructions.",
+    "features": [
+      "Task extraction",
+      "Assignee detection",
+      "Deadline parsing",
+      "Priority assignment"
+    ],
+    "price": "$49/month",
+    "benefits": [
+      "Instant task creation",
+      "No manual entry",
+      "Structured output"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v508-multilingual-transcription",
+    "name": "AI Multilingual Voice Transcription",
+    "category": "AI Services",
+    "description": "Transcribes and processes voice memos in 15+ languages with automatic translation and action extraction.",
+    "features": [
+      "15+ languages",
+      "Auto-translation",
+      "Action extraction",
+      "Cultural adaptation"
+    ],
+    "price": "$89/month",
+    "benefits": [
+      "Global team support",
+      "Multilingual actions",
+      "Cross-language collaboration"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v509-email-competitive-intelligence",
+    "name": "AI Email Competitive Intelligence Engine",
+    "category": "AI Services",
+    "description": "Monitors competitor mentions in emails, tracks market positioning, and generates competitive battle cards for sales teams.",
+    "features": [
+      "Competitor mention tracking",
+      "Battle card generation",
+      "Win/loss analysis",
+      "Market share estimation",
+      "Feature comparison",
+      "Pricing intelligence",
+      "Threat assessment",
+      "10+ competitor database"
+    ],
+    "price": "$139/month",
+    "benefits": [
+      "Know your competition",
+      "Auto battle cards",
+      "Win more deals",
+      "Market intelligence"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v509-battle-card-generator",
+    "name": "AI Competitive Battle Card Generator",
+    "category": "Micro SaaS",
+    "description": "Auto-generates competitive battle cards with strengths, weaknesses, talking points, and objection handlers for each competitor.",
+    "features": [
+      "Auto battle cards",
+      "Talking points",
+      "Objection handlers",
+      "Win rate tracking"
+    ],
+    "price": "$79/month",
+    "benefits": [
+      "Sales team enablement",
+      "Instant battle cards",
+      "Data-driven positioning"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v509-competitor-mention-tracker",
+    "name": "AI Competitor Mention Tracker",
+    "category": "Micro SaaS",
+    "description": "Tracks every competitor mention across email threads with context analysis, sentiment scoring, and trend visualization.",
+    "features": [
+      "Mention tracking",
+      "Context analysis",
+      "Sentiment scoring",
+      "Trend charts"
+    ],
+    "price": "$59/month",
+    "benefits": [
+      "Competitive awareness",
+      "Trend detection",
+      "Market positioning insights"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v509-win-loss-analyzer",
+    "name": "AI Win/Loss Pattern Analyzer",
+    "category": "AI Services",
+    "description": "Analyzes win/loss patterns from email threads to identify what makes deals succeed or fail against specific competitors.",
+    "features": [
+      "Pattern analysis",
+      "Win factor identification",
+      "Loss prevention",
+      "Competitor-specific insights"
+    ],
+    "price": "$89/month",
+    "benefits": [
+      "Learn from wins",
+      "Prevent losses",
+      "Competitive edge"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v509-pricing-intelligence",
+    "name": "AI Competitive Pricing Intelligence",
+    "category": "AI Services",
+    "description": "Extracts competitor pricing information from emails and builds competitive pricing intelligence dashboards.",
+    "features": [
+      "Price extraction",
+      "Competitor comparison",
+      "Pricing trends",
+      "Positioning recommendations"
+    ],
+    "price": "$99/month",
+    "benefits": [
+      "Know competitor pricing",
+      "Optimize your pricing",
+      "Market positioning"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v510-email-accessibility-checker",
+    "name": "AI Email Accessibility & Inclusion Checker",
+    "category": "AI Services",
+    "description": "Ensures emails are accessible (screen readers, WCAG compliance) and inclusive (bias-free language, gender-neutral terms) for all recipients.",
+    "features": [
+      "Screen reader compatibility",
+      "WCAG validation",
+      "Bias-free language",
+      "Gender-neutral terms",
+      "Reading level assessment",
+      "Plain language scoring",
+      "Cultural sensitivity",
+      "Inclusive terminology"
+    ],
+    "price": "$89/month",
+    "benefits": [
+      "WCAG compliance",
+      "Inclusive communication",
+      "Broader reach",
+      "Legal protection"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v510-wcag-compliance-checker",
+    "name": "AI WCAG Email Compliance Checker",
+    "category": "Security Services",
+    "description": "Validates emails against WCAG 2.1 accessibility guidelines including contrast ratios, heading structure, and screen reader compatibility.",
+    "features": [
+      "WCAG 2.1 validation",
+      "Contrast checking",
+      "Heading structure",
+      "Screen reader testing"
+    ],
+    "price": "$69/month",
+    "benefits": [
+      "WCAG compliance",
+      "Accessibility certification",
+      "Legal protection"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v510-bias-free-language-checker",
+    "name": "AI Bias-Free Language Checker",
+    "category": "AI Services",
+    "description": "Detects and suggests replacements for gender, age, ability, and cultural bias in email communications.",
+    "features": [
+      "4 bias categories",
+      "50+ biased terms",
+      "Auto-suggestions",
+      "Severity scoring"
+    ],
+    "price": "$59/month",
+    "benefits": [
+      "Inclusive language",
+      "Avoid offense",
+      "Professional communication"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v510-reading-level-assessor",
+    "name": "AI Email Reading Level Assessor",
+    "category": "Micro SaaS",
+    "description": "Assesses email reading level using Flesch-Kincaid metrics and suggests simplifications for broader accessibility.",
+    "features": [
+      "Flesch-Kincaid scoring",
+      "Grade level",
+      "Simplification suggestions",
+      "Jargon detection"
+    ],
+    "price": "$39/month",
+    "benefits": [
+      "Clearer communication",
+      "Broader audience reach",
+      "Professional quality"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
+  },
+  {
+    "id": "v510-inclusive-terminology-enforcer",
+    "name": "AI Inclusive Terminology Enforcer",
+    "category": "AI Services",
+    "description": "Enforces inclusive terminology standards across all email communications with auto-correction and team-wide policy enforcement.",
+    "features": [
+      "Terminology database",
+      "Auto-correction",
+      "Policy enforcement",
+      "Team-wide standards"
+    ],
+    "price": "$49/month",
+    "benefits": [
+      "Consistent inclusion",
+      "Auto-correction",
+      "Team standards"
+    ],
+    "contactInfo": {
+      "phone": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown DE 19709"
+    }
   }
 ]
