@@ -1199,6 +1199,7 @@ import V941V945Showcase from '@/components/V941V945Showcase';
 import V946V950Showcase from '@/components/V946V950Showcase';
 import V951V955Showcase from '@/components/V951V955Showcase';
 import V956V960Showcase from '@/components/V956V960Showcase';
+import V961V965Showcase from '@/components/V961V965Showcase';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -1698,6 +1699,7 @@ let list = services;
       <V946V950Showcase />
       <V951V955Showcase />
       <V956V960Showcase />
+      <V961V965Showcase />
 
       {/* ── How It Works ── */}
       <section className="py-20">

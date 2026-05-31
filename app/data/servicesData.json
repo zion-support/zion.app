@@ -121196,5 +121196,765 @@
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
     },
     "link": "/services/v960-compliance-report-generator"
+  },
+  {
+    "id": "v961-email-intent-classifier",
+    "name": "AI Email Intent Classifier V961",
+    "category": "AI Email Intelligence",
+    "icon": "🧠",
+    "price": "From $349/month",
+    "description": "Classifies emails into 15+ intent categories with confidence scores, auto-routing, sentiment analysis, and SLA recommendations. Case-by-case intelligent analysis for every email.",
+    "features": [
+      "15+ Intent Categories",
+      "Confidence Scoring",
+      "Auto-Routing",
+      "Sentiment Analysis",
+      "Urgency Detection",
+      "SLA Recommendation"
+    ],
+    "benefits": [
+      "80% faster routing",
+      "Zero missed priorities",
+      "Intelligent auto-responses"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-email-intent-classifier"
+  },
+  {
+    "id": "v961-purchase-intent-detection",
+    "name": "Purchase Intent Detection",
+    "category": "AI Email Intelligence",
+    "icon": "🛒",
+    "price": "From $199/month",
+    "description": "Automatically detects purchase intent in emails with high accuracy. Identifies buying signals, pricing inquiries, and upsell opportunities for instant sales routing.",
+    "features": [
+      "Buying Signal Detection",
+      "Pricing Inquiry Recognition",
+      "Upsell Opportunity Alert",
+      "Sales Pipeline Integration"
+    ],
+    "benefits": [
+      "Never miss a sale",
+      "Instant routing to sales",
+      "3x faster lead response"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-purchase-intent-detection"
+  },
+  {
+    "id": "v961-complaint-escalation-engine",
+    "name": "Complaint Escalation Engine",
+    "category": "AI Email Intelligence",
+    "icon": "🚨",
+    "price": "From $249/month",
+    "description": "Detects customer complaints and frustration signals, auto-escalates to managers, and triggers retention workflows to prevent churn.",
+    "features": [
+      "Frustration Detection",
+      "Auto-Escalation",
+      "Retention Workflow",
+      "Manager Notification"
+    ],
+    "benefits": [
+      "Reduce churn by 40%",
+      "Faster resolution",
+      "Customer retention"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-complaint-escalation-engine"
+  },
+  {
+    "id": "v961-cancellation-prevention",
+    "name": "Cancellation Prevention System",
+    "category": "AI Email Intelligence",
+    "icon": "🛡️",
+    "price": "From $299/month",
+    "description": "Detects cancellation intent early and triggers automated retention workflows with personalized offers, alternatives, and feedback collection.",
+    "features": [
+      "Early Detection",
+      "Retention Offers",
+      "Alternative Suggestions",
+      "Feedback Collection",
+      "Win-Back Campaigns"
+    ],
+    "benefits": [
+      "Save 30% of cancellations",
+      "Automated retention",
+      "Revenue protection"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-cancellation-prevention"
+  },
+  {
+    "id": "v961-negotiation-detector",
+    "name": "Negotiation Signal Detector",
+    "category": "AI Email Intelligence",
+    "icon": "🤝",
+    "price": "From $179/month",
+    "description": "Identifies negotiation signals in emails — discount requests, budget concerns, competitive comparisons — and routes to experienced sales leads.",
+    "features": [
+      "Discount Detection",
+      "Budget Signal Analysis",
+      "Competitor Mention Tracking",
+      "Negotiation Scoring"
+    ],
+    "benefits": [
+      "Better deal outcomes",
+      "Smart routing",
+      "Pricing intelligence"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-negotiation-detector"
+  },
+  {
+    "id": "v961-spam-intent-filter",
+    "name": "Spam Intent Filter Pro",
+    "category": "AI Email Intelligence",
+    "icon": "🗑️",
+    "price": "From $99/month",
+    "description": "Advanced spam detection using intent classification — identifies lottery scams, phishing bait, unsolicited marketing, and fraudulent requests.",
+    "features": [
+      "Scam Pattern Detection",
+      "Phishing Bait Analysis",
+      "Marketing Spam Filter",
+      "Fraud Detection"
+    ],
+    "benefits": [
+      "99.9% spam accuracy",
+      "Clean inbox",
+      "Zero false positives"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v961-spam-intent-filter"
+  },
+  {
+    "id": "v962-revenue-attribution-engine",
+    "name": "AI Revenue Attribution Engine V962",
+    "category": "AI Email Intelligence",
+    "icon": "💰",
+    "price": "From $499/month",
+    "description": "Tracks email-to-revenue attribution, identifies high-value threads, predicts deal close probability, and optimizes sales engagement strategies.",
+    "features": [
+      "Revenue Signal Detection",
+      "Deal Stage Tracking",
+      "Close Probability",
+      "Pipeline Value",
+      "Stakeholder Mapping"
+    ],
+    "benefits": [
+      "Accurate revenue forecasting",
+      "Prioritize high-value deals",
+      "Data-driven sales"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-revenue-attribution-engine"
+  },
+  {
+    "id": "v962-deal-probability-predictor",
+    "name": "Deal Probability Predictor",
+    "category": "AI Email Intelligence",
+    "icon": "📈",
+    "price": "From $299/month",
+    "description": "Predicts deal close probability based on email signals, stakeholder involvement, timeline pressure, and historical patterns.",
+    "features": [
+      "Probability Scoring",
+      "Signal Analysis",
+      "Historical Patterns",
+      "Risk Assessment"
+    ],
+    "benefits": [
+      "Accurate forecasting",
+      "Focus on winnable deals",
+      "Pipeline clarity"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-deal-probability-predictor"
+  },
+  {
+    "id": "v962-sales-pipeline-analytics",
+    "name": "Email Sales Pipeline Analytics",
+    "category": "AI Email Intelligence",
+    "icon": "📊",
+    "price": "From $249/month",
+    "description": "Real-time pipeline analytics from email conversations — weighted pipeline value, stage distribution, deal velocity, and forecast accuracy.",
+    "features": [
+      "Weighted Pipeline",
+      "Stage Distribution",
+      "Deal Velocity",
+      "Forecast Accuracy",
+      "Team Performance"
+    ],
+    "benefits": [
+      "Real-time visibility",
+      "Accurate forecasts",
+      "Performance insights"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-sales-pipeline-analytics"
+  },
+  {
+    "id": "v962-stakeholder-mapper",
+    "name": "Deal Stakeholder Mapper",
+    "category": "AI Email Intelligence",
+    "icon": "👥",
+    "price": "From $199/month",
+    "description": "Maps decision-makers, influencers, and end-users from email conversations. Identifies who holds the budget, who influences, and who uses.",
+    "features": [
+      "Decision Maker Detection",
+      "Influencer Identification",
+      "Org Chart Building",
+      "Engagement Tracking"
+    ],
+    "benefits": [
+      "Know your buyers",
+      "Target right people",
+      "Faster closes"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-stakeholder-mapper"
+  },
+  {
+    "id": "v962-competitive-intelligence",
+    "name": "Email Competitive Intelligence",
+    "category": "AI Email Intelligence",
+    "icon": "🏆",
+    "price": "From $279/month",
+    "description": "Detects competitor mentions in emails, tracks competitive positioning, and generates battle cards for sales teams.",
+    "features": [
+      "Competitor Detection",
+      "Positioning Analysis",
+      "Battle Card Generation",
+      "Win/Loss Tracking"
+    ],
+    "benefits": [
+      "Competitive edge",
+      "Better positioning",
+      "Higher win rates"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-competitive-intelligence"
+  },
+  {
+    "id": "v962-deal-risk-advisor",
+    "name": "Deal Risk Advisor",
+    "category": "AI Email Intelligence",
+    "icon": "⚠️",
+    "price": "From $229/month",
+    "description": "Identifies deal risks from email signals — budget constraints, timeline delays, competitor threats, and ghosting patterns — with mitigation strategies.",
+    "features": [
+      "Risk Detection",
+      "Mitigation Strategies",
+      "Early Warning",
+      "Ghosting Prevention"
+    ],
+    "benefits": [
+      "Save at-risk deals",
+      "Proactive intervention",
+      "Higher close rates"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v962-deal-risk-advisor"
+  },
+  {
+    "id": "v963-phishing-shield-pro",
+    "name": "Phishing Shield Pro V963",
+    "category": "AI Email Intelligence",
+    "icon": "🛡️",
+    "price": "From $399/month",
+    "description": "Advanced phishing detection with URL reputation analysis, sender spoofing detection, social engineering pattern recognition, and real-time threat assessment.",
+    "features": [
+      "URL Reputation",
+      "Sender Verification",
+      "Social Engineering Detection",
+      "Attachment Analysis",
+      "Threat Scoring"
+    ],
+    "benefits": [
+      "Block 99.9% of phishing",
+      "Zero-day protection",
+      "Real-time alerts"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-phishing-shield-pro"
+  },
+  {
+    "id": "v963-url-reputation-scanner",
+    "name": "URL Reputation Scanner",
+    "category": "AI Email Intelligence",
+    "icon": "🔗",
+    "price": "From $149/month",
+    "description": "Scans all URLs in emails for suspicious patterns — phishing domains, IP addresses, excessive subdomains, URL shorteners, and brand spoofing.",
+    "features": [
+      "Domain Analysis",
+      "TLD Risk Assessment",
+      "Brand Spoofing Detection",
+      "Shortener Detection"
+    ],
+    "benefits": [
+      "Block malicious links",
+      "Protect employees",
+      "Prevent data theft"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-url-reputation-scanner"
+  },
+  {
+    "id": "v963-sender-authentication",
+    "name": "Sender Authentication Engine",
+    "category": "AI Email Intelligence",
+    "icon": "✉️",
+    "price": "From $199/month",
+    "description": "Verifies sender authenticity by detecting display name spoofing, free email impersonation, and domain mismatch patterns.",
+    "features": [
+      "Display Name Verification",
+      "Domain Mismatch Detection",
+      "Impersonation Alert",
+      "SPF/DKIM Check"
+    ],
+    "benefits": [
+      "Stop spoofing",
+      "Verify senders",
+      "Trust your inbox"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-sender-authentication"
+  },
+  {
+    "id": "v963-social-engineering-guard",
+    "name": "Social Engineering Guard",
+    "category": "AI Email Intelligence",
+    "icon": "🎭",
+    "price": "From $249/month",
+    "description": "Detects social engineering tactics — authority impersonation, fear mongering, greed bait, and urgency manipulation in emails.",
+    "features": [
+      "Authority Detection",
+      "Fear Tactic Analysis",
+      "Urgency Manipulation",
+      "Greed Bait Detection"
+    ],
+    "benefits": [
+      "Stop manipulation",
+      "Educate employees",
+      "Reduce human error"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-social-engineering-guard"
+  },
+  {
+    "id": "v963-attachment-threat-scanner",
+    "name": "Attachment Threat Scanner",
+    "category": "AI Email Intelligence",
+    "icon": "📎",
+    "price": "From $179/month",
+    "description": "Scans email attachments for threats — executable files, malicious archives, double extension spoofing, and macro-enabled documents.",
+    "features": [
+      "Executable Detection",
+      "Archive Analysis",
+      "Extension Spoofing",
+      "Macro Detection"
+    ],
+    "benefits": [
+      "Block malware",
+      "Safe attachments",
+      "Prevent infections"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-attachment-threat-scanner"
+  },
+  {
+    "id": "v963-threat-intelligence-feed",
+    "name": "Email Threat Intelligence Feed",
+    "category": "AI Email Intelligence",
+    "icon": "📡",
+    "price": "From $299/month",
+    "description": "Real-time threat intelligence feed with phishing campaign tracking, zero-day attack detection, and industry-specific threat monitoring.",
+    "features": [
+      "Campaign Tracking",
+      "Zero-Day Detection",
+      "Industry Monitoring",
+      "Threat Reports"
+    ],
+    "benefits": [
+      "Stay ahead of threats",
+      "Proactive defense",
+      "Industry awareness"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v963-threat-intelligence-feed"
+  },
+  {
+    "id": "v964-smart-meeting-scheduler",
+    "name": "AI Smart Meeting Scheduler V964",
+    "category": "AI Email Intelligence",
+    "icon": "📅",
+    "price": "From $299/month",
+    "description": "Extracts meeting requests from emails, suggests optimal times based on timezone analysis, auto-generates calendar invites, and handles rescheduling.",
+    "features": [
+      "Meeting Intent Detection",
+      "Timezone Analysis",
+      "Calendar Invite Generation",
+      "Conflict Detection",
+      "Optimal Time Suggestions"
+    ],
+    "benefits": [
+      "Save 5+ hours/week",
+      "Zero scheduling conflicts",
+      "Global timezone support"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-smart-meeting-scheduler"
+  },
+  {
+    "id": "v964-timezone-intelligence",
+    "name": "Timezone Intelligence Engine",
+    "category": "AI Email Intelligence",
+    "icon": "🌐",
+    "price": "From $149/month",
+    "description": "Detects timezones from email content, adjusts meeting times across 24+ timezones, and ensures optimal meeting times for global teams.",
+    "features": [
+      "24+ Timezone Support",
+      "City-Based Detection",
+      "Auto-Adjustment",
+      "Overlap Optimization"
+    ],
+    "benefits": [
+      "Global meetings made easy",
+      "No timezone math",
+      "Optimal overlap times"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-timezone-intelligence"
+  },
+  {
+    "id": "v964-meeting-type-classifier",
+    "name": "Meeting Type Classifier",
+    "category": "AI Email Intelligence",
+    "icon": "🏷️",
+    "price": "From $99/month",
+    "description": "Automatically classifies meeting types — demo, sales, support, technical, review, kickoff — and suggests appropriate durations and agendas.",
+    "features": [
+      "8+ Meeting Types",
+      "Duration Suggestions",
+      "Agenda Templates",
+      "Platform Detection"
+    ],
+    "benefits": [
+      "Right meeting format",
+      "Optimal durations",
+      "Better preparation"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-meeting-type-classifier"
+  },
+  {
+    "id": "v964-calendar-conflict-resolver",
+    "name": "Calendar Conflict Resolver",
+    "category": "AI Email Intelligence",
+    "icon": "⚡",
+    "price": "From $179/month",
+    "description": "Detects scheduling conflicts across multiple participants and suggests alternative times that work for everyone.",
+    "features": [
+      "Multi-Participant Analysis",
+      "Alternative Suggestions",
+      "Priority Scheduling",
+      "Buffer Management"
+    ],
+    "benefits": [
+      "Eliminate conflicts",
+      "Save back-and-forth",
+      "Efficient scheduling"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-calendar-conflict-resolver"
+  },
+  {
+    "id": "v964-meeting-followup-automator",
+    "name": "Meeting Follow-up Automator",
+    "category": "AI Email Intelligence",
+    "icon": "🔄",
+    "price": "From $199/month",
+    "description": "Automatically generates meeting follow-up emails with action items, decisions made, and next steps extracted from email threads.",
+    "features": [
+      "Action Item Extraction",
+      "Decision Logging",
+      "Next Step Tracking",
+      "Auto-Follow-Up"
+    ],
+    "benefits": [
+      "Never miss follow-ups",
+      "Accountability tracking",
+      "Meeting ROI"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-meeting-followup-automator"
+  },
+  {
+    "id": "v964-availability-poll-generator",
+    "name": "Availability Poll Generator",
+    "category": "AI Email Intelligence",
+    "icon": "📊",
+    "price": "From $79/month",
+    "description": "Auto-generates availability polls when no specific times are proposed, making group scheduling effortless.",
+    "features": [
+      "Smart Poll Generation",
+      "Time Slot Suggestions",
+      "Response Tracking",
+      "Auto-Selection"
+    ],
+    "benefits": [
+      "Effortless group scheduling",
+      "Fast consensus",
+      "No more email ping-pong"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v964-availability-poll-generator"
+  },
+  {
+    "id": "v965-email-performance-analytics",
+    "name": "AI Email Performance Analytics V965",
+    "category": "AI Email Intelligence",
+    "icon": "📊",
+    "price": "From $399/month",
+    "description": "Comprehensive email performance tracking with team-wide metrics, response time analysis, engagement scoring, and performance benchmarks.",
+    "features": [
+      "Response Time Tracking",
+      "Engagement Scoring",
+      "Performance Grading",
+      "Team Analytics",
+      "Benchmark Comparison"
+    ],
+    "benefits": [
+      "Data-driven improvements",
+      "Team visibility",
+      "SLA compliance"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-email-performance-analytics"
+  },
+  {
+    "id": "v965-response-time-monitor",
+    "name": "Response Time Monitor",
+    "category": "AI Email Intelligence",
+    "icon": "⏱️",
+    "price": "From $149/month",
+    "description": "Real-time response time monitoring with SLA tracking, alert thresholds, and performance trend analysis across teams.",
+    "features": [
+      "Real-Time Monitoring",
+      "SLA Tracking",
+      "Alert Thresholds",
+      "Trend Analysis",
+      "Team Comparison"
+    ],
+    "benefits": [
+      "Never miss SLAs",
+      "Identify bottlenecks",
+      "Continuous improvement"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-response-time-monitor"
+  },
+  {
+    "id": "v965-engagement-analytics",
+    "name": "Email Engagement Analytics",
+    "category": "AI Email Intelligence",
+    "icon": "📈",
+    "price": "From $199/month",
+    "description": "Track email engagement metrics — thread depth, word count, attachment frequency, question frequency — to measure customer interest and satisfaction.",
+    "features": [
+      "Thread Depth Tracking",
+      "Engagement Scoring",
+      "Interest Indicators",
+      "Satisfaction Signals"
+    ],
+    "benefits": [
+      "Measure engagement",
+      "Identify hot leads",
+      "Prevent churn"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-engagement-analytics"
+  },
+  {
+    "id": "v965-sentiment-trajectory-tracker",
+    "name": "Sentiment Trajectory Tracker",
+    "category": "AI Email Intelligence",
+    "icon": "📉",
+    "price": "From $179/month",
+    "description": "Tracks sentiment changes across email threads — detects declining satisfaction early and triggers intervention workflows.",
+    "features": [
+      "Sentiment Tracking",
+      "Trajectory Analysis",
+      "Early Warning",
+      "Intervention Triggers"
+    ],
+    "benefits": [
+      "Prevent escalations",
+      "Save relationships",
+      "Proactive support"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-sentiment-trajectory-tracker"
+  },
+  {
+    "id": "v965-team-performance-dashboard",
+    "name": "Team Performance Dashboard",
+    "category": "AI Email Intelligence",
+    "icon": "🏆",
+    "price": "From $299/month",
+    "description": "Team-wide email performance dashboard with individual metrics, team averages, leaderboard, and coaching recommendations.",
+    "features": [
+      "Individual Metrics",
+      "Team Averages",
+      "Leaderboard",
+      "Coaching Tips",
+      "Goal Tracking"
+    ],
+    "benefits": [
+      "Team transparency",
+      "Performance coaching",
+      "Healthy competition"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-team-performance-dashboard"
+  },
+  {
+    "id": "v965-productivity-insights-engine",
+    "name": "Email Productivity Insights Engine",
+    "category": "AI Email Intelligence",
+    "icon": "💡",
+    "price": "From $229/month",
+    "description": "Generates actionable productivity insights from email patterns — peak hours, time wasters, automation opportunities, and workflow optimizations.",
+    "features": [
+      "Peak Hour Analysis",
+      "Time Waste Detection",
+      "Automation Suggestions",
+      "Workflow Optimization"
+    ],
+    "benefits": [
+      "Work smarter",
+      "Save time",
+      "Optimize workflows"
+    ],
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "link": "/services/v965-productivity-insights-engine"
   }
 ]
