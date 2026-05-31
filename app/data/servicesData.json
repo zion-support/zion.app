@@ -83292,5 +83292,302 @@
     "category": "micro-saas",
     "popular": true,
     "industry": "Events"
+  },
+  {
+    "id": "ai-autonomous-vehicles",
+    "title": "Autonomous Vehicle AI Platform",
+    "description": "Self-driving car AI with computer vision, sensor fusion, and real-time decision making for autonomous transportation.",
+    "icon": "🚗",
+    "features": [
+      "Computer vision",
+      "Sensor fusion",
+      "Path planning",
+      "Real-time decisions",
+      "Safety systems"
+    ],
+    "pricing": {
+      "basic": "9999",
+      "pro": "24999",
+      "enterprise": "49999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/ai-autonomous-vehicles",
+    "category": "ai",
+    "popular": true,
+    "industry": "Automotive"
+  },
+  {
+    "id": "ai-climate-modeling",
+    "title": "AI Climate Modeling Platform",
+    "description": "Advanced climate prediction and environmental impact analysis using ML models and satellite data.",
+    "icon": "🌍",
+    "features": [
+      "Climate prediction",
+      "Environmental impact",
+      "Satellite analysis",
+      "Carbon tracking",
+      "Risk assessment"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "7999",
+      "enterprise": "19999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/ai-climate-modeling",
+    "category": "ai",
+    "popular": false,
+    "industry": "Environmental"
+  },
+  {
+    "id": "ai-robotics-control",
+    "title": "AI Robotics Control System",
+    "description": "Intelligent robot control with reinforcement learning, motion planning, and multi-robot coordination.",
+    "icon": "🤖",
+    "features": [
+      "Reinforcement learning",
+      "Motion planning",
+      "Multi-robot coordination",
+      "Safety constraints",
+      "Real-time control"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "12999",
+      "enterprise": "29999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/ai-robotics-control",
+    "category": "ai",
+    "popular": true,
+    "industry": "Robotics"
+  },
+  {
+    "id": "security-biometric-auth",
+    "title": "Biometric Authentication Platform",
+    "description": "Multi-modal biometric authentication with facial recognition, fingerprint, and behavioral biometrics.",
+    "icon": "👁️",
+    "features": [
+      "Facial recognition",
+      "Fingerprint scanning",
+      "Behavioral biometrics",
+      "Liveness detection",
+      "Multi-factor auth"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2299",
+      "enterprise": "5999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/security-biometric-auth",
+    "category": "security",
+    "popular": true,
+    "industry": "Identity"
+  },
+  {
+    "id": "security-dark-web-monitoring",
+    "title": "Dark Web Monitoring Service",
+    "description": "Monitor dark web for compromised credentials, data breaches, and threats to your organization.",
+    "icon": "🕵️",
+    "features": [
+      "Credential monitoring",
+      "Data breach detection",
+      "Threat intelligence",
+      "Alert system",
+      "Remediation guidance"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1299",
+      "enterprise": "3499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/security-dark-web-monitoring",
+    "category": "security",
+    "popular": false,
+    "industry": "Threat Intelligence"
+  },
+  {
+    "id": "cloud-edge-ai-inference",
+    "title": "Edge AI Inference Platform",
+    "description": "Deploy AI models at the edge with low latency, offline capability, and automatic model updates.",
+    "icon": "📡",
+    "features": [
+      "Low latency inference",
+      "Offline capability",
+      "Auto model updates",
+      "Resource optimization",
+      "Multi-device support"
+    ],
+    "pricing": {
+      "basic": "699",
+      "pro": "1799",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/cloud-edge-ai-inference",
+    "category": "cloud",
+    "popular": true,
+    "industry": "Edge Computing"
+  },
+  {
+    "id": "data-blockchain-analytics",
+    "title": "Blockchain Analytics Platform",
+    "description": "Analyze blockchain transactions with wallet tracking, fraud detection, and compliance reporting.",
+    "icon": "⛓️",
+    "features": [
+      "Wallet tracking",
+      "Fraud detection",
+      "Compliance reporting",
+      "Transaction analysis",
+      "Risk scoring"
+    ],
+    "pricing": {
+      "basic": "1299",
+      "pro": "3499",
+      "enterprise": "8999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/data-blockchain-analytics",
+    "category": "data",
+    "popular": false,
+    "industry": "Blockchain"
+  },
+  {
+    "id": "data-spatial-analytics",
+    "title": "Spatial Analytics Platform",
+    "description": "Geospatial data analysis with mapping, location intelligence, and spatial pattern recognition.",
+    "icon": "🗺️",
+    "features": [
+      "Geospatial mapping",
+      "Location intelligence",
+      "Pattern recognition",
+      "Route optimization",
+      "Demographic analysis"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "1999",
+      "enterprise": "5499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/data-spatial-analytics",
+    "category": "data",
+    "popular": true,
+    "industry": "GIS"
+  },
+  {
+    "id": "data-realtime-cdc",
+    "title": "Real-Time Change Data Capture",
+    "description": "Stream database changes in real-time with CDC for analytics, replication, and event-driven architectures.",
+    "icon": "⚡",
+    "features": [
+      "Real-time streaming",
+      "Database replication",
+      "Event-driven architecture",
+      "Schema evolution",
+      "Multi-database support"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1499",
+      "enterprise": "3999"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/data-realtime-cdc",
+    "category": "data",
+    "popular": false,
+    "industry": "Data Integration"
+  },
+  {
+    "id": "saas-customer-portal",
+    "title": "Customer Portal Platform",
+    "description": "Self-service customer portal with ticket tracking, knowledge base, and community forums.",
+    "icon": "🎫",
+    "features": [
+      "Ticket tracking",
+      "Knowledge base",
+      "Community forums",
+      "Self-service",
+      "Analytics"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-customer-portal",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Customer Support"
+  },
+  {
+    "id": "saas-influencer-marketing",
+    "title": "Influencer Marketing Platform",
+    "description": "Manage influencer campaigns with discovery, outreach, performance tracking, and ROI measurement.",
+    "icon": "📱",
+    "features": [
+      "Influencer discovery",
+      "Campaign management",
+      "Performance tracking",
+      "ROI measurement",
+      "Contract management"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1299",
+      "enterprise": "3499"
+    },
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    },
+    "href": "/services/saas-influencer-marketing",
+    "category": "micro-saas",
+    "popular": true,
+    "industry": "Marketing"
   }
 ]
