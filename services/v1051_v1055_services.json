@@ -1,0 +1,413 @@
+const services = [
+  // V1051: AI Email Negotiation Coach
+  {
+    name: "AI Email Negotiation Coach",
+    description: "Real-time coaching during business negotiations. Analyzes counterpart's language patterns and leverage points. Suggests optimal counter-offers and timing strategies.",
+    category: "Email Intelligence",
+    version: "V1051",
+    icon: "🤝",
+    price: "$699/month",
+    features: [
+      "Real-time leverage analysis",
+      "Counter-offer suggestions",
+      "Objection handling coaching",
+      "Closing signal detection",
+      "Timing recommendations",
+      "Negotiation stage tracking"
+    ]
+  },
+  {
+    name: "Sales Deal Accelerator",
+    description: "Identify patterns that accelerate deal closure. Get real-time recommendations to move prospects through your sales funnel faster with AI-powered insights.",
+    category: "Email Intelligence",
+    version: "V1051",
+    icon: "🚀",
+    price: "$749/month",
+    features: [
+      "Deal velocity optimization",
+      "Acceleration pattern detection",
+      "Real-time recommendations",
+      "Bottleneck identification",
+      "Closing trigger alerts",
+      "Sales funnel analytics"
+    ]
+  },
+  {
+    name: "Contract Negotiation Assistant",
+    description: "AI-powered assistance for contract negotiations. Analyze terms, suggest redlines, and ensure favorable outcomes while maintaining relationships.",
+    category: "Email Intelligence",
+    version: "V1051",
+    icon: "📝",
+    price: "$899/month",
+    features: [
+      "Contract term analysis",
+      "Redline suggestions",
+      "Risk assessment",
+      "Precedent matching",
+      "Clause optimization",
+      "Negotiation strategy"
+    ]
+  },
+  {
+    name: "Pricing Strategy Optimizer",
+    description: "Optimize pricing strategies based on negotiation history, market data, and customer segments. Maximize revenue while maintaining competitiveness.",
+    category: "Email Intelligence",
+    version: "V1051",
+    icon: "💲",
+    price: "$649/month",
+    features: [
+      "Dynamic pricing analysis",
+      "Competitor benchmarking",
+      "Customer segment optimization",
+      "Discount strategy",
+      "Revenue maximization",
+      "Margin protection"
+    ]
+  },
+  {
+    name: "Vendor Negotiation Manager",
+    description: "Manage vendor negotiations with AI-powered insights. Track vendor performance, compare offers, and negotiate better terms automatically.",
+    category: "Email Intelligence",
+    version: "V1051",
+    icon: "🏢",
+    price: "$599/month",
+    features: [
+      "Vendor performance tracking",
+      "Offer comparison",
+      "Term negotiation",
+      "SLA optimization",
+      "Cost reduction strategies",
+      "Relationship management"
+    ]
+  },
+
+  // V1052: Email Workflow Automation Architect
+  {
+    name: "Email Workflow Automation Architect",
+    description: "Automatically creates multi-step workflows from email conversations. Triggers actions across apps with conditional logic and native integrations.",
+    category: "Email Intelligence",
+    version: "V1052",
+    icon: "⚙️",
+    price: "$549/month",
+    features: [
+      "Multi-step workflow creation",
+      "Conditional logic",
+      "Cross-app triggers",
+      "Template-based automation",
+      "Native integrations",
+      "Workflow optimization"
+    ]
+  },
+  {
+    name: "Zapier Email Integration Pro",
+    description: "Advanced Zapier integration for email workflows. Create complex multi-step zaps triggered by email content, sender, or metadata.",
+    category: "Email Intelligence",
+    version: "V1052",
+    icon: "⚡",
+    price: "$449/month",
+    features: [
+      "Advanced Zapier integration",
+      "Multi-step zaps",
+      "Conditional triggers",
+      "Email content parsing",
+      "Webhook support",
+      "Error handling"
+    ]
+  },
+  {
+    name: "Make.com Email Automation",
+    description: "Build sophisticated email automation scenarios with Make.com. Visual workflow builder with advanced logic and error recovery.",
+    category: "Email Intelligence",
+    version: "V1052",
+    icon: "🔧",
+    price: "$479/month",
+    features: [
+      "Visual scenario builder",
+      "Advanced logic flows",
+      "Error recovery",
+      "Data transformation",
+      "API orchestration",
+      "Monitoring dashboard"
+    ]
+  },
+  {
+    name: "Slack Email Bridge",
+    description: "Seamlessly bridge email conversations to Slack channels. Auto-route emails to appropriate channels and enable Slack-based email responses.",
+    category: "Email Intelligence",
+    version: "V1052",
+    icon: "💬",
+    price: "$349/month",
+    features: [
+      "Email-to-Slack routing",
+      "Channel auto-assignment",
+      "Slack-based replies",
+      "Thread synchronization",
+      "Notification management",
+      "Search integration"
+    ]
+  },
+  {
+    name: "CRM Email Workflow Builder",
+    description: "Build automated workflows between email and CRM systems. Sync contacts, update deals, and trigger actions based on email interactions.",
+    category: "Email Intelligence",
+    version: "V1052",
+    icon: "🎯",
+    price: "$529/month",
+    features: [
+      "CRM synchronization",
+      "Deal stage automation",
+      "Contact enrichment",
+      "Activity logging",
+      "Pipeline triggers",
+      "Reporting integration"
+    ]
+  },
+
+  // V1053: AI Email Compliance Guardian Pro
+  {
+    name: "AI Email Compliance Guardian Pro",
+    description: "Industry-specific compliance checking for HIPAA, GDPR, SOX, PCI-DSS, and FINRA. Auto-redaction of sensitive data with tamper-proof audit trails.",
+    category: "Email Intelligence",
+    version: "V1053",
+    icon: "🛡️",
+    price: "$899/month",
+    features: [
+      "Multi-framework compliance",
+      "Auto-redaction",
+      "Audit trail generation",
+      "Real-time alerts",
+      "Disclaimer management",
+      "Regulatory updates"
+    ]
+  },
+  {
+    name: "HIPAA Email Compliance",
+    description: "Ensure all healthcare email communications meet HIPAA requirements. Detect PHI, enforce encryption, and maintain audit logs.",
+    category: "Email Intelligence",
+    version: "V1053",
+    icon: "🏥",
+    price: "$799/month",
+    features: [
+      "PHI detection",
+      "Encryption enforcement",
+      "Audit logging",
+      "BAA compliance",
+      "Breach prevention",
+      "Staff training alerts"
+    ]
+  },
+  {
+    name: "GDPR Email Guardian",
+    description: "Protect EU citizen data in email communications. Detect personal data, manage consent, and ensure GDPR compliance across all email interactions.",
+    category: "Email Intelligence",
+    version: "V1053",
+    icon: "🇪🇺",
+    price: "$749/month",
+    features: [
+      "Personal data detection",
+      "Consent management",
+      "Data residency checks",
+      "Right to erasure support",
+      "DPO notifications",
+      "Compliance reporting"
+    ]
+  },
+  {
+    name: "Financial Compliance Scanner",
+    description: "Ensure financial services emails meet SOX, PCI-DSS, and FINRA requirements. Detect prohibited language and enforce disclosure requirements.",
+    category: "Email Intelligence",
+    version: "V1053",
+    icon: "💰",
+    price: "$849/month",
+    features: [
+      "SOX compliance",
+      "PCI-DSS scanning",
+      "FINRA rule enforcement",
+      "Disclosure management",
+      "Audit trail",
+      "Regulatory reporting"
+    ]
+  },
+  {
+    name: "Data Loss Prevention for Email",
+    description: "Prevent sensitive data from leaving your organization via email. Detect credentials, PII, and confidential information before sending.",
+    category: "Email Intelligence",
+    version: "V1053",
+    icon: "🔒",
+    price: "$699/month",
+    features: [
+      "Sensitive data detection",
+      "Credential scanning",
+      "PII protection",
+      "Policy enforcement",
+      "Quarantine workflow",
+      "Incident reporting"
+    ]
+  },
+
+  // V1054: Email Intelligence API Platform
+  {
+    name: "Email Intelligence API Platform",
+    description: "Expose all email intelligence features as RESTful APIs. Webhook support, SDK for multiple languages, rate limiting, and usage analytics.",
+    category: "Email Intelligence",
+    version: "V1054",
+    icon: "🔌",
+    price: "$799/month",
+    features: [
+      "RESTful API access",
+      "Webhook support",
+      "Multi-language SDKs",
+      "Rate limiting",
+      "Usage analytics",
+      "Authentication"
+    ]
+  },
+  {
+    name: "Email Analysis API",
+    description: "API for email sentiment analysis, urgency detection, and routing recommendations. Process thousands of emails per minute with enterprise-grade reliability.",
+    category: "Email Intelligence",
+    version: "V1054",
+    icon: "📊",
+    price: "$599/month",
+    features: [
+      "Sentiment analysis API",
+      "Urgency detection",
+      "Routing recommendations",
+      "Batch processing",
+      "Real-time streaming",
+      "99.9% uptime SLA"
+    ]
+  },
+  {
+    name: "Email Translation API",
+    description: "High-quality email translation API supporting 50+ languages. Preserve tone, context, and business terminology across translations.",
+    category: "Email Intelligence",
+    version: "V1054",
+    icon: "🌐",
+    price: "$649/month",
+    features: [
+      "50+ language support",
+      "Context preservation",
+      "Business terminology",
+      "Quality scoring",
+      "Batch translation",
+      "Glossary management"
+    ]
+  },
+  {
+    name: "Compliance Check API",
+    description: "API for checking email compliance against multiple frameworks. Real-time validation with detailed violation reports and auto-redaction.",
+    category: "Email Intelligence",
+    version: "V1054",
+    icon: "✅",
+    price: "$699/month",
+    features: [
+      "Multi-framework checking",
+      "Real-time validation",
+      "Violation reporting",
+      "Auto-redaction API",
+      "Audit trail API",
+      "Custom rules"
+    ]
+  },
+  {
+    name: "Email Webhook Service",
+    description: "Real-time webhooks for email events. Get instant notifications for sentiment changes, compliance violations, and workflow triggers.",
+    category: "Email Intelligence",
+    version: "V1054",
+    icon: "🪝",
+    price: "$449/month",
+    features: [
+      "Real-time webhooks",
+      "Event filtering",
+      "Retry logic",
+      "Payload signing",
+      "Delivery guarantees",
+      "Monitoring dashboard"
+    ]
+  },
+
+  // V1055: AI Email Performance Analytics Dashboard
+  {
+    name: "AI Email Performance Analytics Dashboard",
+    description: "Comprehensive analytics on email effectiveness. Response time tracking, conversion rates, team performance, and predictive insights.",
+    category: "Email Intelligence",
+    version: "V1055",
+    icon: "📈",
+    price: "$499/month",
+    features: [
+      "Response time tracking",
+      "Conversion analytics",
+      "Team performance",
+      "Predictive insights",
+      "A/B testing",
+      "Custom dashboards"
+    ]
+  },
+  {
+    name: "Email ROI Tracker",
+    description: "Track the true return on investment for email communications. Measure revenue per email, campaign effectiveness, and team productivity.",
+    category: "Email Intelligence",
+    version: "V1055",
+    icon: "💵",
+    price: "$549/month",
+    features: [
+      "Revenue attribution",
+      "Campaign ROI",
+      "Productivity metrics",
+      "Cost analysis",
+      "Trend reporting",
+      "Benchmarking"
+    ]
+  },
+  {
+    name: "Team Email Analytics",
+    description: "Analyze team email performance with detailed metrics. Track response times, satisfaction scores, workload distribution, and improvement areas.",
+    category: "Email Intelligence",
+    version: "V1055",
+    icon: "👥",
+    price: "$429/month",
+    features: [
+      "Team performance metrics",
+      "Response time analysis",
+      "Satisfaction tracking",
+      "Workload distribution",
+      "Improvement insights",
+      "Leaderboards"
+    ]
+  },
+  {
+    name: "Email A/B Testing Platform",
+    description: "Test subject lines, send times, and content variations. Get statistically significant results with automated winner selection.",
+    category: "Email Intelligence",
+    version: "V1055",
+    icon: "🧪",
+    price: "$399/month",
+    features: [
+      "Subject line testing",
+      "Send time optimization",
+      "Content variations",
+      "Statistical significance",
+      "Auto-winner selection",
+      "Results reporting"
+    ]
+  },
+  {
+    name: "Predictive Email Insights",
+    description: "AI-powered predictions for email performance. Forecast open rates, reply rates, and conversions. Identify at-risk contacts and upsell opportunities.",
+    category: "Email Intelligence",
+    version: "V1055",
+    icon: "🔮",
+    price: "$599/month",
+    features: [
+      "Performance forecasting",
+      "Risk identification",
+      "Opportunity detection",
+      "Best time predictions",
+      "Churn warnings",
+      "Revenue projections"
+    ]
+  }
+];
+
+export default services;
