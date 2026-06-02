@@ -27545,5 +27545,390 @@
     "category": "ai",
     "industry": "technology",
     "stage": "published"
+  },
+  {
+    "id": "micro-saas-ai-review-aggregator",
+    "title": "Micro-SaaS AI Review Aggregator & Response Manager",
+    "description": "Aggregate reviews from Google, Yelp, Amazon, Trustpilot, and 20+ platforms into one dashboard. AI analyzes sentiment, generates response drafts, and tracks review trends.",
+    "features": [
+      "Multi-platform review aggregation (20+ sources)",
+      "AI sentiment and topic analysis",
+      "Auto-generated response drafts",
+      "Competitor review benchmarking",
+      "Review request automation via email/SMS",
+      "Alert system for negative reviews"
+    ],
+    "benefits": [
+      "Manage all reviews from one place",
+      "Respond 5x faster with AI drafts",
+      "Improve ratings with proactive requests",
+      "Benchmark against competitors"
+    ],
+    "pricing": {
+      "basic": "$59/mo",
+      "pro": "$149/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\u2b50",
+    "href": "/services/micro-saas-ai-review-aggregator",
+    "popular": true,
+    "category": "micro-saas",
+    "industry": "marketing",
+    "stage": "published"
+  },
+  {
+    "id": "micro-saas-ai-hiring-pipeline",
+    "title": "Micro-SaaS AI Hiring Pipeline & ATS",
+    "description": "Lightweight AI-powered applicant tracking system for SMBs. Smart resume parsing, candidate scoring, interview scheduling, and offer management \u2014 all in one affordable platform.",
+    "features": [
+      "AI resume parsing and candidate scoring",
+      "Smart job description generator",
+      "Automated interview scheduling",
+      "Candidate communication templates",
+      "Offer letter generation and e-signature",
+      "Diversity and compliance reporting"
+    ],
+    "benefits": [
+      "Reduce time-to-hire by 50%",
+      "Screen 100 resumes in minutes",
+      "Eliminate scheduling back-and-forth",
+      "Affordable for small businesses"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$249/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/micro-saas-ai-hiring-pipeline",
+    "popular": true,
+    "category": "micro-saas",
+    "industry": "hr-tech",
+    "stage": "published"
+  },
+  {
+    "id": "micro-saas-ai-inventory-forecaster",
+    "title": "Micro-SaaS AI Inventory Forecaster",
+    "description": "AI inventory forecasting for e-commerce and retail. Predicts demand, optimizes reorder points, and prevents stockouts while minimizing carrying costs.",
+    "features": [
+      "ML demand forecasting per SKU",
+      "Automated reorder point calculation",
+      "Seasonal trend detection",
+      "Supplier lead time tracking",
+      "Multi-location inventory optimization",
+      "Integration with Shopify, WooCommerce, Amazon"
+    ],
+    "benefits": [
+      "Reduce stockouts by 70%",
+      "Lower carrying costs by 25%",
+      "Optimize cash flow tied up in inventory",
+      "Scale inventory without adding planners"
+    ],
+    "pricing": {
+      "basic": "$79/mo",
+      "pro": "$199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udce6",
+    "href": "/services/micro-saas-ai-inventory-forecaster",
+    "popular": false,
+    "category": "micro-saas",
+    "industry": "retail",
+    "stage": "published"
+  },
+  {
+    "id": "micro-saas-ai-customer-portal",
+    "title": "Micro-SaaS AI Customer Self-Service Portal",
+    "description": "White-label customer portal with AI chatbot, knowledge base, ticket management, and account management. Reduce support tickets by 40% with self-service.",
+    "features": [
+      "AI chatbot trained on your knowledge base",
+      "Self-service account management",
+      "Ticket creation and tracking",
+      "Knowledge base with smart search",
+      "Custom branding and white-labeling",
+      "Integration with Zendesk, Intercom, Salesforce"
+    ],
+    "benefits": [
+      "Reduce support tickets by 40%",
+      "24/7 self-service for customers",
+      "Improve CSAT with instant answers",
+      "Launch in days not months"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udfe2",
+    "href": "/services/micro-saas-ai-customer-portal",
+    "popular": false,
+    "category": "micro-saas",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "it-compliance-automation",
+    "title": "IT Compliance Automation & Audit Readiness",
+    "description": "Automate compliance for SOC 2, HIPAA, PCI DSS, ISO 27001, and GDPR. Continuous monitoring, evidence collection, and audit-ready reporting.",
+    "features": [
+      "Continuous compliance monitoring",
+      "Automated evidence collection",
+      "Policy management and enforcement",
+      "Audit-ready report generation",
+      "Risk assessment and remediation tracking",
+      "Multi-framework support (SOC 2, HIPAA, PCI, ISO, GDPR)"
+    ],
+    "benefits": [
+      "Reduce audit prep time by 80%",
+      "Continuous compliance not point-in-time",
+      "Automate evidence collection",
+      "Pass audits with confidence"
+    ],
+    "pricing": {
+      "basic": "$3,000/mo",
+      "pro": "$7,500/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udccb",
+    "href": "/services/it-compliance-automation",
+    "popular": true,
+    "category": "security",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "it-database-optimization",
+    "title": "IT Database Optimization & Performance Tuning",
+    "description": "Expert database optimization for PostgreSQL, MySQL, MongoDB, SQL Server, and Oracle. Improve query performance by 10x, reduce costs, and ensure high availability.",
+    "features": [
+      "Query performance analysis and optimization",
+      "Index strategy review and implementation",
+      "Schema optimization and normalization",
+      "Replication and high availability setup",
+      "Migration planning and execution",
+      "24/7 monitoring and alerting"
+    ],
+    "benefits": [
+      "10x faster query performance",
+      "Reduce database costs by 40%",
+      "Eliminate downtime with HA setup",
+      "Scale databases without re-architecture"
+    ],
+    "pricing": {
+      "basic": "$2,500/mo",
+      "pro": "$5,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/it-database-optimization",
+    "popular": false,
+    "category": "it",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "it-log-management",
+    "title": "IT Log Management & SIEM",
+    "description": "Centralized log management with real-time analysis, correlation, and alerting. Ingest logs from any source and detect threats, anomalies, and operational issues.",
+    "features": [
+      "Centralized log collection from any source",
+      "Real-time log analysis and correlation",
+      "Custom alerting and dashboards",
+      "Compliance reporting (SOC 2, HIPAA, PCI)",
+      "Long-term log retention and archiving",
+      "Integration with 200+ data sources"
+    ],
+    "benefits": [
+      "Detect threats in real-time",
+      "Meet compliance log retention requirements",
+      "Troubleshoot issues 10x faster",
+      "Centralize all logs in one platform"
+    ],
+    "pricing": {
+      "basic": "$500/mo",
+      "pro": "$1,500/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcca",
+    "href": "/services/it-log-management",
+    "popular": true,
+    "category": "it",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "ai-translation-platform",
+    "title": "AI Translation & Localization Platform",
+    "description": "Enterprise AI translation platform with 100+ language pairs, domain-specific models, and human-in-the-loop review. Translate documents, websites, and apps at scale.",
+    "features": [
+      "AI translation for 100+ language pairs",
+      "Domain-specific models (legal, medical, tech)",
+      "Human-in-the-loop review workflow",
+      "Website and app localization",
+      "Translation memory and glossary management",
+      "API for real-time translation"
+    ],
+    "benefits": [
+      "Translate 10x faster than human translators",
+      "95%+ accuracy with domain models",
+      "Reduce translation costs by 80%",
+      "Localize products for global markets"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udf0d",
+    "href": "/services/ai-translation-platform",
+    "popular": true,
+    "category": "ai",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "ai-cyber-threat-intelligence",
+    "title": "AI Cyber Threat Intelligence Platform",
+    "description": "AI-powered threat intelligence platform that aggregates, analyzes, and contextualizes threat data from 100+ sources. Proactively identify threats targeting your organization.",
+    "features": [
+      "Threat intelligence aggregation (100+ sources)",
+      "AI threat correlation and prioritization",
+      "Dark web monitoring for leaked credentials",
+      "IOC enrichment and context",
+      "Automated threat briefings",
+      "Integration with SIEM, SOAR, and firewalls"
+    ],
+    "benefits": [
+      "Identify threats before they hit",
+      "Reduce threat research time by 90%",
+      "Proactive defense with dark web monitoring",
+      "Contextualized alerts reduce false positives"
+    ],
+    "pricing": {
+      "basic": "$2,999/mo",
+      "pro": "$7,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd75\ufe0f",
+    "href": "/services/ai-cyber-threat-intelligence",
+    "popular": true,
+    "category": "security",
+    "industry": "technology",
+    "stage": "published"
+  },
+  {
+    "id": "ai-employee-engagement",
+    "title": "AI Employee Engagement & Retention Platform",
+    "description": "AI platform that measures employee engagement in real-time, predicts flight risk, and recommends retention actions. Pulse surveys, sentiment analysis, and manager coaching.",
+    "features": [
+      "Real-time engagement monitoring",
+      "AI flight risk prediction",
+      "Automated pulse surveys with sentiment analysis",
+      "Manager coaching recommendations",
+      "Benchmarking against industry standards",
+      "Integration with HRIS and communication tools"
+    ],
+    "benefits": [
+      "Reduce turnover by 25%",
+      "Identify at-risk employees 6 months early",
+      "Data-driven retention strategies",
+      "Improve employee satisfaction scores"
+    ],
+    "pricing": {
+      "basic": "$5/employee/mo",
+      "pro": "$10/employee/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-employee-engagement",
+    "popular": false,
+    "category": "ai",
+    "industry": "hr-tech",
+    "stage": "published"
+  },
+  {
+    "id": "ai-smart-contract-management",
+    "title": "AI Smart Contract Lifecycle Management",
+    "description": "AI-powered contract management with automated drafting, clause extraction, risk analysis, and renewal tracking. Manage the entire contract lifecycle in one platform.",
+    "features": [
+      "AI contract drafting from templates",
+      "Clause extraction and risk analysis",
+      "Obligation tracking and alerts",
+      "Renewal and expiration management",
+      "Contract comparison (original vs amended)",
+      "Integration with CRM and procurement"
+    ],
+    "benefits": [
+      "Draft contracts 10x faster",
+      "Catch risky clauses automatically",
+      "Never miss a renewal deadline",
+      "Reduce contract management costs by 60%"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "https://ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcc4",
+    "href": "/services/ai-smart-contract-management",
+    "popular": true,
+    "category": "ai",
+    "industry": "legal-tech",
+    "stage": "published"
   }
 ]
