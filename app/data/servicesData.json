@@ -33647,5 +33647,509 @@
     "popular": false,
     "category": "data",
     "industry": "Technology"
+  },
+  {
+    "id": "ai-autonomous-research-assistant",
+    "title": "AI Autonomous Research Assistant",
+    "description": "AI agent that autonomously conducts deep research across academic papers, patents, news, and databases. Produces cited reports, literature reviews, and competitive intelligence briefs. Supports 50+ data sources including PubMed, arXiv, Google Patents, and SEC filings.",
+    "features": [
+      "Autonomous multi-source research",
+      "Academic paper analysis (PubMed, arXiv)",
+      "Patent landscape mapping",
+      "Competitive intelligence reports",
+      "Auto-citation and bibliography",
+      "Natural language query to structured report",
+      "Scheduled monitoring and alerts",
+      "Export to Word, PDF, LaTeX"
+    ],
+    "benefits": [
+      "10x faster literature reviews",
+      "Never miss relevant patents or papers",
+      "Data-driven competitive insights",
+      "Reduce research costs by 70%"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-autonomous-research-assistant",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd2c",
+    "href": "/services/ai-autonomous-research-assistant",
+    "popular": true,
+    "category": "ai",
+    "industry": "Research"
+  },
+  {
+    "id": "ai-emotion-recognition-platform",
+    "title": "AI Emotion Recognition Platform",
+    "description": "Real-time emotion and sentiment analysis from facial expressions, voice tone, and text. Used for customer experience optimization, market research, and mental health screening. GDPR-compliant with on-device processing option.",
+    "features": [
+      "Facial emotion detection (7 basic emotions)",
+      "Voice tone and prosody analysis",
+      "Text sentiment and emotion detection",
+      "Real-time streaming API",
+      "On-device processing for privacy",
+      "Emotion timeline visualization",
+      "Demographic-aware analysis",
+      "Integration with video conferencing tools"
+    ],
+    "benefits": [
+      "Understand customer emotions in real-time",
+      "Improve product experience with emotional data",
+      "Mental health screening support",
+      "Privacy-first architecture"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-emotion-recognition-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\ude0a",
+    "href": "/services/ai-emotion-recognition-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-workforce-planning-optimizer",
+    "title": "AI Workforce Planning Optimizer",
+    "description": "AI-powered workforce planning and optimization platform. Forecast staffing needs, optimize schedules, predict attrition, and plan succession. Integrates with HRIS, ATS, and payroll systems.",
+    "features": [
+      "Demand forecasting by role and location",
+      "Optimal shift scheduling",
+      "Attrition prediction with risk scores",
+      "Succession planning recommendations",
+      "Skills gap analysis",
+      "Compensation benchmarking",
+      "Integration with Workday, BambooHR, ADP",
+      "Diversity and inclusion analytics"
+    ],
+    "benefits": [
+      "Reduce hiring costs by 30%",
+      "Improve employee retention",
+      "Optimize labor spend",
+      "Data-driven workforce decisions"
+    ],
+    "pricing": {
+      "basic": "$1,299/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-workforce-planning-optimizer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/ai-workforce-planning-optimizer",
+    "popular": false,
+    "category": "ai",
+    "industry": "HR"
+  },
+  {
+    "id": "ai-code-documentation-generator",
+    "title": "AI Code Documentation Generator",
+    "description": "Automatically generate comprehensive documentation from source code. Produces API docs, inline comments, README files, architecture diagrams, and changelogs. Supports 30+ programming languages.",
+    "features": [
+      "Auto-generate API documentation",
+      "Inline comment generation",
+      "Architecture diagram extraction",
+      "README and changelog generation",
+      "Multi-language support (30+)",
+      "Swagger/OpenAPI spec generation",
+      "Integration with GitHub, GitLab, Bitbucket",
+      "Custom documentation templates"
+    ],
+    "benefits": [
+      "Always up-to-date documentation",
+      "Reduce documentation time by 90%",
+      "Improve code onboarding",
+      "Consistent documentation style"
+    ],
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-code-documentation-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/ai-code-documentation-generator",
+    "popular": true,
+    "category": "ai",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-supply-chain-digital-twin",
+    "title": "AI Supply Chain Digital Twin",
+    "description": "Create a virtual replica of your entire supply chain for simulation, optimization, and risk management. Model scenarios, predict disruptions, and optimize inventory across the network in real-time.",
+    "features": [
+      "Full supply chain modeling",
+      "Real-time simulation engine",
+      "Disruption prediction and alerting",
+      "Inventory optimization across nodes",
+      "What-if scenario analysis",
+      "Supplier risk scoring",
+      "Carbon footprint tracking",
+      "Integration with ERP and WMS"
+    ],
+    "benefits": [
+      "Reduce supply chain disruptions by 50%",
+      "Optimize inventory costs",
+      "Data-driven scenario planning",
+      "Improve sustainability metrics"
+    ],
+    "pricing": {
+      "basic": "$2,999/mo",
+      "pro": "$7,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-supply-chain-digital-twin",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/ai-supply-chain-digital-twin",
+    "popular": false,
+    "category": "ai",
+    "industry": "Supply Chain"
+  },
+  {
+    "id": "ai-personalized-learning-platform",
+    "title": "AI Personalized Learning Platform",
+    "description": "Adaptive learning platform that creates personalized curricula based on individual learning styles, goals, and progress. AI tutors, skill assessments, and spaced repetition for corporate training and education.",
+    "features": [
+      "Adaptive curriculum generation",
+      "AI tutoring with Socratic method",
+      "Skill gap analysis",
+      "Spaced repetition scheduling",
+      "Multi-modal content (video, text, interactive)",
+      "Progress analytics dashboard",
+      "LMS integration (SCORM, xAPI)",
+      "Certification tracking"
+    ],
+    "benefits": [
+      "3x faster skill acquisition",
+      "Personalized at scale",
+      "Reduce training costs",
+      "Measurable skill improvement"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-personalized-learning-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udf93",
+    "href": "/services/ai-personalized-learning-platform",
+    "popular": true,
+    "category": "ai",
+    "industry": "Education"
+  },
+  {
+    "id": "ai-energy-optimization-platform",
+    "title": "AI Energy Optimization Platform",
+    "description": "Optimize energy consumption across buildings, factories, and data centers using AI. Predict demand, optimize HVAC, manage renewables, and reduce carbon emissions. Real-time monitoring with automated control.",
+    "features": [
+      "Demand forecasting by zone",
+      "HVAC optimization (20-40% savings)",
+      "Renewable energy management",
+      "Carbon emissions tracking",
+      "Anomaly detection for equipment",
+      "Utility bill analysis",
+      "Integration with BMS and SCADA",
+      "ESG reporting automation"
+    ],
+    "benefits": [
+      "Reduce energy costs by 25-40%",
+      "Meet carbon reduction targets",
+      "Predict and prevent equipment failures",
+      "Automated ESG compliance"
+    ],
+    "pricing": {
+      "basic": "$999/mo",
+      "pro": "$3,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-energy-optimization-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/ai-energy-optimization-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "Energy"
+  },
+  {
+    "id": "it-service-mesh-platform",
+    "title": "IT Service Mesh Platform",
+    "description": "Enterprise service mesh for microservices communication, security, and observability. mTLS encryption, traffic management, circuit breaking, and distributed tracing across Kubernetes clusters.",
+    "features": [
+      "Automatic mTLS encryption",
+      "Traffic routing and canary deployments",
+      "Circuit breaking and retry policies",
+      "Distributed tracing (OpenTelemetry)",
+      "Multi-cluster federation",
+      "Zero-trust network policies",
+      "Performance dashboards",
+      "Istio/Linkerd compatibility"
+    ],
+    "benefits": [
+      "Secure microservices communication",
+      "Zero-downtime deployments",
+      "Full observability across services",
+      "Simplify multi-cluster management"
+    ],
+    "pricing": {
+      "basic": "$1,499/mo",
+      "pro": "$4,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-service-mesh-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd78\ufe0f",
+    "href": "/services/it-service-mesh-platform",
+    "popular": false,
+    "category": "it",
+    "industry": "Technology"
+  },
+  {
+    "id": "it-incident-management-platform",
+    "title": "IT Incident Management Platform",
+    "description": "End-to-end incident management with AI-powered triage, auto-remediation, and post-incident analysis. Integrates with monitoring tools, creates runbooks, and tracks SLA compliance.",
+    "features": [
+      "AI-powered incident triage",
+      "Auto-remediation runbooks",
+      "Multi-channel alerting (PagerDuty, Slack, Teams)",
+      "Incident timeline reconstruction",
+      "Post-incident review automation",
+      "SLA tracking and reporting",
+      "War room collaboration",
+      "Integration with 100+ monitoring tools"
+    ],
+    "benefits": [
+      "Reduce MTTR by 70%",
+      "Automate repetitive incident response",
+      "Improve SLA compliance",
+      "Learn from every incident"
+    ],
+    "pricing": {
+      "basic": "$599/mo",
+      "pro": "$1,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-incident-management-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udea8",
+    "href": "/services/it-incident-management-platform",
+    "popular": true,
+    "category": "it",
+    "industry": "Technology"
+  },
+  {
+    "id": "it-quantum-safe-cryptography",
+    "title": "IT Quantum-Safe Cryptography Migration",
+    "description": "Prepare your infrastructure for the post-quantum era. Cryptographic inventory, vulnerability assessment, and migration to NIST-approved quantum-resistant algorithms. Compliance with CNSA 2.0 timeline.",
+    "features": [
+      "Cryptographic inventory and assessment",
+      "Quantum vulnerability scoring",
+      "NIST PQC algorithm migration",
+      "TLS and certificate modernization",
+      "Crypto-agility framework",
+      "Compliance reporting (CNSA 2.0)",
+      "Hybrid certificate deployment",
+      "Zero-downtime migration"
+    ],
+    "benefits": [
+      "Future-proof against quantum attacks",
+      "Meet CNSA 2.0 compliance deadlines",
+      "Identify crypto vulnerabilities",
+      "Seamless migration with no downtime"
+    ],
+    "pricing": {
+      "basic": "$2,999/mo",
+      "pro": "$8,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-quantum-safe-cryptography",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd10",
+    "href": "/services/it-quantum-safe-cryptography",
+    "popular": false,
+    "category": "it",
+    "industry": "Technology"
+  },
+  {
+    "id": "micro-saas-contract-management",
+    "title": "ContractForge \u2014 Contract Management Micro-SaaS",
+    "description": "Contract lifecycle management for small and medium businesses. Template library, e-signatures, renewal tracking, and AI-powered clause analysis. Integrates with CRM and accounting software.",
+    "features": [
+      "Contract template library",
+      "E-signature (legally binding)",
+      "Renewal and expiration alerts",
+      "AI clause risk analysis",
+      "Obligation tracking",
+      "Approval workflows",
+      "Integration with HubSpot, Salesforce, QuickBooks",
+      "Audit trail and version history"
+    ],
+    "benefits": [
+      "Never miss a contract renewal",
+      "Reduce contract risk with AI analysis",
+      "Speed up contract cycles by 60%",
+      "Centralized contract repository"
+    ],
+    "pricing": {
+      "basic": "$89/mo",
+      "pro": "$279/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-contract-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcdd",
+    "href": "/services/micro-saas-contract-management",
+    "popular": false,
+    "category": "micro-saas",
+    "industry": "Legal"
+  },
+  {
+    "id": "micro-saas-invoice-generator",
+    "title": "InvoiceFlow \u2014 Invoice Generator Micro-SaaS",
+    "description": "Professional invoice and payment collection for freelancers and small businesses. Custom templates, recurring invoices, payment tracking, and automatic late payment reminders. Multi-currency and tax support.",
+    "features": [
+      "Custom invoice templates",
+      "Recurring invoice automation",
+      "Payment tracking dashboard",
+      "Automatic late payment reminders",
+      "Multi-currency support",
+      "Tax calculation (VAT, GST, Sales Tax)",
+      "Stripe/PayPal payment integration",
+      "Expense and time tracking"
+    ],
+    "benefits": [
+      "Get paid 2x faster",
+      "Automate invoicing workflows",
+      "Professional brand image",
+      "Accurate tax compliance"
+    ],
+    "pricing": {
+      "basic": "$29/mo",
+      "pro": "$89/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/micro-saas-invoice-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83e\uddfe",
+    "href": "/services/micro-saas-invoice-generator",
+    "popular": true,
+    "category": "micro-saas",
+    "industry": "Finance"
+  },
+  {
+    "id": "security-deception-technology-platform",
+    "title": "Security Deception Technology Platform",
+    "description": "Deploy decoys, honeypots, and deception grids across your network to detect intruders early. Real-time alerts when attackers interact with decoys. Forensic capture of attack techniques and tools.",
+    "features": [
+      "Automated decoy deployment",
+      "Honeypots for common services (SSH, HTTP, DB)",
+      "Deception tokens (fake credentials, files)",
+      "Real-time attack alerts",
+      "Forensic session capture",
+      "MITRE ATT&CK mapping",
+      "Integration with SIEM/SOAR",
+      "Threat intelligence feeds"
+    ],
+    "benefits": [
+      "Detect threats weeks earlier",
+      "Zero false positives",
+      "Understand attacker TTPs",
+      "Validate detection capabilities"
+    ],
+    "pricing": {
+      "basic": "$1,999/mo",
+      "pro": "$5,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/security-deception-technology-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udfad",
+    "href": "/services/security-deception-technology-platform",
+    "popular": false,
+    "category": "security",
+    "industry": "Technology"
+  },
+  {
+    "id": "security-data-loss-prevention",
+    "title": "Security Data Loss Prevention (DLP) Suite",
+    "description": "Comprehensive DLP covering endpoints, network, cloud, and email. Identify, classify, and protect sensitive data with AI-powered content inspection. Automated policy enforcement and incident response.",
+    "features": [
+      "AI-powered content classification",
+      "Endpoint DLP agent",
+      "Cloud DLP (SaaS and IaaS)",
+      "Email DLP with encryption",
+      "USB and device control",
+      "Automated policy enforcement",
+      "Incident investigation workflows",
+      "Regulatory compliance (GDPR, HIPAA, PCI)"
+    ],
+    "benefits": [
+      "Prevent data breaches from insider threats",
+      "Automate compliance enforcement",
+      "Protect IP and trade secrets",
+      "Reduce data exposure risk"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/security-data-loss-prevention",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/security-data-loss-prevention",
+    "popular": true,
+    "category": "security",
+    "industry": "Technology"
   }
 ]
