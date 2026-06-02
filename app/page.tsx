@@ -1054,6 +1054,29 @@ let list = services;
           </div>
         </div>
       </section>
+      {/* ── Contact CTA Section ── */}
+      <section className="py-20 border-t border-slate-800 bg-gradient-to-b from-slate-950 via-purple-950/10 to-slate-950">
+        <div className="container-page text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
+          <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+            Get a free custom quote for any of our {services.length}+ AI, IT, and Micro-SaaS solutions. Our experts are ready to help.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <a href="/contact" className="btn-primary text-lg px-10 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 transition-all shadow-lg shadow-purple-500/20 font-semibold">
+              ✉ Get Free Consultation
+            </a>
+            <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:border-purple-500/40 transition-colors">
+              📧 kleber@ziontechgroup.com
+            </a>
+            <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:border-purple-500/40 transition-colors">
+              ☎ +1 302 464 0950
+            </a>
+          </div>
+          <div className="text-slate-500 text-sm">
+            📍 364 E Main St STE 1008, Middletown, DE 19709 &nbsp;|&nbsp; 🕐 Mon-Fri 9AM-6PM EST
+          </div>
+        </div>
+      </section>
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
