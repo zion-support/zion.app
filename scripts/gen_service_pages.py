@@ -2,7 +2,7 @@
 """Generate static service detail pages for ALL services in servicesData.json"""
 import json, os
 
-base = '/data/data/com.termux/files/home/zion-support.github.io'
+base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 out_services = os.path.join(base, 'out', 'services')
 
 with open(os.path.join(base, 'app/data/servicesData.json')) as f:
