@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
               Zion Tech Group
             </span>
             <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
-              <Sparkles className="h-3 w-3" /> 960 Services
+              <Sparkles className="h-3 w-3" /> 981 Services
             </span>
           </Link>
 

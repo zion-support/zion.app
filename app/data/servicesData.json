@@ -29435,5 +29435,293 @@
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
     }
+  },
+  {
+    "id": "micro-saas-ai-employee-scheduling",
+    "title": "AI Employee Scheduling & Workforce Planning",
+    "category": "ai",
+    "industry": "hr-tech",
+    "icon": "\ud83d\udcc5",
+    "popular": false,
+    "pricing": {
+      "basic": "$8/employee/mo",
+      "pro": "$15/employee/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered employee scheduling that optimizes shifts based on demand forecasts, employee preferences, skills, and labor law compliance.",
+    "features": [
+      "AI demand forecasting for staffing needs",
+      "Auto-scheduling with employee preference matching",
+      "Labor law compliance checking (breaks, overtime, minors)",
+      "Shift swapping and open shift marketplace",
+      "Time and attendance tracking",
+      "Integration with payroll systems",
+      "Mobile app for employees",
+      "Analytics on labor costs and overtime"
+    ],
+    "benefits": [
+      "Reduce labor costs by 15%",
+      "Eliminate scheduling conflicts automatically",
+      "Ensure 100% labor law compliance",
+      "Improve employee satisfaction with preference matching"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-employee-scheduling",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "micro-saas-ai-knowledge-quality",
+    "title": "AI Knowledge Base Quality & Freshness Monitor",
+    "category": "ai",
+    "industry": "productivity",
+    "icon": "\ud83d\udcda",
+    "popular": false,
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$299/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI that monitors your knowledge base for outdated, conflicting, or gaps in content. Automatically flags articles for review and suggests updates.",
+    "features": [
+      "AI content freshness scoring",
+      "Automatic conflict detection between articles",
+      "Gap analysis vs customer questions",
+      "Integration with Confluence, Notion, Zendesk",
+      "Automated article decay alerts",
+      "AI-generated update suggestions",
+      "Analytics on article usefulness",
+      "Version comparison and change tracking"
+    ],
+    "benefits": [
+      "Keep 100% of KB articles up to date",
+      "Reduce support tickets from outdated content",
+      "Identify knowledge gaps before customers do",
+      "Automate content review workflows"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-knowledge-quality",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "micro-saas-ai-contract-comparison",
+    "title": "AI Contract Comparison & Deviation Analysis",
+    "category": "ai",
+    "industry": "legal-tech",
+    "icon": "\ud83d\udcd1",
+    "popular": false,
+    "pricing": {
+      "basic": "$349/mo",
+      "pro": "$999/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI that compares contracts against your standard templates and flags deviations, risks, and missing clauses. Reduce legal review time by 80%.",
+    "features": [
+      "AI deviation detection vs standard templates",
+      "Missing clause identification",
+      "Risk scoring per deviation",
+      "Bulk contract comparison",
+      "Integration with DocuSign, SharePoint, Dropbox",
+      "Negotiation history tracking",
+      "Approval workflow automation",
+      "Audit trail for all comparisons"
+    ],
+    "benefits": [
+      "80% faster contract review",
+      "Catch risky deviations human reviewers miss",
+      "Enforce standard terms automatically",
+      "Track negotiation changes across versions"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-contract-comparison",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "micro-saas-ai-community-moderation",
+    "title": "AI Community Moderation & Engagement Platform",
+    "category": "ai",
+    "industry": "technology",
+    "icon": "\ud83d\udc65",
+    "popular": false,
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered community moderation that detects toxicity, spam, and policy violations while boosting healthy engagement. For forums, Discord, Slack, and social.",
+    "features": [
+      "Real-time toxicity and hate speech detection",
+      "Spam and bot detection",
+      "Policy violation flagging with context",
+      "Engagement scoring and trending content ID",
+      "Integration with Discord, Slack, Discourse, Reddit",
+      "Automated warnings and escalation",
+      "Community health dashboards",
+      "Custom moderation rule builder"
+    ],
+    "benefits": [
+      "Moderate communities 24/7 without human moderators",
+      "Detect toxic content with 98% accuracy",
+      "Boost healthy engagement by 40%",
+      "Scale community management as you grow"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-community-moderation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "it-unified-communications",
+    "title": "IT Unified Communications & Collaboration",
+    "category": "it",
+    "industry": "technology",
+    "icon": "\ud83d\udcde",
+    "popular": true,
+    "pricing": {
+      "basic": "$12/user/mo",
+      "pro": "$22/user/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Design and deploy unified communications with Teams, Zoom, or Cisco. Voice, video, messaging, and collaboration in one platform.",
+    "features": [
+      "Microsoft Teams / Zoom / Cisco deployment",
+      "VoIP and PBX migration",
+      "Video conferencing room design",
+      "Contact center integration",
+      "Unified messaging and presence",
+      "Integration with CRM and business apps",
+      "Network assessment and QoS configuration",
+      "Training and change management"
+    ],
+    "benefits": [
+      "Reduce communication costs by 40%",
+      "Improve collaboration across locations",
+      "Consolidate vendors into one platform",
+      "Enable seamless hybrid work"
+    ],
+    "contactInfo": {
+      "website": "/services/it-unified-communications",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "it-data-migration",
+    "title": "IT Data Migration & Database Consolidation",
+    "category": "it",
+    "industry": "technology",
+    "icon": "\ud83d\udd04",
+    "popular": false,
+    "pricing": {
+      "basic": "$5,000/mo",
+      "pro": "$12,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "End-to-end data migration services \u2014 from legacy databases to modern platforms. Zero-downtime migration with automated validation and rollback.",
+    "features": [
+      "Source system assessment and mapping",
+      "ETL pipeline development and testing",
+      "Zero-downtime migration execution",
+      "Automated data validation and reconciliation",
+      "Rollback planning and testing",
+      "Integration with Oracle, SQL Server, MongoDB, PostgreSQL",
+      "Performance optimization post-migration",
+      "Documentation and knowledge transfer"
+    ],
+    "benefits": [
+      "Migrate with zero downtime",
+      "Ensure 100% data accuracy with automated validation",
+      "Reduce database costs by 40%",
+      "Modernize without business disruption"
+    ],
+    "contactInfo": {
+      "website": "/services/it-data-migration",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "ai-customer-segmentation",
+    "title": "AI Customer Segmentation & Lifetime Value Prediction",
+    "category": "ai",
+    "industry": "marketing",
+    "icon": "\ud83c\udfa8",
+    "popular": false,
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered customer segmentation that goes beyond demographics. Behavioral clustering, lifetime value prediction, and next-best-action for each segment.",
+    "features": [
+      "AI behavioral clustering and segmentation",
+      "Customer lifetime value (LTV) prediction",
+      "Churn risk scoring per segment",
+      "Next-best-action recommendations",
+      "Integration with CRM, CDP, and marketing automation",
+      "Segment migration tracking",
+      "A/B testing per segment",
+      "Revenue attribution by segment"
+    ],
+    "benefits": [
+      "Increase marketing ROI by 40%",
+      "Predict LTV with 90%+ accuracy",
+      "Reduce churn with targeted retention",
+      "Personalize at scale with AI segments"
+    ],
+    "contactInfo": {
+      "website": "/services/ai-customer-segmentation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
+  },
+  {
+    "id": "ai-digital-twin",
+    "title": "AI Digital Twin & Simulation Platform",
+    "category": "ai",
+    "industry": "manufacturing",
+    "icon": "\ud83c\udfed",
+    "popular": false,
+    "pricing": {
+      "basic": "$4,999/mo",
+      "pro": "$12,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Create digital twins of physical assets, processes, and systems. Simulate scenarios, predict failures, and optimize operations with AI-powered simulation.",
+    "features": [
+      "3D digital twin modeling from CAD and IoT data",
+      "Real-time sensor data integration",
+      "Predictive simulation and what-if analysis",
+      "Failure prediction and maintenance optimization",
+      "Integration with SCADA, MES, and IoT platforms",
+      "Custom physics-based and ML models",
+      "Collaborative simulation environment",
+      "Executive dashboards and reporting"
+    ],
+    "benefits": [
+      "Reduce unplanned downtime by 50%",
+      "Optimize operations with virtual testing",
+      "Predict failures 30 days in advance",
+      "Simulate changes without disrupting production"
+    ],
+    "contactInfo": {
+      "website": "/services/ai-digital-twin",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950",
+      "address": "364 E Main St STE 1008, Middletown, DE 19709"
+    }
   }
 ]
