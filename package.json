@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx next dev",
     "build": "rm -rf .next/export .next/lock || true && NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS='--max-old-space-size=4096' NEXT_BUILD_WORKER_COUNT=1 npx next build",
-    "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate_services_json.cjs && node scripts/write-postbuild-artifacts.cjs && node scripts/gen_service_pages.py && touch out/.nojekyll",
+    "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate_services_json.cjs && node scripts/write-postbuild-artifacts.cjs && python3 scripts/gen_service_pages.py && touch out/.nojekyll",
     "start": "npx next start",
     "lint": "eslint . --fix --ignore-pattern \".next/**\" --ignore-pattern \"out/**\" --ignore-pattern \"dist/**\" --ignore-pattern \"build/**\" --max-warnings 0",
     "check:merge-conflicts": "node scripts/automation/check-merge-conflict-markers.cjs",
