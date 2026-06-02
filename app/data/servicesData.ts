@@ -8497,7 +8497,7 @@ export const aiServices: Service[] = [
     popular: false,
     category: 'ai',
     industry: 'technology',
-  }];
+  },];
 
 export const itServices: Service[] = [
   {
@@ -10353,7 +10353,7 @@ export const itServices: Service[] = [
     popular: false,
     category: 'it',
     industry: 'technology',
-  }];
+  },];
 
 export const cloudServices: Service[] = [
   {
@@ -12411,7 +12411,7 @@ export const securityServices: Service[] = [
     popular: true,
     category: 'security',
     industry: 'technology',
-  }];
+  },];
 
 export const dataServices: Service[] = [
   {
