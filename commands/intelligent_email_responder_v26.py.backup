@@ -27,6 +27,14 @@ V26_STATS  = DATA / 'v26_stats.jsonl'
 V28_TQ_LOG = DATA / 'template_quality.jsonl'
 V28_TQ_AUDIT = DATA / 'template_quality_audit.jsonl'
 
+# Import response quality feedback
+from response_quality_feedback import _score_response_quality, _log_response_quality
+
+try:
+    from v32_modules.lang_detector import detect_lang, LangDetectionError
+except ImportError:
+    # Local fallback functions will be used
+    pass
 _PROMOTION_WINDOW     = 200
 _QUARANTINE_THRESHOLD = 70.0
 _CANONICAL_THRESHOLD  = 90.0
@@ -190,14 +198,6 @@ try:
 except Exception as _e:
     print(f"⚠️ V25: V23 module import failed: {_e}", flush=True)
     SenderProfileLearnerV23 = None
-    ContextualMemoryBankV23 = None
-    IntentConfidenceScorerV23 = None
-    ResponseQualityCheckerV23 = None
-    AutoCategorizerV23 = None
-    SmartFollowUpSchedulerV23 = None
-    ActionItemExtractorV23 = None
-    analyze_tone = None
-    generate_adapted_response = None
 
 try:
     from email_decision import from_email_data, decide_reply_all, always_cc
@@ -214,6 +214,14 @@ except Exception:
     FeedbackLearner       = None
     SenderFeedbackStore   = None
     V28_FEEDBACK_ENABLED  = False
+
+# ─── V31: ReplyAllOptimizer ─────────────────────────────────
+try:
+    from reply_all_optimizer import ReplyAllOptimizer
+    REPLY_ALL_OPTIMIZER_ENABLED = True
+except Exception:
+    ReplyAllOptimizer     = None
+    REPLY_ALL_OPTIMIZER_ENABLED = False
 
 # ─── Wave 2: KB Grounding RAG ───────────────────────────────
 try:
@@ -311,19 +319,6 @@ try:
     M1_ORCHESTRATOR_ENABLED = True
 except Exception as _ex_m1:
     print(f"⚠️ M1: orchestrator import failed: {_ex_m1}", flush=True)
-    # Define fallback functions
-    def classify_thread(*args, **kwargs):
-        return {}
-    def add_to_result(email, additional_fields):
-        result = email.copy()
-        result.update(additional_fields)
-        return result
-    def decode_reply_all(*args, **kwargs):
-        return {}
-    def bind(*args, **kwargs):
-        return {}
-    def orchestrate(*args, **kwargs):
-        pass
     M1_ORCHESTRATOR_ENABLED = False
 
 # ─── w2-02 / w3-01 / w3-02 / w3-03 ───────────────────────────
@@ -389,7 +384,38 @@ def _log_stats(record: dict):
     except Exception:
         pass
 
-
+def _analyze_response_effectiveness(email_id: str, intent_label: str, action_taken: str, 
+                                   tone_data: dict, quality_score: float, elapsed_ms: float) -> dict:
+    """Analyze response effectiveness for continuous improvement."""
+    effectiveness = {
+        "email_id": email_id,
+        "intent": intent_label,
+        "action": action_taken,
+        "tone": tone_data.get("formality", "neutral") if isinstance(tone_data, dict) else "neutral",
+        "quality_score": quality_score,
+        "response_time_ms": elapsed_ms,
+        "effectiveness_rating": "unknown"
+    }
+    
+    # Determine effectiveness based on quality score and response time
+    if quality_score >= 90 and elapsed_ms < 1000:
+        effectiveness["effectiveness_rating"] = "excellent"
+    elif quality_score >= 80 and elapsed_ms < 2000:
+        effectiveness["effectiveness_rating"] = "good"
+    elif quality_score >= 70:
+        effectiveness["effectiveness_rating"] = "fair"
+    else:
+        effectiveness["effectiveness_rating"] = "needs_improvement"
+    
+    # Log for analytics
+    try:
+        effectiveness_log = DATA / 'response_effectiveness.jsonl'
+        with open(effectiveness_log, 'a') as f:
+            f.write(json.dumps(effectiveness, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+    
+    return effectiveness
 # ═══════════════════════════════════════════════════════════════
 #  TEMPLATE LIBRARY
 # ═══════════════════════════════════════════════════════════════
@@ -1019,10 +1045,14 @@ class V26Responder:
         self.qr_trainer = QualityRegressionTrainer() if V25_REGR_TRAINER_ENABLED and QualityRegressionTrainer else None
         self.ml_weights = self.optimizer.train_from_outcomes() if self.optimizer else {}
         self.feedback_oracle = FeedbackLearner() if V28_FEEDBACK_ENABLED and FeedbackLearner else None
+        self.reply_all_optimizer = ReplyAllOptimizer() if REPLY_ALL_OPTIMIZER_ENABLED else None
         self.stats = defaultdict(int)
         self.stats['reply_all_enforced'] = 0
         self.stats['reply_all_missed']   = 0
         self.stats['reply_all_total']    = 0
+        self.stats['reply_all_optimizer_correct'] = 0
+        self.stats['reply_all_optimizer_incorrect'] = 0
+        self.stats['reply_all_optimizer_overrides'] = 0
         self._fin_result = {}
         self.stats['action_escalated'] = 0
         self.stats['action_financial']  = 0
@@ -1372,28 +1402,9 @@ class V26Responder:
         snip      = email["snippet"]          # ← V29 FIX: use email["snippet"]
         name      = self._get_name(sender)
         lang      = tone_data.get("language", "pt")
-        # Get reply-all policy for this intent
-        policy = _INTENT_POLICIES.get(intent_label, _INTENT_POLICIES.get("default", {}))
-        reply_all_desired = policy.get("reply_all_default", False)
-
-        # Determine CC header for reply
-        original_cc = email.get("cc", "")
-        if reply_all_desired:
-            # For reply-all, preserve original CC
-            use_cc = original_cc
-        else:
-            # For reply-to-sender, clear CC
-            use_cc = ""
-            
-        # Log the decision for improvement tracking
-        if not dry_run:
-            try:
-                telegram_send(f"[REPLY-ALL-DECISION] Intent: {intent_label}, Reply-all: {reply_all_desired}, Reason: {policy.get('reply_all_reason', 'default')}")
-            except Exception:
-                pass  # Fail silently if telegram not available
+        use_cc    = ""
         attach_info = attach_info or {"has_attachments": False, "attachment_summary": ""}
-        # Use intent-policy-based reply-all preference
-        reply_all = policy.get("reply_all_default", False)
+        reply_all = False
 
         # ① Tone — already computed
         t_response = f"Fast-path ({intent_cat}) response for {name}."
@@ -1509,26 +1520,6 @@ class V26Responder:
             except Exception:
                 pass
 
-
-        # IDEAS-5: partial-reply minimizer
-        _is_partial = self._detect_partial_reply(body)
-        if _is_partial and not dry_run and tid:
-            _thread_text = self._get_thread_recent(tid)
-            if _thread_text:
-                body = f"{body}\n\n—\nContinuing from thread:\n{_thread_text}"
-                self.stats['partial_reply_patched'] = self.stats.get('partial_reply_patched', 0) + 1
-            else:
-                self.stats['partial_reply_skipped'] = self.stats.get('partial_reply_skipped', 0) + 1
-
-        # IDEAS-5: partial-reply minimizer
-        _is_partial = self._detect_partial_reply(body)
-        if _is_partial and not dry_run and tid:
-            _thread_text = self._get_thread_recent(tid)
-            if _thread_text:
-                body = f"{body}\n\n—\nContinuing from thread:\n{_thread_text}"
-                self.stats['partial_reply_patched'] = self.stats.get('partial_reply_patched', 0) + 1
-            else:
-                self.stats['partial_reply_skipped'] = self.stats.get('partial_reply_skipped', 0) + 1
         # ③ Trim grammar check
         g_score, g_issues = _fast_grammar_check(body)
 
@@ -1664,6 +1655,20 @@ class V26Responder:
                 reply_all_ok = True
                 self.stats["feedback_oracle_override"] = self.stats.get("feedback_oracle_override", 0) + 1
 
+        # V31: ReplyAllOptimizer override
+        if self.reply_all_optimizer and reply_all_ok is False:
+            sender_addr = sender.split("@")[0] if "@" in sender else sender
+            appropriateness = self.reply_all_optimizer.get_appropriateness_ratio(sender_addr)
+            if appropriateness >= 0.7:  # Threshold for override
+                reply_all_ok = True
+                self.stats["reply_all_optimizer_overrides"] = self.stats.get("reply_all_optimizer_overrides", 0) + 1
+                self._log({
+                    "run_id": RUN_ID, 
+                    "phase": "reply_all_optimizer_override", 
+                    "sender": sender,
+                    "appropriateness": appropriateness,
+                    "threshold": 0.7
+                })
 
         if reply_all_ok and use_cc:
             try:
@@ -1777,6 +1782,13 @@ class V26Responder:
                     "quality": min_qc, "elapsed_ms": round((time.monotonic() - t0) * 1000, 1),
                     "thread_intent": thread_intent_label,
                     "reply_all_detail": reply_all_dec if reply_all_ok else {"reply_all": False, "reason": "dry_run"}})
+            # Quality feedback loop: score and log response quality (dry-run)
+            try:
+                quality_score = _score_response_quality(body, email)
+                _log_response_quality(tid, quality_score, body, email)
+            except Exception:
+                # Fail silently to not disrupt email processing
+                pass
             return result
 
         # V35: dry-run path — improver handled below after dry result
@@ -1809,14 +1821,28 @@ class V26Responder:
                     "reason": "reply_all_ok_without_cc",
                     "reply_all_ok": reply_all_ok, "use_cc": use_cc,
                     "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)})
+            # Quality feedback loop: score and log response quality (dry-run)
+            try:
+                quality_score = _score_response_quality(body, email)
+                _log_response_quality(tid, quality_score, body, email)
+            except Exception:
+                # Fail silently to not disrupt email processing
+                pass
             return result
-
         all_rcp = f"{sender}{cc_part}"
         subj_rep = f"Re: {subj}" if not subj.lower().startswith("re:") else subj
         # V51-FEAT3: reply_to_override from policy
         _reply_to = intent_raw.get("_policy", {}).get("reply_to_override", "")
         res = gmail_send_reply_fixed(tid, subj_rep, body, all_rcp, thread_id=tid,
                                      reply_to=_reply_to if _reply_to else None)
+
+        # Quality feedback loop: score and log response quality (actual send)
+        try:
+            quality_score = _score_response_quality(body, email)
+            _log_response_quality(tid, quality_score, body, email)
+        except Exception:
+            # Fail silently to not disrupt email processing
+            pass
 
         # R2: dedup tracking — record successful send
         _record_send(tid, "send_fast")
@@ -1885,6 +1911,7 @@ class V26Responder:
         except Exception:
             pass
 
+        _analyze_response_effectiveness(tid, intent_label, "send_fast", tone_data, min_qc["overall_score"], round((time.monotonic() - t0) * 1000, 1))
         result = add_to_result(email, {"action": "send_fast", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "thread_intent": thread_intent_label,
@@ -2043,15 +2070,7 @@ class V26Responder:
 
         # ⑨ Template selection + ⑩ Compose
         tpl_body = TEMPLATES.get(lang, TEMPLATES["en"]).get(intent_cat, TEMPLATES["en"]["general"])
-        body = tpl_body.format(name=name, close="—", signature="")
-        adapted = None
-        if generate_adapted_response:
-            try:
-                adapted = generate_adapted_response(name, intent_label, tone_data)
-            except Exception:
-                pass
-        if adapted:
-            body = f"{adapted}\\n\\n{body}"
+        adapted  = generate_adapted_response(name, intent_label, tone_data)
 
         # Wave 9: full-pipeline RTFB
         rtfb_result = None
@@ -2074,28 +2093,6 @@ class V26Responder:
         faq_reply = _fast_faq_check(subj, body, lang)
         if faq_reply:
             body = f"{body}\n\n{faq_reply}"
-
-
-        # IDEAS-5: partial-reply minimizer (full-path)
-        _is_partial_fp = self._detect_partial_reply(body)
-        if _is_partial_fp and not dry_run and tid:
-            _thread_text_fp = self._get_thread_recent(tid)
-            if _thread_text_fp:
-                body = f"{body}\n\n—\nContinuing from thread:\n{_thread_text_fp}"
-                self.stats['partial_reply_patched'] = self.stats.get('partial_reply_patched', 0) + 1
-            else:
-                self.stats['partial_reply_skipped'] = self.stats.get('partial_reply_skipped', 0) + 1
-
-
-        # IDEAS-5: partial-reply minimizer (full-path)
-        _is_partial_fp = self._detect_partial_reply(body)
-        if _is_partial_fp and not dry_run and tid:
-            _thread_text_fp = self._get_thread_recent(tid)
-            if _thread_text_fp:
-                body = f"{body}\n\n—\nContinuing from thread:\n{_thread_text_fp}"
-                self.stats['partial_reply_patched'] = self.stats.get('partial_reply_patched', 0) + 1
-            else:
-                self.stats['partial_reply_skipped'] = self.stats.get('partial_reply_skipped', 0) + 1
 
         # ⑪ Quality gate
         qc = {"overall_score": 85.0, "passed": True, "issues": [],
@@ -2278,59 +2275,15 @@ class V26Responder:
                   "thread_id": tid})
         except Exception:
             pass
+        _analyze_response_effectiveness(tid, intent_label, "send", tone_data, min_qc["overall_score"], round((time.monotonic() - t0) * 1000, 1))
 
         result = add_to_result(email, {"action": "send", "intent": intent_label,
                 "reply_all": reply_all_ok, "tone": tone_data,
                 "quality": qc, "elapsed_ms": ms(), "fast_path": False,
-                "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx),
-                "partial_reply_patched": self.stats.get("partial_reply_patched", 0)})
-
-
-
+                "wave5_cc": _wave5_cc_candidates, "kb_ctx": bool(kb_ctx)})
         return result
 
     # ── Helpers ────────────────────────────────────────────────
-    def _detect_partial_reply(self, body: str) -> bool:
-        """IDEAS-5: return True if body looks like a partial/incomplete reply."""
-        if not body or len(body.strip()) < 20:
-            return True
-        try:
-            import re as _re_partial
-            _low = body.lower().strip()
-            _phrases = ['partial', "i'll answer", 'coming soon', 'follow up',
-                'briefly', 'in progress', 'work in progress', 'reply shortly',
-                'get back to you', 'short answer', 'tl;dr']
-            _words = _re_partial.findall(r'\w+', body)
-            _substantive = len(_words) > 30 and any(p in _low for p in _phrases)
-            return _substantive
-        except Exception:
-            return False
-
-    def _get_thread_recent(self, thread_id: str, max_msgs: int = 3,
-                           max_total_words: int = 500) -> str:
-        """IDEAS-5: pull last N messages from thread via gmail_get."""
-        try:
-            from google_workspace import gmail_get as _gmail_get
-            _info = _gmail_get(thread_id)
-            _msgs = _info.get('messages', [])
-            if not _msgs:
-                return ''
-            _recent = _msgs[-max_msgs:]
-            _parts = []
-            _total = 0
-            import re as _re_thr
-            for _m in _recent:
-                _b = _m.get('body', '') or _m.get('snippet', '')
-                _w = _re_thr.findall(r'\w+', _b)
-                if len(_w) + _total > max_total_words:
-                    break
-                _parts.append(_b.strip())
-                _total += len(_w)
-            return '\n---\n'.join(_parts)
-        except Exception:
-            return ''
-
-
     def _get_name(self, sender: str) -> str:
         m = re.match(r'"([^"]+)"\s*<', sender)
         if m: return m.group(1).strip()

@@ -38,9 +38,9 @@ const DOCK_ITEMS = [
   },
   {
     id: 'health-check',
-    href: '/tools/health-check',
+    href: '/health-dashboard/',
     emoji: '🏥',
-    label: 'Platform Status',
+    label: 'Service Statistics',
     action: 'nav',
     color: 'from-emerald-500 to-green-500',
   },

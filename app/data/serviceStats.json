@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-03-29T00:00:00Z",
+  "total_services": 671,
+  "unique_service_ids": 671,
+  "by_category": {
+    "ai": 346,
+    "it": 114,
+    "cloud": 70,
+    "security": 58,
+    "data": 42,
+    "automation": 41
+  },
+  "by_stage": {},
+  "by_industry": {
+    "General": 327,
+    "Finance": 157,
+    "Manufacturing": 47,
+    "E-Commerce": 37,
+    "Marketing": 33,
+    "Healthcare": 20,
+    "SaaS": 8,
+    "Sustainability": 6,
+    "Education": 4,
+    "Email Security": 2,
+    "Training": 2,
+    "Marketing AI": 2,
+    "Threat Detection": 1,
+    "Data Protection": 1,
+    "Compliance": 1,
+    "Legal": 1,
+    "Technology": 1,
+    "HR": 1,
+    "Transformation": 1,
+    "AI Strategy": 1
+  },
+  "features_count": 671,
+  "benefits_count": 671,
+  "pricing_count": 672,
+  "avg_rating": 0,
+  "total_ratings": 0,
+  "avg_starter_price": 0,
+  "avg_pro_price": 0,
+  "avg_enterprise_price": 0,
+  "starter_price_range": [
+    0,
+    0
+  ],
+  "top_tags": {}
+}
