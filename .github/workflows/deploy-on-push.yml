@@ -42,7 +42,7 @@ jobs:
     - name: Static site build
       run: npm run build
     - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3.0.1
+      uses: actions/upload-pages-artifact@v5
       with:
         path: out
     - name: Write deploy status (triggered)
@@ -61,7 +61,7 @@ jobs:
 
         '
     - name: Upload deploy status artifact
-      uses: actions/upload-artifact@v4.4.0
+      uses: actions/upload-artifact@v7
       with:
         name: deploy-status
         path: automation/reports/deploy-status-latest.json
@@ -96,7 +96,7 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4.0.5
+      uses: actions/deploy-pages@v5
   smoke-tests:
     needs:
     - build
@@ -149,7 +149,7 @@ jobs:
       continue-on-error: true
     - name: Upload deploy watchdog report
       if: always()
-      uses: actions/upload-artifact@v4.4.0
+      uses: actions/upload-artifact@v7
       with:
         name: deploy-watchdog-report
         path: automation/reports/deploy-watchdog-latest.json

@@ -47,7 +47,7 @@ jobs:
         '
     - name: Upload report artifact
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: bundle-split-report
         path: '.hermes/memory/bundle-split/latest-report.json
@@ -61,7 +61,7 @@ jobs:
         \ \"Bundle split warnings detected\"\n  exit 1\nfi\n"
     - name: Comment on PR with recommendations
       if: github.event_name == 'pull_request' && failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
           let body = '\U0001F4E6 **Bundle Split Analysis \u2014 Recommendations**\\\
@@ -80,7 +80,7 @@ jobs:
           \ context.issue.number,\n  body\n});\n"
     - name: Open GitHub issue on main branch regressions
       if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
           const title = '\U0001F4E6 Bundle Split Regressions on Main';\nlet body =\
