@@ -67,7 +67,9 @@ export default function PortScannerPage() {
                 mode: 'no-cors',
               });
               portOpen = true; // no-cors means we got a response
-            } catch {}
+            } catch {
+              // Port closed or filtered — expected for closed ports
+            }
           }
           
           return { port, name, desc, open: portOpen, dnsResolves: reachable };
