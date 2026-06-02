@@ -27930,5 +27930,355 @@
     "category": "ai",
     "industry": "legal-tech",
     "stage": "published"
+  },
+  {
+    "id": "micro-saas-ai-url-monitor",
+    "title": "AI Website Uptime & Performance Monitor",
+    "category": "ai",
+    "industry": "technology",
+    "icon": "\ud83d\udd0e",
+    "popular": true,
+    "pricing": {
+      "basic": "$29/mo",
+      "pro": "$89/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Monitor website uptime, performance, and SEO health from 50+ global locations. AI predicts outages before they happen and auto-remediates common issues.",
+    "features": [
+      "Uptime monitoring from 50+ global locations",
+      "Core Web Vitals and Lighthouse scoring",
+      "AI-powered anomaly detection and prediction",
+      "Auto-remediation for common issues",
+      "SSL certificate expiration monitoring",
+      "Domain expiration and DNS monitoring",
+      "Public status page with custom branding",
+      "Incident timeline and post-mortem templates"
+    ],
+    "benefits": [
+      "Detect outages in under 60 seconds",
+      "Predict issues before they cause downtime",
+      "Auto-fix common problems without human intervention",
+      "Maintain SEO rankings with performance monitoring"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-url-monitor",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "micro-saas-ai-customer-feedback",
+    "title": "AI Customer Feedback Analyzer & NPS Platform",
+    "category": "ai",
+    "industry": "customer-success",
+    "icon": "\ud83d\udcac",
+    "popular": true,
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$299/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Collect, analyze, and act on customer feedback from surveys, reviews, support tickets, and social media. AI identifies themes, sentiment, and priority actions.",
+    "features": [
+      "Multi-channel feedback collection",
+      "AI theme extraction and clustering",
+      "Sentiment analysis with emotion detection",
+      "NPS, CSAT, and CES scoring with trend analysis",
+      "Automated follow-up for detractors",
+      "Integration with CRM, helpdesk, and product tools",
+      "Executive dashboard with actionable insights",
+      "Custom alert rules for negative feedback spikes"
+    ],
+    "benefits": [
+      "Understand customer sentiment in real-time",
+      "Identify product issues before they escalate",
+      "Increase NPS by 15+ points with closed-loop follow-up",
+      "Unify feedback from all channels in one place"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-customer-feedback",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "micro-saas-ai-subscription-analytics",
+    "title": "AI Subscription Analytics & Revenue Intelligence",
+    "category": "ai",
+    "industry": "finance",
+    "icon": "\ud83d\udcc8",
+    "popular": false,
+    "pricing": {
+      "basic": "$149/mo",
+      "pro": "$449/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Deep analytics for subscription businesses. Track MRR, churn, LTV, cohort analysis, and expansion revenue. AI predicts at-risk accounts and recommends pricing changes.",
+    "features": [
+      "MRR, ARR, and revenue waterfall analysis",
+      "Cohort retention and LTV analysis",
+      "AI churn prediction with risk scoring",
+      "Expansion revenue and upsell identification",
+      "Pricing optimization recommendations",
+      "Integration with Stripe, Chargebee, Recurly",
+      "Board-ready financial reports and forecasts",
+      "Scenario modeling for pricing and packaging"
+    ],
+    "benefits": [
+      "Increase net revenue retention to 120%+",
+      "Predict churn 60 days in advance",
+      "Optimize pricing with data-driven insights",
+      "Automate board and investor reporting"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-subscription-analytics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "micro-saas-ai-legal-doc-review",
+    "title": "AI Legal Document Review & Due Diligence",
+    "category": "ai",
+    "industry": "legal-tech",
+    "icon": "\u2696\ufe0f",
+    "popular": false,
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered legal document review for M&A due diligence, contract analysis, and compliance review. Reduces review time by 90% while improving accuracy.",
+    "features": [
+      "Bulk document upload and AI classification",
+      "Key clause extraction and risk flagging",
+      "Redline comparison between document versions",
+      "M&A due diligence checklist automation",
+      "Regulatory compliance gap analysis",
+      "Privilege log generation for litigation",
+      "Integration with legal practice management tools",
+      "Audit trail and version history"
+    ],
+    "benefits": [
+      "Reduce document review time by 90%",
+      "Catch risky clauses human reviewers miss",
+      "Accelerate M&A due diligence timelines",
+      "Lower legal review costs by 60%"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-legal-doc-review",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "micro-saas-ai-event-planner",
+    "title": "AI Event Planning & Management Platform",
+    "category": "ai",
+    "industry": "events",
+    "icon": "\ud83c\udf89",
+    "popular": false,
+    "pricing": {
+      "basic": "$199/mo",
+      "pro": "$599/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Plan and manage events with AI assistance. From venue selection to attendee engagement, automate logistics, budgeting, and marketing for conferences, webinars, and meetups.",
+    "features": [
+      "AI venue recommendation based on budget and requirements",
+      "Automated budget tracking and vendor payments",
+      "Event marketing with AI-generated content",
+      "Registration and ticketing with dynamic pricing",
+      "Attendee matchmaking and networking suggestions",
+      "Live polling, Q&A, and engagement tools",
+      "Post-event analytics and ROI reporting",
+      "Integration with Zoom, Hopin, Eventbrite"
+    ],
+    "benefits": [
+      "Plan events 5x faster with AI assistance",
+      "Increase attendance with smart marketing",
+      "Reduce event costs by 30% with vendor optimization",
+      "Measure event ROI with comprehensive analytics"
+    ],
+    "contactInfo": {
+      "website": "/services/micro-saas-ai-event-planner",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "it-data-warehouse",
+    "title": "IT Data Warehouse & Lakehouse Architecture",
+    "category": "it",
+    "industry": "technology",
+    "icon": "\ud83c\udfd7\ufe0f",
+    "popular": true,
+    "pricing": {
+      "basic": "$5,000/mo",
+      "pro": "$12,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Design and implement modern data warehouse and lakehouse solutions. From Snowflake, BigQuery, and Databricks to custom ETL pipelines and data governance.",
+    "features": [
+      "Data warehouse architecture design and implementation",
+      "ETL/ELT pipeline development and optimization",
+      "Data lakehouse setup (Delta Lake, Iceberg, Hudi)",
+      "Data governance and cataloging",
+      "Real-time streaming data ingestion",
+      "Data quality monitoring and validation",
+      "Cost optimization and performance tuning",
+      "Migration from legacy data warehouses"
+    ],
+    "benefits": [
+      "Unify all data sources in one platform",
+      "Query petabytes in seconds",
+      "Reduce data infrastructure costs by 40%",
+      "Enable self-service analytics for all teams"
+    ],
+    "contactInfo": {
+      "website": "/services/it-data-warehouse",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "it-network-monitoring",
+    "title": "IT Network Monitoring & Performance Management",
+    "category": "it",
+    "industry": "technology",
+    "icon": "\ud83c\udf10",
+    "popular": false,
+    "pricing": {
+      "basic": "$1,500/mo",
+      "pro": "$4,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "24/7 network monitoring with AI-powered anomaly detection, automated alerting, and performance optimization. Monitor on-prem, cloud, and hybrid networks.",
+    "features": [
+      "Real-time network topology mapping",
+      "AI anomaly detection and root cause analysis",
+      "Bandwidth utilization monitoring and optimization",
+      "SNMP, NetFlow, sFlow, and packet capture support",
+      "Automated alerting via email, SMS, Slack, PagerDuty",
+      "Historical performance trending and capacity planning",
+      "Cloud network monitoring (AWS VPC, Azure VNet, GCP)",
+      "Custom dashboards and executive reporting"
+    ],
+    "benefits": [
+      "Detect network issues before users notice",
+      "Reduce mean time to resolution by 70%",
+      "Optimize bandwidth and reduce costs",
+      "Plan capacity with data-driven insights"
+    ],
+    "contactInfo": {
+      "website": "/services/it-network-monitoring",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "it-vulnerability-management",
+    "title": "IT Vulnerability Management & Penetration Testing",
+    "category": "security",
+    "industry": "technology",
+    "icon": "\ud83d\udd0d",
+    "popular": true,
+    "pricing": {
+      "basic": "$2,000/mo",
+      "pro": "$5,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "Continuous vulnerability scanning, prioritization, and remediation guidance. Includes quarterly penetration testing, web app security assessments, and red team exercises.",
+    "features": [
+      "Continuous automated vulnerability scanning",
+      "Risk-based prioritization with CVSS and business context",
+      "Quarterly manual penetration testing",
+      "Web application security assessment (OWASP Top 10)",
+      "Red team and purple team exercises",
+      "Remediation guidance and patch verification",
+      "Compliance reporting (PCI DSS, SOC 2, HIPAA)",
+      "Executive risk dashboards and trend analysis"
+    ],
+    "benefits": [
+      "Find and fix vulnerabilities before attackers",
+      "Prioritize remediation by actual risk, not just CVSS",
+      "Meet compliance scanning requirements",
+      "Quantify security posture for leadership"
+    ],
+    "contactInfo": {
+      "website": "/services/it-vulnerability-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "ai-hr-talent-analytics",
+    "title": "AI HR Talent Analytics & Workforce Planning",
+    "category": "ai",
+    "industry": "hr-tech",
+    "icon": "\ud83d\udc65",
+    "popular": false,
+    "pricing": {
+      "basic": "$1,499/mo",
+      "pro": "$3,999/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered workforce analytics for hiring, retention, and organizational planning. Predict attrition, identify high-potential employees, and optimize team composition.",
+    "features": [
+      "Attrition prediction with risk scoring",
+      "High-potential employee identification",
+      "Workforce planning and headcount forecasting",
+      "Compensation benchmarking and equity analysis",
+      "Diversity, equity, and inclusion analytics",
+      "Employee engagement trend analysis",
+      "Integration with Workday, BambooHR, SAP SuccessFactors",
+      "Manager dashboards and actionable recommendations"
+    ],
+    "benefits": [
+      "Reduce voluntary attrition by 20-30%",
+      "Identify flight risks 6 months in advance",
+      "Optimize workforce costs with data-driven planning",
+      "Improve diversity and inclusion with analytics"
+    ],
+    "contactInfo": {
+      "website": "/services/ai-hr-talent-analytics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
+  },
+  {
+    "id": "ai-medical-imaging-assistant",
+    "title": "AI Medical Imaging Analysis Assistant",
+    "category": "ai",
+    "industry": "healthcare",
+    "icon": "\ud83c\udfe5",
+    "popular": false,
+    "pricing": {
+      "basic": "$4,999/mo",
+      "pro": "$12,000/mo",
+      "enterprise": "Custom"
+    },
+    "description": "AI-powered medical imaging analysis that assists radiologists in detecting anomalies in X-rays, CT scans, MRIs, and pathology slides. FDA-cleared algorithms with 95%+ sensitivity.",
+    "features": [
+      "X-ray, CT, MRI, and pathology image analysis",
+      "Automated anomaly detection and classification",
+      "Priority flagging for urgent findings",
+      "Structured report generation",
+      "Integration with PACS and EMR systems",
+      "Longitudinal comparison with prior studies",
+      "Quality assurance and peer review tools",
+      "HIPAA-compliant infrastructure"
+    ],
+    "benefits": [
+      "Detect abnormalities with 95%+ sensitivity",
+      "Reduce radiologist reading time by 40%",
+      "Flag urgent cases for immediate attention",
+      "Improve diagnostic consistency across providers"
+    ],
+    "contactInfo": {
+      "website": "/services/ai-medical-imaging-assistant",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    }
   }
 ]
