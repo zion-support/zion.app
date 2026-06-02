@@ -138,7 +138,7 @@ export default function V911V915Showcase() {
 
         {/* CTA */}
         <div className="text-center">
-          <a href="/services?category=Smart%20Email%20Responders" className="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+          <a href="/services?category=ai" className="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg">
             Explore Smart Email Services →
           </a>
         </div>

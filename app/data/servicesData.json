@@ -31811,5 +31811,365 @@
     "popular": false,
     "category": "it",
     "industry": "technology"
+  },
+  {
+    "id": "ai-deepfake-detection-platform",
+    "title": "AI Deepfake Detection & Media Authenticity Platform",
+    "description": "Detect deepfakes, synthetic media, and manipulated content in real-time. AI-powered analysis of video, audio, and images for media integrity verification.",
+    "features": [
+      "Real-time deepfake detection in video and audio",
+      "Synthetic image detection with 99.5% accuracy",
+      "Blockchain-based media provenance tracking",
+      "API for social media platforms",
+      "Batch processing for large media libraries",
+      "Forensic analysis report generation",
+      "Integration with content moderation workflows",
+      "Continuous model updates"
+    ],
+    "benefits": [
+      "Protect brand reputation from synthetic media",
+      "Prevent fraud and misinformation",
+      "Verify media authenticity in seconds",
+      "Meet regulatory compliance"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-deepfake-detection-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd0d",
+    "href": "/services/ai-deepfake-detection-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "security"
+  },
+  {
+    "id": "ai-legal-contract-nlp-analyzer",
+    "title": "AI Legal Contract NLP Analyzer & Risk Detector",
+    "description": "AI-powered contract analysis that extracts clauses, identifies risks, compares against templates, and flags non-standard language.",
+    "features": [
+      "Automated clause extraction and classification",
+      "Risk scoring for each contract section",
+      "Template comparison and deviation detection",
+      "Obligation and deadline extraction",
+      "Multi-language contract support",
+      "Redline generation for negotiations",
+      "Integration with DocuSign",
+      "Audit trail for compliance"
+    ],
+    "benefits": [
+      "Reduce contract review time by 80%",
+      "Catch risky clauses before signing",
+      "Standardize contract language",
+      "Ensure regulatory compliance"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$799/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-legal-contract-nlp-analyzer",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/ai-legal-contract-nlp-analyzer",
+    "popular": false,
+    "category": "ai",
+    "industry": "legal"
+  },
+  {
+    "id": "ai-wildlife-conservation-drone",
+    "title": "AI Wildlife Conservation & Anti-Poaching Drone System",
+    "description": "Autonomous drone system with AI-powered wildlife tracking, poaching detection, and habitat monitoring for conservation organizations.",
+    "features": [
+      "Autonomous drone patrol routes",
+      "AI animal species identification",
+      "Real-time poaching alert system",
+      "Thermal imaging for night patrols",
+      "Habitat change detection via satellite",
+      "Population counting and migration tracking",
+      "Ranger dispatch integration",
+      "Weather-adaptive flight planning"
+    ],
+    "benefits": [
+      "Reduce poaching incidents by 70%",
+      "Monitor wildlife populations autonomously",
+      "Protect endangered species",
+      "Reduce ranger risk"
+    ],
+    "pricing": {
+      "basic": "$2,000/mo",
+      "pro": "$5,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-wildlife-conservation-drone",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83e\udd81",
+    "href": "/services/ai-wildlife-conservation-drone",
+    "popular": false,
+    "category": "ai",
+    "industry": "conservation"
+  },
+  {
+    "id": "ai-personalized-medicine-genomics",
+    "title": "AI Personalized Medicine & Genomics Platform",
+    "description": "AI-driven genomic analysis for personalized treatment plans, drug response prediction, and rare disease diagnosis.",
+    "features": [
+      "Whole genome sequencing analysis",
+      "Pharmacogenomic drug response prediction",
+      "Rare disease variant identification",
+      "Cancer treatment recommendation engine",
+      "EHR integration via FHIR/HL7",
+      "Clinical trial matching",
+      "Family pedigree analysis",
+      "HIPAA-compliant data handling"
+    ],
+    "benefits": [
+      "Improve treatment outcomes by 40%",
+      "Reduce adverse drug reactions",
+      "Accelerate rare disease diagnosis",
+      "Enable precision medicine at scale"
+    ],
+    "pricing": {
+      "basic": "$3,000/mo",
+      "pro": "$8,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-personalized-medicine-genomics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83e\uddec",
+    "href": "/services/ai-personalized-medicine-genomics",
+    "popular": false,
+    "category": "ai",
+    "industry": "healthcare"
+  },
+  {
+    "id": "ai-ocean-pollution-tracker",
+    "title": "AI Ocean Pollution Tracking & Marine Ecosystem Monitor",
+    "description": "Satellite and drone-based AI system for tracking ocean pollution, monitoring marine ecosystems, and detecting illegal dumping.",
+    "features": [
+      "Satellite imagery analysis for pollution detection",
+      "Plastic waste concentration mapping",
+      "Illegal vessel discharge monitoring",
+      "Marine biodiversity tracking",
+      "Oil spill detection and trajectory prediction",
+      "Water quality sensor integration",
+      "Automated regulatory reporting",
+      "Historical trend analysis"
+    ],
+    "benefits": [
+      "Detect pollution events in real-time",
+      "Protect marine ecosystems",
+      "Support environmental compliance",
+      "Track cleanup effectiveness"
+    ],
+    "pricing": {
+      "basic": "$1,500/mo",
+      "pro": "$4,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-ocean-pollution-tracker",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udf0a",
+    "href": "/services/ai-ocean-pollution-tracker",
+    "popular": false,
+    "category": "ai",
+    "industry": "environment"
+  },
+  {
+    "id": "it-zero-trust-security-architecture",
+    "title": "IT Zero Trust Security Architecture Implementation",
+    "description": "Complete zero trust security framework including identity verification, micro-segmentation, and continuous authentication.",
+    "features": [
+      "Identity-centric security architecture",
+      "Micro-segmentation of network resources",
+      "Continuous authentication and authorization",
+      "Device trust scoring",
+      "Least-privilege access enforcement",
+      "SIEM and SOAR integration",
+      "Compliance mapping (NIST, ISO 27001)",
+      "24/7 security monitoring"
+    ],
+    "benefits": [
+      "Eliminate implicit trust in networks",
+      "Reduce breach impact by 90%",
+      "Meet compliance requirements",
+      "Secure remote workforce"
+    ],
+    "pricing": {
+      "basic": "$5,000/mo",
+      "pro": "$12,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-zero-trust-security-architecture",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd12",
+    "href": "/services/it-zero-trust-security-architecture",
+    "popular": false,
+    "category": "it",
+    "industry": "technology"
+  },
+  {
+    "id": "it-data-migration-service",
+    "title": "IT Data Migration & Modernization Service",
+    "description": "End-to-end data migration from legacy systems to modern cloud platforms. Zero-downtime migration with automated validation.",
+    "features": [
+      "Legacy system assessment and planning",
+      "Automated schema conversion",
+      "Zero-downtime migration execution",
+      "Data validation and reconciliation",
+      "Rollback capabilities",
+      "Performance testing post-migration",
+      "Documentation and knowledge transfer",
+      "Post-migration support"
+    ],
+    "benefits": [
+      "Migrate without business disruption",
+      "Modernize legacy infrastructure",
+      "Reduce technical debt",
+      "Ensure data integrity"
+    ],
+    "pricing": {
+      "basic": "$2,000/mo",
+      "pro": "$5,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/it-data-migration-service",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/it-data-migration-service",
+    "popular": false,
+    "category": "it",
+    "industry": "technology"
+  },
+  {
+    "id": "ai-mental-health-support-chatbot",
+    "title": "AI Mental Health Support & Wellness Chatbot",
+    "description": "HIPAA-compliant AI chatbot providing 24/7 mental health support, crisis detection, and therapeutic conversation.",
+    "features": [
+      "24/7 empathetic AI conversation",
+      "Crisis detection and escalation",
+      "CBT and DBT-based therapeutic techniques",
+      "Mood tracking and journaling",
+      "Integration with therapist workflows",
+      "Multilingual support",
+      "Anonymous usage option",
+      "Outcome measurement and reporting"
+    ],
+    "benefits": [
+      "Provide 24/7 mental health support",
+      "Reduce therapist workload",
+      "Early crisis detection",
+      "Improve employee wellness"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-mental-health-support-chatbot",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83e\udde0",
+    "href": "/services/ai-mental-health-support-chatbot",
+    "popular": false,
+    "category": "ai",
+    "industry": "healthcare"
+  },
+  {
+    "id": "ai-food-safety-inspection",
+    "title": "AI Food Safety & Quality Inspection System",
+    "description": "Computer vision-based food safety inspection for restaurants, food processing plants, and supply chains.",
+    "features": [
+      "Real-time contamination detection",
+      "Temperature monitoring alerts",
+      "Hygiene compliance verification",
+      "Pest detection in storage areas",
+      "Supply chain traceability",
+      "Automated HACCP reporting",
+      "Integration with IoT sensors",
+      "Historical compliance analytics"
+    ],
+    "benefits": [
+      "Prevent foodborne illness outbreaks",
+      "Automate safety inspections",
+      "Ensure regulatory compliance",
+      "Reduce food waste"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$1,199/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-food-safety-inspection",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udf7d\ufe0f",
+    "href": "/services/ai-food-safety-inspection",
+    "popular": false,
+    "category": "ai",
+    "industry": "food"
+  },
+  {
+    "id": "ai-smart-city-infrastructure",
+    "title": "AI Smart City Infrastructure Management Platform",
+    "description": "Comprehensive AI platform for managing smart city infrastructure including traffic, utilities, public safety, and environmental monitoring.",
+    "features": [
+      "Intelligent traffic signal optimization",
+      "Smart grid energy distribution",
+      "Water and waste management optimization",
+      "Air quality monitoring and prediction",
+      "Public safety camera analytics",
+      "Citizen engagement portal",
+      "Digital twin city modeling",
+      "Open data platform integration"
+    ],
+    "benefits": [
+      "Reduce traffic congestion by 25%",
+      "Lower energy consumption by 20%",
+      "Improve public safety",
+      "Enhance citizen quality of life"
+    ],
+    "pricing": {
+      "basic": "$10,000/mo",
+      "pro": "$25,000/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-smart-city-infrastructure",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udfd9\ufe0f",
+    "href": "/services/ai-smart-city-infrastructure",
+    "popular": false,
+    "category": "ai",
+    "industry": "government"
   }
 ]

@@ -151,7 +151,7 @@ export default function V901V905Showcase() {
 
         {/* CTA */}
         <div className="text-center">
-          <a href="/services?category=Advanced%20Analytics" className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+          <a href="/services?category=data" className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg">
             Explore Analytics Services →
           </a>
         </div>

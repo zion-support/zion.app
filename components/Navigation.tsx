@@ -10,12 +10,13 @@ const Navigation: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const CATEGORIES = [
-    { key: 'ai',        label: 'AI Services',           emoji: '🧠', count: '200+' },
-    { key: 'it',        label: 'IT Services',            emoji: '🖥️', count: '300+' },
-    { key: 'cloud',     label: 'Cloud Services',          emoji: '☁️', count: '150+' },
-    { key: 'security',  label: 'Security Services',        emoji: '🔐', count: '100+' },
-    { key: 'data',      label: 'Data Analytics',           emoji: '📊', count: '120+' },
-    { key: 'automation',label: 'Automation & DevOps',      emoji: '🤖', count: '80+' },
+    { key: 'ai',        label: 'AI Services',           emoji: '🧠', count: '550+' },
+    { key: 'it',        label: 'IT Services',            emoji: '🖥️', count: '180+' },
+    { key: 'cloud',     label: 'Cloud Services',          emoji: '☁️', count: '90+' },
+    { key: 'security',  label: 'Security Services',        emoji: '🔐', count: '95+' },
+    { key: 'data',      label: 'Data Analytics',           emoji: '📊', count: '70+' },
+    { key: 'automation',label: 'Automation & DevOps',      emoji: '🤖', count: '55+' },
+    { key: 'micro-saas',label: 'Micro-SaaS Solutions',     emoji: '🚀', count: '65+' },
   ];
 
   return (
@@ -28,7 +29,7 @@ const Navigation: React.FC = () => {
               Zion Tech Group
             </span>
             <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
-              <Sparkles className="h-3 w-3" /> 1039 Services
+              <Sparkles className="h-3 w-3" /> 1049 Services
             </span>
           </Link>
 
@@ -51,7 +52,7 @@ const Navigation: React.FC = () => {
               <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[480px] max-h-[80vh] overflow-y-auto bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl shadow-black/40 py-3 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ring-1 ring-slate-700/50">
                 <div className="px-3 pb-2">
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 mb-2">Service Categories</p>
-                  <div className="grid grid-cols-2 gap-1">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
                     {CATEGORIES.map(cat => (
                       <Link
                         key={cat.key}
