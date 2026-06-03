@@ -1,0 +1,74 @@
+name: Lighthouse Performance Budget
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['main']
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    name: 'Lighthouse budget gate'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+
+      - name: 'set up Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 'install dependencies'
+        run: npm ci
+
+      - name: 'build'
+        run: npm run build
+
+      - name: 'run Lighthouse'
+        run: |
+          set -euo pipefail
+          npx lighthouse http://localhost:3000 \
+            --chrome-flags='--headless --no-sandbox' \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json \
+            --output-path=./lighthouse-report.json \
+            --quiet || true
+
+      - name: 'enforce performance budget'
+        run: |
+          set -euo pipefail
+          REPORT=./lighthouse-report.json
+          if [ ! -f "$REPORT" ]; then
+            echo 'lighthouse report missing' >&2
+            exit 1
+          fi
+          node - <<'NODE'
+const fs = require('fs');
+const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
+const scores = report.categories || {};
+const budget = {
+  performance: 0.9,
+  accessibility: 0.9,
+  bestPractices: 0.9,
+  seo: 0.9,
+};
+const failures = [];
+for (const [key, min] of Object.entries(budget)) {
+  const score = scores[key]?.score;
+  if (score === null || score === undefined || score < min) {
+    failures.push(`${key}: ${score} < ${min}`);
+  }
+}
+if (failures.length) {
+  console.log('Lighthouse budget failures:\n' + failures.join('\n'));
+  process.exit(1);
+} else {
+  console.log('Lighthouse budget passed');
+}
+NODE
