@@ -19905,8 +19905,121 @@ export const additionalNewDataServices: Service[] = [
     contactInfo: {website:'/services/agritech-precision-farming', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🌾', href: '/services/agritech-precision-farming', popular: false, category: 'agritech', industry: 'Agriculture',
   }
+,
+  {
+    id: 'agritech-irrigation-optimization',
+    title: 'AI Smart Irrigation Optimization',
+    description: 'AI-powered irrigation control. Soil moisture monitoring, weather-adaptive scheduling, water usage optimization, and crop-specific recommendations.',
+    features: ["Soil moisture sensor integration", "Weather-adaptive scheduling", "Water usage optimization", "Crop-specific recommendations", "Remote valve control", "Integration with Rainbird, Hunter", "Water cost tracking", "Drought response automation"],
+    benefits: ["Reduce water usage 35%", "Lower irrigation costs", "Improve crop yields", "Remote monitoring and control"],
+    pricing: {"basic": "$99/mo", "pro": "$299/mo", "enterprise": "$899/mo"},
+    contactInfo: {website:'/services/agritech-irrigation-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💧', href: '/services/agritech-irrigation-optimization', popular: false, category: 'agritech', industry: 'Agriculture',
+  },
+  {
+    id: 'agritech-greenhouse-automation',
+    title: 'AI Greenhouse Climate Control',
+    description: 'AI-powered greenhouse automation. Climate optimization, lighting control, CO2 management, and yield prediction for controlled environment agriculture.',
+    features: ["Temperature and humidity optimization", "Lighting schedule automation", "CO2 level management", "Yield prediction models", "Energy cost optimization", "Integration with Priva, Argus", "Disease risk alerts", "Harvest timing recommendations"],
+    benefits: ["Increase yield 25%", "Reduce energy costs 30%", "Optimize growing conditions 24/7", "Predict harvest dates accurately"],
+    pricing: {"basic": "$199/mo", "pro": "$599/mo", "enterprise": "$1,499/mo"},
+    contactInfo: {website:'/services/agritech-greenhouse-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🏠', href: '/services/agritech-greenhouse-automation', popular: false, category: 'agritech', industry: 'Agriculture',
+  }
 ];
 
+
+export const additionalNewConstructionTechServices: Service[] = [
+  {
+    id: 'construction-tech-bim-management',
+    title: 'BIM Management Platform for Construction',
+    description: 'Building Information Modeling management for construction teams. 3D model collaboration, clash detection, version control, and field-to-office synchronization.',
+    features: ["3D BIM model collaboration", "Automated clash detection", "Version control and audit trail", "Field-to-office sync", "Progress tracking with 4D simulation", "Integration with Autodesk, Trimble", "RFIs and submittal management", "Safety compliance tracking"],
+    benefits: ["Reduce rework by 30%", "Detect clashes before construction", "Real-time field progress", "Single source of truth for all teams"],
+    pricing: {"basic": "$499/mo", "pro": "$1,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/construction-tech-bim-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🏗️', href: '/services/construction-tech-bim-management', popular: true, category: 'construction-tech', industry: 'Construction',
+  },
+  {
+    id: 'construction-tech-safety-monitoring',
+    title: 'AI Construction Safety Monitoring',
+    description: 'AI-powered construction site safety. PPE detection, hazard identification, incident prediction, and compliance reporting with computer vision.',
+    features: ["PPE detection (hard hat, vest, gloves)", "Hazard zone monitoring", "Incident prediction", "Integration with security cameras", "Real-time alerts to safety officers", "Compliance reporting", "Worker proximity alerts", "Integration with Procore, Autodesk Build"],
+    benefits: ["Reduce safety incidents 50%", "Automated compliance", "Real-time hazard alerts", "Protect workers proactively"],
+    pricing: {"basic": "$599/mo", "pro": "$1,799/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/construction-tech-safety-monitoring', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🦺', href: '/services/construction-tech-safety-monitoring', popular: true, category: 'construction-tech', industry: 'Construction',
+  }
+];
+
+export const additionalNewManufacturingTechServices: Service[] = [
+  {
+    id: 'manufacturing-tech-digital-twin',
+    title: 'Digital Twin for Manufacturing',
+    description: 'Create digital twins of manufacturing assets. Real-time simulation, predictive maintenance, process optimization, and what-if scenario modeling.',
+    features: ["Real-time asset digital twins", "Predictive maintenance simulation", "Process optimization", "What-if scenario modeling", "Integration with IoT sensors", "3D visualization integration", "OEE tracking and improvement", "Integration with Siemens, GE Digital"],
+    benefits: ["Reduce unplanned downtime 45%", "Optimize processes digitally", "Predict failures before they occur", "Improve OEE by 20%"],
+    pricing: {"basic": "$2,999/mo", "pro": "$8,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/manufacturing-tech-digital-twin', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔄', href: '/services/manufacturing-tech-digital-twin', popular: true, category: 'manufacturing-tech', industry: 'Manufacturing',
+  },
+  {
+    id: 'manufacturing-tech-quality-vision',
+    title: 'Computer Vision Quality Inspection',
+    description: 'AI visual inspection for manufacturing lines. Defect detection, measurement verification, and pass/fail classification at production speed.',
+    features: ["Real-time defect detection", "Dimensional measurement", "Pass/fail classification", "Integration with cameras and PLCs", "Custom defect model training", "Production line dashboard", "Defect trend analysis", "Integration with Cognex, Keyence"],
+    benefits: ["Inspect 100% of production", "Detect defects humans miss", "Reduce scrap and rework", "Measure at production speed"],
+    pricing: {"basic": "$1,999/mo", "pro": "$5,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/manufacturing-tech-quality-vision', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔍', href: '/services/manufacturing-tech-quality-vision', popular: false, category: 'manufacturing-tech', industry: 'Manufacturing',
+  }
+];
+
+export const additionalNewAiServicesServices: Service[] = [
+  {
+    id: 'ai-services-model-observability',
+    title: 'AI Model Observability Platform',
+    description: 'Monitor AI models in production. Drift detection, performance tracking, bias monitoring, and alerting for ML pipelines.',
+    features: ["Model drift detection", "Performance tracking and alerting", "Bias and fairness monitoring", "A/B test result analysis", "Feature importance tracking", "Integration with MLflow, Weights & Biases", "Automated retraining triggers", "Model explainability dashboard"],
+    benefits: ["Detect model degradation early", "Ensure fair and unbiased models", "Automate model retraining", "Full production visibility"],
+    pricing: {"basic": "$399/mo", "pro": "$1,199/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-services-model-observability', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '👁️', href: '/services/ai-services-model-observability', popular: true, category: 'ai-services', industry: 'Technology',
+  },
+  {
+    id: 'ai-services-rag-as-a-service',
+    title: 'RAG as a Service — Knowledge Retrieval API',
+    description: 'Plug-and-play Retrieval Augmented Generation. Upload documents, get a chatbot API. No ML team required.',
+    features: ["Document upload and indexing", "Automatic chunking and embedding", "REST and WebSocket APIs", "Custom knowledge bases", "Source citation in responses", "Integration with OpenAI, Claude, Llama", "Usage analytics", "GDPR-compliant data handling"],
+    benefits: ["Build AI chatbots in minutes", "No ML expertise required", "Source-grounded responses", "Scale without infrastructure"],
+    pricing: {"basic": "$149/mo", "pro": "$449/mo", "enterprise": "$1,499/mo"},
+    contactInfo: {website:'/services/ai-services-rag-as-a-service', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🧠', href: '/services/ai-services-rag-as-a-service', popular: true, category: 'ai-services', industry: 'Technology',
+  }
+];
+
+export const additionalNewItServicesServices: Service[] = [
+  {
+    id: 'it-services-asset-management',
+    title: 'IT Asset Management Platform',
+    description: 'Comprehensive IT asset lifecycle management. Hardware and software tracking, license compliance, procurement workflows, and disposal management.',
+    features: ["Hardware asset tracking", "Software license management", "Procurement workflows", "Auto-discovery of network assets", "Compliance and audit reports", "Integration with ServiceNow, Jira", "Lifecycle cost analysis", "Disposal and recycling tracking"],
+    benefits: ["Eliminate license violations", "Reduce IT spend by 20%", "Full asset visibility", "Automated compliance reporting"],
+    pricing: {"basic": "$199/mo", "pro": "$599/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/it-services-asset-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💻', href: '/services/it-services-asset-management', popular: false, category: 'it-services', industry: 'Technology',
+  },
+  {
+    id: 'it-services-saml-sso',
+    title: 'SAML/SSO Identity Provider',
+    description: 'Enterprise Single Sign-On and identity management. SAML, OIDC, MFA, and directory integration for seamless access control.',
+    features: ["SAML 2.0 and OIDC support", "Multi-factor authentication", "Directory sync (LDAP, AD, SCIM)", "Conditional access policies", "User provisioning and deprovisioning", "Integration with Okta, Azure AD, Google Workspace", "Session management", "Compliance reporting (SOC2, HIPAA)"],
+    benefits: ["One login for all apps", "Reduce password tickets 80%", "Enforce MFA everywhere", "Meet compliance requirements"],
+    pricing: {"basic": "$299/mo", "pro": "$899/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/it-services-saml-sso', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔐', href: '/services/it-services-saml-sso', popular: false, category: 'it-services', industry: 'Technology',
+  }
+];
 export const allServices: Service[] = [
   ...aiServices,
   ...itServices,
@@ -19955,6 +20068,10 @@ export const allServices: Service[] = [
   ...wave177CloudServices,
   ...wave177DataServices,
   ...wave177AutomationServices,
+  ...additionalNewConstructionTechServices,
+  ...additionalNewManufacturingTechServices,
+  ...additionalNewAiServicesServices,
+  ...additionalNewItServicesServices,
 ].filter((s): s is Service => s !== undefined);
 
 
