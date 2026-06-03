@@ -19,8 +19,8 @@ import AiSolutionsArchitectWidget from './components/ai/AiSolutionsArchitectWidg
 import AIExperienceLoader from './components/AIExperienceLoader';
 import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
+import { useFocusManagement } from './hooks/useFocusManagement';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
-import FocusManagement from './components/FocusManagement';
 import './globals.css';
 
 const siteUrl = 'https://ziontechgroup.com';
@@ -73,6 +73,8 @@ export default function RootLayout({
 }: {
   children: ReactNode;
 }) {
+  useFocusManagement();
+
   return (
     <>
       {/* JSON-LD: Organization */}
@@ -103,7 +105,6 @@ export default function RootLayout({
           <CtaTracking />
           <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
             <EnhancedSkipLink />
-            <FocusManagement />
             <ReadingProgressBar />
             <Header />
             <main className="relative z-10 flex-1" id="main-content" tabIndex={-1} role="main">
