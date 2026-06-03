@@ -1,0 +1,55 @@
+name: Audit Report Cleanup
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+
+      - name: 'archive old audit reports'
+        run: |
+          set -euo pipefail
+          mkdir -p audit/archive
+          find audit -maxdepth 1 -type f -name 'report-*.md' -mtime +30 | while read -r f; do
+            month=$(date -r "$f" +%Y-%m)
+            mkdir -p "audit/archive/${month}"
+            mv "$f" "audit/archive/${month}/"
+          done
+
+      - name: 'prune automation health history'
+        run: |
+          set -euo pipefail
+          if [ -f public/api/automation-health-history.json ]; then
+            node - <<'NODE'
+const fs = require('fs');
+const path = 'public/api/automation-health-history.json';
+const retentionDays = 30;
+try {
+  const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+  const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;
+  const filtered = Array.isArray(data) ? data.filter(entry => (entry.timestamp || entry.date || 0) >= cutoff) : [];
+  fs.writeFileSync(path, JSON.stringify(filtered, null, 2));
+  console.log('pruned automation health history to', filtered.length, 'entries');
+} catch (e) {
+  console.log('skip prune:', e.message);
+}
+NODE
+          fi
+
+      - name: 'commit cleanup changes'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+          git add audit/archive public/api/automation-health-history.json || true
+          git diff --cached --quiet || git commit -m 'chore: archive old audit reports and prune health history'
+          git push origin HEAD:main || true
