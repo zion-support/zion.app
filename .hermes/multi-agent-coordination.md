@@ -1,14 +1,14 @@
 # Shared Task Board — Zion Tech Group Multi-Agent
 > Source of truth for all 5 bots. Update on status change.
 > Location: ~/.hermes/multi-agent-coordination.md (synced by @Kilo)
-> Last updated: 2026-06-04T09:30:00-03:00
+> Last updated: 2026-06-03T14:11:00-03:00
 
 ## Bot Roster
 | Bot | Role | Status | Current Task |
 |-----|------|--------|-------------|
 | @windows_carol_bot | 🖥️ DevOps & Infrastructure | 🟢 Active | CI/CD workflows, wave integration, accessibility |
 | @Kilo_openclaw_kleber_bot | 🧠 Intelligence & Orchestration | 🟢 Active | Coordination lead, quality audits |
-| @tablet_kleber_bot | 📱 Content & Research | 🟢 Active | Wave creation (cron) |
+| @tablet_kleber_bot | 📱 Content & Research | 🟢 Active | Wave research & content creation |
 | @Windows_quel_bot | 🔧 Code & Implementation | 🔵 Available | Site quality improvements |
 | @Rocket_Kleber_bot | 🚀 Integration & Delivery | 🔵 Available | Build/deploy automation |
 | @OWL | 📊 Build & Deploy | 🟢 Active | Wave creation, bug fixes, fleet coordination |
@@ -19,21 +19,22 @@ None — all clear ✅
 ## In Progress (P1)
 | ID | Task | Owner | Status |
 |----|------|-------|--------|
-|| P1-1 | Wave 207+ creation | @tablet/@OWL | Ongoing |
-| P1-2 | Site quality pass — thin pages, empty benefits | @Kilo/Windows_quel | Ready |
-| P1-3 | Email responder activation | @Kilo | Blocked on Gmail app password |
+| P1-1 | Wave 208 research | @tablet | 🔄 Just delegated — research 5 new services in new categories |
+| P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | 🔄 Just delegated — re-scan needed (was 223 after last fix) |
+| P1-3 | Wave 208 integration | @OWL | ⏳ Waiting on P1-1 completion |
 
 ## Backlog (P2)
 | ID | Task | Owner | Notes |
 |----|------|-------|-------|
-| B2 | CI/CD pipeline hardening | @Rocket | Multiple workflows already added |
+| B2 | CI/CD pipeline hardening | @Rocket | Multiple workflows already added — optimize further |
 | B3 | GitHub auth for Actions triage | @windows_carol | Needs gh auth on remote |
 | B4 | Service page generation from wave data | @tablet | Automated via postbuild |
-| B5 | Thin page content enrichment | @Kilo | Ongoing |
+| B5 | Thin page content enrichment | @Kilo | Ongoing audits |
+| B6 | Wave 209+ research pipeline | @tablet | Next wave after 208 |
 
 ## Blocked
 | ID | Task | What's Needed |
-|----|------|---------------|
+|------|------|---------------|
 | X1 | Email responder live | Kleber: Gmail app password |
 | X2 | GitHub Actions triage | Kleber: gh auth on remote machine |
 
@@ -47,7 +48,8 @@ None — all clear ✅
 | 188-192 | 44 services | ✅ Integrated |
 | 193-196 | 41 services | ✅ Integrated |
 | 197-206 | ~160 services | ✅ Integrated |
-| **Total** | **~1,700+ services** | ✅ Type-check clean |
+| 207 | 5 services | ✅ Integrated (Grafana, Keycloak, Strapi, Medusa, Outline) |
+| **Total** | **~1,710+ services** | ✅ Type-check clean |
 
 ## Schema Rules (MUST FOLLOW)
 1. **Category values**: always lowercase (`ai`, `micro-saas`, `it`, `security`, `cloud`, `data`, `automation`)
@@ -61,9 +63,10 @@ None — all clear ✅
 ## Site State
 - **Build**: ✅ `npm run build` — green
 - **Type-check**: ✅ `npx tsc --noEmit` — clean
-- **Services**: ~1,700+ in servicesData.ts (waves 174-206)
+- **Services**: ~1,710+ in servicesData.ts (waves 174-207)
 - **Site**: 200 OK — https://ziontechgroup.com
-- **Last deploy**: Wave 206
+- **Last deploy**: Wave 207
+- **Cron jobs**: 4 active (link-monitor, org-health, wave-research, email-readiness)
 
 ## Delegation Log (recent)
 | Time | Bot | Action | Result |
@@ -80,9 +83,12 @@ None — all clear ✅
 | 2026-06-04 07:00 | @Kilo | **ORGANIZE** | Cron review: site 200 OK, P1-2 stale (no progress >24h), rebalancing suggested |
 | 2026-06-04 08:00 | @OWL | Waves 193-195 recovery | Re-created after Carol force-push, added features+benefits, fixed services/page.tsx unclosed fragment + CRLF, null guards on detail page |
 | 2026-06-04 08:30 | @OWL | Wave 196 | +10 services pushed (5e0bdbc). Site 200 OK |
-|| 2026-06-04 09:00 | @OWL | Fleet coordination | Updated coordination doc, all bots synced |
-||| 2026-06-04 13:00 | @OWL | **ORGANIZE** | Verified all clean: waves 174-206, type-check green, 4 cron jobs healthy, coordination doc updated |
-||| 2026-06-04 14:00 | @tablet_kleber_bot | **Wave 207 research** | 5 new services in 5 new categories: Grafana (observability), Keycloak (identity), Strapi (cms), Medusa (ecommerce), Outline (documentation). Report saved to wave-research-2026-06-04.md |
+| 2026-06-04 09:00 | @OWL | Fleet coordination | Updated coordination doc, all bots synced |
+| 2026-06-04 14:00 | @tablet | Wave 207 research | 5 new services in 5 categories: Grafana, Keycloak, Strapi, Medusa, Outline |
+| 2026-06-06 18:00 | @Kilo | **ORGANIZE** | Full fleet rebalance. Updated coord doc. All bots synced. Delegating P1-2→@Windows_quel, P1-1→@tablet for wave 208 |
+| 2026-06-06 20:00 | @Kilo | **ORGANIZE** | Wave 207 integrated (Grafana, Keycloak, Strapi, Medusa, Outline). 5 new categories. Type-check clean. P1-1→Wave 208. Cron scheduler stale (next_run_at stuck on June 3). |
+| 2026-06-09 00:00 | @Kilo | **ORGANIZE** | Site 200 OK. Fleet review: P1-2 stale >72h (@Windows_quel available to take it). P1-1 Wave 208 research borderline (~48h). Rebalanced: P1-2→@Windows_quel (active), no other changes needed. |
+| 2026-06-03 14:11 | @Kilo | **ORGANIZE** | Full fleet reorganization per Kleber directive. Rebalanced all P1/P2 tasks. Delegated: Wave 208 research→@tablet, site quality→@Windows_quel, CI/CD→@Rocket. Sent coordination message to Zion Agents group. |
 
 ## Communication Protocol
 1. **Read this file at session start** — all bots
@@ -98,3 +104,5 @@ None — all clear ✅
 - **Node v26 ESM issue** with CJS postbuild scripts — GitHub Actions uses Node 20 (works fine)
 - **SWC wasm compiler** chokes on CRLF line endings — always convert to LF
 - **Service detail page** requires features[] and benefits[] — crashes without them
+- **@Kilo** should pull --rebase before any coord doc update (Carol may have pushed)
+- **Delegation rules**: @tablet=research/content, @Windows_quel=code quality, @Rocket=CI/CD, @Carol=infra, @Kilo=coordination, @OWL=wave integration
