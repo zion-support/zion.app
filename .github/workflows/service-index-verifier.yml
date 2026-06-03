@@ -1,0 +1,38 @@
+name: Service Index Verifier
+"on":
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+      - name: 'setup Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 'prepare local build'
+        run: |
+          set -euo pipefail
+          npm ci --prefer-offline --no-audit --fund=false
+          npm run build || true
+      - name: 'install linkedom'
+        continue-on-error: true
+        run: npm install --no-audit --no-fund --silent linkedom
+      - name: 'run service index verification'
+        id: verify-service-index
+        continue-on-error: true
+        run: node scripts/verify-service-index.cjs
+      - name: 'upload report'
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: service-index-report
+          path: service-index-report.json
+          retention-days: 30
