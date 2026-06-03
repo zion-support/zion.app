@@ -19061,6 +19061,17 @@ export const newAutomationServices: Service[] = [
     contactInfo: {website:'/services/automation-workflow-orchestration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '⚙️', href: '/services/automation-workflow-orchestration', popular: false, category: 'automation', industry: 'Technology',
   }
+,
+  {
+    id: 'logistics-tech-supply-chain-visibility',
+    title: 'End-to-End Supply Chain Visibility',
+    description: 'Real-time supply chain tracking and optimization. IoT integration, predictive analytics, route optimization, and supplier risk management.',
+    features: ["Real-time shipment tracking", "Predictive ETA", "Route optimization", "Supplier risk scoring", "Inventory optimization", "Integration with ERP/WMS", "Exception management", "Carbon tracking"],
+    benefits: ["Reduce logistics costs 25%", "Improve delivery times", "Mitigate supply risk", "End-to-end visibility"],
+    pricing: {"basic": "$599/mo", "pro": "$1,799/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/logistics-tech-supply-chain-visibility', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📦', href: '/services/logistics-tech-supply-chain-visibility', popular: false, category: 'logistics-tech', industry: 'Logistics',
+  }
 ];
 
 
@@ -19271,6 +19282,17 @@ export const additionalNewAiServices: Service[] = [
     contactInfo: {website:'/services/ai-speech-analytics', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎙️', href: '/services/ai-speech-analytics', popular: false, category: 'ai', industry: 'Technology',
   }
+,
+  {
+    id: 'ai-document-understanding-platform',
+    title: 'AI Document Understanding Platform',
+    description: 'Extract, classify, and understand any document type. OCR, NLP, and LLMs combined for invoices, contracts, forms, and handwritten notes.',
+    features: ["Multi-format OCR (PDF, images, scans)", "Intelligent document classification", "Key-value extraction", "Contract analysis", "Invoice processing", "Handwriting recognition", "Custom model training", "API and batch processing"],
+    benefits: ["Process documents 10x faster", "Reduce manual data entry", "Extract insights from unstructured data", "Scale without hiring"],
+    pricing: {"basic": "$199/mo", "pro": "$599/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-document-understanding-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📄', href: '/services/ai-document-understanding-platform', popular: true, category: 'ai', industry: 'Technology',
+  }
 ];
 
 
@@ -19450,6 +19472,27 @@ export const additionalNewMicroSaaS: Service[] = [
     contactInfo: {website:'/services/micro-saas-status-page', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📡', href: '/services/micro-saas-status-page', popular: false, category: 'micro-saas', industry: 'SaaS',
   }
+,
+  {
+    id: 'micro-saas-churn-prediction',
+    title: 'ChurnGuard — SaaS Churn Prediction & Prevention',
+    description: 'AI-powered churn prediction for SaaS. Identify at-risk customers, automate retention campaigns, and track health scores in real-time.',
+    features: ["AI churn prediction", "Customer health scoring", "Automated retention campaigns", "Integration with Stripe, HubSpot", "Cohort analysis", "Revenue impact forecasting", "Playbook automation", "NPS correlation"],
+    benefits: ["Reduce churn by 40%", "Increase LTV", "Automate retention", "Prioritize at-risk accounts"],
+    pricing: {"basic": "$99/mo", "pro": "$299/mo", "enterprise": "$799/mo"},
+    contactInfo: {website:'/services/micro-saas-churn-prediction', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📉', href: '/services/micro-saas-churn-prediction', popular: true, category: 'micro-saas', industry: 'SaaS',
+  },
+  {
+    id: 'retail-tech-personalization-engine',
+    title: 'AI Retail Personalization Engine',
+    description: 'Hyper-personalized shopping experiences. Product recommendations, dynamic pricing, customer segmentation, and omnichannel orchestration.',
+    features: ["Real-time product recommendations", "Dynamic pricing optimization", "Customer segmentation", "Omnichannel orchestration", "A/B testing framework", "Integration with Shopify, WooCommerce", "Inventory-aware recommendations", "Analytics dashboard"],
+    benefits: ["Increase conversion 35%", "Boost average order value", "Personalize at scale", "Unify online and offline"],
+    pricing: {"basic": "$399/mo", "pro": "$1,199/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/retail-tech-personalization-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🛒', href: '/services/retail-tech-personalization-engine', popular: false, category: 'retail-tech', industry: 'Retail',
+  }
 ];
 
 
@@ -19538,6 +19581,27 @@ export const additionalNewItServices: Service[] = [
     pricing: {"basic": "$299/mo", "pro": "$899/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/it-vendor-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🤝', href: '/services/it-vendor-management', popular: false, category: 'it', industry: 'Technology',
+  }
+,
+  {
+    id: 'healthcare-it-telemedicine-platform',
+    title: 'Telemedicine Platform for Healthcare IT',
+    description: 'HIPAA-compliant telemedicine platform with video consultations, e-prescribing, patient scheduling, and EHR integration.',
+    features: ["HD video consultations", "HIPAA-compliant messaging", "E-prescribing (EPCS)", "Patient scheduling and reminders", "EHR/EMR integration", "Insurance verification", "Multi-language support", "Analytics dashboard"],
+    benefits: ["Expand patient reach", "Reduce no-show rates", "Streamline workflows", "Ensure HIPAA compliance"],
+    pricing: {"basic": "$399/mo", "pro": "$1,199/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/healthcare-it-telemedicine-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🏥', href: '/services/healthcare-it-telemedicine-platform', popular: false, category: 'healthcare-it', industry: 'Healthcare',
+  },
+  {
+    id: 'edtech-learning-management-system',
+    title: 'AI-Enhanced Learning Management System',
+    description: 'Modern LMS with AI-powered personalized learning paths, automated grading, engagement analytics, and content recommendations.',
+    features: ["AI personalized learning paths", "Automated grading and feedback", "Engagement analytics", "Content recommendation engine", "SCORM/xAPI compliance", "Live virtual classrooms", "Mobile learning app", "Integration with Zoom, Teams"],
+    benefits: ["Improve learning outcomes", "Reduce instructor workload", "Personalize at scale", "Increase completion rates"],
+    pricing: {"basic": "$199/mo", "pro": "$599/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/edtech-learning-management-system', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🎓', href: '/services/edtech-learning-management-system', popular: false, category: 'edtech', industry: 'Education',
   }
 ];
 
@@ -19628,6 +19692,17 @@ export const additionalNewSecurityServices: Service[] = [
     contactInfo: {website:'/services/security-data-loss-prevention', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔒', href: '/services/security-data-loss-prevention', popular: false, category: 'security', industry: 'Technology',
   }
+,
+  {
+    id: 'cybersecurity-threat-intelligence-platform',
+    title: 'Cybersecurity Threat Intelligence Platform',
+    description: 'Real-time threat intelligence aggregation, analysis, and response. Monitor dark web, IOC feeds, and attack surface with AI-powered correlation.',
+    features: ["Dark web monitoring", "IOC aggregation and correlation", "Attack surface management", "Threat actor profiling", "Integration with SIEM/SOAR", "Automated alerting and triage", "Risk scoring", "Compliance mapping (MITRE ATT&CK)"],
+    benefits: ["Detect threats before they hit", "Reduce incident response time", "Proactive security posture", "Automated threat correlation"],
+    pricing: {"basic": "$799/mo", "pro": "$2,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/cybersecurity-threat-intelligence-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🛡️', href: '/services/cybersecurity-threat-intelligence-platform', popular: true, category: 'cybersecurity', industry: 'Technology',
+  }
 ];
 
 
@@ -19706,6 +19781,17 @@ export const additionalNewCloudServices: Service[] = [
     pricing: {"basic": "$999/mo", "pro": "$2,999/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/cloud-disaster-recovery', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔄', href: '/services/cloud-disaster-recovery', popular: false, category: 'cloud', industry: 'Technology',
+  }
+,
+  {
+    id: 'energy-tech-smart-grid-management',
+    title: 'Smart Grid Energy Management',
+    description: 'AI-powered smart grid management platform. Real-time energy monitoring, demand forecasting, renewable integration, and outage prediction.',
+    features: ["Real-time grid monitoring", "Demand forecasting", "Renewable energy integration", "Outage prediction and prevention", "Energy storage optimization", "Carbon footprint tracking", "Integration with IoT sensors", "Regulatory reporting"],
+    benefits: ["Reduce energy waste 30%", "Optimize renewable usage", "Prevent outages", "Meet sustainability goals"],
+    pricing: {"basic": "$1,499/mo", "pro": "$4,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/energy-tech-smart-grid-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '⚡', href: '/services/energy-tech-smart-grid-management', popular: false, category: 'energy-tech', industry: 'Energy',
   }
 ];
 
@@ -19795,6 +19881,27 @@ export const additionalNewDataServices: Service[] = [
     pricing: {"basic": "$599/mo", "pro": "$1,799/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/data-data-catalog', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📚', href: '/services/data-data-catalog', popular: false, category: 'data', industry: 'Technology',
+  }
+,
+  {
+    id: 'fintech-fraud-detection-ai',
+    title: 'AI-Powered Fraud Detection for Fintech',
+    description: 'Real-time fraud detection for financial transactions. ML models trained on billions of transactions to detect anomalies, account takeover, and money laundering.',
+    features: ["Real-time transaction scoring", "Behavioral biometrics", "Account takeover detection", "AML/BSA compliance monitoring", "Integration with payment processors", "Case management workflow", "Explainable AI for regulators", "Custom rule engine"],
+    benefits: ["Reduce fraud losses by 80%", "Meet regulatory requirements", "Minimize false positives", "Scale without adding analysts"],
+    pricing: {"basic": "$1,999/mo", "pro": "$4,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/fintech-fraud-detection-ai', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💳', href: '/services/fintech-fraud-detection-ai', popular: true, category: 'fintech', industry: 'Finance',
+  },
+  {
+    id: 'agritech-precision-farming',
+    title: 'Precision Farming with AI & Drones',
+    description: 'AI-powered precision agriculture platform. Drone imagery analysis, soil monitoring, crop health prediction, and yield optimization.',
+    features: ["Drone imagery analysis", "Soil sensor integration", "Crop health prediction", "Yield optimization", "Weather integration", "Irrigation automation", "Pest detection", "Farm management dashboard"],
+    benefits: ["Increase crop yields 20%", "Reduce water usage", "Early pest detection", "Data-driven decisions"],
+    pricing: {"basic": "$299/mo", "pro": "$899/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/agritech-precision-farming', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🌾', href: '/services/agritech-precision-farming', popular: false, category: 'agritech', industry: 'Agriculture',
   }
 ];
 
