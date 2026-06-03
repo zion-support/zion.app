@@ -155,7 +155,7 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="lg:col-span-2 glass-card">
             <h2 className="text-2xl font-semibold text-white mb-6">Features</h2>
             <ul className="space-y-3">
-              {service.features.map((feature, i) => (
+              {(service.features || []).map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-300">
                   <span className="text-purple-400 mt-1 shrink-0">✦</span>
                   <span>{feature}</span>
@@ -203,7 +203,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="glass-card mb-12">
           <h2 className="text-2xl font-semibold text-white mb-6">Benefits</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {service.benefits.map((benefit, i) => (
+            {(service.benefits || []).map((benefit, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
                 <span className="text-green-400 text-lg shrink-0">✓</span>
                 <span className="text-slate-300">{benefit}</span>
@@ -219,7 +219,7 @@ export default async function ServicePage({ params }: PageProps) {
         {(() => {
           // Infer phase steps from service description + category
           const s = service;
-          const isComplex = s.features.length >= 4;
+          const isComplex = (s.features || []).length >= 4;
           const hasEnterprise = s.pricing.enterprise !== '$0';
           const phases = (() => {
             if (s.category === 'ai') return [

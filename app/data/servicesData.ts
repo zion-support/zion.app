@@ -32,6 +32,9 @@ import { wave189AiServices, wave189MicroSaasServices, wave189ItServices, wave189
 import { wave190AiServices, wave190MicroSaasServices, wave190ItServices, wave190SecurityServices, wave190CloudServices, wave190DataServices, wave190AutomationServices } from './wave190';
 import { wave191AiServices, wave191MicroSaasServices, wave191ItServices, wave191SecurityServices, wave191CloudServices, wave191DataServices, wave191AutomationServices } from './wave191';
 import { wave192AiServices, wave192MicroSaasServices, wave192ItServices, wave192SecurityServices, wave192CloudServices, wave192DataServices, wave192AutomationServices } from './wave192';
+import { wave193AiServices, wave193MicroSaasServices, wave193ItServices, wave193SecurityServices, wave193CloudServices, wave193DataServices, wave193AutomationServices } from './wave193';
+import { wave194AiServices, wave194MicroSaasServices, wave194ItServices, wave194SecurityServices, wave194CloudServices, wave194DataServices, wave194AutomationServices, wave194DevopsServices, wave194IotServices } from './wave194';
+import { wave195AiServices, wave195MicroSaasServices, wave195ItServices, wave195SecurityServices, wave195CloudServices, wave195DataServices, wave195AutomationServices } from './wave195';
 
 
 export const aiServices: Service[] = [
