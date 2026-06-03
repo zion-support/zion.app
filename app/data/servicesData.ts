@@ -17,8 +17,8 @@ export interface Service {
 
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 
-import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
 
+import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
 import { wave176AiServices, wave176MicroSaasServices, wave176ItServices, wave176SecurityServices, wave176CloudServices, wave176DataServices, wave176AutomationServices } from './wave176';
 
 import { wave177AiServices, wave177MicroSaasServices, wave177ItServices, wave177SecurityServices, wave177CloudServices, wave177DataServices, wave177AutomationServices } from './wave177';
@@ -29,6 +29,7 @@ import { wave179AiServices, wave179MicroSaasServices, wave179ItServices, wave179
 
 import { wave187AiServices, wave187MicroSaasServices, wave187HealthcareItServices, wave187SecurityServices, wave187CloudServices, wave187DataServices, wave187AutomationServices } from './wave187';
 
+import { wave180AiServices, wave180MicroSaasServices, wave180ItServices, wave180SecurityServices, wave180CloudServices, wave180DataServices, wave180AutomationServices } from './wave180';
 import { wave183AiServices, wave183MicroSaasServices, wave183ItServices, wave183SecurityServices, wave183CloudServices, wave183DataServices, wave183AutomationServices } from './wave183';
 
 import { wave184MicroSaasServices, wave184ItServices } from './wave184';
@@ -20001,6 +20002,13 @@ export const allServices: Service[] = [
   ...wave187CloudServices,
   ...wave187DataServices,
   ...wave187AutomationServices,
+  ...wave180AiServices,
+  ...wave180MicroSaasServices,
+  ...wave180ItServices,
+  ...wave180SecurityServices,
+  ...wave180CloudServices,
+  ...wave180DataServices,
+  ...wave180AutomationServices,
 ].filter((s): s is Service => s !== undefined);
 
 
