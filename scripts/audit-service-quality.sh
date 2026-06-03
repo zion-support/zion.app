@@ -23,7 +23,7 @@ echo "════════════════════════�
 echo ""
 
 # ── 1. Count total services ──
-TOTAL=$(grep -c "id: '" "$SERVICES_FILE" 2>/dev/null || echo "0")
+TOTAL=$(grep -c "id: ['\"]" "$SERVICES_FILE" 2>/dev/null || echo "0")
 echo "📊 Total services in servicesData.ts: $TOTAL"
 
 # ── 2. Check for duplicate IDs ──
@@ -115,7 +115,7 @@ WAVE_COUNT=0
 WAVE_SERVICES=0
 for wf in $WAVE_FILES; do
     WAVE_COUNT=$((WAVE_COUNT + 1))
-    COUNT=$(python3 -c "import re; print(len(re.findall(r\"id: '\", open('$wf').read())))" 2>/dev/null || echo "0")
+    COUNT=$(python3 -c "import re; print(len(re.findall(r'id:\s*[\"\\x27]', open('$wf').read())))" 2>/dev/null || echo "0")
     WAVE_SERVICES=$((WAVE_SERVICES + COUNT))
     echo "  📄 $(basename "$wf"): $COUNT services"
 done
