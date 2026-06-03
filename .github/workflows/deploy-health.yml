@@ -1,0 +1,61 @@
+name: build verification
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['main']
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  verify-deploy:
+    name: 'guard: verify deploy artifacts'
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        channel: ['preview']
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+
+      - name: 'set up Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 'install dependencies'
+        run: npm ci
+
+      - name: 'stop on first failure'
+        run: |
+          set -euo pipefail
+          test -f .deploy-temp/index.html || (echo 'missing deploy artifact: .deploy-temp/index.html' >&2; exit 1)
+
+      - name: 'validate link health'
+        run: |
+          set -euo pipefail
+          if [ ! -d .deploy-temp ]; then
+            echo '.deploy-temp missing; skip link check' >&2
+            exit 0
+          fi
+          scripts/link-health-check.sh
+
+      - name: 'fail when links are broken'
+        run: |
+          set -euo pipefail
+          if [ -f audit/link-health-report.md ]; then
+            if grep -q 'suspicious link' audit/link-health-report.md; then
+              echo 'link-health report contains broken links' >&2
+              cat audit/link-health-report.md >&2
+              exit 1
+            fi
+          fi
