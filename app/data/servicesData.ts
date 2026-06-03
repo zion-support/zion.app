@@ -27,6 +27,14 @@ import { wave178AiServices, wave178MicroSaasServices, wave178ItServices, wave178
 
 import { wave179AiServices, wave179MicroSaasServices, wave179ItServices, wave179SecurityServices, wave179CloudServices, wave179DataServices, wave179AutomationServices } from './wave179';
 
+import { wave183AiServices, wave183MicroSaasServices, wave183ItServices, wave183SecurityServices, wave183CloudServices, wave183DataServices, wave183AutomationServices } from './wave183';
+
+import { wave184MicroSaasServices, wave184ItServices } from './wave184';
+
+import { wave185MicroSaasServices, wave185CloudServices, wave185DataServices } from './wave185';
+
+import { wave187AiServices, wave187MicroSaasServices, wave187HealthcareItServices, wave187SecurityServices, wave187CloudServices, wave187DataServices, wave187AutomationServices } from './wave187';
+
 export const aiServices: Service[] = [
   {
     id: 'advanced-ai-enterprise-intelligence-hub',
@@ -19973,6 +19981,25 @@ export const allServices: Service[] = [
   ...wave179CloudServices,
   ...wave179DataServices,
   ...wave179AutomationServices,
+  ...wave183AiServices,
+  ...wave183MicroSaasServices,
+  ...wave183ItServices,
+  ...wave183SecurityServices,
+  ...wave183CloudServices,
+  ...wave183DataServices,
+  ...wave183AutomationServices,
+  ...wave184MicroSaasServices,
+  ...wave184ItServices,
+  ...wave185MicroSaasServices,
+  ...wave185CloudServices,
+  ...wave185DataServices,
+  ...wave187AiServices,
+  ...wave187MicroSaasServices,
+  ...wave187HealthcareItServices,
+  ...wave187SecurityServices,
+  ...wave187CloudServices,
+  ...wave187DataServices,
+  ...wave187AutomationServices,
 ].filter((s): s is Service => s !== undefined);
 
 
