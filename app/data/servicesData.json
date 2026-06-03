@@ -36779,5 +36779,365 @@
     "popular": false,
     "category": "micro-saas",
     "industry": "Marketing"
+  },
+  {
+    "id": "ai-mental-wellness-coach",
+    "title": "AI Mental Wellness Coach",
+    "description": "AI-powered mental wellness and resilience coaching for employees. Personalized coping strategies, mood tracking, and crisis support with human escalation paths.",
+    "features": [
+      "Personalized wellness plans",
+      "Mood tracking and journaling",
+      "CBT-based coping strategies",
+      "Stress level monitoring",
+      "Sleep quality insights",
+      "Crisis detection and escalation",
+      "Integration with Slack and Teams",
+      "Anonymous and confidential"
+    ],
+    "benefits": [
+      "Reduce employee burnout by 30%",
+      "Improve mental health support",
+      "Confidential 24/7 support",
+      "Reduce absenteeism"
+    ],
+    "pricing": {
+      "basic": "$299/mo",
+      "pro": "$899/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-mental-wellness-coach",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83e\udde0",
+    "href": "/services/ai-mental-wellness-coach",
+    "popular": true,
+    "category": "ai",
+    "industry": "HR"
+  },
+  {
+    "id": "ai-document-translation-platform",
+    "title": "AI Document Translation Platform",
+    "description": "Enterprise document translation with AI. Translate contracts, manuals, and marketing materials while preserving formatting, terminology, and legal accuracy.",
+    "features": [
+      "Document format preservation",
+      "Industry-specific terminology",
+      "100+ language pairs",
+      "Legal and medical translation",
+      "Terminology management",
+      "Translation memory",
+      "API and plugin for CMS/WMS",
+      "Human review workflow"
+    ],
+    "benefits": [
+      "Translate 10x faster than human",
+      "Ensure terminology consistency",
+      "Preserve document formatting",
+      "Scale localization operations"
+    ],
+    "pricing": {
+      "basic": "$399/mo",
+      "pro": "$1,299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-document-translation-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83c\udf10",
+    "href": "/services/ai-document-translation-platform",
+    "popular": false,
+    "category": "ai",
+    "industry": "Technology"
+  },
+  {
+    "id": "ai-customer-churn-prevention",
+    "title": "AI Customer Churn Prevention Platform",
+    "description": "Predict and prevent customer churn with AI. Behavioral analysis, early warning alerts, automated retention campaigns, and win-back workflows.",
+    "features": [
+      "Churn risk scoring",
+      "Behavioral anomaly detection",
+      "Automated retention campaigns",
+      "Win-back workflow builder",
+      "Revenue impact forecasting",
+      "Integration with CRM and billing",
+      "Health score dashboards",
+      "Cohort analysis"
+    ],
+    "benefits": [
+      "Reduce churn by 25%",
+      "Identify at-risk accounts early",
+      "Automate retention efforts",
+      "Protect revenue"
+    ],
+    "pricing": {
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-customer-churn-prevention",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/ai-customer-churn-prevention",
+    "popular": true,
+    "category": "ai",
+    "industry": "Customer Success"
+  },
+  {
+    "id": "ai-product-description-generator",
+    "title": "AI Product Description Generator",
+    "description": "Generate compelling, SEO-optimized product descriptions for e-commerce. Maintain brand voice, optimize for conversions, and scale content creation.",
+    "features": [
+      "SEO-optimized descriptions",
+      "Brand voice customization",
+      "Bulk generation (SKU-level)",
+      "A/B testing suggestions",
+      "Multi-language output",
+      "Integration with Shopify, WooCommerce, Magento",
+      "Custom templates and guidelines",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "10x faster product listing",
+      "Improve SEO rankings",
+      "Maintain brand consistency",
+      "Scale catalog content"
+    ],
+    "pricing": {
+      "basic": "$99/mo",
+      "pro": "$299/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/ai-product-description-generator",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\u270d\ufe0f",
+    "href": "/services/ai-product-description-generator",
+    "popular": false,
+    "category": "ai",
+    "industry": "E-commerce"
+  },
+  {
+    "id": "cloud-hybrid-connectivity-platform",
+    "title": "Hybrid Cloud Connectivity Platform",
+    "description": "Secure, high-performance connectivity between on-premises and cloud environments. SD-WAN, dedicated connections, and network optimization for hybrid architectures.",
+    "features": [
+      "Multi-cloud connectivity",
+      "SD-WAN integration",
+      "Dedicated network paths",
+      "Traffic optimization",
+      "Encryption in transit",
+      "Integration with AWS Direct Connect, Azure ExpressRoute",
+      "Network monitoring and analytics",
+      "Automated failover"
+    ],
+    "benefits": [
+      "Optimize hybrid cloud performance",
+      "Reduce network costs",
+      "Improve reliability",
+      "Secure data transit"
+    ],
+    "pricing": {
+      "basic": "$999/mo",
+      "pro": "$2,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-hybrid-connectivity-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd0c",
+    "href": "/services/cloud-hybrid-connectivity-platform",
+    "popular": false,
+    "category": "cloud",
+    "industry": "Technology"
+  },
+  {
+    "id": "cloud-container-security-platform",
+    "title": "Container Security Platform",
+    "description": "End-to-end security for containerized workloads. Image scanning, runtime protection, network policy enforcement, and compliance monitoring for Kubernetes.",
+    "features": [
+      "Container image scanning",
+      "Runtime threat detection",
+      "Network policy enforcement",
+      "Secrets management",
+      "CIS benchmark compliance",
+      "Integration with ECR, GCR, ACR",
+      "Admission control",
+      "Vulnerability prioritization"
+    ],
+    "benefits": [
+      "Shift security left",
+      "Protect containers at runtime",
+      "Meet compliance requirements",
+      "Reduce vulnerability exposure"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-container-security-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udce6",
+    "href": "/services/cloud-container-security-platform",
+    "popular": true,
+    "category": "cloud",
+    "industry": "Technology"
+  },
+  {
+    "id": "cloud-finops-management",
+    "title": "Cloud FinOps Management Platform",
+    "description": "Financial operations for cloud spend. Multi-cloud cost allocation, showback/chargeback, budget management, and optimization recommendations with FinOps best practices.",
+    "features": [
+      "Multi-cloud cost allocation",
+      "Showback and chargeback",
+      "Budget management and alerts",
+      "Savings recommendations",
+      "Reserved instance planning",
+      "Kubernetes cost allocation",
+      "Integration with AWS, Azure, GCP billing",
+      "FinOps maturity assessment"
+    ],
+    "benefits": [
+      "Reduce cloud waste by 35%",
+      "Transparent cost allocation",
+      "Optimize reserved capacity",
+      "FinOps team enablement"
+    ],
+    "pricing": {
+      "basic": "$499/mo",
+      "pro": "$1,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/cloud-finops-management",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcb0",
+    "href": "/services/cloud-finops-management",
+    "popular": true,
+    "category": "cloud",
+    "industry": "Technology"
+  },
+  {
+    "id": "data-data-quality-platform",
+    "title": "Data Quality Management Platform",
+    "description": "Automated data quality monitoring and remediation. Rule-based validation, anomaly detection, and data profiling for trustworthy analytics and AI.",
+    "features": [
+      "Automated data profiling",
+      "Rule-based validation",
+      "Anomaly detection",
+      "Data quality scoring",
+      "Remediation workflows",
+      "Integration with data warehouses",
+      "Custom quality dimensions",
+      "Quality trend dashboards"
+    ],
+    "benefits": [
+      "Ensure data trustworthiness",
+      "Catch quality issues early",
+      "Automate data monitoring",
+      "Improve analytics accuracy"
+    ],
+    "pricing": {
+      "basic": "$599/mo",
+      "pro": "$1,799/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-data-quality-platform",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\u2705",
+    "href": "/services/data-data-quality-platform",
+    "popular": false,
+    "category": "data",
+    "industry": "Technology"
+  },
+  {
+    "id": "data-data-catalog-governance",
+    "title": "AI Data Catalog & Governance Platform",
+    "description": "Automated data catalog with AI-powered classification, lineage tracking, and governance policies. Discover, understand, and govern data assets across the enterprise.",
+    "features": [
+      "Automated data discovery",
+      "AI classification and tagging",
+      "Data lineage tracking",
+      "Access policy enforcement",
+      "PII detection and masking",
+      "Integration with data warehouses and lakes",
+      "Business glossary",
+      "Data stewardship workflows"
+    ],
+    "benefits": [
+      "Discover all data assets automatically",
+      "Ensure data governance compliance",
+      "Track data lineage end-to-end",
+      "Enable self-service analytics"
+    ],
+    "pricing": {
+      "basic": "$999/mo",
+      "pro": "$2,999/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-data-catalog-governance",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udcd6",
+    "href": "/services/data-data-catalog-governance",
+    "popular": false,
+    "category": "data",
+    "industry": "Technology"
+  },
+  {
+    "id": "data-change-data-capture",
+    "title": "Change Data Capture (CDC) Platform",
+    "description": "Real-time change data capture for databases. Stream data changes to data lakes, warehouses, and applications with low latency and minimal source impact.",
+    "features": [
+      "Real-time CDC for all major databases",
+      "Sub-second latency",
+      "Minimal source system impact",
+      "Schema evolution handling",
+      "Integration with Kafka, Snowflake, Databricks",
+      "Exactly-once delivery",
+      "Monitoring and alerting",
+      "Cloud and on-premises deployment"
+    ],
+    "benefits": [
+      "Real-time data synchronization",
+      "Minimal impact on source systems",
+      "Enable event-driven architectures",
+      "Keep all systems in sync"
+    ],
+    "pricing": {
+      "basic": "$799/mo",
+      "pro": "$2,499/mo",
+      "enterprise": "Custom"
+    },
+    "contactInfo": {
+      "website": "/services/data-change-data-capture",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/data-change-data-capture",
+    "popular": false,
+    "category": "data",
+    "industry": "Technology"
   }
 ]
