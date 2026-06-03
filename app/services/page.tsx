@@ -1,4 +1,4 @@
-// app/services/page.tsx - Full Service Catalog
+// app/services/page.tsx — Full Service Catalog
 'use client';
 
 import { useState, useMemo, Suspense } from 'react';
@@ -6,31 +6,29 @@ import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SmartSearchBar from '@/components/SmartSearchBar';
-import JsonLd from '@/components/JsonLd';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 
 
 
-const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence' };
+const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & AI', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge' };
 const CATEGORIES = [
   { key: 'all' as const, label: 'All' },
   { key: 'ai' as const, label: 'AI' },
   { key: 'it' as const, label: 'IT' },
   { key: 'cloud' as const, label: 'Cloud' },
   { key: 'security' as const, label: 'Security' },
-  { key: 'data' as const, label: 'Data' },
+  { key: 'data' as const, label: 'Data & AI' },
   { key: 'automation' as const, label: 'Automation' },
   { key: 'micro-saas' as const, label: 'Micro-SaaS' },
   { key: 'devops' as const, label: 'DevOps' },
   { key: 'blockchain' as const, label: 'Blockchain' },
-  { key: 'iot' as const, label: 'IoT' },
-  { key: 'email-intelligence' as const, label: 'Email Intel' },
+  { key: 'iot' as const, label: 'IoT & Edge' },
 ];
 
 function ServicesContent() {
   const searchParams = useSearchParams();
-  const urlCategory = searchParams.get('category') || 'all';
+  const urlCategory = searchParams?.get('category') || 'all';
   const [activeCategory, setActiveCategory] = useState(urlCategory);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -48,36 +46,10 @@ function ServicesContent() {
   }, [activeCategory, searchQuery]);
 
   return (
-    <>
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'CollectionPage',
-          name: 'Zion Tech Group Service Catalog',
-          description: 'Browse AI, IT, cloud, security, data, automation, and DevOps services across multiple categories.',
-          url: 'https://ziontechgroup.com/services',
-          isPartOf: { '@type': 'WebSite', url: 'https://ziontechgroup.com/', name: 'Zion Tech Group' },
-          about: {
-            '@type': 'Organization',
-            name: 'Zion Tech Group',
-            url: 'https://ziontechgroup.com',
-            email: 'kleber@ziontechgroup.com',
-            telephone: '+1 302 464 0950',
-            address: '364 E Main St STE 1008, Middletown, DE 19709',
-          },
-          breadcrumb: {
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://ziontechgroup.com/services' },
-            ],
-          },
-        }}
-      />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <p className="section-subheading text-center">{allServices.length}+ real-world services across 6 categories</p>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
@@ -114,11 +86,7 @@ function ServicesContent() {
         </div>
         <div className="text-center mt-16">
           <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
-          <div className="mt-6 space-y-2">
-            <p className="text-slate-400 text-sm">📞 <a href="tel:+13024640950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
-            <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
-            <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
-          </div>
+          <p className="text-slate-500 text-sm mt-4">Or call us: <a href="tel:+13024640950" className="text-purple-300">+1 302 464 0950</a></p>
         </div>
       </div>
     </main>
@@ -127,7 +95,7 @@ function ServicesContent() {
 
 export default function ServicesPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-slate-950 py-20"><div className="container-page text-center py-20"><div className="inline-block w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" /><p className="text-slate-400 mt-4">Loading services...</p></div></main>}>
+    <Suspense fallback={<main className="min-h-screen bg-slate-950 py-20"><div className="container-page text-center py-20"><div className="inline-block w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin" /><p className="text-slate-400 mt-4">Loading services…</p></div></main>}>
       <ServicesContent />
     </Suspense>
   );
