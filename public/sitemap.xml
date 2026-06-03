@@ -1105,6 +1105,7 @@
 <url><loc>https://ziontechgroup.com/services/it-container-platform/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-crm-implementation/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-cybersecurity-operations/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/it-data-center-optimization/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-data-engineering/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-data-lakehouse-governance/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-data-mesh-implementation/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1170,6 +1171,7 @@
 <url><loc>https://ziontechgroup.com/services/it-multi-cloud-networking/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-network-automation/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-network-firewall-next-generation/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/it-network-infrastructure-audit/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-network-modernization/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-network-monitoring/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/it-network-observability/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -1327,8 +1329,11 @@
 <url><loc>https://ziontechgroup.com/services/micro-saas-subscription-analytics/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-subscription-billing/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/micro-saas-usage-based-cost-calculator/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/microsaas-email-campaign-manager/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/microsaas-review-tracker/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/microsaas-survey-builder/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/microsaas-ticket-desk/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+<url><loc>https://ziontechgroup.com/services/microsaas-time-tracker/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/misp-threat-intel/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/mlops-platform/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://ziontechgroup.com/services/mobile-development/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
