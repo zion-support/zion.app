@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ErrorWrapper>
+  <Wraps command="npm run wrap">
+    <Purpose>Run npm scripts through the error wrapper without changing package scripts.</Purpose>
+    <Autonomy>yes</Autonomy>
+    <StopCondition>After first successful run, stop and report.</StopCondition>
+  </Wraps>
+</ErrorWrapper>
