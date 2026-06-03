@@ -1,19 +1,6 @@
 // Service data for AI and IT solutions
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  features: string[];
-  benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string;
-  href: string;
-  popular?: boolean;
-  category: string;
-  industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
+export type { Service };
 
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
@@ -47,6 +34,7 @@ import { wave204AiServices, wave204MicroSaasServices, wave204DataServices, wave2
 import { wave205AiServices, wave205MicroSaasServices, wave205DataServices, wave205SecurityServices, wave205CloudServices, wave205AutomationServices, wave205ItServices, wave205HealthcareItServices } from './wave205';
 import { wave206AiServices, wave206MicroSaasServices, wave206DataServices, wave206SecurityServices, wave206CloudServices, wave206AutomationServices, wave206ItServices, wave206HealthcareItServices } from './wave206';
 import { wave207ObservabilityServices, wave207IdentityServices, wave207CmsServices, wave207EcommerceServices, wave207DocumentationServices } from './wave207';
+import { wave207AiServices, wave207DataServices, wave207CloudServices, wave207SecurityServices, wave207AutomationServices, wave207ItServices, wave207MicroSaasServices, wave207HealthcareItServices } from './wave207';
 import { wave208AiMlOpsServices, wave208DevSecOpsServices, wave208FinTechServices, wave208EdTechServices, wave208IotServices } from './wave208';
 import { wave208AiServices, wave208DataServices, wave208CloudServices, wave208SecurityServices, wave208AutomationServices, wave208ItServices, wave208MicroSaasServices, wave208HealthcareItServices } from './wave208';
 
@@ -1534,6 +1522,14 @@ export const allServices: Service[] = [
   ...wave207CmsServices,
   ...wave207EcommerceServices,
   ...wave207DocumentationServices,
+  ...wave207AiServices,
+  ...wave207DataServices,
+  ...wave207CloudServices,
+  ...wave207SecurityServices,
+  ...wave207AutomationServices,
+  ...wave207ItServices,
+  ...wave207MicroSaasServices,
+  ...wave207HealthcareItServices,
   ...wave208AiMlOpsServices,
   ...wave208DevSecOpsServices,
   ...wave208FinTechServices,
