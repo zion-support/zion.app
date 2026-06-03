@@ -19016,6 +19016,16 @@ export const newAutomationServices: Service[] = [
     contactInfo: {website:'/services/predictive-maintenance-iot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔧', href: '/services/predictive-maintenance-iot', popular: false, category: 'iot', industry: 'Manufacturing',
   },
+  {
+    id: 'automation-intelligent-document-processing',
+    title: 'Intelligent Document Processing (IDP)',
+    description: 'AI-powered document processing for invoices, contracts, forms, and claims. OCR, NLP, and ML combined for touchless document workflows.',
+    features: ["Multi-format OCR (PDF, images, scans)", "NLP entity extraction", "Classification and routing", "Validation and exception handling", "Integration with SAP, Oracle, Workday", "Human-in-the-loop review", "Audit trail and compliance", "Custom model training"],
+    benefits: ["Process documents 10x faster", "Reduce manual data entry by 90%", "Improve accuracy and compliance", "Scale without adding headcount"],
+    pricing: {"basic": "$599/mo", "pro": "$1,799/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/automation-intelligent-document-processing', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📄', href: '/services/automation-intelligent-document-processing', popular: false, category: 'automation', industry: 'Technology',
+  }
 ];
 
 
@@ -19101,6 +19111,37 @@ export const additionalNewAiServices: Service[] = [
     pricing: {"basic": "$1,499/mo", "pro": "$4,499/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/ai-predictive-quality-assurance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🏭', href: '/services/ai-predictive-quality-assurance', popular: false, category: 'ai', industry: 'Manufacturing',
+  }
+,
+  {
+    id: 'ai-predictive-maintenance-iiot',
+    title: 'AI Predictive Maintenance for IIoT',
+    description: 'Predict industrial equipment failures before they happen using IIoT sensor data and ML. Reduce unplanned downtime and extend asset life across manufacturing, energy, and utilities.',
+    features: ["Vibration analysis", "Thermal anomaly detection", "Oil analysis prediction", "Remaining useful life estimation", "Integration with PTC ThingWorx, Siemens MindSphere", "Work order auto-generation", "Spare parts forecasting", "Maintenance scheduling optimization"],
+    benefits: ["Reduce unplanned downtime by 50%", "Extend asset life by 20%", "Lower maintenance costs", "Improve safety compliance"],
+    pricing: {"basic": "$1,999/mo", "pro": "$5,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-predictive-maintenance-iiot', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔧', href: '/services/ai-predictive-maintenance-iiot', popular: true, category: 'ai', industry: 'Manufacturing',
+  },
+  {
+    id: 'ai-cybersecurity-threat-hunting',
+    title: 'AI Cybersecurity Threat Hunting Platform',
+    description: 'Proactively hunt for advanced threats using AI-driven behavioral analytics, anomaly detection, and automated investigation playbooks across endpoints, network, and cloud.',
+    features: ["Behavioral analytics (UEBA)", "Network traffic analysis", "Endpoint detection and response", "Automated threat investigation", "MITRE ATT&CK mapping", "Integration with Splunk, Sentinel, CrowdStrike", "Threat intelligence correlation", "Incident timeline reconstruction"],
+    benefits: ["Detect threats 10x faster", "Reduce dwell time to hours", "Automate Tier-1 investigation", "Meet SOC 2 and ISO 27001 requirements"],
+    pricing: {"basic": "$2,499/mo", "pro": "$7,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-cybersecurity-threat-hunting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🛡️', href: '/services/ai-cybersecurity-threat-hunting', popular: true, category: 'ai', industry: 'Cybersecurity',
+  },
+  {
+    id: 'ai-digital-twin-simulation',
+    title: 'AI Digital Twin & Simulation Platform',
+    description: 'Create and run digital twins of physical assets, processes, and entire facilities. AI-powered simulation for what-if analysis, optimization, and predictive planning.',
+    features: ["3D asset modeling", "Physics-based simulation", "AI-powered what-if analysis", "Real-time sensor integration", "Scenario comparison and optimization", "Integration with Unity, NVIDIA Omniverse", "Predictive planning dashboards", "API for custom integrations"],
+    benefits: ["Optimize operations without physical risk", "Test changes in simulation first", "Predict outcomes with AI accuracy", "Reduce planning cycles by 60%"],
+    pricing: {"basic": "$2,999/mo", "pro": "$8,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-digital-twin-simulation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🪞', href: '/services/ai-digital-twin-simulation', popular: false, category: 'ai', industry: 'Manufacturing',
   }
 ];
 
@@ -19197,6 +19238,27 @@ export const additionalNewMicroSaaS: Service[] = [
     contactInfo: {website:'/services/micro-saas-usage-based-cost-calculator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '💲', href: '/services/micro-saas-usage-based-cost-calculator', popular: false, category: 'micro-saas', industry: 'SaaS',
   }
+,
+  {
+    id: 'micro-saas-customer-health-score',
+    title: 'HealthScore — Customer Health Scoring',
+    description: 'Real-time customer health scoring for SaaS. Combine product usage, support tickets, NPS, and billing data into a single health score with automated playbooks for at-risk accounts.',
+    features: ["Composite health scoring", "Product usage tracking", "Support ticket sentiment analysis", "NPS and CSAT integration", "Automated playbooks for at-risk accounts", "Integration with Salesforce, HubSpot, Intercom", "Churn prediction alerts", "Executive health dashboards"],
+    benefits: ["Reduce churn by 25%", "Prioritize CSM efforts", "Early warning for at-risk accounts", "Data-driven retention strategy"],
+    pricing: {"basic": "$79/mo", "pro": "$249/mo", "enterprise": "$599/mo"},
+    contactInfo: {website:'/services/micro-saas-customer-health-score', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💓', href: '/services/micro-saas-customer-health-score', popular: false, category: 'micro-saas', industry: 'SaaS',
+  },
+  {
+    id: 'micro-saas-internal-wiki',
+    title: 'WikiBase — Internal Knowledge Wiki',
+    description: 'Modern internal wiki with AI-powered search, auto-documentation, and team collaboration. Replace Confluence with a faster, smarter knowledge base.',
+    features: ["AI-powered search and answers", "Auto-documentation from code", "Real-time collaboration", "Version history and rollback", "Integration with Slack, GitHub, Jira", "Custom templates and workflows", "Access control and permissions", "Analytics on knowledge gaps"],
+    benefits: ["Find answers 5x faster", "Reduce onboarding time", "Keep documentation alive", "Single source of truth"],
+    pricing: {"basic": "$19/mo", "pro": "$59/mo", "enterprise": "$199/mo"},
+    contactInfo: {website:'/services/micro-saas-internal-wiki', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📚', href: '/services/micro-saas-internal-wiki', popular: false, category: 'micro-saas', industry: 'Productivity',
+  }
 ];
 
 
@@ -19241,6 +19303,17 @@ export const additionalNewItServices: Service[] = [
     pricing: {"basic": "$2,499/mo", "pro": "$7,499/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/it-green-computing-consulting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🌿', href: '/services/it-green-computing-consulting', popular: false, category: 'it', industry: 'Technology',
+  }
+,
+  {
+    id: 'it-enterprise-architecture',
+    title: 'Enterprise Architecture as a Service',
+    description: 'Strategic enterprise architecture consulting and tooling. Technology roadmap, application portfolio rationalization, and target architecture design for digital transformation.',
+    features: ["Application portfolio assessment", "Technology roadmap development", "Target architecture design", "Integration architecture planning", "TOGAF and ArchiMate frameworks", "Cloud readiness assessment", "Cost-benefit analysis", "Executive presentation decks"],
+    benefits: ["Align IT with business strategy", "Reduce technical debt", "Optimize technology spend", "Accelerate digital transformation"],
+    pricing: {"basic": "$4,999/mo", "pro": "$14,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/it-enterprise-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🏛️', href: '/services/it-enterprise-architecture', popular: false, category: 'it', industry: 'Technology',
   }
 ];
 
@@ -19287,6 +19360,17 @@ export const additionalNewSecurityServices: Service[] = [
     contactInfo: {website:'/services/security-iot-device-security', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔐', href: '/services/security-iot-device-security', popular: false, category: 'security', industry: 'IoT',
   }
+,
+  {
+    id: 'security-zero-trust-architecture',
+    title: 'Zero Trust Architecture Implementation',
+    description: 'End-to-end Zero Trust implementation. Identity verification, micro-segmentation, continuous monitoring, and policy enforcement across hybrid cloud and on-prem.',
+    features: ["Identity-centric security", "Micro-segmentation design", "Continuous verification", "Policy engine deployment", "Integration with Zscaler, Palo Alto, Cloudflare", "Device trust scoring", "Least-privilege access automation", "Compliance mapping (NIST 800-207)"],
+    benefits: ["Eliminate implicit trust", "Reduce attack surface by 80%", "Meet compliance requirements", "Secure hybrid workforce"],
+    pricing: {"basic": "$3,999/mo", "pro": "$11,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/security-zero-trust-architecture', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔒', href: '/services/security-zero-trust-architecture', popular: false, category: 'security', industry: 'Technology',
+  }
 ];
 
 
@@ -19321,6 +19405,17 @@ export const additionalNewCloudServices: Service[] = [
     pricing: {"basic": "$349/mo", "pro": "$999/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/cloud-database-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🗄️', href: '/services/cloud-database-optimization', popular: false, category: 'cloud', industry: 'Technology',
+  }
+,
+  {
+    id: 'cloud-finops-platform',
+    title: 'Cloud FinOps Platform',
+    description: 'Comprehensive FinOps platform for cloud cost management. Showback/chargeback, reserved instance optimization, waste detection, and unit economics tracking.',
+    features: ["Multi-cloud cost visibility", "Showback and chargeback", "RI and Savings Plans optimization", "Waste detection and auto-remediation", "Unit economics (cost per customer, per feature)", "Integration with AWS, GCP, Azure billing", "Budget alerts and forecasting", "Executive cost dashboards"],
+    benefits: ["Reduce cloud spend by 30%", "Eliminate waste automatically", "Business-aligned cost decisions", "Accurate forecasting"],
+    pricing: {"basic": "$499/mo", "pro": "$1,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/cloud-finops-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💰', href: '/services/cloud-finops-platform', popular: true, category: 'cloud', industry: 'Technology',
   }
 ];
 
@@ -19366,6 +19461,17 @@ export const additionalNewDataServices: Service[] = [
     pricing: {"basic": "$299/mo", "pro": "$899/mo", "enterprise": "Custom"},
     contactInfo: {website:'/services/data-consent-management-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📋', href: '/services/data-consent-management-platform', popular: false, category: 'data', industry: 'Legal',
+  }
+,
+  {
+    id: 'data-realtime-streaming-platform',
+    title: 'Real-Time Data Streaming Platform',
+    description: 'Managed real-time data streaming with Apache Kafka, Flink, and change data capture. Ingest, process, and serve data in milliseconds for event-driven architectures.',
+    features: ["Managed Kafka clusters", "Stream processing with Flink", "Change data capture (Debezium)", "Schema registry and evolution", "Exactly-once processing guarantees", "Integration with 100+ sources and sinks", "Monitoring and alerting", "Auto-scaling"],
+    benefits: ["Process data in milliseconds", "Eliminate batch delays", "Event-driven architecture made easy", "Scale without ops burden"],
+    pricing: {"basic": "$999/mo", "pro": "$2,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/data-realtime-streaming-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '⚡', href: '/services/data-realtime-streaming-platform', popular: false, category: 'data', industry: 'Technology',
   }
 ];
 
