@@ -15,6 +15,8 @@ export interface Service {
   stage?: 'published' | 'beta' | 'planned';
 }
 
+import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
+
 export const aiServices: Service[] = [
   {
     id: 'advanced-ai-enterprise-intelligence-hub',
@@ -19285,6 +19287,13 @@ export const allServices: Service[] = [
   ...additionalNewSecurityServices,
   ...additionalNewCloudServices,
   ...additionalNewDataServices,
+  ...wave174AiServices,
+  ...wave174MicroSaasServices,
+  ...wave174ItServices,
+  ...wave174SecurityServices,
+  ...wave174CloudServices,
+  ...wave174DataServices,
+  ...wave174AutomationServices,
 ].filter((s): s is Service => s !== undefined);
 
 
