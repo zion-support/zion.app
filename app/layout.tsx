@@ -20,6 +20,7 @@ import AIExperienceLoader from './components/AIExperienceLoader';
 import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import { useFocusManagement } from './hooks/useFocusManagement';
+import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
 import './globals.css';
 
 const siteUrl = 'https://ziontechgroup.com';
@@ -93,6 +94,7 @@ export default function RootLayout({
           }),
         }}
       />
+      <AutoJsonLd />
       <html lang="en" dir="ltr">
         <head>
           <link rel="preconnect" href="https://www.googletagmanager.com" />

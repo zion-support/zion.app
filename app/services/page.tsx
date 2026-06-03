@@ -122,7 +122,6 @@ function ServicesContent() {
         </div>
       </div>
     </main>
-    </>
   );
 }
 
