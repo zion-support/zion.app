@@ -1,7 +1,7 @@
 # Shared Task Board — Zion Tech Group Multi-Agent
 > Source of truth for all 6 bots. Update on status change.
 > Location: ~/.hermes/multi-agent-coordination.md (synced by @Kilo)
-> Last updated: 2026-06-09T16:15:00-03:00
+> Last updated: 2026-06-12T21:15:00-03:00
 
 ## Bot Roster
 | Bot | Role | Status | Current Task |
@@ -19,10 +19,9 @@ None — all clear ✅
 ## In Progress (P1)
 | ID | Task | Owner | Status |
 |-----|------|-------|--------|
-| P1-1 | Wave 209 integration | @tablet + @OWL | ✅ Done — pushed 1a8beeda, CI/CD building |
-| P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | 🔄 Active — re-scan & fix |
-| P1-3 | Full site link crawl + fix broken links | @OWL | 🔄 Active — waiting for CI/CD deploy |
-| P1-4 | Dashboard v3 — real-time data, agent auto-update | @OWL | 🔄 Active — enhancing now |
+| P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | ⚠️ STALE >72h — no progress since June 6. @Windows_quel is 🔵 Available, needs kickstart |
+| P1-3 | Full site link crawl + fix broken links | @OWL | 🔄 Active — CI/CD deploys timing out at 20min, all cancelled. Site live but new pages 404 |
+| P1-4 | Dashboard v3 — real-time data, agent auto-update | @OWL | 🔄 Active — dashboard/ still 404, deploy not completing |
 
 ## Backlog (P2)
 | ID | Task | Owner | Notes |
@@ -40,6 +39,7 @@ None — all clear ✅
 |-----|------|---------------|
 | X1 | Email responder live | Kleber: Gmail app password |
 | X2 | GitHub Actions triage | Kleber: gh auth on remote machine |
+| X3 | CI/CD deploy completing | All "Deploy on Push" runs timing out at 20min (cancelled). Build likely too large (795+ pages). Need to investigate timeout config or reduce build scope. |
 
 ## Wave Integration Status
 | Wave | Services | Status |
@@ -55,7 +55,7 @@ None — all clear ✅
 | 208 | 14 services | ✅ Integrated (5 OWL new categories + 9 Carol) |
 | **209** | **5 services** | **✅ Integrated — Kafka, Meilisearch, Plane, Playwright, Kong Gateway** |
 | **772+** | **Base services** | **✅ In servicesData.ts** |
-| **Total** | **~795 services** | **✅ Pushed 1a8beeda — CI/CD building** |
+| **Total** | **~795 services** | **✅ Pushed — CI/CD building** |
 
 ## Schema Rules (MUST FOLLOW)
 1. **Category values**: always lowercase (`ai`, `micro-saas`, `it`, `security`, `cloud`, `data`, `automation`)
@@ -67,11 +67,15 @@ None — all clear ✅
 7. **CRLF check**: ensure wave files use LF line endings, not CRLF (causes SWC wasm compiler crash on Node v26)
 
 ## Site State
-- **Build**: ✅ `npm run build` — green
+- **Build**: 🔄 CI/CD deploy manually triggered (run 26913728096), timeout increased to 30min
 - **Type-check**: ✅ `npx tsc --noEmit` — clean
-- **Services**: ~1,710+ in servicesData.ts (waves 174-207)
-- **Site**: 200 OK — https://ziontechgroup.com
-- **Last deploy**: Wave 207
+- **Services**: ~795 in servicesData.ts (waves 174-209)
+- **Site**: 200 OK — https://ziontechgroup.com (main page + static pages)
+- **Dashboard**: 404 — awaiting CI/CD deploy (new page, not in old cache)
+- **Working pages**: / (200), /services/ (200), /blog/ (200), /contact/ (200), /about/ (200), /configurator/ (200), /proposals/ (200), /careers/ (200), /faq/ (200), /search/ (200), /pricing/ (200), /privacy/ (200), /terms/ (200), /sitemap.xml (200)
+- **Failing pages**: /dashboard/ (404), wave 208-209 service pages (404) — all awaiting deploy
+- **Link crawl**: 16 OK, 19 404 — ALL 404s are new pages not yet deployed. No broken links in code.
+- **Root cause**: Previous deploys cancelled at 20min timeout. Fix: timeout increased to 30min.
 - **Cron jobs**: 4 active (link-monitor, org-health, wave-research, email-readiness)
 
 ## Delegation Log (recent)
@@ -99,6 +103,8 @@ None — all clear ✅
 | 2026-06-03 14:27 | @Kilo | **ORGANIZE #3** | Wave 208 full integration: 15 services (10 Carol: Carbon Tracker, Satellite Analytics, Data Mesh, Cloud Cost Optimizer, Supply Chain Security, IDP, DEM, Churn Prediction, Clinical Trial Mgmt + 5 OWL new categories: MLflow, Snyk, Stripe, Moodle, ThingsBoard). Fixed 8 category values to lowercase (Carol's wave used mixed case). Added ai-ml-ops + devsecops to CAT_LABELS. Type-check clean. Pushed 8c45aed27. |
 | 2026-06-09 16:15 | @Kilo | **ORGANIZE #4** | Full fleet rebalance per Kleber directive. Updated coord doc with 6-bot roster. P1-1→Wave 209 (research done). P1-4→Dashboard v3 enhancement. Added B7 (nav/design), B8 (self-improvement). Build running (memory pressure — 10min+). Dashboard CTA on main page needs verification. |
 | 2026-06-03 15:30 | @tablet | Wave 209 research | 5 new services in 5 categories: Apache Kafka, Meilisearch, Plane, Playwright, Kong Gateway. Research file: wave-research-2026-06-03.md |
+| 2026-06-12 07:00 | @Kilo | **ORGANIZE** | Fleet health check. Site 200 OK. P1-1 (Wave 209) done — cleaned from active list. P1-2 stale >72h (@Windows_quel available, needs kickstart). P1-3 potentially unblocked if CI/CD deploy finished. P1-4 needs progress check (~4d idle). @Rocket available for B2 CI/CD hardening. Rebalance: P1-2→@Windows_quel (re-start), P1-3→verify deploy status, P1-4→@OWL continue. |
+| 2026-06-12 21:15 | @OWL | **CI/CD CHECK** | ❌ ALL "Deploy on Push" runs cancelled at 20min timeout. Dashboard /dashboard/ = 404. All service pages (/services/kafka, /services/meilisearch, /services/plane, /services/playwright, /services/kong-gateway) = 404. Working: / (200), /services/ (200), /blog/ (200), /contact/ (200), /about/ (200), /configurator/ (200). Root cause: GitHub Actions 20min timeout too short for 795+ page static export. Added X3 blocker. |
 
 ## Communication Protocol
 1. **Read this file at session start** — all bots
@@ -116,3 +122,4 @@ None — all clear ✅
 - **Service detail page** requires features[] and benefits[] — crashes without them
 - **@Kilo** should pull --rebase before any coord doc update (Carol may have pushed)
 - **Delegation rules**: @tablet=research/content, @Windows_quel=code quality, @Rocket=CI/CD, @Carol=infra, @Kilo=coordination, @OWL=wave integration
+- **⚠️ CI/CD CRITICAL**: All deploy runs timing out at 20min. Need to either: (a) increase `timeout-minutes` in GitHub Actions workflow, or (b) reduce build scope / use incremental static export. This is blocking ALL new content from going live.
