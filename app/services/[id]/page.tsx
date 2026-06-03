@@ -17,6 +17,8 @@ const CAT_LABELS: Record<string,string> = {
   'retail-tech': 'Retail Tech', 'energy-tech': 'Energy Tech', 'logistics-tech': 'Logistics Tech',
   'construction-tech': 'Construction Tech', 'cybersecurity': 'Cybersecurity',
   agritech: 'AgriTech',
+  'ai-ml-ops': 'AI/ML Ops',
+  devsecops: 'DevSecOps',
 };
 
 interface PageProps { params: Promise<{ id: string }>; }
