@@ -17,3 +17,11 @@ out/
 
 # Secrets (store in .env.shared; .env.shared is mode 600 and never committed)
 .env.shared*
+
+# Backup files
+*.backup*
+*.backup
+*.backup2
+*.backup_before*
+*.orig
+*.rej
