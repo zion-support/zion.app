@@ -19062,6 +19062,46 @@ export const additionalNewAiServices: Service[] = [
     contactInfo: {website:'/services/ai-low-code-builder', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🧱', href: '/services/ai-low-code-builder', popular: true, category: 'ai', industry: 'Technology',
   },
+  {
+    id: 'ai-customer-intent-prediction',
+    title: 'AI Customer Intent Prediction Engine',
+    description: 'Predict customer purchase intent in real-time using behavioral signals, browsing patterns, and historical data. Power personalized offers and reduce cart abandonment.',
+    features: ["Real-time intent scoring", "Behavioral signal analysis", "Cross-channel data unification", "Lookalike audience modeling", "API for e-commerce platforms", "Integration with Shopify, WooCommerce, Magento", "Live intent dashboards", "Automated offer triggering"],
+    benefits: ["Increase conversions by 28%", "Reduce cart abandonment", "Personalize shopping experiences", "Optimize ad spend"],
+    pricing: {"basic": "$499/mo", "pro": "$1,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-customer-intent-prediction', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🎯', href: '/services/ai-customer-intent-prediction', popular: true, category: 'ai', industry: 'E-Commerce',
+  },
+  {
+    id: 'ai-insurance-claims-automation',
+    title: 'AI Insurance Claims Automation',
+    description: 'End-to-end insurance claims processing with AI. Document extraction, fraud detection, damage assessment via photos, and automated adjudication for faster payouts.',
+    features: ["OCR document extraction", "Photo-based damage assessment", "Fraud scoring engine", "Automated adjudication rules", "Policy coverage matching", "Integration with Guidewire, Duck Creek", "Regulatory compliance checks", "Customer self-service portal"],
+    benefits: ["Reduce claims processing time by 70%", "Lower fraud losses", "Improve customer satisfaction", "Cut operational costs"],
+    pricing: {"basic": "$2,999/mo", "pro": "$8,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-insurance-claims-automation', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🛡️', href: '/services/ai-insurance-claims-automation', popular: false, category: 'ai', industry: 'Insurance',
+  },
+  {
+    id: 'ai-localization-engine',
+    title: 'AI Content Localization Engine',
+    description: 'Go beyond translation — adapt content for local markets with AI. Cultural nuance detection, imagery adaptation, and brand voice consistency across 50+ languages.',
+    features: ["Cultural nuance detection", "Image and icon adaptation", "Brand voice preservation", "Glossary and style guide support", "Integration with CMS (Contentful, Strapi)", "In-context preview", "Quality scoring per locale", "Continuous learning from native reviewers"],
+    benefits: ["Launch in new markets 3x faster", "Avoid cultural missteps", "Consistent brand voice globally", "Reduce localization costs by 50%"],
+    pricing: {"basic": "$599/mo", "pro": "$1,799/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-localization-engine', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🌍', href: '/services/ai-localization-engine', popular: false, category: 'ai', industry: 'Technology',
+  },
+  {
+    id: 'ai-predictive-quality-assurance',
+    title: 'AI Predictive Quality Assurance',
+    description: 'Predict manufacturing defects before they happen using sensor data and ML models. Integrate with IoT platforms and MES for real-time quality control.',
+    features: ["Sensor data anomaly detection", "Defect prediction models", "Root cause analysis", "Integration with Siemens MindSphere, AWS IoT", "Real-time quality dashboards", "Custom ML model training", "Batch quality forecasting", "Alerting and escalation workflows"],
+    benefits: ["Reduce defect rates by 40%", "Minimize scrap and rework", "Ensure consistent product quality", "Compliance-ready reporting"],
+    pricing: {"basic": "$1,499/mo", "pro": "$4,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/ai-predictive-quality-assurance', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🏭', href: '/services/ai-predictive-quality-assurance', popular: false, category: 'ai', industry: 'Manufacturing',
+  }
 ];
 
 
@@ -19137,6 +19177,26 @@ export const additionalNewMicroSaaS: Service[] = [
     contactInfo: {website:'/services/license-tracker', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🗝️', href: '/services/license-tracker', popular: false, category: 'micro-saas', industry: 'Productivity',
   },
+  {
+    id: 'micro-saas-feature-request-voting',
+    title: 'FeatureVote — Feature Request Voting Board',
+    description: 'Public feature request board with voting, status tracking, and roadmap publishing. Help product teams prioritize based on real customer demand.',
+    features: ["Public voting board", "Duplicate detection and merging", "Status tracking (planned, in-progress, done)", "Public roadmap publishing", "Integration with Intercom, Slack, Zendesk", "Admin moderation tools", "Email notifications for voters", "Embeddable widget"],
+    benefits: ["Build what customers actually want", "Reduce support ticket volume", "Transparent product roadmap", "Increase customer engagement"],
+    pricing: {"basic": "$29/mo", "pro": "$99/mo", "enterprise": "$299/mo"},
+    contactInfo: {website:'/services/micro-saas-feature-request-voting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🗳️', href: '/services/micro-saas-feature-request-voting', popular: true, category: 'micro-saas', industry: 'SaaS',
+  },
+  {
+    id: 'micro-saas-usage-based-cost-calculator',
+    title: 'CostLens — Usage-Based Cost Calculator',
+    description: 'Interactive pricing calculator widget for usage-based SaaS. Real-time cost estimation, scenario comparison, and embed in any site with one script tag.',
+    features: ["Drag-and-drop calculator builder", "Real-time cost updates", "Scenario comparison tables", "Embeddable JavaScript widget", "Currency conversion", "Integration with Stripe billing", "PDF export for proposals", "Analytics on calculator usage"],
+    benefits: ["Increase pricing page conversions", "Reduce sales cycle length", "Self-service pricing transparency", "Better lead qualification"],
+    pricing: {"basic": "$49/mo", "pro": "$149/mo", "enterprise": "$399/mo"},
+    contactInfo: {website:'/services/micro-saas-usage-based-cost-calculator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '💲', href: '/services/micro-saas-usage-based-cost-calculator', popular: false, category: 'micro-saas', industry: 'SaaS',
+  }
 ];
 
 
@@ -19172,6 +19232,16 @@ export const additionalNewItServices: Service[] = [
     contactInfo: {website:'/services/data-center-migration', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🚚', href: '/services/data-center-migration', popular: false, category: 'it', industry: 'Cloud Computing',
   },
+  {
+    id: 'it-green-computing-consulting',
+    title: 'Green Computing & Carbon-Neutral IT Consulting',
+    description: 'Sustainability-first IT consulting. Carbon footprint assessment, green cloud migration strategies, and regulatory compliance for ESG reporting.',
+    features: ["IT carbon footprint assessment", "Green cloud migration roadmap", "Energy-efficient architecture design", "ESG compliance reporting (GRI, CDP)", "Vendor sustainability scoring", "Carbon offset integration", "Green SLA frameworks", "Executive sustainability dashboards"],
+    benefits: ["Meet ESG regulatory requirements", "Reduce cloud costs by 20%", "Attract sustainability-conscious customers", "Future-proof IT operations"],
+    pricing: {"basic": "$2,499/mo", "pro": "$7,499/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/it-green-computing-consulting', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🌿', href: '/services/it-green-computing-consulting', popular: false, category: 'it', industry: 'Technology',
+  }
 ];
 
 
@@ -19207,6 +19277,16 @@ export const additionalNewSecurityServices: Service[] = [
     contactInfo: {website:'/services/threat-intelligence-feed', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎯', href: '/services/threat-intelligence-feed', popular: false, category: 'security', industry: 'Cybersecurity',
   },
+  {
+    id: 'security-iot-device-security',
+    title: 'IoT Device Security Platform',
+    description: 'Secure IoT device fleets with continuous monitoring, firmware vulnerability detection, and automated patch management for industrial and consumer IoT.',
+    features: ["Device inventory and classification", "Firmware vulnerability scanning", "Behavioral anomaly detection", "Automated patch management", "Network segmentation recommendations", "Compliance for IEC 62443, NIST", "Integration with AWS IoT, Azure IoT Hub", "Real-time threat intelligence feeds"],
+    benefits: ["Prevent IoT botnet recruitment", "Ensure firmware integrity", "Meet IoT security compliance", "Reduce breach risk across device fleets"],
+    pricing: {"basic": "$999/mo", "pro": "$2,999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/security-iot-device-security', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🔐', href: '/services/security-iot-device-security', popular: false, category: 'security', industry: 'IoT',
+  }
 ];
 
 
@@ -19232,6 +19312,16 @@ export const additionalNewCloudServices: Service[] = [
     contactInfo: {website:'/services/cloud-cost-audit', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '💡', href: '/services/cloud-cost-audit', popular: false, category: 'cloud', industry: 'Cloud Computing',
   },
+  {
+    id: 'cloud-database-optimization',
+    title: 'Cloud Database Performance Optimization',
+    description: 'Automated database performance tuning for cloud-native workloads. Query optimization, index recommendations, and cost-rightsizing across RDS, Cloud SQL, and Cosmos DB.',
+    features: ["Query performance analysis", "Automated index recommendations", "Cost-rightsizing alerts", "Slow query detection and fixing", "Support for PostgreSQL, MySQL, MongoDB, Redis", "Integration with AWS, GCP, Azure", "Anomaly detection on query patterns", "Weekly optimization reports"],
+    benefits: ["Reduce database costs by 35%", "Improve query performance", "Eliminate manual tuning", "Prevent production incidents"],
+    pricing: {"basic": "$349/mo", "pro": "$999/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/cloud-database-optimization', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '🗄️', href: '/services/cloud-database-optimization', popular: false, category: 'cloud', industry: 'Technology',
+  }
 ];
 
 
@@ -19267,6 +19357,16 @@ export const additionalNewDataServices: Service[] = [
     contactInfo: {website:'/services/data-visualization-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📈', href: '/services/data-visualization-generator', popular: true, category: 'data', industry: 'General',
   },
+  {
+    id: 'data-consent-management-platform',
+    title: 'Data Consent Management Platform',
+    description: 'Enterprise consent and preference management for GDPR, CCPA, and LGPD compliance. Unified consent collection, audit trails, and real-time enforcement.',
+    features: ["Consent collection banners", "Preference center for users", "Consent audit trails", "Cross-domain consent syncing", "Real-time enforcement APIs", "Integration with analytics and marketing tools", "Automated data subject request processing", "Multi-regulation support (GDPR, CCPA, LGPD, POPIA)"],
+    benefits: ["Achieve regulatory compliance", "Avoid fines up to 4% of revenue", "Build customer trust", "Automate DSAR workflows"],
+    pricing: {"basic": "$299/mo", "pro": "$899/mo", "enterprise": "Custom"},
+    contactInfo: {website:'/services/data-consent-management-platform', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    icon: '📋', href: '/services/data-consent-management-platform', popular: false, category: 'data', industry: 'Legal',
+  }
 ];
 
 export const allServices: Service[] = [
