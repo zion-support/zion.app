@@ -1,49 +1,123 @@
-// app/layout.tsx
+import React, { ReactNode } from 'react';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import SkipLink from './components/SkipLink';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Analytics from './components/Analytics';
+import CtaTracking from './components/CtaTracking';
+import BackToTop from './components/BackToTop';
+import ReadingProgressBar from './components/ReadingProgressBar';
+import StickyMobileCTA from './components/StickyMobileCTA';
+import AIChatWidget from './components/AIChatWidget';
+import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
+import StickyDonateBanner from './components/StickyDonateBanner';
+import ChatWidget from './components/ChatWidget';
+import CookieConsentBanner from './components/CookieConsentBanner';
+import AiSolutionsArchitectWidget from './components/ai/AiSolutionsArchitectWidget';
+import AIExperienceLoader from './components/AIExperienceLoader';
+import ErrorTracker from './components/ErrorTracker';
+import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import './globals.css';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import AccessibilityEnhancer from '@/components/AccessibilityEnhancer';
-import type { Metadata } from 'next';
-import { SITE_URL, STRUCTURED_DATA } from './utils/seoConstants';
 
-export const metadata: Metadata = {
-  title: { default: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', template: '%s | Zion Tech Group' },
-  description: 'Enterprise AI services, IT solutions, Micro-SaaS platforms, cloud infrastructure, cybersecurity, data analytics, blockchain, and IoT. 1328+ solutions for modern businesses. Based in Delaware, serving clients worldwide.',
-  keywords: 'AI services, IT consulting, machine learning, cybersecurity, cloud migration, Micro SAAS, automation, NLP, computer vision, recommendation engine',
-  authors: [{ name: 'Kleber Garcia Alcatrão', url: 'https://ziontechgroup.com' }],
-  creator: 'Zion Tech Group', publisher: 'Zion Tech Group',
-  robots: 'index, follow',
-  icons: {
-    icon: [
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+const siteUrl = 'https://ziontechgroup.com';
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
+
+export const metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Zion Tech Group | AI & IT Solutions',
+    template: '%s | Zion Tech Group',
   },
-  openGraph: { type: 'website', title: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms — from machine learning and cybersecurity to cloud infrastructure and automation. Custom proposals in minutes.', url: 'https://ziontechgroup.com', siteName: 'Zion Tech Group', locale: 'en_US', images: [{ url: 'https://ziontechgroup.com/og-home.svg', width: 1200, height: 630, alt: 'Zion Tech Group — AI, IT & Micro SAAS Solutions' }] },
-  twitter: { card: 'summary_large_image', title: 'Zion Tech Group — AI, IT & Micro SAAS Solutions', description: 'Enterprise AI services, IT solutions, and Micro SAAS platforms.', images: ['https://ziontechgroup.com/og-home.svg'] },
-  alternates: { canonical: 'https://ziontechgroup.com' },
+  description:
+    'AI applications, secure engineering, and scalable delivery for modern teams. Zion Tech Group.',
+  applicationName: 'Zion Tech Group',
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
+  manifest: '/manifest.json',
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
+  referrer: 'strict-origin-when-cross-origin',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Zion Tech Group',
+  },
 };
 
-const orgSchema = { ...STRUCTURED_DATA.ORGANIZATION, url: SITE_URL };
-const websiteSchema = STRUCTURED_DATA.WEBSITE;
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  colorScheme: 'dark light',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0b1221' },
+  ],
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-</head>
-      <body className="min-h-screen bg-slate-950 text-white antialiased">
-        <AccessibilityEnhancer>
-          <Navigation />
-          <div id="main-content">{children}</div>
-          <Footer />
-        </AccessibilityEnhancer>
-      </body>
-    </html>
+    <>
+      {/* JSON-LD: Organization */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Zion Tech Group',
+            url: 'https://ziontechgroup.com',
+            email: 'kleber@ziontechgroup.com',
+            telephone: '+1 302 464 0950',
+            address: '364 E Main St STE 1008, Middletown, DE 19709',
+            sameAs: [],
+          }),
+        }}
+      />
+      <html lang="en" dir="ltr">
+        <head>
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        </head>
+        <body className={`${inter.className} antialiased`}>
+          <Analytics />
+          <CtaTracking />
+          <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+            <SkipLink />
+            <ReadingProgressBar />
+            <Header />
+            <main className="relative z-10 flex-1" id="main-content" tabIndex={-1} role="main">
+              {children}
+            </main>
+            <Footer />
+            <BackToTop />
+            <AiSolutionsArchitectWidget />
+            <AIChatWidget />
+            <AIExperienceLoader />
+            <StickyMobileCTA />
+            <ServiceWorkerRegistration />
+            <StickyDonateBanner />
+            <CookieConsentBanner />
+            <ErrorTracker />
+            <FieldPerformanceCollector />
+          </div>
+        </body>
+      </html>
+    </>
   );
 }
