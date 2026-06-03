@@ -21151,6 +21151,126 @@ export const wave174CloudServices: Service[] = [
 ];
 
 
+export const wave175AiServices: Service[] = [
+  {
+    id: 'ai-email-personalization-engine',
+    title: 'AI Email Personalization Engine',
+    description: 'Hyper-personalize marketing emails with AI. Dynamic content, subject line optimization, send-time optimization, and automated A/B testing for higher open and conversion rates.',
+    features: ["Dynamic content insertion", "AI subject line optimization", "Send-time optimization", "Automated A/B testing", "Audience segmentation AI", "Integration with Mailchimp, Klaviyo, HubSpot", "Personalization analytics", "Spam score checking"],
+    benefits: ["Increase open rates by 35%", "Improve click-through rates", "Automate email optimization", "Scale personalization"],
+    pricing: {"basic": "$199/mo", "pro": "$599/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/ai-email-personalization-engine", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '📧', href: '/services/ai-email-personalization-engine', popular: true, category: 'ai', industry: 'Marketing',
+  },
+  {
+    id: 'ai-contract-risk-analyzer',
+    title: 'AI Contract Risk Analyzer',
+    description: 'Analyze contract risk with AI. Identify unfavorable clauses, missing provisions, and compliance gaps. Compare against industry benchmarks and internal standards.',
+    features: ["Clause-level risk scoring", "Missing provision detection", "Compliance gap analysis", "Industry benchmark comparison", "Redline suggestions", "Integration with CLM systems", "Custom risk models", "Executive risk summaries"],
+    benefits: ["Reduce contract risk exposure", "Speed up contract review", "Ensure compliance", "Standardize risk assessment"],
+    pricing: {"basic": "$799/mo", "pro": "$2,499/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/ai-contract-risk-analyzer", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '📝', href: '/services/ai-contract-risk-analyzer', popular: false, category: 'ai', industry: 'Legal',
+  },
+  {
+    id: 'ai-warehouse-picking-optimization',
+    title: 'AI Warehouse Picking Optimization',
+    description: 'Optimize warehouse picking routes and batch assignments with AI. Reduce picker travel time, increase throughput, and improve order accuracy.',
+    features: ["Pick path optimization", "Batch order optimization", "Slotting optimization", "Real-time order prioritization", "Integration with WMS (Manhattan, Blue Yonder)", "Labor planning", "Performance analytics", "Pick-by-voice and pick-by-light support"],
+    benefits: ["Reduce pick time by 30%", "Increase throughput by 25%", "Improve order accuracy", "Optimize labor allocation"],
+    pricing: {"basic": "$999/mo", "pro": "$2,999/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/ai-warehouse-picking-optimization", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '📦', href: '/services/ai-warehouse-picking-optimization', popular: false, category: 'ai', industry: 'Logistics',
+  },
+  {
+    id: 'ai-deepfake-detection-enterprise',
+    title: 'AI Deepfake Detection Enterprise',
+    description: 'Enterprise-grade deepfake detection for images, video, and audio. Real-time API for content moderation, identity verification, and fraud prevention.',
+    features: ["Image manipulation detection", "Video deepfake detection", "Audio deepfake detection", "Real-time API (< 200ms)", "Batch processing", "Integration with social media platforms", "Confidence scores with explanations", "Custom model training"],
+    benefits: ["Prevent deepfake fraud", "Automate content moderation", "Verify identity in video calls", "Protect brand reputation"],
+    pricing: {"basic": "$1,999/mo", "pro": "$5,999/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/ai-deepfake-detection-enterprise", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '🎭', href: '/services/ai-deepfake-detection-enterprise', popular: true, category: 'ai', industry: 'Cybersecurity',
+  },
+  {
+    id: 'ai-legal-e-discovery',
+    title: 'AI Legal E-Discovery Platform',
+    description: 'AI-powered electronic discovery for legal teams. Document review, privilege detection, and case strategy analytics with predictive coding.',
+    features: ["Predictive coding", "Privilege detection", "Document clustering", "Concept search", "Relevance ranking", "Integration with legal hold systems", "Production and redaction tools", "Case analytics"],
+    benefits: ["Reduce document review time by 80%", "Lower e-discovery costs", "Improve review accuracy", "Scale legal team capacity"],
+    pricing: {"basic": "$1,499/mo", "pro": "$4,499/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/ai-legal-e-discovery", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '⚖️', href: '/services/ai-legal-e-discovery', popular: false, category: 'ai', industry: 'Legal',
+  }
+];
+
+
+export const wave175MicroSaasServices: Service[] = [
+  {
+    id: 'micro-saas-onboarding-checklist',
+    title: 'OnboardFlow — Onboarding Checklist Micro-SaaS',
+    description: 'Interactive onboarding checklists for SaaS products. Drag-and-drop builder, progress tracking, and integration with Intercom, Pendo, and Segment.',
+    features: ["Drag-and-drop checklist builder", "Progress tracking", "Conditional logic", "Integration with Intercom, Pendo, Segment", "Custom branding", "Analytics and completion rates", "API access", "Multi-language support"],
+    benefits: ["Increase activation rates by 40%", "Reduce onboarding time", "Visual progress motivates users", "Track completion analytics"],
+    pricing: {"basic": "$29/mo", "pro": "$89/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/micro-saas-onboarding-checklist", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '✅', href: '/services/micro-saas-onboarding-checklist', popular: true, category: 'micro-saas', industry: 'SaaS',
+  },
+  {
+    id: 'micro-saas-churn-analytics',
+    title: 'Churnlytics — Churn Analytics Micro-SaaS',
+    description: 'Predict and prevent SaaS churn with AI. Connect Stripe/Braintree, get churn risk scores, automated retention campaigns, and revenue impact forecasting.',
+    features: ["Stripe/Braintree integration", "Per-customer churn risk scoring", "Automated retention campaigns", "Win-back workflows", "Revenue impact forecasting", "Cohort analysis", "Slack/Teams alerts", "API access"],
+    benefits: ["Reduce churn by 25%", "Identify at-risk accounts early", "Automate retention efforts", "Forecast revenue impact"],
+    pricing: {"basic": "$49/mo", "pro": "$149/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/micro-saas-churn-analytics", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '📉', href: '/services/micro-saas-churn-analytics', popular: false, category: 'micro-saas', industry: 'SaaS',
+  }
+];
+
+
+export const wave175SecurityServices: Service[] = [
+  {
+    id: 'security-siem-platform',
+    title: 'Cloud-Native SIEM Platform',
+    description: 'Modern SIEM with AI-powered threat detection, automated correlation, and cloud-native architecture. Replace legacy SIEM with scalable, intelligent security analytics.',
+    features: ["AI-powered threat detection", "Automated correlation rules", "Cloud-native architecture", "Integration with 300+ data sources", "SOAR integration", "Compliance reporting", "Custom detection rules", "Threat intelligence feeds"],
+    benefits: ["Detect threats faster", "Reduce alert fatigue", "Cloud-native scalability", "Replace legacy SIEM"],
+    pricing: {"basic": "$1,999/mo", "pro": "$5,999/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/security-siem-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '🔍', href: '/services/security-siem-platform', popular: true, category: 'security', industry: 'Technology',
+  }
+];
+
+
+export const wave175CloudServices: Service[] = [
+  {
+    id: 'cloud disaster recovery testing',
+    title: 'Automated DR Testing Platform',
+    description: 'Automate disaster recovery testing with AI. Non-disruptive testing, automated failover validation, and compliance reporting for DR readiness.',
+    features: ["Non-disruptive DR testing", "Automated failover validation", "Recovery time measurement", "Compliance reporting", "Integration with AWS, Azure, GCP DR services", "Regular scheduled testing", "Remediation recommendations", "Executive readiness dashboards"],
+    benefits: ["Ensure DR readiness", "Automate compliance testing", "Reduce MTTR", "Validate recovery procedures"],
+    pricing: {"basic": "$999/mo", "pro": "$2,999/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/cloud-disaster-recovery-testing", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '🔄', href: '/services/cloud-disaster-recovery-testing', popular: false, category: 'cloud', industry: 'Technology',
+  }
+];
+
+
+export const wave175DataServices: Service[] = [
+  {
+    id: 'data-data-contract-platform',
+    title: 'Data Contract Platform',
+    description: 'Define, enforce, and monitor data contracts between producers and consumers. Ensure data quality, schema consistency, and ownership across the organization.',
+    features: ["Data contract definition", "Schema enforcement", "Quality monitoring", "Data ownership tracking", "Integration with data pipelines", "Violation alerting", "Contract versioning", "Stakeholder collaboration"],
+    benefits: ["Ensure data quality", "Prevent schema breakages", "Clear data ownership", "Enable data mesh"],
+    pricing: {"basic": "$799/mo", "pro": "$2,499/mo", "enterprise": "Custom"},
+    contactInfo: {"website": "/services/data-data-contract-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    icon: '📋', href: '/services/data-data-contract-platform', popular: false, category: 'data', industry: 'Technology',
+  }
+];
+
+
 export const allServices: Service[] = [
   ...aiServices,
   ...itServices,
@@ -21214,6 +21334,11 @@ export const allServices: Service[] = [
   ...wave174MicroSaasServices,
   ...wave174SecurityServices,
   ...wave174CloudServices,
+  ...wave175AiServices,
+  ...wave175MicroSaasServices,
+  ...wave175SecurityServices,
+  ...wave175CloudServices,
+  ...wave175DataServices,
 ].filter((s): s is Service => s !== undefined);
 
 
