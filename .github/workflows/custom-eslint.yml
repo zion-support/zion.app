@@ -21,11 +21,11 @@ jobs:
       pull-requests: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
         cache: npm
@@ -45,7 +45,7 @@ jobs:
         \ true\necho \"exit_code=$?\" >> $GITHUB_OUTPUT\n"
     - name: Upload ESLint report
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: eslint-autonomous-report
         path: /tmp/eslint-report.json
@@ -55,7 +55,7 @@ jobs:
         ESLint violations detected\"\n  exit 1\nfi\n"
     - name: Parse and comment on PR
       if: github.event_name == 'pull_request' && failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst reportPath = '/tmp/eslint-report.json';\n\
           let body = '\U0001F6A8 **Custom ESLint Rules Violations**\\n\\n';\ntry {\n\
@@ -75,7 +75,7 @@ jobs:
           \ context.issue.number,\n  body\n});\n"
     - name: Open GitHub issue on main branch violations
       if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst title = '\U0001F6A8 Custom ESLint\
           \ Rules Violations on Main';\nconst reportPath = '/tmp/eslint-report.json';\n\

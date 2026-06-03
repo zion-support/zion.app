@@ -21,11 +21,11 @@ jobs:
       pull-requests: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
         cache: npm
@@ -45,14 +45,14 @@ jobs:
         '
     - name: Upload violations artifact
       if: failure()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: openapi-violations
         path: .hermes/memory/openapi-drift/violations.json
         retention-days: 7
     - name: Comment on PR if drift detected
       if: github.event_name == 'pull_request' && failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst violationsPath = '.hermes/memory/openapi-drift/violations.json';\n\
           let msg = '\U0001F6A8 **OpenAPI Contract Drift Detected**\\n\\n';\ntry {\n\
@@ -70,7 +70,7 @@ jobs:
           \ msg\n});\n"
     - name: Open GitHub issue on main branch drift
       if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst title = '\U0001F6A8 API Contract\
           \ Drift Detected on Main';\nconst violationsPath = '.hermes/memory/openapi-drift/violations.json';\n\

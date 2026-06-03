@@ -23,9 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6
     - name: Setup Node
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
         cache: npm
@@ -44,7 +44,7 @@ jobs:
       run: node automation/api-schema-validator.cjs
     - name: Post PR comment on failure
       if: github.event_name == 'pull_request' && failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nlet statePath = '.hermes/memory/api-schema/history.json';\n\
           let comment = '\U0001F6A8 **API Schema Validation Failed**\\n\\n';\ncomment\

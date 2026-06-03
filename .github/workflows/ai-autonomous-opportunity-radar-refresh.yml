@@ -22,7 +22,7 @@ jobs:
         with:
           token: ${{ github.token }}
       - name: Setup Node
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
           cache: npm
@@ -45,7 +45,7 @@ jobs:
           bash scripts/automation/commit-and-push-main.sh "chore(automation): refresh autonomous opportunity radar report"
 
       - name: Upload report artifact
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: autonomous-opportunity-radar-${{ github.run_id }}
           path: automation/reports/autonomous-opportunity-radar-latest.json
