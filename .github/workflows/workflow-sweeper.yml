@@ -1,0 +1,70 @@
+name: Workflow Sweeper
+'on':
+  schedule:
+    - cron: '0 5 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 'find stale workflows'
+        run: |
+          set -euo pipefail
+          DRY_RUN="${{ inputs.dry_run || true }}"
+          find .github/workflows -type f -name '*.yml' -o -name '*.yaml' | while read -r f; do
+            if ! grep -q '^on:' "$f"; then
+              echo "stale: $f"
+              if [ "$DRY_RUN" != "true" ]; then
+                rm -f "$f"
+              fi
+            else
+              triggers=$(grep -cE 'push|schedule|workflow_dispatch|pull_request' "$f" || true)
+              if [ "$triggers" -eq 0 ]; then
+                echo "disabled: $f"
+                if [ "$DRY_RUN" != "true" ]; then
+                  sed -i 's/^name:/# disabled by sweeper\nname:/' "$f"
+                fi
+              fi
+            fi
+          done
+
+      - name: 'remove unused action references'
+        run: |
+          set -euo pipefail
+          DRY_RUN="${{ inputs.dry_run || true }}"
+          find . -type f \( -name '*.yml' -o -name '*.yaml' \) ! -path './node_modules/*' ! -path './.git/*' | while read -r f; do
+            actions=$(grep -oE 'uses: [^@]+@[^ ]+' "$f" 2>/dev/null | awk '{print $2}' | sort -u || true)
+            for action in $actions; do
+              if ! curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/${action%%@*}" | grep -q '200'; then
+                echo "unused action: $action in $f"
+                if [ "$DRY_RUN" != "true" ]; then
+                  sed -i "s|uses: ${action}||g" "$f"
+                fi
+              fi
+            done
+          done
+
+      - name: 'commit sweeper changes'
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+          git add .github/workflows
+          git diff --cached --quiet || git commit -m 'chore: sweep stale workflows and unused actions'
+          git push
