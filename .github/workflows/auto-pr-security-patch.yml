@@ -1,0 +1,77 @@
+name: Auto-PR Security Patch
+'on':
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_run:
+    workflows: ["Dependency Audit"]
+    types: [completed]
+    branches: [ main ]
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+jobs:
+  auto-patch:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' || github.event_name == 'schedule' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Apply safe npm audit patches
+        run: |
+          npm audit fix --only=prod || true
+          npm audit fix --only=dev || true
+      - name: Run preflight checks
+        run: |
+          npm run lint
+          npm run type-check
+          npm run build
+      - name: Create PR with patches
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = 'auto/security-patch-' + context.sha.slice(0,7);
+            const head = context.repo.owner + ':' + branch;
+            // Create branch from main (use ref via REST)
+            github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'heads/main'
+            }).then(() => {
+              return github.rest.git.createRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: 'refs/heads/' + branch,
+                sha: context.sha
+              });
+            }).catch(() => {
+              // branch may already exist; ignore
+            });
+            // Create PR
+            github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'chore: auto security patch `npm audit fix`',
+              head: head,
+              base: 'main',
+              body: 'Automated dependency security patch via unstoppable pipeline.'
+            });
+      - name: Create failure issue if patch breaks build
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Auto security patch broke build on ${context.sha.slice(0,7)}`,
+              body: `npm audit fix patches were applied but preflight checks failed.`,
+              labels: ['security', 'bug', 'automation']
+            })
