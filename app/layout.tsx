@@ -19,7 +19,6 @@ import AiSolutionsArchitectWidget from './components/ai/AiSolutionsArchitectWidg
 import AIExperienceLoader from './components/AIExperienceLoader';
 import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
-import { useFocusManagement } from './hooks/useFocusManagement';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
 import './globals.css';
 
@@ -73,8 +72,6 @@ export default function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  useFocusManagement();
-
   return (
     <>
       {/* JSON-LD: Organization */}
