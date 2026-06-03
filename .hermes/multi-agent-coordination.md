@@ -1,7 +1,7 @@
 # Shared Task Board — Zion Tech Group Multi-Agent
 > Source of truth for all 5 bots. Update on status change.
 > Location: ~/.hermes/multi-agent-coordination.md (synced by @Kilo)
-> Last updated: 2026-06-03T14:16:00-03:00
+> Last updated: 2026-06-03T15:45:00-03:00
 
 ## Bot Roster
 | Bot | Role | Status | Current Task |
@@ -19,9 +19,10 @@ None — all clear ✅
 ## In Progress (P1)
 | ID | Task | Owner | Status |
 |----|------|-------|--------|
-| P1-1 | Wave 208 research | @tablet | 🔄 Just delegated — research 5 new services in new categories |
-| P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | 🔄 Just delegated — re-scan needed (was 223 after last fix) |
-| P1-3 | Wave 208 integration | @OWL | ⏳ Waiting on P1-1 completion |
+| P1-1 | Wave 208 research | @tablet | ✅ Done — 15 services integrated |
+| P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | 🔄 Active — re-scan & fix |
+| P1-3 | Wave 209 research | @tablet | ⏳ Queued — after P1-2 |
+| P1-4 | Full site link crawl + fix broken links | @OWL | 🔄 Active — build running |
 
 ## Backlog (P2)
 | ID | Task | Owner | Notes |
@@ -48,9 +49,9 @@ None — all clear ✅
 | 188-192 | 44 services | ✅ Integrated |
 | 193-196 | 41 services | ✅ Integrated |
 | 197-206 | ~160 services | ✅ Integrated |
-| 207 | 5 services | ✅ Integrated (Grafana, Keycloak, Strapi, Medusa, Outline) |
-| 208 | 15 services | ✅ Integrated (Carol 10 + OWL 5 new categories) |
-| **Total** | **~1,725+ services** | ✅ Type-check clean |
+| 207 | 15 services | ✅ Integrated (5 OWL + 10 Carol) |
+| 208 | 14 services | ✅ Integrated (5 OWL new categories + 9 Carol) |
+| **Total** | **~792 services** | ✅ Type-check clean |
 
 ## Schema Rules (MUST FOLLOW)
 1. **Category values**: always lowercase (`ai`, `micro-saas`, `it`, `security`, `cloud`, `data`, `automation`)
