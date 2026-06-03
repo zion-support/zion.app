@@ -1,0 +1,35 @@
+name: External Link Rot Monitor
+"on":
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+      - name: 'setup Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 'prepare local build'
+        run: |
+          set -euo pipefail
+          npm ci --prefer-offline --no-audit --fund=false
+          npm run build || true
+      - name: 'run external link checker'
+        id: external-links
+        continue-on-error: true
+        run: node scripts/check-external-links.cjs
+      - name: 'upload report'
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-links-report
+          path: external-links-report.json
+          retention-days: 30
