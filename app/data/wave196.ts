@@ -1,0 +1,156 @@
+import type { Service } from './servicesData';
+
+export const wave196AiServices: Service[] = [
+  {
+    id: 'ai-code-reviewer',
+    title: 'AI Code Reviewer',
+    description: 'Automated code review using AI. Detects bugs, security vulnerabilities, performance issues, and style violations. Integrates with GitHub, GitLab, and Bitbucket.',
+    features: ['Bug detection', 'Security vulnerability scanning', 'Performance analysis', 'Style enforcement', 'PR integration'],
+    benefits: ['Catches bugs before production', 'Reduces code review time by 70%', 'Enforces coding standards', 'Prevents security vulnerabilities'],
+    category: 'ai',
+    icon: '🔍',
+    href: '/services/ai-code-reviewer',
+    industry: 'Technology',
+    stage: 'growth',
+    popular: true,
+    pricing: { basic: '$99/mo', pro: '$299/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+  {
+    id: 'ai-video-generator',
+    title: 'AI Video Generator',
+    description: 'Generate professional videos from text scripts. AI avatars, voiceovers, and scene generation. Perfect for marketing, training, and social media content.',
+    features: ['Text-to-video', 'AI avatars', 'Voiceover generation', 'Scene composition', 'Multi-language support'],
+    benefits: ['Produces videos in minutes', 'No filming equipment needed', 'Scales content production', 'Reduces video costs by 90%'],
+    category: 'ai',
+    icon: '🎬',
+    href: '/services/ai-video-generator',
+    industry: 'Media',
+    stage: 'growth',
+    popular: true,
+    pricing: { basic: '$149/mo', pro: '$399/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196DataServices: Service[] = [
+  {
+    id: 'data-catalog',
+    title: 'Data Catalog & Lineage',
+    description: 'Enterprise data catalog with automated discovery, classification, and lineage tracking. Understand where your data comes from, how it flows, and who uses it.',
+    features: ['Automated discovery', 'Data classification', 'Lineage tracking', 'Impact analysis', 'Data quality scoring'],
+    benefits: ['Eliminates data silos', 'Accelerates data discovery', 'Ensures compliance', 'Improves data trust'],
+    category: 'data',
+    icon: '📚',
+    href: '/services/data-catalog',
+    industry: 'Technology',
+    stage: 'growth',
+    popular: true,
+    pricing: { basic: '$399/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196CloudServices: Service[] = [
+  {
+    id: 'serverless-platform',
+    title: 'Serverless Platform',
+    description: 'Deploy and scale serverless functions without managing infrastructure. Auto-scaling, pay-per-execution, and built-in monitoring.',
+    features: ['Auto-scaling', 'Pay-per-execution', 'Built-in monitoring', 'Multi-runtime support', 'Edge deployment'],
+    benefits: ['Zero infrastructure management', 'Infinite scalability', 'Reduces cloud costs', 'Faster time to market'],
+    category: 'cloud',
+    icon: '⚡',
+    href: '/services/serverless-platform',
+    industry: 'Technology',
+    stage: 'mature',
+    popular: true,
+    pricing: { basic: '$49/mo', pro: '$199/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196SecurityServices: Service[] = [
+  {
+    id: 'cloud-security-posture',
+    title: 'Cloud Security Posture Management',
+    description: 'Continuous cloud security assessment and remediation. Detects misconfigurations, compliance violations, and security risks across AWS, Azure, and GCP.',
+    features: ['Misconfiguration detection', 'Compliance monitoring', 'Risk scoring', 'Auto-remediation', 'Multi-cloud support'],
+    benefits: ['Prevents cloud breaches', 'Ensures compliance', 'Reduces security risks', 'Automates remediation'],
+    category: 'security',
+    icon: '☁️',
+    href: '/services/cloud-security-posture',
+    industry: 'Technology',
+    stage: 'growth',
+    popular: true,
+    pricing: { basic: '$349/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196AutomationServices: Service[] = [
+  {
+    id: 'workflow-orchestrator',
+    title: 'Workflow Orchestrator',
+    description: 'Visual workflow builder for complex business processes. Drag-and-drop designer, conditional logic, API integrations, and real-time monitoring.',
+    features: ['Visual workflow builder', 'Conditional logic', 'API integrations', 'Real-time monitoring', 'Error handling'],
+    benefits: ['Automates complex processes', 'Reduces manual work', 'Improves process consistency', 'Scales operations'],
+    category: 'automation',
+    icon: '🔄',
+    href: '/services/workflow-orchestrator',
+    industry: 'Technology',
+    stage: 'growth',
+    popular: true,
+    pricing: { basic: '$199/mo', pro: '$499/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196MicroSaasServices: Service[] = [
+  {
+    id: 'customer-feedback-platform',
+    title: 'Customer Feedback Platform',
+    description: 'Collect, analyze, and act on customer feedback. In-app surveys, NPS tracking, sentiment analysis, and automated follow-up workflows.',
+    features: ['In-app surveys', 'NPS tracking', 'Sentiment analysis', 'Automated follow-up', 'Feedback analytics'],
+    benefits: ['Improves customer satisfaction', 'Identifies product issues', 'Increases retention', 'Data-driven decisions'],
+    category: 'micro-saas',
+    icon: '💬',
+    href: '/services/customer-feedback-platform',
+    industry: 'Technology',
+    stage: 'growth',
+    popular: false,
+    pricing: { basic: '$79/mo', pro: '$199/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+  {
+    id: 'inventory-management',
+    title: 'Inventory Management System',
+    description: 'Real-time inventory tracking across warehouses and stores. Barcode scanning, reorder alerts, supplier management, and demand forecasting.',
+    features: ['Real-time tracking', 'Barcode scanning', 'Reorder alerts', 'Supplier management', 'Demand forecasting'],
+    benefits: ['Prevents stockouts', 'Reduces carrying costs', 'Optimizes reorder points', 'Improves fulfillment speed'],
+    category: 'micro-saas',
+    icon: '📦',
+    href: '/services/inventory-management',
+    industry: 'Retail',
+    stage: 'mature',
+    popular: true,
+    pricing: { basic: '$99/mo', pro: '$249/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+  {
+    id: 'project-time-tracker',
+    title: 'Project Time Tracker',
+    description: 'Time tracking and project management for teams. Automatic time capture, project budgeting, client billing, and productivity analytics.',
+    features: ['Automatic time capture', 'Project budgeting', 'Client billing', 'Productivity analytics', 'Team scheduling'],
+    benefits: ['Accurate client billing', 'Improves productivity', 'Tracks project profitability', 'Reduces timesheet overhead'],
+    category: 'micro-saas',
+    icon: '⏰',
+    href: '/services/project-time-tracker',
+    industry: 'Professional Services',
+    stage: 'mature',
+    popular: true,
+    pricing: { basic: '$29/mo', pro: '$79/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
+  },
+];
+
+export const wave196ItServices: Service[] = [];
