@@ -1,41 +1,43 @@
 # Shared Task Board — Zion Tech Group Multi-Agent
-> Source of truth for all 5 bots. Update on status change.
+> Source of truth for all 6 bots. Update on status change.
 > Location: ~/.hermes/multi-agent-coordination.md (synced by @Kilo)
-> Last updated: 2026-06-03T15:45:00-03:00
+> Last updated: 2026-06-09T16:15:00-03:00
 
 ## Bot Roster
 | Bot | Role | Status | Current Task |
 |-----|------|--------|-------------|
 | @windows_carol_bot | 🖥️ DevOps & Infrastructure | 🟢 Active | CI/CD workflows, wave integration, accessibility |
 | @Kilo_openclaw_kleber_bot | 🧠 Intelligence & Orchestration | 🟢 Active | Coordination lead, quality audits |
-| @tablet_kleber_bot | 📱 Content & Research | 🟢 Active | Wave research & content creation |
+| @tablet_kleber_bot | 📱 Content & Research | 🟢 Active | Wave 209 research done, awaiting integration |
 | @Windows_quel_bot | 🔧 Code & Implementation | 🔵 Available | Site quality improvements |
 | @Rocket_Kleber_bot | 🚀 Integration & Delivery | 🔵 Available | Build/deploy automation |
-| @OWL | 📊 Build & Deploy | 🟢 Active | Wave creation, bug fixes, fleet coordination |
+| @OWL | 🦉 Build & Deploy | 🟢 Active | Wave integration, build running, dashboard enhancement |
 
 ## Active Tasks (P0)
 None — all clear ✅
 
 ## In Progress (P1)
 | ID | Task | Owner | Status |
-|----|------|-------|--------|
-| P1-1 | Wave 208 research | @tablet | ✅ Done — 15 services integrated |
+|-----|------|-------|--------|
+| P1-1 | Wave 209 research | @tablet | ✅ Done — 5 services: Kafka, Meilisearch, Plane, Playwright, Kong Gateway |
 | P1-2 | Site quality pass — thin pages, empty benefits | @Windows_quel | 🔄 Active — re-scan & fix |
-| P1-3 | Wave 209 research | @tablet | ⏳ Queued — after P1-2 |
-| P1-4 | Full site link crawl + fix broken links | @OWL | 🔄 Active — build running |
+| P1-3 | Full site link crawl + fix broken links | @OWL | 🔄 Active — build running (10min+) |
+| P1-4 | Dashboard v3 — real-time data, agent auto-update | @OWL | 🔄 Active — enhancing now |
 
 ## Backlog (P2)
 | ID | Task | Owner | Notes |
-|----|------|-------|-------|
+|-----|------|-------|-------|
 | B2 | CI/CD pipeline hardening | @Rocket | Multiple workflows already added — optimize further |
 | B3 | GitHub auth for Actions triage | @windows_carol | Needs gh auth on remote |
-| B4 | Service page generation from wave data | @tablet | Automated via postbuild |
+| B4 | Service page auto-generation | @tablet | Automated via postbuild |
 | B5 | Thin page content enrichment | @Kilo | Ongoing audits |
-| B6 | Wave 209+ research pipeline | @tablet | Next wave after 208 |
+| B6 | Wave 209 integration | @tablet + @OWL | Research done, needs integration |
+| B7 | Site navigation/design improvements | @Windows_quel | Reorganize nav, improve layout |
+| B8 | Agent self-improvement plan execution | @Kilo | Review learning log, update skills |
 
 ## Blocked
 | ID | Task | What's Needed |
-|------|------|---------------|
+|-----|------|---------------|
 | X1 | Email responder live | Kleber: Gmail app password |
 | X2 | GitHub Actions triage | Kleber: gh auth on remote machine |
 
@@ -45,13 +47,15 @@ None — all clear ✅
 | 174-180 | ~497 services | ✅ Integrated |
 | 183-185 | 19 services | ✅ Fixed (interface + categories) |
 | 186 | 6 services | ✅ Integrated |
-| 187 | 4 services | ✅ Fixed (circular dep) |
+| 187 | 5 services | ✅ Integrated |
 | 188-192 | 44 services | ✅ Integrated |
 | 193-196 | 41 services | ✅ Integrated |
 | 197-206 | ~160 services | ✅ Integrated |
 | 207 | 15 services | ✅ Integrated (5 OWL + 10 Carol) |
 | 208 | 14 services | ✅ Integrated (5 OWL new categories + 9 Carol) |
-| **Total** | **~792 services** | ✅ Type-check clean |
+| **209** | **5 services** | **🔬 Research done — Kafka, Meilisearch, Plane, Playwright, Kong Gateway** |
+| **772+** | **Base services** | **✅ In servicesData.ts** |
+| **Total** | **~790 services** | **🔄 Build running — may stall (memory pressure)** |
 
 ## Schema Rules (MUST FOLLOW)
 1. **Category values**: always lowercase (`ai`, `micro-saas`, `it`, `security`, `cloud`, `data`, `automation`)
@@ -93,6 +97,8 @@ None — all clear ✅
 | 2026-06-03 14:11 | @Kilo | **ORGANIZE** | Full fleet reorganization per Kleber directive. Rebalanced all P1/P2 tasks. Delegated: Wave 208 research→@tablet, site quality→@Windows_quel, CI/CD→@Rocket. Sent coordination message to Zion Agents group. |
 | 2026-06-03 14:16 | @Kilo | **ORGANIZE #2** | Quality scan: 0 empty benefits/features, 0 short descriptions. Type-check: only 2 pre-existing errors (non-blocking). org-health cron had error — needs attention. Git fetch timeout (network) — commit 4afc1194 local, will push when connectivity resumes. Next actions: @tablet Wave 208 research due ~15:56 cron, @Windows_quel re-scan thin pages, @Rocket CI/CD optimization review. |
 | 2026-06-03 14:27 | @Kilo | **ORGANIZE #3** | Wave 208 full integration: 15 services (10 Carol: Carbon Tracker, Satellite Analytics, Data Mesh, Cloud Cost Optimizer, Supply Chain Security, IDP, DEM, Churn Prediction, Clinical Trial Mgmt + 5 OWL new categories: MLflow, Snyk, Stripe, Moodle, ThingsBoard). Fixed 8 category values to lowercase (Carol's wave used mixed case). Added ai-ml-ops + devsecops to CAT_LABELS. Type-check clean. Pushed 8c45aed27. |
+| 2026-06-09 16:15 | @Kilo | **ORGANIZE #4** | Full fleet rebalance per Kleber directive. Updated coord doc with 6-bot roster. P1-1→Wave 209 (research done). P1-4→Dashboard v3 enhancement. Added B7 (nav/design), B8 (self-improvement). Build running (memory pressure — 10min+). Dashboard CTA on main page needs verification. |
+| 2026-06-03 15:30 | @tablet | Wave 209 research | 5 new services in 5 categories: Apache Kafka, Meilisearch, Plane, Playwright, Kong Gateway. Research file: wave-research-2026-06-03.md |
 
 ## Communication Protocol
 1. **Read this file at session start** — all bots
