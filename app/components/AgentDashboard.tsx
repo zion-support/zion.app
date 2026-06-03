@@ -324,7 +324,7 @@ export default function AgentDashboard() {
               </ol>
             </section>
 
-            <!-- Client-facing badge -->
+            {/* Client-facing badge */}
             <section className="bg-gradient-to-br from-emerald-500/5 to-green-500/5 border border-emerald-500/10 rounded-xl p-4 text-center">
               <div className="text-2xl mb-2">🛡️</div>
               <h3 className="text-xs font-semibold text-emerald-300 mb-1">Powered by AI Agents</h3>
