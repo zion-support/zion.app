@@ -1196,21 +1196,6 @@ export const microSaasServices: Service[] = [
     industry: 'CRM',
     stage: 'published',
   },
-  {
-    id: 'saas-invoice-generator',
-    title: 'Smart Invoice & Expense Tracker',
-    description: 'Create and send professional invoices in seconds. Track expenses, categorize spending, send recurring invoices, accept online payments, and generate tax-ready financial reports. Supports multi-currency.',
-    features: ['One-click invoice generation','Recurring invoices & auto-reminders','Expense tracking with receipt capture','Online payments (Stripe, PayPal)','Multi-currency support','Tax calculation & reports','Client portal for self-service','Export to PDF, CSV, QuickBooks'],
-    benefits: ['Get paid faster with professional invoices','Track expenses effortlessly - snap a photo','Tax-ready reports save hours at tax time','Multi-currency support for international clients'],
-    pricing: {basic:'$12/mo', pro:'$29/mo', enterprise:'$59/mo'},
-    contactInfo: {website:'/services/saas-invoice-generator', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
-    icon: '💳',
-    href: '/services/saas-invoice-generator',
-    popular: false,
-    category: 'micro-saas',
-    industry: 'Finance',
-    stage: 'published',
-  },
 
 ];
 
