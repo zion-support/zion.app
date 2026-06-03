@@ -47,6 +47,7 @@ import { wave191AiServices, wave191MicroSaasServices, wave191ItServices, wave191
 
 import { wave192AiServices, wave192MicroSaasServices, wave192ItServices, wave192SecurityServices, wave192CloudServices, wave192DataServices, wave192AutomationServices } from './wave192';
 
+
 import { wave180AiServices, wave180MicroSaasServices, wave180ItServices, wave180SecurityServices, wave180CloudServices, wave180DataServices, wave180AutomationServices } from './wave180';
 
 
