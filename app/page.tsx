@@ -60,6 +60,11 @@ const CATEGORIES = [
   { key: 'media-streaming', label: 'Media Streaming',     emoji: '🎬', color: 'from-rose-500 to-pink-600' },
   { key: 'infrastructure-as-code', label: 'Infrastructure as Code', emoji: '🏗️', color: 'from-amber-600 to-orange-600' },
   { key: 'low-code',  label: 'Low-Code Platforms',       emoji: '⚡', color: 'from-emerald-500 to-teal-600' },
+  { key: 'monitoring', label: 'Monitoring & Alerting', emoji: '📊', color: 'from-blue-400 to-indigo-400' },
+  { key: 'logging', label: 'Log Aggregation', emoji: '📝', color: 'from-gray-400 to-blue-400' },
+  { key: 'security-scanning', label: 'Security Scanning', emoji: '🔍', color: 'from-red-400 to-amber-400' },
+  { key: 'backup-recovery', label: 'Backup & Recovery', emoji: '💾', color: 'from-green-400 to-teal-400' },
+  { key: 'identity-management', label: 'Identity & Access', emoji: '🔑', color: 'from-purple-400 to-fuchsia-400' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
@@ -74,6 +79,11 @@ const INDUSTRY_CATS: Record<string,string> = {
   "financial-services-&-fintech": "ai",
   "education-&-research": "ai",
   "healthcare-&-life-sciences": "ai",
+  "monitoring": "monitoring",
+  "logging": "logging",
+  "security-scanning": "security-scanning",
+  "backup-recovery": "backup-recovery",
+  "identity-management": "identity-management",
 };
 
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // app/agents-monitoring/page.tsx — Public Agent Monitoring Dashboard (Client View)
 import { Metadata } from 'next';
 import AgentDashboard from '@/components/AgentDashboard';
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
   description: 'Real-time monitoring of Zion Tech Group AI agent fleet. Watch 6 autonomous agents build, test, and deploy 795+ services 24/7.',
   alternates: { canonical: 'https://ziontechgroup.com/agents-monitoring' },
 };
+=======
+import AgentsMonitoring from '@/components/AgentsMonitoring';
+>>>>>>> 50cd2749 (feat: Wave 211 integration — 5 new services, 5 new categories (monitoring, logging, security-scanning, backup-recovery, identity-management))
 
 export default function AgentsMonitoringPage() {
   return <AgentDashboard defaultView="client" defaultTab="showcase" />;

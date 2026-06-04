@@ -1,160 +1,160 @@
 import { Service } from './serviceTypes';
 
-// Wave 211 — AI Agent Orchestration, Data Product Marketplace, Zero-Trust Network, Synthetic Data & MLOps Registry (5 services)
+// Wave 211 — Monitoring, Logging, Security Scanning, Backup Recovery & Identity Management (5 services)
 // Research by @tablet_kleber_bot — 2026-06-14
-// New categories: ai-agent-orchestration, data-product, zero-trust, synthetic-data, mlops
+// New categories: monitoring, logging, security-scanning, backup-recovery, identity-management
 
-export const wave211AiAgentOrchestrationServices: Service[] = [
+export const wave211MonitoringServices: Service[] = [
   {
-    id: 'ai-agent-orchestration-platform',
-    title: 'AI Agent Orchestration Platform',
-    description: 'Enterprise platform for building, deploying, and managing autonomous AI agent fleets that collaborate on complex multi-step workflows. As AI moves from chatbots to agentic systems in 2026, organizations need orchestration layers that handle agent-to-agent communication, task decomposition, tool access governance, and failure recovery. This platform provides a visual agent builder, pre-built agent templates for common enterprise tasks, and real-time monitoring of agent behavior and costs.',
-    category: 'ai',
-    icon: '🤖',
-    href: '/services/ai-agent-orchestration-platform',
+    id: 'prometheus',
+    title: 'Prometheus Monitoring & Alerting',
+    description: 'Prometheus is an open-source monitoring and alerting toolkit originally built at SoundCloud. It has become the industry standard for monitoring cloud-native applications, providing a powerful dimensional data model, flexible query language, and efficient storage for time series data.',
+    category: 'monitoring',
+    icon: '📊',
+    href: '/services/prometheus',
     industry: 'Technology & SaaS',
     stage: 'published',
     popular: true,
-    pricing: { basic: '$499/mo', pro: '$1,499/mo', enterprise: 'Custom' },
+    pricing: { basic: 'Free (OSS)', pro: 'Free tier (10K samples/sec)', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
     features: [
-      'Visual agent builder with drag-and-drop workflow designer — no coding required for common patterns',
-      'Pre-built agent templates: research analyst, code reviewer, customer support triage, data pipeline monitor',
-      'Agent-to-agent communication protocol with task delegation, result aggregation, and conflict resolution',
-      'Tool access governance with granular permissions — control which APIs, databases, and systems each agent can access',
-      'Real-time agent behavior monitoring with cost tracking per agent, per task, and per workflow',
-      'Automatic failure recovery with retry logic, fallback agents, and human-in-the-loop escalation',
-      'Integration with OpenAI Agents SDK, LangChain, CrewAI, AutoGen, and custom agent frameworks'
+      'Multi-dimensional data model with time series identified by metric name and key/value pairs',
+      'PromQL: powerful flexible query language to leverage dimensionality',
+      'No reliance on distributed storage; single server nodes are autonomous',
+      'Time series collection happens via a pull model over HTTP',
+      'Pushing time series is supported via an intermediary gateway',
+      'Targets are discovered via service discovery or static configuration'
     ],
     benefits: [
-      'Automate complex multi-step workflows that previously required 5-10 FTEs across departments',
-      'Reduce AI agent costs by 60% with intelligent task routing and model selection per subtask',
-      'Deploy agent fleets in days instead of months with pre-built templates and visual tooling',
-      'Maintain full auditability and governance over autonomous agent actions for compliance'
+      'Eliminates vendor lock-in with open source and portable data model',
+      'Scales horizontally via federation and horizontal sharding',
+      'Reliable against failures as individual nodes are autonomous',
+      'Used by Kubernetes, Docker, Istio, Linkerd, and many other CNCF projects',
+      'Integrates with Grafana for rich dashboards and Alertmanager for notifications'
     ]
   }
 ];
 
-export const wave211DataProductMarketplaceServices: Service[] = [
+export const wave211LoggingServices: Service[] = [
   {
-    id: 'data-product-marketplace-platform',
-    title: 'Data Product Marketplace Platform',
-    description: 'Internal data product marketplace that enables teams to publish, discover, evaluate, and subscribe to trusted data products across the organization. In 2026, leading enterprises are shifting from raw data sharing to curated data products — with defined schemas, SLAs, quality guarantees, and usage analytics. This platform operationalizes the data mesh principle of treating data as a product, providing the marketplace infrastructure that makes it real.',
-    category: 'data',
-    icon: '🏪',
-    href: '/services/data-product-marketplace-platform',
-    industry: 'Data Engineering',
-    stage: 'published',
-    popular: false,
-    pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
-    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
-    features: [
-      'Self-service data product publishing with schema documentation, sample queries, and quality scorecards',
-      'Search and discovery engine with natural language search, tags, ratings, and usage recommendations',
-      'Automated data product onboarding — schema validation, access provisioning, and consumer contract generation',
-      'Usage analytics dashboard: query volume, consumer satisfaction, freshness, and downstream impact tracking',
-      'Data product versioning with backward compatibility guarantees and automated consumer migration',
-      'Integration with Snowflake, Databricks, BigQuery, dbt, and any JDBC/ODBC data source',
-      'Monetization support with internal chargeback and cost allocation per data product and consumer'
-    ],
-    benefits: [
-      'Reduce time-to-data from weeks to minutes with self-service discovery and instant provisioning',
-      'Increase data team productivity by 40% through reusable, well-documented data products',
-      'Establish clear data ownership and accountability with published SLAs and quality guarantees',
-      'Enable data mesh architecture without building marketplace infrastructure from scratch'
-    ]
-  }
-];
-
-export const wave211ZeroTrustNetworkServices: Service[] = [
-  {
-    id: 'zero-trust-network-access-platform',
-    title: 'Zero-Trust Network Access (ZTNA) Platform',
-    description: 'Enterprise zero-trust network access platform that replaces legacy VPNs with identity-aware, least-privilege access to internal applications and resources. In 2026, with 72% of enterprises operating hybrid work models and 68% of breaches involving compromised credentials (Verizon DBIR 2025), traditional perimeter-based security is obsolete. This platform enforces continuous verification — every user, device, and session is authenticated and authorized for each specific resource, eliminating lateral movement and reducing breach blast radius to near zero.',
-    category: 'security',
-    icon: '🔐',
-    href: '/services/zero-trust-network-access-platform',
-    industry: 'Financial Services & FinTech',
+    id: 'loki',
+    title: 'Grafana Loki Log Aggregation',
+    description: 'Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective and easy to operate, as it does not index the contents of the logs, but rather a set of labels for each log stream.',
+    category: 'logging',
+    icon: '📝',
+    href: '/services/loki',
+    industry: 'Technology & SaaS',
     stage: 'published',
     popular: true,
-    pricing: { basic: '$15/user/mo', pro: '$35/user/mo', enterprise: 'Custom' },
+    pricing: { basic: 'Free (OSS)', pro: 'Free tier (50 GB/day)', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
     features: [
-      'Identity-aware access proxy — every request authenticated via SSO/MFA before reaching any application',
-      'Device posture checking: OS version, encryption status, EDR health, and compliance before granting access',
-      'Micro-segmentation with per-application access policies — users see only resources they are authorized for',
-      'Continuous session monitoring with real-time risk scoring and automatic session termination on anomaly',
-      'Browser-based access to web apps, SSH, RDP, databases, and Kubernetes — no client software required',
-      'Full audit logging of every access request, data transfer, and session activity for compliance reporting',
-      'Integration with Okta, Azure AD, Google Workspace, CrowdStrike, and any SAML/OIDC identity provider'
+      'Does not index full text of logs, only metadata (labels) — significantly lower operational cost',
+      'Labels support dynamic discovery and rich filtering capabilities',
+      'Native integration with Grafana for seamless log exploration within dashboards',
+      'Supports multiple storage backends: local filesystem, AWS S3, Google GCS, Azure Blob',
+      'Multi-tenant architecture with isolated tenant data and query execution',
+      'Horizontal scaling and high availability through replication and load balancing'
     ],
     benefits: [
-      'Eliminate VPN vulnerabilities — ZTNA reduces attack surface by 80% compared to traditional VPNs',
-      'Achieve SOC 2, ISO 27001, and PCI-DSS compliance with continuous verification and audit trails',
-      'Support seamless hybrid work — employees access internal apps from any device, any location, securely',
-      'Reduce breach blast radius to a single application — attackers cannot move laterally through the network'
+      'Significantly lower cost than traditional log aggregation solutions (ELK, Splunk)',
+      'Operational simplicity: no complex indexing infrastructure to manage',
+      'Seamless integration with Grafana and Prometheus for full observability stack',
+      'Scales to handle massive log volumes from microservices and containerized applications',
+      'Used by Grafana Labs, Shopify, Reddit, and other major technology companies'
     ]
   }
 ];
 
-export const wave211SyntheticDataServices: Service[] = [
+export const wave211SecurityScanningServices: Service[] = [
   {
-    id: 'synthetic-data-generation-platform',
-    title: 'Synthetic Data Generation Platform',
-    description: 'AI-powered synthetic data platform that generates statistically equivalent, privacy-safe datasets for software testing, ML training, and data sharing. In 2026, with GDPR fines exceeding €4B cumulatively and new AI training data regulations emerging, organizations cannot afford to use real customer data for development and testing. This platform uses generative models to create synthetic datasets that preserve the statistical properties, correlations, and edge cases of production data — without containing any real personal information.',
-    category: 'data',
-    icon: '🧬',
-    href: '/services/synthetic-data-generation-platform',
-    industry: 'Healthcare & Life Sciences',
+    id: 'trivy',
+    title: 'Trivy Comprehensive Security Scanner',
+    description: 'Trivy is a comprehensive and versatile security scanner that targets vulnerabilities in container images, file systems, and Git repositories, as well as configuration issues. It detects OS packages and language-specific dependencies with CVEs, IaC files and Kubernetes with misconfigurations, and secrets.',
+    category: 'security-scanning',
+    icon: '🔍',
+    href: '/services/trivy',
+    industry: 'Technology & SaaS',
     stage: 'published',
-    popular: false,
-    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    popular: true,
+    pricing: { basic: 'Free (OSS)', pro: 'Free tier (unlimited scans)', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
     features: [
-      'Statistical fidelity engine — synthetic data preserves distributions, correlations, and rare edge cases from source data',
-      'Privacy guarantee with differential privacy metrics and formal re-identification risk scoring',
-      'Support for tabular, time-series, relational, and text data with referential integrity across tables',
-      'Conditional generation — create synthetic datasets with specific characteristics for targeted testing scenarios',
-      'Data augmentation mode — expand small datasets 10-100x while maintaining statistical properties',
-      'Quality assessment dashboard with similarity scores, privacy metrics, and downstream ML model performance comparison',
-      'One-click export to CSV, Parquet, databases, or direct integration with ML training pipelines'
+      'Detects vulnerabilities in OS packages (Alpine, RHEL, CentOS, etc.) and language-specific bundles (Bundler, Composer, npm, yarn)',
+      'Identifies IaC issues in Terraform, CloudFormation, Kubernetes, and Dockerfiles',
+      'Scans for sensitive data exposure: API keys, tokens, passwords, and private keys in repositories',
+      'Detects container image vulnerabilities and misconfigurations in one unified scanner',
+      'Generates reports in multiple formats: JSON, YAML, SARIF, CycloneDX, and plain text',
+      'Easy to install and use: single binary with no dependencies, works in CI/CD pipelines'
     ],
     benefits: [
-      'Eliminate privacy risk in development and testing — synthetic data contains zero real personal information',
-      'Accelerate ML model development by generating unlimited training data without manual labeling',
-      'Enable safe data sharing with partners, vendors, and offshore teams without legal or compliance risk',
-      'Reduce data-related development bottlenecks by 70% — teams get production-like data on demand'
+      'Replaces multiple specialized scanners with one unified tool for images, files, repos, and IaC',
+      'Fast scanning: typically completes in seconds to minutes depending on target size',
+      'Zero false positives in vulnerability detection for supported package managers',
+      'Integrates seamlessly with GitHub Actions, GitLab CI, Jenkins, and other CI systems',
+      'Used by Red Hat, Google, Microsoft, and thousands of organizations for DevSecOps'
     ]
   }
 ];
 
-export const wave211MLOpsRegistryServices: Service[] = [
+export const wave211BackupRecoveryServices: Service[] = [
   {
-    id: 'mlops-model-registry-platform',
-    title: 'MLOps Model Registry & Experiment Tracking',
-    description: 'Enterprise MLOps platform that provides centralized model registry, experiment tracking, automated model validation, and one-click deployment across cloud and on-premise infrastructure. In 2026, the average enterprise has 50-200 ML models in production, yet 60% lack proper versioning, reproducibility, or deployment governance (Gartner). This platform brings software engineering best practices — version control, CI/CD, testing, and rollback — to the ML lifecycle, enabling teams to move from notebook experiments to production-grade ML systems.',
-    category: 'devtools',
-    icon: '⚙️',
-    href: '/services/mlops-model-registry-platform',
+    id: 'velero',
+    title: 'Velero Kubernetes Backup and Disaster Recovery',
+    description: 'Velero is an open source tool to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes. It provides a simple, configurable and operationally robust way to back up your application state and associated data.',
+    category: 'backup-recovery',
+    icon: '💾',
+    href: '/services/velero',
     industry: 'Technology & SaaS',
     stage: 'published',
     popular: false,
-    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    pricing: { basic: 'Free (OSS, Apache 2.0)', pro: 'Free tier (community support)', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
     features: [
-      'Centralized model registry with full lineage tracking — from training data and hyperparameters to deployment artifacts',
-      'Experiment tracking with automatic logging of metrics, parameters, artifacts, and environment configurations',
-      'Automated model validation gates — accuracy thresholds, bias checks, latency requirements, and regression tests',
-      'One-click deployment to AWS SageMaker, Google Vertex AI, Azure ML, Kubernetes, and on-premise servers',
-      'A/B testing and canary deployment with automatic rollback on performance degradation',
-      'Model versioning with semantic versioning, tags, and approval workflows for production promotion',
-      'Integration with MLflow, Kubeflow, Weights & Biases, DVC, and any Python-based ML framework'
+      'Backs up Kubernetes objects and persistent volumes to arbitrary cloud storage',
+      'Supports snapshot-based volume backups for AWS EBS, GCE PD, Azure Disk, and more',
+      'Enables cluster migration and resource movement between different Kubernetes clusters',
+      'Provides built-in integration with AWS, Azure, and GCP for cloud-native volume snapshots',
+      'Includes built-in helpers for commonly used cloud providers and CSI drivers',
+      'Supports backup encryption, compression, and selective resource inclusion/exclusion'
     ],
     benefits: [
-      'Reduce model deployment time from weeks to hours with automated validation and one-click deployment',
-      'Ensure full reproducibility — every model can be retrained from exact data, code, and configuration',
-      'Prevent production incidents with automated quality gates that catch regressions before deployment',
-      'Scale ML operations from 5 to 200+ models without proportional increase in MLOps headcount'
+      'Eliminates complex custom backup scripts with standardized, reliable backup/restore',
+      'Enables migration between Kubernetes clusters, clouds, and on-premise environments',
+      'Provides point-in-time recovery for accidental deletions or cluster corruption',
+      'Integrates with CSI drivers for application-consistent snapshots of stateful workloads',
+      'Used by Red Hat, VMware, Microsoft Azure AKS, and thousands of Kubernetes clusters'
+    ]
+  }
+];
+
+export const wave211IdentityManagementServices: Service[] = [
+  {
+    id: 'keycloak',
+    title: 'Keycloak Identity and Access Management',
+    description: 'Keycloak is an open source identity and access management solution for modern applications and services. It adds authentication to applications and secures them with minimum effort, so you dont have to deal with storing users, authenticating users, or managing users.',
+    category: 'identity-management',
+    icon: '🔑',
+    href: '/services/keycloak',
+    industry: 'Technology & SaaS',
+    stage: 'published',
+    popular: true,
+    pricing: { basic: 'Free (OSS, Apache 2.0)', pro: 'Free tier (community support)', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Single Sign-On (SSO) for web applications and RESTful APIs with support for OpenID Connect, OAuth 2.0, and SAML 2.0',
+      'User Federation: pluggable user storage via LDAP and Active Directory, or custom providers',
+      'Identity Brokering: authenticate with external Identity Providers like Facebook, Google, or GitHub',
+      'Social Login: enable login with Google, GitHub, Facebook, Twitter, and other social networks',
+      'Admin Console: manage realms, roles, users, clients, and configure the server',
+      'Account Management: allow users to manage their own account via a user-facing interface'
+    ],
+    benefits: [
+      'Eliminates need to build and maintain custom authentication and authorization systems',
+      'Provides enterprise-grade security standards: OpenID Connect, OAuth 2.0, SAML 2.0',
+      'Scales to handle millions of users with clustered and distributed deployment options',
+      'Integrates with existing LDAP/AD infrastructure for seamless user federation',
+      'Used by Red Hat, IBM, Thomson Reuters, and thousands of organizations worldwide'
     ]
   }
 ];

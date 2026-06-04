@@ -39,8 +39,25 @@ import { wave208AiMlOpsServices, wave208DevSecOpsServices, wave208FinTechService
 import { wave208AiServices, wave208DataServices, wave208CloudServices, wave208SecurityServices, wave208AutomationServices, wave208ItServices, wave208MicroSaasServices, wave208HealthcareItServices } from './wave208';
 import { wave209DataStreamingServices, wave209SearchServices, wave209DevOpsServices, wave209TestingServices, wave209ApiServices } from './wave209';
 import { wave210DatabaseServices, wave210CollaborationServices, wave210MediaStreamingServices, wave210InfrastructureAsCodeServices, wave210LowCodeServices } from './wave210';
-import { wave211AiAgentOrchestrationServices, wave211DataProductMarketplaceServices, wave211ZeroTrustNetworkServices, wave211SyntheticDataServices, wave211MLOpsRegistryServices } from './wave211';
-import { wave212AiObservabilityServices, wave212DataPrivacyServices, wave212CloudFinOpsServices, wave212SecurityThreatIntelServices, wave212AiTransparencyServices } from './wave212';
+import {
+  wave211MonitoringServices,
+  wave211LoggingServices,
+  wave211SecurityScanningServices,
+  wave211BackupRecoveryServices,
+  wave211IdentityManagementServices,
+  wave211AiAgentOrchestrationServices,
+  wave211DataProductMarketplaceServices,
+  wave211ZeroTrustNetworkServices,
+  wave211SyntheticDataServices,
+  wave211MLOpsRegistryServices
+} from './wave211';
+import {
+  wave212AiObservabilityServices,
+  wave212DataPrivacyServices,
+  wave212CloudFinOpsServices,
+  wave212SecurityThreatIntelServices,
+  wave212AiTransparencyServices
+} from './wave212';
 
 export const aiServices: Service[] = [
   {
@@ -1435,12 +1452,12 @@ export const allServices: Service[] = [
   ...wave210CollaborationServices,
   ...wave210MediaStreamingServices,
   ...wave210InfrastructureAsCodeServices,
+...wave211MonitoringServices,
+  ...wave211LoggingServices,
+  ...wave211SecurityScanningServices,
+  ...wave211BackupRecoveryServices,
+  ...wave211IdentityManagementServices,
   ...wave210LowCodeServices,
-  ...wave211AiAgentOrchestrationServices,
-  ...wave211DataProductMarketplaceServices,
-  ...wave211ZeroTrustNetworkServices,
-  ...wave211SyntheticDataServices,
-  ...wave211MLOpsRegistryServices,
   ...wave212AiObservabilityServices,
   ...wave212DataPrivacyServices,
   ...wave212CloudFinOpsServices,
