@@ -121,6 +121,7 @@ const WAVE_STATUS: WaveEntry[] = [
   { wave: '207', services: '15', status: 'ok', integrator: '@Kilo + @tablet' },
   { wave: '208', services: '14', status: 'ok', integrator: '@Kilo + @Carol' },
   { wave: '209', services: '5', status: 'ok', integrator: '@tablet + @OWL' },
+  { wave: '210', services: '5', status: 'ok', integrator: '@tablet + @OWL' },
 ];
 
 const ALL_TASKS: TaskEntry[] = [

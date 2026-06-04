@@ -55,6 +55,11 @@ const CATEGORIES = [
   { key: 'blockchain',label: 'Blockchain and Web3',     emoji: '⛓️', color: 'from-yellow-500 to-amber-600' },
   { key: 'iot',       label: 'IoT and Edge',            emoji: '📡', color: 'from-teal-500 to-green-500' },
   { key: 'email-intelligence', label: 'Email Intelligence', emoji: '📧', color: 'from-violet-500 to-purple-600' },
+  { key: 'database',  label: 'Database Solutions',       emoji: '🐘', color: 'from-blue-600 to-indigo-600' },
+  { key: 'collaboration', label: 'Collaboration Platforms', emoji: '📂', color: 'from-sky-500 to-cyan-600' },
+  { key: 'media-streaming', label: 'Media Streaming',     emoji: '🎬', color: 'from-rose-500 to-pink-600' },
+  { key: 'infrastructure-as-code', label: 'Infrastructure as Code', emoji: '🏗️', color: 'from-amber-600 to-orange-600' },
+  { key: 'low-code',  label: 'Low-Code Platforms',       emoji: '⚡', color: 'from-emerald-500 to-teal-600' },
 ];
 
 // Per-industry service-category mapping (derived from service catalog)
