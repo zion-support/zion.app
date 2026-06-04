@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://ziontechgroup.com
+
+# Sitemaps
 Sitemap: https://ziontechgroup.com/sitemap.xml
-Disallow: /api/
-Crawl-delay: 1

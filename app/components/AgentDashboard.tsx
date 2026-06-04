@@ -142,8 +142,8 @@ const CRON_JOBS: CronEntry[] = [
 
 const SYSTEM_METRICS: SystemMetric[] = [
   { label: 'Site Uptime', value: '100%', trend: 'stable', color: 'emerald' },
-  { label: 'Pages OK', value: '15/15', trend: 'stable', color: 'emerald' },
-  { label: 'Links OK', value: '87/87', trend: 'stable', color: 'emerald' },
+  { label: 'Core Pages', value: '14/14', trend: 'stable', color: 'emerald' },
+  { label: 'Links OK', value: '30/30', trend: 'stable', color: 'emerald' },
   { label: 'Services', value: '795', trend: 'up', color: 'purple' },
   { label: 'Fleet Health', value: '6/6', trend: 'stable', color: 'emerald' },
   { label: 'Waves Done', value: '37', trend: 'up', color: 'purple' },
