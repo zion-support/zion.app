@@ -1,4 +1,4 @@
-// app/dashboard/page.tsx — Agent Monitoring Dashboard
+// app/dashboard/page.tsx — Agent Operations Dashboard (Ops View)
 import { Metadata } from 'next';
 import AgentDashboard from '@/components/AgentDashboard';
 
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function DashboardPage() {
-  return <AgentDashboard />;
+  return <AgentDashboard defaultView="operations" defaultTab="fleet" />;
 }

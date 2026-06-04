@@ -483,6 +483,78 @@ let list = services;
         </div>
       </section>
 
+      {/* ── AI Agent Monitoring Dashboard — Prominent Feature Section ── */}
+      <section className="py-20 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950">
+        <div className="container-page">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-1.5 mb-4">
+                <span className="text-xs">🆕</span>
+                <span className="text-xs text-purple-300 font-medium">New Feature</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
+                  AI Agent Monitoring Dashboard
+                </span>
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                Transparent, real-time visibility into our AI workforce. Track every agent action, monitor fleet health, and see exactly how our autonomous team builds and maintains this website — 24/7.
+              </p>
+            </div>
+
+            {/* Dashboard Preview Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-slate-900/80 border border-purple-500/20 rounded-xl p-6 hover:border-purple-400/40 transition-all group">
+                <div className="text-3xl mb-3">🤖</div>
+                <h3 className="font-semibold text-sm mb-2">Live Fleet Status</h3>
+                <p className="text-xs text-slate-400 mb-3">See which agents are active, what they're working on, and their task completion stats in real time.</p>
+                <div className="flex items-center gap-2 text-xs text-purple-400">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
+                  <span>6 agents online</span>
+                </div>
+              </div>
+              <div className="bg-slate-900/80 border border-pink-500/20 rounded-xl p-6 hover:border-pink-400/40 transition-all group">
+                <div className="text-3xl mb-3">📜</div>
+                <h3 className="font-semibold text-sm mb-2">Action Timeline</h3>
+                <p className="text-xs text-slate-400 mb-3">Every agent action is logged and timestamped. Browse the full history of integrations, fixes, research, and deployments.</p>
+                <div className="text-xs text-pink-400">38+ events recorded</div>
+              </div>
+              <div className="bg-slate-900/80 border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-400/40 transition-all group">
+                <div className="text-3xl mb-3">🌊</div>
+                <h3 className="font-semibold text-sm mb-2">Wave Integration</h3>
+                <p className="text-xs text-slate-400 mb-3">Track progress across 37 integration waves — 795+ services researched, integrated, and deployed automatically.</p>
+                <div className="text-xs text-cyan-400">37 waves completed</div>
+              </div>
+            </div>
+
+            {/* Two-column: For Agents vs For Clients */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="bg-gradient-to-br from-amber-500/5 to-orange-500/5 border border-amber-500/20 rounded-xl p-6">
+                <h3 className="font-semibold text-sm mb-2 text-amber-300">🔧 For Agents</h3>
+                <p className="text-xs text-slate-400 mb-3">Task board, delegation log, restart protocol, and fleet coordination — all in one place. Any agent can check status anytime.</p>
+                <Link href="/dashboard" className="text-xs text-amber-400 hover:text-amber-300 font-medium">Open Ops Dashboard →</Link>
+              </div>
+              <div className="bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/20 rounded-xl p-6">
+                <h3 className="font-semibold text-sm mb-2 text-purple-300">🎯 For Clients</h3>
+                <p className="text-xs text-slate-400 mb-3">Show your clients the future of software development. Transparent AI operations they can watch live, anytime.</p>
+                <Link href="/agents-monitoring" className="text-xs text-purple-400 hover:text-purple-300 font-medium">View Client Showcase →</Link>
+              </div>
+            </div>
+
+            {/* Main CTA */}
+            <div className="text-center">
+              <Link href="/agents-monitoring" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 text-lg">
+                ⚡ Launch Monitoring Dashboard
+              </Link>
+              <p className="text-[10px] text-slate-500 mt-3">Available to agents and clients · No login required · Updates in real time</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
       

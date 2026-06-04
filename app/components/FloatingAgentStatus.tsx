@@ -73,11 +73,11 @@ export default function FloatingAgentStatus() {
             </div>
 
             <div className="flex gap-2">
-              <Link href="/dashboard" className="flex-1 text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs py-2 rounded-lg font-medium hover:from-purple-500 hover:to-pink-500 transition-all">
-                ⚡ Full Dashboard
+              <Link href="/agents-monitoring" className="flex-1 text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs py-2 rounded-lg font-medium hover:from-purple-500 hover:to-pink-500 transition-all">
+                ⚡ Live Monitor
               </Link>
-              <Link href="/agents-monitoring" className="flex-1 text-center bg-slate-800 border border-slate-700 text-slate-300 text-xs py-2 rounded-lg font-medium hover:bg-slate-700 transition-all">
-                📊 Monitor
+              <Link href="/dashboard" className="flex-1 text-center bg-slate-800 border border-slate-700 text-slate-300 text-xs py-2 rounded-lg font-medium hover:bg-slate-700 transition-all">
+                🖥️ Ops
               </Link>
             </div>
 

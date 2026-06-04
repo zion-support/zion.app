@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function AgentsMonitoringPage() {
-  return <AgentDashboard defaultView="client" />;
+  return <AgentDashboard defaultView="client" defaultTab="showcase" />;
 }

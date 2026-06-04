@@ -5,12 +5,21 @@ import { useState } from 'react';
 
 const DOCK_ITEMS = [
   {
-    id: 'agent-dashboard',
-    href: '/dashboard',
+    id: 'agent-monitoring',
+    href: '/agents-monitoring',
     emoji: '⚡',
     label: 'AI Agents Live',
     action: 'nav',
     color: 'from-purple-500 to-pink-500',
+    priority: true,
+  },
+  {
+    id: 'agent-dashboard',
+    href: '/dashboard',
+    emoji: '🖥️',
+    label: 'Ops Dashboard',
+    action: 'nav',
+    color: 'from-violet-500 to-purple-500',
     priority: true,
   },
   {
@@ -52,15 +61,6 @@ const DOCK_ITEMS = [
     label: 'Service Statistics',
     action: 'nav',
     color: 'from-emerald-500 to-green-500',
-  },
-  {
-    id: 'agent-monitoring',
-    href: '/agents-monitoring/',
-    emoji: '🤖',
-    label: 'Agent Operations',
-    action: 'nav',
-    color: 'from-violet-500 to-purple-500',
-    priority: true,
   },
   {
     id: 'contact',
