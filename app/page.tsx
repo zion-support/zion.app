@@ -439,7 +439,8 @@ let list = services;
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
-
+      <AgentsMonitoring />
+      
       {/* ── How It Works ── */}
       <section className="py-20">
         <div className="container-page">
