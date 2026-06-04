@@ -1,13 +1,7 @@
 // Wave 174 — 70 new innovative services (AI, Micro-SaaS, IT, Security, Cloud, Data, Automation)
 // Generated 2026-06-03
 
-interface Service {
-  id: string; title: string; description: string; features: string[]; benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string; href: string; popular?: boolean; category: string; industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
 
 export const wave174AiServices: Service[] = [
   {

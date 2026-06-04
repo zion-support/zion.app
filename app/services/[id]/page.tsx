@@ -19,6 +19,11 @@ const CAT_LABELS: Record<string,string> = {
   agritech: 'AgriTech',
   'ai-ml-ops': 'AI/ML Ops',
   devsecops: 'DevSecOps',
+  observability: 'Observability', identity: 'Identity & Access',
+  cms: 'CMS & Content', ecommerce: 'E-Commerce',
+  documentation: 'Documentation', 'data-streaming': 'Data Streaming',
+  search: 'Search', api: 'API Management',
+  'email-intelligence': 'Email Intelligence',
 };
 
 interface PageProps { params: Promise<{ id: string }>; }

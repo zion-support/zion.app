@@ -64,7 +64,7 @@ export const wave188MicroSaasServices: Service[] = [
     benefits: ['Predict churn 90% accuracy', 'Save at-risk accounts'],
     pricing: { basic: '$99/mo', pro: '$299/mo', enterprise: '$799/mo' },
     contactInfo: { website: '/services/microsaas-churn-prediction', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '📊', href: '/services/microsaas-churn-prediction', popular: false, category: 'Micro-SaaS', industry: 'SaaS',
+    icon: '📊', href: '/services/microsaas-churn-prediction', popular: false, category: 'micro-saas', industry: 'SaaS',
   },
 ];
 

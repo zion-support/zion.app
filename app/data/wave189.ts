@@ -100,6 +100,6 @@ export const wave189MicroSaasServices: Service[] = [
     benefits: ['Draft 10x faster', 'Reduce review time 70%'],
     pricing: { basic: '$79/mo', pro: '$199/mo', enterprise: '$599/mo' },
     contactInfo: { website: '/services/microsaas-legal-document', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '⚖️', href: '/services/microsaas-legal-document', popular: false, category: 'Micro-SaaS', industry: 'Legal',
+    icon: '⚖️', href: '/services/microsaas-legal-document', popular: false, category: 'micro-saas', industry: 'Legal',
   },
 ];

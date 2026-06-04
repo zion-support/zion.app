@@ -1,13 +1,7 @@
 // Wave 184 services - OWL
 // 5 new services across 5 categories
 
-interface Service {
-  id: string; title: string; description: string; features: string[]; benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string; href: string; popular?: boolean; category: string; industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
 
 export const wave184MicroSaasServices: Service[] = [
   {

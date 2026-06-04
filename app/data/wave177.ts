@@ -1,13 +1,7 @@
 // Wave 177 — 70 new innovative services (AI, Micro-SaaS, IT, Security, Cloud, Data, Automation)
 // Generated 2026-06-03
 
-interface Service {
-  id: string; title: string; description: string; features: string[]; benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string; href: string; popular?: boolean; category: string; industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
 
 export const wave177AiServices: Service[] = [
   {id:'w177-ai-legal-brief',title:'AI Legal Brief Analyzer',description:'Analyze legal briefs: argument extraction, precedent matching, strength scoring, counter-argument suggestions.',features:['Argument and claim extraction','Precedent matching and citation analysis','Argument strength scoring','Counter-argument suggestions','Brief comparison between cases','Timeline and fact extraction','Integration with Clio, Westlaw, LexisNexis'],benefits:['Analyze briefs 10x faster','Precedent matching finds relevant cases','Strength scoring prioritizes arguments','Counter-argument prep strengthens cases'],pricing:{basic:'$299/mo',pro:'$899/mo',enterprise:'$2,999/mo'},contactInfo:{website:'/services/w177-ai-legal-brief',email:'kleber@ziontechgroup.com',phone:'+1 302 464 0950'},icon:'⚖️',href:'/services/w177-ai-legal-brief',popular:true,category:'ai',industry:'Legal'},

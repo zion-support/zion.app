@@ -1,13 +1,7 @@
 // Wave 179 - 70 new innovative services (AI, Micro-SaaS, IT, Security, Cloud, Data, Automation)
 // Generated 2026-06-03
 
-interface Service {
-  id: string; title: string; description: string; features: string[]; benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string; href: string; popular?: boolean; category: string; industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
 
 export const wave179AiServices: Service[] = [
   {id:'w179-ai-supply-risk',title:'AI Supply Chain Risk Monitor',description:'Monitor supply chain risks: supplier financial health, geopolitical events, weather disruptions.',features:['Supplier financial health monitoring','Geopolitical risk scoring','Weather and natural disaster alerts','Alternative supplier recommendations','Single-source risk identification','Integration with SAP Ariba, Resilinc, Everstream'],benefits:['Detect supply risks before disruption','Proactive alternative sourcing','Single-source dependency visibility','Automated risk scoring'],pricing:{basic:'$999/mo',pro:'$2,999/mo',enterprise:'Custom'},contactInfo:{website:'/services/w179-ai-supply-risk',email:'kleber@ziontechgroup.com',phone:'+1 302 464 0950'},icon:'📦',href:'/services/w179-ai-supply-risk',popular:true,category:'ai',industry:'Supply Chain'},

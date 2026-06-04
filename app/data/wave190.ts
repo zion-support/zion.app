@@ -100,7 +100,7 @@ export const wave190MicroSaasServices: Service[] = [
     benefits: ['Improve NPS 30%', 'Close feedback loop'],
     pricing: { basic: '$49/mo', pro: '$149/mo', enterprise: '$499/mo' },
     contactInfo: { website: '/services/microsaas-customer-feedback', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '💬', href: '/services/microsaas-customer-feedback', popular: false, category: 'Micro-SaaS', industry: 'SaaS',
+    icon: '💬', href: '/services/microsaas-customer-feedback', popular: false, category: 'micro-saas', industry: 'SaaS',
   },
   {
     id: 'microsaas-invoice-builder',
@@ -110,6 +110,6 @@ export const wave190MicroSaasServices: Service[] = [
     benefits: ['Get paid 2x faster', 'Automate billing'],
     pricing: { basic: '$29/mo', pro: '$79/mo', enterprise: '$199/mo' },
     contactInfo: { website: '/services/microsaas-invoice-builder', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '🧾', href: '/services/microsaas-invoice-builder', popular: false, category: 'Micro-SaaS', industry: 'Finance',
+    icon: '🧾', href: '/services/microsaas-invoice-builder', popular: false, category: 'micro-saas', industry: 'Finance',
   },
 ];

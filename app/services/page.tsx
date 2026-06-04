@@ -12,7 +12,7 @@ import type { Service } from '../data/servicesData';
 
 
 
-const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence' };
+const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence', observability: 'Observability', identity: 'Identity & Access', cms: 'CMS & Content', ecommerce: 'E-Commerce', documentation: 'Documentation', 'ai-ml-ops': 'AI/ML Ops', devsecops: 'DevSecOps', fintech: 'FinTech', edtech: 'EdTech', 'healthcare-it': 'Healthcare IT', 'data-streaming': 'Data Streaming', search: 'Search', api: 'API Management' };
 const CATEGORIES = [
   { key: 'all' as const, label: 'All' },
   { key: 'ai' as const, label: 'AI' },
@@ -26,6 +26,19 @@ const CATEGORIES = [
   { key: 'blockchain' as const, label: 'Blockchain' },
   { key: 'iot' as const, label: 'IoT' },
   { key: 'email-intelligence' as const, label: 'Email Intel' },
+  { key: 'observability' as const, label: 'Observability' },
+  { key: 'identity' as const, label: 'Identity' },
+  { key: 'cms' as const, label: 'CMS' },
+  { key: 'ecommerce' as const, label: 'E-Commerce' },
+  { key: 'documentation' as const, label: 'Docs' },
+  { key: 'ai-ml-ops' as const, label: 'AI/ML Ops' },
+  { key: 'devsecops' as const, label: 'DevSecOps' },
+  { key: 'fintech' as const, label: 'FinTech' },
+  { key: 'edtech' as const, label: 'EdTech' },
+  { key: 'healthcare-it' as const, label: 'Healthcare' },
+  { key: 'data-streaming' as const, label: 'Streaming' },
+  { key: 'search' as const, label: 'Search' },
+  { key: 'api' as const, label: 'API' },
 ];
 
 function ServicesContent() {

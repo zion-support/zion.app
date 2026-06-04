@@ -100,7 +100,7 @@ export const wave191MicroSaasServices: Service[] = [
     benefits: ['10x faster scheduling', 'Grow engagement 3x'],
     pricing: { basic: '$19/mo', pro: '$49/mo', enterprise: '$149/mo' },
     contactInfo: { website: '/services/microsaas-social-media-scheduler', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '📱', href: '/services/microsaas-social-media-scheduler', popular: false, category: 'Micro-SaaS', industry: 'Marketing',
+    icon: '📱', href: '/services/microsaas-social-media-scheduler', popular: false, category: 'micro-saas', industry: 'Marketing',
   },
   {
     id: 'microsaas-employee-onboarding',
@@ -110,6 +110,6 @@ export const wave191MicroSaasServices: Service[] = [
     benefits: ['Onboard 2x faster', '98% completion rate'],
     pricing: { basic: '$49/mo', pro: '$149/mo', enterprise: '$499/mo' },
     contactInfo: { website: '/services/microsaas-employee-onboarding', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '👋', href: '/services/microsaas-employee-onboarding', popular: false, category: 'Micro-SaaS', industry: 'HR',
+    icon: '👋', href: '/services/microsaas-employee-onboarding', popular: false, category: 'micro-saas', industry: 'HR',
   },
 ];

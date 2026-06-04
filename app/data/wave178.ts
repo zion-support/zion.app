@@ -1,13 +1,7 @@
 // Wave 178 — 70 new innovative services (AI, Micro-SaaS, IT, Security, Cloud, Data, Automation)
 // Generated 2026-06-03
 
-interface Service {
-  id: string; title: string; description: string; features: string[]; benefits: string[];
-  pricing: { basic: string; pro: string; enterprise: string };
-  contactInfo: { website: string; email: string; phone: string };
-  icon: string; href: string; popular?: boolean; category: string; industry: string;
-  stage?: 'published' | 'beta' | 'planned';
-}
+import { Service } from './serviceTypes';
 
 export const wave178AiServices: Service[] = [
   {id:'w178-ai-resume-screen',title:'AI Resume Screener',description:'AI resume screening: parse, rank, shortlist candidates. Bias detection, skills matching, ATS integration.',features:['Resume parsing and data extraction','Skills-to-job matching','Bias detection and mitigation','Ranking and shortlist generation','Diversity analytics dashboard','Integration with Greenhouse, Lever, Workday'],benefits:['Reduce screening time 80%','Bias detection ensures fair hiring','Skills matching improves quality','Diversity analytics for reporting'],pricing:{basic:'$199/mo',pro:'$599/mo',enterprise:'$1,999/mo'},contactInfo:{website:'/services/w178-ai-resume-screen',email:'kleber@ziontechgroup.com',phone:'+1 302 464 0950'},icon:'📄',href:'/services/w178-ai-resume-screen',popular:true,category:'ai',industry:'Human Resources'},

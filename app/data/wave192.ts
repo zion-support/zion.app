@@ -100,7 +100,7 @@ export const wave192MicroSaasServices: Service[] = [
     benefits: ['Fill schedule automatically', 'Reduce no-shows 80%'],
     pricing: { basic: '$29/mo', pro: '$79/mo', enterprise: '$199/mo' },
     contactInfo: { website: '/services/microsaas-booking-scheduler', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '📅', href: '/services/microsaas-booking-scheduler', popular: true, category: 'Micro-SaaS', industry: 'Services',
+    icon: '📅', href: '/services/microsaas-booking-scheduler', popular: true, category: 'micro-saas', industry: 'Services',
   },
   {
     id: 'microsaas-reputation-manager',
@@ -110,6 +110,6 @@ export const wave192MicroSaasServices: Service[] = [
     benefits: ['4.5+ stars everywhere', 'Respond 10x faster'],
     pricing: { basic: '$39/mo', pro: '$99/mo', enterprise: '$299/mo' },
     contactInfo: { website: '/services/microsaas-reputation-manager', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '⭐', href: '/services/microsaas-reputation-manager', popular: false, category: 'Micro-SaaS', industry: 'Marketing',
+    icon: '⭐', href: '/services/microsaas-reputation-manager', popular: false, category: 'micro-saas', industry: 'Marketing',
   },
 ];

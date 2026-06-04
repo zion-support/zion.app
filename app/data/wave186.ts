@@ -77,7 +77,7 @@ export const wave186MicroSaasServices: Service[] = [
     benefits: ['Build what users want', 'Reduce churn 20%'],
     pricing: { basic: '$29/mo', pro: '$79/mo', enterprise: '$199/mo' },
     contactInfo: { website: '/services/microsaas-feature-voting', email: 'commercial@ziontechgroup.com', phone: '+1 302 464 0950' },
-    icon: '🗳️', href: '/services/microsaas-feature-voting', popular: false, category: 'Micro-SaaS', industry: 'SaaS',
+    icon: '🗳️', href: '/services/microsaas-feature-voting', popular: false, category: 'micro-saas', industry: 'SaaS',
   },
 ];
 
