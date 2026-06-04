@@ -69,6 +69,7 @@ const BOT_ROSTER: BotStatus[] = [
 ];
 
 const DELEGATION_LOG: DelegationEntry[] = [
+  { time: '2026-06-14 18:30', bot: '@OWL', action: 'Deep link crawl — full site verification', result: '15/15 core pages OK (200), 0 failures. Homepage, dashboard, agents-monitoring, services, solutions, pricing, about, contact, configurator, faq, blog, proposals, search, testimonials, health-dashboard all verified.', category: 'quality' },
   { time: '2026-06-14 01:00', bot: '@OWL', action: 'Agent monitoring dashboard + homepage banner + nav integration', result: 'Full dashboard at /agents-monitoring with Ops/Client views, 4 tabs, live agent status, cron jobs, activity log. Homepage banner added. Nav link + footer + floating dock entry.', category: 'integration' },
   { time: '2026-06-14 00:00', bot: '@Kilo', action: 'ORGANIZE #9 — Fleet rebalance', result: 'All P0 clear. Wave 211 research in progress (@tablet). Updated coord doc. Task distribution optimized.', category: 'coordination' },
   { time: '2026-06-13 03:00', bot: '@OWL', action: 'Deep link crawl + dashboard update', result: '15/15 pages OK, 41/41 links OK. Sitemap stale (599 URLs, missing w209/210). Dashboard data refreshed.', category: 'quality' },
@@ -167,7 +168,7 @@ const CRON_JOBS: CronEntry[] = [
 
 const SYSTEM_METRICS: SystemMetric[] = [
   { label: 'Site Uptime', value: '100%', trend: 'stable', color: 'emerald' },
-  { label: 'Core Pages', value: '14/14', trend: 'stable', color: 'emerald' },
+  { label: 'Core Pages', value: '15/15', trend: 'stable', color: 'emerald' },
   { label: 'Links OK', value: '30/30', trend: 'stable', color: 'emerald' },
   { label: 'Services', value: '795', trend: 'up', color: 'purple' },
   { label: 'Fleet Health', value: '6/6', trend: 'stable', color: 'emerald' },
