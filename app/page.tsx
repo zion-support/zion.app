@@ -14,7 +14,7 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
-import AgentsMonitoring from '@/components/AgentsMonitoring';
+import AgentsMonitoring from '../components/AgentsMonitoring';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
