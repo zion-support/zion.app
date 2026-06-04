@@ -8,8 +8,8 @@ export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Services', href: '/services' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Pricing', href: '/pricing' },
+  { name: '⚡ AI Agents', href: '/dashboard' },
   { name: 'Contact', href: '/contact' },
-  { name: 'AI Agents', href: '/dashboard' },
 ];
 
 export const SOLUTION_LINKS: NavigationLink[] = [

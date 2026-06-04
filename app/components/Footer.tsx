@@ -38,16 +38,16 @@ const Footer: React.FC = () => {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {[
-                { name: 'AI Services', href: '/ai-services/' },
-                { name: 'All Services', href: '/services/' },
-                { name: 'Micro-SaaS', href: '/services/?category=micro-saas' },
-                { name: 'Cloud & DevOps', href: '/services/?category=cloud' },
-                { name: 'Security', href: '/services/?category=security' },
-                { name: 'Data & Analytics', href: '/services/?category=data' },
-                { name: 'Blockchain & Web3', href: '/services/?category=blockchain' },
-                { name: 'IoT & Edge', href: '/services/?category=iot' },
-                { name: 'Pricing', href: '/pricing/' },
-                { name: '⚡ AI Agent Dashboard', href: '/dashboard/' },
+                { name: 'AI Services', href: '/ai-services' },
+                { name: 'All Services', href: '/services' },
+                { name: 'Micro-SaaS', href: '/services?category=micro-saas' },
+                { name: 'Cloud & DevOps', href: '/services?category=cloud' },
+                { name: 'Security', href: '/services?category=security' },
+                { name: 'Data & Analytics', href: '/services?category=data' },
+                { name: 'Blockchain & Web3', href: '/services?category=blockchain' },
+                { name: 'IoT & Edge', href: '/services?category=iot' },
+                { name: 'Pricing', href: '/pricing' },
+                { name: '⚡ AI Agent Dashboard', href: '/dashboard' },
               ].map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">{l.name}</Link>
@@ -61,13 +61,13 @@ const Footer: React.FC = () => {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
               {[
-                { name: 'About Us', href: '/about/' },
-                { name: 'Blog', href: '/blog/' },
-                { name: 'Careers', href: '/careers/' },
-                { name: 'Partners', href: '/partners/' },
-                { name: 'Client Portal', href: '/portal/' },
-                { name: 'Press', href: '/press/' },
-                { name: '⚡ AI Agent Dashboard', href: '/dashboard/' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Blog', href: '/blog' },
+                { name: 'Careers', href: '/careers' },
+                { name: 'Partners', href: '/partners' },
+                { name: 'Client Portal', href: '/portal' },
+                { name: 'Press', href: '/press' },
+                { name: '⚡ AI Agent Dashboard', href: '/dashboard' },
               ].map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">{l.name}</Link>
@@ -115,10 +115,10 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex gap-6">
             {[
-              { name: 'Privacy Policy', href: '/privacy/' },
-              { name: 'Terms of Service', href: '/terms/' },
-              { name: 'Cookie Policy', href: '/cookies/' },
-              { name: 'FAQ', href: '/faq/' },
+              { name: 'Privacy Policy', href: '/privacy' },
+              { name: 'Terms of Service', href: '/terms' },
+              { name: 'Cookie Policy', href: '/cookies' },
+              { name: 'FAQ', href: '/faq' },
             ].map(l => (
               <Link key={l.href} href={l.href} className="text-slate-500 hover:text-purple-400 text-sm transition-colors">{l.name}</Link>
             ))}

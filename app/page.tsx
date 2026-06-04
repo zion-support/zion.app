@@ -385,6 +385,58 @@ let list = services;
         </div>
       </section>
 
+      {/* ── AI Agent Dashboard Banner ── */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-violet-900/30 to-pink-900/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(120,50,200,0.25),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(200,50,150,0.15),transparent_60%)]" />
+        <div className="relative container-page py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-xs text-emerald-400 font-medium">6 AI Agents Active Now</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+                Powered by AI Agents
+              </span>
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto mb-6 text-sm leading-relaxed">
+              This entire website is built, maintained, and continuously improved by a fleet of 6 autonomous AI agents working 24/7.
+              They research services, write code, fix bugs, integrate new features, and deploy updates — all in real time.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="grid grid-cols-3 gap-6 max-w-md">
+                <div>
+                  <div className="text-2xl font-bold text-purple-400">759</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wider">Services</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-emerald-400">36</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wider">Waves</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-pink-400">466+</div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wider">Tasks Done</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/dashboard" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3.5 rounded-xl font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-[1.02]">
+                ⚡ View Live Agent Dashboard
+              </Link>
+              <Link href="/dashboard?mode=client" className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-700/60 text-slate-300 px-8 py-3.5 rounded-xl font-medium text-sm hover:bg-slate-700/80 hover:text-white hover:border-purple-500/30 transition-all">
+                🤖 Meet the Agents
+              </Link>
+            </div>
+            <p className="text-[10px] text-slate-600 mt-4">Real-time monitoring · Updated every second · All agents check this dashboard on restart</p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
 

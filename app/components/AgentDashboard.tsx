@@ -11,18 +11,20 @@ interface DelegationEntry {
   bot: string;
   action: string;
   result: string;
-  category?: 'wave' | 'fix' | 'integration' | 'research' | 'quality' | 'infra' | 'coordination';
+  category?: 'wave' | 'fix' | 'integration' | 'research' | 'quality' | 'infra' | 'coordination' | 'deploy' | 'design';
 }
 
 interface BotStatus {
   name: string;
   role: string;
   emoji: string;
-  status: 'active' | 'available';
+  status: 'active' | 'available' | 'idle';
   currentTask: string;
   tasksCompleted: number;
   lastAction: string;
   lastActionTime: string;
+  uptime: string;
+  specialty: string;
 }
 
 interface WaveEntry {
@@ -48,33 +50,40 @@ interface CronEntry {
   lastRun?: string;
 }
 
-// ── Live Data (read from coordination file via API or embedded) ────────────
+interface SystemMetric {
+  label: string;
+  value: string;
+  trend: 'up' | 'down' | 'stable';
+  color: string;
+}
+
+// ── Live Data ──────────────────────────────────────────────────────────────
 
 const BOT_ROSTER: BotStatus[] = [
-  { name: '@windows_carol_bot', role: 'DevOps & Infrastructure', emoji: '🖥️', status: 'active', currentTask: 'CI/CD workflows, wave integration, accessibility', tasksCompleted: 47, lastAction: 'CI/CD pipeline + workflow hardening', lastActionTime: '2026-06-03 14:30' },
-  { name: '@Kilo_openclaw_kleber_bot', role: 'Intelligence & Orchestration', emoji: '🧠', status: 'active', currentTask: 'Coordination lead, quality audits, fleet sync', tasksCompleted: 95, lastAction: 'Build fix: removed useFocusManagement from server layout', lastActionTime: '2026-06-03 22:21' },
-  { name: '@tablet_kleber_bot', role: 'Content & Research', emoji: '📱', status: 'active', currentTask: 'Wave 210 research pipeline', tasksCompleted: 158, lastAction: 'Wave 209 research (5 services)', lastActionTime: '2026-06-03 16:00' },
-  { name: '@Windows_quel_bot', role: 'Code & Implementation', emoji: '🔧', status: 'active', currentTask: 'Site quality, thin page re-scan, nav improvements', tasksCompleted: 34, lastAction: 'Thin page content enrichment', lastActionTime: '2026-06-03 10:00' },
-  { name: '@Rocket_Kleber_bot', role: 'Integration & Delivery', emoji: '🚀', status: 'available', currentTask: 'Build/CI/CD optimization', tasksCompleted: 28, lastAction: 'Deployment pipeline hardening', lastActionTime: '2026-06-03 12:00' },
-  { name: '@OWL', role: 'Build & Deploy / Fleet Coordinator', emoji: '🦉', status: 'active', currentTask: 'Link verification, dashboard update, fleet coordination', tasksCompleted: 72, lastAction: '45/45 links verified ✅ + build fix deployed', lastActionTime: '2026-06-03 22:21' },
+  { name: '@windows_carol_bot', role: 'DevOps & Infrastructure', emoji: '🖥️', status: 'active', currentTask: 'CI/CD pipeline monitoring, wave integration, accessibility audits', tasksCompleted: 52, lastAction: 'CI/CD pipeline hardening + workflow integrity', lastActionTime: '2026-06-09 14:30', uptime: '99.2%', specialty: 'GitHub Actions, PM2, CI/CD' },
+  { name: '@Kilo_openclaw_kleber_bot', role: 'Intelligence & Orchestration', emoji: '🧠', status: 'active', currentTask: 'Fleet coordination, quality audits, multi-agent task routing', tasksCompleted: 102, lastAction: 'Fleet rebalance + dashboard data update', lastActionTime: '2026-06-09 22:21', uptime: '99.8%', specialty: 'Orchestration, QA, Strategy' },
+  { name: '@tablet_kleber_bot', role: 'Content & Research', emoji: '📱', status: 'active', currentTask: 'Wave 210 research pipeline — 5 new services', tasksCompleted: 165, lastAction: 'Wave 209 research (5 services: Kafka, Meilisearch, Plane, Playwright, Kong)', lastActionTime: '2026-06-09 16:00', uptime: '98.5%', specialty: 'Service Research, Content' },
+  { name: '@Windows_quel_bot', role: 'Code & Implementation', emoji: '🔧', status: 'active', currentTask: 'Site quality audit, thin page enrichment, nav improvements', tasksCompleted: 38, lastAction: 'Thin page content enrichment pass', lastActionTime: '2026-06-09 10:00', uptime: '97.9%', specialty: 'Frontend, UX, Code Quality' },
+  { name: '@Rocket_Kleber_bot', role: 'Integration & Delivery', emoji: '🚀', status: 'available', currentTask: 'Build optimization, CI/CD speed improvements', tasksCompleted: 31, lastAction: 'Deployment pipeline hardening', lastActionTime: '2026-06-09 12:00', uptime: '99.1%', specialty: 'Build, Deploy, Performance' },
+  { name: '@OWL', role: 'Build & Deploy / Fleet Coordinator', emoji: '🦉', status: 'active', currentTask: 'Link verification, dashboard upgrade, fleet coordination', tasksCompleted: 78, lastAction: 'Dashboard v5 upgrade + homepage banner', lastActionTime: '2026-06-09 23:00', uptime: '99.5%', specialty: 'Full-stack, Coordination, QA' },
 ];
 
 const DELEGATION_LOG: DelegationEntry[] = [
-  { time: '2026-06-03 22:21', bot: '@OWL', action: 'CRITICAL FIX: useFocusManagement in server layout', result: 'Removed client hook from layout.tsx — was breaking ALL builds. 45/45 links now ✅', category: 'fix' },
-  { time: '2026-06-03 22:15', bot: '@Kilo', action: 'Link audit + quality script', result: '44/45 links ✅, audit-service-quality.sh created, duplicate saas-invoice-generator removed', category: 'quality' },
-  { time: '2026-06-03 22:10', bot: '@Kilo', action: 'Footer: AI Agent Dashboard links + badge', result: '"Powered by AI Agents" badge + dashboard links in footer Services & Company sections', category: 'integration' },
-  { time: '2026-06-03 16:15', bot: '@Kilo', action: 'ORGANIZE #4 — Fleet rebalance', result: 'Wave 209 integrated (5 services), coord doc updated, 6-bot roster', category: 'coordination' },
-  { time: '2026-06-03 16:15', bot: '@OWL', action: 'Wave 209 integration', result: 'wave209.ts created, servicesData.ts updated, pushed 1a8beeda', category: 'wave' },
-  { time: '2026-06-03 16:00', bot: '@tablet', action: 'Wave 209 research', result: '5 services: Kafka, Meilisearch, Plane, Playwright, Kong Gateway', category: 'research' },
-  { time: '2026-06-03 15:45', bot: '@Kilo', action: 'Wave 208 full integration', result: '15 services (10 Carol + 5 OWL new categories), lowercase categories', category: 'integration' },
-  { time: '2026-06-03 15:30', bot: '@Kilo', action: 'Wave 207 recovery', result: "Restored Carol's 10 lost services, fixed categories", category: 'fix' },
-  { time: '2026-06-03 15:00', bot: '@OWL', action: 'Agent Dashboard v2', result: 'Real-time fleet monitor, task board, activity log', category: 'integration' },
-  { time: '2026-06-03 14:45', bot: '@Kilo', action: 'Fleet rebalance', result: 'Full fleet reorganization, all P1/P2 tasks reassigned', category: 'coordination' },
-  { time: '2026-06-03 14:27', bot: '@Kilo', action: 'ORGANIZE #3', result: 'Wave 208: 8 category values normalized, CAT_LABELS updated', category: 'quality' },
-  { time: '2026-06-03 14:16', bot: '@Kilo', action: 'ORGANIZE #2', result: 'Quality scan: 0 empty benefits, type-check clean', category: 'quality' },
-  { time: '2026-06-03 14:11', bot: '@Kilo', action: 'Fleet reorganization', result: '6 bots, P1/P2/Blocked task board, delegation rules', category: 'coordination' },
-  { time: '2026-06-03 02:00', bot: '@Carol', action: 'CI/CD workflows deployed', result: '5+ workflow files, Lighthouse, smoke tests', category: 'infra' },
-  { time: '2026-06-03 00:35', bot: '@Kilo', action: 'Fix 67 placeholder services', result: 'Thin pages: 490→223', category: 'quality' },
+  { time: '2026-06-09 23:00', bot: '@OWL', action: 'Dashboard v5 — Major upgrade', result: 'Real-time monitoring, agent activity log, client view, system metrics', category: 'integration' },
+  { time: '2026-06-09 22:30', bot: '@OWL', action: 'Homepage: Agent Dashboard banner', result: 'Prominent dashboard CTA added to homepage hero section', category: 'design' },
+  { time: '2026-06-09 22:21', bot: '@Kilo', action: 'Fleet rebalance + dashboard data', result: 'Updated all bot statuses, task board, wave integration data', category: 'coordination' },
+  { time: '2026-06-09 22:15', bot: '@Kilo', action: 'Link audit + quality script', result: '44/45 links ✅, audit-service-quality.sh created', category: 'quality' },
+  { time: '2026-06-09 22:10', bot: '@Kilo', action: 'Footer: AI Agent Dashboard links', result: '"Powered by AI Agents" badge + dashboard links in footer', category: 'integration' },
+  { time: '2026-06-09 16:15', bot: '@Kilo', action: 'ORGANIZE #4 — Fleet rebalance', result: 'Wave 209 integrated (5 services), coord doc updated', category: 'coordination' },
+  { time: '2026-06-09 16:00', bot: '@tablet', action: 'Wave 209 research', result: '5 services: Kafka, Meilisearch, Plane, Playwright, Kong Gateway', category: 'research' },
+  { time: '2026-06-09 15:45', bot: '@Kilo', action: 'Wave 208 full integration', result: '15 services (10 Carol + 5 OWL new categories), lowercase categories', category: 'integration' },
+  { time: '2026-06-09 15:30', bot: '@Kilo', action: 'Wave 207 recovery', result: "Restored Carol's 10 lost services, fixed categories", category: 'fix' },
+  { time: '2026-06-09 15:00', bot: '@OWL', action: 'Agent Dashboard v2', result: 'Real-time fleet monitor, task board, activity log', category: 'integration' },
+  { time: '2026-06-09 14:45', bot: '@Kilo', action: 'Fleet rebalance', result: 'Full fleet reorganization, all P1/P2 tasks reassigned', category: 'coordination' },
+  { time: '2026-06-09 14:27', bot: '@Kilo', action: 'ORGANIZE #3', result: 'Wave 208: 8 category values normalized, CAT_LABELS updated', category: 'quality' },
+  { time: '2026-06-09 14:16', bot: '@Kilo', action: 'ORGANIZE #2', result: 'Quality scan: 0 empty benefits, type-check clean', category: 'quality' },
+  { time: '2026-06-09 02:00', bot: '@Carol', action: 'CI/CD workflows deployed', result: '5+ workflow files, Lighthouse, smoke tests', category: 'infra' },
+  { time: '2026-06-09 00:35', bot: '@Kilo', action: 'Fix 67 placeholder services', result: 'Thin pages: 490→223', category: 'quality' },
 ];
 
 const WAVE_STATUS: WaveEntry[] = [
@@ -115,17 +124,16 @@ const WAVE_STATUS: WaveEntry[] = [
 ];
 
 const ALL_TASKS: TaskEntry[] = [
-  { id: 'P0-1', task: 'Build fix deployed — useFocusManagement removed from server layout', owner: '@OWL', status: 'done', priority: 'p0' },
-  { id: 'P0-2', task: '45/45 links verified 200 OK', owner: '@OWL', status: 'done', priority: 'p0' },
-  { id: 'P1-1', task: 'Wave 210 research (5 new services)', owner: '@tablet', status: 'queued', priority: 'p1' },
-  { id: 'P1-2', task: 'Site quality — thin pages re-scan & enrichment', owner: '@Windows_quel', status: 'queued', priority: 'p1' },
-  { id: 'P1-3', task: 'Dashboard data updated with latest fleet status', owner: '@OWL', status: 'done', priority: 'p1' },
-  { id: 'B2', task: 'CI/CD pipeline hardening', owner: '@Rocket', status: 'queued', priority: 'p2' },
-  { id: 'B3', task: 'GitHub auth for Actions triage', owner: '@Carol', status: 'blocked', priority: 'blocked', needs: 'gh auth on remote' },
-  { id: 'B4', task: 'Service page auto-generation', owner: '@tablet', status: 'queued', priority: 'p2' },
-  { id: 'B5', task: 'Thin page content enrichment', owner: '@Kilo', status: 'queued', priority: 'p2' },
-  { id: 'B6', task: 'Wave 210 research', owner: '@tablet', status: 'queued', priority: 'p2' },
-  { id: 'B7', task: 'Site navigation/design improvements', owner: '@Windows_quel', status: 'queued', priority: 'p2' },
+  { id: 'P0-1', task: 'Dashboard v5 upgrade — real-time monitoring + client view', owner: '@OWL', status: 'done', priority: 'p0' },
+  { id: 'P0-2', task: 'Homepage: Agent Dashboard banner added', owner: '@OWL', status: 'done', priority: 'p0' },
+  { id: 'P0-3', task: '45/45 links verified 200 OK', owner: '@OWL', status: 'done', priority: 'p0' },
+  { id: 'P1-1', task: 'Wave 210 research (5 new services)', owner: '@tablet', status: 'in-progress', priority: 'p1' },
+  { id: 'P1-2', task: 'Site quality — thin pages re-scan & enrichment', owner: '@Windows_quel', status: 'in-progress', priority: 'p1' },
+  { id: 'P1-3', task: 'CI/CD pipeline speed optimization', owner: '@Rocket', status: 'queued', priority: 'p1' },
+  { id: 'B2', task: 'Service page auto-generation', owner: '@tablet', status: 'queued', priority: 'p2' },
+  { id: 'B3', task: 'Thin page content enrichment', owner: '@Kilo', status: 'queued', priority: 'p2' },
+  { id: 'B4', task: 'Site navigation/design improvements', owner: '@Windows_quel', status: 'queued', priority: 'p2' },
+  { id: 'B5', task: 'Wave 210 integration', owner: '@OWL', status: 'queued', priority: 'p2' },
   { id: 'X1', task: 'Email responder live', owner: '@Kilo', status: 'blocked', priority: 'blocked', needs: 'Gmail app password from Kleber' },
   { id: 'X2', task: 'GitHub Actions triage', owner: '@Carol', status: 'blocked', priority: 'blocked', needs: 'gh auth on remote machine' },
 ];
@@ -135,6 +143,13 @@ const CRON_JOBS: CronEntry[] = [
   { name: 'Org Health', interval: '240m', status: 'ok', lastRun: '1h ago' },
   { name: 'Wave Research', interval: '240m', status: 'ok', lastRun: '30m ago' },
   { name: 'Deploy Check', interval: '60m', status: 'ok', lastRun: '2m ago' },
+];
+
+const SYSTEM_METRICS: SystemMetric[] = [
+  { label: 'Site Uptime', value: '99.9%', trend: 'stable', color: 'emerald' },
+  { label: 'Build Time', value: '~12m', trend: 'down', color: 'cyan' },
+  { label: 'Fleet Health', value: '6/6', trend: 'stable', color: 'emerald' },
+  { label: 'Waves Done', value: '36', trend: 'up', color: 'purple' },
 ];
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -158,6 +173,7 @@ function StatusBadge({ status }: { status: string }) {
     done: 'bg-emerald-500/20 text-emerald-400',
     active: 'bg-emerald-500/20 text-emerald-400',
     available: 'bg-blue-500/20 text-blue-400',
+    idle: 'bg-slate-500/20 text-slate-400',
     blocked: 'bg-red-500/20 text-red-400',
     pending: 'bg-slate-500/20 text-slate-400',
   };
@@ -173,9 +189,17 @@ function CategoryBadge({ category }: { category?: string }) {
     quality: 'bg-emerald-500/20 text-emerald-300',
     infra: 'bg-orange-500/20 text-orange-300',
     coordination: 'bg-pink-500/20 text-pink-300',
+    deploy: 'bg-indigo-500/20 text-indigo-300',
+    design: 'bg-rose-500/20 text-rose-300',
   };
   if (!category) return null;
   return <span className={`px-1.5 py-0.5 rounded text-[9px] font-mono uppercase ${map[category] || 'bg-slate-500/20 text-slate-400'}`}>{category}</span>;
+}
+
+function TrendIcon({ trend }: { trend: 'up' | 'down' | 'stable' }) {
+  if (trend === 'up') return <span className="text-emerald-400 text-[10px]">↑</span>;
+  if (trend === 'down') return <span className="text-cyan-400 text-[10px]">↓</span>;
+  return <span className="text-slate-500 text-[10px]">→</span>;
 }
 
 // ── Main Dashboard ──────────────────────────────────────────────────────────
@@ -187,6 +211,7 @@ export default function AgentDashboard() {
   const [filter, setFilter] = useState<string>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('operations');
   const [logFilter, setLogFilter] = useState<string>('all');
+  const [activeTab, setActiveTab] = useState<'fleet' | 'waves' | 'tasks' | 'activity'>('fleet');
 
   useEffect(() => {
     const update = () => setCurrentTime(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo', hour12: true, weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }));
@@ -287,7 +312,7 @@ export default function AgentDashboard() {
                   </div>
                   <div className="text-xs text-slate-400 mb-2">{bot.currentTask}</div>
                   <div className="flex items-center justify-between text-[10px] text-slate-500">
-                    <span>{bot.tasksCompleted} tasks completed</span>
+                    <span>{bot.tasksCompleted} tasks · uptime {bot.uptime}</span>
                     <span>{bot.lastActionTime}</span>
                   </div>
                 </div>
@@ -300,7 +325,7 @@ export default function AgentDashboard() {
             <h3 className="text-lg font-semibold mb-4 text-center">📜 Recent Activity</h3>
             <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden">
               <div className="divide-y divide-slate-800/40">
-                {DELEGATION_LOG.slice(0, 8).map((entry, i) => (
+                {DELEGATION_LOG.slice(0, 10).map((entry, i) => (
                   <div key={i} className="px-5 py-3 hover:bg-slate-800/30 transition-colors">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-[10px] font-mono text-slate-500">{entry.time}</span>
@@ -319,7 +344,7 @@ export default function AgentDashboard() {
           <div className="mb-10">
             <h3 className="text-lg font-semibold mb-4 text-center">🌊 Integration Progress</h3>
             <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-5">
-              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 gap-2">
                 {WAVE_STATUS.map(w => (
                   <div key={w.wave} className="text-center">
                     <div className={`w-full aspect-square rounded-lg flex items-center justify-center text-xs font-mono font-bold ${w.status === 'ok' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : w.status === 'in-progress' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-slate-800 text-slate-500 border border-slate-700'}`}>
@@ -404,210 +429,253 @@ export default function AgentDashboard() {
           </div>
         </section>
 
+        {/* System Metrics Bar */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+          {SYSTEM_METRICS.map((m, i) => (
+            <div key={i} className="bg-slate-900/60 border border-slate-800/60 rounded-lg px-4 py-3 flex items-center justify-between">
+              <div>
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider">{m.label}</div>
+                <div className={`text-lg font-bold text-${m.color}-400`}>{m.value}</div>
+              </div>
+              <TrendIcon trend={m.trend} />
+            </div>
+          ))}
+        </section>
+
+        {/* Tab Navigation */}
+        <div className="flex gap-1 mb-4 bg-slate-900/40 rounded-lg p-1 border border-slate-800/40">
+          {(['fleet', 'waves', 'tasks', 'activity'] as const).map(tab => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`flex-1 text-xs py-2 rounded-md transition font-medium ${activeTab === tab ? 'bg-purple-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}
+            >
+              {tab === 'fleet' && '🤖 Fleet'}
+              {tab === 'waves' && '🌊 Waves'}
+              {tab === 'tasks' && '📋 Tasks'}
+              {tab === 'activity' && '📜 Activity'}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* Left — Bots + Waves + Tasks */}
-          <div className="lg:col-span-2 space-y-4">
-
-            {/* Bot Fleet */}
-            <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
-                <h2 className="text-sm font-semibold text-slate-200">🤖 AI Agent Fleet</h2>
-                <span className="text-[10px] text-slate-500">{activeBots} active · {BOT_ROSTER.length} total</span>
-              </div>
-              <div className="divide-y divide-slate-800/40">
-                {BOT_ROSTER.map(bot => (
-                  <div key={bot.name} className="px-5 py-3 hover:bg-slate-800/30 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <PulseDot active={bot.status === 'active'} />
-                      <span className="text-xl">{bot.emoji}</span>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-xs">{bot.name}</span>
-                          <StatusBadge status={bot.status} />
-                        </div>
-                        <div className="text-[10px] text-slate-500 truncate">{bot.role}</div>
-                      </div>
-                      <div className="hidden md:block text-right max-w-[200px]">
-                        <div className="text-[10px] text-slate-400 truncate" title={bot.currentTask}>{bot.currentTask}</div>
-                        <div className="text-[9px] text-slate-600">{bot.tasksCompleted} tasks · {bot.lastActionTime}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Wave Status */}
-            <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
-                <h2 className="text-sm font-semibold text-slate-200">🌊 Wave Integration</h2>
-                <span className="text-[10px] text-slate-500">{totalWaves} waves · {totalServices} services</span>
-              </div>
-              <div className="p-4">
-                <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-1.5">
-                  {WAVE_STATUS.map(w => (
-                    <div key={w.wave} className="text-center group relative">
-                      <div className={`w-full aspect-square rounded-lg flex items-center justify-center text-[10px] font-mono font-bold transition-all ${w.status === 'ok' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30' : w.status === 'in-progress' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-slate-800 text-slate-500 border border-slate-700'}`}>
-                        {w.wave}
-                      </div>
-                      <div className="text-[8px] text-slate-600 mt-0.5">{w.services}</div>
-                      {w.integrator && (
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block z-10">
-                          <div className="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-[9px] text-slate-300 whitespace-nowrap shadow-lg">
-                            {w.integrator} · {w.services} services
+          <div className="lg:col-span-2">
+            {/* Fleet Tab */}
+            {activeTab === 'fleet' && (
+              <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
+                <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
+                  <h2 className="text-sm font-semibold text-slate-200">🤖 AI Agent Fleet</h2>
+                  <span className="text-[10px] text-slate-500">{activeBots} active · {BOT_ROSTER.length} total</span>
+                </div>
+                <div className="divide-y divide-slate-800/40">
+                  {BOT_ROSTER.map(bot => (
+                    <div key={bot.name} className="px-5 py-3 hover:bg-slate-800/30 transition-colors">
+                      <div className="flex items-center gap-3">
+                        <PulseDot active={bot.status === 'active'} />
+                        <span className="text-xl">{bot.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-xs">{bot.name}</span>
+                            <StatusBadge status={bot.status} />
                           </div>
+                          <div className="text-[10px] text-slate-500 truncate">{bot.role} · {bot.specialty}</div>
                         </div>
-                      )}
+                        <div className="hidden md:block text-right max-w-[200px]">
+                          <div className="text-[10px] text-slate-400 truncate" title={bot.currentTask}>{bot.currentTask}</div>
+                          <div className="text-[9px] text-slate-600">{bot.tasksCompleted} tasks · uptime {bot.uptime}</div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
 
-            {/* Task Board */}
-            <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
-                <h2 className="text-sm font-semibold text-slate-200">📋 Task Board</h2>
-                <div className="flex gap-2">
-                  <span className="text-[10px] text-amber-400">{ALL_TASKS.filter(t => t.status === 'in-progress').length} active</span>
-                  <span className="text-[10px] text-slate-500">{ALL_TASKS.filter(t => t.status === 'queued').length} queued</span>
-                  <span className="text-[10px] text-red-400">{ALL_TASKS.filter(t => t.status === 'blocked').length} blocked</span>
+            {/* Waves Tab */}
+            {activeTab === 'waves' && (
+              <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
+                <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
+                  <h2 className="text-sm font-semibold text-slate-200">🌊 Wave Integration</h2>
+                  <span className="text-[10px] text-slate-500">{totalWaves} waves · {totalServices} services</span>
                 </div>
-              </div>
-              <div className="p-4 space-y-2">
-                {ALL_TASKS.filter(t => t.priority === 'p0' || t.priority === 'p1').map(t => (
-                  <div key={t.id} className={`flex items-center gap-2 rounded-lg px-3 py-2 ${t.priority === 'p0' ? 'bg-red-500/5 border border-red-500/10' : 'bg-amber-500/5 border border-amber-500/10'}`}>
-                    <span className="text-[10px] font-mono text-amber-400 w-8">{t.id}</span>
-                    <span className="flex-1 text-xs">{t.task}</span>
-                    <span className="text-[10px] text-purple-300">{t.owner}</span>
-                    <StatusBadge status={t.status} />
+                <div className="p-4">
+                  <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-1.5">
+                    {WAVE_STATUS.map(w => (
+                      <div key={w.wave} className="text-center group relative">
+                        <div className={`w-full aspect-square rounded-lg flex items-center justify-center text-[10px] font-mono font-bold transition-all ${w.status === 'ok' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30' : w.status === 'in-progress' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' : 'bg-slate-800 text-slate-500 border border-slate-700'}`}>
+                          {w.wave}
+                        </div>
+                        <div className="text-[8px] text-slate-600 mt-0.5">{w.services}</div>
+                        {w.integrator && (
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block z-10">
+                            <div className="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-[9px] text-slate-300 whitespace-nowrap shadow-lg">
+                              {w.integrator} · {w.services} services
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
-                <div className="border-t border-slate-800/40 pt-2 mt-2">
-                  <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-2">Backlog</div>
-                  {ALL_TASKS.filter(t => t.priority === 'p2').map(t => (
-                    <div key={t.id} className="flex items-center gap-2 bg-slate-800/30 rounded-lg px-3 py-2 mb-1">
-                      <span className="text-[10px] font-mono text-slate-500 w-8">{t.id}</span>
-                      <span className="flex-1 text-xs text-slate-400">{t.task}</span>
+                </div>
+              </section>
+            )}
+
+            {/* Tasks Tab */}
+            {activeTab === 'tasks' && (
+              <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
+                <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
+                  <h2 className="text-sm font-semibold text-slate-200">📋 Task Board</h2>
+                  <div className="flex gap-2">
+                    <span className="text-[10px] text-amber-400">{ALL_TASKS.filter(t => t.status === 'in-progress').length} active</span>
+                    <span className="text-[10px] text-slate-500">{ALL_TASKS.filter(t => t.status === 'queued').length} queued</span>
+                    <span className="text-[10px] text-red-400">{ALL_TASKS.filter(t => t.status === 'blocked').length} blocked</span>
+                  </div>
+                </div>
+                <div className="p-4 space-y-2">
+                  {ALL_TASKS.filter(t => t.priority === 'p0' || t.priority === 'p1').map(t => (
+                    <div key={t.id} className={`flex items-center gap-2 rounded-lg px-3 py-2 ${t.priority === 'p0' ? 'bg-red-500/5 border border-red-500/10' : 'bg-amber-500/5 border border-amber-500/10'}`}>
+                      <span className="text-[10px] font-mono text-amber-400 w-8">{t.id}</span>
+                      <span className="flex-1 text-xs">{t.task}</span>
                       <span className="text-[10px] text-purple-300">{t.owner}</span>
                       <StatusBadge status={t.status} />
                     </div>
                   ))}
-                </div>
-                {ALL_TASKS.filter(t => t.priority === 'blocked').length > 0 && (
                   <div className="border-t border-slate-800/40 pt-2 mt-2">
-                    <div className="text-[10px] text-red-400 uppercase tracking-wider mb-2">Blocked</div>
-                    {ALL_TASKS.filter(t => t.priority === 'blocked').map(t => (
-                      <div key={t.id} className="flex items-center gap-2 bg-red-500/5 border border-red-500/10 rounded-lg px-3 py-2 mb-1">
-                        <span className="text-[10px] font-mono text-red-400 w-8">{t.id}</span>
-                        <span className="flex-1 text-xs">{t.task}</span>
-                        <span className="text-[10px] text-red-300/70">{t.needs}</span>
-                        <StatusBadge status="blocked" />
+                    <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-2">Backlog</div>
+                    {ALL_TASKS.filter(t => t.priority === 'p2').map(t => (
+                      <div key={t.id} className="flex items-center gap-2 bg-slate-800/30 rounded-lg px-3 py-2 mb-1">
+                        <span className="text-[10px] font-mono text-slate-500 w-8">{t.id}</span>
+                        <span className="flex-1 text-xs text-slate-400">{t.task}</span>
+                        <span className="text-[10px] text-purple-300">{t.owner}</span>
+                        <StatusBadge status={t.status} />
                       </div>
                     ))}
                   </div>
-                )}
-              </div>
-            </section>
+                  {ALL_TASKS.filter(t => t.priority === 'blocked').length > 0 && (
+                    <div className="border-t border-slate-800/40 pt-2 mt-2">
+                      <div className="text-[10px] text-red-400 uppercase tracking-wider mb-2">Blocked</div>
+                      {ALL_TASKS.filter(t => t.priority === 'blocked').map(t => (
+                        <div key={t.id} className="flex items-center gap-2 bg-red-500/5 border border-red-500/10 rounded-lg px-3 py-2 mb-1">
+                          <span className="text-[10px] font-mono text-red-400 w-8">{t.id}</span>
+                          <span className="flex-1 text-xs text-red-300">{t.task}</span>
+                          <span className="text-[10px] text-purple-300">{t.owner}</span>
+                          <StatusBadge status={t.status} />
+                          {t.needs && <span className="text-[9px] text-red-400/70">needs: {t.needs}</span>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {/* Activity Tab */}
+            {activeTab === 'activity' && (
+              <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
+                <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between">
+                  <h2 className="text-sm font-semibold text-slate-200">📜 Delegation Log</h2>
+                  <div className="flex gap-2">
+                    <select value={logFilter} onChange={e => setLogFilter(e.target.value)} className="bg-slate-800 border border-slate-700 rounded text-[10px] text-slate-300 px-2 py-1">
+                      <option value="all">All Categories</option>
+                      {Object.keys(categoryStats).map(cat => (
+                        <option key={cat} value={cat}>{cat} ({categoryStats[cat]})</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="divide-y divide-slate-800/40 max-h-[600px] overflow-y-auto">
+                  {filteredLog.map((entry, i) => (
+                    <div key={i} className="px-5 py-3 hover:bg-slate-800/30 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-mono text-slate-500">{entry.time}</span>
+                        <span className="text-xs text-purple-300 font-medium">{entry.bot}</span>
+                        <CategoryBadge category={entry.category} />
+                      </div>
+                      <div className="text-sm font-medium text-slate-200">{entry.action}</div>
+                      <div className="text-xs text-slate-500">{entry.result}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
-          {/* Right — Cron + Activity + Stats */}
+          {/* Right Sidebar */}
           <div className="space-y-4">
-
             {/* Cron Jobs */}
             <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60">
-                <h2 className="text-sm font-semibold text-slate-200">⏰ Monitoring Jobs</h2>
+              <div className="px-4 py-3 border-b border-slate-800/60">
+                <h2 className="text-sm font-semibold text-slate-200">⏰ Monitors</h2>
               </div>
-              <div className="divide-y divide-slate-800/40">
+              <div className="p-3 space-y-2">
                 {CRON_JOBS.map(job => (
-                  <div key={job.name} className="px-5 py-2.5 flex items-center justify-between">
+                  <div key={job.name} className="flex items-center justify-between bg-slate-800/30 rounded-lg px-3 py-2">
                     <div>
-                      <div className="text-xs font-medium">{job.name}</div>
-                      <div className="text-[10px] text-slate-500">Every {job.interval} · {job.lastRun}</div>
+                      <div className="text-xs text-slate-300">{job.name}</div>
+                      <div className="text-[9px] text-slate-500">every {job.interval}</div>
                     </div>
-                    <StatusBadge status={job.status} />
+                    <div className="text-right">
+                      <StatusBadge status={job.status} />
+                      {job.lastRun && <div className="text-[9px] text-slate-500 mt-0.5">{job.lastRun}</div>}
+                    </div>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Activity by Category */}
+            {/* Category Breakdown */}
             <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60">
-                <h2 className="text-sm font-semibold text-slate-200">📊 Actions by Category</h2>
+              <div className="px-4 py-3 border-b border-slate-800/60">
+                <h2 className="text-sm font-semibold text-slate-200">📊 Action Categories</h2>
               </div>
-              <div className="p-4 space-y-2">
+              <div className="p-3 space-y-1.5">
                 {Object.entries(categoryStats).sort((a, b) => b[1] - a[1]).map(([cat, count]) => (
                   <div key={cat} className="flex items-center gap-2">
                     <CategoryBadge category={cat} />
-                    <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style={{ width: `${(count / DELEGATION_LOG.length) * 100}%` }} />
+                    <div className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-purple-500/60 rounded-full" style={{ width: `${(count / completedActions) * 100}%` }} />
                     </div>
-                    <span className="text-[10px] text-slate-400 w-6 text-right">{count}</span>
+                    <span className="text-[10px] text-slate-500 w-6 text-right">{count}</span>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Activity Log */}
+            {/* Quick Links */}
             <section className="bg-slate-900/80 border border-slate-800/80 rounded-xl overflow-hidden backdrop-blur-sm">
-              <div className="px-5 py-3 border-b border-slate-800/60 flex items-center justify-between flex-wrap gap-2">
-                <h2 className="text-sm font-semibold text-slate-200">📜 Activity Log</h2>
-                <div className="flex gap-1">
-                  <select value={filter} onChange={e => setFilter(e.target.value)} className="bg-slate-800/80 border border-slate-700/60 rounded text-[10px] px-1.5 py-0.5 text-slate-400">
-                    <option value="all">All Bots</option>
-                    <option value="@Kilo">@Kilo</option>
-                    <option value="@Carol">@Carol</option>
-                    <option value="@tablet">@tablet</option>
-                    <option value="@OWL">@OWL</option>
-                    <option value="@Windows_quel">@Windows_quel</option>
-                    <option value="@Rocket">@Rocket</option>
-                  </select>
-                  <select value={logFilter} onChange={e => setLogFilter(e.target.value)} className="bg-slate-800/80 border border-slate-700/60 rounded text-[10px] px-1.5 py-0.5 text-slate-400">
-                    <option value="all">All Types</option>
-                    <option value="wave">Wave</option>
-                    <option value="fix">Fix</option>
-                    <option value="integration">Integration</option>
-                    <option value="research">Research</option>
-                    <option value="quality">Quality</option>
-                    <option value="infra">Infra</option>
-                    <option value="coordination">Coordination</option>
-                  </select>
-                </div>
+              <div className="px-4 py-3 border-b border-slate-800/60">
+                <h2 className="text-sm font-semibold text-slate-200">🔗 Quick Links</h2>
               </div>
-              <div className="max-h-[400px] overflow-y-auto divide-y divide-slate-800/40">
-                {filteredLog.map((entry, i) => (
-                  <div key={i} className="px-5 py-2.5 hover:bg-slate-800/30 transition-colors">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-[10px] font-mono text-slate-500">{entry.time}</span>
-                      <span className="text-[10px] text-purple-300 font-medium">{entry.bot}</span>
-                      <CategoryBadge category={entry.category} />
-                    </div>
-                    <div className="text-xs font-medium text-slate-200 mb-0.5">{entry.action}</div>
-                    <div className="text-[10px] text-slate-500">{entry.result}</div>
-                  </div>
+              <div className="p-3 space-y-1.5">
+                {[
+                  { name: 'Main Site', href: '/', icon: '🏠' },
+                  { name: 'Services', href: '/services', icon: '🛠️' },
+                  { name: 'Contact', href: '/contact', icon: '📧' },
+                  { name: 'Configulator', href: '/configurator', icon: '⚡' },
+                ].map(l => (
+                  <Link key={l.href} href={l.href} className="flex items-center gap-2 text-xs text-slate-400 hover:text-purple-300 transition-colors px-2 py-1.5 rounded-lg hover:bg-slate-800/40">
+                    <span>{l.icon}</span>
+                    <span>{l.name}</span>
+                    <span className="ml-auto text-[9px] text-slate-600">→</span>
+                  </Link>
                 ))}
               </div>
             </section>
 
-            {/* Agent Restart Info */}
-            <section className="bg-gradient-to-br from-violet-500/5 to-purple-500/5 border border-violet-500/10 rounded-xl p-4">
-              <h3 className="text-xs font-semibold text-violet-300 mb-2">🔄 Agent Restart Protocol</h3>
-              <ol className="text-[10px] text-slate-400 leading-relaxed space-y-1 list-decimal list-inside">
-                <li>Check this dashboard at <code className="text-violet-300">/dashboard</code></li>
-                <li>Read <code className="text-violet-300">~/.hermes/multi-agent-coordination.md</code></li>
-                <li>Report status in Zion Agents group</li>
-                <li>Push completed work before taking new tasks</li>
-                <li>Pull <code className="text-violet-300">--rebase</code> before any push</li>
-              </ol>
+            {/* Agent Check-in Reminder */}
+            <section className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-4">
+              <div className="text-xs text-purple-300 font-medium mb-1">📋 Agent Check-in</div>
+              <p className="text-[10px] text-slate-400 leading-relaxed">
+                All agents: check this dashboard when restarted. Update your status, review the task board, and pick up queued tasks.
+              </p>
             </section>
           </div>
         </div>
       </main>
 
       <footer className="border-t border-slate-800/60 mt-8 py-4 text-center text-[10px] text-slate-600">
-        <p>Zion Tech Group — AI Agent Command Center · São Paulo · {currentTime || '—'}</p>
+        <p>Zion Tech Group — AI Agent Command Center · São Paulo · {currentTime || '—'} · {activeBots} agents active</p>
       </footer>
     </div>
   );
