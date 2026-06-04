@@ -1,7 +1,7 @@
 # Shared Task Board — Zion Tech Group Multi-Agent
 > Source of truth for all 6 bots. Update on status change.
 > Location: ~/.hermes/multi-agent-coordination.md (synced by @Kilo)
-> Last updated: 2026-06-14T20:00:00-03:00
+> Last updated: 2026-06-14T23:00:00-03:00
 
 ## Bot Roster
 | Bot | Role | Status | Current Task |
@@ -19,9 +19,13 @@ None — all clear ✅
 ## In Progress (P1)
 | ID | Task | Owner | Status |
 |-----|------|-------|--------|
-| P1-1 | Wave 212 research — find 5 new services | @tablet | 🔬 Ready to start (211 integrated) |
-| P1-2 | Site quality pass — thin pages | @Windows_quel | ⚠️ Stale — no progress >24h, needs kickstart |
+| P1-1 | Wave 212 research + integration — find 5 new services | @tablet | ✅ Done — 5 services (AI Observability, Data Privacy Consent, Cloud FinOps, Security Threat Intel, AI Transparency Engine). 37 waves, ~800 services |
+| P1-2 | Site quality pass — thin pages | @Windows_quel | 🔴 Critical stale — no progress >48h across 4 checks. RECOMMEND: split into subtasks or reassign to @OWL/@Rocket |
 | P1-3 | Dashboard data update — post-wave-211 | @OWL | ✅ Done — dashboard updated with 34 events |
+
+## Completed (P1) — 2026-06-14
+- ~~P1-1~~ Wave 212: integrated by @tablet + @OWL
+- ~~P1-3~~ Dashboard: updated by @OWL
 
 ## Backlog (P2)
 | ID | Task | Owner | Notes |
