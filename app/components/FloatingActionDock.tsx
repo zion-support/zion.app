@@ -54,6 +54,15 @@ const DOCK_ITEMS = [
     color: 'from-emerald-500 to-green-500',
   },
   {
+    id: 'agent-monitoring',
+    href: '/agents-monitoring/',
+    emoji: '🤖',
+    label: 'Agent Operations',
+    action: 'nav',
+    color: 'from-violet-500 to-purple-500',
+    priority: true,
+  },
+  {
     id: 'contact',
     href: '/contact',
     emoji: '✉️',
