@@ -343,13 +343,19 @@ let list = services;
 
             {/* ── Agents Dashboard Promo ── */}
             <div className="mt-10 max-w-4xl mx-auto">
-              <Link href="/agents-dashboard/" className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-purple-500/40 bg-gradient-to-r from-purple-900/40 to-slate-900/80 px-6 py-5 shadow-lg shadow-purple-900/30 hover:border-purple-400/60 transition-colors">
+              <Link href="/agents-dashboard/" className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-purple-500/60 bg-gradient-to-r from-purple-900/50 to-slate-900/90 px-6 py-6 shadow-xl shadow-purple-900/40 hover:border-purple-400/80 transition-all">
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-purple-300">Live Monitoring</div>
-                  <div className="text-xl font-semibold text-white mt-1">AI Agents Dashboard</div>
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <div className="text-xs font-bold uppercase tracking-wider text-purple-300">Live Monitoring</div>
+                  </div>
+                  <div className="text-2xl font-bold text-white mt-1">AI Agents Dashboard</div>
                   <div className="text-sm text-slate-300 mt-1">Real-time agent activity, uptime, and client-facing proof of work.</div>
                 </div>
-                <div className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">
+                <div className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-3 text-base font-semibold text-white hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/30">
                   Open Dashboard <span aria-hidden="true">→</span>
                 </div>
               </Link>
