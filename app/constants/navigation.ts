@@ -15,8 +15,8 @@ export const PRIMARY_NAV_LINKS: readonly NavigationLink[] = [
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Live Agents', href: '/agents-dashboard/', badge: 'Live' },
 ];
-
 export const SOLUTION_LINKS: readonly NavigationLink[] = [
   { name: 'All Solutions', href: '/solutions' },
   { name: 'Healthcare', href: '/solutions/healthcare' },
