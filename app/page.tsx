@@ -405,6 +405,9 @@ let list = services;
         </div>
       </section>
 
+      {/* ── AI Agent Monitoring — Live Fleet Banner (Priority) ── */}
+      <AgentsMonitoring />
+
       {/* ── AI Agent Operations — Always Visible Banner ── */}
       <section className="relative overflow-hidden border-y border-purple-500/20">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 via-violet-900/40 to-pink-900/50" />
