@@ -40,12 +40,12 @@ const Footer: React.FC = () => {
               {[
                 { name: 'AI Services', href: '/ai-services/' },
                 { name: 'All Services', href: '/services/' },
-                { name: 'Micro-SaaS', href: '/services/?category=micro-saas' },
-                { name: 'Cloud & DevOps', href: '/services/?category=cloud' },
-                { name: 'Security', href: '/services/?category=security' },
-                { name: 'Data & Analytics', href: '/services/?category=data' },
-                { name: 'Blockchain & Web3', href: '/services/?category=blockchain' },
-                { name: 'IoT & Edge', href: '/services/?category=iot' },
+                { name: 'Micro-SaaS', href: '/services/micro-saas' },
+                { name: 'Cloud & DevOps', href: '/services/cloud' },
+                { name: 'Security', href: '/services/security' },
+                { name: 'Data & Analytics', href: '/services/data' },
+                { name: 'Blockchain & Web3', href: '/services/blockchain' },
+                { name: 'IoT & Edge', href: '/services/iot' },
                 { name: 'Pricing', href: '/pricing/' },
               ].map(l => (
                 <li key={l.href}>

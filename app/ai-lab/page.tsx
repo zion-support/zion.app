@@ -122,7 +122,7 @@ const DEMO_CARDS: DemoCard[] = [
 const AI_PAGES = [
   { href: '/ai-services', label: '🧠 AI Services', desc: 'Browse all AI services' },
   { href: '/configurator', label: '⚡ Get a Custom Proposal', desc: 'AI-powered proposal engine' },
-  { href: '/services?category=ai', label: '🗂️ AI Service Catalog', desc: 'Filtered by AI category' },
+  { href: '/services/ai', label: '🗂️ AI Service Catalog', desc: 'Filtered by AI category' },
   { href: '/blog', label: '📖 AI Blog', desc: 'Latest AI insights & guides' },
   { href: '/status', label: '📡 System Status', desc: 'Live platform health' },
   { href: '/contact', label: '✉️ Contact Us', desc: 'Get in touch' },

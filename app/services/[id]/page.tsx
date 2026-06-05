@@ -116,7 +116,7 @@ export default async function ServicePage({ params }: PageProps) {
         "@type": "ListItem",
         position: 3,
         name: catLabel,
-        item: `https://ziontechgroup.com/services/?category=${encodeURIComponent(serviceFinal.category)}`,
+        item: `https://ziontechgroup.com/services/${encodeURIComponent(serviceFinal.category)}`,
       },
       {
         "@type": "ListItem",
@@ -146,7 +146,7 @@ export default async function ServicePage({ params }: PageProps) {
           <span className="mx-2">/</span>
           <Link href="/services/" className="hover:text-purple-400 transition">Services</Link>
           <span className="mx-2">/</span>
-          <Link href={`/services/?category=${encodeURIComponent(serviceFinal.category)}`} className="hover:text-purple-400 transition">{catLabel}</Link>
+          <Link href={`/services/${encodeURIComponent(serviceFinal.category)}`} className="hover:text-purple-400 transition">{catLabel}</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-300">{serviceFinal.title}</span>
         </nav>
@@ -349,7 +349,7 @@ export default async function ServicePage({ params }: PageProps) {
                   })}
               </div>
               <div className="text-center mt-6">
-                <Link href={`/services?category=${service.category}`}
+                <Link href={`/services/${service.category}`}
                   className="text-sm text-purple-400 hover:text-purple-300 font-medium transition">
                   View all {catLabelRel} services →
                 </Link>
