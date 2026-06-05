@@ -341,6 +341,20 @@ let list = services;
               ))}
             </div>
 
+            {/* ── Agents Dashboard Promo ── */}
+            <div className="mt-10 max-w-4xl mx-auto">
+              <Link href="/agents-dashboard/" className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-purple-500/40 bg-gradient-to-r from-purple-900/40 to-slate-900/80 px-6 py-5 shadow-lg shadow-purple-900/30 hover:border-purple-400/60 transition-colors">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-purple-300">Live Monitoring</div>
+                  <div className="text-xl font-semibold text-white mt-1">AI Agents Dashboard</div>
+                  <div className="text-sm text-slate-300 mt-1">Real-time agent activity, uptime, and client-facing proof of work.</div>
+                </div>
+                <div className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">
+                  Open Dashboard <span aria-hidden="true">→</span>
+                </div>
+              </Link>
+            </div>
+
             {/* ── Contact Bar ── */}
             <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
               <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
