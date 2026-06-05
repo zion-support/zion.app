@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-06-05T13:13:15.425Z",
+  "pages": 2134,
+  "internalLinks": 1678,
+  "ok": 1672,
+  "fail": 6,
+  "missing": [
+    {
+      "url": "/_next/static/css/c422b8c9baf4135e.css",
+      "status": 404
+    },
+    {
+      "url": "/_next/static/chunks/webpack-d282787ed3063711.js",
+      "status": 404
+    },
+    {
+      "url": "/favicon-32x32.png",
+      "status": 404
+    },
+    {
+      "url": "/favicon-16x16.png",
+      "status": 404
+    },
+    {
+      "url": "/apple-touch-icon.png",
+      "status": 404
+    },
+    {
+      "url": "/tools/favicon-generator",
+      "status": 404
+    }
+  ]
+}
