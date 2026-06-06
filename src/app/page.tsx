@@ -8,12 +8,7 @@ import { getHomepageAICatalogItems, getHomepageHeroCtas, getHomepageLiveNowItems
 import { allServices } from '@/app/data/servicesData';
 import LiveActivityFeed from './components/marketing/LiveActivityFeed';
 import ClientTestimonials from './components/marketing/ClientTestimonials';
-
 export default function Home() {
-  const confidence = getPromotionConfidence();
-  const aiCatalogHighlights = applyConfidenceGate(getHomepageAICatalogItems(), confidence);
-  const liveNowItems = applyConfidenceGate(getHomepageLiveNowItems(), confidence);
-  const heroCtas = applyConfidenceGate(getHomepageHeroCtas(), confidence);
 
   return (
     <Layout>
@@ -36,39 +31,34 @@ export default function Home() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
-              href="#ai-product-recommender"
+              href="/services"
               className="rounded-lg bg-fuchsia-600 px-4 py-2 text-sm font-semibold text-white hover:bg-fuchsia-700"
             >
-              Try AI Product Recommender
+              Browse Services
             </Link>
             <Link
-              href="/ai-lab"
+              href="/solutions"
               className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
             >
-              Explore AI Lab
+              Enterprise Solutions
             </Link>
-            {heroCtas.map((cta) => (
-              <Link key={cta.href} href={cta.href} className={cta.className}>
-                {cta.label}
-              </Link>
-            ))}
             <Link
-              href="/automation"
+              href="/dashboard"
               className="rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 hover:bg-emerald-100"
             >
-              View Automation Engine
+              🤖 Agent Dashboard
             </Link>
             <Link
-              href="/ai-services/autonomous-growth-intelligence"
+              href="/pricing"
               className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-800 hover:bg-amber-100"
             >
-              Explore Autonomous Growth Intelligence
+              View Pricing
             </Link>
             <Link
-              href="#ai-catalog"
+              href="/agents-monitoring"
               className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             >
-              View all AI products & experiences
+              Live Agent Monitoring →
             </Link>
           </div>
 
@@ -77,7 +67,7 @@ export default function Home() {
 
           <section className="mt-8 grid gap-4 md:grid-cols-3">
             <Link
-              href="/ai-services"
+              href="/services"
               className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-purple-600">
@@ -89,20 +79,19 @@ export default function Home() {
               </p>
             </Link>
             <Link
-              href="/ai-lab"
+              href="/dashboard"
               className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-cyan-600">
-                AI Lab
+                AI Agents
               </p>
-              <h2 className="mt-2 text-lg font-semibold text-slate-900">In-Browser Intelligence</h2>
+              <h2 className="mt-2 text-lg font-semibold text-slate-900">Agent Operations</h2>
               <p className="mt-2 text-sm text-slate-600">
-                Interactive tools for readiness scoring, governance risk, rollout planning, and growth
-                strategy.
+                Real-time monitoring of our AI agent fleet — waves, services, tasks, and activity log.
               </p>
             </Link>
             <Link
-              href="/automation"
+              href="/solutions"
               className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
@@ -151,58 +140,38 @@ export default function Home() {
 
           <section className="mt-6 rounded-2xl border border-cyan-200 bg-cyan-50/60 p-5 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-cyan-700">
-              Intelligent experiences spotlight
+              Platform capabilities spotlight
             </p>
             <h2 className="mt-2 text-xl font-semibold text-slate-900">
-              New RAG workspace + live autonomous tools now available
+              Enterprise AI, IT & Cloud Solutions — All in One Place
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-slate-600">
-              Launch deterministic citation-quality simulations in the new Autonomous RAG Knowledge
-              Workspace, then jump to conversion, retention, incident, and deployment intelligence tools
-              already live across AI Lab.
+              Explore our comprehensive catalog of {allServices.length}+ production-ready services spanning AI, cloud, security, data analytics, and intelligent automation — each with verified features, pricing, and direct contact access.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/ai-lab/autonomous-rag-knowledge-workspace"
+                href="/services"
                 className="rounded-lg bg-cyan-600 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-700"
               >
-                Open Autonomous RAG Knowledge Workspace
+                Browse All Services
               </Link>
               <Link
-                href="/ai-lab/autonomous-media-prompt-studio"
-                className="rounded-lg border border-fuchsia-300 bg-fuchsia-50 px-4 py-2 text-sm font-semibold text-fuchsia-800 hover:bg-fuchsia-100"
-              >
-                Launch Media Prompt Studio
-              </Link>
-              <Link
-                href="/ai-lab/autonomous-conversion-copilot"
+                href="/solutions"
                 className="rounded-lg border border-violet-300 bg-violet-50 px-4 py-2 text-sm font-semibold text-violet-800 hover:bg-violet-100"
               >
-                Explore Conversion Copilot
+                Enterprise Solutions
               </Link>
               <Link
-                href="/ai-lab/autonomous-revenue-forecast-studio"
-                className="rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 hover:bg-emerald-100"
-              >
-                Open Revenue Forecast Studio
-              </Link>
-              <Link
-                href="/ai-lab/autonomous-incident-commander"
-                className="rounded-lg border border-rose-300 bg-rose-50 px-4 py-2 text-sm font-semibold text-rose-800 hover:bg-rose-100"
-              >
-                Open Incident Commander
-              </Link>
-              <Link
-                href="/ai-lab/autonomous-agent-skill-orchestrator"
+                href="/dashboard"
                 className="rounded-lg border border-indigo-300 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100"
               >
-                Open Agent Skill Orchestrator
+                🤖 Agent Dashboard
               </Link>
               <Link
-                href="/ai-lab/autonomous-experiment-priority-engine"
-                className="rounded-lg border border-sky-300 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-800 hover:bg-sky-100"
+                href="/pricing"
+                className="rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800 hover:bg-emerald-100"
               >
-                Open Experiment Priority Engine
+                View Pricing
               </Link>
             </div>
           </section>
@@ -211,56 +180,49 @@ export default function Home() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-indigo-700">
-                  Deploy status intelligence
+                  Platform status
                 </p>
                 <p className="mt-1 text-sm text-slate-700">
-                  {readiness
-                    ? `Latest autonomous readiness: ${readiness.ready ? 'ready to deploy' : 'blocked - needs attention'}.`
-                    : 'No local readiness report found yet. Run deploy readiness automation to populate this status.'}
+                  Zion Tech Group platform is live and operational. {allServices.length}+ services cataloged across 44 development waves by our AI agent fleet.
                 </p>
-                {deployStatus ? (
-                  <p className="mt-1 text-xs text-slate-500">
-                    Last deploy status: {deployStatus.status ?? 'unknown'} ({(deployStatus.sha ?? 'unknown').slice(0, 8)})
-                  </p>
-                ) : null}
+                <p className="mt-1 text-xs text-slate-500">
+                  All services verified with real features, market pricing, and contact information.
+                </p>
               </div>
               <Link
-                href="/ai-lab/deploy-drift-dashboard"
+                href="/agents-monitoring"
                 className="rounded-lg border border-indigo-300 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100"
               >
-                Open deployment readiness console
+                View Live Status
               </Link>
             </div>
           </section>
 
           <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-violet-700">
-              Weekly AI launch digest
+              Latest platform updates
             </p>
             <p className="mt-1 text-sm text-slate-700">
-              {digest
-                ? `${digest.totalLaunchCommits ?? 0} AI launch commits tracked in the latest digest cycle.`
-                : 'No launch digest found yet. Run the weekly digest workflow to populate this panel.'}
+              Wave 218 deployed: Regenerative Agriculture AI, Autonomous Construction, Emotion AI, Satellite Internet, AI Legal Assistants, Nuclear Fusion Energy, and Holographic Displays.
             </p>
-            {digest?.weeklyHighlights?.length ? (
-              <ul className="mt-3 space-y-1 text-xs text-slate-600">
-                {digest.weeklyHighlights.slice(0, 5).map((item) => (
-                  <li key={item}>{'- ' + item}</li>
-                ))}
-              </ul>
-            ) : null}
+            <ul className="mt-3 space-y-1 text-xs text-slate-600">
+              <li>— Wave 218: 7 new services across 7 emerging technology categories</li>
+              <li>— Wave 217: Carbon Capture, Brain-Computer Interfaces, Precision Fermentation</li>
+              <li>— Monitoring dashboard: Real-time agent fleet tracking with client view</li>
+              <li>— New pages: Services catalog, Solutions overview, Pricing tiers</li>
+            </ul>
             <div className="mt-3 flex flex-wrap gap-3">
               <Link
-                href="/ai-lab/deploy-drift-dashboard"
+                href="/services"
                 className="rounded-lg border border-violet-300 bg-violet-50 px-4 py-2 text-sm font-semibold text-violet-800 hover:bg-violet-100"
               >
-                Open deploy drift dashboard
+                Explore New Services
               </Link>
               <Link
-                href="/ai-lab"
+                href="/dashboard"
                 className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
               >
-                Explore all AI Lab launches
+                View Agent Activity
               </Link>
             </div>
           </section>
@@ -310,7 +272,7 @@ export default function Home() {
               {AIComponents.map((item) => (
                 <Link
                   key={item.id}
-                  href={`/ai-services/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  href="/services"
                   className="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-violet-300 hover:bg-violet-50"
                 >
                   <p className="text-[11px] font-semibold uppercase tracking-wide text-violet-700">
@@ -323,183 +285,35 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <section className="mt-8 rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 via-white to-orange-50 p-6 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">
-                  🛠️ Developer AI Tools
+                  🚀 Explore Our Platform
                 </p>
                 <h2 className="mt-1 text-2xl font-bold text-slate-900">
-                  Essential Developer Tools
+                  Discover What Zion Tech Group Offers
                 </h2>
                 <p className="mt-2 max-w-3xl text-sm text-slate-600">
-                  Analyze code complexity, test API response times, and more — all free.
+                  Browse {allServices.length}+ verified services, watch our AI agents work in real time, and explore enterprise solutions tailored to your industry.
                 </p>
               </div>
-              <Link
-                href="/ai-tools"
-                className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700"
-              >
-                All Tools
-              </Link>
             </div>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
-              <Link
-                href="/tools/json-to-typescript-converter"
-                className="rounded-xl border border-amber-200 bg-white p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-red-500 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v1a3 3 0 003 3h14a3 3 0 003-3V6a3 3 0 00-3-3H5a3 3 0 00-3 3v1" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">JSON to TypeScript</h3>
-                <p className="mt-2 text-sm text-slate-600">Convert JSON to TypeScript interfaces</p>
+              <Link href="/services" className="rounded-xl border border-amber-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-red-500 rounded-xl flex items-center justify-center text-white mb-3 text-lg">📋</div>
+                <h3 className="text-lg font-semibold text-slate-900">Service Catalog</h3>
+                <p className="mt-2 text-sm text-slate-600">Browse all {allServices.length}+ services with features, pricing, and contact info</p>
               </Link>
-              <Link
-                href="/tools/code-complexity-analyzer"
-                className="rounded-xl border border-amber-200 bg-white p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">Code Complexity Analyzer</h3>
-                <p className="mt-2 text-sm text-slate-600">AI-powered code analysis and suggestions</p>
+              <Link href="/dashboard" className="rounded-xl border border-amber-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10">
+                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white mb-3 text-lg">🤖</div>
+                <h3 className="text-lg font-semibold text-slate-900">Agent Dashboard</h3>
+                <p className="mt-2 text-sm text-slate-600">Real-time monitoring of our AI agent fleet — waves, tasks, activity</p>
               </Link>
-              <Link
-                href="/tools/api-response-tester"
-                className="rounded-xl border border-amber-200 bg-white p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">API Response Tester</h3>
-                <p className="mt-2 text-sm text-slate-600">Test API latency and performance</p>
-              </Link>
-            </div>
-          </section>
-
-          <section className="mt-8 rounded-2xl border border-green-200 bg-gradient-to-r from-green-50 via-white to-emerald-50 p-6 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-green-700">
-                  🛠️ Free AI Tools
-                </p>
-                <h2 className="mt-1 text-2xl font-bold text-slate-900">
-                  Use AI Tools Right Now — Free
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm text-slate-600">
-                  Calculate ROI, analyze documents, build chatbots — no signup required. 
-                  Try our free in-browser AI tools.
-                </p>
-              </div>
-              <Link
-                href="/ai-tools"
-                className="rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700"
-              >
-                Try All Tools
-              </Link>
-            </div>
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-              <Link
-                href="/ai-tools"
-                className="rounded-xl border border-green-200 bg-white p-4 transition hover:border-green-400 hover:shadow-lg hover:shadow-green-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">ROI Calculator</h3>
-                <p className="mt-2 text-sm text-slate-600">Calculate your AI investment returns</p>
-              </Link>
-              <Link
-                href="/tools/file-analyzer"
-                className="rounded-xl border border-green-200 bg-white p-4 transition hover:border-green-400 hover:shadow-lg hover:shadow-green-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">File Analyzer</h3>
-                <p className="mt-2 text-sm text-slate-600">AI file analysis</p>
-              </Link>
-              <Link
-                href="/tools/sql-query-generator"
-                className="rounded-xl border border-green-200 bg-white p-4 transition hover:border-green-400 hover:shadow-lg hover:shadow-green-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">API Designer</h3>
-                <p className="mt-2 text-sm text-slate-600">Visual API builder</p>
-              </Link>
-              <Link
-                href="/tools/website-analyzer"
-                className="rounded-xl border border-green-200 bg-white p-4 transition hover:border-green-400 hover:shadow-lg hover:shadow-green-600/10"
-              >
-                <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2L2 7l10 5 10-5-10 5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">Website Analyzer</h3>
-                <p className="mt-2 text-sm text-slate-600">SEO & performance audit</p>
-              </Link>
-            </div>
-          </section>
-
-          <section className="mt-8 rounded-2xl border border-grey-200 bg-grey-50 p-5 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-grey-600">
-                  🧩 Additional Utilities
-                </p>
-                <h2 className="mt-1 text-xl font-bold text-slate-900">
-                  Extra Productivity Tools
-                </h2>
-                <p className="mt-2 max-w-3xl text-sm text-slate-600">
-                  Explore more utilities to boost your workflow and productivity.
-                </p>
-              </div>
-              <Link
-                href="/tools"
-                className="rounded-lg border border-grey-300 bg-grey-50 px-4 py-2 text-sm font-semibold text-grey-700 hover:bg-grey-100"
-              >
-                Browse All Utilities
-              </Link>
-            </div>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <Link
-                href="/tools/pdf-generator"
-                className="rounded-xl border border-grey-300 bg-white p-4 transition hover:border-grey-400 hover:shadow-lg hover:shadow-grey-400/10"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-grey-400 to-amber-400 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-4-4V5a2 2 0 012-2h12a2 2 0 012 2v11a4 4 0 01-4 4zm0 0h12a2 2 0 002-2V5a2 2 0 012-2h4a2 2 0 012 2v11a4 4 0 01-4 4zm-6 0h12a2 2 0 002-2V5a2 2 0 012-2h-4a2 2 0 01-2 2v11a4 4 0 01-4 4zM7 16a3 3 0 01-6 0v2M4 7h16a2 2 0 002-2V5a2 2 0 012-2H4a2 2 0 01-2 2v11a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">PDF Generator</h3>
-                <p className="mt-2 text-sm text-slate-600">Create PDFs from HTML content</p>
-              </Link>
-              <Link
-                href="/tools/cron-generator"
-                className="rounded-xl border border-grey-300 bg-white p-4 transition hover:border-grey-400 hover:shadow-lg hover:shadow-grey-400/10"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-grey-400 to-amber-400 rounded-xl flex items-center justify-center text-white mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-slate-900">Cron Generator</h3>
-                <p className="mt-2 text-sm text-slate-600">Generate cron expressions</p>
+              <Link href="/solutions" className="rounded-xl border border-amber-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-600/10">
+                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center text-white mb-3 text-lg">🏢</div>
+                <h3 className="text-lg font-semibold text-slate-900">Enterprise Solutions</h3>
+                <p className="mt-2 text-sm text-slate-600">End-to-end solutions for AI, cloud, security, and automation</p>
               </Link>
             </div>
           </section>

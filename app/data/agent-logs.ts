@@ -111,6 +111,7 @@ export const WAVE_DATA = [
   { wave: '215', services: 7, status: 'ok' as const, integrator: '@OWL' },
   { wave: '216', services: 10, status: 'ok' as const, integrator: '@OWL' },
   { wave: '217', services: 9, status: 'ok' as const, integrator: '@OWL' },
+  { wave: '218', services: 7, status: 'ok' as const, integrator: '@OWL' },
 ];
 
 export const CRON_JOBS = [
