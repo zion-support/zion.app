@@ -1,84 +1,39 @@
 {
-  "generatedAt": "2026-06-06T01:28:12.949532+00:00",
+  "generatedAt": "2026-06-06T01:30:16.752140+00:00",
   "monitors": [
     {
       "id": "kilo_openclaw_kleber_bot",
-      "events": [
-        "kilo_openclaw_kleber_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
     },
     {
       "id": "neo_kleber_bot",
-      "events": [
-        "neo_kleber_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
     },
     {
       "id": "rocket_kleber_bot",
-      "events": [
-        "rocket_kleber_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
+    },
+    {
+      "id": "summary.txt",
+      "events": []
     },
     {
       "id": "tablet_kleber_bot",
-      "events": [
-        "tablet_kleber_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
     },
     {
       "id": "windows_carol_bot",
-      "events": [
-        "windows_carol_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
     },
     {
       "id": "windows_quel_bot",
-      "events": [
-        "windows_quel_bot \u2192 ONLINE \u2190 : refreshed dashboard"
-      ]
+      "events": []
     }
   ],
-  "recentActivity": [
-    {
-      "agent": "kilo_openclaw_kleber_bot",
-      "action": "kilo_openclaw_kleber_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    },
-    {
-      "agent": "neo_kleber_bot",
-      "action": "neo_kleber_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    },
-    {
-      "agent": "rocket_kleber_bot",
-      "action": "rocket_kleber_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    },
-    {
-      "agent": "tablet_kleber_bot",
-      "action": "tablet_kleber_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    },
-    {
-      "agent": "windows_carol_bot",
-      "action": "windows_carol_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    },
-    {
-      "agent": "windows_quel_bot",
-      "action": "windows_quel_bot \u2192 ONLINE \u2190 : dashboard refreshed",
-      "ts": "2026-06-06T01:28:12.949532+00:00",
-      "source": "local"
-    }
-  ],
+  "recentActivity": [],
   "stats": {
-    "monitors": 6,
-    "recentEvents": 6,
+    "monitors": 7,
+    "recentEvents": 0,
     "pageCoverage": {
       "ok": 1678,
       "missing": 0
@@ -90,7 +45,7 @@
     "successScore": 99.4
   },
   "metadata": {
-    "lastDeepCrawl": "2026-06-06T01:28:12.949532+00:00",
+    "lastDeepCrawl": "2026-06-06T01:30:16.752140+00:00",
     "lastDeepCrawlResult": "1678 OK / 0 MISS"
   }
 }
