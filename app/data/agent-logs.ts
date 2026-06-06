@@ -104,25 +104,27 @@ export const WAVE_DATA = [
   { wave: '210', services: 5, status: 'ok' as const, integrator: '@tablet + @OWL' },
   { wave: '211', services: 5, status: 'ok' as const, integrator: '@tablet + @OWL' },
   { wave: '212', services: 5, status: 'ok' as const, integrator: '@OWL' },
-  { wave: '213', services: 0, status: 'stale' as const, integrator: '@tablet' },
+  { wave: '213', services: 5, status: 'ok' as const, integrator: '@OWL' },
+  { wave: '214', services: 5, status: 'ok' as const, integrator: '@OWL' },
+  { wave: '215', services: 7, status: 'ok' as const, integrator: '@OWL' },
 ];
 
 export const CRON_JOBS = [
   { name: 'Link Monitor', interval: '360m', status: 'ok' as const, lastRun: '5m ago' },
   { name: 'Org Health', interval: '240m', status: 'ok' as const, lastRun: '1h ago' },
-  { name: 'Wave Research', interval: '240m', status: 'error' as const, lastRun: '2h ago' },
+  { name: 'Wave Research', interval: '240m', status: 'ok' as const, lastRun: '1h ago' },
   { name: 'Email Readiness', interval: '120m', status: 'ok' as const, lastRun: '30m ago' },
 ];
 
 export const TASKS = [
-  { id: 'P1-1', task: 'Wave 213 research — find 5 new services', owner: '@tablet', status: 'in-progress' as const, priority: 'p1' as const },
-  { id: 'P1-2', task: 'Wave 213 integration — deploy 5 new services', owner: '@OWL', status: 'queued' as const, priority: 'p1' as const },
+  { id: 'P1-1', task: 'Wave 215 research + integration', owner: '@OWL', status: 'done' as const, priority: 'p1' as const, note: '7 services: Quantum, Neuromorphic, Digital Twin, Homomorphic Encryption, Autonomous Drones' },
+  { id: 'P1-2', task: 'Deploy /solutions/ + /industry-solutions/ pages', owner: '@OWL', status: 'in-progress' as const, priority: 'p1' as const, note: 'Pages exist locally, need CI/CD build' },
   { id: 'B1', task: 'CI/CD pipeline hardening', owner: '@Rocket', status: 'queued' as const, priority: 'p2' as const },
   { id: 'B3', task: 'Service page auto-generation', owner: '@tablet', status: 'queued' as const, priority: 'p2' as const },
   { id: 'B4', task: 'Agent self-improvement — review learning log', owner: '@Kilo', status: 'queued' as const, priority: 'p2' as const },
   { id: 'B6', task: 'Site quality — thin page enrichment', owner: '@Windows_quel', status: 'queued' as const, priority: 'p2' as const, note: 'Pick 10 most visited pages from analytics' },
   { id: 'B7', task: 'CI/CD timeout investigation', owner: '@Rocket', status: 'queued' as const, priority: 'p2' as const },
-  { id: 'B8', task: 'Monitoring dashboard v2 — homepage banner', owner: '@OWL', status: 'done' as const, priority: 'p2' as const, note: 'Completed 2026-06-17' },
+  { id: 'B8', task: 'Wave 216 research — next 5 services', owner: '@tablet', status: 'queued' as const, priority: 'p2' as const },
   { id: 'X1', task: 'Email responder live', owner: '@Kilo', status: 'blocked' as const, priority: 'blocked' as const, needs: 'Gmail app password from Kleber' },
   { id: 'X2', task: 'GitHub Actions triage', owner: '@Carol', status: 'blocked' as const, priority: 'blocked' as const, needs: 'gh auth on remote machine' },
 ];

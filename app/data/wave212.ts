@@ -4,7 +4,7 @@ export const wave212PerformanceTestingServices: Service[] = [
   {
     id: 'k6',
     title: 'k6 Load Testing',
-    description: 'k6 is a modern load testing tool, building on Load Impact\\'s legacy to become the open source developers love. It helps you test the performance of your APIs, microservices, and websites.',
+    description: "k6 is a modern load testing tool, building on Load Impact's legacy to become the open source developers love. It helps you test the performance of your APIs, microservices, and websites.",
     category: 'performance-testing',
     icon: '🏃',
     href: '/services/k6',
