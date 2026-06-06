@@ -1,3 +1,8 @@
-Pages: 2135, Unique internal links: 1678
-OK: 1678, MISSING: 0
-Report written to crawl-report.json
+{
+  "generatedAt": "2026-06-06T05:37:27.484Z",
+  "pages": 2135,
+  "internalLinks": 1678,
+  "ok": 1678,
+  "fail": 0,
+  "missing": []
+}

@@ -471,135 +471,20 @@ export default function Home() {
             </div>
           </section>
         </main>
-          {/* ALL SERVICES CATALOG */}
+          {/* Services grouped */}
           <section id="all-services" className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-blue-600">Complete Service Catalog</p>
             <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
               All AI &middot; IT &middot; Cloud &middot; Security &middot; Data &amp; Automation Services
             </h2>
             <p className="mt-3 max-w-3xl text-sm text-slate-600">
-              <strong>{allServices.length}</strong> production-ready services from Zion Tech Group — enterprise-grade AI, IT infrastructure, cloud native, zero-trust security, data analytics, and intelligent automation. Every listing shows features, benefits, average market prices, and direct links to the full service page.
+              <strong>{allServices.length}</strong> production-ready services from Zion Tech Group.
             </p>
-
-            {/* AI Services */}
-            {(() => {
-              const ai = allServices.filter(s => s.category === 'ai').sort((a,b) => a.title.localeCompare(b.title));
-              return ai.length > 0 ? (
-                <>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-400">🤖 AI &amp; Machine Learning — {ai.length} services</p>
-                  <div className="mt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {ai.map(s => (
-                      <Link key={s.id} href={s.href} className="group rounded-xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl flex-shrink-0" role="img" aria-label={s.title}>{s.icon}</span>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">{s.title}</h3>
-                            <p className="mt-1 text-xs text-slate-600 line-clamp-2">{s.description}</p>
-                            <p className="mt-2 text-xs font-medium text-slate-500">From {s.pricing.basic}/mo</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : null;
-            })()}
-
-            {/* IT + Security */}
-            {(() => {
-              const itSec = allServices.filter(s => s.category === 'it' || s.category === 'security').sort((a,b) => a.title.localeCompare(b.title));
-              return itSec.length > 0 ? (
-                <>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-400">🖥️ IT &amp; Security — {itSec.length} services</p>
-                  <div className="mt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {itSec.map(s => (
-                      <Link key={s.id} href={s.href} className="group rounded-xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl flex-shrink-0" role="img" aria-label={s.title}>{s.icon}</span>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">{s.title}</h3>
-                            <p className="mt-1 text-xs text-slate-600 line-clamp-2">{s.description}</p>
-                            <p className="mt-2 text-xs font-medium text-slate-500">From {s.pricing.basic}/mo</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : null;
-            })()}
-
-            {/* Cloud */}
-            {(() => {
-              const cloud = allServices.filter(s => s.category === 'cloud').sort((a,b) => a.title.localeCompare(b.title));
-              return cloud.length > 0 ? (
-                <>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-400">☁️ Cloud — {cloud.length} services</p>
-                  <div className="mt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {cloud.map(s => (
-                      <Link key={s.id} href={s.href} className="group rounded-xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl flex-shrink-0" role="img" aria-label={s.title}>{s.icon}</span>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">{s.title}</h3>
-                            <p className="mt-1 text-xs text-slate-600 line-clamp-2">{s.description}</p>
-                            <p className="mt-2 text-xs font-medium text-slate-500">From {s.pricing.basic}/mo</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : null;
-            })()}
-
-            {/* Data */}
-            {(() => {
-              const data = allServices.filter(s => s.category === 'data').sort((a,b) => a.title.localeCompare(b.title));
-              return data.length > 0 ? (
-                <>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-400">📊 Data &amp; Analytics — {data.length} services</p>
-                  <div className="mt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {data.map(s => (
-                      <Link key={s.id} href={s.href} className="group rounded-xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl flex-shrink-0" role="img" aria-label={s.title}>{s.icon}</span>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">{s.title}</h3>
-                            <p className="mt-1 text-xs text-slate-600 line-clamp-2">{s.description}</p>
-                            <p className="mt-2 text-xs font-medium text-slate-500">From {s.pricing.basic}/mo</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : null;
-            })()}
-
-            {/* Automation */}
-            {(() => {
-              const auto = allServices.filter(s => s.category === 'automation').sort((a,b) => a.title.localeCompare(b.title));
-              return auto.length > 0 ? (
-                <>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-400">⚡ Automation — {auto.length} services</p>
-                  <div className="mt-3 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {auto.map(s => (
-                      <Link key={s.id} href={s.href} className="group rounded-xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/5">
-                        <div className="flex items-start gap-3">
-                          <span className="text-2xl flex-shrink-0" role="img" aria-label={s.title}>{s.icon}</span>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">{s.title}</h3>
-                            <p className="mt-1 text-xs text-slate-600 line-clamp-2">{s.description}</p>
-                            <p className="mt-2 text-xs font-medium text-slate-500">From {s.pricing.basic}/mo</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : null;
-            })()}
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/services" className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">Browse all services</Link>
+              <Link href="/ai-lab" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">AI Lab</Link>
+              <Link href="/automation" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Automation</Link>
+            </div>
           </section>
           {/* END SERVICE CATALOG */}
 
