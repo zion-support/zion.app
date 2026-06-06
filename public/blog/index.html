@@ -1,18 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Blog — Zion Tech Group</title>
+    <title>Blog | Zion Tech Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #7c3aed;
+            --accent2: #a78bfa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent2); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            background: var(--surface);
+        }
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        header nav a { color: var(--muted); font-size: 0.95rem; }
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+        .article-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .article {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .article:hover { border-color: var(--accent); }
+        .article .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .article h2 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+        .article p { color: var(--muted); margin: 0 0 0.75rem; }
+        .read-more { color: var(--accent2); font-size: 0.95rem; font-weight: 600; }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-<h1>Blog</h1>
-<p>Insights, tutorials, and news from the Zion team.</p>
-<ul>
-  <li><a href="/ai-services/ai-agents-autonomous">The Future of Autonomous Agents</a></li>
-  <li><a href="/services/workflow-automation">Workflow Automation Best Practices</a></li>
-  <li><a href="/solutions/technology-and-saas">AI in SaaS: 2026 Outlook</a></li>
-</ul>
-<p><a href="/">← Back to home</a></p>
+    <header>
+        <nav>
+            <a class="brand" href="/">Zion Tech Group</a>
+            <a href="/free-tools-hub">Free Tools</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/innovation-bundles">Innovation Bundles</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Blog</h1>
+        <p class="subtitle">Practical notes on platform engineering, AI integration, and product team dynamics.</p>
+
+        <div class="article-list">
+            <article class="article">
+                <div class="meta">2026-06-05 · Platform Engineering</div>
+                <h2>Why We Measure Platform Reliability in Revenue, Not Minutes</h2>
+                <p>Moving from SLOs to business outcomes changed how we prioritize reliability work, improved executive alignment, and reduced churn.</p>
+                <a class="read-more" href="/case-studies">See related work →</a>
+            </article>
+
+            <article class="article">
+                <div class="meta">2026-05-28 · AI Strategy</div>
+                <h2>A Pragmatic Path to Internal AI Adoption</h2>
+                <p>Three phases to move from exploration to measurable impact without forcing use cases that do not fit the organization.</p>
+                <a class="read-more" href="/innovation-bundles">View AI Enablement bundle →</a>
+            </article>
+
+            <article class="article">
+                <div class="meta">2026-05-14 · Architecture</div>
+                <h2>Event-Driven Does Not Mean Rebuild Everything</h2>
+                <p>An incremental migration approach that kept a monolith stable while introducing async boundaries one domain at a time.</p>
+                <a class="read-more" href="/blog">Read more on architecture →</a>
+            </article>
+
+            <article class="article">
+                <div class="meta">2026-04-30 · Delivery</div>
+                <h2>Frozen Scope Is Not Protection</h2>
+                <p>How fixed deadlines with changing requirements affected our delivery rhythm and the playbook we now use instead.</p>
+                <a class="read-more" href="/pricing">Explore engagement options →</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Zion Tech Group. All rights reserved.
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

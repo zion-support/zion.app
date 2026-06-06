@@ -1,18 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Case Studies — Zion Tech Group</title>
+    <title>Case Studies | Zion Tech Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #7c3aed;
+            --accent2: #a78bfa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent2); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            background: var(--surface);
+        }
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        header nav a { color: var(--muted); font-size: 0.95rem; }
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .case-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: border-color 0.2s;
+        }
+        .case-card:hover { border-color: var(--accent); }
+        .case-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--accent2);
+            border: 1px solid var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .case-card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+        .case-card p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+        .result {
+            background: rgba(124, 58, 237, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-<h1>Case Studies</h1>
-<p>Real results from real deployments across industries.</p>
-<ul>
-  <li><a href="/solutions/healthcare">Healthcare: AI-Driven Diagnostics</a></li>
-  <li><a href="/solutions/financial-services">Financial Services: Fraud Prevention</a></li>
-  <li><a href="/solutions/technology-and-saas">SaaS: Automated Customer Success</a></li>
-</ul>
-<p><a href="/">← Back to home</a></p>
+    <header>
+        <nav>
+            <a class="brand" href="/">Zion Tech Group</a>
+            <a href="/free-tools-hub">Free Tools</a>
+            <a href="/innovation-bundles">Innovation Bundles</a>
+            <a href="/blog">Blog</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Case Studies</h1>
+        <p class="subtitle">Selected client engagements with measurable outcomes across product, platform, and AI transformations.</p>
+
+        <div class="case-grid">
+            <div class="case-card">
+                <span class="tag">Enterprise SaaS</span>
+                <h3>API Modernization at FinEdge</h3>
+                <p>Replaced a fragmented gateway layer and cut average request latency by 42% while retiring eight legacy integrations.</p>
+                <div class="result">Result: 42% latency reduction, 8 legacy services retired.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="tag">Financial Services</span>
+                <h3>Compliance Automation for NorthStar Bank</h3>
+                <p>Built a rule engine and audit pipeline that reduced manual review cycles from weeks to hours.</p>
+                <div class="result">Result: Audit prep time cut from 3 weeks to 1 day.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="tag">Healthcare</span>
+                <h3>Patient Data Pipeline Overhaul</h3>
+                <p>Migrated batch ETL jobs to event-driven streaming and added lineage and masking controls.</p>
+                <div class="result">Result: 3x faster reporting, zero P1 incidents in 6 months.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="tag">E-Commerce</span>
+                <h3>Personalization Engine for RetailCo</h3>
+                <p>Introduced real-time ranking and experimentation infrastructure while preserving site stability under peak traffic.</p>
+                <div class="result">Result: +11% conversion during campaign weeks.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="tag">AI & Automation</span>
+                <h3>Support Assistant for ShopStream</h3>
+                <p>Designed a retrieval-augmented assistant grounded in internal docs to reduce ticket volume and improve first-response accuracy.</p>
+                <div class="result">Result: 34% ticket reduction, 18h saved weekly.</div>
+            </div>
+
+            <div class="case-card">
+                <span class="tag">Cloud</span>
+                <h3>Multi-Cloud Cost Governance</h3>
+                <p>Introduced tagging standards, budgeting alerts, and automated rightsizing recommendations across AWS and Azure.</p>
+                <div class="result">Result: 29% cloud cost reduction in first quarter.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Zion Tech Group. All rights reserved.
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

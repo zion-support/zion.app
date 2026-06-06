@@ -1,45 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Pricing — Zion Tech Group</title>
-<style>
-  :root { --bg:#0b1120; --text:#e2e8f0; --muted:#8b97a8; --purple:#a78bfa; --card:rgba(255,255,255,0.025); --border:rgba(255,255,255,0.07); }
-  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,sans-serif; }
-  a { color:var(--purple); }
-  main { max-width:1000px; margin:0 auto; padding:40px 20px; }
-  h1 { font-size:28px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px; }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
-  .price { font-size:32px; font-weight:700; }
-</style>
+    <title>Pricing | Zion Tech Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #7c3aed;
+            --accent2: #a78bfa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent2); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            background: var(--surface);
+        }
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        header nav a { color: var(--muted); font-size: 0.95rem; }
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .plan {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+        .plan h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .price small { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+        .plan > p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+        .features {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 0 0 1.25rem;
+            padding-left: 1.1rem;
+        }
+        .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.95rem;
+        }
+        .btn.secondary {
+            background: transparent;
+            color: var(--accent2);
+            border: 1px solid var(--accent);
+        }
+        .note {
+            margin-top: 2.5rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-<main>
-  <h1>Pricing</h1>
-  <p>Transparent pricing for every stage of your AI journey.</p>
-  <div class="grid">
-    <div class="card">
-      <h2>Explorer</h2>
-      <div class="price">$499/mo</div>
-      <p>1 AI service, 5k API calls, email support.</p>
-      <a href="/contact">Get started</a>
-    </div>
-    <div class="card">
-      <h2>Growth</h2>
-      <div class="price">$1,499/mo</div>
-      <p>3 AI services, 25k API calls, SLA support.</p>
-      <a href="/contact">Get started</a>
-    </div>
-    <div class="card">
-      <h2>Enterprise</h2>
-      <div class="price">Custom</div>
-      <p>Unlimited services, dedicated infra, 24/7 support.</p>
-      <a href="/contact">Contact sales</a>
-    </div>
-  </div>
-  <p style="margin-top:24px"><a href="/services">← All Services</a> · <a href="/contact">Request quote</a></p>
-</main>
+    <header>
+        <nav>
+            <a class="brand" href="/">Zion Tech Group</a>
+            <a href="/free-tools-hub">Free Tools</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/innovation-bundles">Innovation Bundles</a>
+            <a href="/blog">Blog</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Pricing</h1>
+        <p class="subtitle">Transparent engagement models aligned to delivery risk and outcome clarity.</p>
+
+        <div class="plans">
+            <div class="plan">
+                <h3>Advisory</h3>
+                <div class="price">$3,500<small>/week</small></div>
+                <p>Best for architecture reviews, roadmap validation, and technical interviews.</p>
+                <ul class="features">
+                    <li>Weekly cadence</li>
+                    <li>Written recommendations</li>
+                    <li>Manager sync included</li>
+                </ul>
+                <div class="cta-row">
+                    <a class="btn" href="/case-studies">See related work</a>
+                    <a class="btn secondary" href="/blog">Read insights</a>
+                </div>
+            </div>
+
+            <div class="plan">
+                <h3>Embedded Team</h3>
+                <div class="price">Custom</div>
+                <p>For hands-on delivery with dedicated engineers and a delivery lead.</p>
+                <ul class="features">
+                    <li>Scope-based pricing</li>
+                    <li>QA and delivery manager</li>
+                    <li>Weekly reporting</li>
+                </ul>
+                <div class="cta-row">
+                    <a class="btn" href="/innovation-bundles">View bundles</a>
+                    <a class="btn secondary" href="/free-tools-hub">Start with an estimate tool</a>
+                </div>
+            </div>
+
+            <div class="plan">
+                <h3>Enterprise Transform</h3>
+                <div class="price">Custom</div>
+                <p>Multi-team programs with governance, enablement, and executive sponsorship.</p>
+                <ul class="features">
+                    <li>Program timeline</li>
+                    <li>Change management</li>
+                    <li>Executive dashboard</li>
+                </ul>
+                <div class="cta-row">
+                    <a class="btn" href="/case-studies">See case studies</a>
+                    <a class="btn secondary" href="/blog">Read our approach</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="note">We publish prompts and calculators in the Free Tools Hub to help you scope work before engagement and to move faster with plain-language artifacts.</p>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Zion Tech Group. All rights reserved.
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

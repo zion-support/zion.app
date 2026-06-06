@@ -1,19 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Free Tools Hub — Zion Tech Group</title>
+    <title>Free Tools Hub | Zion Tech Group</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --border: #334155;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --accent: #7c3aed;
+            --accent2: #a78bfa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--accent2); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            background: var(--surface);
+        }
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header .brand { font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        header nav a { color: var(--muted); font-size: 0.95rem; }
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .tool-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+        .tool-card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+        .tool-card p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--accent2);
+            border: 1px solid var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-<h1>Free Tools Hub</h1>
-<p>Explore our free AI-powered tools and resources.</p>
-<h2>Available Tools</h2>
-<ul>
-  <li><a href="/zion-ai-api-tester">Zion AI API Tester</a></li>
-  <li><a href="/zion-ai-knowledge-base">Zion AI Knowledge Base</a></li>
-  <li><a href="/search">Search</a></li>
-</ul>
-<p><a href="/">← Back to home</a></p>
+    <header>
+        <nav>
+            <a class="brand" href="/">Zion Tech Group</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/innovation-bundles">Innovation Bundles</a>
+            <a href="/blog">Blog</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Free Tools Hub</h1>
+        <p class="subtitle">Self-contained utilities to accelerate your workflows — no sign-up required.</p>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>Cost Estimator</h3>
+                <p>Quick, rough-order-of-magnitude budgeting for cloud migrations, platform builds, and AI integrations.</p>
+                <span class="tag">Planning</span>
+            </div>
+            <div class="tool-card">
+                <h3>Tech Stack Mapper</h3>
+                <p>Paste your current stack and get a structured diagram plus optimization suggestions in under a minute.</p>
+                <span class="tag">Architecture</span>
+            </div>
+            <div class="tool-card">
+                <h3>AI ROI Calculator</h3>
+                <p>Model implementation cost against projected efficiency gains and payback period.</p>
+                <span class="tag">Finance</span>
+            </div>
+            <div class="tool-card">
+                <h3>Prompt Library</h3>
+                <p>Curated prompts for engineering, content, support, and analytics workflows.</p>
+                <span class="tag">AI</span>
+            </div>
+            <div class="tool-card">
+                <h3>Deployment Checklist</h3>
+                <p>A concise pre- and post-launch checklist used by our engineering teams.</p>
+                <span class="tag">DevOps</span>
+            </div>
+            <div class="tool-card">
+                <h3>Security Quick Scan</h3>
+                <p>Run a lightweight review of headers, dependencies, and common exposure patterns.</p>
+                <span class="tag">Security</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Zion Tech Group. All rights reserved.
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
