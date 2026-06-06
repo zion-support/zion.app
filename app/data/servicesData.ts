@@ -41,7 +41,7 @@ import { wave209DataStreamingServices, wave209SearchServices, wave209DevOpsServi
 import { wave210DatabaseServices, wave210CollaborationServices, wave210MediaStreamingServices, wave210InfrastructureAsCodeServices, wave210LowCodeServices } from './wave210';
 import { wave211MonitoringServices, wave211LoggingServices, wave211SecurityScanningServices, wave211BackupRecoveryServices, wave211IdentityManagementServices } from './wave211';
 import { wave212PerformanceTestingServices, wave212ChaosEngineeringServices, wave212ServiceMeshServices, wave212APIGatewayServices, wave212EventStreamingServices } from './wave212';
-import { wave213SupplyChainAiServices, wave213VoiceBiometricsServices, wave213GreenItServices, wave213SpatialComputingServices, wave213LegalResearchAiServices } from './wave213';
+import { wave213CodeGenerationServices, wave213DigitalHumansServices, wave213UptimeMonitoringServices, wave213AiTranslationServices, wave213PredictiveMaintenanceServices } from './wave213';
 import { wave214DeveloperExperiencePlatformsServices, wave214AiCodeReviewServices, wave214EdgeComputingServices, wave214DataObservabilityServices, wave214IncidentManagementServices } from './wave214';
 import { wave215QuantumComputingServices, wave215NeuromorphicProcessingServices, wave215DigitalTwinPlatforms, wave215HomomorphicEncryptionServices, wave215AutonomousDroneDelivery } from './wave215';
 import { wave216SwarmIntelligenceServices, wave216EdgeAiInferenceServices, wave216SyntheticDataGenerationServices, wave216AiGovernanceComplianceServices, wave216AutonomousRpaServices, wave216FederatedLearningServices, wave216SpaceComputingServices } from './wave216';
@@ -1453,11 +1453,11 @@ export const allServices: Service[] = [
   ...wave212ServiceMeshServices,
   ...wave212APIGatewayServices,
   ...wave212EventStreamingServices,
-  ...wave213SupplyChainAiServices,
-  ...wave213VoiceBiometricsServices,
-  ...wave213GreenItServices,
-  ...wave213SpatialComputingServices,
-  ...wave213LegalResearchAiServices,
+  ...wave213CodeGenerationServices,
+  ...wave213DigitalHumansServices,
+  ...wave213UptimeMonitoringServices,
+  ...wave213AiTranslationServices,
+  ...wave213PredictiveMaintenanceServices,
   ...wave214DeveloperExperiencePlatformsServices,
   ...wave214AiCodeReviewServices,
   ...wave214EdgeComputingServices,
