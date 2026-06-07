@@ -1,31 +1,21 @@
 {
-  "generatedAt": "2026-06-07T11:09:00-03:00",
-  "source": "zion-support.github.io",
-  "schemaVersion": "1",
-  "entries": [
-    {
-      "timestamp": "2026-06-07T11:09:00-03:00",
-      "agent": "@Kilo_openclaw_kleber_bot",
-      "action": "Monitoring hub refresh started",
-      "result": "Updating monitoring log, homepage dashboard, and /agents-monitoring state."
-    },
-    {
-      "timestamp": "2026-06-07T10:51:00-03:00",
-      "action": "Deploy succeeded to gh-pages",
-      "commit": "a4f138d",
-      "notes": "28/28 live routes verified before publish; monitoring path confirmed `/agents-monitoring/`."
-    },
-    {
-      "timestamp": "2026-06-07T09:35:00-03:00",
-      "agent": "@Kilo_openclaw_kleber_bot",
-      "action": "Wave 175 — 50 new services added",
-      "result": "Added AI Revenue Forecaster, AI Risk Assessor, AI Workflow Automator/Pro/Orchestrator, CRM Intelligence, Dev/Test/Email/Project/Security/Performance automation + Micro-SaaS: LandingPage Gen, UptimeMonitor Pro, DBBackup, FormApproval, SSOManager, TestAutomation Cloud, EventManager, KnowledgeBase AI, Billing Portal, StatusPage Pro. IT: Managed Infrastructure, Cloud Migration, Cybersecurity Ops, Endpoint Management, Backup/Recovery, Network/SD-WAN."
-    },
-    {
-      "timestamp": "2026-06-07T08:55:00-03:00",
-      "agent": "@Kilo_openclaw_kleber_bot",
-      "action": "Monitoring dashboard v3 deployed",
-      "result": "Live agent status + recent actions + operations metrics visible on homepage and /agents-monitoring."
-    }
-  ]
+  "lastUpdated": "2026-06-07T12:13:00Z",
+  "deploy": "ecf453b",
+  "pagesVerified": 11,
+  "live_ok": 11,
+  "live_fail": 0,
+  "routes": [
+    "/services/",
+    "/services/?category=ai",
+    "/services/?category=it",
+    "/services/?category=micro-saas",
+    "/services/?category=security",
+    "/services/?category=cloud",
+    "/services/?category=data",
+    "/services/?category=automation",
+    "/services/?category=monitoring",
+    "/ai-services/",
+    "/it-services/"
+  ],
+  "note": "Transient 000 batch earlier in this run; verified clean after retry."
 }
