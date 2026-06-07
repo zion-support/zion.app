@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-06-07T15:30:00Z",
+  "lastUpdated": "2026-06-07T15:38:00Z",
   "deploy": "2026-06-07 15:29:11",
   "pagesVerified": 31,
   "live_ok": 31,
   "live_fail": 0,
-  "latestCommit": "8c50e9b",
-  "note": "Cleaned next.config, removed dead fake-wave imports, rebuilt, redeployed."
+  "latestCommit": "64fa523",
+  "note": "Stable verified state. Monitoring dashboard v4 live."
 }
