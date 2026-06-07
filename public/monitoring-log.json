@@ -1,13 +1,11 @@
 {
-  "lastUpdated": "2026-06-07T16:00:00Z",
-  "deploy": "2026-06-07 15:58:02",
+  "lastUpdated": "2026-06-07T16:12:00Z",
+  "deploy": "2026-06-07 16:03:44",
   "pagesVerified": 31,
   "live_ok": 31,
   "live_fail": 0,
-  "latestCommit": "c9dfceb",
-  "note": "Monitoring dashboard upgrade: expanded client ops, richer actions, full log.",
+  "latestCommit": "742e822",
+  "note": "Monitoring dashboard v5 live with refreshed agent activity and client CTA focus.",
   "status": "Operational",
-  "uptime": "99.9%",
-  "totalServices": 1222,
-  "agentsOnline": 9
+  "uptime": "99.9%"
 }

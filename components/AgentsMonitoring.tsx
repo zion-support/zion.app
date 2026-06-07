@@ -90,9 +90,9 @@ export default function AgentsMonitoring() {
         {/* Header with refreshed timestamp */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h3 className="text-xl font-bold text-white mb-1">🤖 Live Agent Operations Center</h3>
+            <h3 className="text-xl font-bold text-white mb-1">🤖 Live Operations — Zion Agent Fleet</h3>
             <p className="text-slate-300 text-sm md:text-base">
-              {totalServices}+ services · {agents.length} online agents · continuous autonomous deployments
+              {totalServices}+ services delivered · {agents.length} online agents · always-on delivery, monitoring, and support for clients.
             </p>
             <p className="text-slate-400 text-xs mt-2">
               Last refreshed: {new Date(now).toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', month: 'short', day: 'numeric' })}
