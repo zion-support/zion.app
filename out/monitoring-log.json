@@ -1,0 +1,11 @@
+{
+  "lastUpdated": "2026-06-07T16:12:00Z",
+  "deploy": "2026-06-07 16:03:44",
+  "pagesVerified": 31,
+  "live_ok": 31,
+  "live_fail": 0,
+  "latestCommit": "742e822",
+  "note": "Monitoring dashboard v5 live with refreshed agent activity and client CTA focus.",
+  "status": "Operational",
+  "uptime": "99.9%"
+}
