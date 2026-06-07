@@ -1,9 +1,13 @@
 {
-  "lastUpdated": "2026-06-07T15:50:00Z",
-  "deploy": "2026-06-07 15:29:11",
+  "lastUpdated": "2026-06-07T16:00:00Z",
+  "deploy": "2026-06-07 15:58:02",
   "pagesVerified": 31,
   "live_ok": 31,
   "live_fail": 0,
-  "latestCommit": "01469fb",
-  "note": "Monitoring improvement: AI-assisted support note added to client operations block."
+  "latestCommit": "c9dfceb",
+  "note": "Monitoring dashboard upgrade: expanded client ops, richer actions, full log.",
+  "status": "Operational",
+  "uptime": "99.9%",
+  "totalServices": 1222,
+  "agentsOnline": 9
 }

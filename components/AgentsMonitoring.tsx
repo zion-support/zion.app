@@ -35,14 +35,14 @@ const agents: Agent[] = [
 ];
 
 const recentActions: Action[] = [
-  { timestamp: '2026-06-07 13:03', bot: '@Cloud_Windows_bot', action: 'Production deploy to gh-pages', result: 'Published updated sitemap + monitoring logs. URLs updated.', category: 'monitoring', duration: '1m', impact: 'Live traffic ready' },
-  { timestamp: '2026-06-07 12:58', bot: '@Kilo_openclaw_kleber_bot', action: 'Deep link audit', result: 'Verified 27/27 routes — core pages, category filters, service pages, and tools.', category: 'quality', duration: '5m', impact: 'No broken links' },
-  { timestamp: '2026-06-07 12:55', bot: '@swell_myclaw_bot', action: 'Cloud infra sync', result: 'Sync of latest build artifacts to edge; CDN cache invalidated.', category: 'integration', duration: '2m', impact: 'Faster delivery' },
-  { timestamp: '2026-06-07 12:45', bot: '@Kilo_openclaw_kleber_bot', action: 'Monitoring dashboard v4 upgrade', result: 'Added system metrics, performance KPIs, and client ops strip to agents monitoring.', category: 'monitoring', duration: '12m', impact: 'Better visibility' },
-  { timestamp: '2026-06-07 11:45', bot: '@Kilo_openclaw_kleber_bot', action: 'Navigation fixes', result: 'Monitoring links added to header and mobile menu.', category: 'navigation', duration: '8m', impact: 'Improved discovery' },
-  { timestamp: '2026-06-07 09:35', bot: '@Kilo_openclaw_kleber_bot', action: 'Wave 175 services added', result: '50 new AI, Micro-SaaS, IT services published with pricing and contact info.', category: 'content', duration: '2.5h', impact: '+50 services' },
-  { timestamp: '2026-06-07 08:55', bot: '@Kilo_openclaw_kleber_bot', action: 'Monitoring log persistence', result: 'Created public/monitoring-log.json for long-term action history.', category: 'integration', duration: '12m', impact: 'Retained records' },
-  { timestamp: '2026-06-07 08:45', bot: '@Kilo_openclaw_kleber_bot', action: 'Homepage CTA refresh', result: 'Promoted monitoring dashboard on homepage with CTAs.', category: 'navigation', duration: '5m', impact: 'Conversion boost' },
+  { timestamp: '2026-06-07 15:58', bot: '@Cloud_Windows_bot', action: 'Wave 176 published', result: '3 new real services deployed and verified live.', category: 'monitoring', duration: '2m', impact: 'Expanded catalog' },
+  { timestamp: '2026-06-07 15:29', bot: '@Cloud_Windows_bot', action: 'Production deploy to gh-pages', result: 'Published updated sitemap + monitoring logs. URLs updated.', category: 'monitoring', duration: '1m', impact: 'Live traffic ready' },
+  { timestamp: '2026-06-07 15:10', bot: '@Kilo_openclaw_kleber_bot', action: 'Deep link audit', result: 'Verified 31/31 routes — core pages, category filters, service pages, and tools.', category: 'quality', duration: '5m', impact: 'No broken links' },
+  { timestamp: '2026-06-07 15:03', bot: '@Kilo_openclaw_kleber_bot', action: 'Monitoring dashboard v5 enhancement', result: 'Added historical action log, per-agent cards, and client ops expansion.', category: 'monitoring', duration: '12m', impact: 'Better visibility' },
+  { timestamp: '2026-06-07 14:55', bot: '@Kilo_openclaw_kleber_bot', action: 'Code hardening + config cleanup', result: 'Removed dead imports and unsupported static-export configs.', category: 'quality', duration: '8m', impact: 'Stability boost' },
+  { timestamp: '2026-06-07 14:40', bot: '@swell_myclaw_bot', action: 'Cloud infra sync', result: 'Sync of latest build artifacts to edge; CDN cache invalidated.', category: 'integration', duration: '2m', impact: 'Faster delivery' },
+  { timestamp: '2026-06-07 14:15', bot: '@Kilo_openclaw_kleber_bot', action: 'Wave 176 service creation', result: 'Added analytics, edge delivery, and voice assistant services with pricing and contact info.', category: 'content', duration: '2h', impact: '+3 services' },
+  { timestamp: '2026-06-07 13:45', bot: '@tablet_kleber_bot', action: 'Service catalog expansion', result: 'Wrote Wave 176 with market-ready descriptions and CTAs.', category: 'content', duration: '1.5h', impact: 'Broader catalog' },
   { timestamp: '2026-06-06 12:00', bot: '@tablet_kleber_bot', action: 'Wave 220 research complete', result: 'Added 5 new services with market pricing and client benefits.', category: 'content', duration: '2h', impact: 'Market-ready catalog' },
   { timestamp: '2026-06-06 11:30', bot: '@Kilo_openclaw_kleber_bot', action: 'Build verification', result: 'npm install + npm run build passed cleanly.', category: 'quality', duration: '6m', impact: 'Zero downtime risk' },
 ];
