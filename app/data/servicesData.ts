@@ -43,6 +43,11 @@ import { wave217CarbonCaptureTechServices, wave217BrainComputerInterfaceServices
 import { wave218RegenerativeAgricultureAiServices, wave218AutonomousConstructionServices, wave218EmotionAiServices, wave218SatelliteInternetServices, wave218AiLegalAssistantServices, wave218NuclearFusionEnergyServices, wave218HolographicDisplayServices } from './wave218';
 import { wave219AutonomousWarehouseRoboticsServices, wave219AiMusicGenerationServices, wave219DigitalIdentityVerificationServices, wave219SmartCityIotServices, wave219AiPoweredCybersecurityServices, wave219VerticalFarmingServices, wave219WearableHealthTechServices } from './wave219';
 import { wave220AiVideoAnalyticsServices, wave220SyntheticVoiceCloningServices, wave220AiContractLifecycleServices, wave220AutonomousVehicleTelemetryServices, wave220AiAccessibilityTestingServices } from './wave220';
+import { wave221ClimateRiskAnalyticsServices, wave221AgenticAiWorkflowServices, wave221AiCodeMigrationServices, wave221GreenCloudSustainabilityServices, wave221AiTalentMarketplaceServices } from './wave221';
+import { wave222MicroSaasAppointmentCrmServices, wave222ItPatchManagementServices, wave222SecuritySocAiCopilotServices, wave222DataContractEnforcementServices, wave222AutomationEmailCampaignServices, wave222MicroSaasFeedbackServices, wave222AiCompetitiveIntelServices } from './wave222';
+import { wave223AiSupplyChainDigitalTwinServices, wave223MicroSaasWhiteLabelServices, wave223ZeroTrustApiGatewayServices, wave223AiLegalDiscoveryServices, wave223GreenItAssetLifecycleServices, wave223AutonomousDbTuningServices, wave223AiAccessibilityComplianceServices } from './wave223';
+import { wave224AiManufacturingQcServices, wave224ItUedrServices, wave224DataFraudGraphServices } from './wave224';
+import { wave225MicroSaasBoardMgmtServices, wave225AiTranslationServices, wave225SecurityCnappServices, wave225DataCatalogAiServices } from './wave225';
 
 export const aiServices: Service[] = [
   {
@@ -1459,4 +1464,30 @@ export const allServices: Service[] = [
   ...wave220AiContractLifecycleServices,
   ...wave220AutonomousVehicleTelemetryServices,
   ...wave220AiAccessibilityTestingServices,
+  ...wave221ClimateRiskAnalyticsServices,
+  ...wave221AgenticAiWorkflowServices,
+  ...wave221AiCodeMigrationServices,
+  ...wave221GreenCloudSustainabilityServices,
+  ...wave221AiTalentMarketplaceServices,
+  ...wave222MicroSaasAppointmentCrmServices,
+  ...wave222ItPatchManagementServices,
+  ...wave222SecuritySocAiCopilotServices,
+  ...wave222DataContractEnforcementServices,
+  ...wave222AutomationEmailCampaignServices,
+  ...wave222MicroSaasFeedbackServices,
+  ...wave222AiCompetitiveIntelServices,
+  ...wave223AiSupplyChainDigitalTwinServices,
+  ...wave223MicroSaasWhiteLabelServices,
+  ...wave223ZeroTrustApiGatewayServices,
+  ...wave223AiLegalDiscoveryServices,
+  ...wave223GreenItAssetLifecycleServices,
+  ...wave223AutonomousDbTuningServices,
+  ...wave223AiAccessibilityComplianceServices,
+  ...wave224AiManufacturingQcServices,
+  ...wave224ItUedrServices,
+  ...wave224DataFraudGraphServices,
+  ...wave225MicroSaasBoardMgmtServices,
+  ...wave225AiTranslationServices,
+  ...wave225SecurityCnappServices,
+  ...wave225DataCatalogAiServices,
 ].filter((s: Service) => s.benefits.length > 0);
