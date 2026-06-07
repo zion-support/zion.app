@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-06-07T04:26:00-03:00",
+  "generatedAt": "2026-06-07T08:51:00-03:00",
   "source": "zion-support.github.io",
   "schemaVersion": "1",
-  "entries": []
+  "entries": [
+    {
+      "timestamp": "2026-06-07T08:51:00-03:00",
+      "action": "Deploy succeeded to gh-pages",
+      "commit": "a4f138d",
+      "routeResults": {
+        "live_ok": 25,
+        "live_fail": 0,
+        "sampleRoutes": [
+          "/",
+          "/agents-monitoring/",
+          "/dashboard/",
+          "/services/",
+          "/ai-services/",
+          "/it-services/",
+          "/pricing/",
+          "/contact/",
+          "/about/",
+          "/solutions/",
+          "/faq/",
+          "/search/"
+        ]
+      }
+    }
+  ]
 }
