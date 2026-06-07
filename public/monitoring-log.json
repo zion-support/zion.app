@@ -1,21 +1,9 @@
 {
-  "lastUpdated": "2026-06-07T12:13:00Z",
-  "deploy": "ecf453b",
-  "pagesVerified": 11,
-  "live_ok": 11,
+  "lastUpdated": "2026-06-07T12:36:00Z",
+  "deploy": "102b8ea",
+  "pagesVerified": 27,
+  "live_ok": 27,
   "live_fail": 0,
-  "routes": [
-    "/services/",
-    "/services/?category=ai",
-    "/services/?category=it",
-    "/services/?category=micro-saas",
-    "/services/?category=security",
-    "/services/?category=cloud",
-    "/services/?category=data",
-    "/services/?category=automation",
-    "/services/?category=monitoring",
-    "/ai-services/",
-    "/it-services/"
-  ],
-  "note": "Transient 000 batch earlier in this run; verified clean after retry."
+  "latestCommit": "102b8ea",
+  "note": "Verified routes include core pages, category filters, service pages, AI/IT service pages, and tools."
 }
