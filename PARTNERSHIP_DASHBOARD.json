@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-06-08T23:30:00+00:00",
+  "systems": {
+    "google_workspace": {
+      "status": "connected",
+      "account": "kleber@ziontechgroup.com",
+      "inbox_unread": 0,
+      "inbox_archived_today": 25
+    },
+    "partnership_outreach": {
+      "total_leads": 39,
+      "sent": 39,
+      "replied": 0,
+      "delivery_rate_percent": 100
+    },
+    "active_cron_jobs": [
+      {"name": "lead-miner-high-freq", "interval": "5 min", "purpose": "Outreach engine"},
+      {"name": "Client Outreach Scan", "interval": "4 hours", "purpose": "New lead mining"},
+      {"name": "Gmail Token Auto-Refresh", "interval": "30 min", "purpose": "Token renewal"}
+    ],
+    "scripts_ready": [
+      "free_outreach_system.py (LLM-free)",
+      "ultra_fast_outreach.sh",
+      "maintain_google_tokens.py"
+    ]
+  }
+}

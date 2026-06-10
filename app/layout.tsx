@@ -26,14 +26,18 @@ import './globals.css';
 const siteUrl = 'https://ziontechgroup.com';
 const inter = Inter({ subsets: ['latin'], display: 'swap', fallback: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'] });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Zion Tech Group | AI & IT Solutions',
+    default: 'Zion Tech Group | AI Agents · IT Solutions · Partnership Network',
     template: '%s | Zion Tech Group',
   },
   description:
-    'AI applications, secure engineering, and scalable delivery for modern teams. Zion Tech Group.',
+    'Enterprise AI agents, IT services, and Micro SAAS platforms. 396+ services across 18 categories. Partnership opportunities in LATAM, US, UK. Built by AI, delivered by humans.',
+  keywords: 'AI agents, artificial intelligence, IT services, cloud infrastructure, automation, voice AI, consulting, GPU cloud, partnerships, LATAM AI, NVIDIA, OpenAI, white-label AI',
+  authors: [{ name: 'Kleber Garcia Alcatrão', url: siteUrl }],
+  creator: 'Zion Tech Group',
+  publisher: 'Zion Tech Group',
   applicationName: 'Zion Tech Group',
   alternates: {
     canonical: '/',
@@ -53,6 +57,20 @@ export const metadata = {
     capable: true,
     statusBarStyle: 'default',
     title: 'Zion Tech Group',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    title: 'Zion Tech Group | AI Agents · IT Solutions · Partnership Network',
+    description: 'Enterprise AI agents, IT services, and partnership opportunities across LATAM, US, and UK.',
+    siteName: 'Zion Tech Group',
+    images: [{ url: '/og-home.svg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zion Tech Group | AI Agents & IT Solutions',
+    description: 'Built by AI agents. Partnership opportunities available.',
   },
 };
 
@@ -84,7 +102,7 @@ export default function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Zion Tech Group',
-            url: 'https://ziontechgroup.com',
+            url: siteUrl,
             email: 'kleber@ziontechgroup.com',
             telephone: '+1 302 464 0950',
             address: '364 E Main St STE 1008, Middletown, DE 19709',

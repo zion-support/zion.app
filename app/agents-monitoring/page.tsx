@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import AgentsMonitoring from '@/components/AgentsMonitoring';
+import AgentsMonitoringPage from '@/components/AgentsMonitoringPage';
 
 export const metadata: Metadata = {
-  title: 'AI Agent Operations — Live Monitoring | Zion Tech Group',
-  description: 'Real-time monitoring of Zion Tech Group AI agent fleet. Watch 6 autonomous agents build, test, and deploy 795+ services 24/7.',
+  title: 'AI Agent Monitoring Dashboard — Live Operations | Zion Tech Group',
+  description: 'Permanent record of all AI agent actions. 9 agents building, testing, and deploying 795+ services with full audit trail and performance metrics.',
   alternates: { canonical: 'https://ziontechgroup.com/agents-monitoring' }
 };
 
-export default function AgentsMonitoringPage() {
-  return <AgentsMonitoring />;
+export default function AgentsMonitoringPageRoute() {
+  return <AgentsMonitoringPage />;
 }
