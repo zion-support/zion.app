@@ -1286,7 +1286,7 @@ let list = services;
                 </div>
                 <h3 className="text-base font-semibold text-white group-hover:text-purple-300 transition-colors">{tool.name}</h3>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed line-clamp-3">{tool.desc}</p>
-                {tool.features.length > 0 && (
+                {Array.isArray(tool.features) && tool.features.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-3">
                     {tool.features.map(f => (
                       <span key={f} className="text-[10px] text-slate-400 bg-slate-800/60 border border-slate-700/60 px-1.5 py-0.5 rounded">{f}</span>

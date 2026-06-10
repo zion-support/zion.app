@@ -1,97 +1,23 @@
+// Wave 221 — New AI/IT Services Added
+// Generated 2026-06-10
+
 import { Service } from './serviceTypes';
 
-// Wave 221 — AI-Powered Climate Risk Analytics, Agentic AI Workflow Platform,
-// AI Code Migration Assistant, Green Cloud Sustainability Dashboard, AI-Powered Talent Marketplace
-// Created by @Kilo_openclaw_kleber_bot — 2026-06-07
-// New categories: climate-risk-analytics, agentic-ai-workflows, ai-code-migration,
-// green-cloud-sustainability, ai-talent-marketplace
-
-export const wave221ClimateRiskAnalyticsServices: Service[] = [
-  {
-    id: 'ai-climate-risk-analytics',
-    title: 'AI Climate Risk Analytics & TCFD Reporting',
-    description: 'Assess physical and transitional climate risks across your asset portfolio using AI-driven climate models. Automate TCFD-aligned disclosures, scenario analysis, and stress testing for regulators, investors, and board reporting.',
-    features: ['Physical risk modeling (flood, wildfire, storm surge)', 'Transitional risk assessment (carbon pricing, policy shifts)', 'TCFD-aligned automated reporting', 'IPCC RCP/SSP scenario analysis', 'Portfolio-level risk scoring and heatmaps', 'Integration with ESG and financial data platforms'],
-    benefits: ['Meet TCFD and SEC climate disclosure mandates', 'Quantify financial exposure to climate events', 'Prioritize adaptation investments with risk data', 'Reduce climate reporting time by 80%', 'Investor-ready disclosures in days not months'],
-    pricing: {basic: '$499/mo', pro: '$1,499/mo', enterprise: 'Custom'},
-    contactInfo: {website: '/services/ai-climate-risk-analytics', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'},
-    icon: '🌍',
-    href: '/services/ai-climate-risk-analytics',
-    popular: true,
-    category: 'ai',
-    industry: 'Climate & Sustainability',
-    stage: 'published',
-  },
+export const wave221AiServices: Service[] = [
+  { id: 'w221-ai-voice-agent-platform', title: 'AI Voice Agent Platform', description: 'White-label voice AI agents for customer service, sales, and technical support.', features: ['Real-time voice synthesis', 'Multi-language support', 'Natural conversation flow', '24/7 availability', 'CRM integration'], benefits: ['Reduce support costs by 70%', 'Increase customer satisfaction', 'Handle unlimited concurrent calls'], pricing: { basic: '299', pro: '599', enterprise: '999' }, contactInfo: { website: '/services/w221-ai-voice-agent-platform', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🎙️', href: '/services/w221-ai-voice-agent-platform', popular: true, category: 'ai', industry: 'Technology' },
+  { id: 'w221-ai-workflow-automation', title: 'AI Workflow Automation Suite', description: 'Intelligent automation of business processes using AI agents.', features: ['Process mining', 'AI decision automation', 'Human approval workflows', 'Document processing'], benefits: ['Reduce manual work by 80%', 'Eliminate bottlenecks', 'Ensure compliance'], pricing: { basic: '499', pro: '899', enterprise: '1499' }, contactInfo: { website: '/services/w221-ai-workflow-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '⚙️', href: '/services/w221-ai-workflow-automation', popular: true, category: 'ai', industry: 'Business' },
+  { id: 'w221-predictive-analytics-engine', title: 'Predictive Analytics Engine', description: 'AI-powered predictive analytics for sales forecasting and customer behavior prediction.', features: ['Sales forecasting', 'Customer behavior prediction', 'Inventory optimization', 'Anomaly detection'], benefits: ['Increase forecast accuracy', 'Reduce stockouts', 'Identify upsell opportunities'], pricing: { basic: '599', pro: '899', enterprise: '1299' }, contactInfo: { website: '/services/w221-predictive-analytics-engine', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🔮', href: '/services/w221-predictive-analytics-engine', popular: true, category: 'ai', industry: 'Business' },
+  { id: 'w221-autonomous-sales-agents', title: 'Autonomous Sales Agents', description: 'AI agents that prospect, qualify, and nurture leads 24/7.', features: ['Lead prospecting', 'Personalized emails', 'Calendar scheduling', 'CRM updates'], benefits: ['5x lead generation', '24/7 sales coverage', 'Reduce cycle time'], pricing: { basic: '799', pro: '1299', enterprise: '1999' }, contactInfo: { website: '/services/w221-autonomous-sales-agents', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🤝', href: '/services/w221-autonomous-sales-agents', popular: true, category: 'ai', industry: 'Sales' },
 ];
 
-export const wave221AgenticAiWorkflowServices: Service[] = [
-  {
-    id: 'agentic-ai-workflow-platform',
-    title: 'Agentic AI Workflow Orchestration Platform',
-    description: 'Build and deploy autonomous AI agent teams that collaborate on complex business workflows. Agents plan, execute, review, and iterate — handling multi-step processes like RFP responses, compliance audits, and research synthesis with minimal human oversight.',
-    features: ['Multi-agent team builder with role assignment', 'Autonomous planning, execution, and self-correction', 'Human-in-the-loop approval gates', 'Tool and API integration for agents (search, CRM, email)', 'Workflow templates (RFP, audit, research, onboarding)', 'Full audit trail and agent decision logging'],
-    benefits: ['Automate complex multi-step workflows end to end', 'Reduce RFP response time from days to hours', 'Ensure consistency with automated quality gates', 'Scale expert workflows without adding headcount', 'Full transparency with agent decision audit trails'],
-    pricing: {basic: '$799/mo', pro: '$1,999/mo', enterprise: 'Custom'},
-    contactInfo: {website: '/services/agentic-ai-workflow-platform', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'},
-    icon: '🤖',
-    href: '/services/agentic-ai-workflow-platform',
-    popular: true,
-    category: 'ai',
-    industry: 'Enterprise AI',
-    stage: 'published',
-  },
+export const wave221MicroSaasServices: Service[] = [
+  { id: 'w221-ai-customer-success-platform', title: 'AI Customer Success Platform', description: 'Proactive customer success management using AI.', features: ['Churn risk detection', 'Expansion alerts', 'Success campaigns', 'Health scoring'], benefits: ['Reduce churn by 45%', 'Increase revenue', 'Proactive management'], pricing: { basic: '399', pro: '699', enterprise: '999' }, contactInfo: { website: '/services/w221-ai-customer-success-platform', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '📈', href: '/services/w221-ai-customer-success-platform', popular: true, category: 'microSaas', industry: 'SaaS' },
 ];
 
-export const wave221AiCodeMigrationServices: Service[] = [
-  {
-    id: 'ai-code-migration-assistant',
-    title: 'AI Code Migration & Modernization Assistant',
-    description: 'Accelerate legacy code migration with AI. Automatically translates COBOL, Java EE, .NET Framework, and monolithic code to modern stacks (Java Spring, .NET Core, microservices, TypeScript). Generates migration plans, refactors code, and creates tests.',
-    features: ['Legacy-to-modern code translation (COBOL, Java EE, .NET Framework)', 'Automated refactoring to microservices patterns', 'Migration plan generation with effort estimates', 'Test generation for migrated code', 'Dependency analysis and compatibility checking', 'Incremental migration with parallel-run support'],
-    benefits: ['Migrate legacy systems 5x faster than manual approaches', 'Reduce migration risk with AI-validated outputs', 'Maintain business logic integrity during modernization', 'Generate tests automatically for migrated code', 'Estimated effort and ROI for each migration step'],
-    pricing: {basic: '$999/mo', pro: '$2,499/mo', enterprise: 'Custom'},
-    contactInfo: {website: '/services/ai-code-migration-assistant', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'},
-    icon: '🔄',
-    href: '/services/ai-code-migration-assistant',
-    popular: true,
-    category: 'ai',
-    industry: 'Software Modernization',
-    stage: 'published',
-  },
+export const wave221SecurityServices: Service[] = [
+  { id: 'w221-ai-security-analyst', title: 'AI Security Analyst', description: '24/7 AI-powered security monitoring and threat detection.', features: ['Log analysis', 'Anomaly detection', 'Incident response', 'Compliance monitoring'], benefits: ['Detect threats 10x faster', 'Reduce false positives', '24/7 coverage'], pricing: { basic: '599', pro: '999', enterprise: '1999' }, contactInfo: { website: '/services/w221-ai-security-analyst', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🛡️', href: '/services/w221-ai-security-analyst', popular: true, category: 'security', industry: 'Security' },
 ];
 
-export const wave221GreenCloudSustainabilityServices: Service[] = [
-  {
-    id: 'green-cloud-sustainability-dashboard',
-    title: 'Green Cloud Sustainability & Carbon Dashboard',
-    description: 'Measure, track, and optimize the carbon footprint of your cloud infrastructure. Real-time emissions data across AWS, Azure, and GCP with carbon-aware workload scheduling, green region recommendations, and ESG reporting integration.',
-    features: ['Real-time cloud carbon emissions tracking', 'Carbon-aware workload scheduling and autoscaling', 'Green region recommendations for deployments', 'Workload right-sizing for energy efficiency', 'ESG reporting integration (GRI, CDP)', 'Cost vs. carbon optimization trade-offs'],
-    benefits: ['Reduce cloud carbon footprint by 20-40%', 'Meet corporate net-zero and ESG commitments', 'Optimize workloads for both cost and carbon', 'Automated green region scheduling', 'Investor-ready sustainability metrics'],
-    pricing: {basic: '$299/mo', pro: '$799/mo', enterprise: 'Custom'},
-    contactInfo: {website: '/services/green-cloud-sustainability-dashboard', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'},
-    icon: '🌱',
-    href: '/services/green-cloud-sustainability-dashboard',
-    popular: true,
-    category: 'cloud',
-    industry: 'Sustainability',
-    stage: 'published',
-  },
-];
-
-export const wave221AiTalentMarketplaceServices: Service[] = [
-  {
-    id: 'ai-talent-marketplace',
-    title: 'AI-Powered Talent Marketplace & Skills Intelligence',
-    description: 'Transform your HR with an internal talent marketplace. AI matches employees to projects, gigs, and mentorships based on skills, aspirations, and growth potential. Identifies skill gaps, recommends learning paths, and forecasts future talent needs.',
-    features: ['AI skills inference from work history and activity', 'Internal project and gig matching', 'Aspiration-based career path mapping', 'Skill gap analysis with learning recommendations', 'Succession planning and flight risk prediction', 'DEI analytics and inclusive matching'],
-    benefits: ['Increase internal mobility and retention by 40%', 'Fill roles faster from within your organization', 'Deploy talent to highest-impact projects', 'Close skill gaps proactively with learning paths', 'Build diverse leadership pipelines'],
-    pricing: {basic: '$299/mo', pro: '$799/mo', enterprise: 'Custom'},
-    contactInfo: {website: '/services/ai-talent-marketplace', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'},
-    icon: '👥',
-    href: '/services/ai-talent-marketplace',
-    popular: true,
-    category: 'ai',
-    industry: 'Human Resources',
-    stage: 'published',
-  },
+export const wave221AutomationServices: Service[] = [
+  { id: 'w221-data-pipeline-automation', title: 'Data Pipeline Automation', description: 'Automated ETL pipelines with AI-powered data quality checks.', features: ['50+ connectors', 'Schema evolution', 'Quality validation', 'Real-time streaming'], benefits: ['Reduce maintenance', 'Improve reliability', 'Faster insights'], pricing: { basic: '399', pro: '699', enterprise: '1299' }, contactInfo: { website: '/services/w221-data-pipeline-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' }, icon: '🔄', href: '/services/w221-data-pipeline-automation', popular: false, category: 'automation', industry: 'Data' },
 ];

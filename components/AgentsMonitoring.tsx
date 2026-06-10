@@ -5,7 +5,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { allServices } from '../data/servicesData';
+import { allServices } from '../app/data/servicesData';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 type Agent = {

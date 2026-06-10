@@ -43,6 +43,7 @@ import { wave213AiTranslationServices, wave213CodeGenerationServices, wave213Dig
 import { wave214AiCodeReviewServices, wave214DataObservabilityServices, wave214DeveloperExperiencePlatformsServices, wave214EdgeComputingServices, wave214IncidentManagementServices } from './wave214';
 import { wave215HomomorphicEncryptionServices, wave215NeuromorphicProcessingServices, wave215QuantumComputingServices } from './wave215';
 import { wave216AiGovernanceComplianceServices, wave216AutonomousRpaServices, wave216EdgeAiInferenceServices, wave216FederatedLearningServices, wave216SpaceComputingServices, wave216SwarmIntelligenceServices, wave216SyntheticDataGenerationServices } from './wave216';
+import { wave221AiServices, wave221MicroSaasServices, wave221SecurityServices, wave221AutomationServices } from './wave221';
 import { wave2173dPrintedElectronicsServices, wave217AiDrugDiscoveryServices, wave217AutonomousMarineVehicleServices, wave217BrainComputerInterfaceServices, wave217CarbonCaptureTechServices, wave217PrecisionFermentationServices, wave217SmartGridEnergyServices } from './wave217';
 import { wave218AiLegalAssistantServices, wave218AutonomousConstructionServices, wave218EmotionAiServices, wave218HolographicDisplayServices, wave218NuclearFusionEnergyServices, wave218RegenerativeAgricultureAiServices, wave218SatelliteInternetServices } from './wave218';
 import { wave219AiMusicGenerationServices, wave219AiPoweredCybersecurityServices, wave219AutonomousWarehouseRoboticsServices, wave219DigitalIdentityVerificationServices, wave219SmartCityIotServices, wave219VerticalFarmingServices, wave219WearableHealthTechServices } from './wave219';
@@ -90,6 +91,7 @@ export const aiServices: Service[] = [
   ...wave216AiGovernanceComplianceServices,
   ...wave216SwarmIntelligenceServices,
   ...wave216SyntheticDataGenerationServices,
+  ...wave221AiServices,
   ...wave217AiDrugDiscoveryServices,
   ...wave217BrainComputerInterfaceServices,
   ...wave218EmotionAiServices,
@@ -329,6 +331,7 @@ export const microSaasServices: Service[] = [
   ...wave206MicroSaasServices,
   ...wave207MicroSaasServices,
   ...wave208MicroSaasServices,
+  ...wave221MicroSaasServices,
 ];
 
 export const devOpsServices: Service[] = [
