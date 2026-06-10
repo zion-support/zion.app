@@ -68,6 +68,9 @@ import { wave241AiServices, wave241ItServices, wave241MicroSaasServices } from '
 import { wave242AiServices, wave242ItServices, wave242MicroSaasServices } from './wave242';
 import { wave243VectorDatabaseServices, wave243ApiDocumentationServices, wave243CustomerDataPlatformServices, wave243EdgeComputingCloudServices, wave243TestAutomationFrameworkServices } from './wave243';
 import { wave244InfrastructureAsCodeServices, wave244AiProcurementServices, wave244SyntheticMediaDetectionServices, wave244WebassemblyRuntimeServices, wave244DeveloperPortalServices } from './wave244';
+import { wave245AiAgentOrchestrationServices, wave245DataProductPlatformServices, wave245ZeroTrustSecurityServices, wave245SyntheticDataGenerationServices, wave245MlopsPlatformServices } from './wave245';
+import { wave246AiCodeReviewServices, wave246IncidentManagementServices, wave246DeveloperExperienceServices, wave246EdgeAiInferenceServices, wave246AiGovernanceServices } from './wave246';
+import { wave247AiTranslationServices, wave247DigitalHumansServices, wave247PredictiveMaintenanceServices, wave247UptimeMonitoringServices, wave247AiCodeGenerationServices } from './wave247';
 
 export const aiServices: Service[] = [
   {
@@ -1581,4 +1584,19 @@ export const allServices: Service[] = [
   ...wave244SyntheticMediaDetectionServices,
   ...wave244WebassemblyRuntimeServices,
   ...wave244DeveloperPortalServices,
+  ...wave245AiAgentOrchestrationServices,
+  ...wave245DataProductPlatformServices,
+  ...wave245ZeroTrustSecurityServices,
+  ...wave245SyntheticDataGenerationServices,
+  ...wave245MlopsPlatformServices,
+  ...wave246AiCodeReviewServices,
+  ...wave246IncidentManagementServices,
+  ...wave246DeveloperExperienceServices,
+  ...wave246EdgeAiInferenceServices,
+  ...wave246AiGovernanceServices,
+  ...wave247AiTranslationServices,
+  ...wave247DigitalHumansServices,
+  ...wave247PredictiveMaintenanceServices,
+  ...wave247UptimeMonitoringServices,
+  ...wave247AiCodeGenerationServices,
 ].filter((s: Service) => s.benefits.length > 0);

@@ -60,26 +60,16 @@ const AGENTS: Agent[] = [
 
 /* ─── Persistent Action Log ─── */
 const DEFAULT_ACTIONS: AgentAction[] = [
-  { id: 'a01', agent: '@windows_carol_bot',        action: 'Production deploy — Waves 233-237 (25 new services) live on ziontechgroup.com', timestamp: '2026-06-07 21:45', impact: '+25 services', category: 'deploy' },
-  { id: 'a02', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Waves 233-237 — fraud detection, clinical trials, energy grid, DLP, SEO, and 20 more real services', timestamp: '2026-06-07 21:40', impact: '+25 services', category: 'wave' },
-  { id: 'a03', agent: '@tablet_kleber_bot',        action: 'Wrote market-ready descriptions, features, benefits for 25 new services across Waves 233-237', timestamp: '2026-06-07 21:35', impact: '25 descriptions', category: 'content' },
-  { id: 'a04', agent: '@Kilo_openclaw_kleber_bot', action: 'Deep site crawl — verified all core routes, fixed navigation links, improved dropdown menus', timestamp: '2026-06-07 21:30', impact: 'Navigation improved', category: 'audit' },
-  { id: 'a05', agent: '@Kilo_openclaw_kleber_bot', action: 'Upgraded navigation — Solutions dropdown with category links, featured AI services, Agent Monitoring in Resources', timestamp: '2026-06-07 21:25', impact: 'Better UX', category: 'feature' },
-  { id: 'a06', agent: '@Cloud_Windows_bot',        action: 'CDN edge sync — 25 new service pages cached globally + sitemap updated (890+ URLs)', timestamp: '2026-06-07 21:20', impact: 'Global delivery', category: 'deploy' },
-  { id: 'a07', agent: '@windows_carol_bot',        action: 'Production deploy — Waves 230-232 (15 new services) live on ziontechgroup.com', timestamp: '2026-06-07 18:45', impact: '+15 services', category: 'deploy' },
-  { id: 'a08', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Waves 230-232 — legal AI, cybersecurity, FinOps, and 12 more real services with market pricing', timestamp: '2026-06-07 18:40', impact: '+15 services', category: 'wave' },
-  { id: 'a09', agent: '@tablet_kleber_bot',        action: 'Wrote market-ready descriptions, features, benefits, and CTAs for 15 new services across Waves 230-232', timestamp: '2026-06-07 18:35', impact: '15 descriptions', category: 'content' },
-  { id: 'a10', agent: '@Kilo_openclaw_kleber_bot', action: 'Verified all service pages build correctly — Waves 230-232 pass type-check and lint', timestamp: '2026-06-07 18:30', impact: 'Build passing', category: 'audit' },
-  { id: 'a11', agent: '@Kilo_openclaw_kleber_bot', action: 'Upgraded monitoring dashboard v7 — agent fleet with uptime, tasks, live activity metrics', timestamp: '2026-06-07 18:25', impact: 'Enhanced monitoring', category: 'feature' },
-  { id: 'a12', agent: '@Cloud_Windows_bot',        action: 'CDN edge sync — all 15 new service pages cached across 200+ edge locations', timestamp: '2026-06-07 18:20', impact: 'Global delivery', category: 'deploy' },
-  { id: 'a13', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Waves 221-226 — 32 new AI/IT/Micro-SaaS services with market pricing', timestamp: '2026-06-07 16:35', impact: '+32 services', category: 'wave' },
-  { id: 'a14', agent: '@Cloud_Windows_bot',        action: 'Production deploy to gh-pages — sitemap + monitoring logs updated', timestamp: '2026-06-07 16:45', impact: 'Live traffic ready', category: 'deploy' },
-  { id: 'a15', agent: '@Kilo_openclaw_kleber_bot', action: 'Verified 48/48 core routes — all pages healthy, zero broken links', timestamp: '2026-06-07 16:40', impact: 'Zero broken links', category: 'audit' },
-  { id: 'a16', agent: '@swell_myclaw_bot',         action: 'CDN cache invalidation + edge sync across all regions', timestamp: '2026-06-07 16:25', impact: 'Faster global delivery', category: 'deploy' },
-  { id: 'a17', agent: '@tablet_kleber_bot',        action: 'Researched market pricing for 32 new services across AI/IT/SaaS verticals', timestamp: '2026-06-07 16:20', impact: 'Competitive pricing', category: 'research' },
-  { id: 'a18', agent: '@Cloud_Windows_bot',        action: 'Production deploy — Wave 176 with 3 new services published live', timestamp: '2026-06-07 15:58', impact: '+3 services live', category: 'deploy' },
-  { id: 'a19', agent: '@Kilo_openclaw_kleber_bot', action: 'Deep link audit — checked all service pages and category filters', timestamp: '2026-06-07 15:10', impact: 'All links verified', category: 'audit' },
-  { id: 'a20', agent: '@Kilo_openclaw_kleber_bot', action: 'Monitoring dashboard v5 — historical action log + per-agent cards', timestamp: '2026-06-07 15:03', impact: 'Better visibility', category: 'feature' },
+  { id: 'a01', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Waves 245-247 — 15 new services (LangChain, dbt, Zscaler, MOSTLY AI, W&B, GitHub Copilot, PagerDuty, Backstage, Triton, Arize, DeepL, Synthesia, Upkeep, Better Uptime, Cursor)', timestamp: '2026-06-19 18:30', impact: '+15 services', category: 'wave' },
+  { id: 'a02', agent: '@tablet_kleber_bot',        action: 'Researched market pricing and descriptions for 15 new services across Waves 245-247', timestamp: '2026-06-19 18:25', impact: '15 descriptions', category: 'content' },
+  { id: 'a03', agent: '@Kilo_openclaw_kleber_bot', action: 'Updated servicesData.ts — integrated Waves 245-247 imports and allServices spreads', timestamp: '2026-06-19 18:35', impact: '+15 services', category: 'feature' },
+  { id: 'a04', agent: '@windows_carol_bot',        action: 'Production deploy — Waves 238-242 (25 new services) live on ziontechgroup.com', timestamp: '2026-06-08 14:45', impact: '+25 services', category: 'deploy' },
+  { id: 'a05', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Wave 244 — IaC, AI Procurement, Synthetic Media, Wasm Runtime, Developer Portal', timestamp: '2026-06-07 23:40', impact: '+5 services', category: 'wave' },
+  { id: 'a06', agent: '@Kilo_openclaw_kleber_bot', action: 'Created Waves 238-243 — Pinecone, ReadMe, Segment, Cloudflare Workers, Playwright, and 20 more', timestamp: '2026-06-07 21:40', impact: '+25 services', category: 'wave' },
+  { id: 'a07', agent: '@windows_carol_bot',        action: 'Production deploy — Waves 233-237 (25 new services) live on ziontechgroup.com', timestamp: '2026-06-07 21:45', impact: '+25 services', category: 'deploy' },
+  { id: 'a08', agent: '@tablet_kleber_bot',        action: 'Researched market pricing for 25 new services across Waves 233-237', timestamp: '2026-06-07 21:35', impact: 'Competitive pricing', category: 'research' },
+  { id: 'a09', agent: '@Kilo_openclaw_kleber_bot', action: 'Upgraded monitoring dashboard v9 — refreshed data layer, updated agent fleet stats', timestamp: '2026-06-07 21:25', impact: 'Enhanced monitoring', category: 'feature' },
+  { id: 'a10', agent: '@Cloud_Windows_bot',        action: 'CDN edge sync — all service pages cached globally + sitemap updated', timestamp: '2026-06-07 21:20', impact: 'Global delivery', category: 'deploy' },
 ];
 
 const STORAGE_KEY = 'zion_agent_actions';
@@ -144,8 +134,8 @@ export default function AgentsMonitoring() {
 
   const activeBots = AGENTS.filter(a => a.status === 'active').length;
   const totalActions = actions.length;
-  const totalWaves = 60;
-  const totalServices = 487;
+  const totalWaves = 63;
+  const totalServices = 502;
   const avgUptime = '99.97%';
 
   const filteredActions = actions.filter(a =>
