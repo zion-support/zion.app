@@ -47,6 +47,7 @@ import { wave221AiServices, wave221MicroSaasServices, wave221SecurityServices, w
 import { wave2173dPrintedElectronicsServices, wave217AiDrugDiscoveryServices, wave217AutonomousMarineVehicleServices, wave217BrainComputerInterfaceServices, wave217CarbonCaptureTechServices, wave217PrecisionFermentationServices, wave217SmartGridEnergyServices } from './wave217';
 import { wave218AiLegalAssistantServices, wave218AutonomousConstructionServices, wave218EmotionAiServices, wave218HolographicDisplayServices, wave218NuclearFusionEnergyServices, wave218RegenerativeAgricultureAiServices, wave218SatelliteInternetServices } from './wave218';
 import { wave219AiMusicGenerationServices, wave219AiPoweredCybersecurityServices, wave219AutonomousWarehouseRoboticsServices, wave219DigitalIdentityVerificationServices, wave219SmartCityIotServices, wave219VerticalFarmingServices, wave219WearableHealthTechServices } from './wave219';
+import { wave224AiVoiceCloneServices, wave224ContainerSecurityScannerServices, wave224RealTimePricingOptimizerServices, wave224AiCustomerSuccessServices, wave224ServerlessDatabasePoolingServices, wave224EdgeComputeOrchestrationServices } from './wave224';
 import { wave220AiAccessibilityTestingServices, wave220AiContractLifecycleServices, wave220AiVideoAnalyticsServices, wave220AutonomousVehicleTelemetryServices, wave220SyntheticVoiceCloningServices } from './wave220';
 
 export const aiServices: Service[] = [
@@ -103,6 +104,9 @@ export const aiServices: Service[] = [
   ...wave220AiContractLifecycleServices,
   ...wave220AiVideoAnalyticsServices,
   ...wave220SyntheticVoiceCloningServices,
+  ...wave224AiVoiceCloneServices,
+  ...wave224RealTimePricingOptimizerServices,
+  ...wave224AiCustomerSuccessServices,
 ];
 
 export const itServices: Service[] = [
@@ -386,6 +390,9 @@ export const otherServices: Service[] = [
   ...wave218HolographicDisplayServices,
   ...wave218NuclearFusionEnergyServices,
   ...wave218SatelliteInternetServices,
+  ...wave224ContainerSecurityScannerServices,
+  ...wave224ServerlessDatabasePoolingServices,
+  ...wave224EdgeComputeOrchestrationServices,
 ];
 
 export const allServices: Service[] = [
