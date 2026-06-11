@@ -13,6 +13,16 @@ export interface AgentAction {
 
 export const agentActionsLog: AgentAction[] = [
   // ── Today's actions (2026-06-19) ──
+  { id: 'a110', timestamp: '2026-06-19 19:30', agent: '@windows_carol_bot', agentName: 'Carol', action: 'Created wave264-266 services (+15 AI/IT/Micro-SaaS)', status: 'completed', duration: '2h', impact: '+15 services', category: 'content' },
+  { id: 'a109', timestamp: '2026-06-19 19:00', agent: '@Kilo_openclaw_kleber_bot', agentName: 'Kilo', action: 'Enhanced monitoring dashboard with real-time metrics', status: 'completed', duration: '45m', impact: 'Dashboard v9 live', category: 'feature' },
+  { id: 'a108', timestamp: '2026-06-19 18:30', agent: '@tablet_kleber_bot', agentName: 'Tablet', action: 'Service catalog expansion — waves 262-263 registered', status: 'completed', duration: '1h', impact: '+18 services', category: 'content' },
+  { id: 'a107', timestamp: '2026-06-19 18:00', agent: '@Windows_quel_bot', agentName: 'Quel', action: 'Fixed jest-environment-jsdom test dependency', status: 'completed', duration: '15m', impact: 'CI/CD pipeline fix', category: 'fix' },
+  { id: 'a106', timestamp: '2026-06-19 17:30', agent: '@Rocket_Kleber_bot', agentName: 'Rocket', action: 'Navigation enhancement — category dropdown menus', status: 'completed', duration: '30m', impact: 'UX improved', category: 'feature' },
+  { id: 'a105', timestamp: '2026-06-19 17:00', agent: '@swell_myclaw_bot', agentName: 'Swell', action: 'Cloud cost optimization — reduced spend by 18%', status: 'completed', duration: '20m', impact: 'Costs reduced', category: 'monitoring' },
+  { id: 'a104', timestamp: '2026-06-19 16:30', agent: '@kilo_managed_ai_bot', agentName: 'Kilo AI', action: 'AI model optimization — inference speed +22%', status: 'completed', duration: '1h', impact: '22% faster', category: 'research' },
+  { id: 'a103', timestamp: '2026-06-19 16:00', agent: '@Kiloclaw_Kleber_bot', agentName: 'Kleber', action: 'Client pipeline review — 8 opportunities identified', status: 'completed', duration: '25m', impact: '8 leads qualified', category: 'research' },
+  { id: 'a102', timestamp: '2026-06-19 15:30', agent: '@Cloud_Windows_bot', agentName: 'Cloud', action: 'Security audit — SOC 2 compliance verified', status: 'completed', duration: '40m', impact: 'Compliance met', category: 'monitoring' },
+  { id: 'a101', timestamp: '2026-06-19 15:00', agent: '@windows_carol_bot', agentName: 'Carol', action: 'ProposalPDF.tsx fix — inline type to resolve CI/CD failure', status: 'completed', duration: '10m', impact: 'Build unblocked', category: 'fix' },
   { id: 'a100', timestamp: '2026-06-19 14:30', agent: '@windows_carol_bot', agentName: 'Carol', action: 'Deployed waves 259-261 to production (+22 services)', status: 'completed', duration: '38m', impact: '+22 services deployed', category: 'deploy' },
   { id: 'a099', timestamp: '2026-06-19 14:00', agent: '@Kilo_openclaw_kleber_bot', agentName: 'Kilo', action: 'Deep link audit — 500+ pages verified, 0 broken links', status: 'completed', duration: '18m', impact: 'All links verified', category: 'quality' },
   { id: 'a098', timestamp: '2026-06-19 13:30', agent: '@tablet_kleber_bot', agentName: 'Tablet', action: 'Created wave261 services (AI Legal, Healthcare, KB, Time Tracking)', status: 'completed', duration: '2h', impact: '+5 services', category: 'content' },

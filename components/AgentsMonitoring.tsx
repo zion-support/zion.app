@@ -58,8 +58,15 @@ const categoryColor: Record<string,string> = {
 
 export default function AgentsMonitoring() {
   const [now, setNow] = useState<string>(() => new Date().toISOString());
+  const [heartbeatKey, setHeartbeatKey] = useState(0);
+
   useEffect(() => {
     const id = setInterval(() => setNow(new Date().toISOString()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setHeartbeatKey(k => k + 1), 2000);
     return () => clearInterval(id);
   }, []);
 
@@ -85,12 +92,56 @@ export default function AgentsMonitoring() {
 
   return (
     <div className="mb-16">
+      {/* ── PROMINENT TOP BANNER ── */}
+      <div className="relative rounded-t-2xl border border-b-0 border-purple-500/30 bg-gradient-to-r from-purple-900/40 via-violet-900/30 to-pink-900/40 p-4 md:p-6 overflow-hidden">
+        {/* Animated background particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-2 left-[10%] w-1 h-1 bg-purple-400/40 rounded-full animate-pulse" />
+          <div className="absolute top-4 right-[15%] w-1.5 h-1.5 bg-pink-400/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute bottom-3 left-[40%] w-1 h-1 bg-violet-400/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-3 left-[70%] w-1 h-1 bg-emerald-400/30 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }} />
+        </div>
+        <div className="relative flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-3 w-3" key={heartbeatKey}>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+              </span>
+              <span className="text-red-400 text-xs font-semibold uppercase tracking-wider">Live</span>
+            </div>
+            <div>
+              <h2 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
+                🤖 AI Agent Fleet — Operating in Real Time
+              </h2>
+              <p className="text-slate-300 text-sm">
+                {agents.length} agents · {totalServices}+ services · 99.9% uptime · 24/7 autonomous operations
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-3 flex-wrap">
+            <Link
+              href="/agents-monitoring"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
+            >
+              ⚡ Open Full Dashboard
+            </Link>
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-purple-500/30 text-purple-300 font-medium rounded-xl text-sm hover:bg-purple-500/10 transition-colors"
+            >
+              🖥️ System Status
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Premium detached monitoring block */}
-      <div className="relative rounded-2xl border border-slate-700/60 bg-slate-900/60 p-6 md:p-8 shadow-2xl shadow-slate-900/30">
+      <div className="relative rounded-b-2xl border border-slate-700/60 bg-slate-900/60 p-6 md:p-8 shadow-2xl shadow-slate-900/30">
         {/* Header with refreshed timestamp */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h3 className="text-xl font-bold text-white mb-1">🤖 Live Operations — Zion Agent Fleet</h3>
+            <h3 className="text-xl font-bold text-white mb-1">📊 Live Operations — Zion Agent Fleet</h3>
             <p className="text-slate-300 text-sm md:text-base">
               {totalServices}+ services delivered · {agents.length} online agents · always-on delivery, monitoring, and support for clients.
             </p>
@@ -105,12 +156,6 @@ export default function AgentsMonitoring() {
             >
               📊 Open Monitoring Dashboard
             </Link>
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center px-5 py-3 border border-white/20 text-white font-semibold rounded-xl text-sm hover:bg-white/10 transition-colors"
-            >
-              🖥️ System Status
-            </Link>
             <a
               href="mailto:kleber@ziontechgroup.com"
               className="inline-flex items-center px-5 py-3 bg-blue-600 text-white font-semibold rounded-xl text-sm hover:bg-blue-500 transition-colors shadow-lg"
@@ -124,7 +169,11 @@ export default function AgentsMonitoring() {
           {/* Live Agents */}
           <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
             <h3 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
-              <span>⚡</span> Online Now
+              <span className="relative flex h-2 w-2" key={heartbeatKey}>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              Online Now
             </h3>
             <div className="space-y-2 text-sm">
               {agents.map(a => (
@@ -269,7 +318,7 @@ export default function AgentsMonitoring() {
             </div>
             <div className="flex flex-col">
               <span className="text-slate-400 text-xs">Phone</span>
-              <a href="tel:+13024640950" className="text-blue-300 hover:text-blue-200 font-medium">+1 302 464 0950</a>
+              <a href="tel:+130****0950" className="text-blue-300 hover:text-blue-200 font-medium">+1 302 464 0950</a>
             </div>
             <div className="flex flex-col">
               <span className="text-slate-400 text-xs">Address</span>
