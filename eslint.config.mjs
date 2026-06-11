@@ -14,6 +14,7 @@ export default [
       'out/**/*',
       'dist/**/*',
       'build/**/*',
+      'node_modules/**/*',
       '**/*.cjs',
       '**/*.js',
       '!jest.config.*',
@@ -50,6 +51,7 @@ export default [
       '@next/next': nextPlugin,
     },
     rules: {
+      'no-useless-assignment': 'off',
       // Next.js rules
       '@next/next/no-html-link-for-pages': 'off',
       '@next/next/no-img-element': 'warn',
@@ -154,6 +156,13 @@ export default [
     rules: {
       'no-unused-vars': 'off',
       'no-undef': 'off',
+      'no-useless-assignment': 'off',
+    },
+  },
+  {
+    files: ['**/*.js'],
+    rules: {
+      'no-useless-assignment': 'off',
     },
   },
 ];
