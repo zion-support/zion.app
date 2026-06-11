@@ -12,12 +12,10 @@ html {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-<<<<<<< Updated upstream
-=======
 
 /* Visibility & readability baseline */
 body {
-  color: #e5e7eb; /* higher-contrast slate-200 default */
+  color: #e5e7eb;
   background: #0b0f1a;
 }
 
@@ -37,7 +35,7 @@ a {
 /* Improve contrast on common muted text containers */
 .text-slate-400,
 .text-slate-500 {
-  color: #cbd5e1; /* slate-300 */
+  color: #cbd5e1;
 }
 
 /* Mobile padding for sticky CTA spacing */
@@ -118,4 +116,3 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
->>>>>>> Stashed changes
