@@ -47,7 +47,7 @@ import { wave220AiVideoAnalyticsServices, wave220SyntheticVoiceCloningServices, 
 import { wave221ClimateRiskAnalyticsServices, wave221AgenticAiWorkflowServices, wave221AiCodeMigrationServices, wave221GreenCloudSustainabilityServices, wave221AiTalentMarketplaceServices } from './wave221';
 import { wave222MicroSaasAppointmentCrmServices, wave222ItPatchManagementServices, wave222SecuritySocAiCopilotServices, wave222DataContractEnforcementServices, wave222AutomationEmailCampaignServices, wave222MicroSaasFeedbackServices, wave222AiCompetitiveIntelServices } from './wave222';
 import { wave223AiSupplyChainDigitalTwinServices, wave223MicroSaasWhiteLabelServices, wave223ZeroTrustApiGatewayServices, wave223AiLegalDiscoveryServices, wave223GreenItAssetLifecycleServices, wave223AutonomousDbTuningServices, wave223AiAccessibilityComplianceServices } from './wave223';
-import { wave224AiManufacturingQcServices, wave224ItUedrServices, wave224DataFraudGraphServices } from './wave224';
+import { wave224AiServices, wave224ItServices, wave224MicroSaasServices } from './wave224';
 import { wave225MicroSaasBoardMgmtServices, wave225AiTranslationServices, wave225SecurityCnappServices, wave225DataCatalogAiServices } from './wave225';
 import { wave226MicroSaasInvoiceTrackerServices, wave226AiMeetingSummarizerServices, wave226ItServiceDeskAutomationServices, wave226SecurityDlpServices } from './wave226';
 import { wave227MicroSaasSimpleCrmServices, wave227AiSocialMediaCalendarServices, wave227ItManagedPrintServices, wave227SecurityEmailDmarcServices, wave227DataCdpSetupServices } from './wave227';
@@ -1515,9 +1515,9 @@ export const allServices: Service[] = [
   ...wave223GreenItAssetLifecycleServices,
   ...wave223AutonomousDbTuningServices,
   ...wave223AiAccessibilityComplianceServices,
-  ...wave224AiManufacturingQcServices,
-  ...wave224ItUedrServices,
-  ...wave224DataFraudGraphServices,
+  ...wave224AiServices,
+  ...wave224ItServices,
+  ...wave224MicroSaasServices,
   ...wave225MicroSaasBoardMgmtServices,
   ...wave225AiTranslationServices,
   ...wave225SecurityCnappServices,
