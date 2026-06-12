@@ -664,6 +664,123 @@ export default function LeadsControl() {
           ))}
         </div>
 
+        {/* ── Dashboard Overview (all tabs) ──────────────────────────────────── */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-6">
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-amber-400">{stats.total}</div>
+            <div className="text-[9px] text-slate-500">Total Leads</div>
+          </div>
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-blue-400">{stats.new}</div>
+            <div className="text-[9px] text-slate-500">New</div>
+          </div>
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-purple-400">{stats.replied}</div>
+            <div className="text-[9px] text-slate-500">Replied</div>
+          </div>
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-emerald-400">{stats.qualified}</div>
+            <div className="text-[9px] text-slate-500">Qualified</div>
+          </div>
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-cyan-400">{stats.emailPartnerships}</div>
+            <div className="text-[9px] text-slate-500">Partnerships</div>
+          </div>
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
+            <div className="text-xl font-bold text-pink-400">${(stats.totalRevenue / 1000).toFixed(0)}K</div>
+            <div className="text-[9px] text-slate-500">Pipeline Value</div>
+          </div>
+        </div>
+
+        {/* ── Lead Scoring Distribution ─────────────────────────────────────── */}
+        <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 mb-6">
+          <h3 className="text-xs font-semibold text-slate-300 mb-3">📊 Lead Score Distribution</h3>
+          <div className="flex items-end gap-1 h-20">
+            {(() => {
+              const buckets = [
+                { label: '0-20', min: 0, max: 20, color: 'bg-red-500' },
+                { label: '21-40', min: 21, max: 40, color: 'bg-orange-500' },
+                { label: '41-60', min: 41, max: 60, color: 'bg-amber-500' },
+                { label: '61-80', min: 61, max: 80, color: 'bg-emerald-500' },
+                { label: '81-100', min: 81, max: 100, color: 'bg-cyan-500' },
+              ];
+              const maxCount = Math.max(...buckets.map(b => leads.filter(l => l.score >= b.min && l.score <= b.max).length), 1);
+              return buckets.map(b => {
+                const count = leads.filter(l => l.score >= b.min && l.score <= b.max).length;
+                const pct = (count / maxCount) * 100;
+                return (
+                  <div key={b.label} className="flex-1 flex flex-col items-center gap-1">
+                    <div className="text-[9px] text-slate-400 font-bold">{count}</div>
+                    <div className={"w-full rounded-t-sm transition-all " + b.color} style={{ height: Math.max(4, (pct / 100) * 64) + 'px', opacity: count > 0 ? 1 : 0.3 }} />
+                    <div className="text-[8px] text-slate-500">{b.label}</div>
+                  </div>
+                );
+              });
+            })()}
+          </div>
+        </div>
+
+        {/* ── Conversion Funnel ─────────────────────────────────────────────── */}
+        <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 mb-6">
+          <h3 className="text-xs font-semibold text-slate-300 mb-3">🔄 Conversion Funnel</h3>
+          <div className="space-y-2">
+            {(() => {
+              const stages = [
+                { label: 'Total Leads', count: stats.total, color: 'bg-slate-500', pct: 100 },
+                { label: 'Contacted', count: stats.contacted + stats.replied + stats.qualified + stats.converted, color: 'bg-blue-500', pct: stats.total > 0 ? ((stats.contacted + stats.replied + stats.qualified + stats.converted) / stats.total) * 100 : 0 },
+                { label: 'Replied', count: stats.replied + stats.qualified + stats.converted, color: 'bg-purple-500', pct: stats.total > 0 ? ((stats.replied + stats.qualified + stats.converted) / stats.total) * 100 : 0 },
+                { label: 'Qualified', count: stats.qualified + stats.converted, color: 'bg-emerald-500', pct: stats.total > 0 ? ((stats.qualified + stats.converted) / stats.total) * 100 : 0 },
+                { label: 'Converted', count: stats.converted, color: 'bg-green-500', pct: stats.total > 0 ? (stats.converted / stats.total) * 100 : 0 },
+              ];
+              return stages.map(s => (
+                <div key={s.label} className="flex items-center gap-3">
+                  <span className="text-[10px] text-slate-400 w-20 shrink-0">{s.label}</span>
+                  <div className="flex-1 h-6 bg-slate-800 rounded-full overflow-hidden">
+                    <div className={"h-full rounded-full transition-all " + s.color} style={{ width: Math.max(2, s.pct) + '%' }} />
+                  </div>
+                  <span className="text-[10px] text-slate-300 w-12 text-right">{s.count} ({s.pct.toFixed(0)}%)</span>
+                </div>
+              ));
+            })()}
+          </div>
+        </div>
+
+        {/* ── Follow-up Reminders ───────────────────────────────────────────── */}
+        {(() => {
+          const reminders = leads
+            .filter(l => l.status !== 'converted' && l.status !== 'lost')
+            .map(l => {
+              const daysSince = l.lastContact ? Math.floor((Date.now() - new Date(l.lastContact).getTime()) / 86400000) : Math.floor((Date.now() - new Date(l.dateFound).getTime()) / 86400000);
+              return { ...l, daysSince, urgent: daysSince >= 7 };
+            })
+            .filter(l => l.daysSince >= 3)
+            .sort((a, b) => b.daysSince - a.daysSince)
+            .slice(0, 5);
+          if (reminders.length === 0) return null;
+          return (
+            <div className="bg-gradient-to-r from-red-500/10 to-amber-500/10 border border-red-500/20 rounded-xl p-4 mb-6">
+              <h3 className="text-xs font-semibold text-red-300 mb-3">⏰ Follow-up Reminders ({reminders.length})</h3>
+              <div className="space-y-2">
+                {reminders.map(l => (
+                  <div key={l.id} className="flex items-center justify-between bg-slate-900/60 rounded-lg p-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm">{l.urgent ? '🔴' : '🟡'}</span>
+                      <div>
+                        <div className="text-[11px] font-semibold text-slate-200">{l.company}</div>
+                        <div className="text-[9px] text-slate-500">{l.contact} · {l.industry} · Score: {l.score}</div>
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-[11px] text-slate-400">{l.daysSince}d ago</div>
+                      <div className="text-[9px] text-slate-500">{l.lastContact || l.dateFound}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+
         {/* ── Kanban Board View ─────────────────────────────────────────────── */}
         {activeTab === 'leads' && manualLeads.length > 0 && (
           <div className="mb-6">
