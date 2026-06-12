@@ -1641,6 +1641,37 @@ export default function LeadsControl() {
             </div>
           ))}
         </div>
+
+        {/* Deal Value Forecast */}
+        <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-xl p-6">
+          <h3 className="text-sm font-semibold text-emerald-300 mb-4">📈 Deal Value Forecast</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {(() => {
+              const p = leads.filter(l => l.source === 'Email Partnership');
+              const weighted = p.reduce((s, l) => {
+                const prob = l.status === 'converted' ? 1.0 : l.status === 'qualified' ? 0.6 : l.status === 'replied' ? 0.3 : l.status === 'contacted' ? 0.15 : 0.05;
+                const val = l.budgetRange?.includes('100K+') ? 150000 : l.budgetRange?.includes('50K-$100K') ? 75000 : l.budgetRange?.includes('10K-$50K') ? 30000 : l.budgetRange?.includes('1K-$10K') ? 5000 : 25000;
+                return s + (val * prob);
+              }, 0);
+              const best = p.reduce((s, l) => s + (l.budgetRange?.includes('100K+') ? 150000 : l.budgetRange?.includes('50K-$100K') ? 75000 : l.budgetRange?.includes('10K-$50K') ? 30000 : l.budgetRange?.includes('1K-$10K') ? 5000 : 25000), 0);
+              const worst = p.reduce((s, l) => {
+                const val = l.budgetRange?.includes('100K+') ? 150000 : l.budgetRange?.includes('50K-$100K') ? 75000 : l.budgetRange?.includes('10K-$50K') ? 30000 : l.budgetRange?.includes('1K-$10K') ? 5000 : 25000;
+                return s + (val * 0.05);
+              }, 0);
+              return [
+                { label: 'Conservative (5%)', value: '$' + (worst / 1000).toFixed(0) + 'K', color: 'text-slate-300' },
+                { label: 'Weighted (prob.)', value: '$' + (weighted / 1000).toFixed(0) + 'K', color: 'text-emerald-400' },
+                { label: 'Best Case (100%)', value: '$' + (best / 1000).toFixed(0) + 'K', color: 'text-amber-400' },
+              ].map(m => (
+                <div key={m.label} className="bg-slate-900/60 rounded-lg p-4 text-center">
+                  <div className={"text-xl font-bold " + m.color}>{m.value}</div>
+                  <div className="text-[9px] text-slate-500 mt-1">{m.label}</div>
+                </div>
+              ));
+            })()}
+          </div>
+          <div className="text-[10px] text-slate-500 text-center">Based on 10 partnership leads with probability-weighted close rates</div>
+        </div>
       </div>
 
       <button
