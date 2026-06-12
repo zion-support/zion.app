@@ -14,7 +14,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "generate-sitemap": "next-sitemap --config next-sitemap.config.cjs",
     "postdeploy": "npm run generate-sitemap",
-    "deploy:status:generate": "mkdir -p automation/reports && echo '{\"status\":\"'${DEPLOY_STATUS:-triggered}'\",\"source\":\"'${DEPLOY_STATUS_SOURCE:-unknown}'\",\"timestamp\":\"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'\"}' > automation/reports/deploy-status-latest.json && cat automation/reports/deploy-status-latest.json",
+    "deploy:status:generate": "node scripts/generate-deploy-status.js",
     "automation:preflight": "echo 'automation preflight ok'",
     "deploy:watchdog": "echo 'deploy watchdog ok'",
     "ai-lab:integrity-check": "echo 'ai lab integrity ok'",
