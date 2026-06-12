@@ -209,6 +209,27 @@ const EMAIL_ACTIVITY: EmailActivity[] = [
   { id: 'ea18', recipient: 'devon@raynmaker.ai', subject: 'Re: Invitation: Raynmaker <> Zion Tech Group: AI Discovery Call', classification: 'meeting', timestamp: '2026-06-12T22:12:00', status: 'sent' },
 ];
 
+// ─── Tasks ──────────────────────────────────────────────────────────────────
+interface Task {
+  id: string;
+  title: string;
+  description: string;
+  dueDate: string;
+  priority: 'high' | 'medium' | 'low';
+  status: 'pending' | 'completed';
+  relatedLead?: string;
+}
+
+const TASKS: Task[] = [
+  { id: 't001', title: 'Raynmaker discovery call', description: 'Monday June 15, 1pm ET with Devon Bush & Douglas Carlson. Prepare AI discovery deck.', dueDate: '2026-06-15', priority: 'high', status: 'pending', relatedLead: 'e006' },
+  { id: 't002', title: 'Retell AI ChatDash application', description: 'Submit white-label partnership application at chat-dash.com/partners/retell', dueDate: '2026-06-16', priority: 'high', status: 'pending', relatedLead: 'e001' },
+  { id: 't003', title: 'Tax document review', description: 'Review DCTFweb - Guia de Pagamento (ref 05/2026, due 19/06) from Contábil Vieira', dueDate: '2026-06-19', priority: 'medium', status: 'pending' },
+  { id: 't004', title: 'Follow up with Pictory', description: 'Check on partnership inquiry status. They said they\'d get back with next steps.', dueDate: '2026-06-17', priority: 'medium', status: 'pending', relatedLead: 'e009' },
+  { id: 't005', title: 'Awaz.ai partnership response', description: 'João asked about white-label/reseller program. Send follow-up with specific questions.', dueDate: '2026-06-16', priority: 'medium', status: 'pending', relatedLead: 'e010' },
+  { id: 't006', title: 'Datadog follow-up', description: 'Datadog Partner Network said they\'ll respond within 48h. Follow up if no response.', dueDate: '2026-06-17', priority: 'low', status: 'pending', relatedLead: 'e005' },
+  { id: 't007', title: 'Stammer.ai partnership details', description: 'Review stammer.ai platform for white-label fit. Contact Aline for technical docs.', dueDate: '2026-06-18', priority: 'low', status: 'pending', relatedLead: 'e002' },
+];
+
 const GMAIL_STATUS: GmailStatus = {
   connected: true,
   tokenValid: true,
@@ -254,7 +275,7 @@ export default function LeadsControl() {
   const [priorityFilter, setPriorityFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
-  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'email' | 'analytics' | 'partnerships'>('leads');
+  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'email' | 'analytics' | 'partnerships' | 'tasks'>('leads');
   const [currentTime, setCurrentTime] = useState('');
   const [composeTemplate, setComposeTemplate] = useState('');
   const [composeSubject, setComposeSubject] = useState('');
@@ -659,6 +680,7 @@ export default function LeadsControl() {
             { id: 'email' as const, label: '📬 Emails' },
             { id: 'analytics' as const, label: '📈 Analytics' },
             { id: 'partnerships' as const, label: `🤝 Partnerships (${leads.filter(l => l.source === 'Email Partnership').length})` },
+            { id: 'tasks' as const, label: `✅ Tasks (${TASKS.filter(t => t.status === 'pending').length})` },
           ]).map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex-1 text-xs py-2 rounded-md transition font-medium whitespace-nowrap ${activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}>
               {tab.label}
@@ -1262,6 +1284,64 @@ export default function LeadsControl() {
                     <div className="text-[9px] text-slate-500 shrink-0 ml-3">{email.timestamp.split('T')[1]?.slice(0, 5) || ''}</div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Tasks Tab ─────────────────────────────────────────────────────────── */}
+        {activeTab === 'tasks' && (
+          <div className="space-y-6">
+            {/* Task Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-amber-400">{TASKS.filter(t => t.status === 'pending').length}</div>
+                <div className="text-[9px] text-slate-500">Pending</div>
+              </div>
+              <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-red-400">{TASKS.filter(t => t.priority === 'high' && t.status === 'pending').length}</div>
+                <div className="text-[9px] text-slate-500">High Priority</div>
+              </div>
+              <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-emerald-400">{TASKS.filter(t => t.status === 'completed').length}</div>
+                <div className="text-[9px] text-slate-500">Completed</div>
+              </div>
+              <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-cyan-400">{TASKS.length}</div>
+                <div className="text-[9px] text-slate-500">Total</div>
+              </div>
+            </div>
+
+            {/* Upcoming Tasks */}
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">📋 Upcoming Tasks</h3>
+              <div className="space-y-3">
+                {TASKS.filter(t => t.status === 'pending').sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime()).map(t => {
+                  const daysUntil = Math.ceil((new Date(t.dueDate).getTime() - Date.now()) / 86400000);
+                  const urgency = daysUntil <= 1 ? '🔴' : daysUntil <= 3 ? '🟡' : '🟢';
+                  const priorityColors = { high: 'border-red-500/30 bg-red-500/5', medium: 'border-amber-500/30 bg-amber-500/5', low: 'border-slate-500/30 bg-slate-500/5' };
+                  return (
+                    <div key={t.id} className={"rounded-lg p-4 border " + (priorityColors[t.priority] || priorityColors.low)}>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm">{urgency}</span>
+                            <span className="text-xs font-semibold text-slate-200">{t.title}</span>
+                            <span className={"text-[8px] px-1.5 py-0.5 rounded " + (t.priority === 'high' ? 'bg-red-500/20 text-red-300' : t.priority === 'medium' ? 'bg-amber-500/20 text-amber-300' : 'bg-slate-500/20 text-slate-400')}>{t.priority}</span>
+                          </div>
+                          <div className="text-[11px] text-slate-500 mt-1 ml-6">{t.description}</div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <div className="text-xs font-bold text-slate-300">{t.dueDate}</div>
+                          <div className="text-[9px] text-slate-500">{daysUntil <= 0 ? 'OVERDUE' : daysUntil + 'd'}</div>
+                        </div>
+                      </div>
+                      <div className="mt-3 pt-2 border-t border-slate-700/50 flex items-center gap-2 ml-6">
+                        <button onClick={() => setLeads(prev => prev)} className="text-[10px] px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 transition">✅ Complete</button>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
