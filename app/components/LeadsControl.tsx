@@ -205,13 +205,14 @@ const EMAIL_ACTIVITY: EmailActivity[] = [
   { id: 'ea14', recipient: 'contact@stammer.ai', subject: 'Re: Partnership Discussion - Next Steps', classification: 'partnership', timestamp: '2026-06-12T19:13:00', status: 'sent' },
   { id: 'ea15', recipient: 'support@retellai.com', subject: 'Re: Partnership Discussion - White-Label Application', classification: 'partnership', timestamp: '2026-06-12T19:14:00', status: 'sent' },
   { id: 'ea16', recipient: 'joao.marcos@awazai.intercom-mail.com', subject: 'Re: Follow-up: Partnership Discussion', classification: 'partnership', timestamp: '2026-06-12T19:15:00', status: 'sent' },
+  { id: 'ea17', recipient: 'obrigacoes@nibo.com.br', subject: 'Re: Novos documentos para Kleber (Protocolo 066110-1/26)', classification: 'document', timestamp: '2026-06-12T21:36:00', status: 'sent' },
 ];
 
 const GMAIL_STATUS: GmailStatus = {
   connected: true,
   tokenValid: true,
-  lastSyncTime: '2026-06-12T19:15:00',
-  emailsProcessedToday: 16,
+  lastSyncTime: '2026-06-12T21:36:00',
+  emailsProcessedToday: 17,
 };
 
 // ─── Styles ──────────────────────────────────────────────────────────────────
@@ -1101,6 +1102,62 @@ export default function LeadsControl() {
                   );
                 });
               })()}
+            </div>
+
+            {/* Partnership Health Metrics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {(() => {
+                const p = leads.filter(l => l.source === 'Email Partnership');
+                const avgScore = p.length > 0 ? Math.round(p.reduce((s, l) => s + l.score, 0) / p.length) : 0;
+                const responded = p.filter(l => ['replied','qualified','converted'].includes(l.status)).length;
+                const responseRate = p.length > 0 ? Math.round((responded / p.length) * 100) : 0;
+                const totalBudget = p.reduce((s, l) => {
+                  const b = l.budgetRange || '';
+                  if (b.includes('100K+')) return s + 150000;
+                  if (b.includes('50K-$100K')) return s + 75000;
+                  if (b.includes('10K-$50K')) return s + 30000;
+                  if (b.includes('1K-$10K')) return s + 5000;
+                  return s + 25000;
+                }, 0);
+                const immediate = p.filter(l => l.decisionTimeline === 'Immediate').length;
+                return [
+                  { label: 'Avg Score', value: avgScore, color: 'text-amber-400', icon: '📊' },
+                  { label: 'Response Rate', value: responseRate + '%', color: 'text-emerald-400', icon: '💬' },
+                  { label: 'Total Budget', value: '$' + (totalBudget / 1000).toFixed(0) + 'K', color: 'text-cyan-400', icon: '💰' },
+                  { label: 'Immediate', value: immediate, color: 'text-red-400', icon: '🔥' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-4 text-center">
+                    <div className="text-lg mb-1">{m.icon}</div>
+                    <div className={"text-xl font-bold " + m.color}>{m.value}</div>
+                    <div className="text-[9px] text-slate-500">{m.label}</div>
+                  </div>
+                ));
+              })()}
+            </div>
+
+            {/* Active Deals — Immediate + Hot */}
+            <div className="bg-gradient-to-r from-red-500/10 to-amber-500/10 border border-red-500/20 rounded-xl p-5">
+              <h3 className="text-sm font-semibold text-red-300 mb-3">🔥 Active Deals — Immediate Attention</h3>
+              <div className="space-y-2">
+                {leads.filter(l => l.source === 'Email Partnership' && (l.decisionTimeline === 'Immediate' || l.score >= 90)).sort((a, b) => b.score - a.score).map(l => (
+                  <div key={l.id} className="bg-slate-900/60 rounded-lg p-3 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg">{l.score >= 90 ? '🔥' : '⚡'}</span>
+                      <div>
+                        <div className="text-xs font-semibold text-slate-200">{l.company} <span className="text-slate-500">·</span> {l.industry}</div>
+                        <div className="text-[10px] text-slate-500">{l.contact} · {l.email} · Budget: {l.budgetRange || 'N/A'}</div>
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-sm font-bold text-amber-400">{l.score}</div>
+                      <div className="text-[9px] text-slate-500">{l.decisionTimeline}</div>
+                    </div>
+                  </div>
+                ))}
+                {leads.filter(l => l.source === 'Email Partnership' && (l.decisionTimeline === 'Immediate' || l.score >= 90)).length === 0 && (
+                  <div className="text-center py-4 text-slate-500 text-sm">No urgent deals right now 🎉</div>
+                )}
+              </div>
             </div>
 
             {/* Partnership Leads List */}
