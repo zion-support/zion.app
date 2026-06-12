@@ -1441,6 +1441,41 @@ export default function LeadsControl() {
                 <p>💡 <strong className="text-slate-300">Multiple pain points matched</strong> → +5 per match</p>
               </div>
             </div>
+
+            {/* Smart Recommendations Engine */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-emerald-300 mb-4">🎯 Smart Recommendations — Next Best Actions</h3>
+              <div className="space-y-3">
+                {(() => {
+                  const recs: { priority: string; icon: string; text: string; action: string }[] = [];
+                  // Find hot leads not yet contacted
+                  const hotNew = leads.filter(l => l.score >= 80 && l.status === 'new');
+                  hotNew.forEach(l => recs.push({ priority: 'high', icon: '🔥', text: `Contact ${l.company} — score ${l.score}, ${l.decisionTimeline} timeline`, action: 'Contact today' }));
+                  // Find leads needing follow-up
+                  const needFollowUp = leads.filter(l => {
+                    const days = l.lastContact ? Math.floor((Date.now() - new Date(l.lastContact).getTime()) / 86400000) : Math.floor((Date.now() - new Date(l.dateFound).getTime()) / 86400000);
+                    return days >= 3 && l.status !== 'converted' && l.status !== 'lost';
+                  });
+                  needFollowUp.slice(0, 3).forEach(l => recs.push({ priority: 'medium', icon: '⏰', text: `Follow up with ${l.company} — ${l.industry}`, action: 'Send follow-up' }));
+                  // Find partnerships to qualify
+                  const toQualify = leads.filter(l => l.source === 'Email Partnership' && l.status === 'replied');
+                  toQualify.forEach(l => recs.push({ priority: 'high', icon: '🤝', text: `Qualify ${l.company} partnership — ${l.budgetRange} budget`, action: 'Schedule call' }));
+                  // Find high-budget leads
+                  const highBudget = leads.filter(l => (l.budgetRange || '').includes('100K+') && l.status !== 'converted');
+                  highBudget.slice(0, 2).forEach(l => recs.push({ priority: 'high', icon: '💰', text: `${l.company} — ${l.budgetRange} budget, ${l.decisionTimeline}`, action: 'Priority outreach' }));
+                  if (recs.length === 0) recs.push({ priority: 'low', icon: '✅', text: 'All leads are up to date! No urgent actions needed.', action: '—' });
+                  return recs.slice(0, 8).map((r, i) => (
+                    <div key={i} className={"flex items-center gap-3 bg-slate-900/50 rounded-lg p-3 " + (r.priority === 'high' ? 'border-l-2 border-red-500' : r.priority === 'medium' ? 'border-l-2 border-amber-500' : 'border-l-2 border-emerald-500')}>
+                      <span className="text-lg shrink-0">{r.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs text-slate-200">{r.text}</div>
+                      </div>
+                      <span className={"text-[9px] px-2 py-1 rounded shrink-0 " + (r.priority === 'high' ? 'bg-red-500/20 text-red-300' : r.priority === 'medium' ? 'bg-amber-500/20 text-amber-300' : 'bg-emerald-500/20 text-emerald-300')}>{r.action}</span>
+                    </div>
+                  ));
+                })()}
+              </div>
+            </div>
           </div>
         )}
       </main>
