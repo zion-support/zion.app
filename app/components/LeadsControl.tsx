@@ -165,6 +165,8 @@ const DISCOVERED_LEADS: Lead[] = [
   { id: 'e006', company: 'Raynmaker', contact: 'Devon', email: 'devon@raynmaker.ai', source: 'Email Partnership', industry: 'AI/Discovery', status: 'replied', score: 87, notes: 'AI discovery platform. Scheduled discovery call. Interested in AI-powered search and discovery solutions.', dateFound: '2026-06-12', lastContact: '2026-06-12', services: ['AI Customer Support Copilot', 'AI Retail Personalization', 'AI Form Builder'], website: 'https://raynmaker.ai', companySize: 'SMB', budgetRange: '$10K-$50K', decisionTimeline: 'Immediate' },
   { id: 'e007', company: 'Pathors', contact: 'Partnerships', email: 'contact@pathors.com', source: 'Email Partnership', industry: 'AI/Platform', status: 'replied', score: 82, notes: 'AI platform partnership opportunity. Interested in co-development and integration.', dateFound: '2026-06-12', lastContact: '2026-06-12', services: ['AI Code Review Copilot', 'AI Compliance Monitor', 'AI Document Processing Pipeline'], website: 'https://pathors.com', companySize: 'SMB', budgetRange: '$10K-$50K', decisionTimeline: '3-6 months' },
   { id: 'e008', company: 'Cartesia', contact: 'Support', email: 'support@cartesia.ai', source: 'Email Partnership', industry: 'AI/Voice', status: 'replied', score: 86, notes: 'AI voice technology platform. Invited to join customer portal. Partnership potential for voice AI solutions.', dateFound: '2026-06-12', lastContact: '2026-06-12', services: ['AI Voice Agent', 'AI Customer Support Copilot'], website: 'https://cartesia.ai', companySize: 'Mid-Market', budgetRange: '$50K-$100K', decisionTimeline: '1-3 months' },
+  { id: 'e009', company: 'Pictory', contact: 'Pickford', email: 'fin@pictory.intercom-mail.com', source: 'Email Partnership', industry: 'AI/Platform', status: 'replied', score: 89, notes: 'AI video generation platform. Interested in API access / white-label for embedding into our SMB solutions. Revenue share model possible.', dateFound: '2026-06-12', lastContact: '2026-06-12', services: ['AI Content Moderation', 'AI Retail Personalization'], website: 'https://pictory.ai', companySize: 'Mid-Market', budgetRange: '$50K-$100K', decisionTimeline: '1-3 months' },
+  { id: 'e010', company: 'Awaz.ai', contact: 'João Marcos', email: 'joao.marcos@awazai.intercom-mail.com', source: 'Email Partnership', industry: 'AI/Voice', status: 'replied', score: 84, notes: 'AI voice/conversational AI platform. João reached out asking about partnership. Exploring white-label/reseller program for US SMB market.', dateFound: '2026-06-12', lastContact: '2026-06-12', services: ['AI Voice Agent', 'AI Chatbot Builder', 'AI Customer Support Copilot'], website: 'https://awazai.com', companySize: 'SMB', budgetRange: '$10K-$50K', decisionTimeline: '1-3 months' },
 ];
 
 const ALL_LEADS: Lead[] = [...MANUAL_LEADS, ...DISCOVERED_LEADS];
@@ -198,13 +200,18 @@ const EMAIL_ACTIVITY: EmailActivity[] = [
   { id: 'ea09', recipient: 'jwilson@medflow.com', subject: 'AI Solutions for MedFlow Health', classification: 'Introduction', timestamp: '2026-06-11T14:30:00', status: 'replied' },
   { id: 'ea10', recipient: 'mgarcia@retailmax.com', subject: 'Following up: AI solutions for RetailMax Corp', classification: 'Follow-Up', timestamp: '2026-06-11T10:00:00', status: 'replied' },
   { id: 'ea11', recipient: 'rkim@financehub.io', subject: 'Custom Proposal for FinanceHub', classification: 'Proposal', timestamp: '2026-06-10T16:45:00', status: 'sent' },
+  { id: 'ea12', recipient: 'fin@pictory.intercom-mail.com', subject: 'Re: Voice AI Partnership - Zion Tech Group', classification: 'partnership', timestamp: '2026-06-12T19:12:00', status: 'sent' },
+  { id: 'ea13', recipient: 'partners+noreply@datadoghq.com', subject: 'Re: AI Security Partnership - Zion Tech Group', classification: 'partnership', timestamp: '2026-06-12T19:12:30', status: 'sent' },
+  { id: 'ea14', recipient: 'contact@stammer.ai', subject: 'Re: Partnership Discussion - Next Steps', classification: 'partnership', timestamp: '2026-06-12T19:13:00', status: 'sent' },
+  { id: 'ea15', recipient: 'support@retellai.com', subject: 'Re: Partnership Discussion - White-Label Application', classification: 'partnership', timestamp: '2026-06-12T19:14:00', status: 'sent' },
+  { id: 'ea16', recipient: 'joao.marcos@awazai.intercom-mail.com', subject: 'Re: Follow-up: Partnership Discussion', classification: 'partnership', timestamp: '2026-06-12T19:15:00', status: 'sent' },
 ];
 
 const GMAIL_STATUS: GmailStatus = {
   connected: true,
   tokenValid: true,
-  lastSyncTime: '2026-06-12T12:15:00',
-  emailsProcessedToday: 11,
+  lastSyncTime: '2026-06-12T19:15:00',
+  emailsProcessedToday: 16,
 };
 
 // ─── Styles ──────────────────────────────────────────────────────────────────
@@ -329,6 +336,10 @@ export default function LeadsControl() {
     cold: leads.filter(l => getPriority(l.score) === 'cold').length,
     totalRevenue: leads.reduce((s, l) => s + revenuePotential(l), 0),
     emailPartnerships: leads.filter(l => l.source === 'Email Partnership').length,
+    partnershipReplied: leads.filter(l => l.source === 'Email Partnership' && (l.status === 'replied' || l.status === 'qualified' || l.status === 'converted')).length,
+    partnershipRate: leads.filter(l => l.source === 'Email Partnership').length > 0
+      ? Math.round((leads.filter(l => l.source === 'Email Partnership' && (l.status === 'replied' || l.status === 'qualified' || l.status === 'converted')).length / leads.filter(l => l.source === 'Email Partnership').length) * 100)
+      : 0,
   }), [leads]);
 
   const pipelineStages: PipelineStage[] = useMemo(() => [
@@ -951,10 +962,10 @@ export default function LeadsControl() {
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             {/* Key Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-5 text-center">
                 <div className="text-3xl font-bold text-amber-400">${(stats.totalRevenue / 1000).toFixed(0)}K</div>
-                <div className="text-[10px] text-slate-500 mt-1">Total Pipeline Value</div>
+                <div className="text-[10px] text-slate-500 mt-1">Pipeline Value</div>
               </div>
               <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-5 text-center">
                 <div className="text-3xl font-bold text-emerald-400">{stats.total > 0 ? ((stats.converted / stats.total) * 100).toFixed(1) : 0}%</div>
@@ -965,8 +976,60 @@ export default function LeadsControl() {
                 <div className="text-[10px] text-slate-500 mt-1">Avg Deal Size</div>
               </div>
               <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-5 text-center">
-                <div className="text-3xl font-bold text-purple-400">{stats.avgScore}</div>
+                <div className="text-3xl font-bold text-purple-400">{stats.partnershipRate}%</div>
+                <div className="text-[10px] text-slate-500 mt-1">Partnership Response</div>
+              </div>
+              <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-5 text-center">
+                <div className="text-3xl font-bold text-pink-400">{stats.avgScore}</div>
                 <div className="text-[10px] text-slate-500 mt-1">Avg Lead Score</div>
+              </div>
+            </div>
+
+            {/* Partnership Pipeline */}
+            <div className="bg-slate-900/80 border border-purple-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-purple-300 mb-4">🤝 Partnership Pipeline</h3>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4">
+                {(() => {
+                  const stages = [
+                    { label: 'Identified', status: 'new', color: 'text-blue-400', bg: 'bg-blue-500/10 border-blue-500/20' },
+                    { label: 'Contacted', status: 'contacted', color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20' },
+                    { label: 'Replied', status: 'replied', color: 'text-purple-400', bg: 'bg-purple-500/10 border-purple-500/20' },
+                    { label: 'Qualified', status: 'qualified', color: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/20' },
+                    { label: 'Converted', status: 'converted', color: 'text-green-400', bg: 'bg-green-500/10 border-green-500/20' },
+                  ];
+                  const partnerships = leads.filter(l => l.source === 'Email Partnership');
+                  return stages.map(s => {
+                    const count = partnerships.filter(l => l.status === s.status).length;
+                    return (
+                      <div key={s.status} className={"rounded-lg p-3 text-center border " + s.bg}>
+                        <div className={"text-2xl font-bold " + s.color}>{count}</div>
+                        <div className="text-[10px] text-slate-500">{s.label}</div>
+                      </div>
+                    );
+                  });
+                })()}
+              </div>
+              <div className="space-y-2">
+                {leads.filter(l => l.source === 'Email Partnership').sort((a, b) => b.score - a.score).map(l => {
+                  const statusColors: Record<string, string> = { new: 'bg-blue-500', contacted: 'bg-amber-500', replied: 'bg-purple-500', qualified: 'bg-emerald-500', converted: 'bg-green-500', lost: 'bg-red-500' };
+                  return (
+                    <div key={l.id} className="flex items-center gap-3 bg-slate-800/40 rounded-lg p-3">
+                      <div className={"w-2 h-2 rounded-full shrink-0 " + (statusColors[l.status] || 'bg-slate-500')} />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-semibold text-slate-200">{l.company}</span>
+                          <span className="text-[9px] bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded">{l.industry}</span>
+                          {l.website && <a href={l.website} target="_blank" rel="noopener" className="text-[9px] text-cyan-400 hover:underline">🌐</a>}
+                        </div>
+                        <div className="text-[10px] text-slate-500 truncate">{l.notes.slice(0, 80)}</div>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <div className="text-xs font-bold text-amber-400">{l.score}</div>
+                        <div className="text-[9px] text-slate-500">{l.decisionTimeline}</div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -1090,7 +1153,7 @@ export default function LeadsControl() {
             </div>
           </div>
           <div className="text-[10px] text-slate-600">
-            Zion Tech Group — Leads Control · {currentTime || '—'} · {stats.total} leads · {stats.discovered} discovered · {stats.emailPartnerships} email partnerships
+            Zion Tech Group — Leads Control · {currentTime || '—'} · {stats.total} leads · {stats.discovered} discovered · {stats.emailPartnerships} partnerships · {stats.partnershipRate}% response rate
           </div>
         </div>
       </footer>
