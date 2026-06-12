@@ -1468,6 +1468,46 @@ export default function LeadsControl() {
       </footer>
 
       {/* Floating Quick Add Button */}
+
+      {/* ── Weekly Activity Log ─────────────────────────────────────────────── */}
+      <div className="mt-8 bg-slate-900/60 border border-slate-800/60 rounded-xl p-5">
+        <h3 className="text-sm font-semibold text-slate-300 mb-3">📅 This Week's Activity</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <div className="text-slate-500 mb-1">Emails Sent</div>
+            <div className="text-lg font-bold text-purple-400">{EMAIL_ACTIVITY.length}</div>
+            <div className="text-[9px] text-slate-600">{EMAIL_ACTIVITY.filter(e => e.status === 'sent').length} delivered</div>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <div className="text-slate-500 mb-1">Partnerships</div>
+            <div className="text-lg font-bold text-cyan-400">{stats.emailPartnerships}</div>
+            <div className="text-[9px] text-slate-600">{stats.partnershipReplied} responded</div>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <div className="text-slate-500 mb-1">Qualified</div>
+            <div className="text-lg font-bold text-emerald-400">{stats.qualified}</div>
+            <div className="text-[9px] text-slate-600">{stats.converted} converted</div>
+          </div>
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <div className="text-slate-500 mb-1">Pipeline Value</div>
+            <div className="text-lg font-bold text-amber-400">${(stats.totalRevenue / 1000).toFixed(0)}K</div>
+            <div className="text-[9px] text-slate-600">est. ${(stats.totalRevenue * 0.15 / 1000).toFixed(0)}K at 15%</div>
+          </div>
+        </div>
+        {/* Recent activity timeline */}
+        <div className="mt-4 space-y-1.5">
+          <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-2">Recent Activity</div>
+          {EMAIL_ACTIVITY.slice(-8).reverse().map(e => (
+            <div key={e.id} className="flex items-center gap-2 text-[10px]">
+              <span className="text-slate-600 w-16 shrink-0">{e.timestamp.split('T')[1]?.slice(0, 5) || ''}</span>
+              <span className={"w-1.5 h-1.5 rounded-full shrink-0 " + (e.status === 'sent' ? 'bg-emerald-500' : e.status === 'replied' ? 'bg-blue-500' : 'bg-red-500')} />
+              <span className="text-slate-400 truncate flex-1">{e.subject}</span>
+              <span className="text-slate-600 shrink-0">→ {e.recipient.split('@')[0]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <button
         onClick={() => setShowAddLead(true)}
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-white text-2xl shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-110 transition-all z-40 flex items-center justify-center"
