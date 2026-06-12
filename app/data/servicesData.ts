@@ -71,7 +71,7 @@ import { wave244InfrastructureAsCodeServices, wave244AiProcurementServices, wave
 import { wave245AiAgentOrchestrationServices, wave245DataProductPlatformServices, wave245ZeroTrustSecurityServices, wave245SyntheticDataGenerationServices, wave245MlopsPlatformServices } from './wave245';
 import { wave246AiCodeReviewServices, wave246IncidentManagementServices, wave246DeveloperExperienceServices, wave246EdgeAiInferenceServices, wave246AiGovernanceServices } from './wave246';
 import { wave247AiTranslationServices, wave247DigitalHumansServices, wave247PredictiveMaintenanceServices, wave247UptimeMonitoringServices, wave247AiCodeGenerationServices } from './wave247';
-import { wave248AiServices, wave248ItServices, wave248MicroSaasServices } from './wave248';
+import { wave248AiRedTeamingServices, wave248PromptOpsPlatformServices, wave248AiModelGatewayServices, wave248LlmCostOptimizationServices, wave248AiWatermarkingServices, wave248MicroSaasServices } from './wave248';
 import { wave249AiServices, wave249ItServices, wave249MicroSaasServices } from './wave249';
 import { wave250AiDevopsPlatformServices, wave250CloudCostOptimizationServices, wave250DataMeshPlatformServices, wave250AiCustomerSupportServices, wave250EdgeAiPlatformServices } from './wave250';
 import { wave251AiVideoGenerationServices, wave251BlockchainIdentityServices, wave251SmartBuildingIotServices, wave251AiFinancialPlanningServices, wave251RoboticProcessAutomationServices } from './wave251';
@@ -96,6 +96,7 @@ import { wave270Services } from './wave270';
 import { wave271Services } from './wave271';
 import { wave272Services } from './wave272';
 import { wave273Services } from './wave273';
+import { wave274Services } from './wave274';
 
 export const aiServices: Service[] = [
   {
@@ -1624,8 +1625,11 @@ export const allServices: Service[] = [
   ...wave247PredictiveMaintenanceServices,
   ...wave247UptimeMonitoringServices,
   ...wave247AiCodeGenerationServices,
-  ...wave248AiServices,
-  ...wave248ItServices,
+  ...wave248AiRedTeamingServices,
+  ...wave248PromptOpsPlatformServices,
+  ...wave248AiModelGatewayServices,
+  ...wave248LlmCostOptimizationServices,
+  ...wave248AiWatermarkingServices,
   ...wave248MicroSaasServices,
   ...wave249AiServices,
   ...wave249ItServices,
@@ -1690,4 +1694,5 @@ export const allServices: Service[] = [
   ...wave271Services,
   ...wave272Services,
   ...wave273Services,
+  ...wave274Services,
 ].filter((s: Service) => s.benefits.length > 0);

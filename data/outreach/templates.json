@@ -1,0 +1,104 @@
+{
+  "templates": [
+    {
+      "id": "intro-ai-healthcare",
+      "name": "AI Solutions Introduction — Healthcare",
+      "category": "Introduction",
+      "subject": "{{contact}}, AI solutions for {{company}} — 40% cost reduction possible",
+      "body": "Hi {{contact}},\n\nI noticed {{company}} is doing impactful work in {{industry}}. At Zion Tech Group, we help healthcare organizations like yours:\n\n• Reduce patient no-shows by 60% with AI scheduling\n• Automate clinical documentation (save 15+ hrs/week per physician)\n• Ensure HIPAA-compliant AI workflows\n\nWe've built custom AI solutions for similar organizations, including patient scheduling copilots, clinical trial matching engines, and medical billing automation.\n\nWould you be open to a 15-minute call this week to explore what AI could do for {{company}}?\n\nBest regards,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com\n🌐 ziontechgroup.com",
+      "variables": ["company", "contact", "industry", "service"],
+      "tone": "professional",
+      "industry": "Healthcare"
+    },
+    {
+      "id": "intro-fintech",
+      "name": "AI Solutions Introduction — FinTech",
+      "category": "Introduction",
+      "subject": "{{company}} + AI fraud detection — reduce losses by 85%",
+      "body": "Hi {{contact}},\n\n{{company}} is in one of the fastest-moving sectors in tech. At Zion Tech Group, we build AI solutions specifically for FinTech companies:\n\n• Real-time fraud detection (85% reduction in losses)\n• Automated financial close (2 days instead of 10)\n• AI-powered credit risk scoring\n• Regulatory compliance automation\n\nWe've helped similar FinTechs implement these solutions with measurable ROI within 90 days.\n\nWould a brief 15-minute call make sense this week?\n\nBest,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact", "industry", "service"],
+      "tone": "professional",
+      "industry": "FinTech"
+    },
+    {
+      "id": "intro-retail",
+      "name": "AI Solutions Introduction — Retail/E-commerce",
+      "category": "Introduction",
+      "subject": "Boost {{company}} revenue with AI personalization",
+      "body": "Hi {{contact}},\n\nE-commerce and retail companies are seeing 30-50% revenue increases with AI personalization. At Zion Tech Group, we build:\n\n• Product recommendation engines (like Amazon's)\n• Dynamic pricing optimization\n• Customer churn prediction\n• Inventory demand forecasting\n\nWe've helped similar {{industry}} companies implement these with clear ROI.\n\nWould you like to see a quick demo of what's possible for {{company}}?\n\nBest regards,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact", "industry", "service"],
+      "tone": "friendly",
+      "industry": "Retail"
+    },
+    {
+      "id": "intro-edtech",
+      "name": "AI Solutions Introduction — EdTech",
+      "category": "Introduction",
+      "subject": "Personalized learning AI for {{company}}",
+      "body": "Hi {{contact}},\n\nThe future of education is personalized. At Zion Tech Group, we build AI solutions for EdTech companies like {{company}}:\n\n• Adaptive learning paths (35% improvement in outcomes)\n• Automated grading and feedback\n• Student engagement prediction\n• Content recommendation engines\n\nWe'd love to show you what's possible. A 15-minute call?\n\nBest,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact", "industry", "service"],
+      "tone": "friendly",
+      "industry": "EdTech"
+    },
+    {
+      "id": "intro-logistics",
+      "name": "AI Solutions Introduction — Logistics",
+      "category": "Introduction",
+      "subject": "Cut {{company}} logistics costs with AI — 30% savings",
+      "body": "Hi {{contact}},\n\nLogistics companies are saving 30%+ on operations with AI. At Zion Tech Group, we build:\n\n• Route optimization (fuel savings up to 25%)\n• Predictive maintenance (reduce downtime 40%)\n• Demand forecasting\n• Supply chain risk intelligence\n\nWould {{company}} benefit from a quick exploration call this week?\n\nBest regards,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact", "industry", "service"],
+      "tone": "professional",
+      "industry": "Logistics"
+    },
+    {
+      "id": "followup-1",
+      "name": "Follow-Up #1 (3 days)",
+      "category": "Follow-Up",
+      "subject": "Following up: AI solutions for {{company}}",
+      "body": "Hi {{contact}},\n\nI wanted to follow up on my previous email about AI solutions for {{company}}.\n\nI know you're busy, so here's the quick version:\n\n• We build custom AI for {{industry}} companies\n• Typical ROI: 40-60% cost reduction within 6 months\n• Free, no-obligation custom proposal\n\nWould Thursday or Friday work for a brief 15-minute call?\n\nBest,\nKleber Garcia\nZion Tech Group\n📱 +1 302 464 0950",
+      "variables": ["company", "contact", "industry"],
+      "tone": "concise",
+      "industry": "universal"
+    },
+    {
+      "id": "followup-2",
+      "name": "Follow-Up #2 (7 days)",
+      "category": "Follow-Up",
+      "subject": "{{contact}}, quick question about {{company}} + AI",
+      "body": "Hi {{contact}},\n\nJust one quick question: Is {{company}} currently exploring any AI or automation initiatives?\n\nIf yes, I'd love to share what we're building for similar {{industry}} companies.\n\nIf no, no worries — I'll check back in a few months.\n\nEither way, happy to connect.\n\nBest,\nKleber Garcia\nZion Tech Group\n📱 +1 302 464 0950",
+      "variables": ["company", "contact", "industry"],
+      "tone": "casual",
+      "industry": "universal"
+    },
+    {
+      "id": "reengage-30day",
+      "name": "Re-Engagement (30 days)",
+      "category": "Re-Engagement",
+      "subject": "{{company}} + Zion Tech — new AI capabilities available",
+      "body": "Hi {{contact}},\n\nIt's been a while since we last connected. Since then, we've added several new capabilities that could benefit {{company}}:\n\n• AI Fraud Detection — reduce fraud losses by 85%\n• Cloud Cost Optimization — reduce cloud spend by 30-50%\n• AI Financial Close Automation — close books in 2 days instead of 10\n• Zero Trust Network Access — enterprise-grade security\n\nWould you like to see a quick demo?\n\nBest regards,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact"],
+      "tone": "value-driven",
+      "industry": "universal"
+    },
+    {
+      "id": "proposal-ready",
+      "name": "Qualified Lead — Proposal",
+      "category": "Proposal",
+      "subject": "Custom proposal for {{company}} — ready to review",
+      "body": "Hi {{contact}},\n\nThank you for your interest in our solutions for {{company}}.\n\nBased on our conversation, I've prepared a custom proposal covering:\n\n• AI implementation roadmap tailored to {{company}}\n• ROI projection for your specific use case\n• Timeline and milestones\n• Pricing options (Basic / Pro / Enterprise)\n\nKey deliverables:\n✅ Custom AI solution design\n✅ Integration with your existing systems\n✅ Training and support\n✅ 90-day success guarantee\n\nWould you like to schedule a call to walk through it?\n\nBest,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact"],
+      "tone": "professional",
+      "industry": "universal"
+    },
+    {
+      "id": "free-audit",
+      "name": "Free AI Audit Offer",
+      "category": "Free Audit",
+      "subject": "Free AI readiness audit for {{company}}",
+      "body": "Hi {{contact}},\n\nI'm reaching out because we're offering a free AI Readiness Audit to select {{industry}} companies.\n\nThe audit covers:\n\n• Current technology stack assessment\n• AI opportunity identification (quick wins + long-term)\n• ROI estimation for top 3 AI use cases\n• Implementation roadmap\n\nNo cost, no obligation. Takes about 30 minutes to complete.\n\nWould {{company}} be interested?\n\nBest regards,\nKleber Garcia\nCEO, Zion Tech Group\n📱 +1 302 464 0950\n📧 kleber@ziontechgroup.com",
+      "variables": ["company", "contact", "industry"],
+      "tone": "value-driven",
+      "industry": "universal"
+    }
+  ]
+}
