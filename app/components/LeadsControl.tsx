@@ -186,20 +186,24 @@ const OUTREACH_TEMPLATES: OutreachTemplate[] = [
 // ─── email Activity data ───────────────────────────────────────────────────
 
 const EMAIL_ACTIVITY: EmailActivity[] = [
-  { id: 'e001', recipient: 'sarah@techstart.io', subject: 'Custom AI Solutions for TechStart Inc — Free Proposal Inside', classification: 'Introduction', timestamp: '2026-06-12T09:15:00', status: 'sent' },
-  { id: 'e002', recipient: 'jwilson@medflow.com', subject: 'AI Solutions for MedFlow Health', classification: 'Introduction', timestamp: '2026-06-11T14:30:00', status: 'replied' },
-  { id: 'e003', recipient: 'mgarcia@retailmax.com', subject: 'Following up: AI solutions for RetailMax Corp', classification: 'Follow-Up', timestamp: '2026-06-11T10:00:00', status: 'replied' },
-  { id: 'e004', recipient: 'rkim@financehub.io', subject: 'Custom Proposal for FinanceHub — Ready to Review', classification: 'Proposal', timestamp: '2026-06-10T16:45:00', status: 'sent' },
-  { id: 'e005', recipient: 'lpark@edulearn.com', subject: 'Personalized learning AI for EduLearn Platform', classification: 'Introduction', timestamp: '2026-06-10T11:20:00', status: 'bounced' },
-  { id: 'e006', recipient: 'mbrown@securebank.com', subject: 'SecureBank + AI threat detection — 24/7 protection', classification: 'Introduction', timestamp: '2026-06-09T08:00:00', status: 'sent' },
-  { id: 'e007', recipient: 'dlee@logitrans.com', subject: 'Cut LogiTrans logistics costs with AI — 30% savings', classification: 'Introduction', timestamp: '2026-06-09T09:30:00', status: 'sent' },
+  { id: 'ea01', recipient: 'support@retellai.com', subject: 'Re: Voice AI Partnership Opportunity', classification: 'partnership', timestamp: '2026-06-12T11:05:00', status: 'sent' },
+  { id: 'ea02', recipient: 'contact@stammer.ai', subject: 'Re: Voice AI Partnership Opportunity', classification: 'partnership', timestamp: '2026-06-12T11:06:00', status: 'sent' },
+  { id: 'ea03', recipient: 'contact@botpenguin.com', subject: 'Re: Voice AI Partnership - LATAM Focus', classification: 'partnership', timestamp: '2026-06-12T11:07:00', status: 'sent' },
+  { id: 'ea04', recipient: 'mmcguinness@rafay.co', subject: 'Re: Partnership Opportunity - AI Infrastructure', classification: 'partnership', timestamp: '2026-06-12T11:08:00', status: 'sent' },
+  { id: 'ea05', recipient: 'partners@datadog.zendesk.com', subject: 'Re: Partnership Opportunity - AI Infrastructure Monitoring', classification: 'partnership', timestamp: '2026-06-12T11:09:00', status: 'sent' },
+  { id: 'ea06', recipient: 'devon@raynmaker.ai', subject: 'Re: Raynmaker <> Zion Tech Group: AI Discovery Call', classification: 'meeting', timestamp: '2026-06-12T11:10:00', status: 'sent' },
+  { id: 'ea07', recipient: 'contact@pathors.com', subject: 'Re: Partnership Opportunity - Pathors & Zion Tech Group', classification: 'partnership', timestamp: '2026-06-12T10:30:00', status: 'sent' },
+  { id: 'ea08', recipient: 'sarah@techstart.io', subject: 'Custom AI Solutions for TechStart Inc', classification: 'Introduction', timestamp: '2026-06-12T09:15:00', status: 'sent' },
+  { id: 'ea09', recipient: 'jwilson@medflow.com', subject: 'AI Solutions for MedFlow Health', classification: 'Introduction', timestamp: '2026-06-11T14:30:00', status: 'replied' },
+  { id: 'ea10', recipient: 'mgarcia@retailmax.com', subject: 'Following up: AI solutions for RetailMax Corp', classification: 'Follow-Up', timestamp: '2026-06-11T10:00:00', status: 'replied' },
+  { id: 'ea11', recipient: 'rkim@financehub.io', subject: 'Custom Proposal for FinanceHub', classification: 'Proposal', timestamp: '2026-06-10T16:45:00', status: 'sent' },
 ];
 
 const GMAIL_STATUS: GmailStatus = {
   connected: true,
   tokenValid: true,
-  lastSyncTime: '2026-06-12T09:45:00',
-  emailsProcessedToday: 7,
+  lastSyncTime: '2026-06-12T12:15:00',
+  emailsProcessedToday: 11,
 };
 
 // ─── Styles ──────────────────────────────────────────────────────────────────
