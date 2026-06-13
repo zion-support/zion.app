@@ -333,7 +333,7 @@ export default function LeadsControl() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [detailLead, setDetailLead] = useState<Lead | null>(null);
-  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'email' | 'analytics' | 'partnerships' | 'tasks'>('leads');
+  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'bulk' | 'email' | 'analytics' | 'dedup' | 'partnerships' | 'tasks'>('leads');
   const [currentTime, setCurrentTime] = useState('');
   const [composeTemplate, setComposeTemplate] = useState('');
   const [composeSubject, setComposeSubject] = useState('');
@@ -754,12 +754,14 @@ export default function LeadsControl() {
             { id: 'discovered' as const, label: `🔍 Discovered (${discoveredLeads.length})` },
             { id: 'templates' as const, label: `📧 Templates (${OUTREACH_TEMPLATES.length})` },
             { id: 'stats' as const, label: '📊 Pipeline' },
+            { id: 'bulk' as const, label: '🔗 Bulk' },
             { id: 'email' as const, label: '📬 Emails' },
             { id: 'analytics' as const, label: '📈 Analytics' },
+            { id: 'dedup' as const, label: '🔄 Dedup' },
             { id: 'partnerships' as const, label: `🤝 Partnerships (${leads.filter(l => l.source === 'Email Partnership').length})` },
             { id: 'tasks' as const, label: `✅ Tasks (${taskList.filter(t => t.status === 'pending').length})` },
-          ]).map(tab => (
-            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex-1 text-xs py-2 rounded-md transition font-medium whitespace-nowrap ${activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}>
+          ] as {id: typeof activeTab; label: string}[]).map(tab => (
+            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex-1 text-[10px] py-2 rounded-md transition font-medium whitespace-nowrap ${activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}>
               {tab.label}
             </button>
           ))}
@@ -1680,6 +1682,123 @@ export default function LeadsControl() {
                   ));
                 })()}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Bulk Outreach Tab ───────────────────────────────────────────────── */}
+        {activeTab === 'bulk' && (
+          <div className="space-y-6">
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">🔗 Bulk Email Composer</h3>
+              <p className="text-xs text-slate-400 mb-4">Select leads and compose a bulk email. Opens your email client with all addresses pre-filled.</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-amber-400">{leads.filter(l => l.email).length}</div>
+                  <div className="text-[9px] text-slate-500">Leads with email</div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-purple-400">{leads.filter(l => l.status === 'new' && l.email).length}</div>
+                  <div className="text-[9px] text-slate-500">New + email</div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-cyan-400">{leads.filter(l => l.source === 'Email Partnership' && l.email).length}</div>
+                  <div className="text-[9px] text-slate-500">Partnerships</div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-emerald-400">{leads.filter(l => getPriority(l.score) === 'hot' && l.email).length}</div>
+                  <div className="text-[9px] text-slate-500">Hot leads</div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <button onClick={() => {
+                  const emails = leads.filter(l => l.email).map(l => l.email).join(',');
+                  window.open(`mailto:?bcc=${emails}&subject=AI Solutions from Zion Tech Group&body=Hi,%0A%0AI wanted to reach out about how Zion Tech Group can help your business with custom AI solutions.%0A%0ABest regards,%0AKleber Garcia%0AZion Tech Group%0A📱 +1 302 464 0950`);
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-amber-600 text-white hover:bg-amber-500 font-medium">📧 Email All Leads ({leads.filter(l => l.email).length})</button>
+                <button onClick={() => {
+                  const emails = leads.filter(l => l.status === 'new' && l.email).map(l => l.email).join(',');
+                  if (!emails) return;
+                  window.open(`mailto:?bcc=${emails}&subject=AI Solutions for Your Business&body=Hi,%0A%0AI noticed you might be exploring AI solutions. At Zion Tech Group, we build custom AI that reduces costs by 40-60%.%0A%0ABest,%0AKleber Garcia%0AZion Tech Group`);
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-purple-600 text-white hover:bg-purple-500 font-medium">📧 Email New Leads ({leads.filter(l => l.status === 'new' && l.email).length})</button>
+                <button onClick={() => {
+                  const emails = leads.filter(l => l.source === 'Email Partnership' && l.email).map(l => l.email).join(',');
+                  if (!emails) return;
+                  window.open(`mailto:?bcc=${emails}&subject=Partnership Follow-up — Zion Tech Group&body=Hi,%0A%0AFollowing up on our partnership discussion. Let me know if you'd like to schedule a call this week.%0A%0ABest,%0AKleber Garcia%0AZion Tech Group`);
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-medium">📧 Email Partnerships ({leads.filter(l => l.source === 'Email Partnership' && l.email).length})</button>
+                <button onClick={() => {
+                  const emails = leads.filter(l => getPriority(l.score) === 'hot' && l.email).map(l => l.email).join(',');
+                  if (!emails) return;
+                  window.open(`mailto:?bcc=${emails}&subject=Priority: Custom AI Solutions&body=Hi,%0A%0AI wanted to personally reach out — I think there's a great fit between our AI solutions and your needs.%0A%0ABest,%0AKleber Garcia%0AZion Tech Group`);
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-red-600 text-white hover:bg-red-500 font-medium">🔥 Email Hot Leads ({leads.filter(l => getPriority(l.score) === 'hot' && l.email).length})</button>
+              </div>
+            </div>
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">📋 Copy Email Lists</h3>
+              <div className="space-y-2">
+                {[
+                  { label: 'All emails', emails: leads.filter(l => l.email).map(l => l.email) },
+                  { label: 'New leads', emails: leads.filter(l => l.status === 'new' && l.email).map(l => l.email) },
+                  { label: 'Partnerships', emails: leads.filter(l => l.source === 'Email Partnership' && l.email).map(l => l.email) },
+                  { label: 'Hot leads', emails: leads.filter(l => getPriority(l.score) === 'hot' && l.email).map(l => l.email) },
+                ].map(group => (
+                  <div key={group.label} className="flex items-center justify-between bg-slate-800/40 rounded-lg p-2.5">
+                    <span className="text-xs text-slate-400">{group.label} ({group.emails.length})</span>
+                    <button onClick={() => { navigator.clipboard.writeText(group.emails.join(',')); }} className="text-[10px] px-2 py-1 rounded bg-slate-700 text-slate-300 hover:bg-slate-600">📋 Copy</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Dedup Tab ────────────────────────────────────────────────────────── */}
+        {activeTab === 'dedup' && (
+          <div className="space-y-6">
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">🔄 Lead Deduplication</h3>
+              <p className="text-xs text-slate-400 mb-4">Detects potential duplicate leads by company name similarity.</p>
+              {(() => {
+                const duplicates: { a: Lead; b: Lead; reason: string }[] = [];
+                const seen: Record<string, Lead> = {};
+                leads.forEach(l => {
+                  const key = l.company.toLowerCase().replace(/[^a-z0-9]/g, '');
+                  if (seen[key]) {
+                    duplicates.push({ a: seen[key], b: l, reason: 'Same company name' });
+                  } else {
+                    seen[key] = l;
+                  }
+                });
+                if (duplicates.length === 0) {
+                  return <div className="text-center py-8 text-slate-500"><div className="text-3xl mb-2">✅</div><div className="text-sm">No duplicates found</div></div>;
+                }
+                return (
+                  <div className="space-y-3">
+                    <div className="text-xs text-amber-400 font-semibold">{duplicates.length} potential duplicate(s) found</div>
+                    {duplicates.map((dup, i) => (
+                      <div key={i} className="bg-slate-800/50 rounded-lg p-4 border border-amber-500/20">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs text-amber-300 font-medium">{dup.reason}</span>
+                          <button onClick={() => {
+                            setLeads(prev => prev.filter(l => l.id !== dup.b.id));
+                          }} className="text-[10px] px-2 py-1 rounded bg-red-500/20 text-red-300 hover:bg-red-500/30">Remove duplicate</button>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="bg-slate-900/60 rounded p-2">
+                            <div className="text-[10px] text-slate-500 mb-1">Lead A (ID: {dup.a.id})</div>
+                            <div className="text-xs text-slate-200">{dup.a.company}</div>
+                            <div className="text-[9px] text-slate-500">{dup.a.contact} · {dup.a.email} · Score: {dup.a.score}</div>
+                          </div>
+                          <div className="bg-slate-900/60 rounded p-2">
+                            <div className="text-[10px] text-slate-500 mb-1">Lead B (ID: {dup.b.id})</div>
+                            <div className="text-xs text-slate-200">{dup.b.company}</div>
+                            <div className="text-[9px] text-slate-500">{dup.b.contact} · {dup.b.email} · Score: {dup.b.score}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
           </div>
         )}
