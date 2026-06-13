@@ -156,15 +156,25 @@ def get_token_info(tokens):
         if expiry.tzinfo is None:
             expiry = expiry.replace(tzinfo=timezone.utc)
         now = datetime.now(timezone.utc)
-        remaining = (expiry - now).total_seconds() / 86400.0
-        if remaining > PROACTIVE_REFRESH_DAYS:
-            return "ok", remaining, expiry, f"Token valid for {remaining:.1f} more days"
-        elif remaining > AUTO_REFRESH_BUFFER_DAYS:
-            return "warning", remaining, expiry, f"Token expires in {remaining:.1f} days (proactive refresh recommended)"
-        elif remaining > 0:
-            return "critical", remaining, expiry, f"Token expires in {remaining:.1f} days (auto-refresh triggered)"
+        remaining_secs = (expiry - now).total_seconds()
+        remaining_days = remaining_secs / 86400.0
+        # Format human-readable remaining time
+        if remaining_secs > 86400:
+            time_str = f"{remaining_days:.1f} more days"
+        elif remaining_secs > 3600:
+            time_str = f"{remaining_secs/3600:.1f} more hours"
+        elif remaining_secs > 0:
+            time_str = f"{remaining_secs/60:.0f} more minutes"
         else:
-            return "expired", remaining, expiry, f"Token expired {-remaining:.1f} days ago"
+            time_str = f"expired {-remaining_days:.1f} days ago"
+        if remaining_days > PROACTIVE_REFRESH_DAYS:
+            return "ok", remaining_days, expiry, f"Token valid for {time_str}"
+        elif remaining_days > AUTO_REFRESH_BUFFER_DAYS:
+            return "warning", remaining_days, expiry, f"Token expires in {time_str} (proactive refresh recommended)"
+        elif remaining_secs > 0:
+            return "critical", remaining_days, expiry, f"Token expires in {time_str} (auto-refresh triggered)"
+        else:
+            return "expired", remaining_days, expiry, f"Token {time_str}"
     except Exception as e:
         return "error", 0.0, None, f"Cannot parse expiry: {e}"
 

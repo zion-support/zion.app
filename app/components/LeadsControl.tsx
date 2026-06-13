@@ -11,6 +11,14 @@ type CompanySize = 'SMB' | 'Mid-Market' | 'Enterprise';
 type DecisionTimeline = 'Immediate' | '1-3 months' | '3-6 months' | '6+ months';
 type BudgetRange = '$1K-$10K' | '$10K-$50K' | '$50K-$100K' | '$100K+';
 
+interface LeadActivity {
+  id: string;
+  leadId: string;
+  action: string;
+  timestamp: string;
+  details?: string;
+}
+
 interface Lead {
   id: string;
   company: string;
@@ -26,11 +34,12 @@ interface Lead {
   services: string[];
   website?: string;
   painPoints?: string[];
-  // Enrichment fields
   linkedin?: string;
   companySize?: CompanySize;
   budgetRange?: BudgetRange;
   decisionTimeline?: DecisionTimeline;
+  activities?: LeadActivity[];
+  tags?: string[];
 }
 
 interface OutreachTemplate {
@@ -103,6 +112,41 @@ function revenuePotential(lead: Lead): number {
     lead.industry === 'Cybersecurity' ? 70000 :
     lead.industry === 'Cloud' ? 50000 : 30000;
   return Math.round((lead.score / 100) * base);
+}
+
+// ─── Auto-scoring engine ────────────────────────────────────────────────────
+function autoScore(lead: Partial<Lead>): number {
+  let score = 50; // base
+  // Company size bonus
+  if (lead.companySize === 'Enterprise') score += 15;
+  else if (lead.companySize === 'Mid-Market') score += 10;
+  else if (lead.companySize === 'SMB') score += 5;
+  // Budget bonus
+  if (lead.budgetRange === '$100K+') score += 15;
+  else if (lead.budgetRange === '$50K-$100K') score += 10;
+  else if (lead.budgetRange === '$10K-$50K') score += 5;
+  // Timeline bonus
+  if (lead.decisionTimeline === 'Immediate') score += 15;
+  else if (lead.decisionTimeline === '1-3 months') score += 10;
+  else if (lead.decisionTimeline === '3-6 months') score += 5;
+  // Source bonus
+  if (lead.source === 'Email Partnership') score += 10;
+  else if (lead.source === 'Referral') score += 8;
+  else if (lead.source === 'LinkedIn') score += 5;
+  // Pain points signal
+  if (lead.painPoints && lead.painPoints.length > 0) score += Math.min(lead.painPoints.length * 3, 10);
+  return Math.min(Math.max(score, 10), 100);
+}
+
+// ─── Activity logging ────────────────────────────────────────────────────────
+function logActivity(activities: LeadActivity[], leadId: string, action: string, details?: string): LeadActivity[] {
+  return [...activities, {
+    id: `act_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    leadId,
+    action,
+    timestamp: new Date().toISOString(),
+    details,
+  }];
 }
 
 // ─── Sample data ─────────────────────────────────────────────────────────────
@@ -401,7 +445,12 @@ export default function LeadsControl() {
 
   // ── Actions ─────────────────────────────────────────────────────────────────
   const updateLeadStatus = useCallback((id: string, status: LeadStatus) => {
-    setLeads(prev => prev.map(l => l.id === id ? { ...l, status, lastContact: new Date().toISOString().split('T')[0] } : l));
+    setLeads(prev => prev.map(l => {
+      if (l.id !== id) return l;
+      const updated = { ...l, status, lastContact: new Date().toISOString().split('T')[0] };
+      updated.activities = logActivity(updated.activities || [], id, `Status → ${status}`);
+      return updated;
+    }));
   }, []);
 
   const toggleLeadSelection = useCallback((id: string) => {
@@ -473,7 +522,7 @@ export default function LeadsControl() {
       source: 'Manual Entry',
       industry: newLead.industry || 'Other',
       status: 'new',
-      score: 50,
+      score: autoScore(newLead),
       notes: newLead.notes || '',
       dateFound: new Date().toISOString().split('T')[0],
       lastContact: '',
@@ -483,6 +532,7 @@ export default function LeadsControl() {
       companySize: newLead.companySize,
       budgetRange: newLead.budgetRange,
       decisionTimeline: newLead.decisionTimeline,
+      activities: [{ id: `act_${Date.now()}`, leadId: `l${Date.now()}`, action: 'Lead created', timestamp: new Date().toISOString() }],
     };
     setLeads(prev => [lead, ...prev]);
     setNewLead({ company: '', contact: '', email: '', industry: '', notes: '', services: [], website: '', linkedin: '', companySize: undefined, budgetRange: undefined, decisionTimeline: undefined });
@@ -1811,6 +1861,21 @@ export default function LeadsControl() {
                 </div>
               );
             })()}
+
+            {/* Lead activity timeline */}
+            {detailLead.activities && detailLead.activities.length > 0 && (
+              <div className="mb-4">
+                <div className="text-[10px] text-slate-500 uppercase mb-2">📋 Activity Timeline</div>
+                <div className="space-y-1.5">
+                  {detailLead.activities.slice(-10).reverse().map(a => (
+                    <div key={a.id} className="bg-slate-800/30 rounded-lg p-2 flex items-center gap-2">
+                      <span className="text-slate-600 text-[9px] shrink-0 w-14">{a.timestamp.split('T')[1]?.slice(0, 5) || ''}</span>
+                      <span className="text-[10px] text-slate-400">{a.action}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Quick actions */}
             <div className="flex gap-2 pt-3 border-t border-slate-700/50">

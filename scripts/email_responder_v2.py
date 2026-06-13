@@ -43,6 +43,7 @@ SPAM_SENDERS = [
     "alerts+noreply@", "noreply@", "no-reply@", "donotreply@", "automated@airbnb.com",
     "sellersupport@shop.tiktok.com", "no-reply@deriv.com", "newsletter@",
     "marketing@", "promotions@", "info@intercom-mail.com",
+    "notification@service.tiktok.com", "system-sg@notice.alibabacloud.com",
 ]
 SPAM_SUBJECT_PATTERNS = [
     r"^\[?(spam|promo|sale|discount|offer|coupon|deal|limited time)",
@@ -50,9 +51,10 @@ SPAM_SUBJECT_PATTERNS = [
     r"(act now|expires? (today|soon)|last chance|final reminder)",
     r"(unsubscribe|manage preferences|email preferences)",
     r"(delivery status|undeliverable|message not delivered)",
-    r"Run (failed|passed|error)",           # GitHub Actions CI notifications
-    r"\[Zion-support/",                      # Our own repo CI notifications
-    r"(Lighthouse|CI\/CD|workflow|build)\b", # CI/CD system notifications
+    r"Run (failed|passed|error)",
+    r"\[Zion-support/",
+    r"(Lighthouse|CI\/CD|workflow|build)\b",
+    r"(started following you|following you|new follower)",
 ]
 
 # ── Auto-archive senders (mark read + remove from inbox) ────────────────────
