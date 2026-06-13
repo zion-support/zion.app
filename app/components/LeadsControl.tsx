@@ -333,7 +333,7 @@ export default function LeadsControl() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [detailLead, setDetailLead] = useState<Lead | null>(null);
-  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'bulk' | 'email' | 'analytics' | 'dedup' | 'partnerships' | 'tasks'>('leads');
+  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'bulk' | 'email' | 'analytics' | 'dedup' | 'partnerships' | 'tasks' | 'quickadd' | 'backup'>('leads');
   const [currentTime, setCurrentTime] = useState('');
   const [composeTemplate, setComposeTemplate] = useState('');
   const [composeSubject, setComposeSubject] = useState('');
@@ -367,11 +367,11 @@ export default function LeadsControl() {
       if ((e.metaKey || e.ctrlKey) && e.key === 'a' && e.shiftKey) { e.preventDefault(); const visible = activeTab === 'leads' ? manualLeads : discoveredLeads; setSelectedLeads(new Set(visible.map(l => l.id))); }
       if (e.key === 'Escape') { setSelectedLead(null); setShowAddLead(false); setShowBulkMenu(false); setShowPresets(false); setDetailLead(null); setShowKeyboardHelp(false); }
       if (e.key === '?' && !e.metaKey && !e.ctrlKey) { e.preventDefault(); setShowKeyboardHelp(prev => !prev); }
-      // Tab shortcuts: 1-8
-      if (e.key >= '1' && e.key <= '8' && !e.metaKey && !e.ctrlKey) {
-        const tabs: typeof activeTab[] = ['leads', 'discovered', 'templates', 'stats', 'email', 'analytics', 'partnerships', 'tasks'];
-        const idx = parseInt(e.key) - 1;
-        if (tabs[idx]) { e.preventDefault(); setActiveTab(tabs[idx]); }
+      // Tab shortcuts: 1-9, 0, -, =
+      if (!e.metaKey && !e.ctrlKey && !e.altKey) {
+        const tabs: typeof activeTab[] = ['leads', 'discovered', 'templates', 'stats', 'bulk', 'email', 'analytics', 'dedup', 'partnerships', 'tasks', 'quickadd', 'backup'];
+        const keyMap: Record<string, number> = {'1':0,'2':1,'3':2,'4':3,'5':4,'6':5,'7':6,'8':7,'9':8,'0':9,'-':10,'=':11};
+        if (keyMap[e.key] !== undefined) { e.preventDefault(); setActiveTab(tabs[keyMap[e.key]]); }
       }
     };
     window.addEventListener('keydown', handler);
@@ -760,8 +760,10 @@ export default function LeadsControl() {
             { id: 'dedup' as const, label: '🔄 Dedup' },
             { id: 'partnerships' as const, label: `🤝 Partnerships (${leads.filter(l => l.source === 'Email Partnership').length})` },
             { id: 'tasks' as const, label: `✅ Tasks (${taskList.filter(t => t.status === 'pending').length})` },
+            { id: 'quickadd' as const, label: '⚡ Quick Add' },
+            { id: 'backup' as const, label: '💾 Backup' },
           ] as {id: typeof activeTab; label: string}[]).map(tab => (
-            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex-1 text-[10px] py-2 rounded-md transition font-medium whitespace-nowrap ${activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}>
+            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex-1 text-[9px] py-2 rounded-md transition font-medium whitespace-nowrap ${activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800/60'}`}>
               {tab.label}
             </button>
           ))}
@@ -1802,6 +1804,120 @@ export default function LeadsControl() {
             </div>
           </div>
         )}
+        {/* ── Quick Add Tab ──────────────────────────────────────────────────── */}
+        {activeTab === 'quickadd' && (
+          <div className="space-y-6">
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">⚡ Quick Add Lead</h3>
+              <p className="text-xs text-slate-400 mb-4">Fast lead entry. Paste email addresses (one per line) to auto-create leads.</p>
+              <textarea
+                id="bulk-emails"
+                placeholder={"Paste emails (one per line):\njohn@company.com\njane@other.org"}
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg text-xs text-slate-300 px-3 py-2 h-32 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 mb-3"
+              />
+              <div className="flex gap-2">
+                <button onClick={() => {
+                  const textarea = document.getElementById('bulk-emails') as HTMLTextAreaElement;
+                  if (!textarea) return;
+                  const lines = textarea.value.split('\n').map(l => l.trim()).filter(l => l.includes('@'));
+                  let added = 0;
+                  lines.forEach(line => {
+                    const email = line.match(/[\w.+-]+@[\w-]+\.[\w.]+/)?.[0] || '';
+                    if (!email) return;
+                    const domain = email.split('@')[1];
+                    const company = domain.split('.')[0].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                    const newLead: Lead = {
+                      id: `l${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+                      company,
+                      contact: email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                      email,
+                      source: 'Quick Add',
+                      industry: 'Other',
+                      status: 'new',
+                      score: 50,
+                      notes: `Added via Quick Add on ${new Date().toLocaleDateString()}`,
+                      dateFound: new Date().toISOString().split('T')[0],
+                      lastContact: '',
+                      services: [],
+                      activities: [{ id: `act_${Date.now()}`, leadId: `l${Date.now()}`, action: 'Lead created via Quick Add', timestamp: new Date().toISOString() }],
+                    };
+                    setLeads(prev => [newLead, ...prev]);
+                    added++;
+                  });
+                  textarea.value = '';
+                  if (added > 0) setActiveTab('leads');
+                }} className="text-xs px-4 py-2 rounded-lg bg-amber-600 text-white hover:bg-amber-500 font-medium">➕ Add Leads</button>
+                <button onClick={() => {
+                  const textarea = document.getElementById('bulk-emails') as HTMLTextAreaElement;
+                  if (textarea) textarea.value = '';
+                }} className="text-xs px-4 py-2 rounded-lg bg-slate-700 text-slate-300 hover:bg-slate-600">Clear</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Backup Tab ─────────────────────────────────────────────────────── */}
+        {activeTab === 'backup' && (
+          <div className="space-y-6">
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-200 mb-4">💾 Data Backup & Restore</h3>
+              <p className="text-xs text-slate-400 mb-4">Export leads to JSON for backup. Import to restore.</p>
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-amber-400">{leads.length}</div>
+                  <div className="text-[9px] text-slate-500">Total Leads</div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                  <div className="text-lg font-bold text-purple-400">{taskList.length}</div>
+                  <div className="text-[9px] text-slate-500">Total Tasks</div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <button onClick={() => {
+                  const data = { leads, tasks: taskList, exportedAt: new Date().toISOString() };
+                  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = `zion-leads-backup-${new Date().toISOString().split('T')[0]}.json`;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-amber-600 text-white hover:bg-amber-500 font-medium">📥 Export JSON Backup</button>
+                <button onClick={() => {
+                  const input = document.createElement('input');
+                  input.type = 'file';
+                  input.accept = '.json';
+                  input.onchange = (e) => {
+                    const file = (e.target as HTMLInputElement).files?.[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                      try {
+                        const data = JSON.parse(ev.target?.result as string);
+                        if (data.leads && Array.isArray(data.leads)) {
+                          setLeads(prev => [...prev, ...data.leads]);
+                        }
+                        if (data.tasks && Array.isArray(data.tasks)) {
+                          setTaskList(prev => [...prev, ...data.tasks]);
+                        }
+                      } catch { /* invalid JSON */ }
+                    };
+                    reader.readAsText(file);
+                  };
+                  input.click();
+                }} className="w-full text-xs px-4 py-2.5 rounded-lg bg-slate-700 text-slate-300 hover:bg-slate-600 font-medium">📤 Import JSON Backup</button>
+                <button onClick={() => {
+                  if (confirm('Clear all leads and tasks? This cannot be undone.')) {
+                    setLeads([]);
+                    setTaskList([]);
+                    localStorage.removeItem('zion_leads');
+                    localStorage.removeItem('zion_tasks');
+                  }
+                }} className="w-full text-xs px-4 py-2 rounded-lg bg-red-500/20 text-red-300 hover:bg-red-500/30 font-medium">🗑️ Clear All Data</button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <footer className="border-t border-slate-800/60 mt-8 py-6 text-center">
@@ -2023,7 +2139,7 @@ export default function LeadsControl() {
               {[
                 ['⌘K', 'Focus search bar'],
                 ['⇧⌘A', 'Select all visible leads'],
-                ['1-8', 'Switch tabs (1=Manual, 2=Discovered, ...)'],
+                ['1-9,0,-,=', 'Switch tabs (12 tabs)'],
                 ['?', 'Toggle this help'],
                 ['Esc', 'Close modals / clear selection'],
               ].map(([key, desc]) => (
