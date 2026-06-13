@@ -691,6 +691,37 @@ export default function LeadsControl() {
           ))}
         </div>
 
+        {/* Global Search & Filter Bar */}
+        <div className="flex gap-2 mb-4">
+          <div className="flex-1 relative">
+            <input
+              type="text"
+              placeholder="🔍 Search leads by company, contact, industry, email..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="w-full bg-slate-900/60 border border-slate-800/60 rounded-lg px-3 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 transition"
+            />
+            {searchQuery && (
+              <button onClick={() => setSearchQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 text-xs">✕</button>
+            )}
+          </div>
+          <select value={filter} onChange={e => setFilter(e.target.value)} className="bg-slate-900/60 border border-slate-800/60 rounded-lg px-2 py-2 text-xs text-slate-300 focus:outline-none focus:border-amber-500/50">
+            <option value="all">All Status</option>
+            <option value="new">🆕 New</option>
+            <option value="contacted">📧 Contacted</option>
+            <option value="replied">💬 Replied</option>
+            <option value="qualified">✅ Qualified</option>
+            <option value="converted">🎉 Converted</option>
+            <option value="lost">❌ Lost</option>
+          </select>
+          <select value={priorityFilter} onChange={e => setPriorityFilter(e.target.value)} className="bg-slate-900/60 border border-slate-800/60 rounded-lg px-2 py-2 text-xs text-slate-300 focus:outline-none focus:border-amber-500/50">
+            <option value="all">All Priority</option>
+            <option value="hot">🔥 Hot (80+)</option>
+            <option value="warm">🌡️ Warm (60-79)</option>
+            <option value="cold">❄️ Cold (&lt;60)</option>
+          </select>
+        </div>
+
         {/* ── Dashboard Overview (all tabs) ──────────────────────────────────── */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-6">
           <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-3 text-center">
