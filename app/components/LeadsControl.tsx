@@ -333,7 +333,7 @@ export default function LeadsControl() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [detailLead, setDetailLead] = useState<Lead | null>(null);
-  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'bulk' | 'email' | 'analytics' | 'dedup' | 'partnerships' | 'tasks' | 'quickadd' | 'backup'>('leads');
+  const [activeTab, setActiveTab] = useState<'leads' | 'discovered' | 'templates' | 'stats' | 'bulk' | 'email' | 'analytics' | 'dedup' | 'actions' | 'partnerships' | 'tasks' | 'quickadd' | 'backup'>('leads');
   const [currentTime, setCurrentTime] = useState('');
   const [composeTemplate, setComposeTemplate] = useState('');
   const [composeSubject, setComposeSubject] = useState('');
@@ -758,6 +758,7 @@ export default function LeadsControl() {
             { id: 'email' as const, label: '📬 Emails' },
             { id: 'analytics' as const, label: '📈 Analytics' },
             { id: 'dedup' as const, label: '🔄 Dedup' },
+            { id: 'actions' as const, label: '🎯 Actions' },
             { id: 'partnerships' as const, label: `🤝 Partnerships (${leads.filter(l => l.source === 'Email Partnership').length})` },
             { id: 'tasks' as const, label: `✅ Tasks (${taskList.filter(t => t.status === 'pending').length})` },
             { id: 'quickadd' as const, label: '⚡ Quick Add' },
@@ -1849,6 +1850,77 @@ export default function LeadsControl() {
                       </div>
                     ))}
                   </div>
+                );
+              })()}
+            </div>
+          </div>
+        )}
+        {/* ── Actions Tab ───────────────────────────────────────────────────────── */}
+        {activeTab === 'actions' && (
+          <div className="space-y-6">
+            {/* Next Best Actions */}
+            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-amber-300 mb-4">🎯 Next Best Actions</h3>
+              <div className="space-y-2">
+                {(() => {
+                  const recs: { priority: string; icon: string; text: string; action: string; lead?: Lead }[] = [];
+                  leads.filter(l => l.score >= 80 && l.status === 'new').forEach(l => recs.push({ priority: 'high', icon: '🔥', text: `${l.company} — score ${l.score}, ${l.decisionTimeline}`, action: 'Contact today', lead: l }));
+                  leads.filter(l => l.status !== 'converted' && l.status !== 'lost').forEach(l => {
+                    const days = l.lastContact ? Math.floor((Date.now() - new Date(l.lastContact).getTime()) / 86400000) : Math.floor((Date.now() - new Date(l.dateFound).getTime()) / 86400000);
+                    if (days >= 3) recs.push({ priority: days >= 7 ? 'high' : 'medium', icon: days >= 7 ? '🔴' : '🟡', text: `${l.company} — ${days}d since last contact`, action: 'Follow up', lead: l });
+                  });
+                  leads.filter(l => l.source === 'Email Partnership' && l.status === 'replied').forEach(l => recs.push({ priority: 'high', icon: '🤝', text: `${l.company} partnership — ${l.budgetRange}`, action: 'Schedule call', lead: l }));
+                  leads.filter(l => (l.budgetRange || '').includes('100K+') && l.status !== 'converted' && l.status !== 'lost').slice(0, 2).forEach(l => recs.push({ priority: 'high', icon: '💰', text: `${l.company} — ${l.budgetRange}`, action: 'Priority outreach', lead: l }));
+                  if (recs.length === 0) recs.push({ priority: 'low', icon: '✅', text: 'All leads up to date!', action: '—' });
+                  return recs.slice(0, 10).map((r, i) => (
+                    <div key={i} className={`flex items-center gap-3 bg-slate-900/50 rounded-lg p-3 cursor-pointer hover:bg-slate-800/50 transition border-l-2 ${r.priority === 'high' ? 'border-red-500' : r.priority === 'medium' ? 'border-amber-500' : 'border-emerald-500'}`} onClick={() => r.lead && setDetailLead(r.lead)}>
+                      <span className="text-lg shrink-0">{r.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs text-slate-200">{r.text}</div>
+                      </div>
+                      <span className={`text-[9px] px-2 py-1 rounded shrink-0 ${r.priority === 'high' ? 'bg-red-500/20 text-red-300' : r.priority === 'medium' ? 'bg-amber-500/20 text-amber-300' : 'bg-emerald-500/20 text-emerald-300'}`}>{r.action}</span>
+                    </div>
+                  ));
+                })()}
+              </div>
+            </div>
+            {/* Revenue Forecast */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-emerald-300 mb-4">📈 Revenue Forecast</h3>
+              {(() => {
+                const active = leads.filter(l => l.status !== 'lost');
+                const totalBudget = active.reduce((s, l) => { const b = l.budgetRange || ''; return s + (b.includes('100K+') ? 150000 : b.includes('50K-$100K') ? 75000 : b.includes('10K-$50K') ? 30000 : b.includes('1K-$10K') ? 5000 : 25000); }, 0);
+                const weighted = active.reduce((s, l) => { const prob = l.status === 'converted' ? 1.0 : l.status === 'qualified' ? 0.6 : l.status === 'replied' ? 0.3 : l.status === 'contacted' ? 0.15 : 0.05; const b = l.budgetRange || ''; const val = b.includes('100K+') ? 150000 : b.includes('50K-$100K') ? 75000 : b.includes('10K-$50K') ? 30000 : b.includes('1K-$10K') ? 5000 : 25000; return s + (val * prob); }, 0);
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-slate-900/60 rounded-lg p-4 text-center"><div className="text-2xl font-bold text-slate-300">${(totalBudget * 0.05 / 1000).toFixed(0)}K</div><div className="text-[10px] text-slate-500 mt-1">Conservative (5%)</div></div>
+                    <div className="bg-slate-900/60 rounded-lg p-4 text-center"><div className="text-2xl font-bold text-emerald-400">${(weighted / 1000).toFixed(0)}K</div><div className="text-[10px] text-slate-500 mt-1">Weighted (prob.)</div></div>
+                    <div className="bg-slate-900/60 rounded-lg p-4 text-center"><div className="text-2xl font-bold text-amber-400">${(totalBudget / 1000).toFixed(0)}K</div><div className="text-[10px] text-slate-500 mt-1">Best Case (100%)</div></div>
+                  </div>
+                );
+              })()}
+            </div>
+            {/* Conversion Funnel SVG */}
+            <div className="bg-slate-900/80 border border-slate-800/80 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-slate-300 mb-4">🔄 Conversion Funnel</h3>
+              {(() => {
+                const stages = [
+                  { label: 'Total Leads', count: leads.length, color: '#64748b' },
+                  { label: 'Contacted', count: leads.filter(l => ['contacted','replied','qualified','converted'].includes(l.status)).length, color: '#3b82f6' },
+                  { label: 'Replied', count: leads.filter(l => ['replied','qualified','converted'].includes(l.status)).length, color: '#a855f7' },
+                  { label: 'Qualified', count: leads.filter(l => ['qualified','converted'].includes(l.status)).length, color: '#10b981' },
+                  { label: 'Converted', count: leads.filter(l => l.status === 'converted').length, color: '#22c55e' },
+                ];
+                const maxW = 400; const H = 220; const barH = 36; const gap = 6;
+                return (
+                  <svg viewBox={`0 0 ${maxW} ${H}`} className="w-full max-w-md mx-auto">
+                    {stages.map((s, i) => {
+                      const w = Math.max(40, (s.count / Math.max(stages[0].count, 1)) * maxW);
+                      const y = i * (barH + gap) + 10;
+                      const x = (maxW - w) / 2;
+                      return (<g key={i}><rect x={x} y={y} width={w} height={barH} rx={6} fill={s.color} opacity={0.85} /><text x={maxW / 2} y={y + barH / 2 - 4} textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">{s.label}</text><text x={maxW / 2} y={y + barH / 2 + 10} textAnchor="middle" fill="white" fontSize="9" opacity={0.9}>{s.count} • {stages[0].count > 0 ? Math.round((s.count / stages[0].count) * 100) : 0}%</text></g>);
+                    })}
+                  </svg>
                 );
               })()}
             </div>
