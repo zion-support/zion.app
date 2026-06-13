@@ -1503,6 +1503,56 @@ export default function LeadsControl() {
               </div>
             </div>
 
+            {/* Top Leads by Score */}
+            <div className="bg-slate-900/80 border border-amber-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-amber-300 mb-4">🏆 Top Leads by Score</h3>
+              <div className="space-y-2">
+                {leads.filter(l => l.status !== 'converted' && l.status !== 'lost').sort((a, b) => b.score - a.score).slice(0, 10).map((l, i) => (
+                  <div key={l.id} className="flex items-center gap-3 bg-slate-800/40 rounded-lg p-2.5">
+                    <span className="text-sm font-bold text-amber-400 w-6 text-center">#{i + 1}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-semibold text-slate-200 truncate">{l.company}</div>
+                      <div className="text-[9px] text-slate-500">{l.industry} · {l.contact} · {l.budgetRange || 'N/A'}</div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-sm font-bold text-amber-400">{l.score}</div>
+                      <div className="text-[8px] text-slate-500">{l.decisionTimeline || 'N/A'}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Follow-up Calendar */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-blue-300 mb-4">📅 Follow-up Schedule</h3>
+              <div className="space-y-2">
+                {leads
+                  .filter(l => l.status !== 'converted' && l.status !== 'lost')
+                  .map(l => {
+                    const lastDate = l.lastContact ? new Date(l.lastContact) : new Date(l.dateFound);
+                    const daysSince = Math.floor((Date.now() - lastDate.getTime()) / 86400000);
+                    const nextFollowUp = new Date(lastDate.getTime() + 3 * 86400000);
+                    const daysUntil = Math.ceil((nextFollowUp.getTime() - Date.now()) / 86400000);
+                    return { ...l, daysSince, nextFollowUp, daysUntil };
+                  })
+                  .sort((a, b) => a.daysUntil - b.daysUntil)
+                  .slice(0, 8)
+                  .map(l => (
+                    <div key={l.id} className="flex items-center gap-3 bg-slate-900/50 rounded-lg p-2.5">
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded ${l.daysUntil <= 0 ? 'bg-red-500/20 text-red-300' : l.daysUntil <= 2 ? 'bg-amber-500/20 text-amber-300' : 'bg-emerald-500/20 text-emerald-300'}`}>
+                        {l.daysUntil <= 0 ? 'OVERDUE' : `${l.daysUntil}d`}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-semibold text-slate-200 truncate">{l.company}</div>
+                        <div className="text-[9px] text-slate-500">Last: {l.daysSince}d ago · Next: {l.nextFollowUp.toLocaleDateString()}</div>
+                      </div>
+                      <span className="text-[9px] text-slate-500">{l.score}pts</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+
             {/* Partnership Pipeline */}
             <div className="bg-slate-900/80 border border-purple-500/20 rounded-xl p-6">
               <h3 className="text-sm font-semibold text-purple-300 mb-4">🤝 Partnership Pipeline</h3>
