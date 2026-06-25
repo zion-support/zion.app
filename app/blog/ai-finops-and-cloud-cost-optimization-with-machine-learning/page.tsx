@@ -1,31 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 
 export const metadata: Metadata = {
   title: 'AI FinOps: Cloud Cost Optimization with Machine Learning | Zion Tech Group Blog',
-  description:
-    'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
-  alternates: { canonical: '/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning' },
-  openGraph: {
-    title: 'AI FinOps: Cloud Cost Optimization with Machine Learning',
-    description:
-      'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning',
-  },
+  description: 'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning'
 };
 
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
-      <ArticleStructuredData
-        headline="AI FinOps: Cloud Cost Optimization with Machine Learning"
-        description="Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance."
-        datePublished="2026-05-28"
-        slug="ai-finops-and-cloud-cost-optimization-with-machine-learning"
-      />
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
@@ -57,8 +44,15 @@ export default function Page() {
           </h1>
         </header>
 
+        <ArticleStructuredData
+          headline="AI FinOps: Cloud Cost Optimization with Machine Learning"
+          description="Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance."
+          datePublished="2026-05-28"
+          slug="ai-finops-and-cloud-cost-optimization-with-machine-learning"
+        />
+
         <div className="prose-invert max-w-none">
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Right-Sizing and Resource Recommendations
             </h2>
@@ -70,7 +64,7 @@ export default function Page() {
             </p>
           </section>
 
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Spot and Reserved Instance Optimization
             </h2>

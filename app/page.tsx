@@ -194,6 +194,9 @@ let list = services;
 
   return (
     <main className="min-h-screen bg-slate-950">
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-purple-900/80 backdrop-blur-sm text-white text-sm px-4 py-2">
+        Powered by Minimax AI
+      </div>
       {/* ── JSON-LD: Organization + WebSite ── */}
       <script
         type="application/ld+json"
@@ -271,9 +274,15 @@ let list = services;
               <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
                 {`🛠️ Explore All ${serviceCount}+ Services`}
               </Link>
-              <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
-                              ☎ +1 302 464 0950
-                            </a>
+              <a href="tel:+1 302 464 0950" className="btn-secondary text-lg px-10 py-4">
+                ☎ +1 302 464 0950
+              </a>
+              <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
+                ✉ kleber@ziontechgroup.com
+              </a>
+              <p className="text-slate-300 text-base mt-4 text-center">
+                📍 364 E Main St STE 1008 Middletown DE 19709
+              </p>
             </div>
 
             {/* ── Secondary CTAs — extra discovery links ── */}

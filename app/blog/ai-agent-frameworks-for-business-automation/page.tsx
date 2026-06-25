@@ -1,20 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 
 export const metadata: Metadata = {
-  title: 'AI Agent Frameworks for Business Automation | Zion Tech Group Blog',
-  description:
-    'Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end.',
-  alternates: { canonical: '/blog/ai-agent-frameworks-for-business-automation' },
-  openGraph: {
-    title: 'AI Agent Frameworks for Business Automation',
-    description:
-      'Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation',
-  },
+  title: 'AI Agent Frameworks for Business Automation',
+  description: 'Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation'
 };
 
 export default function Page() {
@@ -58,7 +51,7 @@ export default function Page() {
         </header>
 
         <div className="prose-invert max-w-none">
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               From Chatbots to Autonomous Agents
             </h2>
@@ -70,7 +63,7 @@ export default function Page() {
             </p>
           </section>
 
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Tool Use and Orchestration Patterns
             </h2>

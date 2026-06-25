@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion | Zion Tech Group Blog',
-  description:
-    'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
-  alternates: { canonical: '/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion' },
-  openGraph: {
-    title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
-    description:
-      'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion',
-  },
+  title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
+  description: 'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

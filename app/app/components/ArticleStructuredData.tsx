@@ -1,47 +1,41 @@
-import { JsonLD } from 'next-seo'
-
 export default function ArticleStructuredData({ 
-  title, 
+  headline, 
   description, 
   datePublished, 
-  dateModified, 
-  author = 'Zion Tech Group',
-  publisher = 'Zion Tech Group',
-  image = '/logo.png',
-  url = 'https://ziontechgroup.com'
+  slug 
+}: { 
+  headline: string; 
+  description: string; 
+  datePublished: string; 
+  slug: string 
 }) {
   return (
-    <Head>
-      <script 
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ 
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": title,
-            "description": description,
-            "datePublished": datePublished,
-            "dateModified": dateModified || datePublished,
-            "author": {
-              "@type": "Person",
-              "name": author
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": publisher,
-              "logo": {
-                "@type": "ImageObject",
-                "url": image
-              }
-            },
-            "image": image,
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": url
-            }
-          })
-        }}
-      />
-    </Head>
-  )
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: headline,
+        description: description,
+        datePublished: datePublished,
+        dateModified: datePublished,
+        author: {
+          "@type": "Person",
+          name: "Zion Tech Group"
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Zion Tech Group",
+          logo: {
+            "@type": "ImageObject",
+            url: "/logo.png"
+          }
+        },
+        image: "/logo.png",
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://ziontechgroup.com/blog/${slug}`
+        }
+      })}
+    </script>
+  );
 }

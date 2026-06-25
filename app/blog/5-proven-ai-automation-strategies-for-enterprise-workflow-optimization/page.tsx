@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization | Zion Tech Group Blog',
-  description:
-    'Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines.',
-  alternates: { canonical: '/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization' },
-  openGraph: {
-    title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
-    description:
-      'Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization',
-  },
+  title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
+  description: 'Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

@@ -1,20 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 import Breadcrumb from '@/app/components/Breadcrumb';
+import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 
 export const metadata: Metadata = {
-  title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting | Zion Tech Group Blog',
-  description:
-    'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
-  alternates: { canonical: '/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting' },
-  openGraph: {
-    title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
-    description:
-      'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting',
-  },
+  title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
+  description: 'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting'
 };
 
 export default function Page() {
@@ -58,7 +51,7 @@ export default function Page() {
         </header>
 
         <div className="prose-invert max-w-none">
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Demand Sensing and Real-Time Forecasting
             </h2>
@@ -70,7 +63,7 @@ export default function Page() {
             </p>
           </section>
 
-        <section className="mb-10">
+          <section className="mb-10">
             <h2 className="mb-4 text-2xl font-bold text-white">
               Safety Stock and Multi-Echelon Optimization
             </h2>

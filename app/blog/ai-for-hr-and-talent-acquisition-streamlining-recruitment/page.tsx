@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: 'AI for HR and Talent Acquisition: Streamlining Recruitment | Zion Tech Group Blog',
-  description:
-    'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
-  alternates: { canonical: '/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment' },
-  openGraph: {
-    title: 'AI for HR and Talent Acquisition: Streamlining Recruitment',
-    description:
-      'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment',
-  },
+  title: 'AI for HR and Talent Acquisition: Streamlining Recruitment',
+  description: 'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

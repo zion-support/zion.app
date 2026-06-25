@@ -9001,6 +9001,34 @@ export const aiServices: Service[] = [
     category: 'automation',
     industry: 'General',
   }
+,
+  {
+    id: 'ai-powered-seo-content-optimizer',
+    title: 'AI-Powered SEO Content Optimizer',
+    description: 'Boost your search engine rankings with AI-driven content optimization. Analyzes keywords, competitor content, and user intent to generate high-ranking, engaging content strategies.',
+    features: [
+      'Keyword gap analysis & opportunity identification',
+      'Competitor content analysis & benchmarking',
+      'AI-generated content briefs & outlines',
+      'Real-time SEO scoring & optimization suggestions',
+      'Content performance tracking & recommendations'
+    ],
+    benefits: [
+      'Increase organic traffic by up to 60%',
+      'Reduce content creation time by 40%',
+      'Improve search engine visibility',
+      'Drive higher conversion rates',
+      'Stay ahead of SEO trends with AI insights'
+    ],
+    pricing: {"basic": "149", "pro": "599", "enterprise": "3000"},
+    contactInfo: { website:'https://ziontechgroup.com/services/ai-powered-seo-content-optimizer/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950' },
+    icon: '📈',
+    href: '/services/ai-powered-seo-content-optimizer/',
+    popular: true,
+    stage: 'published',
+    category: 'ai',
+    industry: 'Marketing',
+  }
 ];
 
 export const allServices = aiServices;

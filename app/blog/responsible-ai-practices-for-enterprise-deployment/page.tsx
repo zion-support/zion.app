@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: 'Responsible AI Practices for Enterprise Deployment | Zion Tech Group Blog',
-  description:
-    'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
-  alternates: { canonical: '/blog/responsible-ai-practices-for-enterprise-deployment' },
-  openGraph: {
-    title: 'Responsible AI Practices for Enterprise Deployment',
-    description:
-      'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/responsible-ai-practices-for-enterprise-deployment',
-  },
+  title: 'Responsible AI Practices for Enterprise Deployment',
+  description: 'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/responsible-ai-practices-for-enterprise-deployment'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

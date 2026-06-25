@@ -718,10 +718,27 @@ function buildCCString(ccList) {
   return ccList.join(', ');
 }
 
-// ─── REAL SMTP EMAIL SENDING with Reply-All ──────────────────────
-//
+/// ─── Emailed Recipients Tracking (to avoid duplicate sends) ────────
+const EMAILED_FILE = BASE_DIR + '/logs/emailed-recipients-v8.json';
+const EMAILED_TTL_DAYS = 7; // consider recent within 7 days
+
+function loadEmailed() { return loadJSON(EMAILED_FILE, {}); }
+function saveEmailed(data) { saveJSON(EMAILED_FILE, data); }
+
+/// ─── Demo Emailed Recipients Tracking (for demo mode duplicate avoidance) ────────
+const DEMAILED_FILE = BASE_DIR + '/logs/demo-mailed-recipients-v8.json';
+const DEMAILED_TTL_DAYS = 7; // consider recent within 7 days for demo mode too
+
+function loadDemoEmailed() { return loadJSON(DEMAILED_FILE, {}); }
+function saveDemoEmailed(data) { saveJSON(DEMAILED_FILE, data); }
+
+/// ─── REAL SMTP EMAIL SENDING with Reply-All ──────────────────────
+///
 // IMPORTANT: Always Reply-All — CC recipients are preserved.
 // Every response goes to TO + all CC recipients via MIME headers.
+
+
+
 
 async function sendEmail(to, cc, subject, body, inReplyTo, references) {
   // Check credentials
@@ -732,53 +749,131 @@ async function sendEmail(to, cc, subject, body, inReplyTo, references) {
 
   if (!emailAddr || !emailPass) {
     // Demo mode — no credentials
+    // Check for duplicate demo sends to avoid spamming the same contacts in demo mode
+    const demoed = loadDemoEmailed();
+    const now = Date.now();
+    const demoTtlMs = DEMAILED_TTL_DAYS * 24 * 60 * 60 * 1000;
+    const allRecipients = [...new Set([to, ...(cc || [])])];
+    const freshDemo = allRecipients.filter(email => {
+      const last = demoed[email];
+      return !last || (now - new Date(last).getTime() > demoTtlMs);
+    });
+    
+    if (freshDemo.length === 0) {
+      // All recipients have been demo-emailed recently, skip
+      return { demo: true, skipped: true, reason: 'demo_all_recipients_emailed_recently', to, cc: cc || [] };
+    }
+    
+    // Record this demo send before returning
+    const updatedDemoed = { ...demoed };
+    const iso = new Date().toISOString();
+    for (const email of freshDemo) {
+      updatedDemoed[email] = iso;
+    }
+    saveDemoEmailed(updatedDemoed);
+    
     return { demo: true, reason: 'no_credentials', to, cc: cc || [] };
   }
 
+  // --- Duplicate suppression: skip if all recipients emailed recently ---
+  const emailed = loadEmailed();
+  const now = Date.now();
+  const ttlMs = EMAILED_TTL_DAYS * 24 * 60 * 60 * 1000;
+  const allRecipients = [...new Set([to, ...(cc || [])])];
+  const fresh = allRecipients.filter(email => {
+    const last = emailed[email];
+    return !last || (now - new Date(last).getTime() > ttlMs);
+  });
+  if (fresh.length === 0) {
+    logInfo('All recipients emailed recently, skipping send.');
+    return { skipped: true, reason: 'all_recipients_emailed_recently', to, cc: cc || [] };
+  }
+  // Determine new to and cc: keep original to if fresh, else pick first fresh as to and move others to cc
+  let newTo = to;
+  let newCc = cc || [];
+  if (!fresh.includes(to)) {
+    // main recipient not fresh; use first fresh as to, rest as cc (excluding newTo)
+    newTo = fresh[0];
+    newCc = fresh.slice(1);
+  } else {
+    // to is fresh, filter cc to only fresh entries
+    newCc = (cc || []).filter(email => fresh.includes(email));
+  }
+
   try {
-    const ccStr = buildCCString(cc);
-    // Escape body for Python string
-    const bodyClean = body.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/"/g, '\\"');
-    const subjectClean = subject.replace(/"/g, '\\"');
-    const toClean = to.replace(/"/g, '\\"');
+    const ccList = Array.isArray(cc) ? cc : (cc ? [cc] : []);
+    const pythonScript = `import smtplib, os, json
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-    const pyLines = [
-      'import smtplib, os, json',
-      'from email.mime.text import MIMEText',
-      'from email.mime.multipart import MIMEMultipart',
-      'u = os.environ.get("ZION_EMAIL_ADDRESS", "")',
-      'p = os.environ.get("ZION_EMAIL_PASSWORD", "")',
-      'h = os.environ.get("ZION_SMTP_HOST", "smtp.gmail.com")',
-      'port = int(os.environ.get("ZION_SMTP_PORT", "587"))',
-      'm = MIMEMultipart()',
-      'm["From"] = u',
-      'm["To"] = "' + toClean + '"'
-    ];
-    if (ccStr) pyLines.push('m["Cc"] = "' + ccStr + '"');
-    pyLines.push('m["Subject"] = "' + subjectClean + '"');
-    if (inReplyTo) pyLines.push('m["In-Reply-To"] = "' + inReplyTo.replace(/"/g, '\\"') + '"');
-    if (references) pyLines.push('m["References"] = "' + references.replace(/"/g, '\\"') + '"');
-    pyLines.push("m.attach(MIMEText('" + bodyClean + "', 'plain', 'utf-8'))");
-    pyLines.push('s = smtplib.SMTP(h, port)');
-    pyLines.push('s.starttls()');
-    pyLines.push('s.login(u, p)');
-    const rcptLine = 'rcpts = ["' + toClean + '"]';
-    if (cc && cc.length) rcptLine += ' + ["' + cc.join('", "') + '"]';
-    pyLines.push(rcptLine);
-    pyLines.push('s.sendmail(u, rcpts, m.as_string())');
-    pyLines.push('s.quit()');
-    pyLines.push('print(json.dumps({"success": True, "recipients": len(rcpts)}))');
+u = os.environ.get("ZION_EMAIL_ADDRESS", "")
+p = os.environ.get("ZION_EMAIL_PASSWORD", "")
+h = os.environ.get("ZION_SMTP_HOST", "smtp.gmail.com")
+port = int(os.environ.get("ZION_SMTP_PORT", "587"))
+to = os.environ.get("ZION_EMAIL_TO", "")
+cc_json = os.environ.get("ZION_EMAIL_CC", "[]")
+subject = os.environ.get("ZION_EMAIL_SUBJECT", "")
+body = os.environ.get("ZION_EMAIL_BODY", "")
+in_reply_to = os.environ.get("ZION_EMAIL_IN_REPLY_TO", "")
+references = os.environ.get("ZION_EMAIL_REFERENCES", "")
 
-    fs.writeFileSync('/tmp/email_send_v8.py', pyLines.join('\n'));
-    const out = execSync('python3 /tmp/email_send_v8.py', { encoding: 'utf8', timeout: 30, env: Object.assign({}, process.env) }).trim();
-    return JSON.parse(out);
+m = MIMEMultipart()
+m["From"] = u
+m["To"] = to
+try:
+    cc_list = json.loads(cc_json)
+  catch:
+    cc_list = []
+if cc_list:
+    m["Cc"] = ", ".join(cc_list)
+if subject:
+    m["Subject"] = subject
+if in_reply_to:
+    m["In-Reply-To"] = in_reply_to
+if references:
+    m["References"] = references
+m.attach(MIMEText(body, 'plain', 'utf-8'))
+s = smtplib.SMTP(h, port)
+s.starttls()
+s.login(u, p)
+rcpts = [to] + cc_list
+s.sendmail(u, rcpts, m.as_string())
+s.quit()
+print(json.dumps({"success": True, "recipients": len(rcpts)}))
+`;
+
+    const env = Object.assign({}, process.env, {
+      ZION_EMAIL_ADDRESS: emailAddr,
+      ZION_EMAIL_PASSWORD: emailPass,
+      ZION_SMTP_HOST: smtpHost,
+      ZION_SMTP_PORT: smtpPort.toString(),
+      ZION_EMAIL_TO: to,
+      ZION_EMAIL_CC: JSON.stringify(ccList),
+      ZION_EMAIL_SUBJECT: subject,
+      ZION_EMAIL_BODY: body,
+      ZION_EMAIL_IN_REPLY_TO: inReplyTo || '',
+      ZION_EMAIL_REFERENCES: references || ''
+    });
+
+    fs.writeFileSync('/tmp/email_send_v8.py', pythonScript);
+    const out = execSync('python3 /tmp/email_send_v8.py', { encoding: 'utf8', timeout: 30, env }).trim();
+    const result = JSON.parse(out);
+   
+    // Update emailed timestamps for recipients we attempted to send to
+    const recipientsToUpdate = [newTo, ...newCc];
+    const updatedEmailed = { ...emailed };
+    const iso = new Date().toISOString();
+    for (const email of recipientsToUpdate) {
+      updatedEmailed[email] = iso;
+    }
+    saveEmailed(updatedEmailed);
+    return result;
   } catch(e) {
     logError('SMTP send failed: ' + e.message.substring(0, 100));
     return { error: e.message };
   }
-}
 
-// ─── Response Quality Scoring ────────────────────────────────────
+}
 
 function scoreResponse(response, emailData) {
   let score = 100;

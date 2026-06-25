@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production | Zion Tech Group Blog',
-  description:
-    'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
-  alternates: { canonical: '/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production' },
-  openGraph: {
-    title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
-    description:
-      'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production',
-  },
+  title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
+  description: 'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

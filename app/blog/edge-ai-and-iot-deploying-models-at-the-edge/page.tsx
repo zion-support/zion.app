@@ -1,22 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
-import Breadcrumb from '@/app/components/Breadcrumb';
-
 export const metadata: Metadata = {
-  title: 'Edge AI and IoT: Deploying Models at the Edge | Zion Tech Group Blog',
-  description:
-    'On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge.',
-  alternates: { canonical: '/blog/edge-ai-and-iot-deploying-models-at-the-edge' },
-  openGraph: {
-    title: 'Edge AI and IoT: Deploying Models at the Edge',
-    description:
-      'On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge.',
-    type: 'article',
-    url: 'https://ziontechgroup.com/blog/edge-ai-and-iot-deploying-models-at-the-edge',
-  },
+  title: 'Edge AI and IoT: Deploying Models at the Edge',
+  description: 'On-device inference, model compression, latency optimization, and offline capability. When and how to move AI from cloud to edge.',
+  type: 'article',
+  url: 'https://ziontechgroup.com/blog/edge-ai-and-iot-deploying-models-at-the-edge'
 };
-
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
